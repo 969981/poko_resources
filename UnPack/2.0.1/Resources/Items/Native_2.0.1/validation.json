@@ -1,0 +1,117 @@
+{
+  "status": "MATCH",
+  "item_slots": 4600,
+  "differences": 0,
+  "invalid_name_indices": 0,
+  "languages": {
+    "en": {
+      "matched": 4600,
+      "different": 0,
+      "native_nonempty": 3586
+    },
+    "jp": {
+      "matched": 4600,
+      "different": 0,
+      "native_nonempty": 3586
+    },
+    "de": {
+      "matched": 4600,
+      "different": 0,
+      "native_nonempty": 3586
+    },
+    "es": {
+      "matched": 4600,
+      "different": 0,
+      "native_nonempty": 3586
+    },
+    "fr": {
+      "matched": 4600,
+      "different": 0,
+      "native_nonempty": 3586
+    },
+    "it": {
+      "matched": 4600,
+      "different": 0,
+      "native_nonempty": 3586
+    },
+    "ko": {
+      "matched": 4600,
+      "different": 0,
+      "native_nonempty": 3586
+    },
+    "zhs": {
+      "matched": 4600,
+      "different": 0,
+      "native_nonempty": 3586
+    },
+    "zht": {
+      "matched": 4600,
+      "different": 0,
+      "native_nonempty": 3586
+    }
+  },
+  "source": {
+    "items": {
+      "path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin",
+      "sha256": "2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f",
+      "entry": 983
+    },
+    "languages": {
+      "en": {
+        "path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04646.bin",
+        "entry": 4646,
+        "sha256": "9b1e9ae4b9ccfbc4a7245c47f3123b0d7ad814b03722c2b47b2716193b8ed0be",
+        "pokohex_sha256": "bc3c3f3835f45beadf1bb3ee0e3ea3f7e1adc8266120758e2b44a28d5caadad9"
+      },
+      "jp": {
+        "path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04645.bin",
+        "entry": 4645,
+        "sha256": "354833598ed4792fddef980538d2d69e069bd29ae3d5eb2e2989634bc6851de3",
+        "pokohex_sha256": "e4e891e5f6845c73af2f2f1d2005627e8f7a6f67083765f84713a5a4cd3387ba"
+      },
+      "de": {
+        "path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04649.bin",
+        "entry": 4649,
+        "sha256": "d0288324bfce5d285cff5828043242218d0a3853d96a28297388871c2cc3ccb2",
+        "pokohex_sha256": "c600860bbe0d4b3edfd79c8f5e0f325481f2ff6641ad31e3132fb3cba933a28e"
+      },
+      "es": {
+        "path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04650.bin",
+        "entry": 4650,
+        "sha256": "ddd5733c7c58b4d642894ee0eedaba7b7345b7a25e463f31540bc85fae013dfa",
+        "pokohex_sha256": "1af7d001d5031645766608fc9e605e6b9cf3f98b9810048c3f6ad12b9bc41851"
+      },
+      "fr": {
+        "path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04647.bin",
+        "entry": 4647,
+        "sha256": "aa4a5da888218a6e0f4863dc3ee086f69e3b7c73867cfc99b352f2d5d1696f02",
+        "pokohex_sha256": "4aa11169ac36940b8ed8a7cddc25ca28e299171b9545f3ad2bddc1c83a0b4dbc"
+      },
+      "it": {
+        "path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04648.bin",
+        "entry": 4648,
+        "sha256": "4a99ecf4605a77af4cf4813d04efdb624a367e7c9184e634e63cbadeb6bf27c7",
+        "pokohex_sha256": "c6af32e0e4cc35411585b186442aef37b9fccdbb7d66bb2459f584810d298c83"
+      },
+      "ko": {
+        "path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04652.bin",
+        "entry": 4652,
+        "sha256": "6d830693142a655b2b09a408e4f0eee352bf8133121783c59ebb0f8f4cdb414f",
+        "pokohex_sha256": "db1700ef77913753dda63dbb9da7d640a703671eed3f20cfe2ba539e723391af"
+      },
+      "zhs": {
+        "path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04653.bin",
+        "entry": 4653,
+        "sha256": "018587283cf9443a8882fd4219421e1b6f37609726176171bdd8507cb3dcc6e5",
+        "pokohex_sha256": "722a3696119090dfb5ea42c51f8134671fd9d9ea13fc38b3d97ffbcd4d00dbda"
+      },
+      "zht": {
+        "path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04651.bin",
+        "entry": 4651,
+        "sha256": "06f5546c88f18d0c1460bbd4c00baaa22d46862ee184dc5fc3ef6333feb70333",
+        "pokohex_sha256": "3ca0d83db10c86882d33d0979febc147a24cc76c359b104fbb84b215d99aee69"
+      }
+    }
+  },
+  "scope": "Native item names only; no inferred material classes or icon-G1T links"
+}
