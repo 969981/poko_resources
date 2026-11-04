@@ -1,0 +1,224 @@
+{
+  "overall": {
+    "root_rdb_records": 60722,
+    "root_rdx_entries": 45,
+    "missing_source_records": 6118,
+    "rdb_published": 79714,
+    "system_rdb_records": 25110,
+    "system_rdx_entries": 5,
+    "link_index_records": 12298,
+    "link_published": 9793,
+    "link_empty_index_entries": 2505,
+    "unexpected_manifest_records": 0,
+    "published_manifest_records": 89507
+  },
+  "coverage": {
+    "rdb_published_of_total": [
+      79714,
+      85832
+    ],
+    "link_published_and_empty_of_total": [
+      12298,
+      12298
+    ],
+    "remaining_missing_physical_inputs": 27
+  },
+  "missing_sources": [
+    {
+      "source_file": "0x18b82cf3.fdata",
+      "rdb_records": 1939,
+      "expected_unpacked_bytes": 3124848,
+      "catalogs": "root",
+      "platform_flags": "ffff"
+    },
+    {
+      "source_file": "0xea42a223.fdata",
+      "rdb_records": 713,
+      "expected_unpacked_bytes": 42870088,
+      "catalogs": "root",
+      "platform_flags": "ffff"
+    },
+    {
+      "source_file": "0x0e195223.fdata",
+      "rdb_records": 639,
+      "expected_unpacked_bytes": 1035984,
+      "catalogs": "root",
+      "platform_flags": "ff02"
+    },
+    {
+      "source_file": "0x03a38715.fdata",
+      "rdb_records": 623,
+      "expected_unpacked_bytes": 88883092,
+      "catalogs": "root",
+      "platform_flags": "ff03"
+    },
+    {
+      "source_file": "0xfd6af828.fdata",
+      "rdb_records": 525,
+      "expected_unpacked_bytes": 183269008,
+      "catalogs": "root",
+      "platform_flags": "ff03"
+    },
+    {
+      "source_file": "0x127f9e06.fdata",
+      "rdb_records": 520,
+      "expected_unpacked_bytes": 846940,
+      "catalogs": "root",
+      "platform_flags": "ffff"
+    },
+    {
+      "source_file": "0x1cf24169.fdata",
+      "rdb_records": 318,
+      "expected_unpacked_bytes": 296800,
+      "catalogs": "root",
+      "platform_flags": "ff03"
+    },
+    {
+      "source_file": "0x42ff8d64.fdata",
+      "rdb_records": 318,
+      "expected_unpacked_bytes": 572732,
+      "catalogs": "root",
+      "platform_flags": "ff03"
+    },
+    {
+      "source_file": "0x07e0c336.fdata",
+      "rdb_records": 165,
+      "expected_unpacked_bytes": 268660,
+      "catalogs": "root",
+      "platform_flags": "ff02"
+    },
+    {
+      "source_file": "0x5c83387f.fdata",
+      "rdb_records": 84,
+      "expected_unpacked_bytes": 151064320,
+      "catalogs": "root",
+      "platform_flags": "ffff"
+    },
+    {
+      "source_file": "0x16b9b27c.fdata",
+      "rdb_records": 51,
+      "expected_unpacked_bytes": 45320,
+      "catalogs": "root",
+      "platform_flags": "ff03"
+    },
+    {
+      "source_file": "0x3cc6fe77.fdata",
+      "rdb_records": 51,
+      "expected_unpacked_bytes": 84316,
+      "catalogs": "root",
+      "platform_flags": "ff03"
+    },
+    {
+      "source_file": "0x785578fe.fdata",
+      "rdb_records": 36,
+      "expected_unpacked_bytes": 119849664,
+      "catalogs": "system",
+      "platform_flags": "ffff"
+    },
+    {
+      "source_file": "0x00184b41.fdata",
+      "rdb_records": 24,
+      "expected_unpacked_bytes": 4733112,
+      "catalogs": "root",
+      "platform_flags": "ff03"
+    },
+    {
+      "source_file": "0x5e069694.fdata",
+      "rdb_records": 21,
+      "expected_unpacked_bytes": 998616,
+      "catalogs": "root",
+      "platform_flags": "ff01"
+    },
+    {
+      "source_file": "0x5e070af3.fdata",
+      "rdb_records": 21,
+      "expected_unpacked_bytes": 950512,
+      "catalogs": "root",
+      "platform_flags": "ff02"
+    },
+    {
+      "source_file": "0xb6a6f383.fdata",
+      "rdb_records": 21,
+      "expected_unpacked_bytes": 4062184,
+      "catalogs": "root",
+      "platform_flags": "ff03"
+    },
+    {
+      "source_file": "0x6e422233.fdata",
+      "rdb_records": 17,
+      "expected_unpacked_bytes": 7377348,
+      "catalogs": "root",
+      "platform_flags": "fffe"
+    },
+    {
+      "source_file": "0xa9992094.fdata",
+      "rdb_records": 14,
+      "expected_unpacked_bytes": 1067032,
+      "catalogs": "system",
+      "platform_flags": "ffff"
+    },
+    {
+      "source_file": "0x8c15fc29.fdata",
+      "rdb_records": 5,
+      "expected_unpacked_bytes": 334980,
+      "catalogs": "root",
+      "platform_flags": "ffff"
+    },
+    {
+      "source_file": "0x898afd6d.fdata",
+      "rdb_records": 3,
+      "expected_unpacked_bytes": 30273628,
+      "catalogs": "root",
+      "platform_flags": "ffff"
+    },
+    {
+      "source_file": "0xd2fa87f5.fdata",
+      "rdb_records": 3,
+      "expected_unpacked_bytes": 3984,
+      "catalogs": "root",
+      "platform_flags": "ff01"
+    },
+    {
+      "source_file": "0x5e077f52.fdata",
+      "rdb_records": 2,
+      "expected_unpacked_bytes": 7824,
+      "catalogs": "root",
+      "platform_flags": "ff03"
+    },
+    {
+      "source_file": "0xed67d16d.fdata",
+      "rdb_records": 2,
+      "expected_unpacked_bytes": 2008,
+      "catalogs": "root",
+      "platform_flags": "ff03"
+    },
+    {
+      "source_file": "0x012fe7c9.fdata",
+      "rdb_records": 1,
+      "expected_unpacked_bytes": 9176072,
+      "catalogs": "root",
+      "platform_flags": "ffff"
+    },
+    {
+      "source_file": "0x25768c1b.file",
+      "rdb_records": 1,
+      "expected_unpacked_bytes": 594240848,
+      "catalogs": "root",
+      "platform_flags": "STANDALONE"
+    },
+    {
+      "source_file": "0xf1c1c296.fdata",
+      "rdb_records": 1,
+      "expected_unpacked_bytes": 2612644,
+      "catalogs": "system",
+      "platform_flags": "ffff"
+    }
+  ],
+  "unpublished_examples": [],
+  "unexpected_manifest_examples": [],
+  "limitations": [
+    "Git-tree validation checks path and blob byte size, not rehashing all SHA-256.",
+    "Record extraction is not semantic parsing of textures, models, databases or FlatBuffers.",
+    "Missing physical inputs cannot be reconstructed from RDX catalog entries."
+  ]
+}
