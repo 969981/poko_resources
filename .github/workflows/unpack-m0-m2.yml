@@ -1,0 +1,111 @@
+name: Pokopia M0-M2 binary validation
+
+on:
+  push:
+    branches: [2.0.1_unpack]
+    paths:
+      - '.github/workflows/unpack-m0-m2.yml'
+      - 'Scripts/unpack/**'
+      - 'tests/**'
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: 'smoke (selected real files) or full (all available resources; requires disk space)'
+        required: true
+        type: choice
+        default: smoke
+        options: [smoke, full]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pokopia-unpack-2-0-1-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  smoke:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Sparse checkout of scripts and small real samples
+        uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+            tests/
+            2.0.1/romfs/LI_C0_R.IDX
+            2.0.1/romfs/LD_C0_R.BIN.7z.001
+            2.0.1/romfs/LD_C0_R.BIN.7z.002
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdb
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdx
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdb
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdx
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x4b13d561.fdata
+      - name: Install 7-Zip
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends 7zip
+          command -v 7zz || command -v 7z
+      - name: Unit tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Real IDX, root/system RDB and small FDATA validation
+        run: python3 -m Scripts.unpack.smoke --source 2.0.1 --output _meta/2.0.1/ci-smoke
+      - name: M0 verify selected archive pieces and their hashes
+        run: |
+          python3 -m Scripts.unpack.inventory --source 2.0.1 --output _meta/2.0.1/ci-inventory --hash --test-7z
+      - name: M1 restore LINKDATA (temporary files only)
+        run: |
+          mkdir -p "$RUNNER_TEMP/linkdata-restored"
+          7z x -y "2.0.1/romfs/LD_C0_R.BIN.7z.001" "-o$RUNNER_TEMP/linkdata-restored"
+          test -s "$RUNNER_TEMP/linkdata-restored/LD_C0_R.BIN"
+          python3 -m Scripts.unpack.linkdata --idx 2.0.1/romfs/LI_C0_R.IDX \
+            --bin "$RUNNER_TEMP/linkdata-restored/LD_C0_R.BIN" \
+            --output _meta/2.0.1/ci-linkdata --decode --verify-only --limit 250
+      - name: M2 targeted real FDATA verification (full RDB indexes)
+        run: |
+          python3 -m Scripts.unpack.ktrdb \
+            --base 2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE \
+            --output _meta/2.0.1/ci-ktrdb --extract --decode --verify-only \
+            --only-fdata 4b13d561 --limit 250
+      - name: Upload reports only (not game assets)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m0-m2-smoke-${{ github.run_id }}
+          path: _meta/2.0.1/ci-*/**
+          retention-days: 14
+          if-no-files-found: warn
+
+  full:
+    if: (github.event_name == 'workflow_dispatch' && inputs.scope == 'full') || (github.event_name == 'push' && contains(github.event.head_commit.message, '[full-unpack]'))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          persist-credentials: false
+          sparse-checkout: |
+            Scripts
+            tests
+            2.0.1
+      - name: Install 7-Zip
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends 7zip
+      - name: M0 preflight, restore and M1/M2 full record validation
+        run: |
+          python3 -m Scripts.unpack.full_pipeline --source 2.0.1 --work "$RUNNER_TEMP/pokopia-full" \
+            --output _meta/2.0.1/full --sevenzip 7z --verify-only
+      - name: Upload metadata only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m0-m2-full-${{ github.run_id }}
+          path: _meta/2.0.1/full/**
+          retention-days: 14
+          if-no-files-found: warn
