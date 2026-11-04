@@ -61,7 +61,7 @@ class TestFormatReaders(unittest.TestCase):
         with self.assertRaisesRegex(FormatError, 'RDB_INVALID_RDX_POSITION'):
             parse_rdb(synth_rdb(1, 2, 16, 157, fidx=1), 'root', rdx)
 
-    def test_rdb_extended_17_byte_footer_is_opaque(self):
+    def test_rdb_extended_17_byte_footer_is_parsed_and_invalid_remains_opaque(self):
         rdx = parse_rdx(struct.pack('<HHI', 0, 0xffff, 0x4b13d561))
         real_footer = bytes.fromhex('010400000080409f048741120000000000')
         row_len = 48 + len(real_footer)
@@ -70,9 +70,18 @@ class TestFormatReaders(unittest.TestCase):
                                            1, 0xf79cb076, 0x20a6a0bb, 0) + real_footer
         record += bytes((-len(record)) % 4)
         entries, _ = parse_rdb(header + record, 'root', rdx)
-        self.assertEqual(entries[0].footer_layout, 'opaque_17')
+        self.assertEqual(entries[0].footer_layout, 'extended_17')
         self.assertEqual(entries[0].footer_extra_hex, real_footer.hex())
-        self.assertEqual(entries[0].fdata_index, -1)
+        self.assertEqual(entries[0].fdata_index, 0)
+        self.assertEqual(entries[0].fdata_offset, 0x87049f40)
+        self.assertEqual(entries[0].fdata_entry_size, 0x1241)
+        bad_footer = bytearray(real_footer)
+        bad_footer[3] = 0x01 # invalid marker 0x80000100
+        bad_record = record[:48] + bytes(bad_footer)
+        bad_record += bytes((-len(bad_record)) % 4)
+        bad_entries, _ = parse_rdb(header + bad_record, 'system', rdx)
+        self.assertEqual(bad_entries[0].footer_layout, 'opaque_17')
+        self.assertEqual(bad_entries[0].fdata_index, -1)
 
     def test_real_kt_frame(self):
         compressed = bytes.fromhex(REAL_KT_COMPRESSED_HEX)
@@ -185,6 +194,38 @@ class TestFormatReaders(unittest.TestCase):
             report = run_ktrdb(base, p / 'out', True, True, None, False, False)
             self.assertEqual(report['statuses'], {'DECOMPRESSED': 1})
             self.assertEqual(len(list((p / 'out/decoded').glob('*.bin'))), 1)
+
+    def test_standalone_file_streaming_payload_verification(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d); base = p / 'assets'; base.mkdir()
+            (base / 'data').mkdir()
+            raw = b'STANDALONE-RAW' * 8  # 112 bytes
+            name_hash = 0x0b5db05b
+            type_hash = 0x0d34474d
+            header_size = 56
+            total = header_size + len(raw)
+            idrk = b'IDRK0000' + struct.pack('<QQQIIII', total, len(raw), len(raw),
+                                               1, name_hash, type_hash, 0)
+            (base / 'data' / f'0x{name_hash:08x}.file').write_bytes(idrk + bytes(8) + raw)
+            (base / 'root.rdx').write_bytes(struct.pack('<HHI', 0, 0xffff, 0x4b13d561))
+            foot = struct.pack('<HIIHB', 0x0c01, 0, total, 0, 0)
+            esize = 48 + len(foot)
+            entry = (b'IDRK0000' + struct.pack('<QQQIIII', esize, len(foot), len(raw),
+                                                1, name_hash, type_hash, 0) + foot)
+            entry += bytes((-len(entry)) % 4)
+            roothead = b'_DRK0000' + struct.pack('<4I', 32, 0, 1, 0) + bytes(8)
+            (base / 'root.rdb').write_bytes(roothead + entry)
+            (base / 'system.rdx').write_bytes(b'')
+            (base / 'system.rdb').write_bytes(roothead[:16] + struct.pack('<I', 0) + roothead[20:])
+            report = run_ktrdb(base, p / 'meta', True, True, None, False, False, True)
+            self.assertEqual(report['statuses'], {'RAW_VERIFIED': 1})
+            self.assertFalse((p / 'meta/raw').exists())
+            self.assertEqual((p / 'meta/ktrdb_report.json').is_file(), True)
+            self.assertEqual(run_ktrdb(base, p / 'extracted', True, True, None, False, False)['statuses'],
+                             {'RAW_VERIFIED': 1})
+            files = list((p / 'extracted/raw').glob('*.bin'))
+            self.assertEqual(len(files), 1)
+            self.assertEqual(files[0].read_bytes(), raw)
 
     def test_linkdata_verify_only_writes_no_asset(self):
         with tempfile.TemporaryDirectory() as d:

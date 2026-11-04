@@ -116,15 +116,31 @@ def parse_rdb(data: bytes, catalog: str, rdx: list[RdxEntry]) -> tuple[list[RdbE
         if entry_size < 48 + payload_size or not 13 <= payload_size <= 128 or at + entry_size > len(data):
             raise FormatError(f'RDB_BAD_ENTRY_SIZE_OR_FOOTER:{at}:{entry_size}:{payload_size}')
         footer_blob = data[at + entry_size - payload_size:at + entry_size]
-        # Only 13-byte format is byte-located. Real root RDB also has 17-byte
-        # and potentially other footer variants; preserve opaque bytes as-is,
-        # never invent an FDATA index or offset for those records.
+        # Actual Pokopia system.rdb records also use 17-byte footers.
+        # Before accepting <HIIIHB>, require the observed 0x80000000 marker,
+        # 0x0401 magic, zero tail, a valid RDX position and 16-byte alignment.
+        # A full restored-system-FDATA run must still validate matching IDRK
+        # name/type/unpacked/stored bytes for each record.
         if payload_size == 13:
             magic, offset, size, index, tail = RDB_FOOTER.unpack(footer_blob)
             if index >= len(rdx):
                 raise FormatError(f'RDB_INVALID_RDX_POSITION:{at}:{index}')
             layout = 'standard_13'
             extra_hex = ''
+        elif payload_size == 17:
+            emagic, marker, eoffset, esize, eindex, etail = struct.unpack('<HIIIHB', footer_blob)
+            if (emagic == 0x0401 and marker == 0x80000000
+                    and eindex < len(rdx) and eoffset % 16 == 0
+                    and esize >= IDRK_HEADER.size and etail == 0):
+                magic, offset, size, index, tail = emagic, eoffset, esize, eindex, etail
+                layout = 'extended_17'
+            else:
+                magic = emagic
+                offset = size = 0
+                index = -1
+                tail = 0
+                layout = 'opaque_17'
+            extra_hex = footer_blob.hex()
         else:
             magic = int.from_bytes(footer_blob[:2], 'little')
             offset = size = 0

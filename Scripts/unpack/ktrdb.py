@@ -4,8 +4,9 @@ import hashlib
 import sys
 from dataclasses import asdict
 from pathlib import Path
+from contextlib import nullcontext
 from .core import (FormatError, decode_kt_payload, find_fdata, parse_rdb, parse_rdx,
-                   read_idrk, save_csv, save_json)
+                   read_idrk, save_csv, save_json, sha256_file)
 
 
 def run(base: Path, output: Path, extract: bool, decode: bool, limit: int | None,
@@ -35,7 +36,7 @@ def run(base: Path, output: Path, extract: bool, decode: bool, limit: int | None
                    'footer_extra_hex': en.footer_extra_hex, 'footer_layout': en.footer_layout,
                    'status': 'INDEXED', 'error': '', 'source_path': '', 'output_sha256': '', 'decoded_sha256': ''}
             rd = rdex[en.fdata_index] if en.fdata_index >= 0 else None
-            if en.footer_layout != 'standard_13':
+            if en.footer_layout not in ('standard_13', 'extended_17'):
                 container = None
                 mode = 'opaque_footer'
             elif en.footer_magic == 0x0c01:
@@ -76,10 +77,55 @@ def run(base: Path, output: Path, extract: bool, decode: bool, limit: int | None
                                     if len(blob) != header.packed_size:
                                         raise FormatError('IDRK_TRUNCATED_PAYLOAD')
                                 else:
-                                    if container.stat().st_size > 512 * 1024 * 1024:
-                                        raise FormatError('STANDALONE_FILE_EXCEEDS_MEMORY_LIMIT')
-                                    blob = fd.read()
-                                    header = None
+                                    # A standalone .file may contain a complete
+                                    # IDRK record (56-byte header plus raw body).
+                                    # Do not allocate a 947MB body in memory.
+                                    size = container.stat().st_size
+                                    header, _metadata = read_idrk(fd, 0, size)
+                                    if header.entry_size != size or en.fdata_entry_size != size:
+                                        raise FormatError('STANDALONE_RECORD_SIZE_MISMATCH')
+                                    if header.name_hash != en.name_hash or header.type_hash != en.type_hash:
+                                        raise FormatError('STANDALONE_NAME_OR_TYPE_MISMATCH')
+                                    if header.unpacked_size != en.uncompressed_size:
+                                        raise FormatError('STANDALONE_UNPACKED_SIZE_MISMATCH')
+                                    if header.packed_size != header.unpacked_size:
+                                        raise FormatError('STANDALONE_COMPRESSED_STREAMING_NOT_IMPLEMENTED')
+                                    name = f'{catalog}_{en.record_index:06d}_{en.name_hash:08x}.{mode}.bin'
+                                    dest = output / 'raw' / name
+                                    existing_ok = (resume and not verify_only and dest.is_file()
+                                                   and dest.stat().st_size == header.packed_size)
+                                    if existing_ok:
+                                        # Even resume requires source byte validation.
+                                        sha = hashlib.sha256()
+                                        remaining = header.packed_size
+                                        while remaining:
+                                            chunk = fd.read(min(4 * 1024 * 1024, remaining))
+                                            if not chunk:
+                                                raise FormatError('STANDALONE_TRUNCATED_PAYLOAD')
+                                            sha.update(chunk)
+                                            remaining -= len(chunk)
+                                        existing_ok = sha256_file(dest) == sha.hexdigest()
+                                        fd.seek(size - header.packed_size)
+                                    if not verify_only and not existing_ok:
+                                        dest.parent.mkdir(parents=True, exist_ok=True)
+                                    ctx = nullcontext(None) if verify_only or existing_ok else dest.open('wb')
+                                    sha = hashlib.sha256()
+                                    remaining = header.packed_size
+                                    with ctx as target:
+                                        while remaining:
+                                            chunk = fd.read(min(4 * 1024 * 1024, remaining))
+                                            if not chunk:
+                                                raise FormatError('STANDALONE_TRUNCATED_PAYLOAD')
+                                            sha.update(chunk)
+                                            if target is not None:
+                                                target.write(chunk)
+                                            remaining -= len(chunk)
+                                    digest = sha.hexdigest()
+                                    row.update(status='RAW_VERIFIED' if decode else 'EXTRACTED',
+                                               output_sha256=digest,
+                                               decoded_sha256=digest if decode else '')
+                                    rows.append(row)
+                                    continue
                             name = f'{catalog}_{en.record_index:06d}_{en.name_hash:08x}.{mode}.bin'
                             dest = output / 'raw' / name
                             raw_hash = hashlib.sha256(blob).hexdigest()
