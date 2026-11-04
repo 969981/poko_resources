@@ -1,0 +1,90 @@
+name: M5 - Audit Pokopia item texture links
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/trace_item_textures.py"
+      - "Scripts/resources/g1t_to_png.py"
+      - "UnPack/2.0.1/Resources/Textures/Indexes/**"
+      - ".github/workflows/unpack-m5-item-links.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m5-item-links-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  native-link-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          persist-credentials: true
+          filter: blob:none
+          sparse-checkout: |
+            Scripts/resources
+            UnPack/2.0.1/Resources/Textures/Indexes
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up Pillow for BC7 and BC3
+        run: python -m pip install "Pillow>=11,<13"
+
+      - name: Trace actual TEXINFO and G1T for four known item IDs
+        run: |
+          python Scripts/resources/trace_item_textures.py \
+            --root UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE \
+            --indexes UnPack/2.0.1/Resources/Textures/Indexes \
+            --output UnPack/2.0.1/Resources \
+            --ids 1010,1390,1425,2735 \
+            --max-preview 4 \
+            --layouts linear,gob1,gob2,gob4,gob8
+
+      - name: Verify physical paths and PNG headers
+        run: |
+          python - <<'PY'
+          import csv, json
+          from pathlib import Path
+          from PIL import Image
+          base = Path("UnPack/2.0.1/Resources")
+          report = json.loads((base/"Textures/item_native_link_summary.json").read_text(encoding="utf-8"))
+          assert report["inventory_items"] == 1615, report
+          assert report["mapping_rows"] == 3229, report
+          assert report["link_status"].get("NATIVE_MATCH", 0) >= 4, report
+          with (base/"Textures/item_native_preview_manifest.csv").open(encoding="utf-8", newline="") as f:
+              previews = list(csv.DictReader(f))
+          good = [x for x in previews if x["status"] == "PNG_CANDIDATE_UNVERIFIED"]
+          assert len(good) >= 4, f"No candidate output: {previews[:8]}"
+          for x in good:
+              with Image.open(x["png"]) as im:
+                  im.verify()
+          print("Candidate PNGs verified:", len(good))
+          PY
+
+      - name: Commit provenance, evidence and unverified PNG candidates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- UnPack/2.0.1/Resources/Textures/item_native_link_audit.csv UnPack/2.0.1/Resources/Textures/item_native_link_summary.json UnPack/2.0.1/Resources/Textures/item_native_preview_manifest.csv UnPack/2.0.1/Resources/Items/NativeCandidates
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "data(m5): trace native TEXINFO G1T links and candidate item previews"
+          for retry in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
