@@ -32,6 +32,7 @@ def run(base: Path, output: Path, extract: bool, decode: bool, limit: int | None
                    'flags': f'{en.flags:08x}', 'footer_magic': f'{en.footer_magic:04x}',
                    'fdata_index': en.fdata_index, 'fdata_offset': en.fdata_offset,
                    'fdata_entry_size': en.fdata_entry_size, 'uncompressed_size': en.uncompressed_size,
+                   'footer_extra_hex': en.footer_extra_hex,
                    'status': 'INDEXED', 'error': '', 'source_path': '', 'output_sha256': '', 'decoded_sha256': ''}
             rd = rdex[en.fdata_index]
             if en.footer_magic == 0x0c01:
