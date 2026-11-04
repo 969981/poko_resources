@@ -1,0 +1,13 @@
+{
+  "kind": "ktrdb",
+  "source_directories": 7,
+  "accepted_bytes": 629145594,
+  "publish_statuses": {
+    "PUBLISHED": 4846,
+    "SKIPPED_BATCH_BUDGET": 282
+  },
+  "extractor_statuses": {
+    "CONTAINER_NOT_PRESENT": 80704,
+    "DECOMPRESSED": 5128
+  }
+}
