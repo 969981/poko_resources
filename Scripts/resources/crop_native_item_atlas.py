@@ -85,12 +85,22 @@ def main() -> None:
         raise ValueError(f"expected two atlas layers in current 2.0.1 manifest, got {required_layers}")
 
     platform, textures = parse_g1t(args.g1t.read_bytes())
-    if len(textures) != 1:
-        raise ValueError(f"atlas G1T has {len(textures)} texture entries, not one")
-    tex = textures[0]
-    if tex["format"] not in (0x66, 0x5f, 0x62, 0x5b, 0x08, 0x12):
-        raise ValueError(f"unknown atlas format: {tex['format']:#x}")
-    layers = split_bc_layers(tex["payload"], tex["width"], tex["height"], required_layers)
+    # This atlas stores TWO independent G1T texture entries, one per TEXINFO
+    # layer. It is not one texture whose BC payload needs to be cut in half.
+    if len(textures) != required_layers:
+        raise ValueError(
+            f"atlas G1T has {len(textures)} entries, TEXINFO requires "
+            f"{required_layers}; cannot safely infer layer ordering"
+        )
+    layers = textures
+    for layer, tex in enumerate(layers):
+        if tex["format"] not in (0x66, 0x5f, 0x62, 0x5b, 0x08, 0x12):
+            raise ValueError(f"unsupported atlas layer {layer} format {tex['format']:#x}")
+        minimum = ((tex["width"] + 3) // 4) * ((tex["height"] + 3) // 4) * 16
+        if len(tex["payload"]) < minimum:
+            raise ValueError(f"atlas layer {layer} has {len(tex['payload'])} bytes; BC base image needs {minimum}")
+    if len({(t["width"], t["height"]) for t in layers}) != 1:
+        raise ValueError("atlas texture entries disagree on dimensions; UV mapping needs investigation")
     layouts = [s.strip() for s in args.layouts.split(",") if s.strip()]
     if any(s not in ("linear", "gob1", "gob2", "gob4", "gob8", "gob16", "gob32")
            for s in layouts):
@@ -99,12 +109,12 @@ def main() -> None:
     args.out.mkdir(parents=True, exist_ok=True)
     rows = []
     for layout in layouts:
-        for layer, binary in enumerate(layers):
+        for layer, tex in enumerate(layers):
             relevant = [e for e in entries if int(e["texture_layer_raw_u32"]) == layer]
             if not relevant:
                 continue
             try:
-                decoded = decode_png(binary, tex["width"], tex["height"], layout, tex["format"])
+                decoded = decode_png(tex["payload"], tex["width"], tex["height"], layout, tex["format"])
                 with Image.open(io.BytesIO(decoded)) as decoded_img:
                     canvas = decoded_img.convert("RGBA")
                 for e in relevant:
@@ -131,8 +141,8 @@ def main() -> None:
         writer.writerow(COLUMNS)
         writer.writerows(rows)
     print(json.dumps({
-        "format": hex(tex["format"]), "platform": hex(platform),
-        "dimensions_per_layer": [tex["width"], tex["height"]],
+        "formats_by_layer": [hex(t["format"]) for t in layers], "platform": hex(platform),
+        "dimensions_per_layer": [[t["width"], t["height"]] for t in layers],
         "layers": len(layers), "selected_items": len(entries),
         "statuses": {s: sum(r[7] == s for r in rows) for s in
                      sorted({r[7] for r in rows})},
