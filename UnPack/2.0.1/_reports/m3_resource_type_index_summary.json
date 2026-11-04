@@ -1,0 +1,42 @@
+{
+  "published_records": 89507,
+  "status_counts": {
+    "UNKNOWN_NATIVE_FORMAT": 9793,
+    "EXTERNAL_TKID_INFERRED": 72337,
+    "MAGIC_AND_TKID": 7377
+  },
+  "extension_hint_counts": {
+    "<unknown>": 9793,
+    ".g1a": 17457,
+    ".g1t": 14412,
+    ".ktid": 5554,
+    ".g1m": 3204,
+    ".oid": 581,
+    ".g1e": 1173,
+    ".kidsobjdb": 4144,
+    ".texinfo": 4341,
+    ".srsa": 403,
+    ".g1s": 26137,
+    ".mtl": 1531,
+    ".kscl": 361,
+    ".grp": 323,
+    ".kts": 31,
+    ".kidsrender": 18,
+    ".srst": 4,
+    ".sid": 17,
+    ".efpl": 5,
+    ".swg": 2,
+    ".g1co": 2,
+    ".g1n": 6,
+    ".rigbin": 3,
+    ".mit": 1,
+    ".g1em": 2,
+    ".sgcbin": 1,
+    ".kidstask": 1
+  },
+  "external_type_hash_reference": "https://github.com/eArmada8/yumia_fdata_tools/blob/main/yumia_mod_lib.py",
+  "identity_note": "Type hashes derive from original RDB; external KTID meanings are hypotheses until independently confirmed for Pokopia.",
+  "no_asset_copy": true,
+  "unknown_or_conflicted_records": 9793,
+  "semantic_conversion_complete": false
+}
