@@ -1,0 +1,59 @@
+name: Build Pokopia 2.0.1 Resources
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/**"
+      - "UnPack/2.0.1/Resources/README.md"
+      - ".github/workflows/build-resources.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-resources-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  resources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout target branch
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Checkout pinned PokoHex source
+        uses: actions/checkout@v4
+        with:
+          repository: 969981/PokoHex
+          ref: c71d2b73fb9d8cfe99c1067e6bfadfd19f60bf78
+          path: .pokohex-source
+          persist-credentials: false
+
+      - name: Build ID-based text, icon and G1T indices
+        run: |
+          python3 Scripts/resources/import_pokohex.py \
+            --source .pokohex-source \
+            --dest UnPack/2.0.1/Resources \
+            --m3-index UnPack/2.0.1/_reports/m3_resource_type_index.csv
+
+      - name: Commit actual outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- UnPack/2.0.1/Resources
+          if git diff --cached --quiet; then
+            echo "No changed resources"; exit 0
+          fi
+          git commit -m "resources: import PokoHex item icons and 9-language catalog"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
