@@ -5,6 +5,8 @@ on:
     paths:
       - 'Scripts/unpack/m3_rdok_crosswalk.py'
       - 'tests/test_m3_rdok_crosswalk.py'
+      - 'tests/test_m3_rdok_sqlite.py'
+      - 'Scripts/unpack/m3_rdok_sqlite.py'
       - '.github/workflows/unpack-m3-rdok.yml'
   workflow_dispatch:
 permissions:
@@ -27,7 +29,7 @@ jobs:
             tests/
             2.0.1/exefs/main
       - name: Run reproducible regression tests
-        run: python3 -m unittest discover -s tests -p test_m3_rdok_crosswalk.py -v
+        run: python3 -m unittest discover -s tests -p 'test_m3_rdok_*.py' -v
       - name: Materialize existing source-verified M3/M4 metadata only
         run: |
           set -euo pipefail
