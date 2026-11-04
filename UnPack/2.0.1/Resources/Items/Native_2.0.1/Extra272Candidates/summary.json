@@ -1,0 +1,34 @@
+{
+  "source_g1t": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/MountPoint_2/0x0017d6e2.fdata/native/root_009286_26a15463.g1t",
+  "source_texinfo": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/MountPoint_2/0x0017d6e2.fdata/native/root_019254_51087a18.texinfo",
+  "g1t_format": "BC7 0x66",
+  "layout": "gob16",
+  "orientation": "top-v",
+  "texture_size": [
+    2048,
+    1024
+  ],
+  "native_texinfo_records": 272,
+  "png_count": 272,
+  "icon_size": [
+    72,
+    72
+  ],
+  "reference_count": 272,
+  "median_reference_distance": 0.090290975,
+  "worst_reference_distance": 0.43815158,
+  "reference_scores_are_heuristic": true,
+  "overlap_with_primary_atlas_count": 4,
+  "overlap_ids": [
+    1677,
+    1764,
+    1765,
+    2742
+  ],
+  "distinct_additional_ids": 268,
+  "status_counts": {
+    "SOURCE_CROP_SIMILAR_REFERENCE": 271,
+    "SOURCE_CROP_REVIEW": 1
+  },
+  "warning": "Reference similarity is not pixel identity. All PNGs stay separate from previous 1333 icons; overlapping IDs are not overwritten."
+}
