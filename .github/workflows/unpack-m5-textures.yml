@@ -31,6 +31,7 @@ jobs:
             Scripts
             tests
             UnPack/2.0.1/Resources/Textures
+            UnPack/2.0.1/Resources/Items/item_catalog.csv
             UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native
 
       - uses: actions/setup-python@v5
@@ -53,6 +54,28 @@ jobs:
             --texinfo-root "$BASE" \
             --layouts "linear,gob1,gob2" \
             --dest "UnPack/2.0.1/Resources"
+
+      - name: Correlate original TEXINFO atlas UVs with indexed KIDSOBJDB/G1T edges
+        run: python Scripts/resources/link_item_textures.py
+
+      - name: Assert multi-record TEXINFO discovery and retain cautious evidence status
+        run: |
+          python - <<'PY'
+          import csv, json
+          from pathlib import Path
+          base = Path("UnPack/2.0.1/Resources/Textures")
+          with (base / "texinfo_names.csv").open(encoding="utf-8", newline="") as f:
+              names = list(csv.DictReader(f))
+          atlas = [r for r in names if r["texture_name"] == "item_0006"
+                   and r["record_count"] == "1333"]
+          assert len(atlas) == 1, "1,333-entry native TEXINFO atlas was not parsed"
+          assert atlas[0]["uv_status"] == "RECT_OK", "atlas UV format invalid"
+          report = json.loads((base / "Indexes/item_native_texture_audit.json").read_text(encoding="utf-8"))
+          assert report["index_edges"] == 3229, report
+          assert report["texinfo_record_matches"] >= 2600, report
+          print("Native TEXINFO atlas rows:", len(names))
+          print("Native item TEXTINFO+KIDSOBJDB index links:", report["texinfo_record_matches"])
+          PY
 
       - name: Check actual images and data rows
         run: |
