@@ -18,7 +18,7 @@ from pathlib import Path
 from .core import FormatError, save_json
 from .m4_batch import ROOT, safe_parts
 
-MAX_BYTES = 4 * 1024 * 1024
+MAX_BYTES = 32 * 1024 * 1024
 
 
 def index_rows(index: Path) -> dict[str, dict]:

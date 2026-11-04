@@ -72,8 +72,9 @@ def parse(blob: bytes, max_sampled_values: int = 32) -> dict:
             fields = []
             for p in range(prop_count):
                 field_kind, field_count, field_hash = struct.unpack_from("<3I", blob, cursor)
-                if field_count > 1_000_000:
-                    raise FormatError(f"KIDSOBJDB_PROPERTY_COUNT_LIMIT:{index}:{p}")
+                # No arbitrary element-count cap: real Pokopia IDOK blobs
+                # contain multi-million-byte uint8 arrays. The typed byte
+                # count is checked against the enclosing block below.
                 fields.append((field_kind, field_count, field_hash))
                 cursor += 12
             partial = False
@@ -108,9 +109,19 @@ def parse(blob: bytes, max_sampled_values: int = 32) -> dict:
                     entry["trailing_bytes"] = len(extra)
                     entry["trailing_nonzero"] = sum(v != 0 for v in extra)
         else:
-            # RDOK data model is not established; preserve its shape+hash.
-            entry["status"] = "RDOK_OPAQUE"
+            # Real 2.0.1 samples: 40/40 RDOK blocks have size 28, three
+            # matching U32 values and a zero fourth. Preserve the exact
+            # four words but do NOT invent a reference/object meaning.
             entry["payload_bytes"] = size - 12
+            if size == 28:
+                words = struct.unpack_from("<4I", blob, offset + 12)
+                entry["status"] = "RDOK_WORDS_UNINTERPRETED"
+                entry["raw_u32_hex"] = [f"{v:08x}" for v in words]
+                entry["observed_equal_triplet_zero_tail"] = (
+                    words[0] == words[1] == words[2] and words[3] == 0
+                )
+            else:
+                entry["status"] = "RDOK_OPAQUE"
             summary["PARTIAL_BLOCKS"] += 1
         blocks.append(entry)
         summary[kind] += 1
