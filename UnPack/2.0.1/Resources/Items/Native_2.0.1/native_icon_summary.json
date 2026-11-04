@@ -1,0 +1,28 @@
+{
+  "source_g1t": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_038147_a0ce9914.g1t",
+  "source_texinfo": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_042753_b4b1fe49.texinfo",
+  "atlas_layers": 2,
+  "atlas_dimensions_per_layer": [
+    2048,
+    2048
+  ],
+  "g1t_platform": "0x18",
+  "g1t_format": "0x66 BC7",
+  "layout": "gob16",
+  "v_origin": "top",
+  "native_atlas_records": 1333,
+  "generated_pngs": 1333,
+  "native_sizes": [
+    72,
+    72
+  ],
+  "reference_count": 1333,
+  "status_counts": {
+    "NATIVE_CROP_REFERENCE_SIMILAR": 1331,
+    "NATIVE_CROP_REVIEW": 2
+  },
+  "median_reference_distance": 0.08905313,
+  "max_reference_distance": 0.16816096,
+  "reference_threshold_is_heuristic": 0.15,
+  "warning": "Native G1T and TEXINFO indices validated; a reference image can differ due to scaling, transparency or external asset conversion. Never overwrite Resources/Items/Icons."
+}
