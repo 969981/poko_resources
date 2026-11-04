@@ -6,6 +6,7 @@ on:
     branches: ["2.0.1_unpack"]
     paths:
       - "Scripts/resources/crop_native_item_atlas.py"
+      - "Scripts/resources/score_atlas_candidates.py"
       - "Scripts/resources/g1t_to_png.py"
       - "tests/test_crop_native_item_atlas.py"
       - "UnPack/2.0.1/Resources/Textures/Indexes/item_atlas_1333_uv.csv"
@@ -33,8 +34,16 @@ jobs:
           sparse-checkout: |
             Scripts/resources/g1t_to_png.py
             Scripts/resources/crop_native_item_atlas.py
+            Scripts/resources/score_atlas_candidates.py
             tests/test_crop_native_item_atlas.py
             UnPack/2.0.1/Resources/Textures/Indexes/item_atlas_1333_uv.csv
+            UnPack/2.0.1/Resources/Items/Icons/item_0006.png
+            UnPack/2.0.1/Resources/Items/Icons/item_0007.png
+            UnPack/2.0.1/Resources/Items/Icons/item_0008.png
+            UnPack/2.0.1/Resources/Items/Icons/item_1677.png
+            UnPack/2.0.1/Resources/Items/Icons/item_1764.png
+            UnPack/2.0.1/Resources/Items/Icons/item_1765.png
+            UnPack/2.0.1/Resources/Items/Icons/item_2742.png
             UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_038147_a0ce9914.g1t
 
       - uses: actions/setup-python@v5
@@ -85,6 +94,13 @@ jobs:
           if not decoded:
               raise SystemExit("No G1T atlas candidate decoded: investigate layer/mip layout")
           PY
+
+      - name: Rank candidate layouts against PokoHex references
+        run: |
+          python Scripts/resources/score_atlas_candidates.py \
+            --candidates atlas-preview \
+            --references UnPack/2.0.1/Resources/Items/Icons \
+            --out atlas-preview
 
       - name: Upload unverified PNG candidates for visual inspection
         if: always()
