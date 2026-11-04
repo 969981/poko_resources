@@ -142,25 +142,86 @@ def decode_png(payload: bytes, width: int, height: int, layout: str, fmt: int = 
         return out.getvalue()
 
 
+TEXINFO_RECORD_SIZE = 104
+
+
+def parse_texinfo(data: bytes) -> list[dict]:
+    """Parse all TEXINFO records, including packed sprite atlases.
+
+    Format: <u32 record_count> followed by record_count * 104 bytes.
+    Each entry holds a 64-byte ASCII name, two u32 fields and eight
+    little-endian float32 UV corner coordinates. This does not prove
+    which G1T contains the texture: that link needs separate evidence.
+    """
+    if len(data) < 4:
+        raise ValueError("truncated TEXINFO header")
+    count = u32(data, 0)
+    if not 1 <= count <= 65536 or len(data) != 4 + count * TEXINFO_RECORD_SIZE:
+        raise ValueError(
+            f"TEXINFO record count/size mismatch: count={count}, bytes={len(data)}"
+        )
+    records = []
+    for idx in range(count):
+        start = 4 + idx * TEXINFO_RECORD_SIZE
+        name_bytes = data[start:start + 64].split(b"\x00", 1)[0]
+        try:
+            name = name_bytes.decode("ascii")
+        except UnicodeDecodeError as exc:
+            raise ValueError(f"non-ASCII name in TEXINFO record {idx}") from exc
+        if not TEXINFO_NAME.fullmatch(name):
+            raise ValueError(f"invalid TEXINFO name in record {idx}: {name!r}")
+        layer = u32(data, start + 64)
+        quad = struct.unpack_from("<8f", data, start + 68)
+        tail = u32(data, start + 100)
+        import math
+        if not all(math.isfinite(v) for v in quad):
+            raise ValueError(f"non-finite UV in TEXINFO record {idx}")
+        u0, v0, u1, v0b, u0b, v1, u1b, v1b = quad
+        rectangular = (abs(v0 - v0b) < 1e-5 and
+                       abs(u0 - u0b) < 1e-5 and
+                       abs(u1 - u1b) < 1e-5 and
+                       abs(v1 - v1b) < 1e-5 and
+                       -1e-5 <= u0 <= u1 <= 1.00001 and
+                       -1e-5 <= v0 <= v1 <= 1.00001)
+        records.append({
+            "name": name, "record_index": idx, "record_count": count,
+            "u0": u0, "v0": v0, "u1": u1, "v1": v1,
+            "uv_status": "RECT_OK" if rectangular else "NONRECT_OR_OUT_OF_RANGE",
+            "texture_layer_raw_u32": layer, "record_tail_raw_u32": tail,
+        })
+    return records
+
+
 def texinfo_index(root: Path, output: Path) -> int:
+    """Write one row per TEXINFO sprite, not one row per TEXINFO file."""
+    fields = [
+        "texinfo_path", "texture_name", "family", "item_id_candidate", "link_status",
+        "record_index", "record_count", "atlas_u0", "atlas_v0",
+        "atlas_u1", "atlas_v1", "uv_status",
+        "texture_layer_raw_u32", "record_tail_raw_u32",
+    ]
     rows = []
     for file in sorted(root.rglob("*.texinfo")):
         try:
-            data = file.read_bytes()
-            if len(data) < 8 or u32(data, 0) != 1:
-                raise ValueError("unexpected TEXINFO header")
-            name = data[4:68].split(b"\x00", 1)[0].decode("ascii")
-            if not TEXINFO_NAME.fullmatch(name):
-                raise ValueError("invalid TEXINFO name")
-            m = ITEM_NAME.match(name)
-            family = "item" if m else name.split("_", 1)[0]
-            rows.append([file.as_posix(), name, family, m.group(1) if m else "", "NAME_ONLY_UNLINKED"])
-        except (ValueError, UnicodeDecodeError) as e:
-            rows.append([file.as_posix(), "", "", "", f"UNPARSED: {e}"])
+            records = parse_texinfo(file.read_bytes())
+            for rec in records:
+                name = rec["name"]
+                m = ITEM_NAME.match(name)
+                family = "item" if m else name.split("_", 1)[0]
+                rows.append([
+                    file.as_posix(), name, family, m.group(1) if m else "",
+                    "NAME_ONLY_UNLINKED", rec["record_index"], rec["record_count"],
+                    *(f"{rec[field]:.9g}" for field in ("u0", "v0", "u1", "v1")),
+                    rec["uv_status"], rec["texture_layer_raw_u32"],
+                    rec["record_tail_raw_u32"],
+                ])
+        except (OSError, ValueError, UnicodeDecodeError) as exc:
+            rows.append([file.as_posix(), "", "", "", f"UNPARSED: {exc}",
+                         "", "", "", "", "", "", "", "", ""])
     output.parent.mkdir(parents=True, exist_ok=True)
-    with output.open("w", encoding="utf-8", newline="") as f:
-        writer = csv.writer(f)
-        writer.writerow(["texinfo_path", "texture_name", "family", "item_id_candidate", "link_status"])
+    with output.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(fields)
         writer.writerows(rows)
     return len(rows)
 
