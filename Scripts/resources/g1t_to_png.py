@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""M5 exploratory Pokopia G1T -> BC7 PNG previews and TEXINFO name index.
+"""M5 exploratory Pokopia G1T -> BC7/BC3 PNG previews and TEXINFO name index.
 
 Outputs are candidates, NOT verified texture-to-item matches. No RomFS input is modified.
 Requires Pillow >= 10 with the BC7 DDS decoder.
@@ -103,14 +103,37 @@ def make_bc7_dds(data: bytes, width: int, height: int) -> bytes:
     return bytes(header) + data[:expected]
 
 
-def decode_png(payload: bytes, width: int, height: int, layout: str) -> bytes:
+def make_bc3_dds(data: bytes, width: int, height: int) -> bytes:
+    expected = ((width + 3) // 4) * ((height + 3) // 4) * 16
+    if len(data) < expected:
+        raise ValueError(f"BC3 needs {expected} bytes, has {len(data)}")
+    header = bytearray(128)
+    header[:4] = b"DDS "
+    struct.pack_into("<I", header, 4, 124)
+    struct.pack_into("<I", header, 8, 0x81007)
+    struct.pack_into("<II", header, 12, height, width)
+    struct.pack_into("<I", header, 20, expected)
+    struct.pack_into("<I", header, 76, 32)
+    struct.pack_into("<I", header, 80, 4)
+    header[84:88] = b"DXT5"
+    struct.pack_into("<I", header, 108, 0x1000)
+    return bytes(header) + data[:expected]
+
+
+def decode_png(payload: bytes, width: int, height: int, layout: str, fmt: int = 0x66) -> bytes:
     if layout == "linear":
         linear = payload
     elif layout.startswith("gob"):
         linear = unswizzle_gob_bc7(payload, width, height, int(layout[3:]))
     else:
         raise ValueError(f"unsupported layout {layout}")
-    with Image.open(io.BytesIO(make_bc7_dds(linear, width, height))) as image:
+    if fmt in (0x66, 0x5f):
+        dds = make_bc7_dds(linear, width, height)
+    elif fmt in (0x62, 0x5b, 0x08, 0x12):
+        dds = make_bc3_dds(linear, width, height)
+    else:
+        raise ValueError(f"unsupported BC texture format {fmt:#x}")
+    with Image.open(io.BytesIO(dds)) as image:
         image.load()
         if image.size != (width, height):
             raise ValueError("decoded image dimensions do not match")
@@ -154,12 +177,12 @@ def run(paths: list[Path], dest: Path, layouts: list[str]) -> list[list[str]]:
             continue
         for i, tex in enumerate(textures):
             fmt, w, h = tex["format"], tex["width"], tex["height"]
-            if fmt not in (0x66, 0x5f):
-                rows.append([str(path), i, "", hex(platform), hex(fmt), w, h, "", "", "UNSUPPORTED_FORMAT", "Only BC7 supported"])
+            if fmt not in (0x66, 0x5f, 0x62, 0x5b, 0x08, 0x12):
+                rows.append([str(path), i, "", hex(platform), hex(fmt), w, h, "", "", "UNSUPPORTED_FORMAT", "Only BC7/BC3 supported"])
                 continue
             for layout in layouts:
                 try:
-                    png = decode_png(tex["payload"], w, h, layout)
+                    png = decode_png(tex["payload"], w, h, layout, fmt)
                     name = f"{path.stem}__tex{i:02d}__{layout}.png"
                     outfile = outdir / name
                     outfile.write_bytes(png)
