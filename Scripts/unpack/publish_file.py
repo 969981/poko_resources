@@ -9,6 +9,7 @@ import hashlib
 import json
 import os
 import tempfile
+import zlib
 from pathlib import Path
 
 from .core import FormatError, parse_rdb, parse_rdx, read_idrk, save_csv, save_json, sha256_file
@@ -85,9 +86,51 @@ def run(base, out, hash_text, source_sha=None, max_total_mib=1500):
                            publish_status="PUBLISHED",
                            output_path=";".join(paths), output_sha256=digest,
                            output_bytes=header.unpacked_size, part_count=len(paths))
-        except (FormatError, OSError, ValueError) as exc:
+        except (FormatError, OSError, ValueError, zlib.error) as exc:
             row["publish_status"] = "SKIPPED_BATCH_BUDGET" if str(exc) == "SKIPPED_BATCH_BUDGET" else "EXTRACTION_FAILED"
             row["decoder_error"] = str(exc)
+            # Preserve a validated packed payload if semantic decoding is unsupported.
+            # Do not duplicate entire input FILE or bypass IDRK bounds validation.
+            if row["publish_status"] == "EXTRACTION_FAILED":
+                try:
+                    with source.open("rb") as fd:
+                        header, _ = read_idrk(fd, 0, source.stat().st_size)
+                        if (header.name_hash != record.name_hash or header.type_hash != record.type_hash
+                                or header.entry_size != record.fdata_entry_size
+                                or header.entry_size != source.stat().st_size
+                                or header.packed_size > max_total_mib * 1024**2):
+                            raise FormatError("RAW_FALLBACK_IDRK_VALIDATION_FAILED")
+                        with tempfile.TemporaryDirectory(prefix=".raw-", dir=directory) as tmp:
+                            writer = PieceWriter(Path(tmp),
+                                                 f"{catalog}_{record.record_index:06d}_{wanted:08x}.packed.bin",
+                                                 header.packed_size)
+                            try:
+                                pending = header.packed_size
+                                while pending:
+                                    block = fd.read(min(pending, 1024 * 1024))
+                                    if not block:
+                                        raise FormatError("TRUNCATED_RAW_FALLBACK")
+                                    writer.write(block)
+                                    pending -= len(block)
+                                digest = writer.finish()
+                            finally:
+                                if writer.current:
+                                    writer.current.close()
+                                    writer.current = None
+                            paths = []
+                            for piece in writer.files:
+                                dest = directory / "raw" / piece.name
+                                dest.parent.mkdir(parents=True, exist_ok=True)
+                                os.replace(piece, dest)
+                                paths.append(dest.relative_to(out).as_posix())
+                        row.update(decoder_status="RAW_PRESERVED_UNDECODED",
+                                   publish_status="PUBLISHED",
+                                   output_path=";".join(paths),
+                                   output_sha256=digest,
+                                   output_bytes=header.packed_size,
+                                   part_count=len(paths))
+                except (FormatError, OSError, ValueError) as raw_exc:
+                    row["decoder_error"] += "; raw_fallback: " + str(raw_exc)
         manifest.append(row)
     save_csv(directory / "_manifest.csv", manifest)
     report = {"hash": hash_text, "records": len(records),
