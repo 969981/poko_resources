@@ -1,0 +1,75 @@
+name: M5 - Compare native 272 item atlas
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/compare_atlas272.py"
+      - ".github/workflows/unpack-m5-atlas272.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: m5-atlas272-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/g1t_to_png.py
+            Scripts/resources/crop_native_item_atlas.py
+            Scripts/resources/score_atlas_candidates.py
+            Scripts/resources/compare_atlas272.py
+            UnPack/2.0.1/Resources/Items/Icons
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/MountPoint_2/0x0017d6e2.fdata/native/root_009286_26a15463.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/MountPoint_2/0x0017d6e2.fdata/native/root_019254_51087a18.texinfo
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: python -m pip install "Pillow>=11,<13"
+
+      - name: Decode 272-atlas and compare nine distributed icons
+        run: python -m Scripts.resources.compare_atlas272
+
+      - name: Check nine PNG previews for each successful swizzle
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          from PIL import Image
+          folder=Path("atlas272-preview")
+          report=json.loads((folder/"summary.json").read_text(encoding="utf-8"))
+          assert report["source_count"]==272,report
+          assert report["pixel_dimensions"]==[2048,1024],report
+          with (folder/"candidate_manifest.csv").open(encoding="utf-8",newline="") as f:
+              rows=list(csv.DictReader(f))
+          good=[r for r in rows if r["status"]=="UNVERIFIED_CANDIDATE"]
+          assert len(good)>=9,report
+          for row in good:
+              with Image.open(row["png"]) as image:
+                  assert image.size==(72,72),row
+                  image.verify()
+          print("Candidate pngs:",len(good))
+          print("Rankings:",report["rankings"])
+          PY
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pokopia-m5-native-atlas272-preview
+          path: atlas272-preview/
+          retention-days: 14
+          if-no-files-found: warn
