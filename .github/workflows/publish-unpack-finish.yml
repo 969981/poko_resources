@@ -176,6 +176,9 @@ jobs:
             if ! git diff --cached --quiet; then
               git commit -m "data(unpack): backfill 0x$FDATA_HASH part $part/$PART_COUNT [skip ci]"
               git push origin HEAD:2.0.1_unpack
+              # Preserve tracked Git blobs, but remove their working copies
+              # outside the sparse checkout to keep runner disk usage bounded.
+              git sparse-checkout reapply
             fi
           done
 
