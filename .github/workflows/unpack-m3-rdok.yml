@@ -1,0 +1,65 @@
+name: Pokopia M3 RDOK exact hash and ExeFS strings
+on:
+  push:
+    branches: [2.0.1_unpack]
+    paths:
+      - 'Scripts/unpack/m3_rdok_crosswalk.py'
+      - 'tests/test_m3_rdok_crosswalk.py'
+      - '.github/workflows/unpack-m3-rdok.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: pokopia-m3-rdok-hash
+  cancel-in-progress: false
+jobs:
+  rdok-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+            tests/
+            2.0.1/exefs/main
+      - name: Run reproducible regression tests
+        run: python3 -m unittest discover -s tests -p test_m3_rdok_crosswalk.py -v
+      - name: Materialize existing source-verified M3/M4 metadata only
+        run: |
+          set -euo pipefail
+          mkdir -p _work/m3_rdok/shards
+          git show HEAD:UnPack/2.0.1/_reports/m3_resource_type_index.csv > _work/m3_rdok/types.csv
+          for i in 0 1 2 3 4 5 6 7; do
+            part="$(printf '%02d' "$i")"
+            git show "HEAD:UnPack/2.0.1/_reports/m4_kidsobjdb_data/m4_shard$part.jsonl.gz" > "_work/m3_rdok/shards/m4_shard$part.jsonl.gz"
+          done
+      - name: Audit 4144 KIDSOBJDB metadata records and all RDOK word patterns
+        run: |
+          python3 -m Scripts.unpack.m3_rdok_crosswalk             --types _work/m3_rdok/types.csv             --shards _work/m3_rdok/shards             --out _work/m3_rdok/results             --exefs 2.0.1/exefs/main
+      - name: Upload all evidence CSVs and JSON
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pokopia-m3-rdok-${{ github.run_id }}
+          path: _work/m3_rdok/results/**
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Commit small RDOK audit evidence (not game binaries)
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git pull --ff-only origin 2.0.1_unpack
+          mkdir -p UnPack/2.0.1/_reports
+          cp _work/m3_rdok/results/rdok_summary.json UnPack/2.0.1/_reports/m3_rdok_summary.json
+          cp _work/m3_rdok/results/rdok_crosswalk.csv UnPack/2.0.1/_reports/m3_rdok_crosswalk.csv
+          cp _work/m3_rdok/results/exefs_string_audit.json UnPack/2.0.1/_reports/m3_exefs_string_audit.json
+          git add --sparse -f -- UnPack/2.0.1/_reports/m3_rdok_summary.json UnPack/2.0.1/_reports/m3_rdok_crosswalk.csv UnPack/2.0.1/_reports/m3_exefs_string_audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(m3): audit 40 RDOK blocks against resource hashes [skip ci]'
+            git push origin HEAD:2.0.1_unpack
+          fi
