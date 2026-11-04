@@ -70,5 +70,43 @@ class G1TTests(unittest.TestCase):
             self.assertEqual(row["link_status"], "NAME_ONLY_UNLINKED")
 
 
+    def test_multi_record_texinfo_atlas_uv(self):
+        data = bytearray(4 + 2 * 104)
+        struct.pack_into("<I", data, 0, 2)
+        for i, name in enumerate(("item_0006", "item_0007")):
+            start = 4 + i * 104
+            data[start:start + len(name)] = name.encode("ascii")
+            u0 = i * 0.125
+            u1 = u0 + 0.125
+            v0, v1 = 0.25, 0.5
+            struct.pack_into("<8f", data, start + 68,
+                             u0, v0, u1, v0, u0, v1, u1, v1)
+            struct.pack_into("<I", data, start + 100, 1)
+        records = m.parse_texinfo(bytes(data))
+        self.assertEqual(len(records), 2)
+        self.assertEqual(records[0]["record_count"], 2)
+        self.assertEqual(records[1]["record_index"], 1)
+        self.assertEqual(records[1]["name"], "item_0007")
+        self.assertEqual(records[1]["uv_status"], "RECT_OK")
+        self.assertAlmostEqual(records[1]["u0"], 0.125)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "root_000001_abcd1234.texinfo").write_bytes(data)
+            path = root / "index.csv"
+            self.assertEqual(m.texinfo_index(root, path), 2)
+            with path.open(encoding="utf-8", newline="") as stream:
+                rows = list(csv.DictReader(stream))
+            self.assertEqual([r["texture_name"] for r in rows],
+                             ["item_0006", "item_0007"])
+            self.assertEqual(rows[1]["record_count"], "2")
+            self.assertEqual(rows[1]["atlas_u0"], "0.125")
+
+    def test_texinfo_corrupt_record_count_fails_closed(self):
+        blob = bytearray(4 + 104)
+        struct.pack_into("<I", blob, 0, 1333)
+        with self.assertRaises(ValueError):
+            m.parse_texinfo(bytes(blob))
+
+
 if __name__ == "__main__":
     unittest.main()
