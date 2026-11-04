@@ -1,0 +1,73 @@
+name: Verify Pokopia 2.0.1 UnPack manifests via Git trees
+
+on:
+  push:
+    branches: [2.0.1_unpack]
+    paths:
+      - '.github/workflows/verify-unpack-remote.yml'
+      - 'Scripts/unpack/reconcile_manifest.py'
+      - 'tests/test_reconcile_manifest.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-unpack-publish-2-0-1
+  cancel-in-progress: true
+
+jobs:
+  verify-published-files:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - name: Sparse checkout code and Git history, without game asset blobs
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          persist-credentials: true
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+            tests/
+      - name: Run regression tests using only synthetic assets
+        run: python3 -m unittest discover -s tests -v
+      - name: Rebuild historic manifests using Git-tree size metadata
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 -m Scripts.unpack.reconcile_manifest --repo "$GITHUB_REPOSITORY"
+      - name: Upload audit report even if validation fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-git-tree-audit-${{ github.run_id }}
+          path: UnPack/2.0.1/_reports/manifest_reconciliation.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit reconciled source manifests and coverage audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          find UnPack/2.0.1/romfs -name _manifest.csv -type f -print0 | xargs -0 -r git add --sparse -f --
+          git add --sparse -f -- UnPack/2.0.1/_reports/manifest_reconciliation.json
+          if ! git diff --cached --quiet; then
+            git commit -m "audit(unpack): reconcile output paths and Git-tree sizes [skip ci]"
+            git push origin HEAD:2.0.1_unpack
+          fi
+      - name: Fail if missing or unmanifested published assets remain
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path("UnPack/2.0.1/_reports/manifest_reconciliation.json").read_text())
+          counts = report["overall"]
+          for field in ("missing_or_wrong_size", "unmanifested_output_files"):
+              if counts.get(field, 0):
+                  raise SystemExit(f"FAILED: {field}={counts[field]} (see report)")
+          print(f"PASS: {counts.get('published_verified_size', 0)} distinct published resource records")
+          PY
