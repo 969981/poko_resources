@@ -95,3 +95,19 @@ python3 Scripts/resources/import_pokohex.py \
 ## 原生九语言核验结论
 
 `Items/Native_2.0.1/validation.json` 记录了以 `00983.bin` 的 4,600 槽物品表与九份 `04645.bin`～`04653.bin` 原生名称表核对的结果：`status=MATCH`、`differences=0`，九种语言均为 4,600 / 4,600 槽一致。文本来源校验已完成，但此结果不包含对道具图像的视觉验证。
+
+## PokoHex 补充资源：宝可梦、反应、技能
+
+新增 Villagers、Reactions、Skills 三组第三方参考资源（9 种语言）。输入来自 969981/PokoHex 的固定提交 c71d2b73fb9d8cfe99c1067e6bfadfd19f60bf78。
+
+- Villagers/Icons：378 张 villager_XXXX.png，XXXX 是肖像 ID，不是游戏 villager ID。使用 villager_portrait.bin 的小端 u16 映射；Villagers/villager_catalog.csv 保存游戏 ID、九语言、肖像 ID 和图标路径。
+- Reactions/Icons：47 张 reaction_XXXX.png，Reactions/reaction_catalog.csv 保存九语言、公开状态与 ID 对照；PokoHex 公开规则为 1–100 且英文名称非空。
+- Skills/Icons：10 张 skill_XXXX.png，Skills/skill_catalog.csv 保存九语言、公开状态、轮盘能力与图标；公开编号为 1–6、10–13，轮盘为 1–6、12、13。
+
+每类包括 Text/（九语言原始 ID 顺序）、pokohex_icon_sources.csv（原路径和 SHA-256）、missing_pokohex_icons.csv；SOURCE_AND_COVERAGE.json 记录各类统计。源头为 PokoHex 的参考素材，不声明已经从 2.0.1 原版 RomFS 逐张提取或验证像素一致性。
+
+复现命令：
+
+    python3 Scripts/resources/import_pokohex_extra.py --source /path/to/PokoHex --dest UnPack/2.0.1/Resources
+
+完整导入由 .github/workflows/build-resources.yml 执行。未来再通过原生 TEXINFO/G1T/RDB/KTID 引用对账。保留同名不同 ID、同肖像多 ID 的原始关系，不擅自归并。
