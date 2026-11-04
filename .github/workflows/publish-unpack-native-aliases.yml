@@ -1,0 +1,61 @@
+name: Pokopia 2.0.1 publish native filename aliases without copying binary blobs
+
+on:
+  push:
+    branches: [2.0.1_unpack]
+    paths:
+      - ".github/workflows/publish-unpack-native-aliases.yml"
+      - "Scripts/unpack/native_aliases.py"
+      - "tests/test_native_aliases.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-native-git-tree-aliases-2-0-1
+  cancel-in-progress: false
+
+jobs:
+  publish-native-git-aliases:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - name: Partial clone scripts and source Git trees only
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          persist-credentials: true
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+            tests/
+      - name: Run complete M0-M4 parser and native-alias safety regressions
+        run: python3 -m unittest discover -s tests -v
+      - name: Read native type index metadata from HEAD, no binary asset download
+        run: |
+          mkdir -p _work/native
+          git show HEAD:UnPack/2.0.1/_reports/m3_resource_type_index.csv > _work/native/type_index.csv
+      - name: Preflight every decoded source blob SHA and native filename
+        run: |
+          python3 -m Scripts.unpack.native_aliases \
+            --type-index _work/native/type_index.csv \
+            --batch-parts 2500
+      - name: Publish aliases in resumable 2500-blob Git tree batches
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -u -m Scripts.unpack.native_aliases \
+            --type-index _work/native/type_index.csv \
+            --batch-parts 2500 --apply
+      - name: Upload CSV/JSON alias integrity report only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-native-blob-alias-report-${{ github.run_id }}
+          path: |
+            UnPack/2.0.1/_reports/native_aliases.csv
+            UnPack/2.0.1/_reports/native_aliases_summary.json
+          if-no-files-found: warn
+          retention-days: 30
