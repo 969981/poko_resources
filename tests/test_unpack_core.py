@@ -125,6 +125,39 @@ class TestFormatReaders(unittest.TestCase):
             self.assertEqual(report['statuses'], {'DECOMPRESSED': 1})
             self.assertEqual(len(list((p / 'out/decoded').glob('*.bin'))), 1)
 
+    def test_linkdata_verify_only_writes_no_asset(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d)
+            value = b'verified-only' * 6
+            packed = zlib.compress(value)
+            (p / 'a.idx').write_bytes(struct.pack('<4Q', 0, len(value), len(packed), 1))
+            (p / 'a.bin').write_bytes(packed)
+            report = run_linkdata(p / 'a.idx', p / 'a.bin', p / 'meta', 0, None,
+                                  False, True, False, True)
+            self.assertEqual(report['statuses'], {'DECOMPRESSED': 1})
+            self.assertFalse((p / 'meta/raw').exists())
+            self.assertFalse((p / 'meta/decoded').exists())
+            self.assertTrue((p / 'meta/linkdata_entries.csv').is_file())
+
+    def test_ktrdb_fdata_filter_and_verify_only(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d); base = p / 'root'; base.mkdir()
+            payload = bytes.fromhex(REAL_KT_COMPRESSED_HEX)
+            entry_size = 48 + 21 + len(payload)
+            header = b'IDRK0000' + struct.pack('<QQQIIII', entry_size, len(payload), 96,
+                                                1, 0xf79cb076, 0x20a6a0bb, 0x400000)
+            (base / '0x4b13d561.fdata').write_bytes(b'PDRK0000' + struct.pack('<II', 16, 0) + header + bytes(21) + payload)
+            (base / 'root.rdx').write_bytes(struct.pack('<HHI', 0, 0xffff, 0x4b13d561))
+            (base / 'root.rdb').write_bytes(synth_rdb(0xf79cb076, 0x20a6a0bb, 16, entry_size))
+            (base / 'system.rdx').write_bytes(b'')
+            (base / 'system.rdb').write_bytes(b'_DRK0000' + struct.pack('<4I', 32, 0, 0, 0) + bytes(8))
+            report = run_ktrdb(base, p / 'meta', True, True, None, False, False, True, {'4b13d561'})
+            self.assertEqual(report['statuses'], {'DECOMPRESSED': 1})
+            self.assertFalse((p / 'meta/raw').exists())
+            self.assertFalse((p / 'meta/decoded').exists())
+            skipped = run_ktrdb(base, p / 'meta2', True, True, None, False, False, True, {'ffffffff'})
+            self.assertEqual(skipped['statuses'], {'LOCATED': 1})
+
     def test_inventory_missing_split_part(self):
         with tempfile.TemporaryDirectory() as d:
             p = Path(d); src = p / '2.0.1'; src.mkdir()
