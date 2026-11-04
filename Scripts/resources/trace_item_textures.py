@@ -13,6 +13,8 @@ import csv
 import hashlib
 import json
 from collections import Counter, defaultdict
+from functools import lru_cache
+import struct
 from pathlib import Path
 
 from g1t_to_png import parse_g1t, decode_png
@@ -20,7 +22,7 @@ from g1t_to_png import parse_g1t, decode_png
 COLUMNS = ["item_id", "sprite_name", "variant", "texinfo_hash", "g1t_hash",
            "g1t_pack", "g1t_bytes", "object_hash", "objdb_file",
            "texinfo_path", "g1t_path", "objdb_path", "name_matches",
-           "g1t_size_matches", "object_found", "status"]
+           "g1t_size_matches", "object_found", "objdb_fields_match", "status"]
 
 
 def table(path):
@@ -59,6 +61,25 @@ def texinfo_name(path):
         return data[4:68].split(b"\0", 1)[0].decode("ascii")
     except UnicodeDecodeError:
         return ""
+
+
+@lru_cache(maxsize=20)
+def objdb_triples(path):
+    data = Path(path).read_bytes()
+    if len(data) < 56:
+        return set()
+    # Verified on the native 0xacd220a8.fdata KIDSOBJDB records:
+    # record object hash @ +0, G1T hash @ +0x30, TEXINFO hash @ +0x34.
+    return {(struct.unpack_from("<I", data, i)[0],
+             struct.unpack_from("<I", data, i + 0x30)[0],
+             struct.unpack_from("<I", data, i + 0x34)[0])
+            for i in range(0, len(data) - 0x38 + 1, 4)}
+
+
+def field_matches(path, obj, g1t, tex):
+    if not path:
+        return False
+    return (int(obj, 16), int(g1t, 16), int(tex, 16)) in objdb_triples(str(path))
 
 
 def main():
@@ -103,10 +124,11 @@ def main():
         name_ok = bool(tex and texinfo_name(tex) == expected_name)
         size_ok = bool(g1t and g1t.stat().st_size == int(item["g1t_bytes"]))
         obj_ok = bool(obj)
+        strict_ok = bool(link and obj and field_matches(obj, link["object_hash"], pair[1], pair[0]))
         if not link:
             status = "AMBIGUOUS_OR_MISSING_LAYOUT"
-        elif name_ok and size_ok and obj_ok:
-            status = "NATIVE_MATCH"
+        elif name_ok and size_ok and obj_ok and strict_ok:
+            status = "VERIFIED_NATIVE_FIELDS"
         else:
             status = "NATIVE_MISMATCH"
         count[status] += 1
@@ -119,6 +141,7 @@ def main():
                      "name_matches": str(name_ok),
                      "g1t_size_matches": str(size_ok),
                      "object_found": str(obj_ok),
+                     "objdb_fields_match": str(strict_ok),
                      "status": status})
 
     out = args.output / "Textures"
@@ -139,7 +162,7 @@ def main():
     exported = 0
     preview_status = []
     for r in rows:
-        if r["status"] != "NATIVE_MATCH" or not r["variant"]:
+        if r["status"] != "VERIFIED_NATIVE_FIELDS" or not r["variant"]:
             continue
         if chosen_ids is not None and r["item_id"] not in chosen_ids:
             continue
@@ -174,7 +197,7 @@ def main():
                "link_status": dict(count), "g1t_scanned": sum(map(len, allg1t.values())),
                "texinfo_scanned": sum(map(len, alltex.values())),
                "previews": dict(counts),
-               "warning": "User-supplied TSV provenance is not independently proven; NATIVE_MATCH means name, bytes, pack and object path checked. PNG layout is not yet validated; atlas cropping is not supported."}
+               "warning": "VERIFIED_NATIVE_FIELDS requires real TEXINFO name, real G1T size, original pack and KIDSOBJDB field triple at offsets +0,+0x30,+0x34. Image layout and atlas crops are still unverified."}
     (out / "item_native_link_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     with (out / "item_native_preview_manifest.csv").open("w", encoding="utf-8", newline="") as f:
         fields = ["sprite", "layout", "source", "sha256", "png", "status", "reason"]
