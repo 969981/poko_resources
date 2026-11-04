@@ -85,6 +85,46 @@ def unswizzle_gob_bc7(src: bytes, width: int, height: int, gob_height: int) -> b
     return bytes(dst)
 
 
+def unswizzle_morton_bc(src: bytes, width: int, height: int,
+                         tile_blocks: int = 0, swap_axes: bool = False) -> bytes:
+    """Explore Morton/Z-order compressed BC block arrangements.
+
+    tile_blocks=0: full-image Morton (square power-of-two block grid).
+    tile_blocks>0: tiles in row-major order, Morton blocks within each tile.
+    These are unverified candidate permutations, not inferred native formats.
+    """
+    bw, bh = (width + 3) // 4, (height + 3) // 4
+    if bw <= 0 or bh <= 0 or (bw & (bw - 1)) or (bh & (bh - 1)):
+        raise ValueError("Morton candidate needs power-of-two BC block dimensions")
+    if tile_blocks == 0:
+        if bw != bh:
+            raise ValueError("global Morton requires square BC block image")
+        tile_blocks = bw
+    if tile_blocks <= 0 or (tile_blocks & (tile_blocks - 1)):
+        raise ValueError("Morton tile dimension must be a power of two")
+    if bw % tile_blocks or bh % tile_blocks:
+        raise ValueError("Morton tile does not divide BC block dimensions")
+    blocks = bw * bh
+    if len(src) < blocks * 16:
+        raise ValueError(f"Morton candidate needs {blocks * 16} source bytes")
+    levels = tile_blocks.bit_length() - 1
+    dst = bytearray(blocks * 16)
+    tiles_w = bw // tile_blocks
+    for y in range(bh):
+        for x in range(bw):
+            tx, ty = x // tile_blocks, y // tile_blocks
+            ix, iy = x % tile_blocks, y % tile_blocks
+            if swap_axes:
+                ix, iy = iy, ix
+            z = 0
+            for bit in range(levels):
+                z |= ((ix >> bit) & 1) << (bit * 2)
+                z |= ((iy >> bit) & 1) << (bit * 2 + 1)
+            source_block = ((ty * tiles_w + tx) * tile_blocks * tile_blocks) + z
+            dst[(y * bw + x) * 16:(y * bw + x + 1) * 16] = src[source_block * 16:(source_block + 1) * 16]
+    return bytes(dst)
+
+
 def make_bc7_dds(data: bytes, width: int, height: int) -> bytes:
     expected = ((width + 3) // 4) * ((height + 3) // 4) * 16
     if len(data) < expected:
@@ -125,6 +165,13 @@ def decode_png(payload: bytes, width: int, height: int, layout: str, fmt: int = 
         linear = payload
     elif layout.startswith("gob"):
         linear = unswizzle_gob_bc7(payload, width, height, int(layout[3:]))
+    elif layout.startswith("morton"):
+        kind = layout.removeprefix("morton")
+        swap_axes = kind.endswith("_yx")
+        kind = kind.removesuffix("_yx")
+        if kind and not kind.isdigit():
+            raise ValueError(f"invalid Morton candidate layout {layout}")
+        linear = unswizzle_morton_bc(payload, width, height, int(kind) if kind else 0, swap_axes)
     else:
         raise ValueError(f"unsupported layout {layout}")
     if fmt in (0x66, 0x5f):
@@ -272,7 +319,7 @@ def main() -> None:
     if args.max_files:
         paths = paths[:args.max_files]
     layouts = [s.strip() for s in args.layouts.split(",") if s.strip()]
-    if not layouts or any(s not in {"linear", "gob1", "gob2", "gob4", "gob8", "gob16", "gob32"} for s in layouts):
+    if not layouts or any(s not in {"linear", "gob1", "gob2", "gob4", "gob8", "gob16", "gob32", "morton", "morton_yx", "morton8", "morton8_yx", "morton16", "morton16_yx", "morton32", "morton32_yx"} for s in layouts):
         p.error("invalid --layouts")
     if args.texinfo_root:
         n = texinfo_index(args.texinfo_root, args.dest / "Textures" / "texinfo_names.csv")
