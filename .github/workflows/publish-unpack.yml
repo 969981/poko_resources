@@ -1,0 +1,92 @@
+name: Publish Pokopia 2.0.1 unpacked RomFS
+
+on:
+  push:
+    branches: [2.0.1_unpack]
+    paths:
+      - '.github/workflows/publish-unpack.yml'
+      - 'Scripts/unpack/publish.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-unpack-publish-2-0-1
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    steps:
+      - name: Sparse checkout of source containers and publisher
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          persist-credentials: true
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+            tests/
+            UnPack/2.0.1/
+            2.0.1/romfs/LI_C0_R.IDX
+            2.0.1/romfs/LD_C0_R.BIN.7z.001
+            2.0.1/romfs/LD_C0_R.BIN.7z.002
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdb
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdx
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdb
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdx
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x4b13d561.fdata
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x514c644e.fdata
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xe634eeb2.fdata
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/MountPoint_1/0x00176283.fdata
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/MountPoint_1/0x939e81a6.fdata
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/MountPoint_1/0x99d71093.fdata
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/MountPoint_1/0xaced3bfa.fdata
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/MountPoint_1/0xed66e8af.fdata
+      - name: Install 7-Zip
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -qq -y --no-install-recommends 7zip
+      - name: Test publisher and existing parsers
+        run: python3 -m unittest discover -s tests -v
+      - name: Restore LINKDATA to temporary space
+        run: |
+          mkdir -p "$RUNNER_TEMP/poko-linkdata"
+          7z t -y 2.0.1/romfs/LD_C0_R.BIN.7z.001
+          7z x -y 2.0.1/romfs/LD_C0_R.BIN.7z.001 "-o$RUNNER_TEMP/poko-linkdata"
+          test -s "$RUNNER_TEMP/poko-linkdata/LD_C0_R.BIN"
+      - name: Publish LINKDATA by original source filename
+        run: |
+          python3 -m Scripts.unpack.publish \
+            --kind linkdata --bin "$RUNNER_TEMP/poko-linkdata/LD_C0_R.BIN" \
+            --output UnPack/2.0.1 --max-file-mib 90 --max-total-mib 600
+          rm -f "$RUNNER_TEMP/poko-linkdata/LD_C0_R.BIN"
+      - name: Publish selected standalone FDATA containers
+        run: |
+          python3 -m Scripts.unpack.publish \
+            --kind ktrdb --output UnPack/2.0.1 \
+            --max-file-mib 90 --max-total-mib 600 \
+            --only-fdata 4b13d561 --only-fdata 514c644e \
+            --only-fdata e634eeb2 --only-fdata acd220a8 \
+            --only-fdata 2943e4da --only-fdata 52482d03 \
+            --only-fdata 00176283 --only-fdata 939e81a6 \
+            --only-fdata 99d71093 --only-fdata aced3bfa \
+            --only-fdata ed66e8af
+      - name: Commit unpack results to 2.0.1_unpack
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -f -- UnPack/2.0.1/romfs UnPack/2.0.1/_reports
+          if git diff --cached --quiet; then
+            echo "No changed extracted records."
+            exit 0
+          fi
+          git diff --cached --stat | tail -n 25
+          git commit -m "data(unpack): publish decoded v2.0.1 RomFS records [skip ci]"
+          git push origin HEAD:2.0.1_unpack
