@@ -1,0 +1,63 @@
+name: Pokopia native format reconstruction and SHA-256 smoke test
+
+on:
+  push:
+    branches: [2.0.1_unpack]
+    paths:
+      - ".github/workflows/unpack-export-native.yml"
+      - "Scripts/unpack/export_native.py"
+      - "tests/test_export_native.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  native-smoke:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Sparse checkout script and an actual 96-byte Pokopia KIDSOBJDB record
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+            tests/
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x4b13d561.fdata/decoded/root_010349_2af82b77.fdata_idrk.bin
+      - name: Run complete parser tests including corruption and split-piece checks
+        run: python3 -m unittest discover -s tests -v
+      - name: Get native extension index without downloading game blobs
+        run: |
+          mkdir -p _work/native
+          git show HEAD:UnPack/2.0.1/_reports/m3_resource_type_index.csv > _work/native/m3_resource_type_index.csv
+      - name: Reconstruct one real game KIDSOBJDB as .kidsobjdb and verify SHA-256
+        run: |
+          python3 -m Scripts.unpack.export_native \
+            --index _work/native/m3_resource_type_index.csv \
+            --assets-root UnPack/2.0.1 \
+            --out _work/native/output \
+            --extensions kidsobjdb \
+            --record-id root:10349
+          test "$(find _work/native/output -name '*.kidsobjdb' -type f | wc -l)" -eq 1
+          python3 - <<'PY'
+          import csv
+          from pathlib import Path
+          p = Path("_work/native/output/native_export_manifest.csv")
+          with p.open(newline="", encoding="utf-8") as f:
+              row = next(csv.DictReader(f))
+          assert row["status"] == "EXPORTED_HASH_VERIFIED", row
+          assert int(row["bytes"]) == 96, row
+          assert Path(row["destination"]).stat().st_size == 96
+          print("REAL_KIDSOBJDB_NATIVE_EXPORT_SHA256_VERIFIED:", row["record_id"], row["sha256"])
+          PY
+      - name: Upload proof manifest only, no copyrighted raw binaries
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-native-export-sha256-proof-${{ github.run_id }}
+          path: _work/native/output/native_export_manifest.csv
+          if-no-files-found: warn
+          retention-days: 30
