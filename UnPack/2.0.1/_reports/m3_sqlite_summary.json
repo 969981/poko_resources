@@ -1,0 +1,24 @@
+{
+  "m3_resources": 89507,
+  "m3_by_catalog": {
+    "link": 9793,
+    "root": 54655,
+    "system": 25059
+  },
+  "missing_input_records": 6118,
+  "original_index_records": 98130,
+  "m4_kidsobjdb_records": 4144,
+  "m4_blocks": 626349,
+  "m4_fields": 8112762,
+  "unverified_numeric_hash_matches": 271271,
+  "bfbs_schema_names_verified": 0,
+  "semantic_complete": false,
+  "source": "M3 type-index + M4 sampled KIDSOBJDB evidence",
+  "limitations": [
+    "Only bounded numeric samples from M4 are indexed; not all original field values.",
+    "RDOK words and unknown schemas are not semantic links.",
+    "U32 equality with a name hash is only an unverified candidate.",
+    "Real asset names and MissionSettings mapping require independent evidence.",
+    "No BFBS signature was confirmed by the published M3 prefix survey."
+  ]
+}
