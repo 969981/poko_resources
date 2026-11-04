@@ -1,0 +1,33 @@
+{
+  "item_slots": 4600,
+  "named_items": 3586,
+  "pokohex_icon_files": 1615,
+  "named_items_with_icons": 1545,
+  "named_items_without_pokohex_icons": 2041,
+  "language_counts": {
+    "en": 3586,
+    "jp": 3586,
+    "de": 3586,
+    "es": 3586,
+    "fr": 3586,
+    "it": 3586,
+    "ko": 3586,
+    "zhs": 3586,
+    "zht": 3586
+  },
+  "menuicon_map_sha256": "379b28cfcbbb116ae1622509b08ef23c1d64f85dc01b78ff51d24c7a07cb8602",
+  "g1t_candidate_records": 14412,
+  "upstream": {
+    "repository": "https://github.com/969981/PokoHex",
+    "commit": "c71d2b73fb9d8cfe99c1067e6bfadfd19f60bf78",
+    "text_source": "PokoHex.Core/Resources/text/<lang>/text_item_<lang>.txt",
+    "icon_source": "PokoHex/Resources/MenuIcon/item_*.png",
+    "mapping_source": "PokoHex.Core/Resources/byte/item_menuicon.bin",
+    "m3_source": "UnPack/2.0.1/_reports/m3_resource_type_index.csv"
+  },
+  "warnings": [
+    "PokoHex assets are a separately sourced dataset, not proven native 2.0.1 extraction.",
+    "G1T candidates are NOT mapped to item IDs; type hashes alone do not prove item identity.",
+    "Missing PokoHex PNG does NOT prove there is no corresponding texture in the game."
+  ]
+}
