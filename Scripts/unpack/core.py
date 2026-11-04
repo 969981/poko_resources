@@ -232,6 +232,11 @@ def decode_linkdata_payload(data: bytes, expected_size: int, flag: int) -> bytes
     if len(data) < 0x80:
         return _strict_zlib_stream(data, expected_size, 'LINK_RAW')
     chunk_size, count, advertised = struct.unpack_from('<III', data)
+    # One real IDX entry has a valid 128-byte no-chunk header and 0 decoded
+    # bytes. It is a placeholder, not malformed compression.
+    if (expected_size == 0 and len(data) == 0x80 and chunk_size == 0x10000
+            and count == advertised == 0 and not any(data[12:])):
+        return b''
     if not (chunk_size in (0x10000, 0x20000, 0x40000, 0x80000, 0x100000)
             and 1 <= count <= 512 and count == (expected_size + chunk_size - 1) // chunk_size):
         # Do not blindly search for zlib headers at arbitrary offsets.
@@ -249,9 +254,9 @@ def decode_linkdata_payload(data: bytes, expected_size: int, flag: int) -> bytes
             raise FormatError(f'LINK_CHUNK_BOUNDS:{i}:{cursor}:{extent}:{len(data)}')
         packed_size = struct.unpack_from('<I', data, cursor)[0]
         remaining = expected_size - len(decoded)
-        if not packed_size and extent == min(chunk_size, remaining):
-            # Observed tiny, uncompressed final chunks (16/18 bytes) have no
-            # 4-byte length prefix. Verify exact chunk extent and output size.
+        if (not packed_size or packed_size + 4 > extent) and extent == min(chunk_size, remaining) and extent <= 32:
+            # Observed tiny, uncompressed final chunks (14/16/18 bytes) lack
+            # a compressed-size prefix. Only permit bounded <=32 byte chunks.
             block = data[cursor:cursor + extent]
         else:
             if not packed_size or packed_size + 4 > extent:

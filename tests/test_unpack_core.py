@@ -127,6 +127,20 @@ class TestFormatReaders(unittest.TestCase):
         value = hdr + raw + bytes((-len(raw)) % 0x80)
         self.assertEqual(decode_linkdata_payload(value, len(raw), 1), raw)
 
+    def test_linkdata_zero_record_header_and_14_byte_final_chunk(self):
+        empty_header = struct.pack('<III', 65536, 0, 0) + bytes(0x80 - 12)
+        self.assertEqual(decode_linkdata_payload(empty_header, 0, 1), b'')
+        self.assertRaises(FormatError, decode_linkdata_payload, empty_header[:-1], 0, 1)
+        first = b'A' * 65536
+        second = struct.pack('<I', 327680) + bytes(10)
+        compressed = zlib.compress(first)
+        one = struct.pack('<I', len(compressed)) + compressed
+        header = struct.pack('<IIIII', 65536, 2, 65550, len(one), len(second))
+        header += bytes(0x80 - len(header))
+        blob = header + one + bytes((-len(one)) % 0x80) + second
+        blob += bytes((-len(blob)) % 0x100)
+        self.assertEqual(decode_linkdata_payload(blob, 65550, 1), first + second)
+
     def test_idrk_record_and_kt_end_to_end(self):
         payload = bytes.fromhex(REAL_KT_COMPRESSED_HEX)
         meta = bytes(21)

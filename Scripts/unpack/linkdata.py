@@ -56,7 +56,7 @@ def run(idx_path: Path, bin_path: Path | None, output: Path, start: int, limit: 
                                     if not (resume and dest.is_file() and dest.stat().st_size == len(decoded) and hashlib.sha256(dest.read_bytes()).digest() == hashlib.sha256(decoded).digest()):
                                         dest.write_bytes(decoded)
                                 row['decoded_sha256'] = hashlib.sha256(decoded).hexdigest()
-                                row['status'] = 'DECOMPRESSED'
+                                row['status'] = 'EMPTY_DECODED' if entry.unpacked_size == 0 else 'DECOMPRESSED'
                             except FormatError as exc:
                                 row['status'] = 'DECODE_FAILED'
                                 row['error'] = str(exc)
