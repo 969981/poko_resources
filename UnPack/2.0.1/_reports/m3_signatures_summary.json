@@ -1,0 +1,30 @@
+{
+  "status": "PASS_BOUNDED_PREFIX_SCAN",
+  "expected_records": 92012,
+  "actual_records": 92012,
+  "kt_records": 79714,
+  "link_records": 12298,
+  "link_empty_entries": 2505,
+  "unique_record_ids": 92012,
+  "part_files": 29,
+  "signatures": {
+    "UNKNOWN_BINARY": 82129,
+    "G1A_ANIMATION_CONTAINER": 29,
+    "G1M_MODEL_CONTAINER": 3204,
+    "KIDSOBJDB_SIGNATURE": 4144,
+    "EMPTY_INDEX": 2505,
+    "EMPTY": 1
+  },
+  "statuses": {
+    "PROBED": 89507,
+    "EMPTY_INDEX": 2505
+  },
+  "anomalies": [],
+  "duplicate_examples": [],
+  "validation_level": "M3 signature survey only, NOT semantic parsing",
+  "limitations": [
+    "First <=96 decoded bytes are sampled per record; no full-payload M3 hash verification.",
+    "Candidate extensions are recommendations, not reconstructed source filenames.",
+    "Unknown binary formats remain undecoded; a PASS is only prefix scan coverage."
+  ]
+}
