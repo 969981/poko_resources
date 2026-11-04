@@ -144,7 +144,7 @@ def run(path: Path, output: Path, max_sampled_values=32, max_mib=64):
         "source": str(path), "records": result["header"]["entry_count"],
         "summary": result["summary"], "semantic_status": result["semantic_status"],
         "warnings": result["warnings"],
-    }, ensure_ascii=False, flush=True)
+    }, ensure_ascii=False), flush=True)
     return result
 
 
