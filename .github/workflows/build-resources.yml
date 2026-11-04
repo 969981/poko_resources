@@ -24,7 +24,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: 2.0.1_unpack
-          fetch-depth: 0
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            Scripts/resources
+            UnPack/2.0.1/_reports/m3_resource_type_index.csv
+            UnPack/2.0.1/Resources
+          sparse-checkout-cone-mode: false
           persist-credentials: true
 
       - name: Checkout pinned PokoHex source
