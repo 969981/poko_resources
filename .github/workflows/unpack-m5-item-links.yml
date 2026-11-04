@@ -61,7 +61,7 @@ jobs:
           report = json.loads((base/"Textures/item_native_link_summary.json").read_text(encoding="utf-8"))
           assert report["inventory_items"] == 1615, report
           assert report["mapping_rows"] == 3229, report
-          assert report["link_status"].get("NATIVE_MATCH", 0) >= 4, report
+          assert report["link_status"].get("VERIFIED_NATIVE_FIELDS", 0) >= 4, report
           with (base/"Textures/item_native_preview_manifest.csv").open(encoding="utf-8", newline="") as f:
               previews = list(csv.DictReader(f))
           good = [x for x in previews if x["status"] == "PNG_CANDIDATE_UNVERIFIED"]
