@@ -50,6 +50,23 @@ class G1TTests(unittest.TestCase):
             self.assertEqual(im.format, "PNG")
             self.assertEqual(im.getpixel((0, 0)), (0, 0, 0, 0))
 
+    def test_morton_block_permutation_and_axis_variant(self):
+        # 8x8 BC blocks, one color-tagged 16-byte compressed block per source index.
+        src = b"".join(bytes([i])*16 for i in range(64))
+        plain = m.unswizzle_morton_bc(src, 32, 32)
+        transpose = m.unswizzle_morton_bc(src, 32, 32, swap_axes=True)
+        tagged = lambda buf, x, y: buf[(y*8+x)*16]
+        self.assertEqual(tagged(plain, 0, 0), 0)
+        self.assertEqual(tagged(plain, 1, 0), 1)
+        self.assertEqual(tagged(plain, 0, 1), 2)
+        self.assertEqual(tagged(transpose, 1, 0), 2)
+        self.assertEqual(tagged(transpose, 0, 1), 1)
+        tiled = m.unswizzle_morton_bc(src, 32, 32, tile_blocks=4)
+        self.assertEqual(tagged(tiled, 4, 0), 16)
+        self.assertEqual(len(tiled), len(src))
+        with self.assertRaises(ValueError):
+            m.unswizzle_morton_bc(src[:16], 32, 32)
+
     def test_gob_changes_block_order(self):
         source = bytes((i * 37) % 256 for i in range(4096))
         self.assertNotEqual(m.unswizzle_gob_bc7(source, 64, 64, 1), source)
