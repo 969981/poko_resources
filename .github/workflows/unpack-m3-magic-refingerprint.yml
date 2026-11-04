@@ -1,0 +1,87 @@
+name: Pokopia M3 recover true native Magic from already saved 64-byte samples
+
+on:
+  push:
+    branches: [2.0.1_unpack]
+    paths:
+      - ".github/workflows/unpack-m3-magic-refingerprint.yml"
+      - "Scripts/unpack/m3_magic_refingerprint.py"
+      - "tests/test_m3_magic_refingerprint.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m3-native-magic-refresh-2-0-1
+  cancel-in-progress: false
+
+jobs:
+  upgrade-native-magic-evidence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - name: Sparse checkout only code and tests
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+            tests/
+      - name: Validate all parsers and Magic versus type-hash agreement
+        run: python3 -m unittest discover -s tests -v
+      - name: Load committed M3 sample bytes and type index metadata only
+        shell: bash
+        run: |
+          mkdir -p _work/m3
+          git show HEAD:UnPack/2.0.1/_reports/m3_signatures.csv > _work/m3/signatures.csv
+          git show HEAD:UnPack/2.0.1/_reports/m3_signatures_summary.json > _work/m3/signature_summary.json
+          git show HEAD:UnPack/2.0.1/_reports/m3_resource_type_index.csv > _work/m3/types.csv
+          git show HEAD:UnPack/2.0.1/_reports/m3_resource_type_index_summary.json > _work/m3/type_summary.json
+      - name: Confirm GT1G G1T, A2G G1A, S2G G1S and XF1G G1E via exact Magic
+        shell: bash
+        run: |
+          python3 -m Scripts.unpack.m3_magic_refingerprint \
+            --signature-input _work/m3/signatures.csv \
+            --type-input _work/m3/types.csv \
+            --signature-summary _work/m3/signature_summary.json \
+            --type-summary _work/m3/type_summary.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          report=json.loads(Path("UnPack/2.0.1/_reports/m3_magic_refingerprint.json").read_text())
+          assert report["new_magic_evidence_records"] == 59205, report
+          assert report["linkdata_magic_confirmed_records"] == 55, report
+          assert report["type_evidence_counts"]["MAGIC_AND_TKID"] == 66527, report
+          assert len(report["errors"]) == 0, report
+          print("MAGIC_RECOVERY_VERIFIED", report["new_magic_evidence_records"])
+          PY
+      - name: Upload metadata evidence without re-downloading 18GB of game blobs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m3-magic-refingerprint-${{ github.run_id }}
+          path: |
+            UnPack/2.0.1/_reports/m3_magic_refingerprint.json
+            UnPack/2.0.1/_reports/m3_resource_type_index_summary.json
+            UnPack/2.0.1/_reports/m3_signatures_summary.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit updated native format evidence and matching resource index
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --ff-only origin 2.0.1_unpack
+          git add --sparse -f -- UnPack/2.0.1/_reports/m3_signatures.csv
+          git add --sparse -f -- UnPack/2.0.1/_reports/m3_signatures_summary.json
+          git add --sparse -f -- UnPack/2.0.1/_reports/m3_resource_type_index.csv
+          git add --sparse -f -- UnPack/2.0.1/_reports/m3_resource_type_index_summary.json
+          git add --sparse -f -- UnPack/2.0.1/_reports/m3_magic_refingerprint.json
+          if ! git diff --cached --quiet; then
+            git commit -m "audit(unpack): verify 59205 native Magic signatures directly from M3 head bytes [skip ci]"
+            git push origin HEAD:2.0.1_unpack
+          fi
