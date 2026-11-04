@@ -29,3 +29,15 @@ python -m unittest discover -s tests -v
 ```
 
 **状态限制：** M1 的 flag=1 目前会尝试标准 zlib，但必须用真实恢复 BIN 验证；任何解码失败都保留 raw 并记录原因。M2 对 `.file` 仅保留完整原始字节，不宣称对其特殊格式已支持语义解析。大型 FDATA 恢复后再做全量测试，当前已验证的是小型真实 KIDSOBJDB 压缩记录。
+
+## M0–M2 下一轮：真实仓库的自动 smoke 与完整验证模式
+
+- `.github/workflows/unpack-m0-m2.yml`：推送脚本、测试或工作流变更到 `2.0.1_unpack` 自动运行 `smoke`；只 checkout IDX、root/system RDB/RDX、一份真实 FDATA、LINKDATA 两个 7z 分卷以及脚本测试。
+- `python -m Scripts.unpack.smoke --source 2.0.1 --output _meta/2.0.1/smoke`：完整索引遍历和 FDATA 真实压缩记录的 byte/hash 验证。
+- `python -m Scripts.unpack.linkdata --idx ... --bin ... --output ... --decode --verify-only --limit 250`：解压验证和 hash 报告，**不写出任何游戏素材**。
+- `python -m Scripts.unpack.ktrdb --base ... --output ... --extract --decode --verify-only --only-fdata 4b13d561 --limit 250`：有针对性的 FDATA 样本提取验证。
+- `python -m Scripts.unpack.full_pipeline --source 2.0.1 --work _work/2.0.1-verify --output _meta/2.0.1/full --sevenzip 7z --verify-only`：完整 7z test/恢复 → 全 LINKDATA 解码验证 → root/system RDB 全遍历与 FDATA 解码验证。计算完整磁盘需求，不够时明确失败，不写出提取游戏素材。
+
+通过 GitHub Actions `workflow_dispatch` 选 `scope=full` 可以手动请求全量；如 GitHub 限制非默认分支手动运行，可在 `2.0.1_unpack` 的脚本变更提交信息中包含 `[full-unpack]` 触发全量分支作业。**请先看 smoke 运行结果及 Runner 可用磁盘空间，不要同时并发多轮全量运行。**
+
+输出状态必须区分 `INDEXED`、`LOCATED`、`EXTRACTED`、`DECOMPRESSED`、`DECODE_FAILED`、`CONTAINER_NOT_PRESENT`。`--verify-only` 只输出元数据、SHA-256 和错误报告；若需实际本地原始二进制导出，使用原 CLI 的 `--extract`/`--decode`（不带 `--verify-only`）。
