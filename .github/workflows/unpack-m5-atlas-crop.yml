@@ -1,0 +1,96 @@
+name: M5 - Crop native two-layer item atlas candidates
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/crop_native_item_atlas.py"
+      - "Scripts/resources/g1t_to_png.py"
+      - "tests/test_crop_native_item_atlas.py"
+      - "UnPack/2.0.1/Resources/Textures/Indexes/item_atlas_1333_uv.csv"
+      - ".github/workflows/unpack-m5-atlas-crop.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pokopia-m5-atlas-crop-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  crop-candidates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout only G1T atlas, index and converters
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/g1t_to_png.py
+            Scripts/resources/crop_native_item_atlas.py
+            tests/test_crop_native_item_atlas.py
+            UnPack/2.0.1/Resources/Textures/Indexes/item_atlas_1333_uv.csv
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_038147_a0ce9914.g1t
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install DDS/BC7 PNG decoder
+        run: python -m pip install "Pillow>=11,<13"
+
+      - name: Test atlas layer/UV cropping
+        run: python -m unittest discover -s tests -p "test_crop_native_item_atlas.py" -v
+
+      - name: Decode both native G1T layers, crop known sample IDs for layout comparison
+        run: |
+          python Scripts/resources/crop_native_item_atlas.py \
+            --g1t UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_038147_a0ce9914.g1t \
+            --manifest UnPack/2.0.1/Resources/Textures/Indexes/item_atlas_1333_uv.csv \
+            --layouts linear,gob1,gob2,gob4,gob8 \
+            --ids 6,7,8,1677,1764,1765,2742 \
+            --out atlas-preview/top-v
+          python Scripts/resources/crop_native_item_atlas.py \
+            --g1t UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_038147_a0ce9914.g1t \
+            --manifest UnPack/2.0.1/Resources/Textures/Indexes/item_atlas_1333_uv.csv \
+            --layouts gob1,gob2,gob4,gob8 \
+            --ids 6,7,8,1677,1764,1765,2742 \
+            --flip-v \
+            --out atlas-preview/flipped-v
+
+      - name: Verify candidates and log unresolved layout failures
+        run: |
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+          from PIL import Image
+          manifests = sorted(Path("atlas-preview").rglob("atlas_candidate_manifest.csv"))
+          decoded = 0
+          for manifest in manifests:
+              with manifest.open(encoding="utf-8", newline="") as fp:
+                  rows = list(csv.DictReader(fp))
+              for row in rows:
+                  if row["status"] != "CROPPED_UNVERIFIED":
+                      print(row["status"], row["item_id"], row["layer"], row["layout"], row["reason"])
+                      continue
+                  with Image.open(row["png_path"]) as image:
+                      image.verify()
+                  decoded += 1
+          print(f"Candidate PNG crops: {decoded}")
+          if not decoded:
+              raise SystemExit("No G1T atlas candidate decoded: investigate layer/mip layout")
+          PY
+
+      - name: Upload unverified PNG candidates for visual inspection
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-two-layer-atlas-candidates
+          path: atlas-preview/
+          if-no-files-found: warn
+          retention-days: 14
