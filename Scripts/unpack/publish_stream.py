@@ -1,7 +1,7 @@
 """Stream large KT FDATA records directly to source-mirrored RomFS output.
 
 Unlike the M2 sample extractor, this does not write duplicate packed and
-decoded copies. A decoded record >90 MiB is split into 80 MiB numbered parts.
+decoded copies. A decoded record >48 MiB is split into 48 MiB numbered parts.
 One partition at a time can be committed to Git to avoid multi-GB pushes.
 """
 import argparse
@@ -24,7 +24,7 @@ MIB = 1024 * 1024
 
 
 class PieceWriter:
-    def __init__(self, folder, filename, expected, chunk_bytes=80 * MIB, max_single=90 * MIB):
+    def __init__(self, folder, filename, expected, chunk_bytes=48 * MIB, max_single=48 * MIB):
         self.folder = Path(folder)
         self.name = filename
         self.expected = expected

@@ -74,12 +74,26 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           dest="UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/data/0x$FILE_HASH.file"
+          staged_bytes=0
+          chunk=0
           if [[ -d "$dest" ]]; then
-            git add --sparse -f -- "$dest"
+            while IFS= read -r -d '' file; do
+              git add --sparse -f -- "$file"
+              staged_bytes=$((staged_bytes + $(stat -c %s "$file")))
+              if (( staged_bytes >= 220 * 1024 * 1024 )); then
+                git commit -m "data(unpack): standalone 0x$FILE_HASH.file chunk $chunk [skip ci]"
+                git push origin HEAD:2.0.1_unpack
+                staged_bytes=0
+                chunk=$((chunk + 1))
+              fi
+            done < <(find "$dest" -type f ! -name _manifest.csv -print0 | sort -z)
+            if [[ -f "$dest/_manifest.csv" ]]; then
+              git add --sparse -f -- "$dest/_manifest.csv"
+            fi
           fi
           git add --sparse -f -- "UnPack/2.0.1/_reports/file_$FILE_HASH.json"
           if ! git diff --cached --quiet; then
-            git commit -m "data(unpack): standalone 0x$FILE_HASH.file [skip ci]"
+            git commit -m "data(unpack): standalone 0x$FILE_HASH.file manifest [skip ci]"
             git push origin HEAD:2.0.1_unpack
           fi
 
@@ -91,9 +105,9 @@ jobs:
       max-parallel: 1
       matrix:
         include:
-          - {hash: "38f972af", source: "0x38f972af", split: true, parts: 32}
-          - {hash: "738d2a35", source: "0x738d2a35", split: true, parts: 16}
-          - {hash: "79c5b922", source: "0x79c5b922", split: true, parts: 4}
+          - {hash: "38f972af", source: "0x38f972af", split: true, parts: 64}
+          - {hash: "738d2a35", source: "0x738d2a35", split: true, parts: 32}
+          - {hash: "79c5b922", source: "0x79c5b922", split: true, parts: 8}
           - {hash: "57e5b452", source: "0x57e5b452", split: false, parts: 2}
           - {hash: "0017d6e2", source: "MountPoint_2/0x0017d6e2", split: false, parts: 2}
           - {hash: "cebd4bd4", source: "MountPoint_2/0xcebd4bd4", split: false, parts: 4}
@@ -153,7 +167,7 @@ jobs:
           for ((part=0; part<PART_COUNT; part++)); do
             python3 -m Scripts.unpack.publish_stream --hash "$FDATA_HASH" \
               --part-index "$part" --parts "$PART_COUNT" \
-              --source-sha "$digest" --max-total-mib 700 --report-tag backfill${PART_COUNT}
+              --source-sha "$digest" --max-total-mib 450 --report-tag backfill${PART_COUNT}
             if [[ -d "$dest" ]]; then
               git add --sparse -f -- "$dest"
             fi
