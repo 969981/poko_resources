@@ -1,0 +1,96 @@
+name: M5 - Export 1333 Native Pokopia Item Icons
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/export_native_item_atlas.py"
+      - ".github/workflows/unpack-m5-export-native-icons.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: m5-export-1333-item-atlas-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  export-native-atlas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout native G1T, TEXINFO, UV index and icon references
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/g1t_to_png.py
+            Scripts/resources/crop_native_item_atlas.py
+            Scripts/resources/score_atlas_candidates.py
+            Scripts/resources/export_native_item_atlas.py
+            UnPack/2.0.1/Resources/Textures/Indexes/item_atlas_1333_uv.csv
+            UnPack/2.0.1/Resources/Items/Icons
+            UnPack/2.0.1/Resources/Items/Native_2.0.1
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_038147_a0ce9914.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_042753_b4b1fe49.texinfo
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install BC7 DDS decoder
+        run: python -m pip install "Pillow>=11,<13"
+
+      - name: Export all 1333 native atlas item PNGs
+        run: python -m Scripts.resources.export_native_item_atlas
+
+      - name: Verify native crop count and pixel comparisons
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          from PIL import Image
+          base=Path("UnPack/2.0.1/Resources/Items/Native_2.0.1")
+          icons=list((base/"Icons").glob("item_*.png"))
+          assert len(icons)==1333,len(icons)
+          report=json.loads((base/"native_icon_summary.json").read_text(encoding="utf-8"))
+          assert report["generated_pngs"]==1333,report
+          with (base/"native_icon_manifest.csv").open(encoding="utf-8",newline="") as f:
+              rows=list(csv.DictReader(f))
+          assert len(rows)==1333,len(rows)
+          assert sum(int(r["layer"])==0 for r in rows)==727
+          assert sum(int(r["layer"])==1 for r in rows)==606
+          assert len(set(r["item_id"] for r in rows))==1333
+          for row in rows:
+              with Image.open(row["png_path"]) as im:
+                  assert im.size==(72,72),(row["item_id"],im.size)
+                  im.verify()
+          # Distances to third-party icon references are heuristic, not exact pixel matches.
+          for item in ("6","7","8","1677","1764","1765","2742"):
+              row=next(r for r in rows if r["item_id"]==item)
+              assert row["reference_distance"]!="" and float(row["reference_distance"]) < 0.15,(item,row)
+          print("Native item icons:",len(icons))
+          print("Status counts:",report["status_counts"])
+          print("Median reference distance:",report["median_reference_distance"])
+          PY
+
+      - name: Commit original-source PNGs without overwriting PokoHex icons
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Items/Native_2.0.1/Icons UnPack/2.0.1/Resources/Items/Native_2.0.1/native_icon_manifest.csv UnPack/2.0.1/Resources/Items/Native_2.0.1/native_icon_summary.json
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "data(m5): export 1333 original source-linked GOB16 item icon PNGs"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
