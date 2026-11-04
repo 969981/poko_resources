@@ -28,7 +28,7 @@ jobs:
           fetch-depth: 0
           filter: blob:none
           sparse-checkout: |
-            Scripts/resources/verify_layout_native.py
+            Scripts/resources
             UnPack/2.0.1/Resources/Textures/Indexes
             UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native
             UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata/native
