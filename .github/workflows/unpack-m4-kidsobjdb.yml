@@ -1,0 +1,72 @@
+name: Pokopia 2.0.1 M4 KIDSOBJDB structural decoder validation
+
+on:
+  push:
+    branches: [2.0.1_unpack]
+    paths:
+      - ".github/workflows/unpack-m4-kidsobjdb.yml"
+      - "Scripts/unpack/decode_kidsobjdb.py"
+      - "tests/test_decode_kidsobjdb.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m4-kidsobjdb-2-0-1
+  cancel-in-progress: false
+
+jobs:
+  validate-real-idok:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Sparse checkout decoder, fixtures and real 96-byte Pokopia KIDSOBJDB
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+            tests/
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x4b13d561.fdata/decoded/root_010349_2af82b77.fdata_idrk.bin
+      - name: Run all parser tests including RDOK and malformed lengths
+        run: python3 -m unittest discover -s tests -v
+      - name: Parse original game data and retain typed structural evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p UnPack/2.0.1/_reports
+          python3 -m Scripts.unpack.decode_kidsobjdb \
+            --input UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x4b13d561.fdata/decoded/root_010349_2af82b77.fdata_idrk.bin \
+            --output UnPack/2.0.1/_reports/m4_kidsobjdb_root_010349.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/_reports/m4_kidsobjdb_root_010349.json")
+          result=json.loads(p.read_text(encoding="utf-8"))
+          assert result["bytes"]==96, result
+          assert result["magic"]=="_DOK0000", result
+          print("REAL_KIDSOBJDB_STRUCTURAL_PROBE:", result["header"], result["summary"], result["semantic_status"])
+          PY
+      - name: Upload structural result, no raw game bytes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-real-kidsobjdb-structure-${{ github.run_id }}
+          path: UnPack/2.0.1/_reports/m4_kidsobjdb_root_010349.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit structural evidence for original IDOK/RDOK sample
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --ff-only origin 2.0.1_unpack
+          git add --sparse -f -- UnPack/2.0.1/_reports/m4_kidsobjdb_root_010349.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data(unpack): M4 inspect actual KIDSOBJDB structures [skip ci]"
+            git push origin HEAD:2.0.1_unpack
+          fi
