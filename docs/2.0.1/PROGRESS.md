@@ -53,3 +53,11 @@ python -m unittest discover -s tests -v
 - SQLite 大小 **1,159,593,984** 字节；CSV/JSONL/SQLite 压缩包存于 [Actions Artifact #13337139016](https://github.com/969981/poko_resources/actions/runs/41856591033/artifacts/13337139016)，30 天保留。Git 只留 `UnPack/2.0.1/_reports/m3_sqlite_summary.json` 和工具，不提交大体积数据库。
 - 查询文档：[M3_SQLITE.md](M3_SQLITE.md)，源码：[m3_database.py](../../Scripts/unpack/m3_database.py)。
 - **尚未完成**：BFBS schema 的实际身份/路径证明（当前前缀扫描确认 0 条）、属性 Hash 的可信文本名称映射、RDOK 语义、真正对象引用及 `MissionSettings` 资源→PE 工厂→Lua handle 同一来源的证据链。M3 数据库完成不等于语义解析全部完成。
+
+## M3 RDOK 静态证据推进（2026-11-04）
+
+- 读取已提交的、SHA-256 验证过的 15 份 KIDSOBJDB 诊断记录，提取其中**全部 40 个 RDOK**，与 4,144 条 KIDSOBJDB 原始资源名称 Hash 对账：**40/40 唯一对应，0 歧义**。
+- 所有目标都有 IDOK，40 条同 root/system 分区、32 条同 FDATA、8 条跨 FDATA；记录源/目标原始路径和 SHA-256。见 [RDOK 证据表](../../UnPack/2.0.1/_reports/m3_rdok_verified_40.csv) 和 [分析文档](M3_RDOK_DIRECT_EVIDENCE.md)。
+- 外部 DWOriginsAssetTool 的 RDOK `object_hash / parent_database_hash / parent_object_hash / property_count` 布局与本次 40 条实际字节吻合，定位为 **强静态支持、运行时语义未证明**。
+- 已提交 `m3_rdok_crosswalk.py` (字段 Hash 频率与 ExeFS 字符串只读扫描)、`m3_rdok_sqlite.py` (候选关联导入 SQLite 的 SHA/IDOK/路径/原始字节验证)，相关 GitHub Actions 处于排队状态时不得称测试通过。
+- 重要更正：旧研究中 `MissionSettings_array.bfbs` / `MissionInfo_array.bfbs` 来自 **SV DLC** 的 pkNX 资源路径，不能当作 Pokopia 真实资源名；仅保留静态负例检索。Pokopia 自己的 BFBS schema、字段 Hash 文本与运行时加载关系仍未完成确认。
