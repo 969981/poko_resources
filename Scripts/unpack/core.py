@@ -203,24 +203,60 @@ def decode_kt_payload(data: bytes, header: IdrkEntry) -> bytes:
     return kt_zlib_chunks(data, header.unpacked_size, header.flags)
 
 
+def _strict_zlib_stream(data: bytes, remaining: int, error_prefix: str) -> bytes:
+    try:
+        d = zlib.decompressobj()
+        content = d.decompress(data, remaining + 1)
+    except zlib.error as exc:
+        raise FormatError(f'{error_prefix}_ZLIB_ERROR:{exc}') from exc
+    if not d.eof or d.unused_data or d.unconsumed_tail:
+        raise FormatError(f'{error_prefix}_ZLIB_NOT_SINGLE_COMPLETE_STREAM')
+    if len(content) > remaining:
+        raise FormatError(f'{error_prefix}_DECOMPRESSED_SIZE_OVERFLOW')
+    return content
+
+
 def decode_linkdata_payload(data: bytes, expected_size: int, flag: int) -> bytes:
-    """Only flag=0 raw and flag=1 normal zlib attempted; unknown codecs fail explicitly."""
+    """LINKDATA v2.0.1: 0x80-byte header, 64-KiB chunk table, framed zlib.
+
+    The record is 256-byte aligned in BIN. Each chunk is preceded by a u32
+    compressed byte count, and each stored chunk extent is rounded to 0x80.
+    Standard naked zlib is retained for synthetic/other-version test fixtures.
+    """
     if flag == 0:
         if len(data) != expected_size:
             raise FormatError('LINK_RAW_SIZE_MISMATCH')
         return data
     if flag != 1:
         raise FormatError(f'LINK_UNKNOWN_CODEC_FLAG:{flag}')
-    try:
-        decoder = zlib.decompressobj()
-        decoded = decoder.decompress(data, expected_size + 1)
-        if not decoder.eof or decoder.unused_data or decoder.unconsumed_tail:
-            raise FormatError('LINK_ZLIB_STREAM_INCOMPLETE')
-    except zlib.error as exc:
-        raise FormatError(f'LINK_ZLIB_DECODE_FAILED:{exc}') from exc
+    if len(data) < 0x80:
+        return _strict_zlib_stream(data, expected_size, 'LINK_RAW')
+    chunk_size, count, advertised = struct.unpack_from('<III', data)
+    if chunk_size != 65536 or not 1 <= count <= 32:
+        # Do not blindly search for zlib headers at arbitrary offsets.
+        return _strict_zlib_stream(data, expected_size, 'LINK_DIRECT')
+    if advertised != expected_size:
+        raise FormatError(f'LINK_HEADER_UNPACKED_SIZE_MISMATCH:{advertised}:{expected_size}')
+    if 12 + 4 * count > 0x80:
+        raise FormatError('LINK_CHUNK_TABLE_OVERFLOW')
+    stored_extents = struct.unpack_from('<' + 'I' * count, data, 12)
+    decoded = bytearray()
+    cursor = 0x80
+    for i, extent in enumerate(stored_extents):
+        if extent < 4 or cursor + extent > len(data):
+            raise FormatError(f'LINK_CHUNK_BOUNDS:{i}:{cursor}:{extent}:{len(data)}')
+        packed_size = struct.unpack_from('<I', data, cursor)[0]
+        if not packed_size or packed_size + 4 > extent:
+            raise FormatError(f'LINK_CHUNK_PACKED_SIZE_INVALID:{i}:{packed_size}:{extent}')
+        block = _strict_zlib_stream(data[cursor + 4:cursor + 4 + packed_size],
+                                    expected_size - len(decoded), 'LINK_CHUNK')
+        decoded.extend(block)
+        cursor += ((extent + 0x7f) // 0x80) * 0x80
     if len(decoded) != expected_size:
-        raise FormatError(f'LINK_ZLIB_SIZE_MISMATCH:{len(decoded)}:{expected_size}')
-    return decoded
+        raise FormatError(f'LINK_TOTAL_UNPACKED_SIZE_MISMATCH:{len(decoded)}:{expected_size}')
+    if cursor > len(data):
+        raise FormatError(f'LINK_FINAL_CHUNK_OVERRUN:{cursor}:{len(data)}')
+    return bytes(decoded)
 
 
 def find_fdata(base: Path, entry: RdxEntry) -> Path | None:

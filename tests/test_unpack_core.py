@@ -93,6 +93,20 @@ class TestFormatReaders(unittest.TestCase):
         with self.assertRaises(FormatError):
             decode_linkdata_payload(raw, len(raw), 9)
 
+    def test_linkdata_real_framed_chunk_layout(self):
+        raw = b'A' * 32080
+        z = zlib.compress(raw)
+        extent = 4 + len(z)
+        header = struct.pack('<IIII', 65536, 1, len(raw), extent) + bytes(0x80 - 16)
+        frame = struct.pack('<I', len(z)) + z
+        value = header + frame + bytes((-len(frame)) % 0x80)
+        value += bytes((-len(value)) % 0x100)
+        self.assertEqual(decode_linkdata_payload(value, len(raw), 1), raw)
+        with self.assertRaisesRegex(FormatError, 'LINK_HEADER_UNPACKED_SIZE_MISMATCH'):
+            decode_linkdata_payload(value, len(raw) + 1, 1)
+        with self.assertRaisesRegex(FormatError, 'LINK_CHUNK_BOUNDS'):
+            decode_linkdata_payload(value[:130], len(raw), 1)
+
     def test_idrk_record_and_kt_end_to_end(self):
         payload = bytes.fromhex(REAL_KT_COMPRESSED_HEX)
         meta = bytes(21)
