@@ -66,3 +66,32 @@ python3 Scripts/resources/import_pokohex.py \
     python Scripts/resources/g1t_to_png.py --input UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_000333_016719f3.g1t --texinfo-root UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native
 
 验收：视觉确认排列和 Alpha 后，再利用 RDB/KTID/对象引用建立 TEXINFO → G1T → 物品 ID 的直接对应。不能仅用名称中相同的数字或 RDB 邻近记录自动匹配。
+
+
+## M5.1 — 原生多记录 TEXINFO 图集与双层 G1T（2026-11-05）
+
+**新增已验证的结构证据（来自 2.0.1 原始解包字节，不是从 PokoHex 猜测）：**
+
+- 文件 `romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_042753_b4b1fe49.texinfo` 长度 **138,636 字节**，头部小端 `u32=1333`；满足 `4 + 1333 × 104` 的真实多记录结构。
+- 每条记录：64 字节 ASCII sprite name、一个原始 `u32` 层/页标识、8 个 `float32` UV 顶点和尾部 `u32`。目前已核对 `item_0006` 等真实名称及坐标。
+- 1,333 条记录的 `texture_layer_raw_u32` 分布是 **层 0: 727 条、层 1: 606 条**。这里的“层”是对原始字段的描述；G1T 内实际纹理数组/多图块排布还需要读取容器头和解码验证。
+- `item-texture-map.tsv` 和 `layout-textures.tsv` 的对应证据指向 `b4b1fe49.texinfo → a0ce9914.g1t`；后者原始资源路径 `root_038147_a0ce9914.g1t`，大小 **8,388,684 字节**。这些是 **索引关系**，并不等同于像素级已经验证正确。
+- 另外此前 `texinfo_names.csv` 中 28 个 `UNPARSED` 条目都是可疑的多记录 TEXINFO 文件：过去 `u32 == 1` 的假设过窄。新的解析器改为 `u32 record_count + record_count × 104` 校验和逐条输出；是否所有文件都能通过仍以工作流结果为准。
+
+**已经直接提交的映射：**
+
+`Textures/Indexes/item_atlas_1333_uv.csv` 包含 1,333 个原始 sprite 名、真实 TEXINFO 记录编号、四个 UV 边界、原始层字段、G1T Hash 与 KIDSOBJDB 索引来源。可据此按道具 ID 定位图集子区域。
+
+**新的执行入口：**
+
+- `Scripts/resources/g1t_to_png.py` 的 `parse_texinfo()` / `texinfo_index()` 现支持多记录 TEXINFO。
+- `Scripts/resources/link_item_textures.py` 将 TEXINFO 名称与 `item-texture-map.tsv`、`layout-textures.tsv` 按 Hash/名称交叉核对，并输出 `Textures/Indexes/item_native_texture_links.csv` 及 `item_native_texture_audit.json`（待相关工作流生成）。
+- `.github/workflows/unpack-m5-textures.yml` 负责重建完整 TEXINFO 索引和交叉核对，包含新的单元测试。
+- `Scripts/resources/crop_native_item_atlas.py` 使用 **原始层字段 + UV 坐标** 裁剪 G1T PNG 候选图；严格检查每层 BC 字节长度，不能确定层/MIP 结构时直接报错，不会默默错位。
+- `.github/workflows/unpack-m5-atlas-crop.yml` 单独提取少量样本的 linear/GOB 排列、V 轴上下方向候选，上传到 Actions Artifact 供肉眼对比；**不会覆盖** `Items/Icons/` 目录。
+
+**界限：** PokoHex PNG 是直接可用的第三方来源；原生 G1T 的 swizzle、图集层、坐标方向、色彩与 Alpha 都需要与真实画面对照，不能将仅 PNG 解码成功标为原版还原完成。缺失的 2,041 个 PokoHex PNG 条目也不能自动推断为游戏中没有图标。
+
+## 原生九语言核验结论
+
+`Items/Native_2.0.1/validation.json` 记录了以 `00983.bin` 的 4,600 槽物品表与九份 `04645.bin`～`04653.bin` 原生名称表核对的结果：`status=MATCH`、`differences=0`，九种语言均为 4,600 / 4,600 槽一致。文本来源校验已完成，但此结果不包含对道具图像的视觉验证。
