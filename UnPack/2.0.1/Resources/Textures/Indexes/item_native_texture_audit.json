@@ -1,0 +1,74 @@
+{
+  "scope": "2.0.1 indexed TEXINFO names and KIDSOBJDB layout edges; G1T pixels have not been visually validated",
+  "item_slots": 4600,
+  "named_items": 3585,
+  "pokohex_png_item_ids": 1615,
+  "indexed_item_ids": 1615,
+  "index_edges": 3229,
+  "texinfo_record_matches": 2609,
+  "atlas_record_link_rows": 1333,
+  "evidence": {
+    "LAYOUT_INDEX_ONLY_TEXINFO_NOT_SCANNED": 620,
+    "TEXINFO_NAME_UV_AND_LAYOUT_INDEX": 2609
+  },
+  "named_without_pokohex_png": 2040,
+  "missing_png_items_in_current_map": 0,
+  "top_shared_g1t_references": [
+    {
+      "texinfo_hash": "b4b1fe49",
+      "g1t_hash": "a0ce9914",
+      "sprite_links": 1333
+    },
+    {
+      "texinfo_hash": "51087a18",
+      "g1t_hash": "26a15463",
+      "sprite_links": 272
+    },
+    {
+      "texinfo_hash": "c8d83a39",
+      "g1t_hash": "35d04d04",
+      "sprite_links": 14
+    },
+    {
+      "texinfo_hash": "e521f5d2",
+      "g1t_hash": "9ef1bd1d",
+      "sprite_links": 1
+    },
+    {
+      "texinfo_hash": "12fa9031",
+      "g1t_hash": "d8bc5efc",
+      "sprite_links": 1
+    },
+    {
+      "texinfo_hash": "40d32a90",
+      "g1t_hash": "128700db",
+      "sprite_links": 1
+    },
+    {
+      "texinfo_hash": "ccfbded5",
+      "g1t_hash": "a0d69fa0",
+      "sprite_links": 1
+    },
+    {
+      "texinfo_hash": "5924931a",
+      "g1t_hash": "2f263e65",
+      "sprite_links": 1
+    },
+    {
+      "texinfo_hash": "86fd2d79",
+      "g1t_hash": "68f0e044",
+      "sprite_links": 1
+    },
+    {
+      "texinfo_hash": "b4d5c7d8",
+      "g1t_hash": "a2bb8223",
+      "sprite_links": 1
+    }
+  ],
+  "warnings": [
+    "PokoHex PNG copies are not native 2.0.1 G1T exports.",
+    "A shared G1T must be cropped by per-sprite TEXINFO UVs, not assigned whole to each item.",
+    "NO_TEXINFO_IN_SCANNED_PACK does not prove the game has no texture.",
+    "Correct swizzle, alpha, vertical origin and PNG visual identity remain unverified."
+  ]
+}
