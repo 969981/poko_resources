@@ -1,0 +1,74 @@
+name: Pokopia 2.0.1 M4 investigate actual unresolved KIDSOBJDB record layouts
+
+on:
+  push:
+    branches: [2.0.1_unpack]
+    paths:
+      - ".github/workflows/unpack-m4-diagnostics.yml"
+      - "Scripts/unpack/m4_diagnostics.py"
+      - "tests/test_m4_diagnostics.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m4-unresolved-diagnostics-2-0-1
+  cancel-in-progress: false
+
+jobs:
+  inspect-unresolved:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Sparse checkout only decoder code initially
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+            tests/
+      - name: Regress all M0-M4 parsers and RDOK debug layouts
+        run: python3 -m unittest discover -s tests -v
+      - name: Obtain the indexed published native types and 15 unresolved IDs
+        shell: bash
+        run: |
+          mkdir -p _work/m4
+          git show HEAD:UnPack/2.0.1/_reports/m3_resource_type_index.csv > _work/m4/types.csv
+          git show HEAD:UnPack/2.0.1/_reports/m4_kidsobjdb_unresolved.csv > _work/m4/unresolved.csv
+      - name: Build exact sparse-checkout paths for the 15 real game records
+        shell: bash
+        run: |
+          python3 -m Scripts.unpack.m4_diagnostics \
+            --mode plan --index _work/m4/types.csv \
+            --unresolved _work/m4/unresolved.csv \
+            --output _work/m4/paths.txt
+          git sparse-checkout set --no-cone --stdin < _work/m4/paths.txt
+      - name: SHA-verify and dump bounded IDOK/RDOK U32 words
+        shell: bash
+        run: |
+          python3 -m Scripts.unpack.m4_diagnostics \
+            --mode scan --index _work/m4/types.csv \
+            --unresolved _work/m4/unresolved.csv \
+            --output UnPack/2.0.1/_reports/m4_unresolved_layout_diagnostics.json
+      - name: Attach bounded evidence file
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m4-unresolved-word-layouts-${{ github.run_id }}
+          path: UnPack/2.0.1/_reports/m4_unresolved_layout_diagnostics.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit exact structural evidence without original game binaries
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --ff-only origin 2.0.1_unpack
+          git add --sparse -f -- UnPack/2.0.1/_reports/m4_unresolved_layout_diagnostics.json
+          if ! git diff --cached --quiet; then
+            git commit -m "audit(unpack): SHA-verified IDOK and RDOK layout evidence for 15 unresolved records [skip ci]"
+            git push origin HEAD:2.0.1_unpack
+          fi
