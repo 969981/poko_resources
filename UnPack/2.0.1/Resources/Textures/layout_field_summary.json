@@ -1,0 +1,39 @@
+{
+  "layout_rows": 9427,
+  "item_rows": 3229,
+  "statuses": {
+    "MISSING_NATIVE_DB": 179,
+    "VERIFIED_FIELDS": 9248
+  },
+  "mapped_item_statuses": {
+    "VERIFIED_FIELDS": 3229
+  },
+  "missing_native_databases": [
+    {
+      "name": "0x2943e4da__2865e466.kidsobjdb",
+      "rows": 1
+    },
+    {
+      "name": "0xacd220a8__24b83555.kidsobjdb",
+      "rows": 84
+    },
+    {
+      "name": "0xacd220a8__28f8bf29.kidsobjdb",
+      "rows": 84
+    },
+    {
+      "name": "0xed66e8af__252bc78f.kidsobjdb",
+      "rows": 4
+    },
+    {
+      "name": "0xed675d0e__25d85da4.kidsobjdb",
+      "rows": 6
+    }
+  ],
+  "field_offsets": {
+    "object_hash": 0,
+    "g1t_hash": 48,
+    "texinfo_hash": 52
+  },
+  "note": "Native KIDSOBJDB hash triples are validated. PNG content, sprite UV crop and physical G1T existence are separate acceptance criteria."
+}
