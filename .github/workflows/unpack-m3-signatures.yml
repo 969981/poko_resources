@@ -1,0 +1,170 @@
+name: Pokopia 2.0.1 M3 signature survey of all available records
+
+on:
+  push:
+    branches: [2.0.1_unpack]
+    paths:
+      - ".github/workflows/unpack-m3-signatures.yml"
+      - "Scripts/unpack/m3_probe.py"
+      - "Scripts/unpack/m3_aggregate.py"
+      - "tests/test_m3_probe.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m3-signature-survey-2-0-1
+  cancel-in-progress: false
+
+jobs:
+  tests:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+            tests/
+      - name: Validate probe reader and all existing format parsers
+        run: python3 -m unittest discover -s tests -v
+
+  probe:
+    needs: tests
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        include:
+          - {key: "kt_00011c54", rel: "0x00011c54.fdata", kind: "ktrdb", split: true}
+          - {key: "kt_05d525ae", rel: "0x05d525ae.fdata", kind: "ktrdb", split: true}
+          - {key: "kt_2943e4da", rel: "0x2943e4da.fdata", kind: "ktrdb", split: false}
+          - {key: "kt_38f972af", rel: "0x38f972af.fdata", kind: "ktrdb", split: true}
+          - {key: "kt_4b13d561", rel: "0x4b13d561.fdata", kind: "ktrdb", split: false}
+          - {key: "kt_514c644e", rel: "0x514c644e.fdata", kind: "ktrdb", split: false}
+          - {key: "kt_52482d03", rel: "0x52482d03.fdata", kind: "ktrdb", split: false}
+          - {key: "kt_57e5b452", rel: "0x57e5b452.fdata", kind: "ktrdb", split: false}
+          - {key: "kt_738d2a35", rel: "0x738d2a35.fdata", kind: "ktrdb", split: true}
+          - {key: "kt_79c5b922", rel: "0x79c5b922.fdata", kind: "ktrdb", split: true}
+          - {key: "kt_acd220a8", rel: "0xacd220a8.fdata", kind: "ktrdb", split: false}
+          - {key: "kt_e634eeb2", rel: "0xe634eeb2.fdata", kind: "ktrdb", split: false}
+          - {key: "kt_00176283", rel: "MountPoint_1/0x00176283.fdata", kind: "ktrdb", split: false}
+          - {key: "kt_939e81a6", rel: "MountPoint_1/0x939e81a6.fdata", kind: "ktrdb", split: false}
+          - {key: "kt_99d71093", rel: "MountPoint_1/0x99d71093.fdata", kind: "ktrdb", split: false}
+          - {key: "kt_aced3bfa", rel: "MountPoint_1/0xaced3bfa.fdata", kind: "ktrdb", split: false}
+          - {key: "kt_ed66e8af", rel: "MountPoint_1/0xed66e8af.fdata", kind: "ktrdb", split: false}
+          - {key: "kt_0017d6e2", rel: "MountPoint_2/0x0017d6e2.fdata", kind: "ktrdb", split: false}
+          - {key: "kt_c884bce7", rel: "MountPoint_2/0xc884bce7.fdata", kind: "ktrdb", split: true}
+          - {key: "kt_cebd4bd4", rel: "MountPoint_2/0xcebd4bd4.fdata", kind: "ktrdb", split: false}
+          - {key: "kt_e1d3773b", rel: "MountPoint_2/0xe1d3773b.fdata", kind: "ktrdb", split: false}
+          - {key: "kt_e80c0628", rel: "MountPoint_2/0xe80c0628.fdata", kind: "ktrdb", split: false}
+          - {key: "kt_e8fc91c2", rel: "MountPoint_2/0xe8fc91c2.fdata", kind: "ktrdb", split: false}
+          - {key: "kt_ed675d0e", rel: "MountPoint_2/0xed675d0e.fdata", kind: "ktrdb", split: false}
+          - {key: "file_0b5db05b", rel: "data/0x0b5db05b.file", kind: "ktrdb", split: true}
+          - {key: "file_272c6efb", rel: "data/0x272c6efb.file", kind: "ktrdb", split: true}
+          - {key: "file_9d464c3c", rel: "data/0x9d464c3c.file", kind: "ktrdb", split: false}
+          - {key: "file_f71746ba", rel: "data/0xf71746ba.file", kind: "ktrdb", split: true}
+          - {key: "linkdata", rel: "LD_C0_R.BIN", kind: "link", split: true}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    env:
+      M3_KEY: "${{ matrix.key }}"
+      M3_REL: "${{ matrix.rel }}"
+      M3_KIND: "${{ matrix.kind }}"
+      M3_SPLIT: "${{ matrix.split }}"
+    steps:
+      - name: Sparse checkout source container, original indexes and scripts
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+            2.0.1/romfs/LI_C0_R.IDX
+            2.0.1/romfs/LD_C0_R.BIN.7z.*
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdb
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdx
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdb
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdx
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/${{ matrix.rel }}*
+      - name: Install local 7-Zip extractor
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -qq -y --no-install-recommends 7zip
+      - name: Restore one input container and sample bounded decoded heads
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p _work/m3/partials
+          if [[ "$M3_KIND" == "link" ]]; then
+            src="2.0.1/romfs/LD_C0_R.BIN"
+            7z t -y "$src.7z.001"
+            7z x -y "$src.7z.001" -o2.0.1/romfs
+            python3 -m Scripts.unpack.m3_probe --kind link --source "$src" --output "_work/m3/partials/$M3_KEY"
+          else
+            root="2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE"
+            src="$root/$M3_REL"
+            if [[ "$M3_SPLIT" == "true" ]]; then
+              7z t -y "$src.7z.001"
+              7z x -y "$src.7z.001" "-o$(dirname "$src")"
+              rm -f "$src.7z."*
+            fi
+            test -s "$src"
+            python3 -m Scripts.unpack.m3_probe --kind ktrdb --base "$root" --source "$src" --output "_work/m3/partials/$M3_KEY"
+          fi
+      - name: Upload per-source signature records, never raw game payloads
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m3-${{ matrix.key }}
+          path: _work/m3/partials/${{ matrix.key }}.*
+          if-no-files-found: warn
+          retention-days: 30
+
+  aggregate:
+    needs: [tests, probe]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - name: Sparse checkout aggregators, without original game assets
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+      - name: Download all bounded-prefix metadata
+        uses: actions/download-artifact@v4
+        with:
+          pattern: m3-*
+          merge-multiple: true
+          path: _work/m3/reports
+      - name: Aggregate 29 sources and fail on any missing records
+        run: python3 -m Scripts.unpack.m3_aggregate --parts-dir _work/m3/reports
+      - name: Upload summary as searchable artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m3-summary-${{ github.run_id }}
+          path: UnPack/2.0.1/_reports/m3_*
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit M3 metadata to 2.0.1_unpack
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --ff-only origin 2.0.1_unpack
+          git add --sparse -f -- UnPack/2.0.1/_reports/m3_signatures.csv
+          git add --sparse -f -- UnPack/2.0.1/_reports/m3_signatures_summary.json
+          git add --sparse -f -- UnPack/2.0.1/_reports/m3_by_type_hash.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "data(unpack): classify 92012 native record prefixes without raw asset redownload [skip ci]"
+            git push origin HEAD:2.0.1_unpack
+          fi
