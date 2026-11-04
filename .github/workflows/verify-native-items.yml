@@ -1,0 +1,63 @@
+name: Verify Native Pokopia 2.0.1 Item Text
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/verify_native_items.py"
+      - ".github/workflows/verify-native-items.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-native-items-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Sparse checkout the actual 2.0.1 tables and reference texts
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/verify_native_items.py
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04645.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04646.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04647.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04648.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04649.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04650.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04651.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04652.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04653.bin
+            UnPack/2.0.1/Resources/Items/Text/
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/
+
+      - name: Decode native tables and generate per-ID comparison
+        run: python3 Scripts/resources/verify_native_items.py
+
+      - name: Commit original 2.0.1 texts, provenance and differences
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- UnPack/2.0.1/Resources/Items/Native_2.0.1
+          if git diff --cached --quiet; then
+            echo "No changed data"
+            exit 0
+          fi
+          git commit -m "resources: record native 2.0.1 nine-language comparison"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
