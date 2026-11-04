@@ -12,10 +12,10 @@ class CoverageTests(unittest.TestCase):
         source = "0x00000001.fdata"
         def record(i, magic, offset=0):
             return N(record_index=i, footer_magic=magic, footer_layout="standard_13",
-                     fdata_index=0, name_hash=(0x25768c1b if magic == 0x0c01 else 111 + i),
+                     fdata_index=(1 if i == 1 else 0), name_hash=(0x25768c1b if magic == 0x0c01 else 111 + i),
                      type_hash=201 + i, uncompressed_size=100)
         root = [record(0, 0x0401), record(1, 0x0401), record(2, 0x0c01)]
-        rdx = [N(filename=source, platform_flags=0xffff)]
+        rdx = [N(filename=source, platform_flags=0xffff), N(filename="0x00000002.fdata", platform_flags=0xffff)]
         link = [N(index=0, stored_size=13), N(index=1, stored_size=0), N(index=2, stored_size=128)]
         kt_manifest = "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00000001.fdata/_manifest.csv"
         link_manifest = "UnPack/2.0.1/romfs/LD_C0_R.BIN/_manifest.csv"
