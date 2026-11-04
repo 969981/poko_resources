@@ -32,10 +32,13 @@ def run(base: Path, output: Path, extract: bool, decode: bool, limit: int | None
                    'flags': f'{en.flags:08x}', 'footer_magic': f'{en.footer_magic:04x}',
                    'fdata_index': en.fdata_index, 'fdata_offset': en.fdata_offset,
                    'fdata_entry_size': en.fdata_entry_size, 'uncompressed_size': en.uncompressed_size,
-                   'footer_extra_hex': en.footer_extra_hex,
+                   'footer_extra_hex': en.footer_extra_hex, 'footer_layout': en.footer_layout,
                    'status': 'INDEXED', 'error': '', 'source_path': '', 'output_sha256': '', 'decoded_sha256': ''}
-            rd = rdex[en.fdata_index]
-            if en.footer_magic == 0x0c01:
+            rd = rdex[en.fdata_index] if en.fdata_index >= 0 else None
+            if en.footer_layout != 'standard_13':
+                container = None
+                mode = 'opaque_footer'
+            elif en.footer_magic == 0x0c01:
                 container = base / 'data' / f'0x{en.name_hash:08x}.file'
                 mode = 'standalone_file'
             elif en.footer_magic == 0x0401:
@@ -44,7 +47,9 @@ def run(base: Path, output: Path, extract: bool, decode: bool, limit: int | None
             else:
                 container = None
                 mode = 'unsupported_footer'
-            if mode == 'unsupported_footer':
+            if mode == 'opaque_footer':
+                row.update(status='UNSUPPORTED_FOOTER_LAYOUT', error=en.footer_layout + ':' + en.footer_extra_hex)
+            elif mode == 'unsupported_footer':
                 row.update(status='UNSUPPORTED_FOOTER', error=f'0x{en.footer_magic:04x}')
             elif container is None or not container.is_file():
                 row.update(status='CONTAINER_NOT_PRESENT', error=f'{mode}:{rd.filename}')
@@ -103,7 +108,7 @@ def run(base: Path, output: Path, extract: bool, decode: bool, limit: int | None
               'statuses': {state: sum(row['status'] == state for row in rows) for state in sorted({r['status'] for r in rows})}}
     save_csv(output / 'rdb_records.csv', rows)
     save_csv(output / 'rdx_containers.csv', rdx_rows)
-    save_csv(output / 'unresolved.csv', [r for r in rows if r['status'] in ('UNSUPPORTED_FOOTER', 'CONTAINER_NOT_PRESENT', 'EXTRACTION_FAILED', 'DECODE_FAILED')])
+    save_csv(output / 'unresolved.csv', [r for r in rows if r['status'] in ('UNSUPPORTED_FOOTER', 'UNSUPPORTED_FOOTER_LAYOUT', 'CONTAINER_NOT_PRESENT', 'EXTRACTION_FAILED', 'DECODE_FAILED')])
     save_json(output / 'ktrdb_report.json', report)
     return report
 

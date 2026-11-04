@@ -60,6 +60,7 @@ class RdbEntry:
     fdata_index: int
     footer_tail: int
     footer_extra_hex: str = ""
+    footer_layout: str = "standard_13"
 
 
 @dataclass(frozen=True)
@@ -112,25 +113,28 @@ def parse_rdb(data: bytes, catalog: str, rdx: list[RdxEntry]) -> tuple[list[RdbE
             raise FormatError(f'RDB_BAD_RECORD_MAGIC:{at}')
         entry_size, payload_size, unpacked = struct.unpack_from('<QQQ', data, at + 8)
         entry_type, name_hash, type_hash, flags = struct.unpack_from('<IIII', data, at + 32)
-        if entry_size < 48 + payload_size or payload_size not in (13, 17) or at + entry_size > len(data):
+        if entry_size < 48 + payload_size or not 13 <= payload_size <= 128 or at + entry_size > len(data):
             raise FormatError(f'RDB_BAD_ENTRY_SIZE_OR_FOOTER:{at}:{entry_size}:{payload_size}')
         footer_blob = data[at + entry_size - payload_size:at + entry_size]
-        # Legacy 13-byte footer supports unknown magic (reported downstream).
-        # Extended 17-byte footer must disambiguate its extra four bytes.
-        candidates = []
-        for start in (0,) if payload_size == 13 else (0, 4):
-            magic, offset, size, index, tail = RDB_FOOTER.unpack_from(footer_blob, start)
-            if payload_size == 13 and index >= len(rdx):
+        # Only 13-byte format is byte-located. Real root RDB also has 17-byte
+        # and potentially other footer variants; preserve opaque bytes as-is,
+        # never invent an FDATA index or offset for those records.
+        if payload_size == 13:
+            magic, offset, size, index, tail = RDB_FOOTER.unpack(footer_blob)
+            if index >= len(rdx):
                 raise FormatError(f'RDB_INVALID_RDX_POSITION:{at}:{index}')
-            if (payload_size == 13 or magic in (0x0401, 0x0c01)) and index < len(rdx):
-                extra = footer_blob[:start] + footer_blob[start + RDB_FOOTER.size:]
-                candidates.append((magic, offset, size, index, tail, extra.hex()))
-        if len(candidates) != 1:
-            raise FormatError(f'RDB_UNKNOWN_OR_AMBIGUOUS_FOOTER:{at}:{payload_size}:'
-                              f'{footer_blob.hex()}:{len(candidates)}')
-        magic, offset, size, index, tail, extra_hex = candidates[0]
+            layout = 'standard_13'
+            extra_hex = ''
+        else:
+            magic = int.from_bytes(footer_blob[:2], 'little')
+            offset = size = 0
+            index = -1
+            tail = 0
+            layout = f'opaque_{payload_size}'
+            extra_hex = footer_blob.hex()
         records.append(RdbEntry(catalog, len(records), at, entry_size, unpacked,
-                                name_hash, type_hash, flags, magic, offset, size, index, tail, extra_hex))
+                                name_hash, type_hash, flags, magic, offset, size, index, tail,
+                                extra_hex, layout))
         at += (entry_size + 3) & ~3
     if len(records) != advertised or at != len(data):
         raise FormatError(f'RDB_COUNT_OR_END_MISMATCH:{len(records)}:{advertised}:{at}:{len(data)}')

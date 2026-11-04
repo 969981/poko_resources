@@ -22,6 +22,7 @@ def run(idx_path: Path, bin_path: Path | None, output: Path, start: int, limit: 
             row['error'] = ''
             row['output_sha256'] = ''
             row['decoded_sha256'] = ''
+            row['raw_head64_hex'] = ''
             if bin_size is not None and entry.offset + entry.stored_size > bin_size:
                 row.update(status='INVALID_RANGE', error='offset+stored_size exceeds BIN')
             eligible = entry.index >= start and (limit is None or total_processed < limit)
@@ -44,6 +45,7 @@ def run(idx_path: Path, bin_path: Path | None, output: Path, start: int, limit: 
                             if not resume or not raw_file.exists() or raw_file.stat().st_size != len(blob) or hashlib.sha256(raw_file.read_bytes()).digest() != hashlib.sha256(blob).digest():
                                 raw_file.write_bytes(blob)
                         row['status'] = 'EXTRACTED'
+                        row['raw_head64_hex'] = blob[:64].hex()
                         row['output_sha256'] = hashlib.sha256(blob).hexdigest()
                         if decode:
                             try:
