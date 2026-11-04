@@ -1,0 +1,84 @@
+name: M5 - Export native extra 14 item PNG candidates
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/export_special14.py"
+      - ".github/workflows/unpack-m5-extra14-export.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-extra14-export-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/g1t_to_png.py
+            Scripts/resources/crop_native_item_atlas.py
+            Scripts/resources/score_atlas_candidates.py
+            Scripts/resources/export_special14.py
+            UnPack/2.0.1/Resources/Items/Icons
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/Extra14Candidates
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/MountPoint_1/0x00176283.fdata/native/root_012800_35d04d04.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/MountPoint_1/0x00176283.fdata/native/root_047603_c8d83a39.texinfo
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: python -m pip install "Pillow>=11,<13"
+
+      - name: Reproduce mixed-format atlas 14 item candidates
+        run: python -m Scripts.resources.export_special14
+
+      - name: Check original file and pixel candidates
+        run: |
+          python - <<'PY'
+          import json,csv
+          from pathlib import Path
+          from PIL import Image
+          p=Path("UnPack/2.0.1/Resources/Items/Native_2.0.1/Extra14Candidates")
+          info=json.loads((p/"summary.json").read_text(encoding="utf-8"))
+          assert info["count"]==14,info
+          images=list(p.glob("item_*.png"))
+          assert len(images)==14,images
+          with (p/"manifest.csv").open(encoding="utf-8",newline="") as f:
+              rows=list(csv.DictReader(f))
+          assert len(rows)==14
+          assert max(float(r["reference_distance"]) for r in rows)<0.15
+          for x in images:
+              with Image.open(x) as im:
+                  assert im.size==(72,72)
+                  im.verify()
+          print("Native special candidate icons",len(images))
+          PY
+
+      - name: Commit extra images without replacing existing icons
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Items/Native_2.0.1/Extra14Candidates
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "data(m5): add 14 mixed-format native item icon candidates"
+          for n in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
