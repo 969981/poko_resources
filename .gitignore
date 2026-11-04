@@ -1,0 +1,15 @@
+# Generated extraction and restoration outputs only
+_work/
+UnPack/2.0.1/LINKDATA/
+UnPack/2.0.1/KTRDB/
+UnPack/2.0.1/Converted/
+
+# Local analysis databases and binary caches
+_meta/2.0.1/*.sqlite
+_meta/2.0.1/*.sqlite-*
+_meta/2.0.1/*.db
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+*.tmp
