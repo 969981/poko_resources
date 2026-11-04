@@ -1,0 +1,81 @@
+name: M5 - Reconcile 1615 Original Item Icon IDs
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/reconcile_native_item_icons.py"
+      - ".github/workflows/unpack-m5-reconcile-item-icons.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m5-reconcile-icons-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  audit-unique-icons:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/score_atlas_candidates.py
+            Scripts/resources/reconcile_native_item_icons.py
+            UnPack/2.0.1/Resources/Items/Icons
+            UnPack/2.0.1/Resources/Items/Native_2.0.1
+            UnPack/2.0.1/Resources/Textures/Indexes/item-id-inventory.tsv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PNG verification and comparison
+        run: python -m pip install "Pillow>=11,<13"
+
+      - name: Reconcile three native atlases and keep overlapping variants
+        run: python -m Scripts.resources.reconcile_native_item_icons
+
+      - name: Validate 1615 multilingual native icon links
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          root=Path("UnPack/2.0.1/Resources/Items/Native_2.0.1")
+          d=json.loads((root/"native_icon_coverage.json").read_text(encoding="utf-8"))
+          with (root/"native_icon_complete_catalog.csv").open(encoding="utf-8",newline="") as f:
+              rows=list(csv.DictReader(f))
+          with (root/"native_icon_variant_review.csv").open(encoding="utf-8",newline="") as f:
+              variants=list(csv.DictReader(f))
+          assert d["unique_item_ids"]==1615,d
+          assert d["images_checked_for_existence_size_and_sha256"]==1619,d
+          assert len(rows)==1615 and len(variants)==4,(len(rows),len(variants))
+          assert len(set(r["item_id"] for r in rows))==1615
+          assert [int(v["item_id"]) for v in variants]==[1677,1764,1765,2742]
+          assert d["canonical_source_counts"]=={"primary":1333,"extra272":268,"extra14":14}
+          print("Reconciled native icon catalog",len(rows),"source records",1619)
+          PY
+
+      - name: Commit unified provenance catalog (no duplicate image copies)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Items/Native_2.0.1/native_icon_complete_catalog.csv UnPack/2.0.1/Resources/Items/Native_2.0.1/native_icon_variant_review.csv UnPack/2.0.1/Resources/Items/Native_2.0.1/native_icon_coverage.json
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "data(m5): index 1615 distinct original icons and four native variants"
+          for i in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
