@@ -8,7 +8,7 @@ from .core import FormatError, decode_linkdata_payload, parse_idx, save_csv, sav
 
 
 def run(idx_path: Path, bin_path: Path | None, output: Path, start: int, limit: int | None,
-        dry_run: bool, decode: bool, resume: bool) -> dict:
+        dry_run: bool, decode: bool, resume: bool, verify_only: bool = False) -> dict:
     entries = parse_idx(idx_path.read_bytes())
     if bin_path and not bin_path.is_file():
         raise FileNotFoundError(f'Restore the BIN first: {bin_path}')
@@ -21,6 +21,7 @@ def run(idx_path: Path, bin_path: Path | None, output: Path, start: int, limit: 
             row['status'] = 'INDEXED' if entry.stored_size else 'EMPTY'
             row['error'] = ''
             row['output_sha256'] = ''
+            row['decoded_sha256'] = ''
             if bin_size is not None and entry.offset + entry.stored_size > bin_size:
                 row.update(status='INVALID_RANGE', error='offset+stored_size exceeds BIN')
             eligible = entry.index >= start and (limit is None or total_processed < limit)
@@ -32,23 +33,27 @@ def run(idx_path: Path, bin_path: Path | None, output: Path, start: int, limit: 
                     row['status'] = 'DRY_RUN_LOCATED'
                 else:
                     raw_file = output / 'raw' / f'{entry.index:05d}.bin'
-                    raw_file.parent.mkdir(parents=True, exist_ok=True)
+                    if not verify_only:
+                        raw_file.parent.mkdir(parents=True, exist_ok=True)
                     inp.seek(entry.offset)
                     blob = inp.read(entry.stored_size)
                     if len(blob) != entry.stored_size:
                         row.update(status='TRUNCATED_READ', error='short read')
                     else:
-                        if not resume or not raw_file.exists() or raw_file.stat().st_size != len(blob) or hashlib.sha256(raw_file.read_bytes()).digest() != hashlib.sha256(blob).digest():
-                            raw_file.write_bytes(blob)
+                        if not verify_only:
+                            if not resume or not raw_file.exists() or raw_file.stat().st_size != len(blob) or hashlib.sha256(raw_file.read_bytes()).digest() != hashlib.sha256(blob).digest():
+                                raw_file.write_bytes(blob)
                         row['status'] = 'EXTRACTED'
                         row['output_sha256'] = hashlib.sha256(blob).hexdigest()
                         if decode:
                             try:
                                 decoded = decode_linkdata_payload(blob, entry.unpacked_size, entry.flag)
                                 dest = output / 'decoded' / f'{entry.index:05d}.bin'
-                                dest.parent.mkdir(parents=True, exist_ok=True)
-                                if not (resume and dest.is_file() and dest.stat().st_size == len(decoded) and hashlib.sha256(dest.read_bytes()).digest() == hashlib.sha256(decoded).digest()):
-                                    dest.write_bytes(decoded)
+                                if not verify_only:
+                                    dest.parent.mkdir(parents=True, exist_ok=True)
+                                    if not (resume and dest.is_file() and dest.stat().st_size == len(decoded) and hashlib.sha256(dest.read_bytes()).digest() == hashlib.sha256(decoded).digest()):
+                                        dest.write_bytes(decoded)
+                                row['decoded_sha256'] = hashlib.sha256(decoded).hexdigest()
                                 row['status'] = 'DECOMPRESSED'
                             except FormatError as exc:
                                 row['status'] = 'DECODE_FAILED'
@@ -80,8 +85,9 @@ def main(argv=None):
     p.add_argument('--dry-run', action='store_true')
     p.add_argument('--decode', action='store_true')
     p.add_argument('--resume', action='store_true')
+    p.add_argument('--verify-only', action='store_true', help='Validate and hash each record without writing game payloads')
     args = p.parse_args(argv)
-    print(run(args.idx, args.bin, args.output, args.start, args.limit, args.dry_run, args.decode, args.resume))
+    print(run(args.idx, args.bin, args.output, args.start, args.limit, args.dry_run, args.decode, args.resume, args.verify_only))
     return 0
 
 
