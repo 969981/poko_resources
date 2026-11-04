@@ -1,0 +1,37 @@
+{
+  "game_version": "2.0.1",
+  "original_native_png_records": 1619,
+  "unique_item_ids": 1615,
+  "primary_atlas": 1333,
+  "secondary_atlas": 272,
+  "mixed_special_atlas": 14,
+  "canonical_source_counts": {
+    "primary": 1333,
+    "extra14": 14,
+    "extra272": 268
+  },
+  "duplicate_item_ids": [
+    1677,
+    1764,
+    1765,
+    2742
+  ],
+  "images_checked_for_existence_size_and_sha256": 1619,
+  "language_columns": [
+    "en",
+    "jp",
+    "de",
+    "es",
+    "fr",
+    "it",
+    "ko",
+    "zhs",
+    "zht"
+  ],
+  "warnings": [
+    "The 1615 icon IDs have source-linked PNGs, but 3586 items have nonempty names; an icon is not proven present for every named ID.",
+    "Reference differences are heuristic; neither perfect native pixels nor object identity is established by a similarity score.",
+    "Four overlapping item IDs preserve all native atlas variants without overwriting earlier PNGs.",
+    "Do not classify material vs other items by name alone."
+  ]
+}
