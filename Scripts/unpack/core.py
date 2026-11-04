@@ -59,6 +59,7 @@ class RdbEntry:
     fdata_entry_size: int
     fdata_index: int
     footer_tail: int
+    footer_extra_hex: str = ""
 
 
 @dataclass(frozen=True)
@@ -111,14 +112,25 @@ def parse_rdb(data: bytes, catalog: str, rdx: list[RdxEntry]) -> tuple[list[RdbE
             raise FormatError(f'RDB_BAD_RECORD_MAGIC:{at}')
         entry_size, payload_size, unpacked = struct.unpack_from('<QQQ', data, at + 8)
         entry_type, name_hash, type_hash, flags = struct.unpack_from('<IIII', data, at + 32)
-        if entry_size < 61 or payload_size != 13 or at + entry_size > len(data):
+        if entry_size < 48 + payload_size or payload_size not in (13, 17) or at + entry_size > len(data):
             raise FormatError(f'RDB_BAD_ENTRY_SIZE_OR_FOOTER:{at}:{entry_size}:{payload_size}')
-        footer = RDB_FOOTER.unpack_from(data, at + entry_size - payload_size)
-        magic, offset, size, index, tail = footer
-        if index >= len(rdx):
-            raise FormatError(f'RDB_INVALID_RDX_POSITION:{at}:{index}')
+        footer_blob = data[at + entry_size - payload_size:at + entry_size]
+        # Legacy 13-byte footer supports unknown magic (reported downstream).
+        # Extended 17-byte footer must disambiguate its extra four bytes.
+        candidates = []
+        for start in (0,) if payload_size == 13 else (0, 4):
+            magic, offset, size, index, tail = RDB_FOOTER.unpack_from(footer_blob, start)
+            if payload_size == 13 and index >= len(rdx):
+                raise FormatError(f'RDB_INVALID_RDX_POSITION:{at}:{index}')
+            if (payload_size == 13 or magic in (0x0401, 0x0c01)) and index < len(rdx):
+                extra = footer_blob[:start] + footer_blob[start + RDB_FOOTER.size:]
+                candidates.append((magic, offset, size, index, tail, extra.hex()))
+        if len(candidates) != 1:
+            raise FormatError(f'RDB_UNKNOWN_OR_AMBIGUOUS_FOOTER:{at}:{payload_size}:'
+                              f'{footer_blob.hex()}:{len(candidates)}')
+        magic, offset, size, index, tail, extra_hex = candidates[0]
         records.append(RdbEntry(catalog, len(records), at, entry_size, unpacked,
-                                name_hash, type_hash, flags, magic, offset, size, index, tail))
+                                name_hash, type_hash, flags, magic, offset, size, index, tail, extra_hex))
         at += (entry_size + 3) & ~3
     if len(records) != advertised or at != len(data):
         raise FormatError(f'RDB_COUNT_OR_END_MISMATCH:{len(records)}:{advertised}:{at}:{len(data)}')
