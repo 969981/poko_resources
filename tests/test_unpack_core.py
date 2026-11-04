@@ -61,6 +61,19 @@ class TestFormatReaders(unittest.TestCase):
         with self.assertRaisesRegex(FormatError, 'RDB_INVALID_RDX_POSITION'):
             parse_rdb(synth_rdb(1, 2, 16, 157, fidx=1), 'root', rdx)
 
+    def test_rdb_extended_17_byte_footer_variants(self):
+        rdx = parse_rdx(struct.pack('<HHI', 0, 0xffff, 0x4b13d561))
+        base_footer = struct.pack('<HIIHB', 0x0401, 1184, 157, 0, 0)
+        for blob in (b'\xaa\xbb\xcc\xdd' + base_footer, base_footer + b'\xaa\xbb\xcc\xdd'):
+            row_len = 48 + len(blob)
+            header = b'_DRK0000' + struct.pack('<4I', 32, 0, 1, 0) + bytes(8)
+            record = (b'IDRK0000' + struct.pack('<QQQIIII', row_len, len(blob), 96,
+                                                1, 0xf79cb076, 0x20a6a0bb, 0) + blob)
+            record += bytes((-len(record)) % 4)
+            entries, _ = parse_rdb(header + record, 'root', rdx)
+            self.assertEqual(entries[0].fdata_offset, 1184)
+            self.assertEqual(entries[0].footer_extra_hex, 'aabbccdd')
+
     def test_real_kt_frame(self):
         compressed = bytes.fromhex(REAL_KT_COMPRESSED_HEX)
         decoded = kt_zlib_chunks(compressed, 96, 0x400000)
