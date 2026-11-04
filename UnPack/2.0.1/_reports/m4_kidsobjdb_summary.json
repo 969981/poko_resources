@@ -1,0 +1,29 @@
+{
+  "expected_records": 4144,
+  "reported_records": 4144,
+  "shards": 8,
+  "distinct_record_ids": 4144,
+  "statuses": {
+    "FIXED_WIDTH_ONLY": 4129,
+    "PARTIAL_UNSUPPORTED_OR_RDOK": 11,
+    "PARSE_FAILED": 4
+  },
+  "blocks": {
+    "idok_blocks": 626305,
+    "rdok_blocks": 40,
+    "unsupported_field_types": 0,
+    "partial_blocks": 40
+  },
+  "unresolved_records": 15,
+  "failed_parse_records": 4,
+  "metadata_complete": true,
+  "semantic_complete": false,
+  "evidence_level": "Typed IDOK fixed-width values (first 8 per field); RDOK opaque",
+  "anomalies": [],
+  "remaining_barriers": [
+    "Unknown KIDSOBJDB property types and RDOK structures are not decoded",
+    "Only first 8 field values retained per property, not every value",
+    "Other original asset families require separate type-aware converters",
+    "27 source FDATA/FILE containers are missing for 6,118 RDB entries"
+  ]
+}
