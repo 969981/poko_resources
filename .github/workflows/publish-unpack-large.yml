@@ -1,0 +1,106 @@
+name: Publish Pokopia 2.0.1 large split FDATA
+
+on:
+  push:
+    branches: [2.0.1_unpack]
+    paths:
+      - '.github/workflows/publish-unpack-large.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-unpack-publish-2-0-1
+  cancel-in-progress: false
+
+jobs:
+  publish-large:
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include:
+          - {hash: "00011c54", source: "0x00011c54", split: true, parts: 4}
+          - {hash: "05d525ae", source: "0x05d525ae", split: true, parts: 4}
+          - {hash: "38f972af", source: "0x38f972af", split: true, parts: 8}
+          - {hash: "738d2a35", source: "0x738d2a35", split: true, parts: 4}
+          - {hash: "79c5b922", source: "0x79c5b922", split: true, parts: 2}
+          - {hash: "57e5b452", source: "0x57e5b452", split: false, parts: 2}
+          - {hash: "0017d6e2", source: "MountPoint_2/0x0017d6e2", split: false, parts: 2}
+          - {hash: "cebd4bd4", source: "MountPoint_2/0xcebd4bd4", split: false, parts: 2}
+          - {hash: "e1d3773b", source: "MountPoint_2/0xe1d3773b", split: false, parts: 1}
+          - {hash: "e80c0628", source: "MountPoint_2/0xe80c0628", split: false, parts: 2}
+          - {hash: "e8fc91c2", source: "MountPoint_2/0xe8fc91c2", split: false, parts: 2}
+          - {hash: "ed675d0e", source: "MountPoint_2/0xed675d0e", split: false, parts: 1}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    env:
+      FDATA_HASH: "${{ matrix.hash }}"
+      PART_COUNT: "${{ matrix.parts }}"
+      FDATA_SOURCE: "${{ matrix.source }}"
+      FDATA_SPLIT: "${{ matrix.split }}"
+    steps:
+      - name: Sparse checkout scripts, RDB indexes and this one volume set
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          persist-credentials: true
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+            tests/
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdb
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdx
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdb
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdx
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/${{ matrix.source }}.fdata*
+      - name: Install 7-Zip
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -qq -y --no-install-recommends 7zip
+      - name: Test streaming decoder and publisher
+        run: python3 -m unittest discover -s tests -v
+      - name: Restore this split FDATA only
+        shell: bash
+        run: |
+          set -euo pipefail
+          base=2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE
+          src="$base/$(dirname "$FDATA_SOURCE")"
+          if [[ "$FDATA_SPLIT" == "true" ]]; then
+            first="$src/0x$FDATA_HASH.fdata.7z.001"
+            test -s "$first"
+            7z t -y "$first"
+            7z x -y "$first" "-o$src"
+            test -s "$src/0x$FDATA_HASH.fdata"
+            rm -f "$src/0x$FDATA_HASH.fdata.7z."*
+          else
+            test -s "$src/0x$FDATA_HASH.fdata"
+          fi
+          sha256sum "$src/0x$FDATA_HASH.fdata"
+      - name: Publish and push partitioned verified decoded records
+        shell: bash
+        run: |
+          set -euo pipefail
+          src="2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/$(dirname "$FDATA_SOURCE")"
+          source_sha="$(sha256sum "$src/0x$FDATA_HASH.fdata" | awk '{print $1}')"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          outdir="UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/$FDATA_SOURCE.fdata"
+          for ((part=0; part<PART_COUNT; part++)); do
+            python3 -m Scripts.unpack.publish_stream \
+              --hash "$FDATA_HASH" --part-index "$part" --parts "$PART_COUNT" \
+              --source-sha "$source_sha" --max-total-mib 800 --output UnPack/2.0.1
+            if [[ -d "$outdir" ]]; then
+              git add --sparse -f -- "$outdir"
+            fi
+            report_path="$(printf 'UnPack/2.0.1/_reports/ktrdb_%s_part%02d.json' "$FDATA_HASH" "$part")"
+            git add --sparse -f -- "$report_path"
+            if git diff --cached --quiet; then
+              echo "No content changes in partition $part"
+            else
+              git commit -m "data(unpack): 0x$FDATA_HASH.fdata partition $part/$PART_COUNT [skip ci]"
+              git push origin HEAD:2.0.1_unpack
+            fi
+          done
