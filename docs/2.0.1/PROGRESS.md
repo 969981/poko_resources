@@ -27,3 +27,11 @@ python -m unittest discover -s tests -v
 ```
 
 在 `_work/2.0.1-restored/` 解压完成后，再使用 `--bin`、`--extract --decode` 以有限 `--limit` 做真实样本提取并保存完整状态报告。
+
+## M0–M2 第二轮验证（2026-11-04）
+
+- [完整实测报告](./ROUND2_RESULTS.md) 已记录真实 Actions 运行与恢复测试。
+- M1：12,298 IDX 记录全部分类；9,792 数据解码成功，1 条有效零长度占位，2,505 空索引，0 失败。对应 Run #41824089583。
+- M2：root 60,722 + system 25,110 = 85,832 条 RDB 索引可解析；单个小型 FDATA 520/520 条成功解压，5,219 扩展 footer 尚待解读。
+- M0：LINKDATA 两卷已通过 7z t/恢复；其余分卷的完整校验仍待全量 run 结果。
+- 额外已触发 [全量尝试 Run #41824295903](https://github.com/969981/poko_resources/actions/runs/41824295903)，状态以 Actions 日志为准。
