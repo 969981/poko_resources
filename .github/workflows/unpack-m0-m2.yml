@@ -62,7 +62,7 @@ jobs:
           test -s "$RUNNER_TEMP/linkdata-restored/LD_C0_R.BIN"
           python3 -m Scripts.unpack.linkdata --idx 2.0.1/romfs/LI_C0_R.IDX \
             --bin "$RUNNER_TEMP/linkdata-restored/LD_C0_R.BIN" \
-            --output _meta/2.0.1/ci-linkdata --decode --verify-only --limit 250
+            --output _meta/2.0.1/ci-linkdata --decode --verify-only
       - name: Real IDX, root/system RDB and small FDATA validation
         run: python3 -m Scripts.unpack.smoke --source 2.0.1 --output _meta/2.0.1/ci-smoke
       - name: M2 targeted real FDATA verification (full RDB indexes)
@@ -70,7 +70,7 @@ jobs:
           python3 -m Scripts.unpack.ktrdb \
             --base 2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE \
             --output _meta/2.0.1/ci-ktrdb --extract --decode --verify-only \
-            --only-fdata 4b13d561 --limit 250
+            --only-fdata 4b13d561
       - name: Upload reports only (not game assets)
         if: always()
         uses: actions/upload-artifact@v4
