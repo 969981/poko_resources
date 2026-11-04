@@ -106,15 +106,6 @@ jobs:
       matrix:
         include:
           - {hash: "38f972af", source: "0x38f972af", split: true, parts: 64}
-          - {hash: "738d2a35", source: "0x738d2a35", split: true, parts: 32}
-          - {hash: "79c5b922", source: "0x79c5b922", split: true, parts: 8}
-          - {hash: "57e5b452", source: "0x57e5b452", split: false, parts: 2}
-          - {hash: "0017d6e2", source: "MountPoint_2/0x0017d6e2", split: false, parts: 2}
-          - {hash: "cebd4bd4", source: "MountPoint_2/0xcebd4bd4", split: false, parts: 4}
-          - {hash: "e1d3773b", source: "MountPoint_2/0xe1d3773b", split: false, parts: 2}
-          - {hash: "e80c0628", source: "MountPoint_2/0xe80c0628", split: false, parts: 2}
-          - {hash: "e8fc91c2", source: "MountPoint_2/0xe8fc91c2", split: false, parts: 2}
-          - {hash: "ed675d0e", source: "MountPoint_2/0xed675d0e", split: false, parts: 1}
     runs-on: ubuntu-24.04
     timeout-minutes: 360
     env:
