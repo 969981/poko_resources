@@ -1,0 +1,147 @@
+name: Pokopia 2.0.1 M4 decode 4144 KIDSOBJDB records
+
+on:
+  push:
+    branches: [2.0.1_unpack]
+    paths:
+      - ".github/workflows/unpack-m4-all-kidsobjdb.yml"
+      - "Scripts/unpack/m4_batch.py"
+      - "Scripts/unpack/m4_aggregate.py"
+      - "tests/test_m4_batch.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m4-kidsobjdb-all-2-0-1
+  cancel-in-progress: false
+
+jobs:
+  tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+            tests/
+      - name: Validate all M0-M4 format readers and hash controls
+        run: python3 -m unittest discover -s tests -v
+
+  decode:
+    needs: tests
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    steps:
+      - name: Sparse checkout only code at first
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+            tests/
+      - name: Load M3 type index metadata without raw-game copies
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p _work/m4
+          git show HEAD:UnPack/2.0.1/_reports/m3_resource_type_index.csv > _work/m4/type_index.csv
+      - name: Compute precise Git sparse patterns for this deterministic record shard
+        shell: bash
+        env:
+          SHARD: ${{ matrix.shard }}
+        run: |
+          set -euo pipefail
+          python3 -m Scripts.unpack.m4_batch \
+            --mode plan --index _work/m4/type_index.csv \
+            --shard "$SHARD" --shards 8 --patterns _work/m4/sparse_patterns.txt
+          git sparse-checkout set --no-cone --stdin < _work/m4/sparse_patterns.txt
+      - name: SHA256-check each source asset and parse KIDSOBJDB structural records
+        shell: bash
+        env:
+          SHARD: ${{ matrix.shard }}
+        run: |
+          set -euo pipefail
+          filename="$(printf '_work/m4/m4_shard%02d.jsonl.gz' "$SHARD")"
+          python3 -m Scripts.unpack.m4_batch \
+            --mode scan --index _work/m4/type_index.csv \
+            --shard "$SHARD" --shards 8 --output "$filename" --sampled-values 8
+      - name: Upload per-shard structured metadata, never unparsed binary assets
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: m4-struct-shard-${{ matrix.shard }}
+          path: _work/m4/m4_shard*.*
+          if-no-files-found: warn
+          retention-days: 30
+
+  merge:
+    needs: [tests, decode]
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - name: Checkout only scripts, preserving existing 18GB Git binary blobs
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+      - name: Load type index from Git object
+        run: |
+          mkdir -p _work/m4
+          git show HEAD:UnPack/2.0.1/_reports/m3_resource_type_index.csv > _work/m4/type_index.csv
+      - name: Download 8 sharded structured reports
+        uses: actions/download-artifact@v4
+        with:
+          pattern: m4-struct-shard-*
+          merge-multiple: true
+          path: _work/m4/shards
+      - name: Compare record IDs against original M3 type index and compressed evidence
+        run: |
+          python3 -m Scripts.unpack.m4_aggregate --parts-dir _work/m4/shards --type-index _work/m4/type_index.csv
+      - name: Save aggregated audit even when a shard fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m4-kidsobjdb-corpus-${{ github.run_id }}
+          path: |
+            UnPack/2.0.1/_reports/m4_kidsobjdb_index.csv
+            UnPack/2.0.1/_reports/m4_kidsobjdb_unresolved.csv
+            UnPack/2.0.1/_reports/m4_kidsobjdb_summary.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit verified per-record JSONL, CSV and totals to 2.0.1_unpack
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --ff-only origin 2.0.1_unpack
+          mkdir -p UnPack/2.0.1/_reports/m4_kidsobjdb_data
+          cp _work/m4/shards/m4_shard*.jsonl.gz UnPack/2.0.1/_reports/m4_kidsobjdb_data/
+          if find UnPack/2.0.1/_reports/m4_kidsobjdb_data -type f -size +90M -print -quit | grep -q .; then
+            echo "An M4 shard exceeds safe Git file limit"; exit 1
+          fi
+          git add --sparse -f -- UnPack/2.0.1/_reports/m4_kidsobjdb_data
+          git add --sparse -f -- UnPack/2.0.1/_reports/m4_kidsobjdb_index.csv
+          git add --sparse -f -- UnPack/2.0.1/_reports/m4_kidsobjdb_unresolved.csv
+          git add --sparse -f -- UnPack/2.0.1/_reports/m4_kidsobjdb_summary.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data(unpack): M4 structure-scan 4144 native KIDSOBJDB with hashes [skip ci]"
+            git push origin HEAD:2.0.1_unpack
+          fi
