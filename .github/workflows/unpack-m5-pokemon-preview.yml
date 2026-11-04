@@ -1,0 +1,108 @@
+name: M5 - Preview Native Pokemon G1T Icon Layouts
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/preview_pokemon_icons.py"
+      - "UnPack/2.0.1/Resources/Pokemon/pokemon_sample_manifest.csv"
+      - ".github/workflows/unpack-m5-pokemon-preview.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pokopia-m5-pokemon-preview-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  source-pokemon-previews:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/g1t_to_png.py
+            Scripts/resources/crop_native_item_atlas.py
+            Scripts/resources/preview_pokemon_icons.py
+            UnPack/2.0.1/Resources/Pokemon/pokemon_sample_manifest.csv
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_000204_00de13ed.texinfo
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_050731_d58f20b8.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_007797_207fd236.texinfo
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_040342_aa556b81.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_018377_4d59cc71.texinfo
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_017769_4aa3bb3c.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_027231_72d081cf.texinfo
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_040531_ab17cf9a.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_036472_99d584f5.texinfo
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_045412_bfb855c0.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_045359_bf86e199.texinfo
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_028845_79b9a464.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_052916_ded0a4f9.texinfo
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_047429_c82c17c4.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_060418_feac1575.texinfo
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_050221_d36b2640.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_000147_00a2d79b.texinfo
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_017070_47b4eb66.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_010156_2a1547c7.texinfo
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_003394_0dde5192.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_019698_52cce9bf.texinfo
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_024239_65e5af8a.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_027881_758e189d.texinfo
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_034825_92dcfd68.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_035924_9789cc43.texinfo
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_039438_a660740e.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_045087_be7118c3.texinfo
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_043978_b9e2008e.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_052968_df01dd05.texinfo
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_037129_9c7335d0.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_060706_ffe55e26.texinfo
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_041385_aebe6f71.g1t
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install native G1T image decoder
+        run: python -m pip install "Pillow>=11,<13"
+
+      - name: Decode sixteen source-linked Pokemon G1Ts as swizzle candidates
+        run: python -m Scripts.resources.preview_pokemon_icons
+
+      - name: Check candidate images and contact sheet
+        run: |
+          python - <<'PY'
+          import json,csv
+          from pathlib import Path
+          from PIL import Image
+          folder=Path("UnPack/2.0.1/Resources/Pokemon/Previews")
+          summary=json.loads((folder/"summary.json").read_text(encoding="utf-8"))
+          assert summary["sample_count"]==16
+          assert summary["candidate_pngs"]>0
+          with (folder/"pokemon_sample_manifest.csv").open(encoding="utf-8",newline="") as f:
+              records=list(csv.DictReader(f))
+          for record in records:
+              if record["status"]!="UNVERIFIED_PNG_CANDIDATE": continue
+              with Image.open(record["png"]) as im:
+                  assert im.format=="PNG"
+                  im.verify()
+          with Image.open(folder/"pokemon_layout_contact_sheet.png") as sheet:
+              assert sheet.width>=800 and sheet.height>=2000
+              sheet.verify()
+          print(summary)
+          PY
+
+      - name: Upload 16 native Pokemon layout candidates for visual inspection
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-pokemon-native-layout-candidates
+          path: UnPack/2.0.1/Resources/Pokemon/Previews/
+          retention-days: 14
+          if-no-files-found: warn
