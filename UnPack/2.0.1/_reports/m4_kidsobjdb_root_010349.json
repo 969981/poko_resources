@@ -1,0 +1,66 @@
+{
+  "magic": "_DOK0000",
+  "bytes": 96,
+  "sha256": "371115c5d77c5acb2d2e1128e11de9a4ee6e4e633a444929e4a36c15e44f2d13",
+  "header": {
+    "header_size": 28,
+    "platform": 24,
+    "entry_count": 1,
+    "name_file_hash": "f041a730",
+    "declared_size": 96
+  },
+  "summary": {
+    "IDOK": 1,
+    "RDOK": 0,
+    "UNSUPPORTED_TYPES": 0,
+    "PARTIAL_BLOCKS": 0
+  },
+  "warnings": [],
+  "blocks": [
+    {
+      "index": 0,
+      "kind": "IDOK",
+      "offset": 28,
+      "size": 68,
+      "sha256": "a89473a4f9eaef6acdfd6463b485cb23444a750ca53103cae799d2cdb13c8cc7",
+      "status": "FIXED_WIDTH_VALUES_PARSED",
+      "name_hash": "d66f66c8",
+      "type_hash": "22a5e641",
+      "property_count": 3,
+      "properties": [
+        {
+          "index": 0,
+          "type_code": 5,
+          "name_hash": "6d8eb6ab",
+          "count": 0,
+          "status": "DECODED_FIXED_WIDTH",
+          "value_bytes": 0,
+          "sample_values": []
+        },
+        {
+          "index": 1,
+          "type_code": 5,
+          "name_hash": "5a7ddf48",
+          "count": 1,
+          "status": "DECODED_FIXED_WIDTH",
+          "value_bytes": 4,
+          "sample_values": [
+            3900000062
+          ]
+        },
+        {
+          "index": 2,
+          "type_code": 5,
+          "name_hash": "cf259abf",
+          "count": 1,
+          "status": "DECODED_FIXED_WIDTH",
+          "value_bytes": 4,
+          "sample_values": [
+            3796256732
+          ]
+        }
+      ]
+    }
+  ],
+  "semantic_status": "FIXED_WIDTH_ONLY"
+}
