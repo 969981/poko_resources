@@ -35,3 +35,12 @@ python -m unittest discover -s tests -v
 - M2：root 60,722 + system 25,110 = 85,832 条 RDB 索引可解析；单个小型 FDATA 520/520 条成功解压，5,219 扩展 footer 尚待解读。
 - M0：LINKDATA 两卷已通过 7z t/恢复；其余分卷的完整校验仍待全量 run 结果。
 - 额外已触发 [全量尝试 Run #41824295903](https://github.com/969981/poko_resources/actions/runs/41824295903)，状态以 Actions 日志为准。
+
+## 第三轮全量结论（2026-11-04）
+
+- [Run #41825954077](https://github.com/969981/poko_resources/actions/runs/41825954077) **smoke/full jobs 均通过**，使用真实仓库原始资源，恢复并核对 10 组 7z 分卷；99 个输入文件完成 SHA-256 清单。
+- M1 LINKDATA：12,298/12,298 成功解码或空记录分类，其中 9,792 解码、1 个零长度占位、2,505 空记录，0 失败。
+- M2 RDB：root 60,722 + system 25,110；**79,710 条 FDATA 解压成功**，**4 条独立 FILE 原始负载流式校验成功**，实际提取/解码失败 0。
+- 5,219 条 system 17 字节 footer 已经通过真实 `0x38f972af.fdata` 回读并成功解码；26 个未提供实体 FDATA 仍对应 6,118 条未定位记录（其中额外含 1 个独立 FILE 未提供）。
+- 结果只包含元数据和 SHA-256，完整资源仍在 Runner 临时目录中，不将原版游戏素材作为 Git 提交。
+- 详情见 [ROUND3_RESULTS.md](./ROUND3_RESULTS.md) 和 [MISSING_CONTAINERS.csv](./MISSING_CONTAINERS.csv)。下一阶段 M3 应对 KIDSOBJDB 和 schema 做结构化解析与验证。
