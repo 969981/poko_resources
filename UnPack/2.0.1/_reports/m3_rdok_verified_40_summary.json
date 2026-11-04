@@ -1,0 +1,20 @@
+{
+  "status": "PASS_FULL_M4_RDOK_HASH_CROSSWALK",
+  "source": "SHA256-verified m4_unresolved_layout_diagnostics.json joined to complete 4144-row m4_kidsobjdb_index.csv",
+  "all_kidsobjdb_records": 4144,
+  "verified_diagnostic_records": 15,
+  "rdok_blocks": 40,
+  "rdok_triplet_equal_zero_tail": 40,
+  "unique_target_record_ids": 40,
+  "all_targets_have_idok": true,
+  "same_catalog": 40,
+  "same_fdata_container": 32,
+  "cross_fdata_container": 8,
+  "runtime_references_confirmed": 0,
+  "rdok_semantic_status": "STRONGLY_SUPPORTED_RESOURCE_HASH_REFERENCE_CANDIDATE",
+  "limits": [
+    "Exact hash equality and IDOK existence do not prove runtime dereference behavior.",
+    "No semantic names or PE factory/Lua handle linkage inferred.",
+    "Original source input scope excludes 6118 unavailable RDB resources."
+  ]
+}
