@@ -18,7 +18,8 @@ from Scripts.resources.crop_native_item_atlas import crop_uv
 
 ROOT = Path("UnPack/2.0.1/Resources/Pokemon")
 NATIVE = Path("UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native")
-LAYOUTS = ["linear", "gob1", "gob2", "gob4", "gob8", "gob16"]
+LAYOUTS = ["linear", "gob1", "gob2", "gob4", "gob8", "gob16",
+           "morton", "morton_yx", "morton8", "morton8_yx", "morton16", "morton16_yx"]
 FIELDS = ["texture_name", "category", "texinfo_hash", "g1t_hash", "g1t_file",
           "layer", "format", "width", "height", "layout", "png",
           "crop_width", "crop_height", "status", "reason"]
