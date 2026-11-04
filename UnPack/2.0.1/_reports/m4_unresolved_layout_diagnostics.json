@@ -1,0 +1,1061 @@
+{
+  "selected_records": 15,
+  "status": {
+    "VERIFIED": 15
+  },
+  "results": [
+    {
+      "record_id": "root:13184",
+      "source_path": "2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata",
+      "output_path": "romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata/decoded/root_013184_3771d387.fdata_idrk.bin",
+      "expected_sha256": "c3b6ddf9fca4c2a934d26353597bfa276f5e57c59299c1079d30924980222eaa",
+      "status": "VERIFIED",
+      "bytes": 56,
+      "sha256": "c3b6ddf9fca4c2a934d26353597bfa276f5e57c59299c1079d30924980222eaa",
+      "header": {
+        "size": 28,
+        "platform": 24,
+        "entries": 1,
+        "name_hash": "b1eda185",
+        "declared_bytes": 56
+      },
+      "blocks": [
+        {
+          "index": 0,
+          "kind": "RDOK0000",
+          "offset": 28,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "55235e67",
+            "55235e67",
+            "55235e67",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c000000675e2355675e2355675e235500000000"
+        }
+      ],
+      "end_offset": 56,
+      "final_length": 56
+    },
+    {
+      "record_id": "root:20245",
+      "source_path": "2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata",
+      "output_path": "romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata/decoded/root_020245_55235e67.fdata_idrk.bin",
+      "expected_sha256": "e381ff777d5e76e0cbe15f7c77fd0623c0b8816bf6b7913401fd8418ce9b8397",
+      "status": "VERIFIED",
+      "bytes": 3442204,
+      "sha256": "e381ff777d5e76e0cbe15f7c77fd0623c0b8816bf6b7913401fd8418ce9b8397",
+      "header": {
+        "size": 28,
+        "platform": 24,
+        "entries": 1,
+        "name_hash": "80d48129",
+        "declared_bytes": 3442204
+      },
+      "blocks": [
+        {
+          "index": 0,
+          "kind": "IDOK0000",
+          "offset": 28,
+          "size": 3442176,
+          "payload_size": 3442164,
+          "words_u32_hex": [
+            "55235e67",
+            "ea69fa13",
+            "00000001",
+            "00000001",
+            "003485dc",
+            "7ae38475",
+            "4b505333",
+            "30303031",
+            "003485dc",
+            "00000014",
+            "0000000a",
+            "00000000",
+            "00000001",
+            "00000074",
+            "00000018",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000003",
+            "00000062",
+            "00000008",
+            "0000000f",
+            "000000c8",
+            "000014d0",
+            "0000000f",
+            "00000100",
+            "00000002"
+          ],
+          "head_64_hex": "49444f4b3030303000863400675e235513fa69ea0100000001000000dc8534007584e37a3353504b31303030dc853400140000000a0000000000000001000000",
+          "property_name_hash": "55235e67",
+          "property_type_hash": "ea69fa13",
+          "property_count": 1,
+          "first_property_type": 1,
+          "first_property_count": 3442140,
+          "first_property_name_hash": "7ae38475"
+        }
+      ],
+      "end_offset": 3442204,
+      "final_length": 3442204
+    },
+    {
+      "record_id": "root:53394",
+      "source_path": "2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xe634eeb2.fdata",
+      "output_path": "romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xe634eeb2.fdata/decoded/root_053394_e0d0b241.fdata_idrk.bin",
+      "expected_sha256": "1887d40694b55a41fb98260115d62d170d0bde1dd24579566bcf7489d77626b2",
+      "status": "VERIFIED",
+      "bytes": 252,
+      "sha256": "1887d40694b55a41fb98260115d62d170d0bde1dd24579566bcf7489d77626b2",
+      "header": {
+        "size": 28,
+        "platform": 24,
+        "entries": 8,
+        "name_hash": "7f24d983",
+        "declared_bytes": 252
+      },
+      "blocks": [
+        {
+          "index": 0,
+          "kind": "RDOK0000",
+          "offset": 28,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "081fd658",
+            "081fd658",
+            "081fd658",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c00000058d61f0858d61f0858d61f0800000000"
+        },
+        {
+          "index": 1,
+          "kind": "RDOK0000",
+          "offset": 56,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "28029070",
+            "28029070",
+            "28029070",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c00000070900228709002287090022800000000"
+        },
+        {
+          "index": 2,
+          "kind": "RDOK0000",
+          "offset": 84,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "4be065d8",
+            "4be065d8",
+            "4be065d8",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c000000d865e04bd865e04bd865e04b00000000"
+        },
+        {
+          "index": 3,
+          "kind": "RDOK0000",
+          "offset": 112,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "544af65f",
+            "544af65f",
+            "544af65f",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c0000005ff64a545ff64a545ff64a5400000000"
+        },
+        {
+          "index": 4,
+          "kind": "RDOK0000",
+          "offset": 140,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "689ccf23",
+            "689ccf23",
+            "689ccf23",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c00000023cf9c6823cf9c6823cf9c6800000000"
+        },
+        {
+          "index": 5,
+          "kind": "RDOK0000",
+          "offset": 168,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "b208025d",
+            "b208025d",
+            "b208025d",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c0000005d0208b25d0208b25d0208b200000000"
+        },
+        {
+          "index": 6,
+          "kind": "RDOK0000",
+          "offset": 196,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "bbdd84f0",
+            "bbdd84f0",
+            "bbdd84f0",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c000000f084ddbbf084ddbbf084ddbb00000000"
+        },
+        {
+          "index": 7,
+          "kind": "RDOK0000",
+          "offset": 224,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "d758b26f",
+            "d758b26f",
+            "d758b26f",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c0000006fb258d76fb258d76fb258d700000000"
+        }
+      ],
+      "end_offset": 252,
+      "final_length": 252
+    },
+    {
+      "record_id": "root:57101",
+      "source_path": "2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata",
+      "output_path": "romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata/decoded/root_057101_f0e2b7b1.fdata_idrk.bin",
+      "expected_sha256": "f34f7a25992f39ccfbbbded79962aaebb6d6d93f6037a2a0c7d1a720f1df2b9b",
+      "status": "VERIFIED",
+      "bytes": 56,
+      "sha256": "f34f7a25992f39ccfbbbded79962aaebb6d6d93f6037a2a0c7d1a720f1df2b9b",
+      "header": {
+        "size": 28,
+        "platform": 24,
+        "entries": 1,
+        "name_hash": "bba2fe2f",
+        "declared_bytes": 56
+      },
+      "blocks": [
+        {
+          "index": 0,
+          "kind": "RDOK0000",
+          "offset": 28,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "03be17bd",
+            "03be17bd",
+            "03be17bd",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c000000bd17be03bd17be03bd17be0300000000"
+        }
+      ],
+      "end_offset": 56,
+      "final_length": 56
+    },
+    {
+      "record_id": "root:8342",
+      "source_path": "2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata",
+      "output_path": "romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata/decoded/root_008342_22ab4c21.fdata_idrk.bin",
+      "expected_sha256": "fe499669d9744f3b37eb9f721a2eda1abaed2ef6394e939b8baf25653dd6ac24",
+      "status": "VERIFIED",
+      "bytes": 476,
+      "sha256": "fe499669d9744f3b37eb9f721a2eda1abaed2ef6394e939b8baf25653dd6ac24",
+      "header": {
+        "size": 28,
+        "platform": 24,
+        "entries": 16,
+        "name_hash": "ed6b929f",
+        "declared_bytes": 476
+      },
+      "blocks": [
+        {
+          "index": 0,
+          "kind": "RDOK0000",
+          "offset": 28,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "2b99feff",
+            "2b99feff",
+            "2b99feff",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c000000fffe992bfffe992bfffe992b00000000"
+        },
+        {
+          "index": 1,
+          "kind": "RDOK0000",
+          "offset": 56,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "422b8674",
+            "422b8674",
+            "422b8674",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c00000074862b4274862b4274862b4200000000"
+        },
+        {
+          "index": 2,
+          "kind": "RDOK0000",
+          "offset": 84,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "5cda3f36",
+            "5cda3f36",
+            "5cda3f36",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c000000363fda5c363fda5c363fda5c00000000"
+        },
+        {
+          "index": 3,
+          "kind": "RDOK0000",
+          "offset": 112,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "608f7344",
+            "608f7344",
+            "608f7344",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c00000044738f6044738f6044738f6000000000"
+        },
+        {
+          "index": 4,
+          "kind": "RDOK0000",
+          "offset": 140,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "68d9c686",
+            "68d9c686",
+            "68d9c686",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c00000086c6d96886c6d96886c6d96800000000"
+        },
+        {
+          "index": 5,
+          "kind": "RDOK0000",
+          "offset": 168,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "7785de87",
+            "7785de87",
+            "7785de87",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c00000087de857787de857787de857700000000"
+        },
+        {
+          "index": 6,
+          "kind": "RDOK0000",
+          "offset": 196,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "89c2f3a0",
+            "89c2f3a0",
+            "89c2f3a0",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c000000a0f3c289a0f3c289a0f3c28900000000"
+        },
+        {
+          "index": 7,
+          "kind": "RDOK0000",
+          "offset": 224,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "8e041d69",
+            "8e041d69",
+            "8e041d69",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c000000691d048e691d048e691d048e00000000"
+        },
+        {
+          "index": 8,
+          "kind": "RDOK0000",
+          "offset": 252,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "932a5e5f",
+            "932a5e5f",
+            "932a5e5f",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c0000005f5e2a935f5e2a935f5e2a9300000000"
+        },
+        {
+          "index": 9,
+          "kind": "RDOK0000",
+          "offset": 280,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "9e83735d",
+            "9e83735d",
+            "9e83735d",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c0000005d73839e5d73839e5d73839e00000000"
+        },
+        {
+          "index": 10,
+          "kind": "RDOK0000",
+          "offset": 308,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "a19447f0",
+            "a19447f0",
+            "a19447f0",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c000000f04794a1f04794a1f04794a100000000"
+        },
+        {
+          "index": 11,
+          "kind": "RDOK0000",
+          "offset": 336,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "c4453797",
+            "c4453797",
+            "c4453797",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c000000973745c4973745c4973745c400000000"
+        },
+        {
+          "index": 12,
+          "kind": "RDOK0000",
+          "offset": 364,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "c64bc098",
+            "c64bc098",
+            "c64bc098",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c00000098c04bc698c04bc698c04bc600000000"
+        },
+        {
+          "index": 13,
+          "kind": "RDOK0000",
+          "offset": 392,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "d601a84d",
+            "d601a84d",
+            "d601a84d",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c0000004da801d64da801d64da801d600000000"
+        },
+        {
+          "index": 14,
+          "kind": "RDOK0000",
+          "offset": 420,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "d961ee6e",
+            "d961ee6e",
+            "d961ee6e",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c0000006eee61d96eee61d96eee61d900000000"
+        },
+        {
+          "index": 15,
+          "kind": "RDOK0000",
+          "offset": 448,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "f04e3499",
+            "f04e3499",
+            "f04e3499",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c00000099344ef099344ef099344ef000000000"
+        }
+      ],
+      "end_offset": 476,
+      "final_length": 476
+    },
+    {
+      "record_id": "root:916",
+      "source_path": "2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata",
+      "output_path": "romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata/decoded/root_000916_03be17bd.fdata_idrk.bin",
+      "expected_sha256": "9568532d98ea833df5c69d3bac1eacdcfa58c35a546b77d0a4d824e40ef30198",
+      "status": "VERIFIED",
+      "bytes": 3740820,
+      "sha256": "9568532d98ea833df5c69d3bac1eacdcfa58c35a546b77d0a4d824e40ef30198",
+      "header": {
+        "size": 28,
+        "platform": 24,
+        "entries": 1,
+        "name_hash": "07b191ff",
+        "declared_bytes": 3740820
+      },
+      "blocks": [
+        {
+          "index": 0,
+          "kind": "IDOK0000",
+          "offset": 28,
+          "size": 3740792,
+          "payload_size": 3740780,
+          "words_u32_hex": [
+            "03be17bd",
+            "ea69fa13",
+            "00000001",
+            "00000001",
+            "00391454",
+            "7ae38475",
+            "4b505333",
+            "30303031",
+            "00391454",
+            "00000014",
+            "0000000a",
+            "00000000",
+            "00000001",
+            "00000074",
+            "00000018",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000003",
+            "00000068",
+            "00000008",
+            "00000012",
+            "000000c8",
+            "00001680",
+            "0000000f",
+            "0000010f",
+            "00000002"
+          ],
+          "head_64_hex": "49444f4b3030303078143900bd17be0313fa69ea0100000001000000541439007584e37a3353504b3130303054143900140000000a0000000000000001000000",
+          "property_name_hash": "03be17bd",
+          "property_type_hash": "ea69fa13",
+          "property_count": 1,
+          "first_property_type": 1,
+          "first_property_count": 3740756,
+          "first_property_name_hash": "7ae38475"
+        }
+      ],
+      "end_offset": 3740820,
+      "final_length": 3740820
+    },
+    {
+      "record_id": "system:14882",
+      "source_path": "2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata",
+      "output_path": "romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata/decoded/system_014882_9869d0bf.fdata_idrk.bin",
+      "expected_sha256": "7d25ec63d53b41a6a9f4ce5deabfe584157a54c134031755277e9fba6379e672",
+      "status": "VERIFIED",
+      "bytes": 56,
+      "sha256": "7d25ec63d53b41a6a9f4ce5deabfe584157a54c134031755277e9fba6379e672",
+      "header": {
+        "size": 28,
+        "platform": 24,
+        "entries": 1,
+        "name_hash": "c41af381",
+        "declared_bytes": 56
+      },
+      "blocks": [
+        {
+          "index": 0,
+          "kind": "RDOK0000",
+          "offset": 28,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "e9505d7b",
+            "e9505d7b",
+            "e9505d7b",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c0000007b5d50e97b5d50e97b5d50e900000000"
+        }
+      ],
+      "end_offset": 56,
+      "final_length": 56
+    },
+    {
+      "record_id": "system:1646",
+      "source_path": "2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata",
+      "output_path": "romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata/decoded/system_001646_117e8f35.fdata_idrk.bin",
+      "expected_sha256": "16ef68e8df57249f62fcf492825d33794c6108fd7172a4129d1804a585317cd9",
+      "status": "VERIFIED",
+      "bytes": 84,
+      "sha256": "16ef68e8df57249f62fcf492825d33794c6108fd7172a4129d1804a585317cd9",
+      "header": {
+        "size": 28,
+        "platform": 24,
+        "entries": 2,
+        "name_hash": "9ec71877",
+        "declared_bytes": 84
+      },
+      "blocks": [
+        {
+          "index": 0,
+          "kind": "RDOK0000",
+          "offset": 28,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "522b350b",
+            "522b350b",
+            "522b350b",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c0000000b352b520b352b520b352b5200000000"
+        },
+        {
+          "index": 1,
+          "kind": "RDOK0000",
+          "offset": 56,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "5f5f9ef1",
+            "5f5f9ef1",
+            "5f5f9ef1",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c000000f19e5f5ff19e5f5ff19e5f5f00000000"
+        }
+      ],
+      "end_offset": 84,
+      "final_length": 84
+    },
+    {
+      "record_id": "system:18333",
+      "source_path": "2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata",
+      "output_path": "romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata/decoded/system_018333_bb87237c.fdata_idrk.bin",
+      "expected_sha256": "d2de914215d64a939a80852773f123b5f7edf915e06873977b8c81dc0c2cd7f7",
+      "status": "VERIFIED",
+      "bytes": 140,
+      "sha256": "d2de914215d64a939a80852773f123b5f7edf915e06873977b8c81dc0c2cd7f7",
+      "header": {
+        "size": 28,
+        "platform": 24,
+        "entries": 4,
+        "name_hash": "93a5a07a",
+        "declared_bytes": 140
+      },
+      "blocks": [
+        {
+          "index": 0,
+          "kind": "RDOK0000",
+          "offset": 28,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "2f853901",
+            "2f853901",
+            "2f853901",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c0000000139852f0139852f0139852f00000000"
+        },
+        {
+          "index": 1,
+          "kind": "RDOK0000",
+          "offset": 56,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "43ca89a4",
+            "43ca89a4",
+            "43ca89a4",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c000000a489ca43a489ca43a489ca4300000000"
+        },
+        {
+          "index": 2,
+          "kind": "RDOK0000",
+          "offset": 84,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "b754f0ad",
+            "b754f0ad",
+            "b754f0ad",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c000000adf054b7adf054b7adf054b700000000"
+        },
+        {
+          "index": 3,
+          "kind": "RDOK0000",
+          "offset": 112,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "dc3686cf",
+            "dc3686cf",
+            "dc3686cf",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c000000cf8636dccf8636dccf8636dc00000000"
+        }
+      ],
+      "end_offset": 140,
+      "final_length": 140
+    },
+    {
+      "record_id": "system:19231",
+      "source_path": "2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata",
+      "output_path": "romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata/decoded/system_019231_c50061a2.fdata_idrk.bin",
+      "expected_sha256": "92ac7bf91af3f0ad2d580112cc50e8b215c655850830868bbae90bb0f27cc025",
+      "status": "VERIFIED",
+      "bytes": 84,
+      "sha256": "92ac7bf91af3f0ad2d580112cc50e8b215c655850830868bbae90bb0f27cc025",
+      "header": {
+        "size": 28,
+        "platform": 24,
+        "entries": 2,
+        "name_hash": "9d1edea0",
+        "declared_bytes": 84
+      },
+      "blocks": [
+        {
+          "index": 0,
+          "kind": "RDOK0000",
+          "offset": 28,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "05be9e82",
+            "05be9e82",
+            "05be9e82",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c000000829ebe05829ebe05829ebe0500000000"
+        },
+        {
+          "index": 1,
+          "kind": "RDOK0000",
+          "offset": 56,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "fc8a8288",
+            "fc8a8288",
+            "fc8a8288",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c00000088828afc88828afc88828afc00000000"
+        }
+      ],
+      "end_offset": 84,
+      "final_length": 84
+    },
+    {
+      "record_id": "system:21132",
+      "source_path": "2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata",
+      "output_path": "romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata/decoded/system_021132_d8307cae.fdata_idrk.bin",
+      "expected_sha256": "5fb303c12cad799af59084b25e7e041dffb61056e202c6b41f6728f7ed6f0461",
+      "status": "VERIFIED",
+      "bytes": 56,
+      "sha256": "5fb303c12cad799af59084b25e7e041dffb61056e202c6b41f6728f7ed6f0461",
+      "header": {
+        "size": 28,
+        "platform": 24,
+        "entries": 1,
+        "name_hash": "a2f0c32c",
+        "declared_bytes": 56
+      },
+      "blocks": [
+        {
+          "index": 0,
+          "kind": "RDOK0000",
+          "offset": 28,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "4e508572",
+            "4e508572",
+            "4e508572",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c0000007285504e7285504e7285504e00000000"
+        }
+      ],
+      "end_offset": 56,
+      "final_length": 56
+    },
+    {
+      "record_id": "system:24596",
+      "source_path": "2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata",
+      "output_path": "romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata/decoded/system_024596_fb38d226.fdata_idrk.bin",
+      "expected_sha256": "89ca7709f4a3ab725b8464e33f9586bcf987a05dcc7d677c852ec4b64d321aea",
+      "status": "VERIFIED",
+      "bytes": 112,
+      "sha256": "89ca7709f4a3ab725b8464e33f9586bcf987a05dcc7d677c852ec4b64d321aea",
+      "header": {
+        "size": 28,
+        "platform": 24,
+        "entries": 3,
+        "name_hash": "b37dc224",
+        "declared_bytes": 112
+      },
+      "blocks": [
+        {
+          "index": 0,
+          "kind": "RDOK0000",
+          "offset": 28,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "07d796a0",
+            "07d796a0",
+            "07d796a0",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c000000a096d707a096d707a096d70700000000"
+        },
+        {
+          "index": 1,
+          "kind": "RDOK0000",
+          "offset": 56,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "34536b2c",
+            "34536b2c",
+            "34536b2c",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c0000002c6b53342c6b53342c6b533400000000"
+        },
+        {
+          "index": 2,
+          "kind": "RDOK0000",
+          "offset": 84,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "e81f5d01",
+            "e81f5d01",
+            "e81f5d01",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c000000015d1fe8015d1fe8015d1fe800000000"
+        }
+      ],
+      "end_offset": 112,
+      "final_length": 112
+    },
+    {
+      "record_id": "system:24759",
+      "source_path": "2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata",
+      "output_path": "romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata/decoded/system_024759_fc8a8288.fdata_idrk.bin",
+      "expected_sha256": "09a2df395c3a7181c0bbf621366d2fff0bd05ae674a9ea786c61458f032707e9",
+      "status": "VERIFIED",
+      "bytes": 7019300,
+      "sha256": "09a2df395c3a7181c0bbf621366d2fff0bd05ae674a9ea786c61458f032707e9",
+      "header": {
+        "size": 28,
+        "platform": 24,
+        "entries": 1,
+        "name_hash": "18532186",
+        "declared_bytes": 7019300
+      },
+      "blocks": [
+        {
+          "index": 0,
+          "kind": "IDOK0000",
+          "offset": 28,
+          "size": 7019272,
+          "payload_size": 7019260,
+          "words_u32_hex": [
+            "fc8a8288",
+            "ea69fa13",
+            "00000001",
+            "00000001",
+            "006b1ae4",
+            "7ae38475",
+            "4b505333",
+            "30303031",
+            "006b1ae4",
+            "00000014",
+            "0000000a",
+            "00000000",
+            "00000001",
+            "00000074",
+            "00000018",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000063",
+            "00000008",
+            "00000010",
+            "000000c2",
+            "00002924",
+            "0000000b",
+            "00000210",
+            "00000002"
+          ],
+          "head_64_hex": "49444f4b30303030081b6b0088828afc13fa69ea0100000001000000e41a6b007584e37a3353504b31303030e41a6b00140000000a0000000000000001000000",
+          "property_name_hash": "fc8a8288",
+          "property_type_hash": "ea69fa13",
+          "property_count": 1,
+          "first_property_type": 1,
+          "first_property_count": 7019236,
+          "first_property_name_hash": "7ae38475"
+        }
+      ],
+      "end_offset": 7019300,
+      "final_length": 7019300
+    },
+    {
+      "record_id": "system:532",
+      "source_path": "2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata",
+      "output_path": "romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata/decoded/system_000532_05be9e82.fdata_idrk.bin",
+      "expected_sha256": "1af8a89f5f425f9c44bce50dc1d4a8783d0a51a4d928af3c1064e161736ac93f",
+      "status": "VERIFIED",
+      "bytes": 7293408,
+      "sha256": "1af8a89f5f425f9c44bce50dc1d4a8783d0a51a4d928af3c1064e161736ac93f",
+      "header": {
+        "size": 28,
+        "platform": 24,
+        "entries": 1,
+        "name_hash": "c4b44300",
+        "declared_bytes": 7293408
+      },
+      "blocks": [
+        {
+          "index": 0,
+          "kind": "IDOK0000",
+          "offset": 28,
+          "size": 7293380,
+          "payload_size": 7293368,
+          "words_u32_hex": [
+            "05be9e82",
+            "ea69fa13",
+            "00000001",
+            "00000001",
+            "006f49a0",
+            "7ae38475",
+            "4b505333",
+            "30303031",
+            "006f49a0",
+            "00000014",
+            "0000000a",
+            "00000000",
+            "00000001",
+            "00000074",
+            "00000018",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "00000000",
+            "0000008f",
+            "0000000c",
+            "00000021",
+            "000000ee",
+            "00002abc",
+            "00000011",
+            "0000023d",
+            "00000003"
+          ],
+          "head_64_hex": "49444f4b30303030c4496f00829ebe0513fa69ea0100000001000000a0496f007584e37a3353504b31303030a0496f00140000000a0000000000000001000000",
+          "property_name_hash": "05be9e82",
+          "property_type_hash": "ea69fa13",
+          "property_count": 1,
+          "first_property_type": 1,
+          "first_property_count": 7293344,
+          "first_property_name_hash": "7ae38475"
+        }
+      ],
+      "end_offset": 7293408,
+      "final_length": 7293408
+    },
+    {
+      "record_id": "system:9481",
+      "source_path": "2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata",
+      "output_path": "romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata/decoded/system_009481_60837618.fdata_idrk.bin",
+      "expected_sha256": "c05b1bb8326f4e5d60e32b66a8f644262bd3354da9a0973f22da28320479b3ec",
+      "status": "VERIFIED",
+      "bytes": 56,
+      "sha256": "c05b1bb8326f4e5d60e32b66a8f644262bd3354da9a0973f22da28320479b3ec",
+      "header": {
+        "size": 28,
+        "platform": 24,
+        "entries": 1,
+        "name_hash": "daff4416",
+        "declared_bytes": 56
+      },
+      "blocks": [
+        {
+          "index": 0,
+          "kind": "RDOK0000",
+          "offset": 28,
+          "size": 28,
+          "payload_size": 16,
+          "words_u32_hex": [
+            "ddd6dfdc",
+            "ddd6dfdc",
+            "ddd6dfdc",
+            "00000000"
+          ],
+          "head_64_hex": "52444f4b303030301c000000dcdfd6dddcdfd6dddcdfd6dd00000000"
+        }
+      ],
+      "end_offset": 56,
+      "final_length": 56
+    }
+  ],
+  "interpretation": "All U32 words are raw evidence, not assigned semantic meaning"
+}
