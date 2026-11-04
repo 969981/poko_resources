@@ -61,13 +61,13 @@ jobs:
           python -m Scripts.resources.crop_native_item_atlas \
             --g1t UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_038147_a0ce9914.g1t \
             --manifest UnPack/2.0.1/Resources/Textures/Indexes/item_atlas_1333_uv.csv \
-            --layouts linear,gob1,gob2,gob4,gob8 \
+            --layouts gob8,gob16,gob32,morton,morton_yx,morton8,morton16,morton16_yx \
             --ids 6,7,8,1677,1764,1765,2742 \
             --out atlas-preview/top-v
           python -m Scripts.resources.crop_native_item_atlas \
             --g1t UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_038147_a0ce9914.g1t \
             --manifest UnPack/2.0.1/Resources/Textures/Indexes/item_atlas_1333_uv.csv \
-            --layouts gob1,gob2,gob4,gob8 \
+            --layouts gob8,gob16,morton,morton16 \
             --ids 6,7,8,1677,1764,1765,2742 \
             --flip-v \
             --out atlas-preview/flipped-v
