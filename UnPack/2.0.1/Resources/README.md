@@ -46,3 +46,23 @@ python3 Scripts/resources/import_pokohex.py \
 - 当前只整理“道具名称”九语；后续可扩展 `villager/area/skill/reaction`。不要把未解析资源误报为已完成。
 
 **来源范围说明：** 用户提供的离线下单页面是一份二次筛选目录，其 2611 个产品不等于游戏 4600 槽位、3586 个有名称条目或 PokoHex 的 1615 张 PNG。分类、叠加数量和商品可选性不能自动推定为 2.0.1 游戏原始字段。
+
+
+## M5 — 2.0.1 RomFS G1T 纹理候选解码
+
+已新增 Scripts/resources/g1t_to_png.py 和 .github/workflows/unpack-m5-textures.yml。
+与 PokoHex 图标导入是两条独立证据链，不能因为 PokoHex 有 PNG 就声称来自原始 2.0.1 RomFS。
+
+- 已从真实 G1T 解析 GT1G0600、平台字段 0x18、格式 0x66 (BC7) 和 0x62 (BC3/DXT5)。
+- 提取阶段分别测试 linear、gob1、gob2 三套排列，用 Pillow 转成真正的 PNG。
+- 输出：Textures/Previews/ 和 Textures/texture_manifest.csv；状态 DECODED_UNVERIFIED 只代表 PNG 解码通过，不代表画面内容正确。
+- 原生 TEXINFO 纹理名输出到 Textures/texinfo_names.csv；item_XXXX_m 仅作为候选 ID；尚无可证明 TEXINFO 精确指向哪条 G1T 的完整链。
+- 全量 M3 的 14,412 条 G1T 推断记录位于 Textures/g1t_candidates.csv，这不是 PNG 成功总数。
+- 保留原始 G1T、原始 TEXINFO 路径及每个候选 PNG 的 SHA-256；暂不覆盖 PokoHex 正式道具图标。
+
+本地复现需要 Python 3.10+、Pillow 11+，可运行：
+    python -m pip install "Pillow>=11,<13"
+    python -m unittest discover -s tests -p "test_g1t_to_png.py" -v
+    python Scripts/resources/g1t_to_png.py --input UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_000333_016719f3.g1t --texinfo-root UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native
+
+验收：视觉确认排列和 Alpha 后，再利用 RDB/KTID/对象引用建立 TEXINFO → G1T → 物品 ID 的直接对应。不能仅用名称中相同的数字或 RDB 邻近记录自动匹配。
