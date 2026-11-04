@@ -62,7 +62,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A -- UnPack/2.0.1/Resources/Textures/layout_field_audit.csv UnPack/2.0.1/Resources/Textures/layout_field_summary.json
+          git add --sparse -A -- UnPack/2.0.1/Resources/Textures/layout_field_audit.csv UnPack/2.0.1/Resources/Textures/layout_field_summary.json
           if git diff --cached --quiet; then
             echo "Already current"
             exit 0
