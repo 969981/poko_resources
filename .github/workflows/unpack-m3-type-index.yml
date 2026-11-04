@@ -1,0 +1,67 @@
+name: Pokopia 2.0.1 M3 native type-hash and magic crosswalk
+
+on:
+  push:
+    branches: [2.0.1_unpack]
+    paths:
+      - ".github/workflows/unpack-m3-type-index.yml"
+      - "Scripts/unpack/m3_types.py"
+      - "tests/test_m3_types.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m3-native-type-index-2-0-1
+  cancel-in-progress: false
+
+jobs:
+  build-type-index:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - name: Sparse checkout code and Git metadata only
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+            tests/
+      - name: Run full parser regressions and evidence-rank tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Retrieve only M3 CSV metadata from Git history
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p _work/m3
+          git show HEAD:UnPack/2.0.1/_reports/m3_signatures.csv > _work/m3/m3_signatures.csv
+      - name: Join M3 signatures with every published Git asset and native type hash
+        run: python3 -m Scripts.unpack.m3_types --source _work/m3/m3_signatures.csv
+      - name: Upload typed index even if Git push later fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-m3-native-type-index-${{ github.run_id }}
+          path: |
+            UnPack/2.0.1/_reports/m3_resource_type_index.csv
+            UnPack/2.0.1/_reports/m3_resource_type_index_summary.json
+            UnPack/2.0.1/_reports/m3_type_hint_conflicts.csv
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit verified record-to-file mapping and inferred native type hints
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --ff-only origin 2.0.1_unpack
+          git add --sparse -f -- UnPack/2.0.1/_reports/m3_resource_type_index.csv
+          git add --sparse -f -- UnPack/2.0.1/_reports/m3_resource_type_index_summary.json
+          git add --sparse -f -- UnPack/2.0.1/_reports/m3_type_hint_conflicts.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "data(unpack): index original type hashes with native extensions and published paths [skip ci]"
+            git push origin HEAD:2.0.1_unpack
+          fi
