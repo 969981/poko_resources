@@ -33,3 +33,13 @@
 - `.github/workflows/unpack-m0-m2.yml`
 - `tests/test_unpack_core.py`
 - `docs/2.0.1/ROUND2.md`
+
+## system RDB 扩展 footer 的 5,219 项候选解析（未实物对账）
+
+从成功运行的 Artifact 中提取全部 17-byte 原始 footer，并尝试 `<HIIIHB>`（u16 magic、u32 marker、u32 candidate offset、u32 candidate entry size、u16 candidate RDX index、u8 tail）布局：
+
+- 5,219/5,219 均为 `magic=0x0401`、`marker=0x80000000`、`RDX index=0`、`tail=0`；均来自 system.rdb。
+- 候选 offset 范围 `0x80018300`–`0x989C7270`，全都按 16 字节对齐，5,219 个偏移均不重复；候选 size 为 84–22,823,167 字节。
+- system.rdx[0] 对应 `0x38f972af.fdata`，存在 27 个大文件分卷。以上高度提示这些记录使用额外 32-bit marker + 32-bit offset/size，但**尚未解包大文件并回读真实 IDRK header**，因此保留 `opaque_17` 状态，不提前将其计为已定位/已解压。
+
+对应下一步精确验收：恢复 `0x38f972af.fdata`，至少选择低/中/高 offset 三条记录，验证 `PDRK/IDRK` 魔数、name/type hash、entry size、packed/unpacked 和 SHA-256，并修复此 footer 模式。不能仅因为数值落在文件大小内就宣布成功。
