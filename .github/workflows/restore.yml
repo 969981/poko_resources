@@ -1,0 +1,188 @@
+name: Restore Pokopia 2.0.1
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: restore-pokopia-2-0-1
+  cancel-in-progress: false
+
+jobs:
+  restore:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - name: Check out resource files
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: 2.0.1
+          sparse-checkout-cone-mode: true
+
+      - name: Install 7-Zip
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y 7zip
+          SEVENZIP="$(command -v 7zz || command -v 7z)"
+          test -x "$SEVENZIP"
+          echo "SEVENZIP=$SEVENZIP" >> "$GITHUB_ENV"
+          "$SEVENZIP" i > /dev/null
+          echo "Using $SEVENZIP"
+
+      - name: Restore and verify into runner temp space
+        env:
+          RESTORE_ROOT: ${{ runner.temp }}/pokopia-restored
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os
+          import re
+          import shutil
+          import subprocess
+          from pathlib import Path
+
+          workspace = Path(os.environ["GITHUB_WORKSPACE"])
+          source = workspace / "2.0.1"
+          output_root = Path(os.environ["RESTORE_ROOT"])
+          sevenzip = os.environ["SEVENZIP"]
+          headroom = 1024 ** 3
+          volume_re = re.compile(r"\.7z\.(\d+)$")
+
+          if not source.is_dir():
+              raise SystemExit(f"Missing checked-out resource directory: {source}")
+          source_files = [p for p in source.rglob("*") if p.is_file()]
+          if not source_files:
+              raise SystemExit("No resource files were checked out")
+          if any(p.relative_to(source).as_posix().lower().startswith("romfs/movie_asset/") for p in source_files):
+              raise SystemExit("Excluded romfs/movie_asset files were found in the checkout")
+
+          grouped = {}
+          raw_files = []
+          for path in source_files:
+              match = volume_re.search(path.name)
+              if match:
+                  stem = path.name[: -len(match.group(0))]
+                  grouped.setdefault((path.parent, stem), []).append((int(match.group(1)), path))
+              else:
+                  raw_files.append(path)
+
+          if not grouped:
+              raise SystemExit("No .7z.001 volumes were found")
+
+          plans = []
+          for (parent, stem), numbered in grouped.items():
+              numbered.sort()
+              numbers = [number for number, _ in numbered]
+              if numbers != list(range(1, len(numbers) + 1)):
+                  raise SystemExit(f"Incomplete volume sequence for {parent / (stem + '.7z')}: {numbers}")
+              volumes = [path for _, path in numbered]
+              if any(path.stat().st_size > 90 * 1024 ** 2 for path in volumes):
+                  raise SystemExit(f"A volume exceeds 90 MiB: {parent / (stem + '.7z')}")
+              first = volumes[0]
+              listing = subprocess.run([sevenzip, "l", "-slt", str(first)], text=True, encoding="utf-8", errors="replace",
+                                       stdout=subprocess.PIPE, stderr=subprocess.STDOUT, check=True).stdout
+              sizes = [int(value) for value in re.findall(r"(?m)^Size = ([0-9]+)\r?$", listing)]
+              if not sizes:
+                  raise SystemExit(f"No restored file size found in {first}")
+              relative_archive = first.relative_to(source)
+              relative_output = Path(str(relative_archive)[:-len(".7z.001")])
+              volume_bytes = sum(path.stat().st_size for path in volumes)
+              plans.append({
+                  "first": first,
+                  "volumes": volumes,
+                  "relative_archive": relative_archive,
+                  "relative_output": relative_output,
+                  # The final Size record is the archived source file; earlier
+                  # records describe the split archive container itself.
+                  "restore_bytes": sizes[-1],
+                  "volume_bytes": volume_bytes,
+              })
+
+          raw_bytes = sum(path.stat().st_size for path in raw_files)
+          # Choose the order with the smallest possible peak extra disk use. Each
+          # archive's volumes are deleted after successful extraction.
+          n = len(plans)
+          best = {0: (0, [])}
+          deltas = [plan["restore_bytes"] - plan["volume_bytes"] for plan in plans]
+          for mask in range(1 << n):
+              if mask not in best:
+                  continue
+              peak, order = best[mask]
+              current_delta = sum(deltas[i] for i in range(n) if mask & (1 << i))
+              for i in range(n):
+                  if mask & (1 << i):
+                      continue
+                  next_mask = mask | (1 << i)
+                  next_peak = max(peak, current_delta + plans[i]["restore_bytes"])
+                  previous = best.get(next_mask)
+                  if previous is None or next_peak < previous[0]:
+                      best[next_mask] = (next_peak, order + [i])
+          peak_extra, order = best[(1 << n) - 1]
+          required_extra = raw_bytes + peak_extra + headroom
+
+          git_dir = workspace / ".git"
+          git_bytes = sum(p.stat().st_size for p in git_dir.rglob("*") if p.is_file()) if git_dir.is_dir() else 0
+          output_root.parent.mkdir(parents=True, exist_ok=True)
+          same_disk = os.stat(workspace).st_dev == os.stat(output_root.parent).st_dev
+          free_now = shutil.disk_usage(output_root.parent).free
+          if same_disk:
+              free_after_checkout_metadata = free_now + git_bytes
+              required_extra = raw_bytes + peak_extra + headroom
+          else:
+              free_after_checkout_metadata = free_now
+              required_extra = raw_bytes + sum(p["restore_bytes"] for p in plans) + headroom
+          print(f"Runner free space at restore destination now: {free_now:,} bytes")
+          print(f"Temporary checkout metadata to remove: {git_bytes:,} bytes")
+          print(f"Resource files to copy: {len(raw_files)} ({raw_bytes:,} bytes)")
+          print(f"Archives to restore: {len(plans)} ({sum(p['restore_bytes'] for p in plans):,} bytes)")
+          print(f"Required additional space including 1 GiB headroom: {required_extra:,} bytes")
+          if free_after_checkout_metadata < required_extra:
+              raise SystemExit(
+                  "Insufficient runner disk space before restoration. "
+                  f"Available at the restore destination after checkout cleanup: {free_after_checkout_metadata:,} bytes; "
+                  f"required: {required_extra:,} bytes. Use a Linux self-hosted runner with more free disk space."
+              )
+
+          output_root.mkdir(parents=True, exist_ok=False)
+          if git_dir.is_dir():
+              shutil.rmtree(git_dir)
+          restored_root = output_root / "2.0.1"
+          def omit_volumes(_directory, names):
+              return [name for name in names if volume_re.search(name)]
+          shutil.copytree(source, restored_root, ignore=omit_volumes)
+
+          expected_outputs = {path.relative_to(source).as_posix() for path in raw_files}
+          for i in order:
+              plan = plans[i]
+              destination = restored_root / plan["relative_output"].parent
+              destination.mkdir(parents=True, exist_ok=True)
+              first = plan["first"]
+              subprocess.run([sevenzip, "t", "-y", str(first)], check=True)
+              subprocess.run([sevenzip, "x", "-y", "-aoa", f"-o{destination}", str(first)], check=True)
+              restored_file = restored_root / plan["relative_output"]
+              if not restored_file.is_file():
+                  raise SystemExit(f"Restored file is missing: {restored_file}")
+              resolved = restored_file.resolve()
+              if not resolved.is_relative_to(restored_root.resolve()):
+                  raise SystemExit(f"Archive output escaped the restore directory: {restored_file}")
+              if restored_file.stat().st_size != plan["restore_bytes"]:
+                  raise SystemExit(f"Restored size mismatch: {restored_file}")
+              rel = plan["relative_output"].as_posix()
+              if rel in expected_outputs:
+                  raise SystemExit(f"Duplicate restored path: {rel}")
+              expected_outputs.add(rel)
+              for volume in plan["volumes"]:
+                  volume.unlink()
+              print(f"RESTORED {rel} ({plan['restore_bytes']:,} bytes)", flush=True)
+
+          actual_outputs = {path.relative_to(restored_root).as_posix() for path in restored_root.rglob("*") if path.is_file()}
+          if actual_outputs != expected_outputs:
+              missing = sorted(expected_outputs - actual_outputs)
+              extra = sorted(actual_outputs - expected_outputs)
+              raise SystemExit(f"Final tree mismatch; missing={missing}, extra={extra}")
+          print(f"SUCCESS: restored {len(plans)} archives and copied {len(raw_files)} raw files to {restored_root}")
+          PY
