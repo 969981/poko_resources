@@ -52,8 +52,6 @@ jobs:
           command -v 7zz || command -v 7z
       - name: Unit tests
         run: python3 -m unittest discover -s tests -v
-      - name: Real IDX, root/system RDB and small FDATA validation
-        run: python3 -m Scripts.unpack.smoke --source 2.0.1 --output _meta/2.0.1/ci-smoke
       - name: M0 verify selected archive pieces and their hashes
         run: |
           python3 -m Scripts.unpack.inventory --source 2.0.1 --output _meta/2.0.1/ci-inventory --hash --test-7z
@@ -65,6 +63,8 @@ jobs:
           python3 -m Scripts.unpack.linkdata --idx 2.0.1/romfs/LI_C0_R.IDX \
             --bin "$RUNNER_TEMP/linkdata-restored/LD_C0_R.BIN" \
             --output _meta/2.0.1/ci-linkdata --decode --verify-only --limit 250
+      - name: Real IDX, root/system RDB and small FDATA validation
+        run: python3 -m Scripts.unpack.smoke --source 2.0.1 --output _meta/2.0.1/ci-smoke
       - name: M2 targeted real FDATA verification (full RDB indexes)
         run: |
           python3 -m Scripts.unpack.ktrdb \
