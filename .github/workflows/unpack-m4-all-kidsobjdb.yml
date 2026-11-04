@@ -8,6 +8,8 @@ on:
       - "Scripts/unpack/m4_batch.py"
       - "Scripts/unpack/m4_aggregate.py"
       - "tests/test_m4_batch.py"
+      - "Scripts/unpack/decode_kidsobjdb.py"
+      - "tests/test_decode_kidsobjdb.py"
   workflow_dispatch:
 
 permissions:

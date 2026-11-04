@@ -54,6 +54,31 @@ class KidsObjDBTests(unittest.TestCase):
         self.assertEqual(r["summary"]["UNSUPPORTED_TYPES"], 1)
         self.assertEqual(r["blocks"][0]["properties"][0]["status"], "UNSUPPORTED_TYPE")
 
+    def test_large_valid_uint8_field_is_bounded_by_block_not_element_count(self):
+        # Real Pokopia KIDSOBJDB includes 3-4 MiB uint8 properties;
+        # reading only 8 sample values avoids memory growth.
+        payload = bytes([7]) * 1_100_000
+        block = (b"IDOK0000" + struct.pack("<4I", 36 + len(payload), 1, 2, 1)
+                 + struct.pack("<3I", 1, len(payload), 3) + payload)
+        doc = make_doc([block])
+        result = parse(doc, max_sampled_values=8)
+        self.assertEqual(result["semantic_status"], "FIXED_WIDTH_ONLY")
+        field = result["blocks"][0]["properties"][0]
+        self.assertEqual(field["count"], len(payload))
+        self.assertEqual(field["value_bytes"], len(payload))
+        self.assertEqual(field["sample_values"], [7] * 8)
+
+    def test_rdok_28_byte_words_are_preserved_without_semantic_claim(self):
+        rdok = b"RDOK0000" + struct.pack("<5I", 28, 0x12345678,
+                                         0x12345678, 0x12345678, 0)
+        parsed = parse(make_doc([rdok]))
+        block = parsed["blocks"][0]
+        self.assertEqual(block["status"], "RDOK_WORDS_UNINTERPRETED")
+        self.assertEqual(block["raw_u32_hex"],
+                         ["12345678", "12345678", "12345678", "00000000"])
+        self.assertTrue(block["observed_equal_triplet_zero_tail"])
+        self.assertEqual(parsed["semantic_status"], "PARTIAL_UNSUPPORTED_OR_RDOK")
+
     def test_reject_truncated_idok_block(self):
         broken = (b"IDOK0000" + struct.pack("<4I", 36, 1, 2, 1)
                   + struct.pack("<3I", 5, 100, 3))
