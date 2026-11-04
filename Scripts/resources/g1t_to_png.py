@@ -125,6 +125,29 @@ def unswizzle_morton_bc(src: bytes, width: int, height: int,
     return bytes(dst)
 
 
+def unswizzle_gob_raw_bgra(src: bytes, width: int, height: int, gob_height: int) -> bytes:
+    """Explore Tegra GOB block-linear for raw 4-byte BGRA pixels."""
+    if gob_height not in (1, 2, 4, 8, 16, 32):
+        raise ValueError("invalid GOB height")
+    byte_width = width * 4
+    columns = (byte_width + 63) // 64
+    required = ((height + 8 * gob_height - 1) // (8 * gob_height)) * columns * 512 * gob_height
+    if len(src) < required:
+        raise ValueError(f"raw BGRA GOB needs {required} bytes, found {len(src)}")
+    dst = bytearray(width * height * 4)
+    for y in range(height):
+        gob_row = y % (8 * gob_height)
+        group = y // (8 * gob_height)
+        for x in range(width):
+            bx = x * 4
+            gob_base = ((group * columns + bx // 64) * gob_height + gob_row // 8) * 512
+            row = gob_row % 8
+            inner = ((bx & 32) << 3) | ((row & 4) << 5) | ((row & 2) << 5) | \
+                    ((bx & 16) << 1) | ((row & 1) << 4) | (bx & 15)
+            dst[(y * width + x) * 4:(y * width + x + 1) * 4] = src[gob_base + inner:gob_base + inner + 4]
+    return bytes(dst)
+
+
 def make_bc7_dds(data: bytes, width: int, height: int) -> bytes:
     expected = ((width + 3) // 4) * ((height + 3) // 4) * 16
     if len(data) < expected:
@@ -161,6 +184,19 @@ def make_bc3_dds(data: bytes, width: int, height: int) -> bytes:
 
 
 def decode_png(payload: bytes, width: int, height: int, layout: str, fmt: int = 0x66) -> bytes:
+    if fmt == 0x0A:
+        if layout == "linear":
+            raw = payload
+        elif layout.startswith("gob"):
+            raw = unswizzle_gob_raw_bgra(payload, width, height, int(layout[3:]))
+        else:
+            raise ValueError(f"unsupported raw BGRA layout {layout}")
+        if len(raw) < width * height * 4:
+            raise ValueError("truncated raw BGRA surface")
+        with Image.frombytes("RGBA", (width, height), raw[:width * height * 4], "raw", "BGRA") as image:
+            out = io.BytesIO()
+            image.save(out, format="PNG")
+            return out.getvalue()
     if layout == "linear":
         linear = payload
     elif layout.startswith("gob"):
