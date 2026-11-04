@@ -13,7 +13,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: pokopia-unpack-publish-2-0-1
+  group: pokopia-unpack-remote-audit-2-0-1
   cancel-in-progress: true
 
 jobs:
