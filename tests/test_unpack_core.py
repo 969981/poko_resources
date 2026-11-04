@@ -107,6 +107,26 @@ class TestFormatReaders(unittest.TestCase):
         with self.assertRaisesRegex(FormatError, 'LINK_CHUNK_BOUNDS'):
             decode_linkdata_payload(value[:130], len(raw), 1)
 
+    def test_linkdata_large_chunk_table_and_tiny_raw_chunk(self):
+        size = 0x80000
+        parts = [bytes([i]) * size for i in range(1, 5)]
+        encoded = []
+        extents = []
+        for part in parts:
+            z = zlib.compress(part)
+            frame = struct.pack('<I', len(z)) + z
+            extents.append(len(frame))
+            encoded.append(frame + bytes((-len(frame)) % 0x80))
+        hdr = struct.pack('<III', size, len(parts), sum(len(x) for x in parts))
+        hdr += struct.pack('<' + 'I' * len(parts), *extents)
+        hdr += bytes((-(len(hdr))) % 0x80)
+        value = hdr + b''.join(encoded)
+        self.assertEqual(decode_linkdata_payload(value, size * len(parts), 1), b''.join(parts))
+        raw = b'\x00' * 18
+        hdr = struct.pack('<IIII', 65536, 1, len(raw), len(raw)) + bytes(0x80 - 16)
+        value = hdr + raw + bytes((-len(raw)) % 0x80)
+        self.assertEqual(decode_linkdata_payload(value, len(raw), 1), raw)
+
     def test_idrk_record_and_kt_end_to_end(self):
         payload = bytes.fromhex(REAL_KT_COMPRESSED_HEX)
         meta = bytes(21)

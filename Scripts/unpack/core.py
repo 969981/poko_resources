@@ -232,24 +232,32 @@ def decode_linkdata_payload(data: bytes, expected_size: int, flag: int) -> bytes
     if len(data) < 0x80:
         return _strict_zlib_stream(data, expected_size, 'LINK_RAW')
     chunk_size, count, advertised = struct.unpack_from('<III', data)
-    if chunk_size != 65536 or not 1 <= count <= 32:
+    if not (chunk_size in (0x10000, 0x20000, 0x40000, 0x80000, 0x100000)
+            and 1 <= count <= 512 and count == (expected_size + chunk_size - 1) // chunk_size):
         # Do not blindly search for zlib headers at arbitrary offsets.
         return _strict_zlib_stream(data, expected_size, 'LINK_DIRECT')
     if advertised != expected_size:
         raise FormatError(f'LINK_HEADER_UNPACKED_SIZE_MISMATCH:{advertised}:{expected_size}')
-    if 12 + 4 * count > 0x80:
-        raise FormatError('LINK_CHUNK_TABLE_OVERFLOW')
+    header_size = ((12 + 4 * count + 127) // 128) * 128
+    if len(data) < header_size:
+        raise FormatError('LINK_CHUNK_TABLE_TRUNCATED')
     stored_extents = struct.unpack_from('<' + 'I' * count, data, 12)
     decoded = bytearray()
-    cursor = 0x80
+    cursor = header_size
     for i, extent in enumerate(stored_extents):
         if extent < 4 or cursor + extent > len(data):
             raise FormatError(f'LINK_CHUNK_BOUNDS:{i}:{cursor}:{extent}:{len(data)}')
         packed_size = struct.unpack_from('<I', data, cursor)[0]
-        if not packed_size or packed_size + 4 > extent:
-            raise FormatError(f'LINK_CHUNK_PACKED_SIZE_INVALID:{i}:{packed_size}:{extent}')
-        block = _strict_zlib_stream(data[cursor + 4:cursor + 4 + packed_size],
-                                    expected_size - len(decoded), 'LINK_CHUNK')
+        remaining = expected_size - len(decoded)
+        if not packed_size and extent == min(chunk_size, remaining):
+            # Observed tiny, uncompressed final chunks (16/18 bytes) have no
+            # 4-byte length prefix. Verify exact chunk extent and output size.
+            block = data[cursor:cursor + extent]
+        else:
+            if not packed_size or packed_size + 4 > extent:
+                raise FormatError(f'LINK_CHUNK_PACKED_SIZE_INVALID:{i}:{packed_size}:{extent}')
+            block = _strict_zlib_stream(data[cursor + 4:cursor + 4 + packed_size],
+                                        remaining, 'LINK_CHUNK')
         decoded.extend(block)
         cursor += ((extent + 0x7f) // 0x80) * 0x80
     if len(decoded) != expected_size:
