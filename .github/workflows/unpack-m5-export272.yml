@@ -1,0 +1,92 @@
+name: M5 - Export 272 Native Item Icon Candidates
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/export_native_atlas272.py"
+      - ".github/workflows/unpack-m5-export272.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: m5-export272-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/g1t_to_png.py
+            Scripts/resources/crop_native_item_atlas.py
+            Scripts/resources/score_atlas_candidates.py
+            Scripts/resources/export_native_atlas272.py
+            UnPack/2.0.1/Resources/Items/Icons
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/Icons
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/Extra272Candidates
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/MountPoint_2/0x0017d6e2.fdata/native/root_009286_26a15463.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/MountPoint_2/0x0017d6e2.fdata/native/root_019254_51087a18.texinfo
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install DDS BC7 decoder
+        run: python -m pip install "Pillow>=11,<13"
+
+      - name: Decode all 272 source-linked item sprites without overwriting original 1333 icons
+        run: python -m Scripts.resources.export_native_atlas272
+
+      - name: Verify every output and overlap protection
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          from PIL import Image
+          d=Path("UnPack/2.0.1/Resources/Items/Native_2.0.1/Extra272Candidates")
+          files=list(d.glob("item_*.png"))
+          data=json.loads((d/"summary.json").read_text(encoding="utf-8"))
+          assert len(files)==272,data
+          assert data["png_count"]==272,data
+          assert data["overlap_with_primary_atlas_count"]==4,data
+          assert data["overlap_ids"]==[1677,1764,1765,2742],data
+          assert data["distinct_additional_ids"]==268,data
+          with (d/"manifest.csv").open(encoding="utf-8",newline="") as f:
+              rows=list(csv.DictReader(f))
+          assert len(rows)==272
+          assert len(set(r["item_id"] for r in rows))==272
+          assert len([r for r in rows if r["overlaps_primary_atlas"]=="True"])==4
+          for r in rows:
+              with Image.open(r["png"]) as im:
+                  assert im.size==(72,72)
+                  im.verify()
+          print("Native 272 atlas candidate icons: 272; additional IDs: 268; duplicates preserved: 4")
+          print("Source/reference statuses:",data["status_counts"])
+          PY
+
+      - name: Commit extra 272 icons as original-source candidates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Items/Native_2.0.1/Extra272Candidates
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "data(m5): preserve 272 source-derived GOB16 icons and 4 duplicate variants"
+          for i in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
