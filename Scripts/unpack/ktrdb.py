@@ -9,7 +9,7 @@ from .core import (FormatError, decode_kt_payload, find_fdata, parse_rdb, parse_
 
 
 def run(base: Path, output: Path, extract: bool, decode: bool, limit: int | None,
-        dry_run: bool, resume: bool) -> dict:
+        dry_run: bool, resume: bool, verify_only: bool = False, only_fdata: set[str] | None = None) -> dict:
     rdx_rows, rows, stats = [], [], {}
     processed = 0
     for catalog in ('root', 'system'):
@@ -32,7 +32,7 @@ def run(base: Path, output: Path, extract: bool, decode: bool, limit: int | None
                    'flags': f'{en.flags:08x}', 'footer_magic': f'{en.footer_magic:04x}',
                    'fdata_index': en.fdata_index, 'fdata_offset': en.fdata_offset,
                    'fdata_entry_size': en.fdata_entry_size, 'uncompressed_size': en.uncompressed_size,
-                   'status': 'INDEXED', 'error': '', 'source_path': '', 'output_sha256': ''}
+                   'status': 'INDEXED', 'error': '', 'source_path': '', 'output_sha256': '', 'decoded_sha256': ''}
             rd = rdex[en.fdata_index]
             if en.footer_magic == 0x0c01:
                 container = base / 'data' / f'0x{en.name_hash:08x}.file'
@@ -49,7 +49,7 @@ def run(base: Path, output: Path, extract: bool, decode: bool, limit: int | None
                 row.update(status='CONTAINER_NOT_PRESENT', error=f'{mode}:{rd.filename}')
             else:
                 row.update(status='LOCATED', source_path=str(container))
-                if extract and (limit is None or processed < limit):
+                if extract and (only_fdata is None or f'{rd.fdata_hash:08x}' in only_fdata) and (limit is None or processed < limit):
                     processed += 1
                     if dry_run:
                         row['status'] = 'DRY_RUN_LOCATED'
@@ -76,19 +76,22 @@ def run(base: Path, output: Path, extract: bool, decode: bool, limit: int | None
                                     header = None
                             name = f'{catalog}_{en.record_index:06d}_{en.name_hash:08x}.{mode}.bin'
                             dest = output / 'raw' / name
-                            dest.parent.mkdir(parents=True, exist_ok=True)
                             raw_hash = hashlib.sha256(blob).hexdigest()
-                            if not (resume and dest.is_file() and dest.stat().st_size == len(blob) and hashlib.sha256(dest.read_bytes()).hexdigest() == raw_hash):
-                                dest.write_bytes(blob)
+                            if not verify_only:
+                                dest.parent.mkdir(parents=True, exist_ok=True)
+                                if not (resume and dest.is_file() and dest.stat().st_size == len(blob) and hashlib.sha256(dest.read_bytes()).hexdigest() == raw_hash):
+                                    dest.write_bytes(blob)
                             row.update(status='EXTRACTED', output_sha256=raw_hash)
                             if decode:
                                 if mode == 'standalone_file':
                                     raise FormatError('STANDALONE_DECODE_UNVERIFIED_RAW_PRESERVED')
                                 decoded = decode_kt_payload(blob, header)
                                 out = output / 'decoded' / name
-                                out.parent.mkdir(parents=True, exist_ok=True)
-                                if not (resume and out.is_file() and out.stat().st_size == len(decoded) and hashlib.sha256(out.read_bytes()).hexdigest() == hashlib.sha256(decoded).hexdigest()):
-                                    out.write_bytes(decoded)
+                                if not verify_only:
+                                    out.parent.mkdir(parents=True, exist_ok=True)
+                                    if not (resume and out.is_file() and out.stat().st_size == len(decoded) and hashlib.sha256(out.read_bytes()).hexdigest() == hashlib.sha256(decoded).hexdigest()):
+                                        out.write_bytes(decoded)
+                                row['decoded_sha256'] = hashlib.sha256(decoded).hexdigest()
                                 row['status'] = 'DECOMPRESSED'
                         except (FormatError, OSError) as exc:
                             # Existing raw has not been deleted; failure explicitly reported.
@@ -113,8 +116,10 @@ def main(argv=None):
     p.add_argument('--limit', type=int, default=None)
     p.add_argument('--dry-run', action='store_true')
     p.add_argument('--resume', action='store_true')
+    p.add_argument('--verify-only', action='store_true', help='Only emit index records/hashes; do not save game payloads')
+    p.add_argument('--only-fdata', action='append', default=[], help='Filter extraction by 8-digit hex FDATA hash; may repeat')
     args = p.parse_args(argv)
-    print(run(args.base, args.output, args.extract or args.decode, args.decode, args.limit, args.dry_run, args.resume))
+    print(run(args.base, args.output, args.extract or args.decode, args.decode, args.limit, args.dry_run, args.resume, args.verify_only, set(x.lower().removeprefix('0x') for x in args.only_fdata) if args.only_fdata else None))
     return 0
 
 
