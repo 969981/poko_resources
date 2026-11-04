@@ -44,3 +44,12 @@ python -m unittest discover -s tests -v
 - 5,219 条 system 17 字节 footer 已经通过真实 `0x38f972af.fdata` 回读并成功解码；26 个未提供实体 FDATA 仍对应 6,118 条未定位记录（其中额外含 1 个独立 FILE 未提供）。
 - 结果只包含元数据和 SHA-256，完整资源仍在 Runner 临时目录中，不将原版游戏素材作为 Git 提交。
 - 详情见 [ROUND3_RESULTS.md](./ROUND3_RESULTS.md) 和 [MISSING_CONTAINERS.csv](./MISSING_CONTAINERS.csv)。下一阶段 M3 应对 KIDSOBJDB 和 schema 做结构化解析与验证。
+
+## M3 SQLite 关系索引验收（2026-11-04）
+
+- [Run #41856591033](https://github.com/969981/poko_resources/actions/runs/41856591033) **成功**。工作流 `unpack-m3-sqlite.yml` 复用已发布 M3 类型索引、8 份 M4 KIDSOBJDB 结构证据、原始 RDB/RDX/IDX 和原始缺失资源清单，执行 SQLite 严格数量/来源/SHA 关联、integrity_check 与外键检查。
+- **89,507** 条已发布资源、**98,130** 条原始 IDX/RDB 定位记录、**6,118** 条缺少实体的资源、**4,144** 条 KIDSOBJDB 对象记录、**626,349** 个 IDOK/RDOK 数据块、**8,112,762** 条字段元数据全部入库。
+- **271,271** 条 U32 数值与资源名称 Hash 相等的**未验证候选**独立存表，不能计为已恢复真实引用链。
+- SQLite 大小 **1,159,593,984** 字节；CSV/JSONL/SQLite 压缩包存于 [Actions Artifact #13337139016](https://github.com/969981/poko_resources/actions/runs/41856591033/artifacts/13337139016)，30 天保留。Git 只留 `UnPack/2.0.1/_reports/m3_sqlite_summary.json` 和工具，不提交大体积数据库。
+- 查询文档：[M3_SQLITE.md](M3_SQLITE.md)，源码：[m3_database.py](../../Scripts/unpack/m3_database.py)。
+- **尚未完成**：BFBS schema 的实际身份/路径证明（当前前缀扫描确认 0 条）、属性 Hash 的可信文本名称映射、RDOK 语义、真正对象引用及 `MissionSettings` 资源→PE 工厂→Lua handle 同一来源的证据链。M3 数据库完成不等于语义解析全部完成。

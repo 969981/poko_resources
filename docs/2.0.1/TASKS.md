@@ -39,7 +39,7 @@
 - [ ] **M3-02 P1** 研究 KIDSOBJDB header、字段、对象和字符串引用
 - [ ] **M3-03 P1** 识别 BFBS/FlatBuffers 与其他序列化格式
 - [ ] **M3-04 P1** 恢复资源/表/字段/多语言名称/Hash 关联
-- [ ] **M3-05 P1** 产出可检索的 SQLite、CSV、JSON 与来源追溯
+- [x] **M3-05 P1** 产出可检索的 SQLite、CSV、JSON 与来源追溯（Run #41856591033；其他 M3 项仅部分研究，未验收）
 - [ ] **M3-06 P1** 使用 MissionSettings 等实际资源进行语义级验证
 
 ## M4 — 图形/地图（6 项）
