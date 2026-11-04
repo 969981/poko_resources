@@ -1,0 +1,122 @@
+name: Pokopia 2.0.1 M3 relational SQLite catalog
+
+on:
+  push:
+    branches: [2.0.1_unpack]
+    paths:
+      - '.github/workflows/unpack-m3-sqlite.yml'
+      - 'Scripts/unpack/m3_database.py'
+      - 'tests/test_m3_database.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m3-sqlite-2-0-1
+  cancel-in-progress: false
+
+jobs:
+  build-catalog:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    steps:
+      - name: Sparse checkout code, original indexes and verified M4 structure evidence
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /Scripts/
+            /tests/
+            /UnPack/2.0.1/_reports/m4_kidsobjdb_data/
+            /2.0.1/romfs/LI_C0_R.IDX
+            /2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdb
+            /2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdx
+            /2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdb
+            /2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdx
+
+      - name: Run parser regressions and new SQLite tests
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Fetch only published CSV indices without 18 GB binary payload checkout
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p _work/m3sqlite/input _work/m3sqlite/output/exports
+          git show HEAD:UnPack/2.0.1/_reports/m3_resource_type_index.csv > _work/m3sqlite/input/types.csv
+          git show HEAD:UnPack/2.0.1/_reports/m4_kidsobjdb_index.csv > _work/m3sqlite/input/m4_index.csv
+          git show HEAD:UnPack/2.0.1/_reports/missing_input_records.csv > _work/m3sqlite/input/missing.csv
+          test "$(find UnPack/2.0.1/_reports/m4_kidsobjdb_data -maxdepth 1 -name 'm4_shard*.jsonl.gz' | wc -l)" -eq 8
+
+      - name: Build full source->record->field SQLite with strict audit gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m Scripts.unpack.m3_database build \
+            --types _work/m3sqlite/input/types.csv \
+            --m4-index _work/m3sqlite/input/m4_index.csv \
+            --m4-dir UnPack/2.0.1/_reports/m4_kidsobjdb_data \
+            --missing _work/m3sqlite/input/missing.csv \
+            --indexes-base 2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE \
+            --link-idx 2.0.1/romfs/LI_C0_R.IDX \
+            --out _work/m3sqlite/output/pokopia_2.0.1_m3_catalog.sqlite \
+            --exports _work/m3sqlite/output/exports --strict
+
+      - name: Run actual record and type hash lookups
+        run: |
+          python3 -m Scripts.unpack.m3_database lookup \
+            --db _work/m3sqlite/output/pokopia_2.0.1_m3_catalog.sqlite \
+            --record root:10349 --limit 5 > _work/m3sqlite/output/exports/lookup_root_10349.json
+          python3 -m Scripts.unpack.m3_database lookup \
+            --db _work/m3sqlite/output/pokopia_2.0.1_m3_catalog.sqlite \
+            --hash 20a6a0bb --limit 5 > _work/m3sqlite/output/exports/lookup_kidsobjdb_hash.json
+
+      - name: Compress SQLite and check database integrity
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import gzip, shutil, sqlite3, json
+          p=Path('_work/m3sqlite/output/pokopia_2.0.1_m3_catalog.sqlite')
+          with sqlite3.connect(p) as db:
+              assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+              assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+              counts={t:db.execute('SELECT COUNT(*) FROM '+t).fetchone()[0] for t in
+                 ('resources','source_locations','missing_records','kidsobjdb_records',
+                  'kidsobjdb_blocks','kidsobjdb_fields','hash_match_candidates')}
+          print(json.dumps({'db_bytes':p.stat().st_size,'table_counts':counts},indent=2))
+          with p.open('rb') as src, gzip.open(str(p)+'.gz','wb',compresslevel=6) as out:
+              shutil.copyfileobj(src,out,1024*1024)
+          p.unlink()
+          PY
+
+      - name: Upload SQLite, CSV and JSON exports, excluding game assets
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pokopia-m3-sqlite-${{ github.run_id }}
+          path: |
+            _work/m3sqlite/output/pokopia_2.0.1_m3_catalog.sqlite.gz
+            _work/m3sqlite/output/exports/**
+          retention-days: 30
+          if-no-files-found: warn
+          compression-level: 1
+
+      - name: Commit small evidence summary to branch
+        shell: bash
+        if: success()
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git pull --ff-only origin 2.0.1_unpack
+          mkdir -p UnPack/2.0.1/_reports
+          cp _work/m3sqlite/output/exports/summary.json UnPack/2.0.1/_reports/m3_sqlite_summary.json
+          git add --sparse -f -- UnPack/2.0.1/_reports/m3_sqlite_summary.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(unpack): indexed M3 provenance and sampled KIDSOBJDB fields in SQLite [skip ci]'
+            git push origin HEAD:2.0.1_unpack
+          fi
