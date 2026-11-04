@@ -1,0 +1,61 @@
+name: Pokopia 2.0.1 full-source unpack coverage gate
+
+on:
+  push:
+    branches: [2.0.1_unpack]
+    paths:
+      - ".github/workflows/unpack-source-coverage.yml"
+      - "Scripts/unpack/coverage.py"
+      - "tests/test_coverage.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-source-coverage-2-0-1
+  cancel-in-progress: false
+
+jobs:
+  source-coverage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - name: Sparse checkout code and fetch original index/manifests on demand
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+            tests/
+      - name: Test parsing and source coverage classifier
+        run: python3 -m unittest discover -s tests -v
+      - name: Cross-check RDB, RDX, IDX, physical sources and committed manifests
+        run: python3 -m Scripts.unpack.coverage
+      - name: Upload coverage evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-source-coverage-${{ github.run_id }}
+          path: |
+            UnPack/2.0.1/_reports/source_coverage.json
+            UnPack/2.0.1/_reports/missing_input_records.csv
+            UnPack/2.0.1/_reports/unpublished_records.csv
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit missing inputs report and coverage status
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -f -- UnPack/2.0.1/_reports/source_coverage.json
+          git add --sparse -f -- UnPack/2.0.1/_reports/missing_input_records.csv
+          git add --sparse -f -- UnPack/2.0.1/_reports/unpublished_records.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "audit(unpack): enumerate every missing physical input and unpublished record [skip ci]"
+            git push origin HEAD:2.0.1_unpack
+          fi
