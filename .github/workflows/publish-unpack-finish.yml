@@ -1,0 +1,206 @@
+name: Pokopia 2.0.1 unpack finish — standalone FILE, FDATA backfill and manifests
+
+on:
+  push:
+    branches: [2.0.1_unpack]
+    paths:
+      - '.github/workflows/publish-unpack-finish.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-unpack-publish-2-0-1
+  cancel-in-progress: false
+
+jobs:
+  standalone-file:
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include:
+          - {hash: "9d464c3c", split: false}
+          - {hash: "0b5db05b", split: true}
+          - {hash: "272c6efb", split: true}
+          - {hash: "f71746ba", split: true}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    env:
+      FILE_HASH: "${{ matrix.hash }}"
+      FILE_SPLIT: "${{ matrix.split }}"
+    steps:
+      - name: Checkout selected FILE and RDB indexes
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          persist-credentials: true
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+            tests/
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdb
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdx
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdb
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdx
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/data/0x${{ matrix.hash }}.file*
+      - name: Install 7-Zip and test
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -qq -y --no-install-recommends 7zip
+          python3 -m unittest discover -s tests -v
+      - name: Restore standalone FILE when split
+        shell: bash
+        run: |
+          set -euo pipefail
+          src=2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/data
+          if [[ "$FILE_SPLIT" == "true" ]]; then
+            first="$src/0x$FILE_HASH.file.7z.001"
+            test -s "$first"
+            7z t -y "$first"
+            7z x -y "$first" "-o$src"
+            rm -f "$src/0x$FILE_HASH.file.7z."*
+          fi
+          test -s "$src/0x$FILE_HASH.file"
+      - name: Export, hash, commit standalone FILE
+        shell: bash
+        run: |
+          set -euo pipefail
+          src=2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/data
+          digest="$(sha256sum "$src/0x$FILE_HASH.file" | awk '{print $1}')"
+          python3 -m Scripts.unpack.publish_file --hash "$FILE_HASH" --source-sha "$digest"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          dest="UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/data/0x$FILE_HASH.file"
+          staged_bytes=0
+          chunk=0
+          if [[ -d "$dest" ]]; then
+            while IFS= read -r -d '' file; do
+              git add --sparse -f -- "$file"
+              staged_bytes=$((staged_bytes + $(stat -c %s "$file")))
+              if (( staged_bytes >= 220 * 1024 * 1024 )); then
+                git commit -m "data(unpack): standalone 0x$FILE_HASH.file chunk $chunk [skip ci]"
+                git push origin HEAD:2.0.1_unpack
+                staged_bytes=0
+                chunk=$((chunk + 1))
+              fi
+            done < <(find "$dest" -type f ! -name _manifest.csv -print0 | sort -z)
+            if [[ -f "$dest/_manifest.csv" ]]; then
+              git add --sparse -f -- "$dest/_manifest.csv"
+            fi
+          fi
+          git add --sparse -f -- "UnPack/2.0.1/_reports/file_$FILE_HASH.json"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(unpack): standalone 0x$FILE_HASH.file manifest [skip ci]"
+            git push origin HEAD:2.0.1_unpack
+          fi
+
+  backfill-fdata:
+    needs: [standalone-file]
+    if: always()
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include:
+          - {hash: "38f972af", source: "0x38f972af", split: true, parts: 64}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    env:
+      FDATA_HASH: "${{ matrix.hash }}"
+      PART_COUNT: "${{ matrix.parts }}"
+      FDATA_SOURCE: "${{ matrix.source }}"
+      FDATA_SPLIT: "${{ matrix.split }}"
+    steps:
+      - name: Sparse checkout selected FDATA and indexes
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          persist-credentials: true
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/
+            tests/
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdb
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdx
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdb
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdx
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/${{ matrix.source }}.fdata*
+      - name: Install 7-Zip
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -qq -y --no-install-recommends 7zip
+      - name: Restore FDATA if compressed
+        shell: bash
+        run: |
+          set -euo pipefail
+          src="2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/$(dirname "$FDATA_SOURCE")"
+          if [[ "$FDATA_SPLIT" == "true" ]]; then
+            first="$src/0x$FDATA_HASH.fdata.7z.001"
+            test -s "$first"
+            7z t -y "$first"
+            7z x -y "$first" "-o$src"
+            rm -f "$src/0x$FDATA_HASH.fdata.7z."*
+          fi
+          test -s "$src/0x$FDATA_HASH.fdata"
+      - name: Backfill missing records in small Git pushes
+        shell: bash
+        run: |
+          set -euo pipefail
+          src="2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/$(dirname "$FDATA_SOURCE")"
+          digest="$(sha256sum "$src/0x$FDATA_HASH.fdata" | awk '{print $1}')"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          dest="UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/$FDATA_SOURCE.fdata"
+          for ((part=0; part<PART_COUNT; part++)); do
+            python3 -m Scripts.unpack.publish_stream --hash "$FDATA_HASH" \
+              --part-index "$part" --parts "$PART_COUNT" \
+              --source-sha "$digest" --max-total-mib 450 --report-tag backfill${PART_COUNT}
+            if [[ -d "$dest" ]]; then
+              git add --sparse -f -- "$dest"
+            fi
+            report="$(printf 'UnPack/2.0.1/_reports/ktrdb_%s_backfill%s_part%02d.json' "$FDATA_HASH" "$PART_COUNT" "$part")"
+            git add --sparse -f -- "$report"
+            if ! git diff --cached --quiet; then
+              git commit -m "data(unpack): backfill 0x$FDATA_HASH part $part/$PART_COUNT [skip ci]"
+              git push origin HEAD:2.0.1_unpack
+              # Preserve tracked Git blobs, but remove their working copies
+              # outside the sparse checkout to keep runner disk usage bounded.
+              git sparse-checkout reapply
+            fi
+          done
+
+  reconcile:
+    if: always()
+    needs: [standalone-file, backfill-fdata]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - name: Checkout Git history and reconciliation script only
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          persist-credentials: true
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/unpack/
+      - name: Merge historic manifests and verify Git HEAD blob sizes
+        run: |
+          python3 -m Scripts.unpack.reconcile_manifest --output UnPack/2.0.1
+      - name: Commit corrected manifests and audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          find UnPack/2.0.1/romfs -name _manifest.csv -type f -print0 | xargs -0 -r git add --sparse -f --
+          git add --sparse -f -- UnPack/2.0.1/_reports/manifest_reconciliation.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data(unpack): reconcile source manifests against committed Git files [skip ci]"
+            git push origin HEAD:2.0.1_unpack
+          fi

@@ -1,7 +1,7 @@
 """Stream large KT FDATA records directly to source-mirrored RomFS output.
 
 Unlike the M2 sample extractor, this does not write duplicate packed and
-decoded copies. A decoded record >90 MiB is split into 80 MiB numbered parts.
+decoded copies. A decoded record >48 MiB is split into 48 MiB numbered parts.
 One partition at a time can be committed to Git to avoid multi-GB pushes.
 """
 import argparse
@@ -10,6 +10,8 @@ import hashlib
 import json
 import os
 import tempfile
+import subprocess
+import io
 import zlib
 from collections import Counter
 from pathlib import Path
@@ -22,7 +24,7 @@ MIB = 1024 * 1024
 
 
 class PieceWriter:
-    def __init__(self, folder, filename, expected, chunk_bytes=80 * MIB, max_single=90 * MIB):
+    def __init__(self, folder, filename, expected, chunk_bytes=48 * MIB, max_single=48 * MIB):
         self.folder = Path(folder)
         self.name = filename
         self.expected = expected
@@ -119,14 +121,37 @@ def copy_decoded_stream(fd, header, sink):
         raise FormatError("KT_PACKED_LENGTH_MISMATCH")
 
 
+def _repo_path(path):
+    return path.resolve().relative_to(Path.cwd().resolve()).as_posix()
+
+
+def _git_show(path):
+    try:
+        return subprocess.check_output(["git", "show", "HEAD:" + _repo_path(path)],
+                                       text=True, encoding="utf-8", stderr=subprocess.DEVNULL)
+    except (OSError, subprocess.CalledProcessError, ValueError):
+        return ""
+
+
+def _git_existing(folder):
+    try:
+        result = subprocess.check_output(
+            ["git", "ls-tree", "-r", "--name-only", "HEAD", "--", _repo_path(folder)],
+            text=True, encoding="utf-8", stderr=subprocess.DEVNULL)
+        return set(result.splitlines())
+    except (OSError, subprocess.CalledProcessError, ValueError):
+        return set()
+
+
 def _read_prior(path):
-    if not path.is_file():
-        return {}
-    with path.open(newline="", encoding="utf-8") as handle:
-        return {row["record_id"]: row for row in csv.DictReader(handle)}
+    if path.is_file():
+        with path.open(newline="", encoding="utf-8") as handle:
+            return {row["record_id"]: row for row in csv.DictReader(handle)}
+    contents = _git_show(path)
+    return {row["record_id"]: row for row in csv.DictReader(io.StringIO(contents)) if row.get("record_id")}
 
 
-def run(base, out, hash_text, part_index, parts, max_total_mib, source_sha=None):
+def run(base, out, hash_text, part_index, parts, max_total_mib, source_sha=None, report_tag=""):
     if len(hash_text) != 8 or any(x not in "0123456789abcdef" for x in hash_text.lower()):
         raise ValueError("FDATA hash must be 8 hexadecimal digits")
     if not 0 <= part_index < parts:
@@ -140,6 +165,7 @@ def run(base, out, hash_text, part_index, parts, max_total_mib, source_sha=None)
     updates = {}
     reports = []
     manifest_cache = {}
+    git_output_cache = {}
     for catalog in ("root", "system"):
         rdx_file = base / (catalog + ".rdx")
         rdb_file = base / (catalog + ".rdb")
@@ -178,7 +204,7 @@ def run(base, out, hash_text, part_index, parts, max_total_mib, source_sha=None)
             if folder not in manifest_cache:
                 manifest_cache[folder] = _read_prior(folder / "_manifest.csv")
             previous = manifest_cache[folder].get(record_id)
-            if previous and previous.get("publish_status") in ("PUBLISHED", "ALREADY_PRESENT_VERIFIED"):
+            if previous and previous.get("publish_status") in ("PUBLISHED", "ALREADY_PRESENT_VERIFIED", "ALREADY_PRESENT_GIT_REFERENCE"):
                 paths = [out / p for p in previous.get("output_path", "").split(";") if p]
                 same_source = previous.get("source_sha256") == row["source_sha256"]
                 valid_files = bool(paths) and all(p.is_file() for p in paths)
@@ -187,6 +213,14 @@ def run(base, out, hash_text, part_index, parts, max_total_mib, source_sha=None)
                 if same_source and same_bytes and same_sha:
                     statuses["ALREADY_PRESENT_VERIFIED"] += 1
                     continue
+                # Sparse checkout deliberately omits previously published binary assets.
+                # Their Git objects persist in HEAD even when files are absent locally.
+                if same_source and paths:
+                    if folder not in git_output_cache:
+                        git_output_cache[folder] = _git_existing(folder)
+                    if all(_repo_path(path) in git_output_cache[folder] for path in paths):
+                        statuses["ALREADY_PRESENT_GIT_REFERENCE"] += 1
+                        continue
             name = f"{catalog}_{item.record_index:06d}_{item.name_hash:08x}.fdata_idrk.bin"
             if item.uncompressed_size > max_total_mib * MIB - bytes_published:
                 row["publish_status"] = "SKIPPED_BATCH_BUDGET"
@@ -244,7 +278,10 @@ def run(base, out, hash_text, part_index, parts, max_total_mib, source_sha=None)
     report = {"hash": hash_text, "part_index": part_index, "partitions": parts,
               "selected_records": records_selected, "accepted_bytes": bytes_published,
               "statuses": dict(statuses)}
-    save_json(out / "_reports" / f"ktrdb_{hash_text}_part{part_index:02d}.json", report)
+    if report_tag and not report_tag.replace("_", "").isalnum():
+        raise ValueError("Invalid report tag")
+    report_base = f"ktrdb_{hash_text}" + (f"_{report_tag}" if report_tag else "")
+    save_json(out / "_reports" / f"{report_base}_part{part_index:02d}.json", report)
     print(json.dumps(report, indent=2, ensure_ascii=False), flush=True)
     return report
 
@@ -263,9 +300,10 @@ def main():
     p.add_argument("--parts", type=int, default=1)
     p.add_argument("--max-total-mib", type=int, default=800)
     p.add_argument("--source-sha")
+    p.add_argument("--report-tag", default="")
     args = p.parse_args()
     run(args.base, args.output, args.hash.lower(), args.part_index, args.parts,
-        args.max_total_mib, args.source_sha)
+        args.max_total_mib, args.source_sha, args.report_tag)
 
 
 if __name__ == "__main__":
