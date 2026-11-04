@@ -1,0 +1,91 @@
+name: M5 - Secondary 14-Icon G1T Atlas Layout
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/compare_special_item_atlas.py"
+      - "Scripts/resources/g1t_to_png.py"
+      - ".github/workflows/unpack-m5-atlas14.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pokopia-m5-atlas14-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  atlas-14:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/g1t_to_png.py
+            Scripts/resources/crop_native_item_atlas.py
+            Scripts/resources/score_atlas_candidates.py
+            Scripts/resources/compare_special_item_atlas.py
+            UnPack/2.0.1/Resources/Items/Icons
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/MountPoint_1/0x00176283.fdata/native/root_012800_35d04d04.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/MountPoint_1/0x00176283.fdata/native/root_047603_c8d83a39.texinfo
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install BC7 / BGRA decoder
+        run: python -m pip install "Pillow>=11,<13"
+
+      - name: Test BGRA raw decoder
+        run: |
+          python - <<'PY'
+          import io
+          from PIL import Image
+          from Scripts.resources.g1t_to_png import decode_png
+          # Little-endian BGRA for one red pixel and three transparent black pixels.
+          raw=bytes([0,0,255,255]+[0,0,0,0]*3)
+          im=Image.open(io.BytesIO(decode_png(raw,2,2,"linear",0x0A)))
+          assert im.size==(2,2)
+          assert im.getpixel((0,0))==(255,0,0,255),im.getpixel((0,0))
+          PY
+
+      - name: Produce format-aware candidates for 13 BC7 icons and 1 BGRA icon
+        run: python -m Scripts.resources.compare_special_item_atlas
+
+      - name: Verify output and record ranked layouts
+        run: |
+          python - <<'PY'
+          import json,csv
+          from pathlib import Path
+          from PIL import Image
+          p=Path("atlas14-preview")
+          report=json.loads((p/"summary.json").read_text(encoding="utf-8"))
+          assert report["total_texinfo_records"]==14,report
+          assert report["texture_formats"]==["0x66","0xa"],report
+          with (p/"candidate_manifest.csv").open(encoding="utf-8",newline="") as f:
+              rows=list(csv.DictReader(f))
+          good=[r for r in rows if r["status"]=="UNVERIFIED_CANDIDATE"]
+          assert len(good)>=14,report
+          for r in good:
+              with Image.open(r["png"]) as im:
+                  assert im.size==(72,72),r
+                  im.verify()
+          print("14-icon candidate PNGs:",len(good))
+          print("Ranking:",report["rankings"])
+          PY
+
+      - name: Upload original-source layout candidates
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-native-14-item-atlas-candidates
+          path: atlas14-preview/
+          retention-days: 14
+          if-no-files-found: warn
