@@ -43,6 +43,13 @@ class G1TTests(unittest.TestCase):
                 self.assertEqual(im.size, (64, 64))
                 self.assertEqual(im.getpixel((0, 0)), (0, 0, 0, 255))
 
+    def test_bc3_dxt5_to_png(self):
+        data = m.decode_png(bytes(4096), 64, 64, "linear", 0x62)
+        with Image.open(io.BytesIO(data)) as im:
+            self.assertEqual(im.size, (64, 64))
+            self.assertEqual(im.format, "PNG")
+            self.assertEqual(im.getpixel((0, 0)), (0, 0, 0, 0))
+
     def test_gob_changes_block_order(self):
         source = bytes((i * 37) % 256 for i in range(4096))
         self.assertNotEqual(m.unswizzle_gob_bc7(source, 64, 64, 1), source)
