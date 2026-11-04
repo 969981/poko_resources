@@ -1,0 +1,16 @@
+{
+  "layout_rows": 9427,
+  "mapping_rows": 3229,
+  "inventory_items": 1615,
+  "layout_zero_rows": 4713,
+  "link_status": {
+    "VERIFIED_NATIVE_FIELDS": 1227,
+    "NATIVE_MISMATCH": 2002
+  },
+  "g1t_scanned": 3777,
+  "texinfo_scanned": 3461,
+  "previews": {
+    "PNG_CANDIDATE_UNVERIFIED": 20
+  },
+  "warning": "VERIFIED_NATIVE_FIELDS requires real TEXINFO name, real G1T size, original pack and KIDSOBJDB field triple at offsets +0,+0x30,+0x34. Image layout and atlas crops are still unverified."
+}
