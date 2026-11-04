@@ -28,6 +28,54 @@
   "warnings": [
     "PokoHex assets are a separately sourced dataset, not proven native 2.0.1 extraction.",
     "G1T candidates are NOT mapped to item IDs; type hashes alone do not prove item identity.",
-    "Missing PokoHex PNG does NOT prove there is no corresponding texture in the game."
-  ]
+    "Missing PokoHex PNG does NOT prove there is no corresponding texture in the game.",
+    "PokoHex sprite resources are third-party references, not verified native 2.0.1 game extraction."
+  ],
+  "additional_pokohex_categories": {
+    "Villagers": {
+      "game_id_slots": 1050,
+      "named_slots": 402,
+      "pokohex_png_files": 378,
+      "linked_sprite_ids": 374,
+      "unreferenced_sprite_ids": [
+        1,
+        18,
+        98,
+        220
+      ],
+      "missing_public_or_named_icons": 25,
+      "sprite_id_rule": "portrait_map: villager ID -> portrait ID",
+      "native_2_0_1_verified": false,
+      "pokohex_source_commit": "c71d2b73fb9d8cfe99c1067e6bfadfd19f60bf78"
+    },
+    "Reactions": {
+      "game_id_slots": 128,
+      "named_slots": 47,
+      "pokohex_png_files": 47,
+      "linked_sprite_ids": 47,
+      "unreferenced_sprite_ids": [],
+      "missing_public_or_named_icons": 0,
+      "sprite_id_rule": "direct",
+      "native_2_0_1_verified": false,
+      "pokohex_source_commit": "c71d2b73fb9d8cfe99c1067e6bfadfd19f60bf78"
+    },
+    "Skills": {
+      "game_id_slots": 64,
+      "named_slots": 11,
+      "pokohex_png_files": 10,
+      "linked_sprite_ids": 10,
+      "unreferenced_sprite_ids": [],
+      "missing_public_or_named_icons": 0,
+      "sprite_id_rule": "direct",
+      "native_2_0_1_verified": false,
+      "pokohex_source_commit": "c71d2b73fb9d8cfe99c1067e6bfadfd19f60bf78"
+    }
+  },
+  "additional_pokohex_source": {
+    "repo": "https://github.com/969981/PokoHex",
+    "commit": "c71d2b73fb9d8cfe99c1067e6bfadfd19f60bf78",
+    "images": "PokoHex/Resources/{Villager,Reaction,Skill}",
+    "names": "PokoHex.Core/Resources/text/<lang>/text_{villager,reaction,skill}_<lang>.txt",
+    "portrait_map": "PokoHex.Core/Resources/byte/villager_portrait.bin"
+  }
 }
