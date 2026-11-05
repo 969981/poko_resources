@@ -49,6 +49,26 @@ python Scripts/resources/export_unlinked_native_text.py --start-entry 471
 - text_id 是**单张原生表内的零基记录顺序**，不是全局任务或剧情 ID。
 - M7 中非 PARSED 的 LINKDATA 文件仍需分别分析其他格式。
 
+## M7/M8/M9 统一文本证据目录（已执行）
+
+新增可重复执行的目录建设工具：
+
+~~~bash
+python -m unittest discover -s tests -p 'test_native_text_catalog.py' -v
+python Scripts/resources/build_native_text_catalog.py
+~~~
+
+- Actions：[M7/M9 Verified native text provenance catalog](https://github.com/969981/poko_resources/actions/workflows/unpack-m7-m9-text-catalog.yml)。
+- 输出目录：UnPack/2.0.1/Resources/Localization/TextCatalog/。
+- native_text_table_catalog.csv：全部 2,738 张已解析表的来源、布局、语言证据与导出路径。
+- m9_verified_text_row_links.csv：已验证的 5,365 条 **M9 类型化资源→文本行** 边及来源字段；不会冒充脚本调用。
+- m9_verified_group_domain_summary.csv：三个表组与四类关系的分布。
+- native_text_catalog_report.json：覆盖报告、已知角色来源和未知范围。
+
+**关键修正：**原始 M7 结构对齐规则排除了 02332–02340 的 Reactions 和 04942–04950 的 Skills，但 M8 的固定版本能力解析器及对应原生记录为这两组分别提供了可靠的九语言顺序及角色表身份。因此在 983 张 M7 unlinked 表中，**18 张在统一目录中升级为 M8_PINNED_NATIVE_ROLE_MAPPING，另 965 张仍 UNKNOWN**。原始 UnlinkedText 仍作为不猜语种的无损底层导出，不改变其 source-provenance manifest。
+
+三个已有关系表组中，只有 04645 属于 M7 195 个结构候选组；02332 和 04942 是 M8 单独来源验证组。这个区分对后续识别使用者非常重要。
+
 ## 与 M8/M9 引用证据衔接
 
 M9 verified_resource_text_edges.csv 当前有 5,365 条具备原生布局或固定解析器证据的资源到文本外键：
