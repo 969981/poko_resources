@@ -1,11 +1,12 @@
 test_full_width_unicode_spaces_are_valid_text (test_m7_localization.NativeTextTests.test_full_width_unicode_spaces_are_valid_text) ... ok
 test_group_nine_requires_structural_alignment (test_m7_localization.NativeTextTests.test_group_nine_requires_structural_alignment) ... ok
+test_private_use_game_font_codepoint_is_preserved (test_m7_localization.NativeTextTests.test_private_use_game_font_codepoint_is_preserved) ... ok
 test_record32_six_raw_forms (test_m7_localization.NativeTextTests.test_record32_six_raw_forms) ... ok
 test_record8_relative_pointers_and_empty_slots (test_m7_localization.NativeTextTests.test_record8_relative_pointers_and_empty_slots) ... ok
 test_reject_bad_pointer (test_m7_localization.NativeTextTests.test_reject_bad_pointer) ... ok
 test_reject_unrecognized_record_width (test_m7_localization.NativeTextTests.test_reject_unrecognized_record_width) ... ok
 
 ----------------------------------------------------------------------
-Ran 6 tests in 0.001s
+Ran 7 tests in 0.001s
 
 OK
