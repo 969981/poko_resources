@@ -4,13 +4,15 @@
   "inventory_items": 1615,
   "layout_zero_rows": 4713,
   "link_status": {
-    "VERIFIED_NATIVE_FIELDS": 1227,
-    "NATIVE_MISMATCH": 2002
+    "VERIFIED_NATIVE_FIELDS": 2560,
+    "NATIVE_SOURCE_UNAVAILABLE": 669
   },
-  "g1t_scanned": 3777,
+  "g1t_scanned": 3806,
   "texinfo_scanned": 3461,
   "previews": {
     "PNG_CANDIDATE_UNVERIFIED": 20
   },
-  "warning": "VERIFIED_NATIVE_FIELDS requires real TEXINFO name, real G1T size, original pack and KIDSOBJDB field triple at offsets +0,+0x30,+0x34. Image layout and atlas crops are still unverified."
+  "texinfo_parser": "Shared parse_texinfo: strict count + all 104-byte records, exact sprite name",
+  "pixel_check": "NOT_RUN_BY_THIS_AUDIT",
+  "warning": "VERIFIED_NATIVE_FIELDS proves native TEXINFO sprite membership, indexed G1T size and KIDSOBJDB triple. NATIVE_SOURCE_UNAVAILABLE means missing/ambiguous input, not a disproved link. PNG identity is audited separately in Items/Native_2.0.1/native_icon_coverage.json."
 }
