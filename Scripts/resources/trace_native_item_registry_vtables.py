@@ -47,24 +47,27 @@ def locate(parts,addr,size):
     return None,None,None
 
 def mod0_probe(parts):
+    """NSO text[4] is often an image/module VA into rodata, not text-relative."""
     text=next(p for p in parts if p["name"]=="text")
     b=text["data"]
+    value=u32(b,4)
     info={"text_first_64_hex":b[:64].hex(),
-          "word_at_text_plus_4":hex(u32(b,4))}
-    off=u32(b,4)
-    candidates=[off]
-    # Note: some builds use text base + signed mod-header offset.
-    if off&(1<<31):candidates.append((off-(1<<32)) & 0xffffffffffffffff)
-    if off+4<len(b) and b[off:off+4]==b"MOD0":
-        base=text["mem_offset"]+off
-        info["mod0_offset"]=hex(base)
-        info["mod0_found"]=True
-        info["mod0_header_64_hex"]=b[off:off+64].hex()
-        info["dynamic_relative"]=hex(u32(b,off+4))
-        return info,base,u32(b,off+4)
-    info["mod0_found"]=False
-    info["candidate_offsets"]=[hex(x) for x in candidates]
+          "word_at_text_plus_4":hex(value)}
+    bases=[("image_va",value),("text_relative",text["mem_offset"]+value)]
+    for mode,va in bases:
+        p,buf,idx=locate(parts,va,64)
+        if p is None or buf[idx:idx+4]!=b"MOD0":
+            continue
+        info.update(mod0_found=True,mod0_offset=hex(va),
+                    mod0_section=p["name"],mod0_pointer_mode=mode,
+                    mod0_header_64_hex=buf[idx:idx+64].hex())
+        rel=struct.unpack_from("<i",buf,idx+4)[0]
+        info["dynamic_relative"]=rel
+        return info,va,rel
+    info.update(mod0_found=False,
+                candidate_virtual_addresses=[{"mode":k,"va":hex(v)} for k,v in bases])
     return info,None,None
+
 
 def dynamic_probe(parts,modbase,reldyn):
     if modbase is None:return [],{"status":"MOD0_NOT_FOUND"}
@@ -144,6 +147,9 @@ def functions(parts,pointers,limit=120):
     for slot,func in pointers.items():
         base=slot-0x30
         if base<0:continue
+        # Only consider the first pointer in each dense run. Sliding the
+        # "vtable base" by 8 creates hundreds of thousands of false vtables.
+        if base-8 in pointers:continue
         hits={hex(i):hex(pointers[base+i]) for i in range(0,0x60,8) if base+i in pointers}
         prior=sum(1 for i in range(0,0x30,8) if base+i in pointers)
         after=sum(1 for i in (0x30,0x38,0x40,0x48,0x50,0x58) if base+i in pointers)
@@ -220,6 +226,26 @@ def selftest():
     struct.pack_into("<QQ",sample,0x90,DT_NULL,0)
     # relocation slot 0x400 -> executable 0x120
     struct.pack_into("<QQq",sample,0xC0,0x400,R_AARCH64_RELATIVE,0x120)
+    # Test image-VA MOD0 pointer into a distinct rodata mapping.
+    image=bytearray(0x300)
+    struct.pack_into("<I",image,4,0x440)
+    rodata=bytearray(0x400)
+    rodata[0x40:0x44]=b"MOD0"
+    struct.pack_into("<I",rodata,0x44,0x20)
+    struct.pack_into("<QQ",rodata,0x60,DT_RELA,0x4c0)
+    struct.pack_into("<QQ",rodata,0x70,DT_RELASZ,24)
+    struct.pack_into("<QQ",rodata,0x80,DT_RELAENT,24)
+    struct.pack_into("<QQ",rodata,0x90,DT_NULL,0)
+    struct.pack_into("<QQq",rodata,0xC0,0x800,R_AARCH64_RELATIVE,0x120)
+    image_parts=[{"name":"text","mem_offset":0,"data":bytes(image)},
+                 {"name":"rodata","mem_offset":0x400,"data":bytes(rodata)},
+                 {"name":"data","mem_offset":0x800,"data":b"\x00"*0x100}]
+    found,newbase,newrel=mod0_probe(image_parts)
+    assert found["mod0_found"] and found["mod0_pointer_mode"]=="image_va" and newbase==0x440
+    newdyn,newdiag=dynamic_probe(image_parts,newbase,newrel)
+    newptrs,newdiag2=relocation_probe(image_parts,newbase,newdyn)
+    assert newptrs=={0x800:0x120},newdiag2
+
     parts=[{"name":"text","mem_offset":0,"data":bytes(sample)},
            {"name":"rodata","mem_offset":0x400,"data":b"\x00"*0x100}]
     info,base,off=mod0_probe(parts)
