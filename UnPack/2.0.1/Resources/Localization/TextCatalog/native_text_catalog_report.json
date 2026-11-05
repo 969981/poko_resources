@@ -1,0 +1,55 @@
+{
+  "status": "M7_ALL_PARSED_TEXT_TABLES_CATALOGED_WITH_EXISTING_M9_TYPED_EDGES",
+  "native_text_tables": 2738,
+  "nine_language_candidate_groups": 195,
+  "nine_language_source_tables": 1755,
+  "unlinked_native_text_tables": 983,
+  "typed_resource_edges_from_m9": 5365,
+  "m9_groups_with_verified_typed_edges": [
+    2332,
+    4645,
+    4942
+  ],
+  "m8_source_verified_role_groups": [
+    2332,
+    4942
+  ],
+  "m8_source_verified_role_tables": 18,
+  "m7_unlinked_with_no_m8_role_identity": 965,
+  "m9_group_domains": [
+    {
+      "group_start": 2332,
+      "domain": "Reactions",
+      "category": "Reactions",
+      "edges": 47
+    },
+    {
+      "group_start": 4645,
+      "domain": "Item",
+      "category": "Items",
+      "edges": 3675
+    },
+    {
+      "group_start": 4645,
+      "domain": "MapPartVariation",
+      "category": "MapParts",
+      "edges": 1632
+    },
+    {
+      "group_start": 4942,
+      "domain": "Skills",
+      "category": "Skills",
+      "edges": 11
+    }
+  ],
+  "verified_new_script_to_text_caller_edges": 0,
+  "unlinked_tables_with_m9_verified_typed_edges": 18,
+  "full_game_coverage": "NOT_CLAIMED",
+  "notes": [
+    "Locale candidates are M7 structural assignments, not established locale identity for every table.",
+    "M9 edges are existing typed resource/row relations, not newly proven script calls.",
+    "A group's row-level verified edge is not evidence that the entire table has one category.",
+    "M8 pinned native role tables provide Reactions/Skills identity for 18 M7-unlinked files.",
+    "No new Quest/Dialogue/Buildings/UI/Tutorials mappings were inferred."
+  ]
+}
