@@ -1,0 +1,92 @@
+name: M25.8 - Complete 629 original KIDS icon source registry
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m25_8_complete_native_icon_registry.py"
+      - ".github/workflows/unpack-m25-8-complete-native-registry.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m25-8-registry-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  merge-original-KIDS-source-OIDs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Sparse checkout every necessary original source-qualified index
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m25_8_complete_native_icon_registry.py
+            UnPack/2.0.1/Resources/Pokemon/pokemon_identity_crosswalk.csv
+            UnPack/2.0.1/Resources/Pokemon/NativeRecoveryM25
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M25/m25_original_second_hop_kids_source_oid_backrefs.csv
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M25/m25_2_full_628_native_icon_registry.csv
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M25/m25_3_26_original_source_to_texture_objects.csv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check original registry cardinality guards
+        run: python -m Scripts.resources.m25_8_complete_native_icon_registry --self-test
+
+      - name: Export all 629 original source and texture OIDs with real G1T/TEXINFO links
+        run: python -m Scripts.resources.m25_8_complete_native_icon_registry
+
+      - name: Enforce complete native block source evidence without guessing species IDs
+        run: |
+          python - <<'PY'
+          import csv,json
+          from collections import Counter
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Pokemon/NativeRecoveryM25")
+          rows=list(csv.DictReader((p/"m25_8_complete_native_629_kids_icon_source_index.csv").open(encoding="utf-8",newline="")))
+          s=json.loads((p/"m25_8_complete_native_registry_summary.json").read_text(encoding="utf-8"))
+          assert len(rows)==s["original_registry_source_oid_nodes"]==629
+          assert s["main_kids_icon_source_normal"]==314
+          assert s["main_kids_icon_source_uni"]==314
+          assert s["other_icon_at_home_source"]==1
+          assert s["m25_new_original_native_g1t_texinfo_pngs"]==26
+          assert len({x["source_oid"] for x in rows})==629
+          assert len({x["target_texture_oid"] for x in rows})==629
+          assert not s["native_gameplay_species_ID_to_array_slot_proven"]
+          assert not s["native_gameplay_villager_ID_to_source_OID_proven"]
+          assert all(not x["game_species_id_verified"] and not x["native_villager_id_verified"] for x in rows)
+          print("M25.8 exact native 314+314+1 source registry validated")
+          PY
+
+      - name: Upload complete 629 KIDS source index
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-m25-8-original-629-KIDS-source-icon-index
+          path: |
+            UnPack/2.0.1/Resources/Pokemon/NativeRecoveryM25/m25_8_*
+          if-no-files-found: warn
+          retention-days: 21
+
+      - name: Commit complete original KIDS source registry
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Pokemon/NativeRecoveryM25/m25_8_*
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m25.8): complete original KIDS icon registry with 629 unique native source OIDs"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
