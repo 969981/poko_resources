@@ -1,4 +1,4 @@
-name: M7 - Export native text files (UTF-8 TXT and JSONL)
+name: M7 - Verify four native text anchors (TXT and JSONL)
 
 on:
   workflow_dispatch:
@@ -35,7 +35,6 @@ jobs:
             tests/test_native_text_file_export.py
             UnPack/2.0.1/Resources/Localization/M7/nine_language_groups.csv
             UnPack/2.0.1/Resources/Localization/M7/native_table_inventory.csv
-            UnPack/2.0.1/Resources/Localization/TextExports
             UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02323.bin
             UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02324.bin
             UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02325.bin
@@ -78,13 +77,13 @@ jobs:
       - name: Test structure, escaping, forms, and SHA-failure behavior
         run: python -m unittest discover -s tests -p 'test_native_text_file_export.py' -v
       - name: Export four anchored nine-language groups from original decoded bytes
-        run: python Scripts/resources/export_native_text_files.py
+        run: python Scripts/resources/export_native_text_files.py --dest /tmp/m7-anchor-text-exports
       - name: Check output record counts and every language file
         run: |
           python - <<'PY'
           import json, hashlib
           from pathlib import Path
-          root=Path('UnPack/2.0.1/Resources/Localization/TextExports')
+          root=Path('/tmp/m7-anchor-text-exports')
           report=json.loads((root/'text_export_report.json').read_text(encoding='utf-8'))
           assert report['status']=='NATIVE_TEXT_EXPORTED_WITH_M7_PROVENANCE'
           assert report['groups_exported']==4
@@ -104,18 +103,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pokopia-201-native-text-export
-          path: UnPack/2.0.1/Resources/Localization/TextExports
+          path: /tmp/m7-anchor-text-exports
           retention-days: 30
-      - name: Commit verified exports
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A -- UnPack/2.0.1/Resources/Localization/TextExports
-          if git diff --cached --quiet; then echo 'No changed text files'; exit 0; fi
-          git commit -m 'data(m7): export native nine-language TXT and lossless JSONL'
-          for attempt in 1 2 3; do
-            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
-            git fetch origin 2.0.1_unpack
-            git rebase origin/2.0.1_unpack
-          done
-          exit 1
