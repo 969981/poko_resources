@@ -97,3 +97,7 @@ GitHub Actions：`.github/workflows/unpack-m21-native-aux-icons.yml`。工作流
 - 其余 **79 项**村民参考图与当前 609 张原生宝可梦纹理的最近候选距离大于 0.015。这意味着 **当前原生 609 范围内**没有可靠匹配，不证明完整 RomFS 中不存在这些图。
 
 后续应扩展可能遗漏的独立头像图集、未解析/索引歧义的 TEXINFO/G1T，以及验证村民外观引用表。遇到同纹理不同原始记录、Alpha/颜色差异或特殊形态，必须保持来源 Hash 和候选列表，不按最接近者直接写实锤 ID。
+
+## 后续 M22 原生追踪
+
+已新增 [M22 村民头像 79 张缺失源与 9 张变体原生字段逐字节核验](M22_VILLAGER_NATIVE_SOURCE_AUDIT.md)。结果：79 张在原有 3,930 张非宝可梦原生图像中无新的高置信候选；9 张涉及 54 条原生 typed-object→纹理 Hash 引用，经源文件 SHA 与字段字节验证，但 game villager ID 语义仍未证明。原始缺失资源里 557 条 G1T、12 份 TEXINFO（最多 15 Sprite 记录）需分源补齐核对。
