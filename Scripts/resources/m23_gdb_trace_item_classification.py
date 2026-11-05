@@ -24,6 +24,9 @@ SITES = {
 }
 SCHEMA = "M23_ITEM_CLASSIFICATION_GDB_V1"
 
+# Operator tags separate experiments; they are NOT native gameplay enum proofs.
+ALLOWED_PHASES = {"unlabeled", "inventory", "crafting", "construction", "materials"}
+
 
 def reg(frame, name):
     return int(frame.read_register(name))
@@ -33,6 +36,22 @@ def read_u64(inferior, addr):
     if not addr:
         raise ValueError("NULL_OBJECT")
     return struct.unpack("<Q", bytes(inferior.read_memory(addr, 8)))[0]
+
+
+def caller_stack(frame, base, limit=8):
+    """Read-only guest ARM64 stack sample, bounded to avoid expensive traces."""
+    frames = []
+    cursor = frame
+    for _ in range(limit):
+        if cursor is None:
+            break
+        try:
+            pc = int(cursor.pc())
+            frames.append({"pc": hex(pc), "candidate_main_rva": hex(pc - base)})
+            cursor = cursor.older()
+        except Exception:
+            break
+    return frames
 
 
 class ProbeBreakpoint(gdb.Breakpoint):
@@ -47,25 +66,35 @@ class ProbeBreakpoint(gdb.Breakpoint):
             return False
         p.hits += 1
         event = {"schema": SCHEMA, "seq": p.hits, "event": SITES[self.rva],
-                 "rva": hex(self.rva)}
+                 "rva": hex(self.rva), "phase": p.phase,
+                 "phase_evidence": "OPERATOR_DECLARED_NOT_NATIVE_UI_IDENTITY"}
         try:
             f = gdb.newest_frame()
             inferior = gdb.selected_inferior()
             t = gdb.selected_thread()
             event["thread_ptid"] = list(t.ptid) if t else []
+            event["guest_call_stack"] = caller_stack(f, p.base)
             if self.rva == 0x2F238:
                 obj, method = reg(f, "x0"), reg(f, "x8")
+                vtable = read_u64(inferior, obj)
+                slot_target = read_u64(inferior, vtable + 0x38)
                 event.update(item_id_candidate=reg(f, "x19") & 0xffff,
-                             v1_object=hex(obj), v1_vtable=hex(read_u64(inferior, obj)),
+                             v1_object=hex(obj), v1_vtable=hex(vtable),
                              v1_method=hex(method),
+                             v1_method_from_vtable_slot=hex(slot_target),
+                             v1_vtable_slot_agrees=(method == slot_target),
                              v1_method_candidate_rva=hex(method - p.base),
                              status="DYNAMIC_V1_TARGET__CLASS_UNVERIFIED")
             elif self.rva == 0x2F258:
                 obj, vt, method = reg(f, "x0"), reg(f, "x8"), reg(f, "x2")
+                actual_vtable = read_u64(inferior, obj)
+                slot_target = read_u64(inferior, actual_vtable + 0x30)
                 event.update(item_id_candidate=reg(f, "x1") & 0xffff,
                              v2_object=hex(obj), v2_vtable=hex(vt),
-                             v2_actual_vtable=hex(read_u64(inferior, obj)),
+                             v2_actual_vtable=hex(actual_vtable),
                              v2_method=hex(method),
+                             v2_method_from_vtable_slot=hex(slot_target),
+                             v2_vtable_slot_agrees=(vt == actual_vtable and method == slot_target),
                              v2_method_candidate_rva=hex(method - p.base),
                              status="DYNAMIC_V2_TARGET__LOADER_UNVERIFIED")
             else:
@@ -113,6 +142,7 @@ class Probe:
         self.base, self.table, self.limit = base, table, limit
         self.disabled = False
         self.hits, self.errors = 0, 0
+        self.phase = "unlabeled"
         self.exact_ids = set()
         self.out = out.open("w", encoding="utf-8", buffering=1)
         self.out.write(json.dumps({
@@ -176,5 +206,27 @@ class Stop(gdb.Command):
             gdb.write("[M23] No active probe\n")
 
 
+class Phase(gdb.Command):
+    """Set an operator-declared experiment phase; does not alter guest memory."""
+    def __init__(self, start):
+        super().__init__("pokopia_m23_phase", gdb.COMMAND_USER)
+        self.start = start
+
+    def invoke(self, args, from_tty):
+        label = args.strip().lower()
+        if label not in ALLOWED_PHASES:
+            raise gdb.GdbError("Phase must be: " + ", ".join(sorted(ALLOWED_PHASES)))
+        p = self.start.probe
+        if not p or p.disabled:
+            raise gdb.GdbError("No active M23 probe; call pokopia_m23_start first")
+        p.phase = label
+        p.out.write(json.dumps({"schema": SCHEMA, "event": "phase",
+                                "phase": label, "seq": p.hits,
+                                "evidence": "OPERATOR_DECLARED_NOT_NATIVE_UI_IDENTITY"}) + "\n")
+        p.out.flush()
+        gdb.write("[M23] Experiment phase: " + label + "\n")
+
+
 _start = Start()
 _stop = Stop(_start)
+_phase = Phase(_start)
