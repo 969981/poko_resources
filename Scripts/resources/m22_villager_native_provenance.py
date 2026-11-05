@@ -300,12 +300,49 @@ def main():
     coverage=json.loads(Path("UnPack/2.0.1/_reports/source_coverage.json").read_text(encoding="utf-8"))
     unavailable = read_csv(Path("UnPack/2.0.1/_reports/missing_input_records.csv"))
     input_types = Counter(x["type_hash"] for x in unavailable)
+    # Type labels originate in Scripts/unpack/m3_types.py; RDB type hashes
+    # are source metadata, not direct proof of a portrait's semantic identity.
+    known_kinds = {"afbec60c": "g1t", "f20de437": "texinfo",
+                   "8e39aa37": "ktid", "20a6a0bb": "kidsobjdb"}
+    by_source = defaultdict(Counter)
+    missing_texinfo_capacity = 0
+    for item in unavailable:
+        source = item["source_file"]
+        kind = known_kinds.get(item["type_hash"], "other")
+        by_source[source][kind] += 1
+        if kind == "texinfo":
+            size = int(item["unpacked_size"])
+            if size < 108 or (size-4) % 104 != 0:
+                raise ValueError(f"Unexpected missing TEXINFO expected uncompressed size: {source}/{item}")
+            missing_texinfo_capacity += (size-4)//104
+    focused = []
+    for name, counts in sorted(by_source.items()):
+        if counts["g1t"] or counts["texinfo"] or counts["ktid"]:
+            focused.append({
+                "original_missing_container": name,
+                "missing_g1t_records_in_root_rdb": counts["g1t"],
+                "missing_texinfo_files_in_root_rdb": counts["texinfo"],
+                "missing_texinfo_sprite_slots_upper_bound": sum(
+                    (int(x["unpacked_size"])-4)//104 for x in unavailable
+                    if x["source_file"]==name and x["type_hash"]=="f20de437"),
+                "missing_ktid_files_in_root_rdb": counts["ktid"],
+                "missing_kidsobjdb_files_in_root_rdb": counts["kidsobjdb"],
+                "portrait_identity_proven": "NO",
+            })
+    write_csv(OUT/"m22_missing_texture_containers.csv", focused, list(focused[0]))
     source_report={
         "version":"2.0.1", "original_missing_input_files":coverage["coverage"]["remaining_missing_physical_inputs"],
         "original_unavailable_index_records":coverage["overall"]["missing_source_records"],
         "missing_index_rows_loaded":len(unavailable),
         "missing_original_file_type_hash_counts":dict(input_types.most_common()),
         "type_hash_is_only_an_index_label":True,
+        "type_hash_labels_from_m3_types":known_kinds,
+        "missing_g1t_original_records":input_types["afbec60c"],
+        "missing_texinfo_original_files":input_types["f20de437"],
+        "missing_texinfo_sprite_slots_upper_bound":missing_texinfo_capacity,
+        "missing_ktid_original_records":input_types["8e39aa37"],
+        "missing_kidsobjdb_original_records":input_types["20a6a0bb"],
+        "original_missing_texture_container_count":len(focused),
         "missing_image_identity_attributed_to_missing_fdata_count":0,
         "caveat":"No direct per-portrait source path exists for the 79 missing reference PNGs, so 27 absent FDATA cannot be asserted to contain any of them.",
     }
