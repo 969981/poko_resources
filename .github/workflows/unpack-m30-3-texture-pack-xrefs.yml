@@ -1,0 +1,89 @@
+name: M30.3 - Original ScreenLayout TexturePack source xrefs
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m30_3_texture_pack_consumer_xrefs.py"
+      - ".github/workflows/unpack-m30-3-texture-pack-xrefs.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m30-3-texture-pack-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  original-texture-pack-code-vocabulary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Sparse checkout original NSO and TexturePack cross reference script
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m20_native_species_item_targets.py
+            Scripts/resources/m30_3_texture_pack_consumer_xrefs.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install original NSO and ARM64 decoder
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Check original TexturePack research anchors
+        run: python -m Scripts.resources.m30_3_texture_pack_consumer_xrefs --self-test
+
+      - name: Trace ScreenLayout/TexturePack original rodata and code refs
+        run: python -m Scripts.resources.m30_3_texture_pack_consumer_xrefs
+
+      - name: Validate exact original class labels and no gameplay identity promotion
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M30")
+          j=json.loads((p/"m30_3_texture_pack_consumer_triage_summary.json").read_text(encoding="utf-8"))
+          d=json.loads((p/"m30_3_original_texture_pack_vocabulary_xrefs.json").read_text(encoding="utf-8"))
+          assert j["original_main_sha256"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert j["original_rodata_string_hits_with_ScreenLayout_or_TexturePack"]>=3
+          assert len(j["property_names_exact"])==3
+          assert {"TexturePackKeyHashArray","TexturePackObjectHashArray",
+                  "ScreenLayoutTexturePackObjectNameHash"}.issubset(
+                  {x["literal"] for x in d["original_texture_pack_literals"]})
+          assert not j["native_3543_texture_pack_query_consumer_verified"]
+          assert not j["game_species_form_to_texture_pack_key_verified"]
+          assert not j["runtime_villager_ID_to_Source_OID_proven"]
+          print("PASS M30.3 verified original texture-pack source strings and no false ID binding")
+          PY
+
+      - name: Upload original texture pack study evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m30-3-original-TexturePack-screen-layout-source-xrefs
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M30/m30_3_*
+          if-no-files-found: warn
+
+      - name: Commit native texture pack source strings and code candidates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M30/m30_3_*
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m30.3): original ScreenLayout TexturePack code and rodata xrefs"
+          for n in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
