@@ -7,6 +7,7 @@ on:
     paths:
       - "Scripts/resources/m23_platform_fdata_audit.py"
       - "Scripts/resources/m23_native_portrait_consumer_triage.py"
+      - "Scripts/resources/m23_1_native_kids_table_install.py"
       - ".github/workflows/unpack-m23-original-fdata-consumer.yml"
 
 permissions:
@@ -37,11 +38,14 @@ jobs:
             Scripts/resources/m20_native_species_item_targets.py
             Scripts/resources/m23_platform_fdata_audit.py
             Scripts/resources/m23_native_portrait_consumer_triage.py
+            Scripts/resources/m23_1_native_kids_table_install.py
             UnPack/2.0.1/_reports/missing_input_records.csv
             UnPack/2.0.1/Resources/Textures/Indexes/layout-textures.tsv
             UnPack/2.0.1/Resources/Textures/Indexes/native_misc_texture_index.csv
             UnPack/2.0.1/Resources/Pokemon/pokemon_texture_index.csv
             UnPack/2.0.1/Resources/Pokemon/NativeCallers/M20/m20_3_schema_pointer_backrefs.json
+            UnPack/2.0.1/Resources/Pokemon/NativeCallers/M19/m19_texture_object_edge_summary.json
+            UnPack/2.0.1/Resources/Pokemon/NativeCallers/M19/m19_verified_texture_object_edges.csv
             UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M22/m22_nine_ambiguous_native_object_refs.csv
 
       - uses: actions/setup-python@v5
@@ -55,12 +59,16 @@ jobs:
         run: |
           python -m Scripts.resources.m23_platform_fdata_audit --self-test
           python -m Scripts.resources.m23_native_portrait_consumer_triage --self-test
+          python -m Scripts.resources.m23_1_native_kids_table_install --self-test
 
       - name: Validate exact original RDX/RDB and 521 G1T references
         run: python -m Scripts.resources.m23_platform_fdata_audit
 
       - name: Trace original NSO property-pointer ownership candidates
         run: python -m Scripts.resources.m23_native_portrait_consumer_triage
+
+      - name: Verify original method table installation and typed native object hash
+        run: python -m Scripts.resources.m23_1_native_kids_table_install
 
       - name: Verify no unproven platform or villager identity promotion
         run: |
@@ -71,6 +79,7 @@ jobs:
           sources=json.loads((root/"m23_platform_source_report.json").read_text(encoding="utf-8"))
           refs=list(csv.DictReader((root/"m23_521_missing_g1t_original_rdb.csv").open(encoding="utf-8",newline="")))
           consumer=json.loads((root/"m23_original_property_consumer_triage.json").read_text(encoding="utf-8"))
+          install=json.loads((root/"m23_1_original_kids_table_install.json").read_text(encoding="utf-8"))
           assert sources["root_rdx_entry_count"]==45
           assert sources["raw_ff03_rdx_entry_count"]==10
           assert sources["raw_ff03_entries_present_in_git_archive"]==0
@@ -85,6 +94,12 @@ jobs:
           assert consumer["m22_typed_source_object_edge_rows_verified"]==54
           assert consumer["direct_bl_or_b_to_property_dispatch"]==0
           assert not consumer["original_species_id_to_texture_consumer_verified"]
+          assert install["original_install_instruction_verified"]
+          assert install["registered_method_pointer_offset"]=="0x18"
+          assert install["nearby_type_hash_value"]=="0x79991e79"
+          assert install["native_typed_KIDSOBJDB_source_target_hash_matches"]
+          assert not install["dynamic_pointer_global_owner_verified"]
+          assert not install["game_villager_id_to_native_object_verified"]
           print("M23 exact original metadata and conservative consumer evidence accepted")
           PY
 
