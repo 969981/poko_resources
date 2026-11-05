@@ -121,7 +121,10 @@ def link_map_parts(blobs: dict[int, bytes], items: list[dict]) -> tuple[list[dic
     p, v, s, m = (blobs[id] for id in (40, 41, 42, 44))
     check_fixed_table(p, 4096, 0, 80, "parts/00040.bin")
     check_fixed_table(v, 4096, 3, 16, "variations/00041.bin")
-    check_fixed_table(s, 255, 0, 4, "sizes/00042.bin")
+    # Native size table has 255 active shapes plus one trailing 4-byte slot.
+    # This is 1088 bytes, not the generic 64 + 255*4 == 1084 bytes.
+    if len(s) != 1088 or u32(s, 0) != 255 or u32(s, 4) != 0 or s[8:64] != bytes(56):
+        raise ValueError("sizes/00042.bin: expected native 1088-byte layout")
     check_fixed_table(m, 4096, 0, 100, "models/00044.bin")
     rows = []
     item_ids = set()
