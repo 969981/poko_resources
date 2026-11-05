@@ -55,3 +55,7 @@ python3 Scripts/resources/discover_native_text.py \
 5. 对照实体游戏/运行时或已知参考数据采样确认，验证控制符、空槽位及多语言一致性。
 
 原始资料保持在 `UnPack/2.0.1/romfs/`，本目录只放衍生索引和经过验收的文本。现阶段没有声称已完成全游戏九语言提取。
+
+## 新增：实际 UTF-8 TXT / JSONL 发布
+
+M7 四组九语言原生锚点已经通过 `.github/workflows/unpack-m7-text-export.yml` 导出并经 SHA 校验。输出位于 `Resources/Localization/TextExports/`：`table_02323`（515 条）、`table_02350`（248 条）、`table_03304`（10 条）、`table_04645`（3001 条，6 个原生 form）。每组九个 TXT 和九个无损 forms.jsonl，同时保留 manifest.json 和总报告。脚本 `Scripts/resources/export_native_text_files.py --all-groups` 可以明确选择全部 195 个 M7 候选组，但未运行的部分不得声称已发布。分类仍以原生引用证据为准。
