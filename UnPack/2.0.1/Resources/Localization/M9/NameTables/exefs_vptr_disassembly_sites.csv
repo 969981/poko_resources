@@ -1,0 +1,4 @@
+property_hash,adrp_pc,address_pc,address_point,adrp_add_bytes_confirmed,candidate_store_instructions,verified_vptr_store,verified_indirect_call,verified_kidsobjdb_getter,verified_text_fk
+0xf92c5190,13996472,13996476,53469072,True,"[{""pc"": 13996488, ""mnemonic"": ""stp"", ""operands"": ""x8, xzr, [x23]""}]",False,False,False,False
+0xf92c5190,13997612,13997628,53469200,True,"[{""pc"": 13997632, ""mnemonic"": ""stp"", ""operands"": ""x8, xzr, [x22]""}]",False,False,False,False
+0xf92c5190,13997612,13997616,53469368,True,"[{""pc"": 13997632, ""mnemonic"": ""stp"", ""operands"": ""x8, xzr, [x22]""}]",False,False,False,False
