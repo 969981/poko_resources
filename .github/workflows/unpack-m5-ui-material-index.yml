@@ -1,0 +1,76 @@
+name: M5 - Inventory native materials UI and other texture sprites
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/build_native_misc_texture_index.py"
+      - "tests/test_build_native_misc_texture_index.py"
+      - ".github/workflows/unpack-m5-ui-material-index.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m5-misc-textures-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  native-texture-index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/build_native_misc_texture_index.py
+            tests/test_build_native_misc_texture_index.py
+            UnPack/2.0.1/Resources/Textures/texinfo_names.csv
+            UnPack/2.0.1/Resources/Textures/Indexes/layout-textures.tsv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check strict identity/ambiguity classification
+        run: python -m unittest discover -s tests -p "test_build_native_misc_texture_index.py" -v
+
+      - name: Inventory original TEXINFO and G1T filenames from Git tree without checking out game assets
+        run: |
+          git ls-tree -r --name-only HEAD -- UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native > /tmp/primary-native-tree.txt
+          test -s /tmp/primary-native-tree.txt
+
+      - name: Generate source-linked UI/material name candidate index
+        run: |
+          python -m Scripts.resources.build_native_misc_texture_index --git-tree /tmp/primary-native-tree.txt
+          python - <<'PY'
+          import json,csv
+          from pathlib import Path
+          root=Path("UnPack/2.0.1/Resources/Textures/Indexes")
+          s=json.loads((root/"native_misc_texture_summary.json").read_text(encoding="utf-8"))
+          r=list(csv.DictReader((root/"native_misc_texture_index.csv").open(encoding="utf-8")))
+          assert len(r)==s["non_item_non_pokemon_records"] and len(r)>0
+          assert s["linked_native_g1t"]>0,s
+          assert all(not x["texture_name"].startswith(("icon_poke_","item_")) for x in r)
+          print("Native miscellaneous sprites indexed:",len(r),"linked:",s["linked_native_g1t"])
+          PY
+
+      - name: Commit only metadata reports and source paths
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -- UnPack/2.0.1/Resources/Textures/Indexes/native_misc_texture_index.csv UnPack/2.0.1/Resources/Textures/Indexes/native_misc_texture_summary.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m5): inventory native UI and material texture/hash links"
+          for i in 1 2 3 4 5 6 7 8; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+            sleep 1
+          done
+          exit 1
