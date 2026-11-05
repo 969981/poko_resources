@@ -1,0 +1,148 @@
+name: M9.5 - inspect native descriptor hash stores and rodata pointers
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_rnk_schema_rodata.py"
+      - "tests/test_m9_rnk_schema_rodata.py"
+      - ".github/workflows/unpack-m9-hash-descriptor-writes.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-5-hash-descriptor
+  cancel-in-progress: false
+
+jobs:
+  native-descriptor-sites:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          persist-credentials: true
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/m9_rnk_schema_rodata.py
+            Scripts/resources/m9_rnk_exefs_xrefs.py
+            Scripts/resources/trace_native_species_item_callers.py
+            tests/test_m9_rnk_schema_rodata.py
+            UnPack/2.0.1/Resources/Localization/M9/NameTables
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Test bytes and disassembly evidence labels
+        id: tests
+        shell: bash
+        run: |
+          mkdir -p UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics
+          set +e
+          python -m unittest discover -s tests -p 'test_m9_rnk_schema_rodata.py' -v \
+            > UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/schema_tests.log 2>&1
+          code=$?
+          cat UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/schema_tests.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Follow ExeFS constant registration sites and nearby rodata pointers
+        id: analyze
+        if: steps.tests.outputs.exit_code == '0'
+        shell: bash
+        run: |
+          set +e
+          python Scripts/resources/m9_rnk_schema_rodata.py \
+            --main 2.0.1/exefs/main \
+            --probe UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_property_hash_consumers.json \
+            --dest UnPack/2.0.1/Resources/Localization/M9/NameTables \
+            > UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/schema.log 2>&1
+          code=$?
+          tail -c 16000 UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/schema.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Validate native code store evidence and disallow fabricated property names
+        id: verify
+        if: steps.tests.outputs.exit_code == '0' && steps.analyze.outputs.exit_code == '0'
+        shell: bash
+        run: |
+          set +e
+          python - <<'PY' > UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/schema_verify.log 2>&1
+          import json
+          from pathlib import Path
+          root=Path("UnPack/2.0.1/Resources/Localization/M9/NameTables")
+          r=json.loads((root/"exefs_descriptor_hash_writes.json").read_text(encoding="utf-8"))
+          assert r["status"]=="M9_CODE_LEVEL_HASH_WRITES_NOT_FIELD_ACCESSORS"
+          assert r["main_sha256"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert r["inspected_hash_constructor_sites"]==3
+          assert r["actual_kidsobjdb_property_accessor_verified"]==0
+          assert r["verified_scene_quest_building_text_foreign_keys"]==0
+          for rec in r["records"]:
+              assert not rec["semantic_property_name_verified"]
+              assert not rec["runtime_property_lookup_verified"]
+              assert not rec["scene_quest_building_text_fk_verified"]
+          assert (root/"exefs_descriptor_hash_writes.csv").is_file()
+          print("Inspected:",r["inspected_hash_constructor_sites"])
+          print("Stores:",r["hash_sites_with_explicit_memory_store"])
+          print("Paired descriptor writes:",r["hash_sites_with_paired_descriptor_store"])
+          PY
+          code=$?
+          cat UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/schema_verify.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Record exact run status
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics
+          printf 'tests=%s\nanalyze=%s\nverify=%s\nrun_id=%s\n' \
+            "${{ steps.tests.outputs.exit_code }}" \
+            "${{ steps.analyze.outputs.exit_code }}" \
+            "${{ steps.verify.outputs.exit_code }}" \
+            "${{ github.run_id }}" \
+            > UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/schema_status.txt
+
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m9-5-hash-descriptor-${{ github.run_id }}
+          path: UnPack/2.0.1/Resources/Localization/M9/NameTables
+          retention-days: 30
+
+      - name: Commit original code evidence or bounded diagnostics
+        if: always()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ "${{ steps.tests.outputs.exit_code }}" = 0 ] &&
+             [ "${{ steps.analyze.outputs.exit_code }}" = 0 ] &&
+             [ "${{ steps.verify.outputs.exit_code }}" = 0 ]; then
+            git add -A -- UnPack/2.0.1/Resources/Localization/M9/NameTables
+          else
+            git add -A -- UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics
+          fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9.5): native hash-store and rodata pointer evidence or diagnostics"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
+
+      - name: Strict final result
+        if: always()
+        run: |
+          test "${{ steps.tests.outputs.exit_code }}" = 0
+          test "${{ steps.analyze.outputs.exit_code }}" = 0
+          test "${{ steps.verify.outputs.exit_code }}" = 0
