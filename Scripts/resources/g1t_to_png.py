@@ -85,6 +85,62 @@ def unswizzle_gob_bc7(src: bytes, width: int, height: int, gob_height: int) -> b
     return bytes(dst)
 
 
+
+def unswizzle_ounce_bc7(src: bytes, width: int, height: int, gob_height: int) -> bytes:
+    """Pokopia / platform 0x18 GOB variant: BC7/BC3 blocks to row-major bytes.
+
+    Verified against original 2.0.1 G1T + TEXINFO bytes and independently
+    extracted PokoHex 72x72 item references. 64-byte x 8-row GOBs have the
+    low address bits [y0, y1, x0, y2, x1], unlike the older Tegra GOB mapping
+    [y0, x0, y1, y2, x1]. Swapping x0/y1 is essential; a normal gob16 image
+    can still look superficially recognizable while being block-scrambled.
+
+    'ounceN' is separate from the legacy 'gobN' codec for other platforms.
+    """
+    if gob_height not in (1, 2, 4, 8, 16, 32):
+        raise ValueError("Ounce GOB height must be 1/2/4/8/16/32")
+    bw, bh = (width + 3) // 4, (height + 3) // 4
+    columns = (bw * 16 + 63) // 64
+    required = ((bh + 8 * gob_height - 1) // (8 * gob_height)) * columns * 512 * gob_height
+    if len(src) < required:
+        raise ValueError(f"Ounce BC surface requires {required} bytes, got {len(src)}")
+    dst = bytearray(bw * bh * 16)
+    for y in range(bh):
+        band, sub = divmod(y, 8 * gob_height)
+        in_row, row = divmod(sub, 8)
+        for x in range(bw):
+            gob_base = ((band * columns + x // 4) * gob_height + in_row) * 512
+            inner = ((x & 2) << 7) | ((row & 4) << 5) | \\
+                    ((x & 1) << 6) | ((row & 2) << 4) | ((row & 1) << 4)
+            input_pos = gob_base + inner
+            output_pos = (y * bw + x) * 16
+            dst[output_pos:output_pos + 16] = src[input_pos:input_pos + 16]
+    return bytes(dst)
+
+
+def unswizzle_ounce_raw_bgra(src: bytes, width: int, height: int, gob_height: int) -> bytes:
+    """Apply the platform 0x18 GOB bit order to 4-byte BGRA8888 texels."""
+    if gob_height not in (1, 2, 4, 8, 16, 32):
+        raise ValueError("invalid Ounce raw GOB height")
+    columns = (width * 4 + 63) // 64
+    required = ((height + 8 * gob_height - 1) // (8 * gob_height)) * columns * 512 * gob_height
+    if len(src) < required:
+        raise ValueError(f"Ounce BGRA surface requires {required} bytes, got {len(src)}")
+    dst = bytearray(width * height * 4)
+    for y in range(height):
+        band, sub = divmod(y, 8 * gob_height)
+        in_row, row = divmod(sub, 8)
+        for x in range(width):
+            x_byte = x * 4
+            gob_base = ((band * columns + x_byte // 64) * gob_height + in_row) * 512
+            inner = ((x_byte & 32) << 3) | ((row & 4) << 5) | \\
+                    ((x_byte & 16) << 2) | ((row & 2) << 4) | \\
+                    ((row & 1) << 4) | (x_byte & 15)
+            output_pos = (y * width + x) * 4
+            dst[output_pos:output_pos + 4] = src[gob_base + inner:gob_base + inner + 4]
+    return bytes(dst)
+
+
 def unswizzle_morton_bc(src: bytes, width: int, height: int,
                          tile_blocks: int = 0, swap_axes: bool = False) -> bytes:
     """Explore Morton/Z-order compressed BC block arrangements.
@@ -189,6 +245,8 @@ def decode_png(payload: bytes, width: int, height: int, layout: str, fmt: int = 
             raw = payload
         elif layout.startswith("gob"):
             raw = unswizzle_gob_raw_bgra(payload, width, height, int(layout[3:]))
+        elif layout.startswith("ounce"):
+            raw = unswizzle_ounce_raw_bgra(payload, width, height, int(layout[5:]))
         else:
             raise ValueError(f"unsupported raw BGRA layout {layout}")
         if len(raw) < width * height * 4:
@@ -201,6 +259,8 @@ def decode_png(payload: bytes, width: int, height: int, layout: str, fmt: int = 
         linear = payload
     elif layout.startswith("gob"):
         linear = unswizzle_gob_bc7(payload, width, height, int(layout[3:]))
+    elif layout.startswith("ounce"):
+        linear = unswizzle_ounce_bc7(payload, width, height, int(layout[5:]))
     elif layout.startswith("morton"):
         kind = layout.removeprefix("morton")
         swap_axes = kind.endswith("_yx")
@@ -355,7 +415,7 @@ def main() -> None:
     if args.max_files:
         paths = paths[:args.max_files]
     layouts = [s.strip() for s in args.layouts.split(",") if s.strip()]
-    if not layouts or any(s not in {"linear", "gob1", "gob2", "gob4", "gob8", "gob16", "gob32", "morton", "morton_yx", "morton8", "morton8_yx", "morton16", "morton16_yx", "morton32", "morton32_yx"} for s in layouts):
+    if not layouts or any(s not in {"linear", "gob1", "gob2", "gob4", "gob8", "gob16", "gob32", "ounce1", "ounce2", "ounce4", "ounce8", "ounce16", "ounce32", "morton", "morton_yx", "morton8", "morton8_yx", "morton16", "morton16_yx", "morton32", "morton32_yx"} for s in layouts):
         p.error("invalid --layouts")
     if args.texinfo_root:
         n = texinfo_index(args.texinfo_root, args.dest / "Textures" / "texinfo_names.csv")
