@@ -2,7 +2,7 @@
 import struct
 import unittest
 from Scripts.resources.m20_item983_cache_provenance import (
-    section_read, inspect_descriptor, descriptor_survey,
+    section_read, inspect_descriptor, inspect_pointer, descriptor_survey,
     all_bl_callers, exact_global_xrefs, find_unqualified_global_displacements,
     analyze, PAGE, DISP, TABLE_BASE, TABLE_STRIDE
 )
@@ -37,6 +37,17 @@ class M20Tests(unittest.TestCase):
         self.assertEqual(descriptor_survey([p])["descriptor_count_if_zero_based"],1195)
         with self.assertRaisesRegex(ValueError,"OUT_OF_BOUNDS"):
             inspect_descriptor([p],1195)
+
+    def test_raw_candidate_pointer_string_and_unmapped_controls(self):
+        payload=bytearray(TABLE_STRIDE*0x4ab+256)
+        addr=TABLE_BASE+TABLE_STRIDE*0x4ab+64
+        struct.pack_into("<I",payload,983*TABLE_STRIDE,addr)
+        payload[addr-TABLE_BASE:addr-TABLE_BASE+14]=b"test_resource"+bytes([0])
+        parts=[{"mem_offset":TABLE_BASE,"data":bytes(payload),"name":"data"}]
+        row=inspect_descriptor(parts,983)
+        self.assertEqual(row["candidate_pointers_by_u32_position"]["0x00"]["ascii_candidate"],"test_resource")
+        self.assertFalse(row["candidate_pointers_by_u32_position"]["0x00"]["byte_identity_is_semantic_resource_name"])
+        self.assertEqual(inspect_pointer(parts,0xdeadbeef)["status"],"UNMAPPED_OR_BSS_POINTER")
 
     def test_direct_and_add_alias_global_read_write(self):
         base=0x1000
