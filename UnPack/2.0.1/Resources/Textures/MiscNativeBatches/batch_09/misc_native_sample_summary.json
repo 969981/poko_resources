@@ -1,0 +1,14 @@
+{
+  "source_samples": 240,
+  "native_decoded_pngs": 240,
+  "statuses": {
+    "PNG_CANDIDATE_UNVERIFIED": 240
+  },
+  "by_candidate_category": {
+    "other_native_sprite_name": 210,
+    "ui_gameplay_name_candidate": 22,
+    "ui_icon_name_candidate": 8
+  },
+  "source_evidence": "Actual 2.0.1 G1T/TEXINFO bytes, layout index edge, UV crop, G1T and PNG SHA256",
+  "warning": "Ounce decoded PNG CANDIDATES; category by filename only, scene rendering/gametype/identity not verified."
+}
