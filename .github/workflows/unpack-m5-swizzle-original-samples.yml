@@ -1,0 +1,56 @@
+name: M5 - Original G1T swizzle forensic samples
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - ".github/workflows/unpack-m5-swizzle-original-samples.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  original-bytes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact native G1T and reference PNG bytes
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_038147_a0ce9914.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_042753_b4b1fe49.texinfo
+            UnPack/2.0.1/Resources/Items/Icons/item_0006.png
+            UnPack/2.0.1/Resources/Items/Icons/item_0007.png
+            UnPack/2.0.1/Resources/Items/Icons/item_0008.png
+            UnPack/2.0.1/Resources/Items/Icons/item_0294.png
+            UnPack/2.0.1/Resources/Items/Icons/item_1870.png
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_017070_47b4eb66.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_050731_d58f20b8.g1t
+
+      - name: Preserve exact original bytes and SHA256
+        run: |
+          set -euo pipefail
+          mkdir -p m5-swizzle-original
+          cp UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_038147_a0ce9914.g1t m5-swizzle-original/
+          cp UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_042753_b4b1fe49.texinfo m5-swizzle-original/
+          cp UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_017070_47b4eb66.g1t m5-swizzle-original/
+          cp UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_050731_d58f20b8.g1t m5-swizzle-original/
+          cp UnPack/2.0.1/Resources/Items/Icons/item_0006.png m5-swizzle-original/
+          cp UnPack/2.0.1/Resources/Items/Icons/item_0007.png m5-swizzle-original/
+          cp UnPack/2.0.1/Resources/Items/Icons/item_0008.png m5-swizzle-original/
+          cp UnPack/2.0.1/Resources/Items/Icons/item_0294.png m5-swizzle-original/
+          cp UnPack/2.0.1/Resources/Items/Icons/item_1870.png m5-swizzle-original/
+          (cd m5-swizzle-original && sha256sum *.g1t *.texinfo *.png > SHA256SUMS.txt)
+          wc -c m5-swizzle-original/*
+
+      - name: Upload small forensic original data set
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m5-original-swizzle-forensic-dataset
+          path: m5-swizzle-original/
+          retention-days: 7
