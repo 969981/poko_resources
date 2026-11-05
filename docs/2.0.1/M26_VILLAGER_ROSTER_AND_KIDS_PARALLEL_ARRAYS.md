@@ -155,3 +155,8 @@ main+0xDD1B88  stp x13,x11,[x1,#8]
 ## M27 原生数组数字 Hash 的下一阶段
 
 参见 [[M27_ORIGINAL_KIDS_REVERSE31_NUMERIC_HASH]]。原始 KIDS 双数组的 626 项数字化图标数据（常规+uni）可被 31 多项式与四位编号字符逆序模型全部精确预测，其中 612 条为每组首样本之外的独立留出对账；14 个组中 4 组只有一例，不宣称通过独立验证。枚举 14×10,000 个候选未在原始 3543 双数组中发现新的非 M25 图标对象。**仍需从游戏 ExeFS 实际实现验证算法，并证明运行时游戏 ID→原生键/OID 的消费者调用链。**
+
+
+## M31 类型和资源包装层新证据
+
+现在已经恢复 `0x9D1AFA46` 的原始类名 `ScreenLayoutTexturePackSettings`、`0x79991E79` 的原始类名 `StaticScreenLayoutTextures`；后者的 `0x2856A1B3` 字段真实名称是 `WrapStaticScreenLayoutTexturesObjectHash`。M31.5 原始源文件逐字节确认 **628/628** 个索引对象都经过**包装 IDOK 对象**，该包装对象才保存匹配 M25 索引的 G1T/TEXINFO 文件 Hash。这是资源端闭合，不代表角色 ID→数组键消费者已找到。详细见 [[M31_KIDS_TWO_HOP_SCREENLAYOUT_TEXTURE_PROVENANCE]]。
