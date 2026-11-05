@@ -1,0 +1,292 @@
+{
+  "report": {
+    "status": "M9_NATIVE_OWNER_MEMBER_VIRTUAL_SLOT0_CALLSITE_PROVEN",
+    "original_exefs_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+    "constructor_argument_x3_to_owner_x19_verified": true,
+    "consumer_argument_x3_to_owner_x19_verified": true,
+    "same_member_offset_write_and_read_verified": true,
+    "callee_saved_x19_x23_provenance_checked": true,
+    "actual_indirect_callsite_pc_verified": 13995792,
+    "indirect_slot_offset": 0,
+    "original_vptr": 53469088,
+    "resolved_vtable_slot0_target_if_object_vptr_unmodified": 13997004,
+    "separate_descriptor_slot0x38_callback": 13997088,
+    "same_runtime_owner_instance_verified": false,
+    "specific_runtime_method_invocation_observed": false,
+    "specific_descriptor_slot0x38_dispatch_verified": false,
+    "KIDSOBJDB_property_getter_verified": false,
+    "new_script_scene_quest_building_M7_text_FKs": 0,
+    "limitations": [
+      "Two native functions use the same x3 argument position and object+0x28 member, not a proven same runtime owner instance.",
+      "Virtual slot zero is not the descriptor callback at offset 0x38.",
+      "The actual target of BLR requires verifying the instance vptr at call time; native slot value is conditional on no vptr replacement.",
+      "No dialogue/quest/building text field or getter is established."
+    ]
+  },
+  "constructor_native_evidence": [
+    {
+      "pc": 13996284,
+      "mnemonic": "mov",
+      "operands": "x19, x3",
+      "writes": [
+        "x19"
+      ],
+      "u32": "aa0303f3"
+    },
+    {
+      "pc": 13996464,
+      "mnemonic": "mov",
+      "operands": "x23, x0",
+      "writes": [
+        "x23"
+      ],
+      "u32": "aa0003f7"
+    },
+    {
+      "pc": 13996488,
+      "mnemonic": "stp",
+      "operands": "x8, xzr, [x23]",
+      "writes": [],
+      "u32": "a9007ee8"
+    },
+    {
+      "pc": 13996660,
+      "mnemonic": "str",
+      "operands": "x23, [x19, #0x28]",
+      "writes": [],
+      "u32": "f9001677"
+    }
+  ],
+  "consumer_native_evidence": [
+    {
+      "pc": 13995604,
+      "mnemonic": "mov",
+      "operands": "x19, x3",
+      "writes": [
+        "x19"
+      ],
+      "u32": "aa0303f3"
+    },
+    {
+      "pc": 13995704,
+      "mnemonic": "ldr",
+      "operands": "x23, [x19, #0x28]",
+      "writes": [
+        "x23"
+      ],
+      "u32": "f9401677"
+    },
+    {
+      "pc": 13995780,
+      "mnemonic": "ldr",
+      "operands": "x8, [x23]",
+      "writes": [
+        "x8"
+      ],
+      "u32": "f94002e8"
+    },
+    {
+      "pc": 13995784,
+      "mnemonic": "mov",
+      "operands": "x0, x23",
+      "writes": [
+        "x0"
+      ],
+      "u32": "aa1703e0"
+    },
+    {
+      "pc": 13995788,
+      "mnemonic": "ldr",
+      "operands": "x8, [x8]",
+      "writes": [
+        "x8"
+      ],
+      "u32": "f9400108"
+    },
+    {
+      "pc": 13995792,
+      "mnemonic": "blr",
+      "operands": "x8",
+      "writes": [
+        "lr"
+      ],
+      "u32": "d63f0100"
+    },
+    {
+      "pc": 13995816,
+      "mnemonic": "str",
+      "operands": "xzr, [x19, #0x28]",
+      "writes": [],
+      "u32": "f900167f"
+    }
+  ],
+  "slot0_target_function_instructions": [
+    {
+      "pc": 13997004,
+      "mnemonic": "ret",
+      "operands": "",
+      "writes": [],
+      "u32": "d65f03c0"
+    },
+    {
+      "pc": 13997008,
+      "mnemonic": "b",
+      "operands": "#0x2745d50",
+      "writes": [],
+      "u32": "1467b260"
+    },
+    {
+      "pc": 13997012,
+      "mnemonic": "b",
+      "operands": "#0x1fed8b0",
+      "writes": [],
+      "u32": "144a5137"
+    },
+    {
+      "pc": 13997016,
+      "mnemonic": "pacibsp",
+      "operands": "",
+      "writes": [
+        "lr"
+      ],
+      "u32": "d503237f"
+    },
+    {
+      "pc": 13997020,
+      "mnemonic": "stp",
+      "operands": "x29, x30, [sp, #-0x20]!",
+      "writes": [
+        "sp"
+      ],
+      "u32": "a9be7bfd"
+    },
+    {
+      "pc": 13997024,
+      "mnemonic": "str",
+      "operands": "x19, [sp, #0x10]",
+      "writes": [],
+      "u32": "f9000bf3"
+    },
+    {
+      "pc": 13997028,
+      "mnemonic": "mov",
+      "operands": "x29, sp",
+      "writes": [
+        "fp"
+      ],
+      "u32": "910003fd"
+    },
+    {
+      "pc": 13997032,
+      "mnemonic": "mov",
+      "operands": "x19, x0",
+      "writes": [
+        "x19"
+      ],
+      "u32": "aa0003f3"
+    },
+    {
+      "pc": 13997036,
+      "mnemonic": "bl",
+      "operands": "#0x1fed8b0",
+      "writes": [
+        "lr"
+      ],
+      "u32": "944a5131"
+    },
+    {
+      "pc": 13997040,
+      "mnemonic": "mov",
+      "operands": "x0, x19",
+      "writes": [
+        "x0"
+      ],
+      "u32": "aa1303e0"
+    },
+    {
+      "pc": 13997044,
+      "mnemonic": "ldr",
+      "operands": "x19, [sp, #0x10]",
+      "writes": [
+        "x19"
+      ],
+      "u32": "f9400bf3"
+    },
+    {
+      "pc": 13997048,
+      "mnemonic": "ldp",
+      "operands": "x29, x30, [sp], #0x20",
+      "writes": [
+        "fp",
+        "lr",
+        "sp"
+      ],
+      "u32": "a8c27bfd"
+    },
+    {
+      "pc": 13997052,
+      "mnemonic": "autibsp",
+      "operands": "",
+      "writes": [
+        "lr"
+      ],
+      "u32": "d50323ff"
+    },
+    {
+      "pc": 13997056,
+      "mnemonic": "b",
+      "operands": "#0x2745d50",
+      "writes": [],
+      "u32": "1467b254"
+    },
+    {
+      "pc": 13997060,
+      "mnemonic": "udf",
+      "operands": "#0",
+      "writes": [],
+      "u32": "00000000"
+    },
+    {
+      "pc": 13997064,
+      "mnemonic": "udf",
+      "operands": "#0",
+      "writes": [],
+      "u32": "00000000"
+    },
+    {
+      "pc": 13997068,
+      "mnemonic": "udf",
+      "operands": "#0",
+      "writes": [],
+      "u32": "00000000"
+    },
+    {
+      "pc": 13997072,
+      "mnemonic": "udf",
+      "operands": "#0",
+      "writes": [],
+      "u32": "00000000"
+    },
+    {
+      "pc": 13997076,
+      "mnemonic": "udf",
+      "operands": "#0",
+      "writes": [],
+      "u32": "00000000"
+    },
+    {
+      "pc": 13997080,
+      "mnemonic": "udf",
+      "operands": "#0",
+      "writes": [],
+      "u32": "00000000"
+    },
+    {
+      "pc": 13997084,
+      "mnemonic": "udf",
+      "operands": "#0",
+      "writes": [],
+      "u32": "00000000"
+    }
+  ]
+}
