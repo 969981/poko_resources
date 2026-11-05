@@ -27,6 +27,7 @@ jobs:
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             Scripts/resources/m24_item_consumer_matrix.py
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin
             UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M12
             UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M20
             UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M24
@@ -53,6 +54,14 @@ jobs:
           with (generated/"m24_wrapper_consumer_matrix.csv").open(encoding="utf8",newline="") as f:
               gr=list(csv.DictReader(f))
           assert cr==gr, "M24 source-qualified 17-caller CSV drifted"
+          with (committed/"m24_three_original_68byte_baselines.csv").open(encoding="utf8",newline="") as f:
+              source_rows=list(csv.DictReader(f))
+          with (generated/"m24_three_original_68byte_baselines.csv").open(encoding="utf8",newline="") as f:
+              derived_rows=list(csv.DictReader(f))
+          assert source_rows==derived_rows, "M24 3 original raw record baselines drifted"
+          assert [int(x["item_id"]) for x in derived_rows]==[6,101,302]
+          assert [int(x["kind_26_u8"]) for x in derived_rows]==[15,16,4]
+          assert all(x["runtime_full_68byte_match"]=="NOT_COLLECTED" for x in derived_rows)
           assert s["direct_BL_callers"]==17
           assert s["wrapper_plus8_in_bounded_window"]==12
           assert s["rows_with_nearby_post_call_field_access"]==13
