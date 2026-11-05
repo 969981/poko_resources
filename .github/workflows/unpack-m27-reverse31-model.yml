@@ -1,0 +1,97 @@
+name: M27 - Original KIDS 31-polynomial reversed numeric hash audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m27_reverse_decimal_hash31.py"
+      - ".github/workflows/unpack-m27-reverse31-model.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m27-reverse31-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  original-31-polynomial-key-value-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout original KIDS bytes and unmodified M25 M26 evidence
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m16_verify_pokemon_texture_kidsobjdb.py
+            Scripts/resources/m27_reverse_decimal_hash31.py
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native/root_019167_50ae86ef.kidsobjdb
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26/m26_4_original_3543_parallel_key_value_pairs.csv
+            UnPack/2.0.1/Resources/Pokemon/NativeRecoveryM25/m25_8_complete_native_629_kids_icon_source_index.csv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Selftest 31 polynomial numeric reversal and power relations
+        run: python -m Scripts.resources.m27_reverse_decimal_hash31 --self-test
+
+      - name: Build exact numeric name hypothesis from original KIDS bytes with held-out verification
+        run: python -m Scripts.resources.m27_reverse_decimal_hash31
+
+      - name: Verify 3543 original rows and fail closed on game-ID assumptions
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M27")
+          j=json.loads((p/"m27_original_reverse31_model_summary.json").read_text(encoding="utf-8"))
+          with (p/"m27_626_native_icon_hash31_template_validation.csv").open(encoding="utf-8",newline="") as f:
+              rows=list(csv.DictReader(f))
+          groups=json.loads((p/"m27_hash31_candidate_family_constants.json").read_text(encoding="utf-8"))
+          with (p/"m27_10k_per_variant_reverse_numeric_probes.csv").open(encoding="utf-8",newline="") as f:
+              probes=list(csv.DictReader(f))
+          assert j["original_3543_key_value_slots_verified"]==3543
+          assert j["source_icon_OIDs_verified"]==628
+          assert j["source_icon_rows_with_4digit_numeric_pattern"]==len(rows)==626
+          assert j["normal_canonical_template_rows"]==292
+          assert j["uni_canonical_template_rows"]==292
+          assert j["independent_holdout_bytes_both_key_and_value_exact"]==612
+          assert len(groups)==j["numeric_31_template_groups"]==14
+          assert j["all_model_predicted_keys_match"] and j["all_model_predicted_source_OIDs_match"]
+          assert len(probes)==j["numeric_candidate_probe_key_match_count"]
+          assert not j["native_hash31_implementation_located"]
+          assert not j["native_species_ID_to_source_OID_verified"]
+          assert not j["original_numeric_name_is_national_dex_ID_proven"]
+          assert all(not x["native_game_species_ID_verified"] for x in rows)
+          assert all(not x["verified_game_ID"] for x in probes)
+          print("M27 exact original KIDS mathematical evidence and uncertainty gates passed")
+          PY
+
+      - name: Upload reproducible reverse-31 numeric source evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m27-3543-original-KIDS-reversed31-hash-model
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M27/
+          if-no-files-found: warn
+          retention-days: 21
+
+      - name: Commit original mathematical source evidence without semantic guess
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M27/
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m27): verify original 31-polynomial 626 icon key/source predictions and heldouts"
+          for i in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
