@@ -41,3 +41,26 @@
 - [M9.1 原生 KIDSOBJDB 记录](https://github.com/969981/poko_resources/actions/workflows/unpack-m9-kidsobjdb-framing.yml)
 
 只读原始文件；提交的是索引、证据、SQLite 和失败诊断，不会覆盖 RomFS。
+
+
+## M9.2 — 实际原生属性恢复结果（2026-11-05）
+
+[GitHub Actions 成功运行 #41949211644](https://github.com/969981/poko_resources/actions/runs/41949211644)，已从 M3 原始文件和 KIDSOBJDB 官方格式兼容的开源解析布局中恢复了 **1,176,984 条逐属性记录**，记录原始 `object_id`、`object_type_hash`、`property_name_hash`、数据类型（整数／浮点／向量）、数组元素数量、数据字节偏移、长度和 SHA-256。所有属性值精确填满其各自的原生 IDOK 记录，没有越界、跳槽或强行按字符串猜 ID。
+
+| M3 来源 | 已校验对象 | 恢复属性数量 | 仅数值匹配的局部对象 ID 候选 |
+|---|---:|---:|---:|
+| `b290631c` | 31,740 | 247,598 | 12,510 |
+| `cfd2bd1f` | 1,330 | 17,740 | 1,228 |
+| `d14d76ef` | 68,397 | 911,646 | 73,707 |
+| **合计** | **101,467** | **1,176,984** | **87,445** |
+
+重要证据区分：
+
+- `NATIVE_TYPED_PROPERTY_BOUNDS_EXACT`：原始属性描述、类型、数值范围和 SHA-256 已按原生字节证实。
+- `TYPED_U32_EQUALS_LOCAL_OID_UNVERIFIED_REFERENCE`：属性的 u32 值恰好命中同库唯一对象 ID，**仍不代表已经证明的对象调用关系**。
+- 目前尚未恢复对应游戏版本的 `.name` 成员名表，也没有足够的脚本 / ExeFS 消费端引用确认这些属性 Hash 所代表的业务语义。
+- 不能把上述 87,445 个候选或对象序号写入 M7 的正式 `text_id` 外键。新确认的剧情／任务／建筑文本外键仍为 **0**。
+
+原始属性 CSV 采用 24 MiB 左右的分片避免 GitHub 单文件 100 MiB 限制。输出目录为 [`M9/Properties`](./Properties)，主要文件包括 `native_typed_fields_*.csv`、`unverified_local_oid_candidates_*.csv`、`m9_typed_field_report.json`。
+
+解析参考为 [eArmada8 / yumia_decode_kidsobjdb](https://github.com/eArmada8/yumia_fdata_tools/blob/9d8dc1fb7436f14ffec42acb6d719cea1214abbd/ktid/yumia_decode_kidsobjdb.py) 与 [PieceMetal / KidsObjectDatabase](https://github.com/PieceMetal/DWOriginsAssetTool/blob/22d744f37d4a55a7b684bd8c6d7fd14665c0152d/Core/KidsObjectDatabase.cs)，并由本项目真实 2.0.1 文件验收。
