@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/runner/work/poko_resources/poko_resources/Scripts/resources/link_native_text_references.py", line 338, in <module>
+    main()
+  File "/home/runner/work/poko_resources/poko_resources/Scripts/resources/link_native_text_references.py", line 284, in main
+    map_rows,map_report=link_map_parts(map_blobs,items)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/poko_resources/poko_resources/Scripts/resources/link_native_text_references.py", line 124, in link_map_parts
+    check_fixed_table(s, 255, 0, 4, "sizes/00042.bin")
+  File "/home/runner/work/poko_resources/poko_resources/Scripts/resources/link_native_text_references.py", line 49, in check_fixed_table
+    raise ValueError(
+ValueError: sizes/00042.bin: expected size=1084, count=255, version=0, stride=4; got size=1088

@@ -1,0 +1,11 @@
+test_invalid_item_index_fails_not_clamps (test_m8_native_text_refs.M8NativeReferenceTests.test_invalid_item_index_fails_not_clamps) ... ok
+test_items_native_name_index_and_fields (test_m8_native_text_refs.M8NativeReferenceTests.test_items_native_name_index_and_fields) ... ok
+test_map_invalid_item_fails (test_m8_native_text_refs.M8NativeReferenceTests.test_map_invalid_item_fails) ... ok
+test_map_part_chain_preserves_category_uncertainty (test_m8_native_text_refs.M8NativeReferenceTests.test_map_part_chain_preserves_category_uncertainty) ... ok
+test_map_table_record_strides_must_match (test_m8_native_text_refs.M8NativeReferenceTests.test_map_table_record_strides_must_match) ... ok
+test_role_different_flags_are_preserved (test_m8_native_text_refs.M8NativeReferenceTests.test_role_different_flags_are_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.143s
+
+OK
