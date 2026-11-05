@@ -116,3 +116,19 @@ PYTHONPATH=. python Scripts/resources/m9_rnk_from_original_fdata.py \
 ```
 
 只有 `rnk_original_fdata_recovery.json` 中的 `verified_native_rnk=true` 才代表 RNK 字节验证成功。即使成功，`semantic_property_name_verified`、`text_fk_verified` 仍保持 false，直到恢复实际脚本及 getter 证据。87,445 条数值候选依然未升级。
+
+
+## M9.8 / M9.9 验收结果（已在 2.0.1_unpack 实际运行）
+
+- [M9.8 Actions #41954445896](https://github.com/969981/poko_resources/actions/runs/41954445896) **Success**：原始 FDATA 提取器单测与严格缺失报告通过。三条来源状态均为 `ORIGINAL_FDATA_NOT_PRESENT`，`verified_original_rnk_sources=0`，`native_irnk_strings_extracted=0`。这是**流程成功、物理输入仍缺失**，不是 RNK 解包成功。可查看 `rnk_original_fdata_recovery.json` 和 `rnk_recovered_irnk_strings.csv`。
+- [M9.9 Actions #41954764327](https://github.com/969981/poko_resources/actions/runs/41954764327) **Success**：继续以原版 `.data` 的三处已验证函数指针槽为起点扫描附近 `ADRP+ADD / ADRP+LDR` 原生静态调用线索，精确指针槽的 `code_reference_candidates=0`。**0 命中不代表没有间接调用**；这更符合通过 vtable/对象指针间接派发的情形，尚不能推断 getter。见 `exefs_descriptor_pointer_slot_xrefs.json/csv`。
+
+M9.9 每个指针槽相邻的 64 位项呈现同一模式，值得下一轮核对 vtable/address-point：
+
+| Hash | `.data` 槽位 | 前一槽 `-0x8` | 后一槽 `+0x8` | 后两槽 `+0x10` |
+|---|---|---|---|---|
+| `0x0b6e1578` | `0x32ecf60` | `0x1fe4fa0` | `0xca2cf8` | `0xca2d04` |
+| `0xe21ff09f` | `0x32fa020` | `0x1fe4fa0` | `0xd38570` | `0xd3857c` |
+| `0xf92c5190` | `0x32fdfd8` | `0x1fe4fa0` | `0xd594dc` | `0xd594e8` |
+
+这些属于**原始字节中的相邻代码指针结构**，不能直接叫作已经恢复的 getter vtable；下一步应识别包含该地址点的对象构造与 `[vptr + offset]` 间接派发、验证传入的缓冲区和属性 ID，然后再寻找脚本对 M7 表号与行 ID 的 typed-field 选择路径。87,445 个数值候选及 0 个剧情/任务/建筑外键的未验证状态保持不变。
