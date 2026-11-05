@@ -104,3 +104,7 @@ GitHub Actions 自动再现：[M22 - Native villager source and variant referenc
 2. 对 62 张连续缺失（317–378），从 PokoHex 的 villager_portrait.bin 出发只作为第三方候选 ID；回查 2.0.1 原生村民/外观表是否实际包含这些游戏 ID，再决定是否为版本差异或输入覆盖问题。当前暂不能证明任一种解释。
 3. 对 9 张歧义对象，沿已确认的 source_oid→target_oid 引用，进一步定位构造/消费者对 `0x2856A1B3` 的语义，并建立 **game villager ID → source object → target texture OID** 全链，再以运行时头像读取验证。
 4. 保留所有无法证明身份的候选；不以距离接近、Hash 邻近或数字相同直接写到 `native_species_id_verified` 等正式字段。
+
+## M23 / M23.1 追踪进展（2026-11-05）
+
+继续研究见 [[M23_FDATA_PLATFORM_AND_KIDS_CONSUMER]]：原始 RDX 已确认 FF03 的 10 组资源均未在当前仓库归档；目标 521 条 G1T 在现有三个纹理索引无直接 Hash 命中。原生 ExeFS 已进一步验证 `main+0xBB85CC` 的方法表安装路径、位于 BSS 的静态对象地址 `main+0x366E6F0` 与 `0x79991E79` 类型常量。该结果仍不是正式物种/村民 ID 绑定，9 张歧义图仍保持未验证。
