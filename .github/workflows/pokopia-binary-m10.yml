@@ -1,0 +1,118 @@
+name: Pokopia.Binary M10 native evidence graph and RDB audit
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: ["2.0.1_unpack"]
+    paths: ["Pokopia.Binary/**", "Pokopia.Binary.Cli/**", "Scripts/resources/build_binary_evidence_graph.py", "tests/test_binary_evidence_graph.py", ".github/workflows/pokopia-binary-m10.yml"]
+  push:
+    branches: ["2.0.1_unpack"]
+    paths: ["Pokopia.Binary/**", "Pokopia.Binary.Cli/**", "Scripts/resources/build_binary_evidence_graph.py", "tests/test_binary_evidence_graph.py", ".github/workflows/pokopia-binary-m10.yml"]
+permissions:
+  contents: read
+jobs:
+  real-index-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          submodules: recursive
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.gitmodules
+            /ThirdParty/Edoke
+            /Pokopia.Binary/**
+            /Pokopia.Binary.Cli/**
+            /2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdb
+            /2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdx
+            /2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdb
+            /2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdx
+            /2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x4b13d561.fdata
+            /2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x514c644e.fdata
+            /2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x52482d03.fdata
+            /2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata
+            /2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata
+            /2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xe634eeb2.fdata
+            /2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/MountPoint_1/*.fdata
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+      - run: dotnet build Pokopia.Binary.Cli/Pokopia.Binary.Cli.csproj -c Release
+      - name: Audit root and system original RDB/RDX against present FDATA
+        shell: bash
+        run: |
+          set -euo pipefail
+          root="2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE"
+          mkdir -p /tmp/m10-index
+          for name in root system; do
+            dotnet run --project Pokopia.Binary.Cli -c Release --no-build -- audit-fdata-summary "$root/$name.rdb" "$root/$name.rdx" "$root" > "/tmp/m10-index/$name.json"
+          done
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          verified=0
+          for name in ("root","system"):
+              j=json.loads(Path(f"/tmp/m10-index/{name}.json").read_text())
+              assert j["RdbRecordsInspected"]>0
+              assert sum(j["StatusCounts"].values())==j["RdbRecordsInspected"]
+              assert j["EvidenceGrade"]=="IDRK_HEADER_BYTES_ONLY_NO_DECOMPRESSION_OR_GAME_SEMANTICS"
+              verified+=j["VerifiedIdrkHeaders"]
+              print(name, j["RdbRecordsInspected"], "records,", j["VerifiedIdrkHeaders"], "verified IDRK heads")
+          assert verified>0, "Expected at least one source FDATA header match"
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m10-original-index-audit
+          path: /tmp/m10-index/*.json
+          retention-days: 14
+  native-graph:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /Scripts/resources/build_binary_evidence_graph.py
+            /tests/test_binary_evidence_graph.py
+            /UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin
+            /UnPack/2.0.1/Resources/Items/Native_2.0.1/native_item_catalog.csv
+            /UnPack/2.0.1/Resources/Localization/M9/Properties/m9_typed_field_report.json
+            /UnPack/2.0.1/Resources/Localization/M9/Properties/native_typed_fields_*.csv
+            /UnPack/2.0.1/Resources/Localization/M9/Properties/unverified_local_oid_candidates_*.csv
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test fail-closed evidence graph
+        run: python -m unittest discover -s tests -p "test_binary_evidence_graph.py" -v
+      - name: Build SQLite from all M9 native property shards and original item table
+        run: python -m Scripts.resources.build_binary_evidence_graph --output /tmp/m10-graph
+      - name: Check source coverage and evidence boundaries
+        run: |
+          python3 - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          r=Path("/tmp/m10-graph")
+          j=json.loads((r/"native_evidence_graph_summary.json").read_text())
+          assert j["native_item_records"]==4600
+          assert j["native_nodes"]==101467
+          assert j["native_fields"]==1176984
+          assert j["local_oid_numeric_equality_candidates"]==87445
+          assert j["item_id_to_kids_field_semantic_foreign_keys_verified"]==0
+          assert not j["material_type_enum_verified"] and not j["max_stack_field_verified"]
+          with sqlite3.connect(r/"native_evidence_graph.sqlite") as db:
+              assert db.execute("PRAGMA integrity_check").fetchone()[0]=="ok"
+              assert not db.execute("PRAGMA foreign_key_check").fetchall()
+          print("PASS actual 2.0.1 evidence graph")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m10-original-native-evidence-sqlite
+          path: |
+            /tmp/m10-graph/native_evidence_graph.sqlite
+            /tmp/m10-graph/native_evidence_graph_summary.json
+            /tmp/m10-graph/native_item_candidate_property_hashes.csv
+          compression-level: 6
+          retention-days: 14
