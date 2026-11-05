@@ -1,5 +1,16 @@
 # Pokopia 2.0.1 Resources — 道具、图标、多语言与纹理线索
 
+## 技术文档入口
+
+- [M5 原版 TEXINFO/G1T/Ounce 贴图技术文档](../../../docs/2.0.1/M5_NATIVE_TEXTURE_PIPELINE.md)：原始 0x18 平台、UV/格式字节、导出源码及 PNG 的 SHA/视觉证据分级。
+- [M9 宝可梦物种 ID 与材料分类研究计划](../../../docs/2.0.1/M9_POKEMON_ITEM_IDENTITIES.md)：原生消费者/结构字段的证明标准、00983.bin 原始 68 字节物品字段、3,930 条非道具纹理的批次验收。
+- [物品完整 4,600 条原生字段审计](Items/Native_2.0.1/native_item_field_report.json)：原始 NameIndex +0x22 已验证；+0x26 为分组候选，**尚未证明其官方材料枚举意义**。
+- [物种纹理 609 条静态 Hash 关联](Pokemon/pokemon_identity_summary.json)：原始纹理到 KIDSOBJDB 引用已确认；真实 `species_id` 关联仍未证明。
+- [非道具纹理 17 批输出](Textures/MiscNativeBatches/) 与 [批次源索引](Textures/Indexes/native_misc_texture_index.csv)：每批独立保留成功/失败、G1T/TEXINFO/UV/PNG 哈希，不会替换道具或宝可梦原图。
+
+**阶段界限**：图像与字段“来源可验证”不等于“类型/物种已验证”。任何尚无原生调用链的 ID、类别或上下限都不应伪装为官方枚举。
+
+
 ## M6 — 原生物品类别与数量字段审计（新增）
 
 已直接读取原版 LINKDATA `00983.bin`（4600 × 68 字节），导出 4600 条原始记录字段与分类候选（`+0x26`、`+0x3A`），并保留全量记录十六进制证据。注意 `+0x26` 的数值尚未证明为游戏官方分类枚举。单组游戏玩法上限 99 与存档 `byte` 的 255 表示范围属于不同层；未发现原生逐物品上限证据时，`native_max_stack` 保持空白。
