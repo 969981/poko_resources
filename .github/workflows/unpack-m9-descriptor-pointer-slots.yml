@@ -1,0 +1,99 @@
+name: M9.9 - trace ExeFS descriptor pointer slot readers
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_descriptor_pointer_slot_xrefs.py"
+      - "tests/test_m9_descriptor_pointer_slot_xrefs.py"
+      - ".github/workflows/unpack-m9-descriptor-pointer-slots.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-9-descriptor-slots
+  cancel-in-progress: false
+
+jobs:
+  static-pointer-reader-triage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/m9_descriptor_pointer_slot_xrefs.py
+            Scripts/resources/m9_rnk_exefs_xrefs.py
+            Scripts/resources/trace_native_species_item_callers.py
+            tests/test_m9_descriptor_pointer_slot_xrefs.py
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_entry_xrefs.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_pointer_slot_xrefs.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_pointer_slot_xrefs.csv
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install "lz4>=4,<5"
+
+      - name: Test pointer slot evidence isolation
+        env:
+          PYTHONPATH: "."
+        run: python -m unittest discover -s tests -p 'test_m9_descriptor_pointer_slot_xrefs.py' -v
+
+      - name: Inspect descriptor callback pointer references
+        env:
+          PYTHONPATH: "."
+        run: |
+          python Scripts/resources/m9_descriptor_pointer_slot_xrefs.py \
+            --main 2.0.1/exefs/main \
+            --m9-entry-graph UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_entry_xrefs.json \
+            --dest UnPack/2.0.1/Resources/Localization/M9/NameTables
+
+      - name: Verify native evidence gates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('UnPack/2.0.1/Resources/Localization/M9/NameTables')
+          doc=json.loads((root/'exefs_descriptor_pointer_slot_xrefs.json').read_text(encoding='utf-8'))
+          assert len(doc['report']['static_pointer_slots'])==3
+          assert doc['report']['verified_runtime_descriptor_reader']==0
+          assert doc['report']['verified_native_property_getter']==0
+          assert doc['report']['verified_scene_quest_building_text_fk']==0
+          assert all(r['evidence_grade']=='STATIC_CODE_REF_TO_FUNCTION_POINTER_SLOT_ONLY'
+                     and not r['runtime_descriptor_reader_verified']
+                     and not r['script_m7_text_fk_verified'] for r in doc['code_xrefs'])
+          print('M9.9 pointer slot xrefs PASS',doc['report']['code_reference_candidates'])
+          PY
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m9-9-descriptor-slot-xrefs
+          path: |
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_pointer_slot_xrefs.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_pointer_slot_xrefs.csv
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Commit verified static pointer survey
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_pointer_slot_xrefs.json \
+                     UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_pointer_slot_xrefs.csv
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9.9): original ARM64 descriptor pointer slot xrefs"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
