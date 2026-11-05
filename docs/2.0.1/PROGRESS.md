@@ -86,3 +86,13 @@ python -m unittest discover -s tests -v
 - **M28.3 已交付可使用的原生资源检索工具** `Scripts/resources/m28_3_kids_icon_lookup.py`，从原始 KIDSOBJDB 和 M27 数学模型将纹理名称还原到真实数组 key / Source OID / Texture OID / G1T / TEXINFO 和 PNG，**626/626** 原生数字图标查找独立对账成功；`icon_poke_0043_00_00_00` 的原生 key=`0x469E2C00`，Source OID=`0x06AB845F`，Texture OID=`0xC1A6D60C`，真实数组槽位 455。
 - 新建只读 GDB 采样 `Scripts/gdb/m28_pokopia_native_id_readonly_trace.py`，观测 `main+0xDD1B48`、`0xDD1C30`、`0x1136AA4`、`0x5FD168` 的动态调用者与寄存器；**目前仅通过静态语法和非修改检查，未在游戏运行时验证**。
 - 因未闭合 game ID → 原始键 / Source OID，身份绑定仍是 **0**。村民头像仍 **307 高置信视觉候选 + 9 多候选 + 62 未定位**。见 [[M28_ORIGINAL_HASH31_CONSUMER_AND_LOOKUP]]。
+
+
+## M29 — Pokémon 原生身份入口与 KIDS 消费者再核验（2026-11-05）
+
+- 真实 2.0.1 原始 ExeFS 直接核验 `RegisterPokemonNum` (`main+0x1135B44`)、`pokemon_dex_id` (`main+0x1136AA4`)、`m_mainPokemonList` (`main+0x5FD168`) 的 rodata 和邻近 AArch64 调用。前二者共享通用 `main+0x27470E0`（总计 110 处直接 BL），后者进入 `main+0x5A71E0`（1,109 处直接 BL）。另 `main+0x113AF80` 有 1,479 处直接 BL；这些是通用记录/编码函数候选，**不能等于图标选择函数**。
+- `pokemon_dex_id` 的原始记录附近有 `x22+4/+6/+8` 三项 u16 和 `0x1F3` 位图范围检查；`m_mainPokemonList` 检查 `x19+0x26` 字节标志；`RegisterPokemonNum` 附近可见上限 1000 的计数循环。均未证明与同实例 KIDS Source OID 的连接。
+- 类型 `0x9D1AFA46` 的 **7 条静态 class-global 候选引用**全位于 `main+0xBE19B4–0xBE1A58` 初始化区域；`main+0xDD1B48` 和 `0xDD1C30` 无直接 `BL/B` 入边（不排除虚函数 `BLR`）。实际身份查询仍未闭环。
+- 为真正的模拟器取证修改 `Scripts/gdb/m28_pokopia_native_id_readonly_trace.py`：默认要求硬件断点（无软件断点静默回退），补记 `x19–x26` 等记录寄存器。新增 `Scripts/resources/m29_1_validate_gdb_trace.py`，可将 **用户真实 GDB JSONL** 检查 PC/基址/LR/原始版本与描述器字段，并导出调用者清单；CI 仅通过模拟输入的校验，**不等于实际运行时取证成功**。
+- 本轮未发现真实游戏 species/villager ID → KIDS key/Source OID 消费者；村民资源仍为 **307 张高置信原生视觉候选、9 张多候选、62 张未定位，原生游戏 ID 绑定 0**。
+- 见 [[M29_NATIVE_IDENTITY_CALLER_AND_RUNTIME_PROOF]] 和 M29 成功的 [GitHub Actions](https://github.com/969981/poko_resources/actions/runs/42009731562)。
