@@ -1,0 +1,41 @@
+{
+  "version": "2.0.1",
+  "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "original_text_rodata_literals_exact_verified": true,
+  "identity_literal_xref_count": 7,
+  "anchor_counts": {
+    "pokemon_dex_id": 1,
+    "pokemon_dex": 1,
+    "RegisterPokemonNum": 1,
+    "m_mainPokemonList": 1,
+    "m_pokemonDexHistory": 1,
+    "m_pokemonDexReadHistory": 1,
+    "m_pokemonHistory": 1
+  },
+  "primary_identity_anchors": [
+    {
+      "name": "RegisterPokemonNum",
+      "sites": [
+        "0x1135b44"
+      ]
+    },
+    {
+      "name": "m_mainPokemonList",
+      "sites": [
+        "0x5fd168"
+      ]
+    },
+    {
+      "name": "pokemon_dex_id",
+      "sites": [
+        "0x1136aa4"
+      ]
+    }
+  ],
+  "scope": "SOURCE_BYTES_ORIGINAL_STRING_ADRP_ADD_AND_BOUNDED_CALLSITE_CONTEXT",
+  "direct_species_to_native_texture_id_verified": false,
+  "gameplay_consumer_to_source_oid_verified": false,
+  "9_ambiguous_identity_resolved": 0,
+  "79_missing_native_portraits_resolved": 0,
+  "warning": "Native save/serialization strings prove only those literals have executable references. Their consumers have NOT been linked to KIDS texture OIDs."
+}

@@ -1,0 +1,2877 @@
+{
+  "pokemon_dex_id": [
+    {
+      "string": "pokemon_dex_id",
+      "literal_rodata_rva": "0x27b1722",
+      "string_xref_rva": "0x1136aa4",
+      "original_instruction_word": "911c8821",
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "local_direct_branch_targets": [
+        {
+          "pc": "0x1136a3c",
+          "kind": "B",
+          "target": "0x1136a4c",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1136a44",
+          "kind": "B",
+          "target": "0x1136a4c",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1136a50",
+          "kind": "BL",
+          "target": "0x2747070",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1136a88",
+          "kind": "B",
+          "target": "0x1136a98",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1136a90",
+          "kind": "B",
+          "target": "0x1136a98",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1136a9c",
+          "kind": "BL",
+          "target": "0x2747070",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1136ab0",
+          "kind": "BL",
+          "target": "0x27470e0",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1136ac4",
+          "kind": "BL",
+          "target": "0x27470e0",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1136ad8",
+          "kind": "BL",
+          "target": "0x2747090",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1136ae8",
+          "kind": "BL",
+          "target": "0x27470a0",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1136af0",
+          "kind": "B",
+          "target": "0x11369b0",
+          "target_is_within_text": true
+        }
+      ],
+      "native_code_window": [
+        {
+          "pc": "0x1136a34",
+          "word": "360000a8",
+          "asm": "tbz w8, #0, #0x1136a48"
+        },
+        {
+          "pc": "0x1136a38",
+          "word": "aa1f03e1",
+          "asm": "mov x1, xzr"
+        },
+        {
+          "pc": "0x1136a3c",
+          "word": "14000004",
+          "asm": "b #0x1136a4c"
+        },
+        {
+          "pc": "0x1136a40",
+          "word": "52800041",
+          "asm": "mov w1, #2"
+        },
+        {
+          "pc": "0x1136a44",
+          "word": "14000002",
+          "asm": "b #0x1136a4c"
+        },
+        {
+          "pc": "0x1136a48",
+          "word": "52800021",
+          "asm": "mov w1, #1"
+        },
+        {
+          "pc": "0x1136a4c",
+          "word": "910043e0",
+          "asm": "add x0, sp, #0x10"
+        },
+        {
+          "pc": "0x1136a50",
+          "word": "94584188",
+          "asm": "bl #0x2747070"
+        },
+        {
+          "pc": "0x1136a54",
+          "word": "b94002c8",
+          "asm": "ldr w8, [x22]"
+        },
+        {
+          "pc": "0x1136a58",
+          "word": "7100091f",
+          "asm": "cmp w8, #2"
+        },
+        {
+          "pc": "0x1136a5c",
+          "word": "5400018d",
+          "asm": "b.le #0x1136a8c"
+        },
+        {
+          "pc": "0x1136a60",
+          "word": "794012c8",
+          "asm": "ldrh w8, [x22, #8]"
+        },
+        {
+          "pc": "0x1136a64",
+          "word": "51000509",
+          "asm": "sub w9, w8, #1"
+        },
+        {
+          "pc": "0x1136a68",
+          "word": "7107cd3f",
+          "asm": "cmp w9, #0x1f3"
+        },
+        {
+          "pc": "0x1136a6c",
+          "word": "54000148",
+          "asm": "b.hi #0x1136a94"
+        },
+        {
+          "pc": "0x1136a70",
+          "word": "d343fd09",
+          "asm": "lsr x9, x8, #3"
+        },
+        {
+          "pc": "0x1136a74",
+          "word": "12000908",
+          "asm": "and w8, w8, #7"
+        },
+        {
+          "pc": "0x1136a78",
+          "word": "38696a89",
+          "asm": "ldrb w9, [x20, x9]"
+        },
+        {
+          "pc": "0x1136a7c",
+          "word": "1ac82528",
+          "asm": "lsr w8, w9, w8"
+        },
+        {
+          "pc": "0x1136a80",
+          "word": "360000a8",
+          "asm": "tbz w8, #0, #0x1136a94"
+        },
+        {
+          "pc": "0x1136a84",
+          "word": "aa1f03e1",
+          "asm": "mov x1, xzr"
+        },
+        {
+          "pc": "0x1136a88",
+          "word": "14000004",
+          "asm": "b #0x1136a98"
+        },
+        {
+          "pc": "0x1136a8c",
+          "word": "52800041",
+          "asm": "mov w1, #2"
+        },
+        {
+          "pc": "0x1136a90",
+          "word": "14000002",
+          "asm": "b #0x1136a98"
+        },
+        {
+          "pc": "0x1136a94",
+          "word": "52800021",
+          "asm": "mov w1, #1"
+        },
+        {
+          "pc": "0x1136a98",
+          "word": "910043e0",
+          "asm": "add x0, sp, #0x10"
+        },
+        {
+          "pc": "0x1136a9c",
+          "word": "94584175",
+          "asm": "bl #0x2747070"
+        },
+        {
+          "pc": "0x1136aa0",
+          "word": "f000b3c1",
+          "asm": "adrp x1, #0x27b1000"
+        },
+        {
+          "pc": "0x1136aa4",
+          "word": "911c8821",
+          "asm": "add x1, x1, #0x722"
+        },
+        {
+          "pc": "0x1136aa8",
+          "word": "9100c3e0",
+          "asm": "add x0, sp, #0x30"
+        },
+        {
+          "pc": "0x1136aac",
+          "word": "aa1503e2",
+          "asm": "mov x2, x21"
+        },
+        {
+          "pc": "0x1136ab0",
+          "word": "9458418c",
+          "asm": "bl #0x27470e0"
+        },
+        {
+          "pc": "0x1136ab4",
+          "word": "f000b3c1",
+          "asm": "adrp x1, #0x27b1000"
+        },
+        {
+          "pc": "0x1136ab8",
+          "word": "911cc421",
+          "asm": "add x1, x1, #0x731"
+        },
+        {
+          "pc": "0x1136abc",
+          "word": "9100c3e0",
+          "asm": "add x0, sp, #0x30"
+        },
+        {
+          "pc": "0x1136ac0",
+          "word": "aa1303e2",
+          "asm": "mov x2, x19"
+        },
+        {
+          "pc": "0x1136ac4",
+          "word": "94584187",
+          "asm": "bl #0x27470e0"
+        },
+        {
+          "pc": "0x1136ac8",
+          "word": "f000b541",
+          "asm": "adrp x1, #0x27e1000"
+        },
+        {
+          "pc": "0x1136acc",
+          "word": "91074c21",
+          "asm": "add x1, x1, #0x1d3"
+        },
+        {
+          "pc": "0x1136ad0",
+          "word": "9100c3e0",
+          "asm": "add x0, sp, #0x30"
+        },
+        {
+          "pc": "0x1136ad4",
+          "word": "910043e2",
+          "asm": "add x2, sp, #0x10"
+        },
+        {
+          "pc": "0x1136ad8",
+          "word": "9458416e",
+          "asm": "bl #0x2747090"
+        },
+        {
+          "pc": "0x1136adc",
+          "word": "90011b81",
+          "asm": "adrp x1, #0x34a6000"
+        },
+        {
+          "pc": "0x1136ae0",
+          "word": "9100c3e0",
+          "asm": "add x0, sp, #0x30"
+        },
+        {
+          "pc": "0x1136ae4",
+          "word": "f9413821",
+          "asm": "ldr x1, [x1, #0x270]"
+        },
+        {
+          "pc": "0x1136ae8",
+          "word": "9458416e",
+          "asm": "bl #0x27470a0"
+        },
+        {
+          "pc": "0x1136aec",
+          "word": "52800033",
+          "asm": "mov w19, #1"
+        },
+        {
+          "pc": "0x1136af0",
+          "word": "17ffffb0",
+          "asm": "b #0x11369b0"
+        },
+        {
+          "pc": "0x1136af4",
+          "word": "90012ca8",
+          "asm": "adrp x8, #0x36ca000"
+        },
+        {
+          "pc": "0x1136af8",
+          "word": "912a0108",
+          "asm": "add x8, x8, #0xa80"
+        },
+        {
+          "pc": "0x1136afc",
+          "word": "b9800109",
+          "asm": "ldrsw x9, [x8]"
+        },
+        {
+          "pc": "0x1136b00",
+          "word": "7100253f",
+          "asm": "cmp w9, #9"
+        },
+        {
+          "pc": "0x1136b04",
+          "word": "540002ac",
+          "asm": "b.gt #0x1136b58"
+        },
+        {
+          "pc": "0x1136b08",
+          "word": "90011b8a",
+          "asm": "adrp x10, #0x34a6000"
+        },
+        {
+          "pc": "0x1136b0c",
+          "word": "5280030b",
+          "asm": "mov w11, #0x18"
+        },
+        {
+          "pc": "0x1136b10",
+          "word": "f941494a",
+          "asm": "ldr x10, [x10, #0x290]"
+        },
+        {
+          "pc": "0x1136b14",
+          "word": "93407c2c",
+          "asm": "sxtw x12, w1"
+        },
+        {
+          "pc": "0x1136b18",
+          "word": "9b2b292a",
+          "asm": "smaddl x10, w9, w11, x10"
+        },
+        {
+          "pc": "0x1136b1c",
+          "word": "93407c0b",
+          "asm": "sxtw x11, w0"
+        },
+        {
+          "pc": "0x1136b20",
+          "word": "11000529",
+          "asm": "add w9, w9, #1"
+        },
+        {
+          "pc": "0x1136b24",
+          "word": "b9000109",
+          "asm": "str w9, [x8]"
+        },
+        {
+          "pc": "0x1136b28",
+          "word": "a900314b",
+          "asm": "stp x11, x12, [x10]"
+        },
+        {
+          "pc": "0x1136b2c",
+          "word": "93407c4b",
+          "asm": "sxtw x11, w2"
+        },
+        {
+          "pc": "0x1136b30",
+          "word": "f900094b",
+          "asm": "str x11, [x10, #0x10]"
+        },
+        {
+          "pc": "0x1136b34",
+          "word": "7100293f",
+          "asm": "cmp w9, #0xa"
+        },
+        {
+          "pc": "0x1136b38",
+          "word": "54000121",
+          "asm": "b.ne #0x1136b5c"
+        },
+        {
+          "pc": "0x1136b3c",
+          "word": "d503237f",
+          "asm": "pacibsp"
+        },
+        {
+          "pc": "0x1136b40",
+          "word": "a9bf7bfd",
+          "asm": "stp x29, x30, [sp, #-0x10]!"
+        }
+      ],
+      "game_id_field_semantics": "UNVERIFIED",
+      "native_texture_oid_binding_verified": false
+    }
+  ],
+  "pokemon_dex": [
+    {
+      "string": "pokemon_dex",
+      "literal_rodata_rva": "0x279c469",
+      "string_xref_rva": "0x11367d8",
+      "original_instruction_word": "9111a421",
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "local_direct_branch_targets": [
+        {
+          "pc": "0x1136798",
+          "kind": "B",
+          "target": "0x11367b8",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x11367bc",
+          "kind": "BL",
+          "target": "0x3b9024",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x11367c8",
+          "kind": "BL",
+          "target": "0x3b8fac",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x11367d0",
+          "kind": "B",
+          "target": "0x11367ac",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x11367e0",
+          "kind": "BL",
+          "target": "0x2747030",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x11367f8",
+          "kind": "BL",
+          "target": "0x2747040",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1136800",
+          "kind": "BL",
+          "target": "0x11358e0",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1136814",
+          "kind": "B",
+          "target": "0x1136864",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x113681c",
+          "kind": "BL",
+          "target": "0xa9767c",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1136828",
+          "kind": "B",
+          "target": "0x1136864",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1136830",
+          "kind": "BL",
+          "target": "0xa97730",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x113683c",
+          "kind": "B",
+          "target": "0x1136864",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1136844",
+          "kind": "BL",
+          "target": "0xa98148",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1136850",
+          "kind": "B",
+          "target": "0x1136864",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1136858",
+          "kind": "BL",
+          "target": "0xa981fc",
+          "target_is_within_text": true
+        }
+      ],
+      "native_code_window": [
+        {
+          "pc": "0x1136768",
+          "word": "2a1f03f3",
+          "asm": "mov w19, wzr"
+        },
+        {
+          "pc": "0x113676c",
+          "word": "2a1303e0",
+          "asm": "mov w0, w19"
+        },
+        {
+          "pc": "0x1136770",
+          "word": "a94a4ff4",
+          "asm": "ldp x20, x19, [sp, #0xa0]"
+        },
+        {
+          "pc": "0x1136774",
+          "word": "a94957f6",
+          "asm": "ldp x22, x21, [sp, #0x90]"
+        },
+        {
+          "pc": "0x1136778",
+          "word": "a9485ff8",
+          "asm": "ldp x24, x23, [sp, #0x80]"
+        },
+        {
+          "pc": "0x113677c",
+          "word": "a9477bfd",
+          "asm": "ldp x29, x30, [sp, #0x70]"
+        },
+        {
+          "pc": "0x1136780",
+          "word": "9102c3ff",
+          "asm": "add sp, sp, #0xb0"
+        },
+        {
+          "pc": "0x1136784",
+          "word": "d65f0fff",
+          "asm": "retab"
+        },
+        {
+          "pc": "0x1136788",
+          "word": "90011b96",
+          "asm": "adrp x22, #0x34a6000"
+        },
+        {
+          "pc": "0x113678c",
+          "word": "52800035",
+          "asm": "mov w21, #1"
+        },
+        {
+          "pc": "0x1136790",
+          "word": "f94166d6",
+          "asm": "ldr x22, [x22, #0x2c8]"
+        },
+        {
+          "pc": "0x1136794",
+          "word": "b90002df",
+          "asm": "str wzr, [x22]"
+        },
+        {
+          "pc": "0x1136798",
+          "word": "14000008",
+          "asm": "b #0x11367b8"
+        },
+        {
+          "pc": "0x113679c",
+          "word": "d503201f",
+          "asm": "nop"
+        },
+        {
+          "pc": "0x11367a0",
+          "word": "b94002c8",
+          "asm": "ldr w8, [x22]"
+        },
+        {
+          "pc": "0x11367a4",
+          "word": "11000508",
+          "asm": "add w8, w8, #1"
+        },
+        {
+          "pc": "0x11367a8",
+          "word": "b90002c8",
+          "asm": "str w8, [x22]"
+        },
+        {
+          "pc": "0x11367ac",
+          "word": "110006b5",
+          "asm": "add w21, w21, #1"
+        },
+        {
+          "pc": "0x11367b0",
+          "word": "710fa2bf",
+          "asm": "cmp w21, #0x3e8"
+        },
+        {
+          "pc": "0x11367b4",
+          "word": "54000100",
+          "asm": "b.eq #0x11367d4"
+        },
+        {
+          "pc": "0x11367b8",
+          "word": "2a1503e0",
+          "asm": "mov w0, w21"
+        },
+        {
+          "pc": "0x11367bc",
+          "word": "97ca0a1a",
+          "asm": "bl #0x3b9024"
+        },
+        {
+          "pc": "0x11367c0",
+          "word": "3707ff00",
+          "asm": "tbnz w0, #0, #0x11367a0"
+        },
+        {
+          "pc": "0x11367c4",
+          "word": "2a1503e0",
+          "asm": "mov w0, w21"
+        },
+        {
+          "pc": "0x11367c8",
+          "word": "97ca09f9",
+          "asm": "bl #0x3b8fac"
+        },
+        {
+          "pc": "0x11367cc",
+          "word": "3707fea0",
+          "asm": "tbnz w0, #0, #0x11367a0"
+        },
+        {
+          "pc": "0x11367d0",
+          "word": "17fffff7",
+          "asm": "b #0x11367ac"
+        },
+        {
+          "pc": "0x11367d4",
+          "word": "d000b321",
+          "asm": "adrp x1, #0x279c000"
+        },
+        {
+          "pc": "0x11367d8",
+          "word": "9111a421",
+          "asm": "add x1, x1, #0x469"
+        },
+        {
+          "pc": "0x11367dc",
+          "word": "9100c3e0",
+          "asm": "add x0, sp, #0x30"
+        },
+        {
+          "pc": "0x11367e0",
+          "word": "94584214",
+          "asm": "bl #0x2747030"
+        },
+        {
+          "pc": "0x11367e4",
+          "word": "90011b88",
+          "asm": "adrp x8, #0x34a6000"
+        },
+        {
+          "pc": "0x11367e8",
+          "word": "9100c3e0",
+          "asm": "add x0, sp, #0x30"
+        },
+        {
+          "pc": "0x11367ec",
+          "word": "f940f908",
+          "asm": "ldr x8, [x8, #0x1f0]"
+        },
+        {
+          "pc": "0x11367f0",
+          "word": "52a00022",
+          "asm": "mov w2, #0x10000"
+        },
+        {
+          "pc": "0x11367f4",
+          "word": "f9400101",
+          "asm": "ldr x1, [x8]"
+        },
+        {
+          "pc": "0x11367f8",
+          "word": "94584212",
+          "asm": "bl #0x2747040"
+        },
+        {
+          "pc": "0x11367fc",
+          "word": "9100c3e0",
+          "asm": "add x0, sp, #0x30"
+        },
+        {
+          "pc": "0x1136800",
+          "word": "97fffc38",
+          "asm": "bl #0x11358e0"
+        },
+        {
+          "pc": "0x1136804",
+          "word": "36000d40",
+          "asm": "tbz w0, #0, #0x11369ac"
+        },
+        {
+          "pc": "0x1136808",
+          "word": "3100067f",
+          "asm": "cmn w19, #1"
+        },
+        {
+          "pc": "0x113680c",
+          "word": "54000060",
+          "asm": "b.eq #0x1136818"
+        },
+        {
+          "pc": "0x1136810",
+          "word": "93407e73",
+          "asm": "sxtw x19, w19"
+        },
+        {
+          "pc": "0x1136814",
+          "word": "14000014",
+          "asm": "b #0x1136864"
+        },
+        {
+          "pc": "0x1136818",
+          "word": "2a1403e0",
+          "asm": "mov w0, w20"
+        },
+        {
+          "pc": "0x113681c",
+          "word": "97e58398",
+          "asm": "bl #0xa9767c"
+        },
+        {
+          "pc": "0x1136820",
+          "word": "36000060",
+          "asm": "tbz w0, #0, #0x113682c"
+        },
+        {
+          "pc": "0x1136824",
+          "word": "aa1f03f3",
+          "asm": "mov x19, xzr"
+        },
+        {
+          "pc": "0x1136828",
+          "word": "1400000f",
+          "asm": "b #0x1136864"
+        },
+        {
+          "pc": "0x113682c",
+          "word": "2a1403e0",
+          "asm": "mov w0, w20"
+        },
+        {
+          "pc": "0x1136830",
+          "word": "97e583c0",
+          "asm": "bl #0xa97730"
+        },
+        {
+          "pc": "0x1136834",
+          "word": "36000060",
+          "asm": "tbz w0, #0, #0x1136840"
+        },
+        {
+          "pc": "0x1136838",
+          "word": "52800033",
+          "asm": "mov w19, #1"
+        },
+        {
+          "pc": "0x113683c",
+          "word": "1400000a",
+          "asm": "b #0x1136864"
+        },
+        {
+          "pc": "0x1136840",
+          "word": "2a1403e0",
+          "asm": "mov w0, w20"
+        },
+        {
+          "pc": "0x1136844",
+          "word": "97e58641",
+          "asm": "bl #0xa98148"
+        },
+        {
+          "pc": "0x1136848",
+          "word": "36000060",
+          "asm": "tbz w0, #0, #0x1136854"
+        },
+        {
+          "pc": "0x113684c",
+          "word": "52800053",
+          "asm": "mov w19, #2"
+        },
+        {
+          "pc": "0x1136850",
+          "word": "14000005",
+          "asm": "b #0x1136864"
+        },
+        {
+          "pc": "0x1136854",
+          "word": "2a1403e0",
+          "asm": "mov w0, w20"
+        },
+        {
+          "pc": "0x1136858",
+          "word": "97e58669",
+          "asm": "bl #0xa981fc"
+        },
+        {
+          "pc": "0x113685c",
+          "word": "36000a80",
+          "asm": "tbz w0, #0, #0x11369ac"
+        },
+        {
+          "pc": "0x1136860",
+          "word": "52800073",
+          "asm": "mov w19, #3"
+        },
+        {
+          "pc": "0x1136864",
+          "word": "f0012148",
+          "asm": "adrp x8, #0x3561000"
+        },
+        {
+          "pc": "0x1136868",
+          "word": "9123c108",
+          "asm": "add x8, x8, #0x8f0"
+        },
+        {
+          "pc": "0x113686c",
+          "word": "f9400108",
+          "asm": "ldr x8, [x8]"
+        },
+        {
+          "pc": "0x1136870",
+          "word": "b96b7109",
+          "asm": "ldr w9, [x8, #0x2b70]"
+        },
+        {
+          "pc": "0x1136874",
+          "word": "7104693f",
+          "asm": "cmp w9, #0x11a"
+        }
+      ],
+      "game_id_field_semantics": "UNVERIFIED",
+      "native_texture_oid_binding_verified": false
+    }
+  ],
+  "RegisterPokemonNum": [
+    {
+      "string": "RegisterPokemonNum",
+      "literal_rodata_rva": "0x27f2200",
+      "string_xref_rva": "0x1135b44",
+      "original_instruction_word": "91080021",
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "local_direct_branch_targets": [
+        {
+          "pc": "0x1135ae8",
+          "kind": "BL",
+          "target": "0x27470e0",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1135b00",
+          "kind": "B",
+          "target": "0x1135b1c",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1135b20",
+          "kind": "BL",
+          "target": "0x3b9024",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1135b2c",
+          "kind": "BL",
+          "target": "0x3b8fac",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1135b34",
+          "kind": "B",
+          "target": "0x1135b10",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1135b4c",
+          "kind": "BL",
+          "target": "0x27470e0",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1135b70",
+          "kind": "BL",
+          "target": "0x27470e0",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1135b88",
+          "kind": "BL",
+          "target": "0x1154a0",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1135b94",
+          "kind": "B",
+          "target": "0x1135be4",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1135ba8",
+          "kind": "B",
+          "target": "0x1135bbc",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x1135bdc",
+          "kind": "B",
+          "target": "0x1135bac",
+          "target_is_within_text": true
+        }
+      ],
+      "native_code_window": [
+        {
+          "pc": "0x1135ad4",
+          "word": "9000b3a1",
+          "asm": "adrp x1, #0x27a9000"
+        },
+        {
+          "pc": "0x1135ad8",
+          "word": "9105b821",
+          "asm": "add x1, x1, #0x16e"
+        },
+        {
+          "pc": "0x1135adc",
+          "word": "72a00e89",
+          "asm": "movk w9, #0x74, lsl #16"
+        },
+        {
+          "pc": "0x1135ae0",
+          "word": "aa1303e0",
+          "asm": "mov x0, x19"
+        },
+        {
+          "pc": "0x1135ae4",
+          "word": "b8696902",
+          "asm": "ldr w2, [x8, x9]"
+        },
+        {
+          "pc": "0x1135ae8",
+          "word": "9458457e",
+          "asm": "bl #0x27470e0"
+        },
+        {
+          "pc": "0x1135aec",
+          "word": "b0011b9a",
+          "asm": "adrp x26, #0x34a6000"
+        },
+        {
+          "pc": "0x1135af0",
+          "word": "f941675a",
+          "asm": "ldr x26, [x26, #0x2c8]"
+        },
+        {
+          "pc": "0x1135af4",
+          "word": "b9400348",
+          "asm": "ldr w8, [x26]"
+        },
+        {
+          "pc": "0x1135af8",
+          "word": "35000228",
+          "asm": "cbnz w8, #0x1135b3c"
+        },
+        {
+          "pc": "0x1135afc",
+          "word": "52800035",
+          "asm": "mov w21, #1"
+        },
+        {
+          "pc": "0x1135b00",
+          "word": "14000007",
+          "asm": "b #0x1135b1c"
+        },
+        {
+          "pc": "0x1135b04",
+          "word": "b9400348",
+          "asm": "ldr w8, [x26]"
+        },
+        {
+          "pc": "0x1135b08",
+          "word": "11000508",
+          "asm": "add w8, w8, #1"
+        },
+        {
+          "pc": "0x1135b0c",
+          "word": "b9000348",
+          "asm": "str w8, [x26]"
+        },
+        {
+          "pc": "0x1135b10",
+          "word": "110006b5",
+          "asm": "add w21, w21, #1"
+        },
+        {
+          "pc": "0x1135b14",
+          "word": "710fa2bf",
+          "asm": "cmp w21, #0x3e8"
+        },
+        {
+          "pc": "0x1135b18",
+          "word": "54000100",
+          "asm": "b.eq #0x1135b38"
+        },
+        {
+          "pc": "0x1135b1c",
+          "word": "2a1503e0",
+          "asm": "mov w0, w21"
+        },
+        {
+          "pc": "0x1135b20",
+          "word": "97ca0d41",
+          "asm": "bl #0x3b9024"
+        },
+        {
+          "pc": "0x1135b24",
+          "word": "3707ff00",
+          "asm": "tbnz w0, #0, #0x1135b04"
+        },
+        {
+          "pc": "0x1135b28",
+          "word": "2a1503e0",
+          "asm": "mov w0, w21"
+        },
+        {
+          "pc": "0x1135b2c",
+          "word": "97ca0d20",
+          "asm": "bl #0x3b8fac"
+        },
+        {
+          "pc": "0x1135b30",
+          "word": "3707fea0",
+          "asm": "tbnz w0, #0, #0x1135b04"
+        },
+        {
+          "pc": "0x1135b34",
+          "word": "17fffff7",
+          "asm": "b #0x1135b10"
+        },
+        {
+          "pc": "0x1135b38",
+          "word": "b9400348",
+          "asm": "ldr w8, [x26]"
+        },
+        {
+          "pc": "0x1135b3c",
+          "word": "93407d02",
+          "asm": "sxtw x2, w8"
+        },
+        {
+          "pc": "0x1135b40",
+          "word": "b000b5e1",
+          "asm": "adrp x1, #0x27f2000"
+        },
+        {
+          "pc": "0x1135b44",
+          "word": "91080021",
+          "asm": "add x1, x1, #0x200"
+        },
+        {
+          "pc": "0x1135b48",
+          "word": "aa1303e0",
+          "asm": "mov x0, x19"
+        },
+        {
+          "pc": "0x1135b4c",
+          "word": "94584565",
+          "asm": "bl #0x27470e0"
+        },
+        {
+          "pc": "0x1135b50",
+          "word": "b0011b89",
+          "asm": "adrp x9, #0x34a6000"
+        },
+        {
+          "pc": "0x1135b54",
+          "word": "f9416929",
+          "asm": "ldr x9, [x9, #0x2d0]"
+        },
+        {
+          "pc": "0x1135b58",
+          "word": "b9400128",
+          "asm": "ldr w8, [x9]"
+        },
+        {
+          "pc": "0x1135b5c",
+          "word": "340001e8",
+          "asm": "cbz w8, #0x1135b98"
+        },
+        {
+          "pc": "0x1135b60",
+          "word": "93407d02",
+          "asm": "sxtw x2, w8"
+        },
+        {
+          "pc": "0x1135b64",
+          "word": "9000b3e1",
+          "asm": "adrp x1, #0x27b1000"
+        },
+        {
+          "pc": "0x1135b68",
+          "word": "911d1421",
+          "asm": "add x1, x1, #0x745"
+        },
+        {
+          "pc": "0x1135b6c",
+          "word": "aa1303e0",
+          "asm": "mov x0, x19"
+        },
+        {
+          "pc": "0x1135b70",
+          "word": "9458455c",
+          "asm": "bl #0x27470e0"
+        },
+        {
+          "pc": "0x1135b74",
+          "word": "f0011a68",
+          "asm": "adrp x8, #0x3484000"
+        },
+        {
+          "pc": "0x1135b78",
+          "word": "f9405d08",
+          "asm": "ldr x8, [x8, #0xb8]"
+        },
+        {
+          "pc": "0x1135b7c",
+          "word": "f9400100",
+          "asm": "ldr x0, [x8]"
+        },
+        {
+          "pc": "0x1135b80",
+          "word": "b4000300",
+          "asm": "cbz x0, #0x1135be0"
+        },
+        {
+          "pc": "0x1135b84",
+          "word": "52800021",
+          "asm": "mov w1, #1"
+        },
+        {
+          "pc": "0x1135b88",
+          "word": "97bf7e46",
+          "asm": "bl #0x1154a0"
+        },
+        {
+          "pc": "0x1135b8c",
+          "word": "7100001f",
+          "asm": "cmp w0, #0"
+        },
+        {
+          "pc": "0x1135b90",
+          "word": "1a9f07e2",
+          "asm": "cset w2, ne"
+        },
+        {
+          "pc": "0x1135b94",
+          "word": "14000014",
+          "asm": "b #0x1135be4"
+        },
+        {
+          "pc": "0x1135b98",
+          "word": "f940032b",
+          "asm": "ldr x11, [x25]"
+        },
+        {
+          "pc": "0x1135b9c",
+          "word": "aa1f03ea",
+          "asm": "mov x10, xzr"
+        },
+        {
+          "pc": "0x1135ba0",
+          "word": "915be16b",
+          "asm": "add x11, x11, #0x6f8, lsl #12"
+        },
+        {
+          "pc": "0x1135ba4",
+          "word": "9126916b",
+          "asm": "add x11, x11, #0x9a4"
+        },
+        {
+          "pc": "0x1135ba8",
+          "word": "14000005",
+          "asm": "b #0x1135bbc"
+        },
+        {
+          "pc": "0x1135bac",
+          "word": "9100054a",
+          "asm": "add x10, x10, #1"
+        },
+        {
+          "pc": "0x1135bb0",
+          "word": "9100316b",
+          "asm": "add x11, x11, #0xc"
+        },
+        {
+          "pc": "0x1135bb4",
+          "word": "f107d55f",
+          "asm": "cmp x10, #0x1f5"
+        },
+        {
+          "pc": "0x1135bb8",
+          "word": "54fffd40",
+          "asm": "b.eq #0x1135b60"
+        },
+        {
+          "pc": "0x1135bbc",
+          "word": "12003d4c",
+          "asm": "and w12, w10, #0xffff"
+        },
+        {
+          "pc": "0x1135bc0",
+          "word": "5100058c",
+          "asm": "sub w12, w12, #1"
+        },
+        {
+          "pc": "0x1135bc4",
+          "word": "7107cd9f",
+          "asm": "cmp w12, #0x1f3"
+        },
+        {
+          "pc": "0x1135bc8",
+          "word": "54ffff28",
+          "asm": "b.hi #0x1135bac"
+        },
+        {
+          "pc": "0x1135bcc",
+          "word": "3940016c",
+          "asm": "ldrb w12, [x11]"
+        },
+        {
+          "pc": "0x1135bd0",
+          "word": "1200018c",
+          "asm": "and w12, w12, #1"
+        },
+        {
+          "pc": "0x1135bd4",
+          "word": "0b0c0108",
+          "asm": "add w8, w8, w12"
+        },
+        {
+          "pc": "0x1135bd8",
+          "word": "b9000128",
+          "asm": "str w8, [x9]"
+        },
+        {
+          "pc": "0x1135bdc",
+          "word": "17fffff4",
+          "asm": "b #0x1135bac"
+        },
+        {
+          "pc": "0x1135be0",
+          "word": "aa1f03e2",
+          "asm": "mov x2, xzr"
+        }
+      ],
+      "game_id_field_semantics": "UNVERIFIED",
+      "native_texture_oid_binding_verified": false
+    }
+  ],
+  "m_mainPokemonList": [
+    {
+      "string": "m_mainPokemonList",
+      "literal_rodata_rva": "0x27d2b35",
+      "string_xref_rva": "0x5fd168",
+      "original_instruction_word": "912cd463",
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "local_direct_branch_targets": [
+        {
+          "pc": "0x5fd108",
+          "kind": "BL",
+          "target": "0x5a71e0",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5fd120",
+          "kind": "B",
+          "target": "0x5fd180",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5fd144",
+          "kind": "BL",
+          "target": "0x113af80",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5fd174",
+          "kind": "BL",
+          "target": "0x5a71e0",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5fd194",
+          "kind": "BL",
+          "target": "0x113af80",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5fd1a4",
+          "kind": "B",
+          "target": "0x5fd220",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5fd1b0",
+          "kind": "BL",
+          "target": "0x113af80",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5fd1c0",
+          "kind": "BL",
+          "target": "0x113af80",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5fd1d0",
+          "kind": "BL",
+          "target": "0x113af80",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5fd1e4",
+          "kind": "B",
+          "target": "0x5fd220",
+          "target_is_within_text": true
+        }
+      ],
+      "native_code_window": [
+        {
+          "pc": "0x5fd0f8",
+          "word": "b0010cc3",
+          "asm": "adrp x3, #0x2796000"
+        },
+        {
+          "pc": "0x5fd0fc",
+          "word": "910fb863",
+          "asm": "add x3, x3, #0x3ee"
+        },
+        {
+          "pc": "0x5fd100",
+          "word": "aa1303e1",
+          "asm": "mov x1, x19"
+        },
+        {
+          "pc": "0x5fd104",
+          "word": "aa1503e2",
+          "asm": "mov x2, x21"
+        },
+        {
+          "pc": "0x5fd108",
+          "word": "97fea836",
+          "asm": "bl #0x5a71e0"
+        },
+        {
+          "pc": "0x5fd10c",
+          "word": "37000140",
+          "asm": "tbnz w0, #0, #0x5fd134"
+        },
+        {
+          "pc": "0x5fd110",
+          "word": "aa1f03f7",
+          "asm": "mov x23, xzr"
+        },
+        {
+          "pc": "0x5fd114",
+          "word": "39409a68",
+          "asm": "ldrb w8, [x19, #0x26]"
+        },
+        {
+          "pc": "0x5fd118",
+          "word": "8b1f02d6",
+          "asm": "add x22, x22, xzr"
+        },
+        {
+          "pc": "0x5fd11c",
+          "word": "361801c8",
+          "asm": "tbz w8, #3, #0x5fd154"
+        },
+        {
+          "pc": "0x5fd120",
+          "word": "14000018",
+          "asm": "b #0x5fd180"
+        },
+        {
+          "pc": "0x5fd124",
+          "word": "aa1f03f7",
+          "asm": "mov x23, xzr"
+        },
+        {
+          "pc": "0x5fd128",
+          "word": "39409a68",
+          "asm": "ldrb w8, [x19, #0x26]"
+        },
+        {
+          "pc": "0x5fd12c",
+          "word": "8b1603f6",
+          "asm": "add x22, xzr, x22"
+        },
+        {
+          "pc": "0x5fd130",
+          "word": "361ffdc8",
+          "asm": "tbz w8, #3, #0x5fd0e8"
+        },
+        {
+          "pc": "0x5fd134",
+          "word": "91007e81",
+          "asm": "add x1, x20, #0x1f"
+        },
+        {
+          "pc": "0x5fd138",
+          "word": "aa1303e0",
+          "asm": "mov x0, x19"
+        },
+        {
+          "pc": "0x5fd13c",
+          "word": "52800022",
+          "asm": "mov w2, #1"
+        },
+        {
+          "pc": "0x5fd140",
+          "word": "52800037",
+          "asm": "mov w23, #1"
+        },
+        {
+          "pc": "0x5fd144",
+          "word": "942cf78f",
+          "asm": "bl #0x113af80"
+        },
+        {
+          "pc": "0x5fd148",
+          "word": "39409a68",
+          "asm": "ldrb w8, [x19, #0x26]"
+        },
+        {
+          "pc": "0x5fd14c",
+          "word": "8b1702d6",
+          "asm": "add x22, x22, x23"
+        },
+        {
+          "pc": "0x5fd150",
+          "word": "37180188",
+          "asm": "tbnz w8, #3, #0x5fd180"
+        },
+        {
+          "pc": "0x5fd154",
+          "word": "90017b49",
+          "asm": "adrp x9, #0x3565000"
+        },
+        {
+          "pc": "0x5fd158",
+          "word": "91054129",
+          "asm": "add x9, x9, #0x150"
+        },
+        {
+          "pc": "0x5fd15c",
+          "word": "f9400120",
+          "asm": "ldr x0, [x9]"
+        },
+        {
+          "pc": "0x5fd160",
+          "word": "b4000100",
+          "asm": "cbz x0, #0x5fd180"
+        },
+        {
+          "pc": "0x5fd164",
+          "word": "b0010ea3",
+          "asm": "adrp x3, #0x27d2000"
+        },
+        {
+          "pc": "0x5fd168",
+          "word": "912cd463",
+          "asm": "add x3, x3, #0xb35"
+        },
+        {
+          "pc": "0x5fd16c",
+          "word": "aa1303e1",
+          "asm": "mov x1, x19"
+        },
+        {
+          "pc": "0x5fd170",
+          "word": "aa1503e2",
+          "asm": "mov x2, x21"
+        },
+        {
+          "pc": "0x5fd174",
+          "word": "97fea81b",
+          "asm": "bl #0x5a71e0"
+        },
+        {
+          "pc": "0x5fd178",
+          "word": "36000380",
+          "asm": "tbz w0, #0, #0x5fd1e8"
+        },
+        {
+          "pc": "0x5fd17c",
+          "word": "39409a68",
+          "asm": "ldrb w8, [x19, #0x26]"
+        },
+        {
+          "pc": "0x5fd180",
+          "word": "91004281",
+          "asm": "add x1, x20, #0x10"
+        },
+        {
+          "pc": "0x5fd184",
+          "word": "37100128",
+          "asm": "tbnz w8, #2, #0x5fd1a8"
+        },
+        {
+          "pc": "0x5fd188",
+          "word": "aa1303e0",
+          "asm": "mov x0, x19"
+        },
+        {
+          "pc": "0x5fd18c",
+          "word": "528000c2",
+          "asm": "mov w2, #6"
+        },
+        {
+          "pc": "0x5fd190",
+          "word": "528000d7",
+          "asm": "mov w23, #6"
+        },
+        {
+          "pc": "0x5fd194",
+          "word": "942cf77b",
+          "asm": "bl #0x113af80"
+        },
+        {
+          "pc": "0x5fd198",
+          "word": "39409a68",
+          "asm": "ldrb w8, [x19, #0x26]"
+        },
+        {
+          "pc": "0x5fd19c",
+          "word": "8b1702d6",
+          "asm": "add x22, x22, x23"
+        },
+        {
+          "pc": "0x5fd1a0",
+          "word": "361802c8",
+          "asm": "tbz w8, #3, #0x5fd1f8"
+        },
+        {
+          "pc": "0x5fd1a4",
+          "word": "1400001f",
+          "asm": "b #0x5fd220"
+        },
+        {
+          "pc": "0x5fd1a8",
+          "word": "aa1303e0",
+          "asm": "mov x0, x19"
+        },
+        {
+          "pc": "0x5fd1ac",
+          "word": "52800042",
+          "asm": "mov w2, #2"
+        },
+        {
+          "pc": "0x5fd1b0",
+          "word": "942cf774",
+          "asm": "bl #0x113af80"
+        },
+        {
+          "pc": "0x5fd1b4",
+          "word": "91004a81",
+          "asm": "add x1, x20, #0x12"
+        },
+        {
+          "pc": "0x5fd1b8",
+          "word": "aa1303e0",
+          "asm": "mov x0, x19"
+        },
+        {
+          "pc": "0x5fd1bc",
+          "word": "52800042",
+          "asm": "mov w2, #2"
+        },
+        {
+          "pc": "0x5fd1c0",
+          "word": "942cf770",
+          "asm": "bl #0x113af80"
+        },
+        {
+          "pc": "0x5fd1c4",
+          "word": "91005281",
+          "asm": "add x1, x20, #0x14"
+        },
+        {
+          "pc": "0x5fd1c8",
+          "word": "aa1303e0",
+          "asm": "mov x0, x19"
+        },
+        {
+          "pc": "0x5fd1cc",
+          "word": "52800042",
+          "asm": "mov w2, #2"
+        },
+        {
+          "pc": "0x5fd1d0",
+          "word": "942cf76c",
+          "asm": "bl #0x113af80"
+        },
+        {
+          "pc": "0x5fd1d4",
+          "word": "528000d7",
+          "asm": "mov w23, #6"
+        },
+        {
+          "pc": "0x5fd1d8",
+          "word": "39409a68",
+          "asm": "ldrb w8, [x19, #0x26]"
+        },
+        {
+          "pc": "0x5fd1dc",
+          "word": "8b1702d6",
+          "asm": "add x22, x22, x23"
+        },
+        {
+          "pc": "0x5fd1e0",
+          "word": "361800c8",
+          "asm": "tbz w8, #3, #0x5fd1f8"
+        },
+        {
+          "pc": "0x5fd1e4",
+          "word": "1400000f",
+          "asm": "b #0x5fd220"
+        },
+        {
+          "pc": "0x5fd1e8",
+          "word": "aa1f03f7",
+          "asm": "mov x23, xzr"
+        },
+        {
+          "pc": "0x5fd1ec",
+          "word": "39409a68",
+          "asm": "ldrb w8, [x19, #0x26]"
+        },
+        {
+          "pc": "0x5fd1f0",
+          "word": "8b1f02d6",
+          "asm": "add x22, x22, xzr"
+        },
+        {
+          "pc": "0x5fd1f4",
+          "word": "37180168",
+          "asm": "tbnz w8, #3, #0x5fd220"
+        },
+        {
+          "pc": "0x5fd1f8",
+          "word": "90017b48",
+          "asm": "adrp x8, #0x3565000"
+        },
+        {
+          "pc": "0x5fd1fc",
+          "word": "91054108",
+          "asm": "add x8, x8, #0x150"
+        },
+        {
+          "pc": "0x5fd200",
+          "word": "f9400100",
+          "asm": "ldr x0, [x8]"
+        },
+        {
+          "pc": "0x5fd204",
+          "word": "b40000e0",
+          "asm": "cbz x0, #0x5fd220"
+        }
+      ],
+      "game_id_field_semantics": "UNVERIFIED",
+      "native_texture_oid_binding_verified": false
+    }
+  ],
+  "m_pokemonDexHistory": [
+    {
+      "string": "m_pokemonDexHistory",
+      "literal_rodata_rva": "0x279a646",
+      "string_xref_rva": "0x5cc170",
+      "original_instruction_word": "91191863",
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "local_direct_branch_targets": [
+        {
+          "pc": "0x5cc114",
+          "kind": "B",
+          "target": "0x5cc184",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5cc144",
+          "kind": "BL",
+          "target": "0x113af80",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5cc17c",
+          "kind": "BL",
+          "target": "0x5a71e0",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5cc198",
+          "kind": "BL",
+          "target": "0x113af80",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5cc1d0",
+          "kind": "BL",
+          "target": "0x5a71e0",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5cc1f0",
+          "kind": "B",
+          "target": "0x5cc260",
+          "target_is_within_text": true
+        }
+      ],
+      "native_code_window": [
+        {
+          "pc": "0x5cc100",
+          "word": "f85f03a8",
+          "asm": "ldur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc104",
+          "word": "8b1f0108",
+          "asm": "add x8, x8, xzr"
+        },
+        {
+          "pc": "0x5cc108",
+          "word": "f81f03a8",
+          "asm": "stur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc10c",
+          "word": "39400328",
+          "asm": "ldrb w8, [x25]"
+        },
+        {
+          "pc": "0x5cc110",
+          "word": "36180268",
+          "asm": "tbz w8, #3, #0x5cc15c"
+        },
+        {
+          "pc": "0x5cc114",
+          "word": "1400001c",
+          "asm": "b #0x5cc184"
+        },
+        {
+          "pc": "0x5cc118",
+          "word": "aa1f03f7",
+          "asm": "mov x23, xzr"
+        },
+        {
+          "pc": "0x5cc11c",
+          "word": "f85f03a8",
+          "asm": "ldur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc120",
+          "word": "8b1f0108",
+          "asm": "add x8, x8, xzr"
+        },
+        {
+          "pc": "0x5cc124",
+          "word": "f81f03a8",
+          "asm": "stur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc128",
+          "word": "39400328",
+          "asm": "ldrb w8, [x25]"
+        },
+        {
+          "pc": "0x5cc12c",
+          "word": "361ffd48",
+          "asm": "tbz w8, #3, #0x5cc0d4"
+        },
+        {
+          "pc": "0x5cc130",
+          "word": "915be288",
+          "asm": "add x8, x20, #0x6f8, lsl #12"
+        },
+        {
+          "pc": "0x5cc134",
+          "word": "aa1303e0",
+          "asm": "mov x0, x19"
+        },
+        {
+          "pc": "0x5cc138",
+          "word": "52830002",
+          "asm": "mov w2, #0x1800"
+        },
+        {
+          "pc": "0x5cc13c",
+          "word": "91227101",
+          "asm": "add x1, x8, #0x89c"
+        },
+        {
+          "pc": "0x5cc140",
+          "word": "52830017",
+          "asm": "mov w23, #0x1800"
+        },
+        {
+          "pc": "0x5cc144",
+          "word": "942dbb8f",
+          "asm": "bl #0x113af80"
+        },
+        {
+          "pc": "0x5cc148",
+          "word": "f85f03a8",
+          "asm": "ldur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc14c",
+          "word": "8b170108",
+          "asm": "add x8, x8, x23"
+        },
+        {
+          "pc": "0x5cc150",
+          "word": "f81f03a8",
+          "asm": "stur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc154",
+          "word": "39400328",
+          "asm": "ldrb w8, [x25]"
+        },
+        {
+          "pc": "0x5cc158",
+          "word": "37180168",
+          "asm": "tbnz w8, #3, #0x5cc184"
+        },
+        {
+          "pc": "0x5cc15c",
+          "word": "b0017cc8",
+          "asm": "adrp x8, #0x3565000"
+        },
+        {
+          "pc": "0x5cc160",
+          "word": "91054108",
+          "asm": "add x8, x8, #0x150"
+        },
+        {
+          "pc": "0x5cc164",
+          "word": "f9400100",
+          "asm": "ldr x0, [x8]"
+        },
+        {
+          "pc": "0x5cc168",
+          "word": "b40000e0",
+          "asm": "cbz x0, #0x5cc184"
+        },
+        {
+          "pc": "0x5cc16c",
+          "word": "d0010e63",
+          "asm": "adrp x3, #0x279a000"
+        },
+        {
+          "pc": "0x5cc170",
+          "word": "91191863",
+          "asm": "add x3, x3, #0x646"
+        },
+        {
+          "pc": "0x5cc174",
+          "word": "aa1303e1",
+          "asm": "mov x1, x19"
+        },
+        {
+          "pc": "0x5cc178",
+          "word": "aa1503e2",
+          "asm": "mov x2, x21"
+        },
+        {
+          "pc": "0x5cc17c",
+          "word": "97ff6c19",
+          "asm": "bl #0x5a71e0"
+        },
+        {
+          "pc": "0x5cc180",
+          "word": "360003a0",
+          "asm": "tbz w0, #0, #0x5cc1f4"
+        },
+        {
+          "pc": "0x5cc184",
+          "word": "915bea88",
+          "asm": "add x8, x20, #0x6fa, lsl #12"
+        },
+        {
+          "pc": "0x5cc188",
+          "word": "aa1303e0",
+          "asm": "mov x0, x19"
+        },
+        {
+          "pc": "0x5cc18c",
+          "word": "52808002",
+          "asm": "mov w2, #0x400"
+        },
+        {
+          "pc": "0x5cc190",
+          "word": "91027101",
+          "asm": "add x1, x8, #0x9c"
+        },
+        {
+          "pc": "0x5cc194",
+          "word": "52808017",
+          "asm": "mov w23, #0x400"
+        },
+        {
+          "pc": "0x5cc198",
+          "word": "942dbb7a",
+          "asm": "bl #0x113af80"
+        },
+        {
+          "pc": "0x5cc19c",
+          "word": "f85f03a8",
+          "asm": "ldur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc1a0",
+          "word": "8b170108",
+          "asm": "add x8, x8, x23"
+        },
+        {
+          "pc": "0x5cc1a4",
+          "word": "f81f03a8",
+          "asm": "stur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc1a8",
+          "word": "39400328",
+          "asm": "ldrb w8, [x25]"
+        },
+        {
+          "pc": "0x5cc1ac",
+          "word": "37180308",
+          "asm": "tbnz w8, #3, #0x5cc20c"
+        },
+        {
+          "pc": "0x5cc1b0",
+          "word": "b0017cc8",
+          "asm": "adrp x8, #0x3565000"
+        },
+        {
+          "pc": "0x5cc1b4",
+          "word": "91054108",
+          "asm": "add x8, x8, #0x150"
+        },
+        {
+          "pc": "0x5cc1b8",
+          "word": "f9400100",
+          "asm": "ldr x0, [x8]"
+        },
+        {
+          "pc": "0x5cc1bc",
+          "word": "b4000280",
+          "asm": "cbz x0, #0x5cc20c"
+        },
+        {
+          "pc": "0x5cc1c0",
+          "word": "d0010e43",
+          "asm": "adrp x3, #0x2796000"
+        },
+        {
+          "pc": "0x5cc1c4",
+          "word": "91040c63",
+          "asm": "add x3, x3, #0x103"
+        },
+        {
+          "pc": "0x5cc1c8",
+          "word": "aa1303e1",
+          "asm": "mov x1, x19"
+        },
+        {
+          "pc": "0x5cc1cc",
+          "word": "aa1503e2",
+          "asm": "mov x2, x21"
+        },
+        {
+          "pc": "0x5cc1d0",
+          "word": "97ff6c04",
+          "asm": "bl #0x5a71e0"
+        },
+        {
+          "pc": "0x5cc1d4",
+          "word": "370001c0",
+          "asm": "tbnz w0, #0, #0x5cc20c"
+        },
+        {
+          "pc": "0x5cc1d8",
+          "word": "aa1f03f7",
+          "asm": "mov x23, xzr"
+        },
+        {
+          "pc": "0x5cc1dc",
+          "word": "f85f03a8",
+          "asm": "ldur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc1e0",
+          "word": "8b1f0108",
+          "asm": "add x8, x8, xzr"
+        },
+        {
+          "pc": "0x5cc1e4",
+          "word": "f81f03a8",
+          "asm": "stur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc1e8",
+          "word": "39400328",
+          "asm": "ldrb w8, [x25]"
+        },
+        {
+          "pc": "0x5cc1ec",
+          "word": "36180268",
+          "asm": "tbz w8, #3, #0x5cc238"
+        },
+        {
+          "pc": "0x5cc1f0",
+          "word": "1400001c",
+          "asm": "b #0x5cc260"
+        },
+        {
+          "pc": "0x5cc1f4",
+          "word": "aa1f03f7",
+          "asm": "mov x23, xzr"
+        },
+        {
+          "pc": "0x5cc1f8",
+          "word": "f85f03a8",
+          "asm": "ldur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc1fc",
+          "word": "8b1f0108",
+          "asm": "add x8, x8, xzr"
+        },
+        {
+          "pc": "0x5cc200",
+          "word": "f81f03a8",
+          "asm": "stur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc204",
+          "word": "39400328",
+          "asm": "ldrb w8, [x25]"
+        },
+        {
+          "pc": "0x5cc208",
+          "word": "361ffd48",
+          "asm": "tbz w8, #3, #0x5cc1b0"
+        },
+        {
+          "pc": "0x5cc20c",
+          "word": "915bea88",
+          "asm": "add x8, x20, #0x6fa, lsl #12"
+        }
+      ],
+      "game_id_field_semantics": "UNVERIFIED",
+      "native_texture_oid_binding_verified": false
+    }
+  ],
+  "m_pokemonDexReadHistory": [
+    {
+      "string": "m_pokemonDexReadHistory",
+      "literal_rodata_rva": "0x2796103",
+      "string_xref_rva": "0x5cc1c4",
+      "original_instruction_word": "91040c63",
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "local_direct_branch_targets": [
+        {
+          "pc": "0x5cc17c",
+          "kind": "BL",
+          "target": "0x5a71e0",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5cc198",
+          "kind": "BL",
+          "target": "0x113af80",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5cc1d0",
+          "kind": "BL",
+          "target": "0x5a71e0",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5cc1f0",
+          "kind": "B",
+          "target": "0x5cc260",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5cc220",
+          "kind": "BL",
+          "target": "0x113af80",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5cc258",
+          "kind": "BL",
+          "target": "0x5a71e0",
+          "target_is_within_text": true
+        }
+      ],
+      "native_code_window": [
+        {
+          "pc": "0x5cc154",
+          "word": "39400328",
+          "asm": "ldrb w8, [x25]"
+        },
+        {
+          "pc": "0x5cc158",
+          "word": "37180168",
+          "asm": "tbnz w8, #3, #0x5cc184"
+        },
+        {
+          "pc": "0x5cc15c",
+          "word": "b0017cc8",
+          "asm": "adrp x8, #0x3565000"
+        },
+        {
+          "pc": "0x5cc160",
+          "word": "91054108",
+          "asm": "add x8, x8, #0x150"
+        },
+        {
+          "pc": "0x5cc164",
+          "word": "f9400100",
+          "asm": "ldr x0, [x8]"
+        },
+        {
+          "pc": "0x5cc168",
+          "word": "b40000e0",
+          "asm": "cbz x0, #0x5cc184"
+        },
+        {
+          "pc": "0x5cc16c",
+          "word": "d0010e63",
+          "asm": "adrp x3, #0x279a000"
+        },
+        {
+          "pc": "0x5cc170",
+          "word": "91191863",
+          "asm": "add x3, x3, #0x646"
+        },
+        {
+          "pc": "0x5cc174",
+          "word": "aa1303e1",
+          "asm": "mov x1, x19"
+        },
+        {
+          "pc": "0x5cc178",
+          "word": "aa1503e2",
+          "asm": "mov x2, x21"
+        },
+        {
+          "pc": "0x5cc17c",
+          "word": "97ff6c19",
+          "asm": "bl #0x5a71e0"
+        },
+        {
+          "pc": "0x5cc180",
+          "word": "360003a0",
+          "asm": "tbz w0, #0, #0x5cc1f4"
+        },
+        {
+          "pc": "0x5cc184",
+          "word": "915bea88",
+          "asm": "add x8, x20, #0x6fa, lsl #12"
+        },
+        {
+          "pc": "0x5cc188",
+          "word": "aa1303e0",
+          "asm": "mov x0, x19"
+        },
+        {
+          "pc": "0x5cc18c",
+          "word": "52808002",
+          "asm": "mov w2, #0x400"
+        },
+        {
+          "pc": "0x5cc190",
+          "word": "91027101",
+          "asm": "add x1, x8, #0x9c"
+        },
+        {
+          "pc": "0x5cc194",
+          "word": "52808017",
+          "asm": "mov w23, #0x400"
+        },
+        {
+          "pc": "0x5cc198",
+          "word": "942dbb7a",
+          "asm": "bl #0x113af80"
+        },
+        {
+          "pc": "0x5cc19c",
+          "word": "f85f03a8",
+          "asm": "ldur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc1a0",
+          "word": "8b170108",
+          "asm": "add x8, x8, x23"
+        },
+        {
+          "pc": "0x5cc1a4",
+          "word": "f81f03a8",
+          "asm": "stur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc1a8",
+          "word": "39400328",
+          "asm": "ldrb w8, [x25]"
+        },
+        {
+          "pc": "0x5cc1ac",
+          "word": "37180308",
+          "asm": "tbnz w8, #3, #0x5cc20c"
+        },
+        {
+          "pc": "0x5cc1b0",
+          "word": "b0017cc8",
+          "asm": "adrp x8, #0x3565000"
+        },
+        {
+          "pc": "0x5cc1b4",
+          "word": "91054108",
+          "asm": "add x8, x8, #0x150"
+        },
+        {
+          "pc": "0x5cc1b8",
+          "word": "f9400100",
+          "asm": "ldr x0, [x8]"
+        },
+        {
+          "pc": "0x5cc1bc",
+          "word": "b4000280",
+          "asm": "cbz x0, #0x5cc20c"
+        },
+        {
+          "pc": "0x5cc1c0",
+          "word": "d0010e43",
+          "asm": "adrp x3, #0x2796000"
+        },
+        {
+          "pc": "0x5cc1c4",
+          "word": "91040c63",
+          "asm": "add x3, x3, #0x103"
+        },
+        {
+          "pc": "0x5cc1c8",
+          "word": "aa1303e1",
+          "asm": "mov x1, x19"
+        },
+        {
+          "pc": "0x5cc1cc",
+          "word": "aa1503e2",
+          "asm": "mov x2, x21"
+        },
+        {
+          "pc": "0x5cc1d0",
+          "word": "97ff6c04",
+          "asm": "bl #0x5a71e0"
+        },
+        {
+          "pc": "0x5cc1d4",
+          "word": "370001c0",
+          "asm": "tbnz w0, #0, #0x5cc20c"
+        },
+        {
+          "pc": "0x5cc1d8",
+          "word": "aa1f03f7",
+          "asm": "mov x23, xzr"
+        },
+        {
+          "pc": "0x5cc1dc",
+          "word": "f85f03a8",
+          "asm": "ldur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc1e0",
+          "word": "8b1f0108",
+          "asm": "add x8, x8, xzr"
+        },
+        {
+          "pc": "0x5cc1e4",
+          "word": "f81f03a8",
+          "asm": "stur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc1e8",
+          "word": "39400328",
+          "asm": "ldrb w8, [x25]"
+        },
+        {
+          "pc": "0x5cc1ec",
+          "word": "36180268",
+          "asm": "tbz w8, #3, #0x5cc238"
+        },
+        {
+          "pc": "0x5cc1f0",
+          "word": "1400001c",
+          "asm": "b #0x5cc260"
+        },
+        {
+          "pc": "0x5cc1f4",
+          "word": "aa1f03f7",
+          "asm": "mov x23, xzr"
+        },
+        {
+          "pc": "0x5cc1f8",
+          "word": "f85f03a8",
+          "asm": "ldur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc1fc",
+          "word": "8b1f0108",
+          "asm": "add x8, x8, xzr"
+        },
+        {
+          "pc": "0x5cc200",
+          "word": "f81f03a8",
+          "asm": "stur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc204",
+          "word": "39400328",
+          "asm": "ldrb w8, [x25]"
+        },
+        {
+          "pc": "0x5cc208",
+          "word": "361ffd48",
+          "asm": "tbz w8, #3, #0x5cc1b0"
+        },
+        {
+          "pc": "0x5cc20c",
+          "word": "915bea88",
+          "asm": "add x8, x20, #0x6fa, lsl #12"
+        },
+        {
+          "pc": "0x5cc210",
+          "word": "aa1303e0",
+          "asm": "mov x0, x19"
+        },
+        {
+          "pc": "0x5cc214",
+          "word": "52808002",
+          "asm": "mov w2, #0x400"
+        },
+        {
+          "pc": "0x5cc218",
+          "word": "91127101",
+          "asm": "add x1, x8, #0x49c"
+        },
+        {
+          "pc": "0x5cc21c",
+          "word": "52808017",
+          "asm": "mov w23, #0x400"
+        },
+        {
+          "pc": "0x5cc220",
+          "word": "942dbb58",
+          "asm": "bl #0x113af80"
+        },
+        {
+          "pc": "0x5cc224",
+          "word": "f85f03a8",
+          "asm": "ldur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc228",
+          "word": "8b170108",
+          "asm": "add x8, x8, x23"
+        },
+        {
+          "pc": "0x5cc22c",
+          "word": "f81f03a8",
+          "asm": "stur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc230",
+          "word": "39400328",
+          "asm": "ldrb w8, [x25]"
+        },
+        {
+          "pc": "0x5cc234",
+          "word": "37180168",
+          "asm": "tbnz w8, #3, #0x5cc260"
+        },
+        {
+          "pc": "0x5cc238",
+          "word": "b0017cc8",
+          "asm": "adrp x8, #0x3565000"
+        },
+        {
+          "pc": "0x5cc23c",
+          "word": "91054108",
+          "asm": "add x8, x8, #0x150"
+        },
+        {
+          "pc": "0x5cc240",
+          "word": "f9400100",
+          "asm": "ldr x0, [x8]"
+        },
+        {
+          "pc": "0x5cc244",
+          "word": "b40000e0",
+          "asm": "cbz x0, #0x5cc260"
+        },
+        {
+          "pc": "0x5cc248",
+          "word": "f0010ea3",
+          "asm": "adrp x3, #0x27a3000"
+        },
+        {
+          "pc": "0x5cc24c",
+          "word": "910a2063",
+          "asm": "add x3, x3, #0x288"
+        },
+        {
+          "pc": "0x5cc250",
+          "word": "aa1303e1",
+          "asm": "mov x1, x19"
+        },
+        {
+          "pc": "0x5cc254",
+          "word": "aa1503e2",
+          "asm": "mov x2, x21"
+        },
+        {
+          "pc": "0x5cc258",
+          "word": "97ff6be2",
+          "asm": "bl #0x5a71e0"
+        },
+        {
+          "pc": "0x5cc25c",
+          "word": "36001700",
+          "asm": "tbz w0, #0, #0x5cc53c"
+        },
+        {
+          "pc": "0x5cc260",
+          "word": "915bea88",
+          "asm": "add x8, x20, #0x6fa, lsl #12"
+        }
+      ],
+      "game_id_field_semantics": "UNVERIFIED",
+      "native_texture_oid_binding_verified": false
+    }
+  ],
+  "m_pokemonHistory": [
+    {
+      "string": "m_pokemonHistory",
+      "literal_rodata_rva": "0x27e3950",
+      "string_xref_rva": "0x5cc08c",
+      "original_instruction_word": "91254063",
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "local_direct_branch_targets": [
+        {
+          "pc": "0x5cc030",
+          "kind": "B",
+          "target": "0x5cc0a0",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5cc060",
+          "kind": "BL",
+          "target": "0x113af80",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5cc098",
+          "kind": "BL",
+          "target": "0x5a71e0",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5cc0bc",
+          "kind": "BL",
+          "target": "0x113af80",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5cc0f4",
+          "kind": "BL",
+          "target": "0x5a71e0",
+          "target_is_within_text": true
+        },
+        {
+          "pc": "0x5cc114",
+          "kind": "B",
+          "target": "0x5cc184",
+          "target_is_within_text": true
+        }
+      ],
+      "native_code_window": [
+        {
+          "pc": "0x5cc01c",
+          "word": "f85f03a8",
+          "asm": "ldur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc020",
+          "word": "8b1f0108",
+          "asm": "add x8, x8, xzr"
+        },
+        {
+          "pc": "0x5cc024",
+          "word": "f81f03a8",
+          "asm": "stur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc028",
+          "word": "39400328",
+          "asm": "ldrb w8, [x25]"
+        },
+        {
+          "pc": "0x5cc02c",
+          "word": "36180268",
+          "asm": "tbz w8, #3, #0x5cc078"
+        },
+        {
+          "pc": "0x5cc030",
+          "word": "1400001c",
+          "asm": "b #0x5cc0a0"
+        },
+        {
+          "pc": "0x5cc034",
+          "word": "aa1f03f7",
+          "asm": "mov x23, xzr"
+        },
+        {
+          "pc": "0x5cc038",
+          "word": "f85f03a8",
+          "asm": "ldur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc03c",
+          "word": "8b1f0108",
+          "asm": "add x8, x8, xzr"
+        },
+        {
+          "pc": "0x5cc040",
+          "word": "f81f03a8",
+          "asm": "stur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc044",
+          "word": "39400328",
+          "asm": "ldrb w8, [x25]"
+        },
+        {
+          "pc": "0x5cc048",
+          "word": "361ffd48",
+          "asm": "tbz w8, #3, #0x5cbff0"
+        },
+        {
+          "pc": "0x5cc04c",
+          "word": "915b6288",
+          "asm": "add x8, x20, #0x6d8, lsl #12"
+        },
+        {
+          "pc": "0x5cc050",
+          "word": "aa1303e0",
+          "asm": "mov x0, x19"
+        },
+        {
+          "pc": "0x5cc054",
+          "word": "52800602",
+          "asm": "mov w2, #0x30"
+        },
+        {
+          "pc": "0x5cc058",
+          "word": "9111b101",
+          "asm": "add x1, x8, #0x46c"
+        },
+        {
+          "pc": "0x5cc05c",
+          "word": "52800617",
+          "asm": "mov w23, #0x30"
+        },
+        {
+          "pc": "0x5cc060",
+          "word": "942dbbc8",
+          "asm": "bl #0x113af80"
+        },
+        {
+          "pc": "0x5cc064",
+          "word": "f85f03a8",
+          "asm": "ldur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc068",
+          "word": "8b170108",
+          "asm": "add x8, x8, x23"
+        },
+        {
+          "pc": "0x5cc06c",
+          "word": "f81f03a8",
+          "asm": "stur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc070",
+          "word": "39400328",
+          "asm": "ldrb w8, [x25]"
+        },
+        {
+          "pc": "0x5cc074",
+          "word": "37180168",
+          "asm": "tbnz w8, #3, #0x5cc0a0"
+        },
+        {
+          "pc": "0x5cc078",
+          "word": "b0017cc8",
+          "asm": "adrp x8, #0x3565000"
+        },
+        {
+          "pc": "0x5cc07c",
+          "word": "91054108",
+          "asm": "add x8, x8, #0x150"
+        },
+        {
+          "pc": "0x5cc080",
+          "word": "f9400100",
+          "asm": "ldr x0, [x8]"
+        },
+        {
+          "pc": "0x5cc084",
+          "word": "b40000e0",
+          "asm": "cbz x0, #0x5cc0a0"
+        },
+        {
+          "pc": "0x5cc088",
+          "word": "f00110a3",
+          "asm": "adrp x3, #0x27e3000"
+        },
+        {
+          "pc": "0x5cc08c",
+          "word": "91254063",
+          "asm": "add x3, x3, #0x950"
+        },
+        {
+          "pc": "0x5cc090",
+          "word": "aa1303e1",
+          "asm": "mov x1, x19"
+        },
+        {
+          "pc": "0x5cc094",
+          "word": "aa1503e2",
+          "asm": "mov x2, x21"
+        },
+        {
+          "pc": "0x5cc098",
+          "word": "97ff6c52",
+          "asm": "bl #0x5a71e0"
+        },
+        {
+          "pc": "0x5cc09c",
+          "word": "360003e0",
+          "asm": "tbz w0, #0, #0x5cc118"
+        },
+        {
+          "pc": "0x5cc0a0",
+          "word": "915b6288",
+          "asm": "add x8, x20, #0x6d8, lsl #12"
+        },
+        {
+          "pc": "0x5cc0a4",
+          "word": "52808002",
+          "asm": "mov w2, #0x400"
+        },
+        {
+          "pc": "0x5cc0a8",
+          "word": "52808017",
+          "asm": "mov w23, #0x400"
+        },
+        {
+          "pc": "0x5cc0ac",
+          "word": "91127101",
+          "asm": "add x1, x8, #0x49c"
+        },
+        {
+          "pc": "0x5cc0b0",
+          "word": "aa1303e0",
+          "asm": "mov x0, x19"
+        },
+        {
+          "pc": "0x5cc0b4",
+          "word": "72a00042",
+          "asm": "movk w2, #2, lsl #16"
+        },
+        {
+          "pc": "0x5cc0b8",
+          "word": "72a00057",
+          "asm": "movk w23, #2, lsl #16"
+        },
+        {
+          "pc": "0x5cc0bc",
+          "word": "942dbbb1",
+          "asm": "bl #0x113af80"
+        },
+        {
+          "pc": "0x5cc0c0",
+          "word": "f85f03a8",
+          "asm": "ldur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc0c4",
+          "word": "8b170108",
+          "asm": "add x8, x8, x23"
+        },
+        {
+          "pc": "0x5cc0c8",
+          "word": "f81f03a8",
+          "asm": "stur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc0cc",
+          "word": "39400328",
+          "asm": "ldrb w8, [x25]"
+        },
+        {
+          "pc": "0x5cc0d0",
+          "word": "37180308",
+          "asm": "tbnz w8, #3, #0x5cc130"
+        },
+        {
+          "pc": "0x5cc0d4",
+          "word": "b0017cc8",
+          "asm": "adrp x8, #0x3565000"
+        },
+        {
+          "pc": "0x5cc0d8",
+          "word": "91054108",
+          "asm": "add x8, x8, #0x150"
+        },
+        {
+          "pc": "0x5cc0dc",
+          "word": "f9400100",
+          "asm": "ldr x0, [x8]"
+        },
+        {
+          "pc": "0x5cc0e0",
+          "word": "b4000280",
+          "asm": "cbz x0, #0x5cc130"
+        },
+        {
+          "pc": "0x5cc0e4",
+          "word": "f00110c3",
+          "asm": "adrp x3, #0x27e7000"
+        },
+        {
+          "pc": "0x5cc0e8",
+          "word": "91308463",
+          "asm": "add x3, x3, #0xc21"
+        },
+        {
+          "pc": "0x5cc0ec",
+          "word": "aa1303e1",
+          "asm": "mov x1, x19"
+        },
+        {
+          "pc": "0x5cc0f0",
+          "word": "aa1503e2",
+          "asm": "mov x2, x21"
+        },
+        {
+          "pc": "0x5cc0f4",
+          "word": "97ff6c3b",
+          "asm": "bl #0x5a71e0"
+        },
+        {
+          "pc": "0x5cc0f8",
+          "word": "370001c0",
+          "asm": "tbnz w0, #0, #0x5cc130"
+        },
+        {
+          "pc": "0x5cc0fc",
+          "word": "aa1f03f7",
+          "asm": "mov x23, xzr"
+        },
+        {
+          "pc": "0x5cc100",
+          "word": "f85f03a8",
+          "asm": "ldur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc104",
+          "word": "8b1f0108",
+          "asm": "add x8, x8, xzr"
+        },
+        {
+          "pc": "0x5cc108",
+          "word": "f81f03a8",
+          "asm": "stur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc10c",
+          "word": "39400328",
+          "asm": "ldrb w8, [x25]"
+        },
+        {
+          "pc": "0x5cc110",
+          "word": "36180268",
+          "asm": "tbz w8, #3, #0x5cc15c"
+        },
+        {
+          "pc": "0x5cc114",
+          "word": "1400001c",
+          "asm": "b #0x5cc184"
+        },
+        {
+          "pc": "0x5cc118",
+          "word": "aa1f03f7",
+          "asm": "mov x23, xzr"
+        },
+        {
+          "pc": "0x5cc11c",
+          "word": "f85f03a8",
+          "asm": "ldur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc120",
+          "word": "8b1f0108",
+          "asm": "add x8, x8, xzr"
+        },
+        {
+          "pc": "0x5cc124",
+          "word": "f81f03a8",
+          "asm": "stur x8, [x29, #-0x10]"
+        },
+        {
+          "pc": "0x5cc128",
+          "word": "39400328",
+          "asm": "ldrb w8, [x25]"
+        }
+      ],
+      "game_id_field_semantics": "UNVERIFIED",
+      "native_texture_oid_binding_verified": false
+    }
+  ]
+}
