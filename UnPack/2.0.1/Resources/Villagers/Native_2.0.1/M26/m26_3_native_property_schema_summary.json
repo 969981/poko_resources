@@ -1,0 +1,22 @@
+{
+  "game_version": "2.0.1",
+  "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "original_kids_objdb_sha256": "86f90b4c11da9bc2b3e28889a5090ff507f96ca713fe4fad1dd50f6f692d7541",
+  "original_class_type_hash": "0x9d1afa46",
+  "original_class_source_object_oid": "b4a1803b",
+  "original_type_vtable_method_slot": "0x33135e0",
+  "original_property_descriptor_method": "0xdd1b48",
+  "original_property_descriptor_table": "0x2838834",
+  "original_property_metadata_table": "0x2838828",
+  "original_property_pointer_table": "0x3331810",
+  "native_property_descriptors": 3,
+  "original_icon_source_array_descriptor_index": 2,
+  "original_icon_array_field_hash": "0x34cbb458",
+  "original_icon_array_elements": 3543,
+  "original_icon_array_data_byte_offset": 378728,
+  "original_method_reads_native_property_hash_by_index": true,
+  "original_type_schema_and_data_field_connected": true,
+  "original_game_species_id_to_array_index_verified": false,
+  "original_game_villager_id_to_source_OID_verified": false,
+  "warning": "Class vtable+0x18 reads exactly three native property descriptors. The third matches a 3543-u32 original KIDS field. This does not prove the gameplay's species-ID indexing of that field."
+}
