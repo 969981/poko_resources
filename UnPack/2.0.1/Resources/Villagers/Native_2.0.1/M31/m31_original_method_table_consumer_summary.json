@@ -1,0 +1,17 @@
+{
+  "game_version": "2.0.1",
+  "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "registered_classes_examined": 2,
+  "bounded_u64_slots_examined_per_class": 16,
+  "total_u64_cells_read": 32,
+  "within_original_text_code_pointer_cells": 32,
+  "unique_original_text_targets": 23,
+  "confirmed_property_method_slots": 2,
+  "combined_direct_BL_to_scanned_method_code_targets": 0,
+  "combined_direct_B_to_scanned_method_code_targets": 0,
+  "entire_vtable_size_verified": false,
+  "consumer_of_3543_texture_pack_key_array_proven": false,
+  "runtime_entity_species_form_to_icon_key_proven": false,
+  "native_game_ID_binding_proven": false,
+  "caveat": "A pointer in the bounded table region and even code xrefs do not prove specific method semantics; direct BL/B excludes virtual BLR and PAC dispatch. Only +0x18 methods had prior KIDS property evidence."
+}
