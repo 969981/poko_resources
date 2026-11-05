@@ -303,6 +303,8 @@ def main():
          "nearby_immediate_positions":c["nearby_immediate_positions"]}
         for c in report["top_bounded_candidates"][:12]
     ],separators=(",",":")))
+    for focus in report["top_bounded_candidates"][:6]:
+        print("M11_CONTEXT",focus["pc"],json.dumps(focus["assembly_context"],separators=(",",":")))
 
 
 if __name__ == "__main__":
