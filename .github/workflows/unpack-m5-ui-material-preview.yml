@@ -1,0 +1,113 @@
+name: M5 - Decode source-linked UI material texture samples
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/export_native_misc_samples.py"
+      - "UnPack/2.0.1/Resources/Textures/Indexes/native_misc_texture_index.csv"
+      - ".github/workflows/unpack-m5-ui-material-preview.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m5-misc-preview-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  decode-original-samples:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Initially checkout source code and indexed names only
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/g1t_to_png.py
+            Scripts/resources/crop_native_item_atlas.py
+            Scripts/resources/export_native_misc_samples.py
+            UnPack/2.0.1/Resources/Textures/Indexes/native_misc_texture_index.csv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install original G1T BC7 image decoder
+        run: python -m pip install "Pillow>=11,<13"
+
+      - name: Select diverse original UI and named-material G1T+TEXINFO files
+        run: |
+          python -m Scripts.resources.export_native_misc_samples --plan /tmp/pokopia-misc-plan.json --per-category 7 > /tmp/pokopia-misc-plan-log.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path("/tmp/pokopia-misc-plan.json").read_text(encoding="utf-8"))
+          assert len(data)>=8,len(data)
+          exact=set(p for row in data for p in (row["g1t_path"],row["texinfo_path"]))
+          base={
+            "Scripts/resources/g1t_to_png.py",
+            "Scripts/resources/crop_native_item_atlas.py",
+            "Scripts/resources/export_native_misc_samples.py",
+            "UnPack/2.0.1/Resources/Textures/Indexes/native_misc_texture_index.csv",
+          }
+          Path("/tmp/pokopia-misc-checkout.txt").write_text(
+              "\n".join(sorted(exact|base))+"\n",encoding="utf-8")
+          print("Sample sprites:",len(data),"original native files:",len(exact))
+          PY
+          git sparse-checkout set --no-cone --stdin < /tmp/pokopia-misc-checkout.txt
+
+      - name: Decode exact native G1T bytes, verify TEXINFO sprite index/UV and save PNGs
+        run: |
+          python -m Scripts.resources.export_native_misc_samples --read-plan /tmp/pokopia-misc-plan.json
+          python - <<'PY'
+          import csv,json,hashlib
+          from pathlib import Path
+          from PIL import Image
+          root=Path("UnPack/2.0.1/Resources/Textures/MiscNativeSamples")
+          d=json.loads((root/"misc_native_sample_summary.json").read_text(encoding="utf-8"))
+          rows=list(csv.DictReader((root/"misc_native_sample_manifest.csv").open(encoding="utf-8")))
+          assert d["source_samples"]==len(rows)>=8,d
+          assert d["native_decoded_pngs"]>=4,d
+          for r in rows:
+              if not r["png_path"]: continue
+              p=Path(r["png_path"])
+              assert p.is_file()
+              assert hashlib.sha256(p.read_bytes()).hexdigest()==r["png_sha256"]
+              assert r["layout"].startswith("ounce")
+              with Image.open(p) as image:
+                  assert image.size==(int(r["crop_width"]),int(r["crop_height"]))
+                  image.verify()
+          with Image.open(root/"contact_sheet_misc_native.png") as im:
+              im.verify()
+          print("Original non-item sprite PNG previews:",d["native_decoded_pngs"])
+          PY
+
+      - name: Upload PNG preview sheets with original-source hash evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-source-linked-misc-material-ui-previews
+          path: UnPack/2.0.1/Resources/Textures/MiscNativeSamples/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Commit audit manifest and unverified PNG sample candidates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Textures/MiscNativeSamples
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m5): source-check and crop 2.0.1 native UI material PNG samples"
+          for i in 1 2 3 4 5 6 7 8; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+            sleep 1
+          done
+          exit 1
