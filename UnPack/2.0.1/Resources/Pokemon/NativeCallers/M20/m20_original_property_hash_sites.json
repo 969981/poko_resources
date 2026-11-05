@@ -1,0 +1,23 @@
+{
+  "status": "M20_EXACT_ORIGINAL_HASH_LITERAL_SITES__CONSUMER_UNPROVEN",
+  "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "typed_edge_corpus_size": 603,
+  "property_hash": "0x2856a1b3",
+  "literal_cells_total": 1,
+  "literal_cells_first": [
+    {
+      "va": "0x2830c98",
+      "section": "rodata",
+      "section_offset": 945304,
+      "aligned_u32": true
+    }
+  ],
+  "movz_movk_pairs_total": 0,
+  "movz_movk_pairs_first": [],
+  "adrp_literal_xrefs_total": 0,
+  "adrp_literal_xrefs_first": [],
+  "code_windows": [],
+  "native_property_consumer_verified": false,
+  "species_id_bindings_verified": 0,
+  "warning": "Constant construction or read is not a typed property consumer or species identity."
+}
