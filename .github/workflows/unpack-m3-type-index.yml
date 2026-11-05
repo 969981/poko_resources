@@ -13,7 +13,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: pokopia-m3-native-type-index-2-0-1
+  group: pokopia-m3-native-magic-refresh-2-0-1
   cancel-in-progress: false
 
 jobs:
