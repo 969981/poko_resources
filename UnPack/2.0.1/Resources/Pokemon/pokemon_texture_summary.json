@@ -2,9 +2,15 @@
   "total": 609,
   "pokemon_standard": 301,
   "pokemon_uni": 308,
-  "physically_present": 580,
-  "missing_physical": 29,
-  "distinct_g1t_files": 574,
-  "samples": 16,
-  "note": "TEXINFO/G1T mapping follows KIDSOBJDB layout hash indexes and physical native G1T filenames; numbered texture names are not yet verified Pokédex species IDs. Decode/pixel correctness not established."
+  "physically_present": 609,
+  "missing_physical": 0,
+  "decoded_aliases_restored": 29,
+  "original_native_records": 580,
+  "special_multi_texture_g1t": [
+    "icon_poke_at_home"
+  ],
+  "distinct_g1t_files": 603,
+  "sample_manifest": 16,
+  "traceability": "29 missing native aliases restored by pointing to existing original decoded FDATA Git blob SHA, without rewriting image bytes; see restore_29_g1t_report.json.",
+  "caveat": "Hash/path and G1T headers are verified. Pixel correctness, special multi-texture mapping and Pokédex identity remain separate validation tasks."
 }
