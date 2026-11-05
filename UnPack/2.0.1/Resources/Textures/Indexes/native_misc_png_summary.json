@@ -1,0 +1,123 @@
+{
+  "game_version": "2.0.1",
+  "status": "COMPLETE_SOURCE_COVERAGE",
+  "source_total": 3930,
+  "seen_source_records": 3930,
+  "missing_source_records": 0,
+  "absent_batch_ids": [],
+  "source_index_sha256": "3e9cb04da58422222f543ab5a0ca1f5e62c6b1e91512162da2cb53f812e10439",
+  "png_candidates": 3930,
+  "recorded_failure_rows": 0,
+  "status_counts": {
+    "PNG_CANDIDATE_UNVERIFIED": 3925,
+    "TRANSPARENT_CANDIDATE_REVIEW": 5
+  },
+  "batch_results": [
+    {
+      "batch_id": 0,
+      "rows": 240,
+      "png_success": 240,
+      "png_unavailable": 0
+    },
+    {
+      "batch_id": 1,
+      "rows": 240,
+      "png_success": 240,
+      "png_unavailable": 0
+    },
+    {
+      "batch_id": 2,
+      "rows": 240,
+      "png_success": 240,
+      "png_unavailable": 0
+    },
+    {
+      "batch_id": 3,
+      "rows": 240,
+      "png_success": 240,
+      "png_unavailable": 0
+    },
+    {
+      "batch_id": 4,
+      "rows": 240,
+      "png_success": 240,
+      "png_unavailable": 0
+    },
+    {
+      "batch_id": 5,
+      "rows": 240,
+      "png_success": 240,
+      "png_unavailable": 0
+    },
+    {
+      "batch_id": 6,
+      "rows": 240,
+      "png_success": 240,
+      "png_unavailable": 0
+    },
+    {
+      "batch_id": 7,
+      "rows": 240,
+      "png_success": 240,
+      "png_unavailable": 0
+    },
+    {
+      "batch_id": 8,
+      "rows": 240,
+      "png_success": 240,
+      "png_unavailable": 0
+    },
+    {
+      "batch_id": 9,
+      "rows": 240,
+      "png_success": 240,
+      "png_unavailable": 0
+    },
+    {
+      "batch_id": 10,
+      "rows": 240,
+      "png_success": 240,
+      "png_unavailable": 0
+    },
+    {
+      "batch_id": 11,
+      "rows": 240,
+      "png_success": 240,
+      "png_unavailable": 0
+    },
+    {
+      "batch_id": 12,
+      "rows": 240,
+      "png_success": 240,
+      "png_unavailable": 0
+    },
+    {
+      "batch_id": 13,
+      "rows": 240,
+      "png_success": 240,
+      "png_unavailable": 0
+    },
+    {
+      "batch_id": 14,
+      "rows": 240,
+      "png_success": 240,
+      "png_unavailable": 0
+    },
+    {
+      "batch_id": 15,
+      "rows": 240,
+      "png_success": 240,
+      "png_unavailable": 0
+    },
+    {
+      "batch_id": 16,
+      "rows": 90,
+      "png_success": 90,
+      "png_unavailable": 0
+    }
+  ],
+  "source_key_uniqueness_checked": true,
+  "material_types_proven": false,
+  "species_ids_proven": false,
+  "warning": "PNG candidates have source hashes and native UV. Material/gameplay identity and final pixel fidelity are separate evidence gates."
+}
