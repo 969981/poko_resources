@@ -1,0 +1,89 @@
+name: M7 - recover native text IDs and nine-language alignments
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/recover_native_text_ids.py"
+      - "tests/test_m7_localization.py"
+      - ".github/workflows/unpack-m7-localization.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m7-native-localization
+  cancel-in-progress: false
+
+jobs:
+  native-text-ids:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout native decoded 2.0.1 LINKDATA
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            Scripts/resources
+            tests/test_m7_localization.py
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded
+            UnPack/2.0.1/Resources/Localization/M7
+          sparse-checkout-cone-mode: false
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Unit tests for self-relative pointers, text ID and linkage
+        run: python -m unittest discover -s tests -p "test_m7_localization.py" -v
+
+      - name: Decode original record tables and verify consecutive nine-language groups
+        run: |
+          python Scripts/resources/recover_native_text_ids.py             --decoded-root UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded             --dest UnPack/2.0.1/Resources/Localization/M7
+
+      - name: Validate native anchor groups and export completeness
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          root=Path("UnPack/2.0.1/Resources/Localization/M7")
+          r=json.loads((root/"m7_report.json").read_text(encoding="utf-8"))
+          print("M7:", r)
+          assert r["parsed_text_tables"] > 0
+          assert r["nine_language_groups"] > 0
+          assert r["native_record_forms_exported"] > 0
+          assert r["nine_language_rows_exported"] > 0
+          for start in ("2323","2350","3304","4645"):
+              assert r["known_anchor_groups"][start] == "PASS", (start,r)
+          assert list(root.glob("native_records_*.csv"))
+          assert list(root.glob("nine_language_records_*.csv"))
+          PY
+
+      - name: Upload exact generated files for independent review
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-native-localization-m7
+          path: UnPack/2.0.1/Resources/Localization/M7
+          retention-days: 30
+
+      - name: Commit evidence-labelled outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- UnPack/2.0.1/Resources/Localization/M7
+          if git diff --cached --quiet; then
+            echo "No new M7 results"
+            exit 0
+          fi
+          git commit -m "data(m7): native text record IDs and cautious nine-language alignment"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
