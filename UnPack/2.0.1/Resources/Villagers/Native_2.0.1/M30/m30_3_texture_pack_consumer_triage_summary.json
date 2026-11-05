@@ -1,0 +1,40 @@
+{
+  "version": "2.0.1",
+  "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "original_rodata_string_hits_with_ScreenLayout_or_TexturePack": 48,
+  "original_strings_containing_ScreenLayout": 41,
+  "original_strings_containing_TexturePack": 9,
+  "property_names_exact": [
+    "ScreenLayoutTexturePackObjectNameHash",
+    "TexturePackKeyHashArray",
+    "TexturePackObjectHashArray"
+  ],
+  "literal_string_initialized_data_pointer_cells": 4,
+  "original_literal_adrp_add_code_refs": 31,
+  "candidate_hash_producers_MOVZ_MOVK": 0,
+  "candidate_hash_producer_counts": {},
+  "original_little_endian_raw_hash_cells_by_field": {
+    "ScreenLayoutTexturePackObjectNameHash": [
+      {
+        "section": "rodata",
+        "pc_or_va": "0x2838834"
+      }
+    ],
+    "TexturePackKeyHashArray": [
+      {
+        "section": "rodata",
+        "pc_or_va": "0x2838838"
+      }
+    ],
+    "TexturePackObjectHashArray": [
+      {
+        "section": "rodata",
+        "pc_or_va": "0x283883c"
+      }
+    ]
+  },
+  "native_3543_texture_pack_query_consumer_verified": false,
+  "game_species_form_to_texture_pack_key_verified": false,
+  "runtime_villager_ID_to_Source_OID_proven": false,
+  "warning": "Literal field labels and source constant construction are not KIDS 3543-array consumers. Direct data pointers into rodata are strings, not native code callbacks."
+}

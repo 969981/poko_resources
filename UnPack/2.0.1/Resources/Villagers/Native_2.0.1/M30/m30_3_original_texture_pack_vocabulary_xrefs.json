@@ -1,0 +1,807 @@
+{
+  "summary": {
+    "version": "2.0.1",
+    "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+    "original_rodata_string_hits_with_ScreenLayout_or_TexturePack": 48,
+    "original_strings_containing_ScreenLayout": 41,
+    "original_strings_containing_TexturePack": 9,
+    "property_names_exact": [
+      "ScreenLayoutTexturePackObjectNameHash",
+      "TexturePackKeyHashArray",
+      "TexturePackObjectHashArray"
+    ],
+    "literal_string_initialized_data_pointer_cells": 4,
+    "original_literal_adrp_add_code_refs": 31,
+    "candidate_hash_producers_MOVZ_MOVK": 0,
+    "candidate_hash_producer_counts": {},
+    "original_little_endian_raw_hash_cells_by_field": {
+      "ScreenLayoutTexturePackObjectNameHash": [
+        {
+          "section": "rodata",
+          "pc_or_va": "0x2838834"
+        }
+      ],
+      "TexturePackKeyHashArray": [
+        {
+          "section": "rodata",
+          "pc_or_va": "0x2838838"
+        }
+      ],
+      "TexturePackObjectHashArray": [
+        {
+          "section": "rodata",
+          "pc_or_va": "0x283883c"
+        }
+      ]
+    },
+    "native_3543_texture_pack_query_consumer_verified": false,
+    "game_species_form_to_texture_pack_key_verified": false,
+    "runtime_villager_ID_to_Source_OID_proven": false,
+    "warning": "Literal field labels and source constant construction are not KIDS 3543-array consumers. Direct data pointers into rodata are strings, not native code callbacks."
+  },
+  "original_texture_pack_literals": [
+    {
+      "original_rodata_VA": "0x2777c37",
+      "literal": "StaticScreenLayoutTexturesObjectHash",
+      "literal_length": 36,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x2778100",
+      "literal": "TexturePackObjectKeyHashArray",
+      "literal_length": 29,
+      "contains_TexturePack": true,
+      "contains_ScreenLayout": false,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x277c0b4",
+      "literal": "ScreenLayoutColorTableBinaryFile",
+      "literal_length": 32,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xbab8d8",
+          "add_pc": "0xbab8dc",
+          "source_word": "b000de81",
+          "add_word": "9102d021",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x2780f9d",
+      "literal": "ScreenLayoutNameArray",
+      "literal_length": 21,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x27898bb",
+      "literal": "ScreenLayoutShapeInfoResourceHash",
+      "literal_length": 33,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xcaa6ac",
+          "add_pc": "0xcaa6b0",
+          "source_word": "f000d6ef",
+          "add_word": "9122edef",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x2792467",
+      "literal": "ScreenLayoutBlurPane",
+      "literal_length": 20,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xba63ec",
+          "add_pc": "0xba63f0",
+          "source_word": "9000df61",
+          "add_word": "91119c21",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x2792a5d",
+      "literal": "ScreenLayoutColorTableObjectHash",
+      "literal_length": 32,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x2796d4a",
+      "literal": "ScreenLayoutCylinderShapePane",
+      "literal_length": 29,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xba6400",
+          "add_pc": "0xba6404",
+          "source_word": "9000df81",
+          "add_word": "91352821",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x2796d68",
+      "literal": "ScreenLayoutFreeShape",
+      "literal_length": 21,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xba67bc",
+          "add_pc": "0xba67c0",
+          "source_word": "9000df81",
+          "add_word": "9135a021",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x2796d90",
+      "literal": "StaticScreenLayout",
+      "literal_length": 18,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xba6a24",
+          "add_pc": "0xba6a28",
+          "source_word": "9000df81",
+          "add_word": "91364021",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        },
+        {
+          "adrp_pc": "0xba82b0",
+          "add_pc": "0xba82b4",
+          "source_word": "d000df61",
+          "add_word": "91364021",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x279b42f",
+      "literal": "ScreenLayoutPictureEffectPane",
+      "literal_length": 29,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xba6428",
+          "add_pc": "0xba642c",
+          "source_word": "b000dfa1",
+          "add_word": "9110bc21",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x279b44d",
+      "literal": "StaticScreenLayoutTextures",
+      "literal_length": 26,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xba6a10",
+          "add_pc": "0xba6a14",
+          "source_word": "b000dfa1",
+          "add_word": "91113421",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x279f864",
+      "literal": "ScreenLayoutDLIndexBufferSize",
+      "literal_length": 29,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x279f882",
+      "literal": "ScreenLayoutDLMaxRegisterObjectNum",
+      "literal_length": 34,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x279ff44",
+      "literal": "StaticScreenLayoutCommonTexturesObjectHash",
+      "literal_length": 42,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x27a0224",
+      "literal": "ScreenLayoutKeyHashArray",
+      "literal_length": 24,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x27a400c",
+      "literal": "StaticScreenLayoutBase",
+      "literal_length": 22,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xba63bc",
+          "add_pc": "0xba63c0",
+          "source_word": "d000dfe1",
+          "add_word": "91003021",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x27b094f",
+      "literal": "ScreenLayoutFreeShapePane",
+      "literal_length": 25,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xba6414",
+          "add_pc": "0xba6418",
+          "source_word": "d000e041",
+          "add_word": "91253c21",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x27b09b9",
+      "literal": "ScreenLayoutTexturePackSettings",
+      "literal_length": 31,
+      "contains_TexturePack": true,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xbaa51c",
+          "add_pc": "0xbaa520",
+          "source_word": "d000e021",
+          "add_word": "9126e421",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x27b13c1",
+      "literal": "TexturePackKeyHashArray",
+      "literal_length": 23,
+      "contains_TexturePack": true,
+      "contains_ScreenLayout": false,
+      "directly_KIDS_property_name": true,
+      "initialized_data_pointer_cells": [
+        "0x3331818"
+      ],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x27b4b11",
+      "literal": "ScreenLayoutDLDataCopyBufferSize",
+      "literal_length": 32,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x27bcdc4",
+      "literal": "RegisterStaticScreenLayoutPrimitivesInternal",
+      "literal_length": 44,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0x213443c",
+          "add_pc": "0x2134440",
+          "source_word": "90003442",
+          "add_word": "91371042",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x27bdd83",
+      "literal": "ScreenLayoutShapeInfoFile",
+      "literal_length": 25,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xba57ac",
+          "add_pc": "0xba57b0",
+          "source_word": "9000e0c1",
+          "add_word": "91360c21",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x27be360",
+      "literal": "TexturePackAssetKeyHashArray",
+      "literal_length": 28,
+      "contains_TexturePack": true,
+      "contains_ScreenLayout": false,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x27c25a0",
+      "literal": "ScreenLayoutEffectPane",
+      "literal_length": 22,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xba63d8",
+          "add_pc": "0xba63dc",
+          "source_word": "9000e0e1",
+          "add_word": "91168021",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x27c2bfb",
+      "literal": "TexturePackSettingsObjectHashArray",
+      "literal_length": 34,
+      "contains_TexturePack": true,
+      "contains_ScreenLayout": false,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x27c6ddd",
+      "literal": "WrapStaticScreenLayoutTexturesObjectHash",
+      "literal_length": 40,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [
+        "0x3330938"
+      ],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x27caca4",
+      "literal": "StaticScreenLayoutViewMask",
+      "literal_length": 26,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xba6a4c",
+          "add_pc": "0xba6a50",
+          "source_word": "9000e121",
+          "add_word": "91329021",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x27cad08",
+      "literal": "MotorScreenLayoutCommonSetting",
+      "literal_length": 30,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xba73a4",
+          "add_pc": "0xba73a8",
+          "source_word": "f000e101",
+          "add_word": "91342021",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x27cfed6",
+      "literal": "TexturePackObjectHashArray",
+      "literal_length": 26,
+      "contains_TexturePack": true,
+      "contains_ScreenLayout": false,
+      "directly_KIDS_property_name": true,
+      "initialized_data_pointer_cells": [
+        "0x3331820"
+      ],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x27d35a1",
+      "literal": "ScreenLayoutEditPaneBase",
+      "literal_length": 24,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xba63a0",
+          "add_pc": "0xba63a4",
+          "source_word": "b000e161",
+          "add_word": "91168421",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x27d7c90",
+      "literal": "ScreenLayoutRadialBlurPane",
+      "literal_length": 26,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xba643c",
+          "add_pc": "0xba6440",
+          "source_word": "b000e181",
+          "add_word": "91324021",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x27d8352",
+      "literal": "ScreenLayoutObjectNameHash",
+      "literal_length": 26,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xd3762c",
+          "add_pc": "0xd37630",
+          "source_word": "b000d50a",
+          "add_word": "910d494a",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x27dbff3",
+      "literal": "StaticScreenLayoutListView",
+      "literal_length": 26,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xba6a60",
+          "add_pc": "0xba6a64",
+          "source_word": "b000e1a1",
+          "add_word": "913fcc21",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x27dc097",
+      "literal": "ScreenLayoutColorTable",
+      "literal_length": 22,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xbab8a8",
+          "add_pc": "0xbab8ac",
+          "source_word": "b000e181",
+          "add_word": "91025c21",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        },
+        {
+          "adrp_pc": "0xbab8bc",
+          "add_pc": "0xbab8c0",
+          "source_word": "b000e181",
+          "add_word": "91025c21",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x27dc6cb",
+      "literal": "TexturePackObjectNameHashArray",
+      "literal_length": 30,
+      "contains_TexturePack": true,
+      "contains_ScreenLayout": false,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x27dfee8",
+      "literal": "OnCreateScreenLayoutViewFlag",
+      "literal_length": 28,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x27e0855",
+      "literal": "ScreenLayoutObjectNameHashArray",
+      "literal_length": 31,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x27e5160",
+      "literal": "ScreenLayoutColorTableCSVFileResourceHash",
+      "literal_length": 41,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xe237d0",
+          "add_pc": "0xe237d4",
+          "source_word": "d000ce09",
+          "add_word": "91058129",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x27e8eee",
+      "literal": "TexturePackDBResourceHashArray",
+      "literal_length": 30,
+      "contains_TexturePack": true,
+      "contains_ScreenLayout": false,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x27ed1a3",
+      "literal": "ScreenLayoutSettingObjectNameHashArray",
+      "literal_length": 38,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x27f102d",
+      "literal": "StaticScreenLayoutTexInfoFile",
+      "literal_length": 29,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xba5798",
+          "add_pc": "0xba579c",
+          "source_word": "9000e261",
+          "add_word": "9100b421",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x27f1068",
+      "literal": "StaticScreenLayoutScrollView",
+      "literal_length": 28,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xba6a74",
+          "add_pc": "0xba6a78",
+          "source_word": "f000e241",
+          "add_word": "9101a021",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x27f10bf",
+      "literal": "MotorScreenLayoutSetting",
+      "literal_length": 24,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0xba7390",
+          "add_pc": "0xba7394",
+          "source_word": "d000e241",
+          "add_word": "9102fc21",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x27f6148",
+      "literal": "ScreenLayoutCommonTexturesObjectNameHash",
+      "literal_length": 40,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x27fb2c7",
+      "literal": "ScreenLayoutTexturePackObjectNameHash",
+      "literal_length": 37,
+      "contains_TexturePack": true,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": true,
+      "initialized_data_pointer_cells": [
+        "0x3331810"
+      ],
+      "code_adrp_add_xrefs": []
+    },
+    {
+      "original_rodata_VA": "0x27fe4f3",
+      "literal": "ScreenLayout",
+      "literal_length": 12,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": [
+        {
+          "adrp_pc": "0x915b24",
+          "add_pc": "0x915b28",
+          "source_word": "b000f742",
+          "add_word": "9113cc42",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        },
+        {
+          "adrp_pc": "0xba5bf8",
+          "add_pc": "0xba5bfc",
+          "source_word": "b000e2c1",
+          "add_word": "9113cc21",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        },
+        {
+          "adrp_pc": "0xba6384",
+          "add_pc": "0xba6388",
+          "source_word": "9000e2c1",
+          "add_word": "9113cc21",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        },
+        {
+          "adrp_pc": "0x265b360",
+          "add_pc": "0x265b364",
+          "source_word": "f0000d02",
+          "add_word": "9113cc42",
+          "proof_grade": "EXACT_ADJACENT_RODATA_ADDRESS_ONLY",
+          "runtime_method_semantics_verified": false
+        }
+      ]
+    },
+    {
+      "original_rodata_VA": "0x27fecd2",
+      "literal": "ScreenLayoutDLVertexBufferSize",
+      "literal_length": 30,
+      "contains_TexturePack": false,
+      "contains_ScreenLayout": true,
+      "directly_KIDS_property_name": false,
+      "initialized_data_pointer_cells": [],
+      "code_adrp_add_xrefs": []
+    }
+  ],
+  "native_movz_movk_property_hash_candidates": []
+}
