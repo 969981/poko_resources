@@ -1,0 +1,98 @@
+name: M21 - Export native reaction skill and villager icons
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/export_native_aux_icons.py"
+      - ".github/workflows/unpack-m21-native-aux-icons.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m21-native-aux-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  reconcile-original-native-icons:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Sparse-checkout source-qualified original PNGs and PokoHex references
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/export_native_aux_icons.py
+            UnPack/2.0.1/Resources/Reactions
+            UnPack/2.0.1/Resources/Skills
+            UnPack/2.0.1/Resources/Villagers
+            UnPack/2.0.1/Resources/Pokemon/NativeCandidates
+            UnPack/2.0.1/Resources/Textures/MiscNativeBatches/batch_14
+            UnPack/2.0.1/Resources/Textures/MiscNativeBatches/batch_15
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pixel-audit dependency
+        run: python -m pip install "Pillow>=11,<13"
+
+      - name: Export original emotes and skills and reconcile Villager image identity
+        run: python Scripts/resources/export_native_aux_icons.py
+
+      - name: Validate source-qualified output and prevent silent overclaims
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, json
+          from pathlib import Path
+          base=Path("UnPack/2.0.1/Resources")
+          for name, reference, native in (
+              ("Reactions",47,40),("Skills",10,14),("Villagers",378,609)):
+              dest=base/name/"Native_2.0.1"
+              report=json.loads((dest/"native_icon_summary.json").read_text(encoding="utf-8"))
+              assert report["pokohex_reference_count"]==reference,report
+              assert report["native_texinfo_png_candidates"]==native,report
+              assert report["pixel_exact_matched_reference_icons"]>=1,report
+              rows=list(csv.DictReader((dest/"native_icon_crosswalk.csv").open(encoding="utf-8",newline="")))
+              assert len({r["reference_sprite_id"] for r in rows})==reference
+              assert all(r["status"] in ("PIXEL_EXACT_UNIQUE","PIXEL_EXACT_MULTIPLE_SOURCES",
+                                        "NO_PIXEL_EXACT_NATIVE") for r in rows)
+              print(name,report["pixel_exact_matched_reference_icons"],"/",reference,
+                    "reference images have identical native RGBA pixels")
+          PY
+
+      - name: Upload independent evidence and native image artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-m21-native-reaction-skill-villager-icons
+          path: |
+            UnPack/2.0.1/Resources/Reactions/Native_2.0.1/
+            UnPack/2.0.1/Resources/Skills/Native_2.0.1/
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Commit native images and non-fabricated image identity crosswalks
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- \
+            UnPack/2.0.1/Resources/Reactions/Native_2.0.1 \
+            UnPack/2.0.1/Resources/Skills/Native_2.0.1 \
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1
+          if git diff --cached --quiet; then echo "Native icon output unchanged"; exit 0; fi
+          git commit -m "data(m21): export ROMFS source-linked native auxiliary sprites"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
