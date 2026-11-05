@@ -40,6 +40,13 @@ OFFSETS={
 REGISTERS=("pc","sp","x0","x1","x2","x3","x8","x9","x19","x20",
            "x21","x22","x23","x24","x25","x26","x30")
 MAX_HITS=500
+# Exact original NSO0 source words from pinned M25/M26 AArch64 evidence.
+ORIGINAL_OPCODE={
+    0x1136A60:0x794012C8,
+    0x5FD168:0x912CD463,
+    0xDD1B48:0x2A1F03E8,
+    0xDD1B74:0xB863D92C,
+}
 _session=None
 
 def h(n):
@@ -96,6 +103,8 @@ class Point(gdb.Breakpoint):
                 "absolute_pc":h(pc),
                 "return_lr_x30":h(values["x30"]),
                 "registers":{n:h(v) for n,v in values.items() if n!="pc"},
+                "current_instruction_original_code_read":mem(pc,4),
+                "expected_original_instruction_word":h(ORIGINAL_OPCODE[self.offset]),
                 "bounded_original_instruction_reads":{},
                 "user_scenario":c.scenario,
                 "same_game_instance_proven":False,
@@ -210,7 +219,7 @@ class Mark(gdb.Command):
     def invoke(self,arg,from_tty):
         c=check_started()
         label=arg.strip()
-        if not label or len(label)>72 or not all(x.isalnum() or x in "_-." for x in label):
+        if not label or len(label)>72 or not all(x.isascii() and (x.isalnum() or x in "_-.") for x in label):
             raise gdb.GdbError("Scenario label: 1-72 chars of ASCII letters/numbers/_-., no spaces")
         c.scenario=label
         c.write({"kind":"operator_marker","label":label,
