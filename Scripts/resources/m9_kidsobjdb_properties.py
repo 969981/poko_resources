@@ -15,7 +15,10 @@ import struct
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from m9_kidsobjdb_framing import decode_nodes
+try:
+    from .m9_kidsobjdb_framing import decode_nodes
+except ImportError:
+    from m9_kidsobjdb_framing import decode_nodes
 
 SIZES={0:1,1:1,2:2,3:2,4:4,5:4,6:8,7:8,8:4,10:16,12:8,13:12}
 F_COLS=("m3_record_id","native_node_index","object_id_hex","object_type_hash_hex",
