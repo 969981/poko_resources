@@ -130,3 +130,35 @@ main+0x2F258  br   x2               ; V2+0x30 -> item lookup, tail-call
 **截至 M19：没有确认 V1/V2 的具体虚表目标函数，也没有确认 `ID × 68` 对应原始 00983.bin 数据基址；因此不可将当前候选归档为已恢复的完整原生分类枚举。**
 
 可复查证据在 `M14/`、`M15/`、`M16/`、`M17/`、`M18/`、`M19/` 目录中，对应 GitHub Actions 测试均采用原版 SHA-256 严格校验。
+
+## M20–M21：原生默认记录 BSS 与 983 描述符缓存的两条独立证据链（2026-11-05）
+
+### 默认物品记录与包装对象
+
+M20 从原始 2.0.1 NSO data 段读到 RVA 0x3483C58 的原始 64 位值 0x35B6128（C7 默认物品记录），RVA 0x3484A38 的原始值 0x35B617C（C9 默认类型记录）。这两个目标地址不在 text/rodata/data 已初始化内容范围中，符合 BSS/运行时未初始化区域的情况。目标相距 0x54 (84) 字节，这是两个默认值的布局距离，**不能当成物品记录的 68 字节步长**。在已初始化 rodata/data 中，没有找到抽查的 20 项原始物品的完整 68 字节副本；这不排除后续运行时加载。
+
+M21 通过原版指令的 ADRP + ADD/LD* 交叉引用定位：0x35B6128 有 123 处候选、0x35B617C 有 1 处、指向默认记录的指针单元 0x3483C58 有 360 处、0x3484A38 有 10 处。main+0x1015A0、0x267490、0x2E7974、0x332F40 等位置可见相同流程：V2 查询返回包装对象 X0；从 [X0+8] 取得候选数据指针；为零时用 0x35B6128 默认记录；之后读取 +0x26、+0x3A 等字段。**已证明消费端共用相同字段偏移，但未证明成功查询的数据指针源于原始 00983.bin。**
+
+M20 验证产物：M20/item_fallback_source_audit.json；M21 验证产物：M21/native_default_item_BSS_xrefs.json。两项 Actions 已完成，均采用严格的原版 main 和 00983.bin SHA-256 校验。
+
+### 另一研究分支发现的 983 描述符加载器
+
+已有并行分支 feature/pokopia-item-consumer-dataflow-m11 与 feature/pokopia-m20-983-cache-provenance 的原版 NSO 指令校验：
+
+    main+0x14FD9B0  MOV W0,#983
+    main+0x14FD9B4  BL 0x1445E30
+    main+0x14FD9B8  BL 0x14718F0
+    main+0x14FD9C0  STR X0,[0x36D54C8]  (via ADRP X8,0x36D5000)
+
+另一条链从 main+0x14FDB1C 开始。0x1445E30 使用 0x3354500 基址、40 字节描述符、最大零基编号 1194、每个描述符 +0x10 的 u32。编号 983 原始描述符位置为 0x335DE98。这不是 4600×68 的物品原始记录表。后续 0x14718F0/0x1471990 包装函数和缓存全局 0x36D54C8 的读取来源尚未与 0xC7 注册对象连通。原版 descriptor ID=983 是否真实等于 LINKDATA/00983.bin 的文件编号仍待证明。
+
+并行证据文档：https://github.com/969981/poko_resources/blob/feature/pokopia-m20-983-cache-provenance/docs/2.0.1/M20_ITEM983_CACHE_ORIGIN.md
+
+### 尚未闭合的边
+
+两条路径必须分别保留：
+
+    983 -> 40-byte resource descriptor -> wrapper/global 0x36D54C8
+    registry 0xC7 -> V1+0x38 -> V2+0x30(ItemID) -> wrapper+8 -> +0x26/+0x3A
+
+需要原生 V1/V2 构造和真实指针赋值证据，把它们连到相同的源资产及 ID*68 记录地址；否则不提升“原生材料分类枚举已恢复”的状态。数量上限 99 亦属于独立的存取与业务限制问题。
