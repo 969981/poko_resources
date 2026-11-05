@@ -45,7 +45,7 @@ python Scripts/resources/export_native_aux_icons.py
 - `Pokemon/NativeCandidates/pokemon_native_manifest.csv`；
 - 各组 `pokohex_icon_sources.csv` 与 `{reaction,skill,villager}_catalog.csv`。
 
-验证原生 PNG 与第三方 PNG 的 SHA256 文件字节；比较参考 PNG 与原生 PNG 的 **宽高、可见 RGBA 像素 SHA256**（完全透明像素的 RGB 规范化为零）。不按编号相等、名称相似或文件邻近关系直接赋 ID。
+验证原生 PNG 与第三方 PNG 的 SHA256 文件字节；先比较 **宽高、可见 RGBA 像素 SHA256**（完全透明像素的 RGB 规范化为零）。如没有严格逐像素相同项，再对同尺寸图片的 **32×32、Alpha-aware 图像缩略图**计算归一化 MAE，并记录前两名距离。仅当第一名距离 ≤0.015、与第二名的距离差 ≥0.015 时，输出高区分度的视觉匹配**候选**；它不等于像素全同，更不等于原生游戏身份 ID 已验证。不按编号相等、名称相似或文件邻近关系直接赋 ID。
 
 输出：
 
@@ -60,7 +60,7 @@ UnPack/2.0.1/Resources/
     native_icon_crosswalk.csv
     native_icon_summary.json
   Villagers/Native_2.0.1/
-    Icons/                     # 仅复制与 378 张参考图像素匹配的原生 pokemon 图
+    Icons/                     # 像素全同或高区分度视觉候选的原生 pokemon 图
     native_icon_crosswalk.csv
     native_icon_summary.json
 ```
