@@ -1,0 +1,84 @@
+name: M11 - Locate native LINKDATA 983 item table loader and ID stride
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/trace_native_item_table_loader.py"
+      - ".github/workflows/unpack-m11-native-item-loader.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-201-m11-item-loader
+  cancel-in-progress: false
+
+jobs:
+  original-item-loader:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout exact original 2.0.1 main, LINKDATA item table and survey scripts
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M11
+            Scripts/resources/trace_native_item_table_loader.py
+            Scripts/resources/trace_native_species_item_callers.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install bounded NSO LZ4 and ARM64 disassembler
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Check synthetic AArch64 patterns and forged-source rejection
+        run: python -m Scripts.resources.trace_native_item_table_loader --self-test
+
+      - name: Scan original main for LINKDATA 983, count 4600 and 68-byte indexing
+        run: python -m Scripts.resources.trace_native_item_table_loader
+
+      - name: Enforce conservative provenance evidence level
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M11")
+          f=json.loads((p/"native_item_loader_candidates.json").read_text(encoding="utf-8"))
+          s=json.loads((p/"native_item_loader_summary.json").read_text(encoding="utf-8"))
+          assert f["source"]["main_sha256"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert f["source"]["item_sha256"]=="2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f"
+          assert f["source"]["record_count"]==4600
+          assert f["source"]["record_stride"]==68
+          assert f["text_bytes"]>40000000
+          assert not f["verified_loader"]
+          assert not f["verified_item_id_stride68"]
+          assert not f["verified_category_0x26"]
+          assert not f["verified_category_0x3a"]
+          assert s["verified_loader"] is False
+          print("PASS: original source identity, bounds and no false-positive caller proof")
+          PY
+
+      - name: Commit reproducible candidate report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -- UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M11
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m11): record native 00983 table loader and ID-stride candidates"
+          for i in 1 2 3 4 5 6 7 8; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+            sleep 2
+          done
+          exit 1
