@@ -1,0 +1,32 @@
+{
+  "stage": "M24_STATIC_WRAPPER_CALLER_MATRIX",
+  "source_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "source_item_sha256": "2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f",
+  "original_wrapper_pc": "0x2f1f0",
+  "direct_BL_callers": 17,
+  "wrapper_plus8_in_bounded_window": 12,
+  "rows_with_nearby_post_call_field_access": 13,
+  "field_offset_nearby_counts": {
+    "0x14": 2,
+    "0x18": 1,
+    "0x1e": 3,
+    "0x27": 1,
+    "0x3a": 1,
+    "0x41": 2,
+    "0xc": 3
+  },
+  "independent_M12_field_read_sites": {
+    "0xe5aa60": "#0x26",
+    "0x10289f4": "#0x26",
+    "0x1028a38": "#0x39",
+    "0xabbb64": "#0x3a",
+    "0xabbbd4": "#0x3a"
+  },
+  "nearby_wrapper_callers_with_0x26_read": 0,
+  "dynamic_v1_method_known": false,
+  "dynamic_v2_method_known": false,
+  "runtime_three_complete_68byte_records_verified": false,
+  "official_item_kind_enum_proven": false,
+  "inventory_construction_material_context_proven": false,
+  "warning": "These 12-instruction windows are candidate reads only; they do not bind source pointer to 00983.bin or verify UI usage."
+}
