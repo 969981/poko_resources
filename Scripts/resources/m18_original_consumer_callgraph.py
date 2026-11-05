@@ -33,9 +33,9 @@ ANCHORS = {
     0xABBB48: "item_id_classification_access_A",
     0xABBBB8: "item_id_classification_access_B",
 }
-FIELD_RE = re.compile(r"\\[(x\\d+),\\s*#0x(22|26|39|3a)\\]", re.I)
-LDR30_RE = re.compile(r"^(x\\d+),\\s*\\[(x\\d+),\\s*#0x30\\]$", re.I)
-REG_RE = re.compile(r"\\b[wx](\\d+)\\b")
+FIELD_RE = re.compile(r"\[(x\d+),\s*#0x(22|26|39|3a)\]", re.I)
+LDR30_RE = re.compile(r"^(x\d+),\s*\[(x\d+),\s*#0x30\]$", re.I)
+REG_RE = re.compile(r"\b[wx](\d+)\b")
 
 
 def signed_bl_target(pc: int, word: int):
@@ -120,7 +120,7 @@ def local_patterns(insts):
             for after in insts[i+1:i+14]:
                 a = after["mnemonic"]
                 args = after["operands"].lower()
-                r = re.search(r"\\b" + re.escape(dst) + r"\\b", args)
+                r = re.search(r"\b" + re.escape(dst) + r"\b", args)
                 if r and (a in ("cmp", "cmn", "tst", "tbz", "tbnz", "cbz", "cbnz") or a in ("subs", "ands")):
                     dependents.append({"pc": hex(after["pc"]), "asm": a+" "+args})
                 if a in ("bl", "blr", "br", "ret", "b") or a.startswith("b."):
@@ -242,7 +242,7 @@ def main():
     out=analyze(args.main.read_bytes(),args.item.read_bytes())
     args.out.mkdir(parents=True,exist_ok=True)
     (args.out/"m18_original_item_callgraph.json").write_text(
-        json.dumps(out,indent=2,ensure_ascii=False)+"\\n",encoding="utf-8")
+        json.dumps(out,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     summary={k:v for k,v in out.items() if k not in ("anchor_evidence","direct_callee_reverse_references","requirements_for_proof")}
     summary["anchor_summary"]=[{
         "rva":r["anchor_rva"],"role":r["role"],
@@ -252,7 +252,7 @@ def main():
     } for r in out["anchor_evidence"]]
     summary["direct_callee_targets"]=[x["direct_callee_va"] for x in out["direct_callee_reverse_references"]]
     (args.out/"m18_original_item_callgraph_summary.json").write_text(
-        json.dumps(summary,indent=2,ensure_ascii=False)+"\\n",encoding="utf-8")
+        json.dumps(summary,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     print(json.dumps(summary,indent=2,ensure_ascii=False))
 
 
