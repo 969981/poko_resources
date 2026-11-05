@@ -110,7 +110,7 @@ def unswizzle_ounce_bc7(src: bytes, width: int, height: int, gob_height: int) ->
         in_row, row = divmod(sub, 8)
         for x in range(bw):
             gob_base = ((band * columns + x // 4) * gob_height + in_row) * 512
-            inner = ((x & 2) << 7) | ((row & 4) << 5) | \\
+            inner = ((x & 2) << 7) | ((row & 4) << 5) | \
                     ((x & 1) << 6) | ((row & 2) << 4) | ((row & 1) << 4)
             input_pos = gob_base + inner
             output_pos = (y * bw + x) * 16
@@ -133,8 +133,8 @@ def unswizzle_ounce_raw_bgra(src: bytes, width: int, height: int, gob_height: in
         for x in range(width):
             x_byte = x * 4
             gob_base = ((band * columns + x_byte // 64) * gob_height + in_row) * 512
-            inner = ((x_byte & 32) << 3) | ((row & 4) << 5) | \\
-                    ((x_byte & 16) << 2) | ((row & 2) << 4) | \\
+            inner = ((x_byte & 32) << 3) | ((row & 4) << 5) | \
+                    ((x_byte & 16) << 2) | ((row & 2) << 4) | \
                     ((row & 1) << 4) | (x_byte & 15)
             output_pos = (y * width + x) * 4
             dst[output_pos:output_pos + 4] = src[gob_base + inner:gob_base + inner + 4]
