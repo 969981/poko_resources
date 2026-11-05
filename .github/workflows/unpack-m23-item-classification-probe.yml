@@ -1,0 +1,45 @@
+name: M23 - Item classification runtime evidence tooling tests
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m23_gdb_trace_item_classification.py"
+      - "Scripts/resources/m23_item_classification_audit.py"
+      - "tests/test_m23_item_classification_audit.py"
+      - ".github/workflows/unpack-m23-item-classification-probe.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pokopia-201-m23-probe
+  cancel-in-progress: false
+
+jobs:
+  static-and-synthetic-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m23_gdb_trace_item_classification.py
+            Scripts/resources/m23_item_classification_audit.py
+            tests/test_m23_item_classification_audit.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile GDB Python and offline auditor
+        run: |
+          python -m py_compile Scripts/resources/m23_gdb_trace_item_classification.py
+          python -m py_compile Scripts/resources/m23_item_classification_audit.py
+      - name: Synthetic tests for exact 68-byte matching and fail-closed audit
+        run: python -m unittest discover -s tests -p "test_m23_item_classification_audit.py" -v
+      - name: Coverage statement
+        run: |
+          echo "M23 CI validates syntax and synthetic auditor only."
+          echo "No game runtime or GDB guest was connected in CI."
