@@ -18,6 +18,12 @@
     "has_M25_verified_source_to_texture_link": true,
     "source_oid": "06ab845f",
     "texture_oid": "c1a6d60c",
+    "legacy_texture_oid_is_actually_wrapper_IDOK_oid": true,
+    "original_wrapper_IDOK_oid": "c1a6d60c",
+    "original_wrapper_render_state_file_hash": "ab6768bd",
+    "original_wrapper_info_data_file_hash": "2198d172",
+    "source_to_wrapper_to_G1T_TEXINFO_bytes_verified": true,
+    "final_texture_object_ID_proven_from_legacy_texture_oid": false,
     "original_texinfo_names": [
       "icon_poke_0043_00_00_00"
     ],
@@ -35,7 +41,8 @@
     {
       "slot": 455,
       "source_oid": "06ab845f",
-      "texture_oid": "c1a6d60c"
+      "legacy_texture_oid_is_wrapper_IDOK": true,
+      "original_wrapper_IDOK_oid": "c1a6d60c"
     }
   ],
   "status": "EXACT_ORIGINAL_SOURCE_NAME_AND_OID"
