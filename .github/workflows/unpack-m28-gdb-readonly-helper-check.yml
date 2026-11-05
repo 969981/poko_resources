@@ -1,0 +1,55 @@
+name: M28 - Read-only GDB trace helper syntax and safety gate
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/gdb/m28_pokopia_native_id_readonly_trace.py"
+      - ".github/workflows/unpack-m28-gdb-readonly-helper-check.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  verify-readonly-GDB-helper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout GDB helper only
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/gdb/m28_pokopia_native_id_readonly_trace.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Syntax-check GDB Python without claiming runtime validation
+        run: python -m py_compile Scripts/gdb/m28_pokopia_native_id_readonly_trace.py
+
+      - name: Verify source offsets, absence of mutation and fail-closed event schema
+        run: |
+          python - <<'PY'
+          import ast
+          from pathlib import Path
+          p=Path("Scripts/gdb/m28_pokopia_native_id_readonly_trace.py")
+          src=p.read_text(encoding="utf-8")
+          tree=ast.parse(src)
+          assert "main+0x" not in src or "NSO" in src
+          assert "0xDD1B48" in src and "0xDD1C30" in src
+          assert "0x1136AA4" in src and "0x5FD168" in src
+          assert "return False" in src and "def stop(self):" in src
+          assert "game_species_id_verified" in src and "kids_source_oid_verified" in src
+          assert "0xACTUAL_NS0_MAIN_LOAD_BASE" in src
+          assert "write_memory" not in src and "inferior.write" not in src
+          assert not any(
+              isinstance(n,ast.Attribute) and n.attr in {"write_memory","write_register","set_value"}
+              for n in ast.walk(tree))
+          print("M28 GDB helper syntax and static non-mutating source gate passed")
+          print("NOTE: no emulator connected, no runtime breakpoint behavior claimed")
+          PY
