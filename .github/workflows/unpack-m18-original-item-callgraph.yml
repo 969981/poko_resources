@@ -1,0 +1,79 @@
+name: M18 - Trace original item consumers by native ARM64 calls and pointer cells
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m18_original_consumer_callgraph.py"
+      - ".github/workflows/unpack-m18-original-item-callgraph.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-201-m18-item-callgraph
+  cancel-in-progress: false
+
+jobs:
+  inspect-original-main-callgraph:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/trace_native_item_registry_vtables.py
+            Scripts/resources/m18_original_consumer_callgraph.py
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M18
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install ARM64 disassembler and NSO decompressors
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+      - name: Verify branch immediates, indirect call patterns and provenance guard
+        run: python -m Scripts.resources.m18_original_consumer_callgraph --self-test
+      - name: Inspect original callsites and reverse references
+        run: python -m Scripts.resources.m18_original_consumer_callgraph
+      - name: Assert source identity and fail-closed interpretation
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path("UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M18")
+          data=json.loads((root/"m18_original_item_callgraph.json").read_text(encoding="utf-8"))
+          assert data["original_main_sha256"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert data["original_item_sha256"]=="2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f"
+          assert len(data["anchor_evidence"])==8
+          assert not data["verified_original_item_loader"]
+          assert not data["verified_material_type_enum"]
+          assert not data["verified_virtual_class_vtable_binding"]
+          print("PASS all native callsites remain class-unbound evidence")
+          PY
+      - name: Upload raw original instruction evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-201-m18-original-item-callgraph
+          path: UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M18/
+          if-no-files-found: error
+      - name: Commit native call graph for review
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M18
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m18): reverse-reference native original item consumer callsites"
+          for i in 1 2 3 4 5 6 7 8; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+            sleep 2
+          done
+          exit 1
