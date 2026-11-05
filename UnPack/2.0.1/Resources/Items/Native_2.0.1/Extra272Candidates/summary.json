@@ -2,7 +2,7 @@
   "source_g1t": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/MountPoint_2/0x0017d6e2.fdata/native/root_009286_26a15463.g1t",
   "source_texinfo": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/MountPoint_2/0x0017d6e2.fdata/native/root_019254_51087a18.texinfo",
   "g1t_format": "BC7 0x66",
-  "layout": "gob16",
+  "layout": "ounce16",
   "orientation": "top-v",
   "texture_size": [
     2048,
@@ -15,8 +15,8 @@
     72
   ],
   "reference_count": 272,
-  "median_reference_distance": 0.090290975,
-  "worst_reference_distance": 0.43815158,
+  "median_reference_distance": 0.00608996,
+  "worst_reference_distance": 0.4379912,
   "reference_scores_are_heuristic": true,
   "overlap_with_primary_atlas_count": 4,
   "overlap_ids": [
