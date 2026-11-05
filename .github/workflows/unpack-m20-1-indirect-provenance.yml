@@ -1,0 +1,85 @@
+name: M20.1 - Native hash neighborhood and item caller offsets
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m20_1_indirect_provenance.py"
+      - ".github/workflows/unpack-m20-1-indirect-provenance.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-201-m20-1-indirect-provenance
+  cancel-in-progress: false
+
+jobs:
+  inspect-native-adjacency:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m20_native_species_item_targets.py
+            Scripts/resources/m20_1_indirect_provenance.py
+            UnPack/2.0.1/Resources/Pokemon/NativeCallers/M20
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M20
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install native NSO decoding and ARM64 disassembly
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+      - name: Check evidence rejection guards
+        run: python -m Scripts.resources.m20_1_indirect_provenance --self-test
+      - name: Trace rodata neighborhood and 17 item-call return windows
+        run: python -m Scripts.resources.m20_1_indirect_provenance
+      - name: Assert native provenance boundaries
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Pokemon/NativeCallers/M20")
+          i=Path("UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M20")
+          n=json.loads((p/"m20_1_rodata_hash_neighborhood.json").read_text(encoding="utf-8"))
+          d=json.loads((i/"m20_1_native_item_offset_distributions.json").read_text(encoding="utf-8"))
+          with (i/"m20_1_original_wrapper_caller_offsets.csv").open(encoding="utf-8",newline="") as f:
+            rows=list(csv.DictReader(f))
+          assert n["original_hash_cell_va"]=="0x2830c98"
+          assert not n["native_property_consumer_verified"]
+          assert not n["native_species_id_verified"]
+          assert len(rows)==17
+          assert all(not x["proven_same_memory_as_wrapper_plus8"] and not x["semantic_enum_verified"] for x in d["fields"].values())
+          print("PASS 17 callers and original hash neighborhood remain unpromoted")
+          PY
+      - name: Upload original raw neighborhood and caller matrix
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-201-m20-1-indirect-native-provenance
+          path: |
+            UnPack/2.0.1/Resources/Pokemon/NativeCallers/M20/m20_1_rodata_hash_neighborhood.json
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M20/m20_1_*
+          if-no-files-found: error
+      - name: Commit M20.1 original evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Pokemon/NativeCallers/M20 UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M20
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m20.1): original hash neighborhood and item offset caller matrix"
+          for attempt in 1 2 3 4 5 6 7 8; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+            sleep 2
+          done
+          exit 1
