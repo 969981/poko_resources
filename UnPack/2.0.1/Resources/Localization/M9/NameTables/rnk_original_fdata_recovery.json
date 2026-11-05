@@ -1,0 +1,53 @@
+{
+  "status": "M9_ORIGINAL_FDATA_RNK_EXTRACTION_STRICT",
+  "sources": [
+    {
+      "expected_rnk_hash": "a91711c6",
+      "rdb_record_id": "root:40061",
+      "physical_source": "",
+      "status": "ORIGINAL_FDATA_NOT_PRESENT",
+      "idrk_name_hash": "",
+      "idrk_type_hash": "",
+      "decoded_sha256": "",
+      "irnk_entries": 0,
+      "verified_native_rnk": false,
+      "semantic_property_name_verified": false,
+      "text_fk_verified": false
+    },
+    {
+      "expected_rnk_hash": "aa91cb96",
+      "rdb_record_id": "root:40411",
+      "physical_source": "",
+      "status": "ORIGINAL_FDATA_NOT_PRESENT",
+      "idrk_name_hash": "",
+      "idrk_type_hash": "",
+      "decoded_sha256": "",
+      "irnk_entries": 0,
+      "verified_native_rnk": false,
+      "semantic_property_name_verified": false,
+      "text_fk_verified": false
+    },
+    {
+      "expected_rnk_hash": "cb3c8b15",
+      "rdb_record_id": "root:48184",
+      "physical_source": "",
+      "status": "ORIGINAL_FDATA_NOT_PRESENT",
+      "idrk_name_hash": "",
+      "idrk_type_hash": "",
+      "decoded_sha256": "",
+      "irnk_entries": 0,
+      "verified_native_rnk": false,
+      "semantic_property_name_verified": false,
+      "text_fk_verified": false
+    }
+  ],
+  "verified_original_rnk_sources": 0,
+  "native_irnk_strings_extracted": 0,
+  "verified_semantic_property_names": 0,
+  "new_script_scene_quest_building_text_foreign_keys": 0,
+  "numeric_oid_candidates_still_unverified": 87445,
+  "limitations": [
+    "IRNK key/hash collisions do not establish property-name semantics.",
+    "A valid RNK is not evidence of a script/M7 text foreign key."
+  ]
+}
