@@ -1,0 +1,153 @@
+name: M9.2 - decode native KIDSOBJDB typed properties and candidate links
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_kidsobjdb_properties.py"
+      - "tests/test_m9_kidsobjdb_properties.py"
+      - ".github/workflows/unpack-m9-kidsobjdb-properties.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-native-properties
+  cancel-in-progress: false
+
+jobs:
+  native-properties:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Sparse checkout validated native records and schema parser
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          persist-credentials: true
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m9_kidsobjdb_properties.py
+            Scripts/resources/m9_kidsobjdb_framing.py
+            tests/test_m9_kidsobjdb_properties.py
+            UnPack/2.0.1/Resources/Localization/M9/m3_object_sources.csv
+            UnPack/2.0.1/Resources/Localization/M9/Properties
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xe634eeb2.fdata/decoded/root_042257_b290631c.fdata_idrk.bin
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/decoded/root_049334_cfd2bd1f.fdata_idrk.bin
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata/decoded/root_049689_d14d76ef.fdata_idrk.bin
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Test real KIDS property descriptor and array boundaries
+        id: tests
+        shell: bash
+        run: |
+          mkdir -p UnPack/2.0.1/Resources/Localization/M9/Properties/Diagnostics
+          set +e
+          python -m unittest discover -s tests -p "test_m9_kidsobjdb_properties.py" -v \
+            > UnPack/2.0.1/Resources/Localization/M9/Properties/Diagnostics/tests.log 2>&1
+          code=$?
+          cat UnPack/2.0.1/Resources/Localization/M9/Properties/Diagnostics/tests.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Recover native property types and value ranges from all three samples
+        if: steps.tests.outputs.exit_code == '0'
+        id: decode
+        shell: bash
+        run: |
+          set +e
+          python Scripts/resources/m9_kidsobjdb_properties.py \
+            --sources UnPack/2.0.1/Resources/Localization/M9/m3_object_sources.csv \
+            --unpack-root UnPack/2.0.1 \
+            --dest UnPack/2.0.1/Resources/Localization/M9/Properties \
+            > UnPack/2.0.1/Resources/Localization/M9/Properties/Diagnostics/decode.log 2>&1
+          code=$?
+          tail -c 20000 UnPack/2.0.1/Resources/Localization/M9/Properties/Diagnostics/decode.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Count decoded fields and verify no candidate is marked confirmed
+        if: steps.tests.outputs.exit_code == '0' && steps.decode.outputs.exit_code == '0'
+        id: verify
+        shell: bash
+        run: |
+          set +e
+          python - <<'PY' > UnPack/2.0.1/Resources/Localization/M9/Properties/Diagnostics/verify.log 2>&1
+          import json,csv
+          from pathlib import Path
+          base=Path("UnPack/2.0.1/Resources/Localization/M9/Properties")
+          rep=json.loads((base/"m9_typed_field_report.json").read_text(encoding="utf-8"))
+          print(json.dumps(rep,indent=2,ensure_ascii=False))
+          assert rep["status"]=="M9_NATIVE_TYPED_IDOK_PROPERTIES_EXACT"
+          assert rep["native_node_records_verified"]==101467
+          assert rep["native_typed_fields_exported"]>17740
+          assert rep["local_oid_equality_candidates_exported"]>=1000
+          assert rep["scene_quest_building_text_foreign_keys_confirmed"]==0
+          fields=list(base.glob("native_typed_fields_*.csv"))
+          links=list(base.glob("unverified_local_oid_candidates_*.csv"))
+          assert fields and links
+          assert sum(1 for f in fields for _ in list(csv.DictReader(f.open(encoding="utf-8",newline=""))))==rep["native_typed_fields_exported"]
+          for f in links:
+              with f.open(encoding="utf-8",newline="") as stream:
+                  assert all(row["is_verified_fk"]=="0" for row in csv.DictReader(stream))
+          print("Native property decode verified")
+          PY
+          code=$?
+          cat UnPack/2.0.1/Resources/Localization/M9/Properties/Diagnostics/verify.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Persist diagnostics
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p UnPack/2.0.1/Resources/Localization/M9/Properties/Diagnostics
+          printf 'tests=%s\ndecode=%s\nverify=%s\nrun_id=%s\n' \
+            "${{ steps.tests.outputs.exit_code }}" \
+            "${{ steps.decode.outputs.exit_code }}" \
+            "${{ steps.verify.outputs.exit_code }}" \
+            "${{ github.run_id }}" > UnPack/2.0.1/Resources/Localization/M9/Properties/Diagnostics/status.txt
+
+      - name: Save artifacts including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-m9-properties-${{ github.run_id }}
+          path: UnPack/2.0.1/Resources/Localization/M9/Properties
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Publish verified property indexes or bounded failure logs
+        if: always()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ "${{ steps.tests.outputs.exit_code }}" = 0 ] &&
+             [ "${{ steps.decode.outputs.exit_code }}" = 0 ] &&
+             [ "${{ steps.verify.outputs.exit_code }}" = 0 ]; then
+            git add -A -- UnPack/2.0.1/Resources/Localization/M9/Properties
+          else
+            git add -A -- UnPack/2.0.1/Resources/Localization/M9/Properties/Diagnostics
+          fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9): source-hashed native KIDSOBJDB typed properties and OID candidates"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
+
+      - name: Reject incomplete KIDS native property decoding
+        if: always()
+        shell: bash
+        run: |
+          test "${{ steps.tests.outputs.exit_code }}" = 0
+          test "${{ steps.decode.outputs.exit_code }}" = 0
+          test "${{ steps.verify.outputs.exit_code }}" = 0
