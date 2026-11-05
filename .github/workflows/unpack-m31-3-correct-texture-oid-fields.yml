@@ -1,0 +1,92 @@
+name: M31.3 - Audit 628 native StaticScreenLayoutTextures field semantics
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m31_3_correct_628_static_texture_fields.py"
+      - ".github/workflows/unpack-m31-3-correct-texture-oid-fields.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m31-3-object-fields-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check-original-628-static-texture-typed-fields:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout source-qualified KIDSOBJDB and 629 provenance rows
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          fetch-depth: 0
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native/root_019167_50ae86ef.kidsobjdb
+            UnPack/2.0.1/Resources/Pokemon/NativeRecoveryM25/m25_8_complete_native_629_kids_icon_source_index.csv
+            Scripts/resources/m16_verify_pokemon_texture_kidsobjdb.py
+            Scripts/resources/m31_3_correct_628_static_texture_fields.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Selftest original StaticScreenLayoutTextures property labels
+        run: python -m Scripts.resources.m31_3_correct_628_static_texture_fields --self-test
+
+      - name: Confirm all source and wrap-object raw fields against M25
+        run: python -m Scripts.resources.m31_3_correct_628_static_texture_fields
+
+      - name: Ensure no legacy target_texture_oid semantic promotion
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M31")
+          s=json.loads((p/"m31_3_original_628_source_field_semantics_summary.json").read_text(encoding="utf-8"))
+          with (p/"m31_3_corrected_628_native_texture_object_fields.csv").open(encoding="utf-8",newline="") as f:
+              rows=list(csv.DictReader(f))
+          assert len(rows)==s["original_icon_source_OID_records_verified"]==628
+          assert s["source_OID_records_three_typed_property_fields_verified"]==628
+          assert s["original_root_kids_sha256"]=="86f90b4c11da9bc2b3e28889a5090ff507f96ca713fe4fad1dd50f6f692d7541"
+          assert s["original_field_name_hashes"]=={
+            "LayoutTexturesRenderStateObjectHash":"c8bb66da",
+            "LayoutTexturesInfoDataResourceHash":"2276fc56",
+            "WrapStaticScreenLayoutTexturesObjectHash":"2856a1b3"}
+          assert s["all_original_property_raw_values_match_M25_legacy_columns"]
+          assert s["M25_column_target_texture_oid_is_original_wrap_static_screen_layout_textures_object_hash"]
+          assert s["unique_original_wrap_object_hashes"]==628
+          assert not s["direct_source_to_final_texture_object_relation_proven"]
+          assert not s["native_species_id_to_icon_source_OID_proven"]
+          assert all(not r["native_game_species_id_verified"] and
+                     not r["native_game_villager_id_verified"] for r in rows)
+          print("PASS 628 original typed KIDS property names and conservative column semantics")
+          PY
+
+      - name: Upload 628 corrected native source-field mapping
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m31-3-corrected-628-original-StaticScreenLayoutTextures-provenance
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M31/m31_3_*
+          if-no-files-found: warn
+
+      - name: Commit corrected Source OID and wrap hash provenance
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M31/m31_3_*
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m31.3): verify 628 real KIDS source fields and rename legacy texture target to wrap hash"
+          for n in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
