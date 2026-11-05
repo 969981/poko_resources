@@ -14,8 +14,9 @@ static void Print(object value) => Console.WriteLine(JsonSerializer.Serialize(va
 
 if (args.Length < 2)
 {
-    Console.Error.WriteLine("usage: dotnet run --project Pokopia.Binary.Cli -- [rdx|rdb|idrk|kids|texinfo|triple|find-triple] FILE [args]");
-    Console.Error.WriteLine("rdb needs RDX_RECORD_COUNT; idrk/triple need OFFSET; find-triple needs OBJECT_HASH G1T_HASH TEXINFO_HASH (hex).");
+    Console.Error.WriteLine("usage: dotnet run --project Pokopia.Binary.Cli -- [rdx|rdb|idrk|kids|kids-fields|audit-fdata|texinfo|triple|find-triple] FILE [args]");
+    Console.Error.WriteLine("rdb needs RDX_RECORD_COUNT; idrk/triple need OFFSET; kids-fields accepts SAMPLE_COUNT (0..32).");
+    Console.Error.WriteLine("audit-fdata needs ROOT.RDB ROOT.RDX FDATA_ROOT; find-triple needs OBJECT_HASH G1T_HASH TEXINFO_HASH (hex).");
     return 2;
 }
 
@@ -38,6 +39,16 @@ try
             break;
         case "kids":
             Print(KidsObjDbReader.Inspect(input));
+            break;
+        case "kids-fields":
+            int sampleCount = args.Length >= 3
+                ? int.Parse(args[2], CultureInfo.InvariantCulture) : 8;
+            foreach (var row in KidsFieldReader.Read(input, sampleCount)) Print(row);
+            break;
+        case "audit-fdata":
+            if (args.Length < 4) throw new ArgumentException("audit-fdata needs RDB RDX FDATA_ROOT");
+            using (var rdx = File.OpenRead(args[2]))
+                foreach (var row in FdataAuditor.Read(input, rdx, args[3])) Print(row);
             break;
         case "texinfo":
             foreach (var row in TexinfoReader.Read(input)) Print(row);
