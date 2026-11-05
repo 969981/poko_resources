@@ -1,0 +1,92 @@
+name: Pokopia.Binary - .NET 10 native reader checks
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Pokopia.Binary/**"
+      - "Pokopia.Binary.Cli/**"
+      - "Pokopia.Binary.Checks/**"
+      - "ThirdParty/Edoke"
+      - ".gitmodules"
+      - ".github/workflows/pokopia-binary-dotnet10.yml"
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Pokopia.Binary/**"
+      - "Pokopia.Binary.Cli/**"
+      - "Pokopia.Binary.Checks/**"
+      - "ThirdParty/Edoke"
+      - ".gitmodules"
+      - ".github/workflows/pokopia-binary-dotnet10.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pokopia-binary-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout .NET projects, pinned Edoke submodule, and one native atlas
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          submodules: recursive
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.gitmodules
+            /ThirdParty/Edoke
+            /Pokopia.Binary/**
+            /Pokopia.Binary.Cli/**
+            /Pokopia.Binary.Checks/**
+            /UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_042753_b4b1fe49.texinfo
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+      - name: Confirm pinned Edoke is present
+        shell: bash
+        run: |
+          test -f ThirdParty/Edoke/Edoke/Edoke.csproj
+          git -C ThirdParty/Edoke rev-parse HEAD
+      - name: Build all projects in Release mode
+        run: |
+          dotnet build Pokopia.Binary/Pokopia.Binary.csproj -c Release
+          dotnet build Pokopia.Binary.Cli/Pokopia.Binary.Cli.csproj -c Release
+          dotnet build Pokopia.Binary.Checks/Pokopia.Binary.Checks.csproj -c Release
+      - name: Run synthetic cases and original 1333-record TEXINFO check
+        run: |
+          dotnet run --project Pokopia.Binary.Checks -c Release --no-build -- \
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_042753_b4b1fe49.texinfo
+      - name: Cross-check .NET native TEXINFO export with independent Python byte parsing
+        shell: bash
+        run: |
+          dotnet run --project Pokopia.Binary.Cli -c Release --no-build -- \
+            texinfo UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_042753_b4b1fe49.texinfo \
+            > /tmp/texinfo-dotnet.ndjson
+          python3 - <<'PY'
+          import json
+          import pathlib
+          import struct
+          raw = pathlib.Path("UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_042753_b4b1fe49.texinfo").read_bytes()
+          rows = [json.loads(x) for x in pathlib.Path("/tmp/texinfo-dotnet.ndjson").read_text().splitlines()]
+          n, = struct.unpack_from("<I", raw, 0)
+          assert n == 1333 and len(raw) == 4 + n * 104 and len(rows) == n
+          for i, row in enumerate(rows):
+              p = 4 + i * 104
+              name = raw[p:p+64].split(b"\0", 1)[0].decode("ascii")
+              layer, = struct.unpack_from("<I", raw, p+64)
+              uv = struct.unpack_from("<8f", raw, p+68)
+              tail, = struct.unpack_from("<I", raw, p+100)
+              assert row["RecordIndex"] == i and row["Name"] == name, i
+              assert row["TextureLayerRawU32"] == layer and row["RecordTailRawU32"] == tail, i
+              assert all(abs(x-y) < 1e-6 for x, y in zip(row["UvCorners"], uv)), i
+          print(f"PASS .NET/Python byte parity: {n} TEXINFO records")
+          PY
