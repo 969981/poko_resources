@@ -213,3 +213,48 @@ RNK 物理文件仍未取得；脚本→M7 正式外键仍 **0**。
 **两个入口都在原生 .data 中找到精确 qword，位置相差 0x100 字节**。两处静态指针块相邻且共享若干外部函数指针布局，增强了“相关虚回调接口”的结构假设，但尚未通过实例 vptr、注册器构造和 x3 实参证明它们运行时属于同一类／同一 owner。报告 exefs_owner_two_callback_pointer_tables.json 中仍保持 registered_dispatch_consumer_proven=false、same_runtime_owner_type_proven=false。
 
 M9.17 的具体静态间接调用点 main+0xD58F10/slot0 已闭合到 owner+0x28；**目标描述符 slot+0x38 的实际调用点仍未闭合**。RNK 三个 FDATA 物理来源与脚本→M7 外键状态也保持未完成，不能升级证据。
+
+## M9.19–M9.22 — 回调表、完整函数体与真正的 `+0x38` 接收者（2026-11-05）
+
+### M9.19 — 静态回调槽不等于已经证明的 vptr
+
+- [Actions #41962144836](https://github.com/969981/poko_resources/actions/runs/41962144836) **Success**。两组原生 .data 指针 `0x32FDE38→main+0xD58E34`、`0x32FDF38→main+0xD590E0` 逐字节验证。
+- 假设各回调均位于其 vptr+0x38，则推得两个候选 vptr `0x32FDE00`、`0x32FDF00`。完整原生 code 的精确 ADRP+ADD（含相邻 ADD）引用结果 **0 条**。此负例不能排除间接登记，但不能认定派生地址点为真正 vptr。
+- 文件 `exefs_owner_callback_vptr_base_probes.json`。
+
+### M9.20 — 两组静态回调表的 12 个邻近函数
+
+- [Actions #41962522416](https://github.com/969981/poko_resources/actions/runs/41962522416) **Success**。首次 [#41962440001](https://github.com/969981/poko_resources/actions/runs/41962440001) 失败原因仅为三条 LDR 解包错误及合成测试表缓冲区不足，已经修复。首次失败未形成原生数据结论。
+- 构造回调表 `0x32FDF38→main+0xD590E0` 的相邻函数槽 `0x32FDF40→main+0xD592B4` 已确认；它从 x3 取得持有者。
+- 第一版分析遇到 ARM64 跳转表 `BR x9` 会提前停止，故不能用第一版的 0 个连续 +0x38 调用形态宣布全函数没有消费者。文件 `exefs_owner_sibling_callback_consumers.json`。
+
+### M9.21 — 四个限定函数体全量反汇编
+
+- [Actions #41962777294](https://github.com/969981/poko_resources/actions/runs/41962777294) **Success**。限定 `0xD58E34..0xD58F50`、`0xD58F60..0xD58FF4`、`0xD590E0..0xD592B4`、`0xD592B4..0xD593AC` 四段，恢复 **287 条原生指令**，其中 x3→x19 有 3 处，owner+0x28 成员读取 4 处，跳转表 BR 3 处。
+- 构造侧第二回调 `main+0xD592B4` 中，`main+0xD59310` 和 `main+0xD59340` 读取 `[x19+0x28]`；`main+0xD59364..D59370` 经 vptr 首槽作 BLR，`main+0xD59388` 清空持有者成员。这支持与 M9.17 相似的对象生命周期结构，但同一运行时实例未验证。
+- 原始字节、全部指令与分支结构：`exefs_owner_complete_callback_control_flow.json`。
+
+### M9.22 — `main+0xD59250` 是 x22 的 +0x38 调用，并非已知内部 x23 对象
+
+- [Actions #41963059933](https://github.com/969981/poko_resources/actions/runs/41963059933) **Success**。原始 NSO、M9.21 指令 SHA/机器码交叉校验，关键数据流如下：
+
+```asm
+main+0xD591A0  mov x22, x0          ; 保存第一对象
+main+0xD591A4  ldr x8, [x0]
+main+0xD591A8  ldr x8, [x8, #0x30]
+main+0xD591AC  blr x8              ; 返回值在 x0
+main+0xD591B0  mov x23, x0         ; 第二个对象的来源
+main+0xD591C8  stp x8, xzr, [x23] ; 赋已知内部 vptr 0x32FDFA0
+...
+main+0xD59240  mov x0, x22
+main+0xD59244  ldr x8, [x22]       ; 当前 this 为 x22
+main+0xD5924C  ldr x8, [x8, #0x38]
+main+0xD59250  blr x8
+main+0xD59274  str x23, [x19, #0x28]
+```
+
+- 已验证 x22、x23 在关键区间无寄存器重赋值，二者来源分别是第一次虚调用前的 x0 与调用后的 x0。**来源不同不等于运行时指针一定不相等。**
+- **关键否定证据**：此前看见的 `vptr+0x38` 调用实际上从 **x22** 读取虚表，而已知 `0x32FDFA0` 的 vptr 被写入新对象 **x23**。因此 **不能把 `main+0xD59250` 的 BLR 认定为 `main+0xD59420` 描述符回调成功调用**。
+- 文件 `exefs_constructor_slot38_receiver_provenance.json`。
+
+**当前边界：** 已证实回调表、各自函数体、x3→owner+0x28 的局部路径、slot0 静态间接调用，以及一次接收者为 x22 的 slot+0x38 指令。尚未证实特定内部 x23 的 slot+0x38 消费者、相同 x3 实例的上层真实调用者、KIDSOBJDB getter 或剧情任务建筑到 M7 的正式新外键（仍 0）。物理 `0xea42a223.fdata`、`0x5c83387f.fdata`、`0x898afd6d.fdata` 仍缺失，RNK/IRNK 不能由 Hash 推断生成。`main` 不受影响。
