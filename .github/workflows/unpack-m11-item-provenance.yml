@@ -1,0 +1,103 @@
+name: M11 - native 2.0.1 item record ARM64 provenance and quantity caller triage
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/trace_native_item_provenance.py"
+      - "Scripts/resources/trace_native_item_decisions.py"
+      - "Scripts/resources/trace_native_item_resource_loader.py"
+      - "tests/test_trace_native_item_resource_loader.py"
+      - "tests/test_trace_native_item_decisions.py"
+      - "tests/test_trace_native_item_provenance.py"
+      - ".github/workflows/unpack-m11-item-provenance.yml"
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/trace_native_item_provenance.py"
+      - "Scripts/resources/trace_native_item_decisions.py"
+      - "Scripts/resources/trace_native_item_resource_loader.py"
+      - "tests/test_trace_native_item_resource_loader.py"
+      - "tests/test_trace_native_item_decisions.py"
+      - "tests/test_trace_native_item_provenance.py"
+      - ".github/workflows/unpack-m11-item-provenance.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  original-exefs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /2.0.1/exefs/main
+            /UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin
+            /Scripts/resources/trace_native_species_item_callers.py
+            /Scripts/resources/trace_native_item_provenance.py
+            /Scripts/resources/trace_native_item_decisions.py
+            /Scripts/resources/trace_native_item_resource_loader.py
+            /tests/test_trace_native_item_resource_loader.py
+            /tests/test_trace_native_item_decisions.py
+            /tests/test_trace_native_item_provenance.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install bounded native NSO and ARM64 readers
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+      - name: Validate ARM64 loads, branch barriers and register dataflow
+        run: python -m unittest discover -s tests -p "test_trace_native_item_provenance.py" -v
+      - name: Synthetic native byte conditional consumers with negative controls
+        run: python -m unittest discover -s tests -p "test_trace_native_item_decisions.py" -v
+      - name: Synthetic original 983 call/global-store and address-negative tests
+        run: python -m unittest discover -s tests -p "test_trace_native_item_resource_loader.py" -v
+      - name: Analyze actual original ExeFS with 4600 x 68 source hash lock
+        run: python -m Scripts.resources.trace_native_item_provenance
+      - name: Follow original byte loads into conditional uses
+        run: python -m Scripts.resources.trace_native_item_decisions
+      - name: Verify exact 983 call chain and global pointer evidence in original main
+        run: python -m Scripts.resources.trace_native_item_resource_loader
+      - name: Enforce source coverage and absence of unsupported semantic claims
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          folder=Path("UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M11")
+          report=json.loads((folder/"item_consumer_register_provenance.json").read_text())
+          assert report["source_main_sha256"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert report["source_00983_sha256"]=="2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f"
+          assert report["inspected_instruction_slots"]==10298656
+          assert report["item_record_stride"]==68 and report["item_header_count"]==4600
+          assert not report["verified_00983_loader_or_base_producer"]
+          assert not report["verified_item_category_consumer"]
+          assert not report["verified_material_type_enum"]
+          assert not report["verified_99_stack_merge_limit"]
+          decision=json.loads((folder/"field_condition_dataflow.json").read_text())
+          assert not decision["confirmed_item_record_base"] and not decision["confirmed_material_type_enum"]
+          assert decision["main_sha256"]==report["source_main_sha256"]
+          loader=json.loads((folder/"literal983_global_provenance.json").read_text())
+          assert len(loader["literal_983_call_chains"])==2
+          assert loader["global_rva"]=="0x36d54c8"
+          assert not loader["confirmed_original_00983_table_pointer"]
+          assert not loader["confirmed_category_enum"] and not loader["confirmed_stack_limit"]
+          print("M11 original 983 call chains",len(loader["literal_983_call_chains"]),
+                "global xrefs",loader["global_xref_count"])
+          print("M11 conditions", decision["counters"], "total", decision["conditional_candidate_total"])
+          print("M11 native scanned slots", report["inspected_instruction_slots"],
+                "co-access candidate sites", report["coaccess_candidates_total"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m11-native-item-arm64-register-provenance
+          path: |
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M11/item_consumer_register_provenance.json
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M11/item_consumer_review_shortlist.json
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M11/field_condition_dataflow.json
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M11/field_condition_shortlist.json
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M11/literal983_global_provenance.json
+          retention-days: 30
