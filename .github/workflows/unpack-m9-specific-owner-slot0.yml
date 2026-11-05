@@ -1,0 +1,103 @@
+name: M9.17 - specific owner+0x28 virtual slot0 call target
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_specific_owner_slot0.py"
+      - "tests/test_m9_specific_owner_slot0.py"
+      - ".github/workflows/unpack-m9-specific-owner-slot0.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-17-specific-owner-slot0
+  cancel-in-progress: false
+
+jobs:
+  specific-native-callsite:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m9_verified_vptr_assignments.py
+            Scripts/resources/m9_rnk_exefs_xrefs.py
+            Scripts/resources/m9_owner_object_escape.py
+            Scripts/resources/m9_owner_local_callgraph.py
+            Scripts/resources/m9_specific_owner_slot0.py
+            tests/test_m9_specific_owner_slot0.py
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_x19_local_callgraph.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_specific_virtual_slot0.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Unit-test native owner source and branch register
+        env:
+          PYTHONPATH: "."
+        run: python -m unittest discover -s tests -p 'test_m9_specific_owner_slot0.py' -v
+
+      - name: Exact original NSO vptr ownership and slot0 native callsite
+        env:
+          PYTHONPATH: "."
+        run: |
+          python Scripts/resources/m9_specific_owner_slot0.py \
+            --main 2.0.1/exefs/main \
+            --m9-16 UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_x19_local_callgraph.json \
+            --dest UnPack/2.0.1/Resources/Localization/M9/NameTables
+
+      - name: Require specific static callsite, forbid unearned runtime and M7 claims
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_specific_virtual_slot0.json')
+          doc=json.loads(p.read_text(encoding='utf-8'))
+          r=doc['report']
+          assert r['status']=='M9_NATIVE_OWNER_MEMBER_VIRTUAL_SLOT0_CALLSITE_PROVEN'
+          assert r['constructor_argument_x3_to_owner_x19_verified']
+          assert r['consumer_argument_x3_to_owner_x19_verified']
+          assert r['same_member_offset_write_and_read_verified']
+          assert r['actual_indirect_callsite_pc_verified']==0xd58f10
+          assert r['resolved_vtable_slot0_target_if_object_vptr_unmodified']==0xd593cc
+          assert r['separate_descriptor_slot0x38_callback']==0xd59420
+          assert not r['specific_runtime_method_invocation_observed']
+          assert not r['same_runtime_owner_instance_verified']
+          assert not r['specific_descriptor_slot0x38_dispatch_verified']
+          assert r['new_script_scene_quest_building_M7_text_FKs']==0
+          print('M9.17 native owner field/virtual slot0 callsite PASS')
+          PY
+
+      - name: Upload source-verifiable native vptr trace
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m9-17-specific-owner-virtual-slot0
+          path: UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_specific_virtual_slot0.json
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Commit evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_specific_virtual_slot0.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9.17): owner-member virtual-slot0 callsite and original target bytes"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
