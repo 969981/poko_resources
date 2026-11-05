@@ -1,0 +1,17 @@
+{
+  "game_version": "2.0.1",
+  "native_texture_rows": 609,
+  "distinct_texture_names": 603,
+  "linked_png_and_kidsobjdb_index": 609,
+  "status_counts": {
+    "INDEX_PNG_AND_HASH_EDGE_LINKED": 609
+  },
+  "species_id_verified_count": 0,
+  "source_kinds": {
+    "ORIGINAL_NATIVE_G1T": 580,
+    "RECOVERED_DECODED_BLOB_ALIAS": 29
+  },
+  "texture_number_field_is_species_id": false,
+  "next_required_evidence": "Original native species/villager lookup table or a runtime sprite-binding consumer pointing to the same texture resource hash, plus visual cross-check",
+  "note": "609 rows are native source-qualified TEXINFO records, not 609 confirmed species. Numeric texture names are retained as unverified candidates."
+}
