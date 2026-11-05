@@ -1,0 +1,76 @@
+name: M14 - Validate original 48 material-group bytes and 50-guide crosswalk
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/export_native_material_candidate_crosswalk.py"
+      - "tests/test_export_native_material_candidate_crosswalk.py"
+      - ".github/workflows/unpack-m14-native-material-candidates.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m14-native-materials-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  original-item-records:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/export_native_material_candidate_crosswalk.py
+            tests/test_export_native_material_candidate_crosswalk.py
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/native_item_catalog.csv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Unit-test original source identity and 48 plus two reference exceptions
+        run: python -m unittest discover -s tests -p "test_export_native_material_candidate_crosswalk.py" -v
+
+      - name: Export exact 48 native group raw IDs and 2 cross-group examples with nine-language lookup
+        run: python -m Scripts.resources.export_native_material_candidate_crosswalk
+
+      - name: Keep candidate classification separate from original native enum proof
+        run: |
+          python - <<'PY'
+          import json,csv
+          from pathlib import Path
+          root=Path("UnPack/2.0.1/Resources/Items/Native_2.0.1")
+          d=json.loads((root/"native_material_candidate_summary.json").read_text(encoding="utf-8"))
+          with (root/"native_material_candidate_crosswalk.csv").open(encoding="utf-8",newline="") as f:
+              entries=list(csv.DictReader(f))
+          assert len(entries)==50
+          assert sum(int(r["raw_item_kind_candidate_u8_0x26"])==16 for r in entries)==48
+          assert d["reference_intersection_with_native_kind_16"]==48
+          assert not d["official_native_enum_name_verified"]
+          assert not d["game_original_item_983_loader_connected_to_consumer"]
+          print("Original native 48 candidates; public-guide 50 scope, 2 exceptions; no inflated original enum claim")
+          PY
+
+      - name: Commit auditable raw item ID and multilingual candidate crosswalk
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -- UnPack/2.0.1/Resources/Items/Native_2.0.1/native_material_candidate_crosswalk.csv UnPack/2.0.1/Resources/Items/Native_2.0.1/native_material_candidate_summary.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m14): crosswalk native raw material candidates to secondary 50-item reference"
+          for i in 1 2 3 4 5 6 7 8; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+            sleep 2
+          done
+          exit 1
