@@ -217,7 +217,7 @@ def selftest():
     decoded=shift_alu5(add)
     assert decoded and decoded["dst"]==1 and decoded["lhs"]==2
     assert decoded["shift_src"]==3 and decoded["shift"]==5
-    assert shift_alu5(add|(1<<10)) is None
+    assert shift_alu5(add|(1<<11)) is None
     assert is_movz31(0x528003E4) and not is_movz31(0x528003C4)
     # madd w1,w2,w3,w4
     mad=0x1B000000|(3<<16)|(4<<10)|(2<<5)|1
