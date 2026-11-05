@@ -1,0 +1,20 @@
+{
+  "status": "TYPED_KIDS_OBJECT_TO_TEXTURE_OBJECT_EDGE_VERIFIED__SPECIES_UNRESOLVED",
+  "original_source_count": 2,
+  "m17_original_edges": 603,
+  "verified_distinct_object_edges": 603,
+  "unique_source_oids": 603,
+  "unique_target_oids": 603,
+  "source_and_target_relationships": {
+    "distinct_g1t": 603,
+    "distinct_texinfo": 603,
+    "source_not_in_icon_index": 603
+  },
+  "source_hashes": {
+    "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native/root_019167_50ae86ef.kidsobjdb": "86f90b4c11da9bc2b3e28889a5090ff507f96ca713fe4fad1dd50f6f692d7541",
+    "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native/root_053829_e2e43333.kidsobjdb": "98c7f56f54155d9016f26a6510cb63fb8b016798d986aa3189e5c35fe3c8c1bb"
+  },
+  "known_pokemon_icon_rows": 609,
+  "species_id_bindings_verified": 0,
+  "required_next_step": "Inspect the native consumer or original RNK property name of 0x2856a1b3 and then trace a separate species/variant key to the same object. A typed object-edge alone is not species identity."
+}
