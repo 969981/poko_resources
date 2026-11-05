@@ -1,0 +1,35 @@
+{
+  "status": "M7_UNLINKED_NATIVE_STRUCTURE_AND_SCRIPT_TRIAGE_NOT_NEW_VERIFIED_MAPPING",
+  "native_unlinked_tables_scanned": 983,
+  "original_source_sha256_verified": 983,
+  "m7_linked_tables_excluded": 1755,
+  "m8_pinned_role_positive_controls": {
+    "2332": "Reactions",
+    "4942": "Skills"
+  },
+  "m8_pinned_source_files": 18,
+  "remaining_without_m8_role_identity": 965,
+  "maximal_shape_bitmap_runs": 107,
+  "runs_nine_or_more_and_divisible_by_nine": 57,
+  "exactly_nine_runs": 42,
+  "runs_longer_than_nine_divisible_by_nine": 15,
+  "source_files_in_nine_chunk_runs": 927,
+  "source_files_outside_nine_chunk_runs": 56,
+  "hypothetical_nine_chunks": 103,
+  "hypothesis_grades": {
+    "AMBIGUOUS_MULTI_GROUP_RUN_NOT_VERIFIED": 61,
+    "LOW_CONTENT_NOT_VERIFIED": 18,
+    "M8_PINNED_NATIVE_ROLE_TABLE": 2,
+    "STRUCTURE_AND_SCRIPT_HYPOTHESIS_NOT_VERIFIED": 22
+  },
+  "new_verified_locale_assignments": 0,
+  "new_verified_semantic_categories": 0,
+  "new_verified_script_callers": 0,
+  "warnings": [
+    "Same count/stride/nonempty bitmap is structural evidence, not proof of locale.",
+    "M7 anchors and M8 pinned role tables are positive controls only.",
+    "Chunk boundaries in >9-length runs are arbitrary and must not be promoted.",
+    "Unicode script witnesses provide prioritization, not definitive locale or narrative identity.",
+    "All native files were matched to the M7 SHA-256 inventory before analysis."
+  ]
+}
