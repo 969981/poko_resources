@@ -1,0 +1,25 @@
+{
+  "game_version": "2.0.1",
+  "original_exefs_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "verified_three_identity_or_list_rodata_anchors": 3,
+  "register_pokemon_num_is_associated_with_upto_1000_loop": true,
+  "pokemon_dex_id_anchor_has_three_u16_field_reads": [
+    4,
+    6,
+    8
+  ],
+  "pokemon_dex_id_u16_checked_up_to_500_values": true,
+  "main_pokemon_list_has_flag_byte_at_offset": "0x26",
+  "register_pokemon_num_handler": "0x27470e0",
+  "pokemon_dex_id_handler": "0x27470e0",
+  "main_pokemon_list_handler": "0x5a71e0",
+  "native_kids_class_global_refs_count": 7,
+  "native_kids_class_adjacent_global_refs_count": 3,
+  "direct_original_kids_property_method_call_count": 0,
+  "direct_original_type_getter_call_count": 0,
+  "exact_native_game_species_field_proven": false,
+  "same_instance_entity_id_to_kids_source_oid_proven": false,
+  "native_villager_ID_to_icon_OID_verified": false,
+  "native_species_ID_to_texture_OID_verified": false,
+  "note": "RegisterPokemonNum is used beside global counter and loops; pokemon_dex_id is used as a rodata key with x21 and bounded u16/bitsets; m_mainPokemonList accompanies x19+0x26 flag byte and conditional general handler. All are CODE facts, not proof these are the sprite-selection consumers. Direct BL calls to virtual methods are insufficient to cover BLR."
+}
