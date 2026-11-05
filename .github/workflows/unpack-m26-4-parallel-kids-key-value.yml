@@ -1,0 +1,86 @@
+name: M26.4 - Original paired 3543-u32 KIDS key and source OID arrays
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m26_4_parallel_3543_key_value_arrays.py"
+      - ".github/workflows/unpack-m26-4-parallel-kids-key-value.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m26-4-parallel-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  original-parallel-array-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout pinned original KIDS object and complete 629 source map
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m16_verify_pokemon_texture_kidsobjdb.py
+            Scripts/resources/m26_4_parallel_3543_key_value_arrays.py
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native/root_019167_50ae86ef.kidsobjdb
+            UnPack/2.0.1/Resources/Pokemon/NativeRecoveryM25/m25_8_complete_native_629_kids_icon_source_index.csv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Selftest original array dimensions and candidate hashing
+        run: python -m Scripts.resources.m26_4_parallel_3543_key_value_arrays --self-test
+
+      - name: Compare all 3543 paired native KIDS fields and identify opaque key distribution
+        run: python -m Scripts.resources.m26_4_parallel_3543_key_value_arrays
+
+      - name: Validate all 628 indexed original icon source OIDs and uncertain hash semantics
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26")
+          summary=json.loads((p/"m26_4_parallel_arrays_analysis.json").read_text(encoding="utf-8"))
+          with (p/"m26_4_original_3543_parallel_key_value_pairs.csv").open(encoding="utf-8",newline="") as f:
+              rows=list(csv.DictReader(f))
+          assert len(rows)==summary["original_parallel_array_element_count"]==3543
+          assert summary["verified_M25_native_icon_source_OID_pairs"]==628
+          assert summary["original_first_array_hash"]=="0xe88c8d60"
+          assert summary["original_second_array_hash"]=="0x34cbb458"
+          assert summary["parallel_arrays_exactly_adjacent"]
+          assert sum(r["icon_source_oid_matches_original_registry"]=="1" for r in rows)==628
+          assert not summary["native_game_species_id_to_array_index_proven"]
+          assert not summary["original_first_array_semantic_identity_proven"]
+          print("M26.4 all raw parallel key/value entries verified")
+          PY
+
+      - name: Upload full original KIDS source array
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m26-4-3543-native-paired-KIDS-array-entries
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26/m26_4_*
+          if-no-files-found: warn
+
+      - name: Commit source-byte pair and hash candidate report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26/m26_4_*
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m26.4): all 3543 source-byte KIDS paired array entries and conservative hash candidates"
+          for i in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
