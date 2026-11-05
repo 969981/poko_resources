@@ -17,7 +17,12 @@ from functools import lru_cache
 import struct
 from pathlib import Path
 
-from g1t_to_png import parse_g1t, decode_png, parse_texinfo
+try:
+    # Package import for unit tests and `python -m Scripts.resources...`.
+    from Scripts.resources.g1t_to_png import parse_g1t, decode_png, parse_texinfo
+except ModuleNotFoundError:
+    # Direct execution: `python Scripts/resources/trace_item_textures.py`.
+    from g1t_to_png import parse_g1t, decode_png, parse_texinfo
 
 COLUMNS = ["item_id", "sprite_name", "variant", "texinfo_hash", "g1t_hash",
            "g1t_pack", "g1t_bytes", "object_hash", "objdb_file",
