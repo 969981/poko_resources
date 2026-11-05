@@ -1,0 +1,107 @@
+{
+  "report": {
+    "status": "M9_NATIVE_OBJECT_VPTR_STORE_AND_CALLBACK_SLOT_VERIFIED",
+    "original_exefs_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+    "original_vptr_stores_verified": 2,
+    "descriptor_callback_table_slots_verified": 1,
+    "verified_runtime_indirect_dispatchers": 0,
+    "verified_native_kidsobjdb_getters": 0,
+    "verified_scene_quest_building_m7_text_foreign_keys": 0,
+    "evidence_grade": "ORIGINAL_ARM64_REGISTER_FLOW_AND_VTABLE_POINTER_BYTES",
+    "limitations": [
+      "Vptr write and callback slot membership are proven for one original native class; its semantic type is unknown.",
+      "There is no demonstrated runtime BLR through that vptr+0x38 to the callback.",
+      "Object field getter and script/text foreign key remain unverified."
+    ]
+  },
+  "verified_stores": [
+    {
+      "site": "candidate_object_A",
+      "adrp_pc": 13996472,
+      "store_pc": 13996488,
+      "object_register": "x23",
+      "written_pointer": 53469088,
+      "store_instruction": "stp x8, xzr, [x23]",
+      "verified_original_arm64_vptr_assignment": true,
+      "verified_runtime_indirect_dispatch": false,
+      "verified_kidsobjdb_getter": false,
+      "verified_script_text_fk": false,
+      "step_instructions": [
+        {
+          "pc": 13996472,
+          "mnemonic": "adrp",
+          "op_str": "x8, #0x32fd000"
+        },
+        {
+          "pc": 13996476,
+          "mnemonic": "add",
+          "op_str": "x8, x8, #0xf90"
+        },
+        {
+          "pc": 13996480,
+          "mnemonic": "str",
+          "op_str": "wzr, [x23, #0x10]"
+        },
+        {
+          "pc": 13996484,
+          "mnemonic": "add",
+          "op_str": "x8, x8, #0x10"
+        },
+        {
+          "pc": 13996488,
+          "mnemonic": "stp",
+          "op_str": "x8, xzr, [x23]"
+        }
+      ],
+      "verified_callback_pointer_at_vptr_offset": true,
+      "vtable_callback_offset": 56,
+      "table_callback_pc": 13997088,
+      "associated_descriptor_hash_candidate": "0xf92c5190"
+    },
+    {
+      "site": "neighbor_object_B",
+      "adrp_pc": 13997612,
+      "store_pc": 13997632,
+      "object_register": "x22",
+      "written_pointer": 53469384,
+      "store_instruction": "stp x8, xzr, [x22]",
+      "verified_original_arm64_vptr_assignment": true,
+      "verified_runtime_indirect_dispatch": false,
+      "verified_kidsobjdb_getter": false,
+      "verified_script_text_fk": false,
+      "step_instructions": [
+        {
+          "pc": 13997612,
+          "mnemonic": "adrp",
+          "op_str": "x8, #0x32fe000"
+        },
+        {
+          "pc": 13997616,
+          "mnemonic": "add",
+          "op_str": "x8, x8, #0xb8"
+        },
+        {
+          "pc": 13997620,
+          "mnemonic": "str",
+          "op_str": "wzr, [x22, #0x20]"
+        },
+        {
+          "pc": 13997624,
+          "mnemonic": "stp",
+          "op_str": "xzr, xzr, [x22, #0x10]"
+        },
+        {
+          "pc": 13997628,
+          "mnemonic": "add",
+          "op_str": "x8, x8, #0x10"
+        },
+        {
+          "pc": 13997632,
+          "mnemonic": "stp",
+          "op_str": "x8, xzr, [x22]"
+        }
+      ],
+      "verified_callback_pointer_at_vptr_offset": false
+    }
+  ]
+}
