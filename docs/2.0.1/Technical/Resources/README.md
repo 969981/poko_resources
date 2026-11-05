@@ -23,3 +23,7 @@ updated: 2026-11-05
 **证据分级**：可读取原生字节 ≠ 建立纹理 Hash 索引 ≠ 生成 PNG ≠ 游戏内真实显示 ≠ ID / 类别含义被原生代码证明。物品 +0x26 的官方类别、逐物品堆叠上限、原生村民/表情 ID 和宝可梦物种 ID 的直接关联仍待补证。
 
 原有 [Formats](../Formats/README.md)、[Samples](../Samples/README.md)、[Validation](../Validation/README.md) 和 [Resources 总账](../../../../UnPack/2.0.1/Resources/README.md) 仍适用。
+
+## M23：物品分类证据链下一步
+
+- [[08-M23-Native-Category-Proof]] · [GitHub M23 手册](08-M23-Native-Category-Proof.md)：GDB 动态读取 V1/V2 两级虚表目标，并把现场完整 68 字节与原版 00983.bin 逐项对账；尚无真实运行时验收结果，分类官方枚举未证明。
