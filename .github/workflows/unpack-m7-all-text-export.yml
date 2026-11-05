@@ -6,6 +6,11 @@ on:
     branches: ["2.0.1_unpack"]
     paths:
       - ".github/workflows/unpack-m7-all-text-export.yml"
+      - "Scripts/resources/export_native_text_files.py"
+      - "Scripts/resources/recover_native_text_ids.py"
+      - "tests/test_native_text_file_export.py"
+      - "UnPack/2.0.1/Resources/Localization/M7/nine_language_groups.csv"
+      - "UnPack/2.0.1/Resources/Localization/M7/native_table_inventory.csv"
 
 permissions:
   contents: write
