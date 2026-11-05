@@ -1,0 +1,28 @@
+{
+  "version": "2.0.1",
+  "original_source_26_texture_OIDs": 26,
+  "original_native_resource_hashes": 52,
+  "original_rdb_mapped_records": 52,
+  "original_rdb_unresolved_hashes": 0,
+  "resource_provenance_groups": [
+    {
+      "extension": "g1t",
+      "rdb_found": true,
+      "original_fdata": "0x00011c54.fdata",
+      "input_tracked": "True",
+      "native_alias_tracked": "True",
+      "count": 26
+    },
+    {
+      "extension": "texinfo",
+      "rdb_found": true,
+      "original_fdata": "0x00011c54.fdata",
+      "input_tracked": "True",
+      "native_alias_tracked": "False",
+      "count": 26
+    }
+  ],
+  "native_species_ids_verified": 0,
+  "native_villager_ids_verified": 0,
+  "warning": "TEXINFO hash absent from RDB may be an object-internal hash or resource variant. Never invent corresponding physical archive or image."
+}
