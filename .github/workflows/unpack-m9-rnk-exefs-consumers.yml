@@ -1,0 +1,194 @@
+name: M9.3 - recover RNK names and survey native attribute hash consumers
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_rnk_name_tables.py"
+      - "Scripts/resources/m9_rnk_exefs_consumers.py"
+      - "tests/test_m9_rnk_name_tables.py"
+      - "tests/test_m9_rnk_exefs_consumers.py"
+      - ".github/workflows/unpack-m9-rnk-exefs-consumers.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-rnk-name-consumers
+  cancel-in-progress: false
+
+jobs:
+  rnk-and-consumers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Sparse checkout original KIDSOBJDB, M3 index, ExeFS and parsers
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          persist-credentials: true
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m9_rnk_name_tables.py
+            Scripts/resources/m9_rnk_exefs_consumers.py
+            Scripts/resources/trace_native_species_item_callers.py
+            tests/test_m9_rnk_name_tables.py
+            tests/test_m9_rnk_exefs_consumers.py
+            UnPack/2.0.1/_reports/m3_resource_type_index.csv
+            UnPack/2.0.1/Resources/Localization/M9/m3_object_sources.csv
+            UnPack/2.0.1/Resources/Localization/M9/Properties/m9_typed_field_report.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xe634eeb2.fdata/decoded/root_042257_b290631c.fdata_idrk.bin
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/decoded/root_049334_cfd2bd1f.fdata_idrk.bin
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata/decoded/root_049689_d14d76ef.fdata_idrk.bin
+            2.0.1/exefs/main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install NSO LZ4 decoder
+        run: python -m pip install "lz4>=4,<5"
+
+      - name: Test RNK and AArch64 parsers
+        id: tests
+        shell: bash
+        run: |
+          mkdir -p UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics
+          set +e
+          python -m unittest discover -s tests -p 'test_m9_rnk_*.py' -v \
+            > UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/tests.log 2>&1
+          code=$?
+          cat UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/tests.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Follow original KIDSOBJDB name-resource hashes to M3 and decode RNK
+        if: steps.tests.outputs.exit_code == '0'
+        id: names
+        shell: bash
+        run: |
+          set +e
+          python Scripts/resources/m9_rnk_name_tables.py \
+            --sources UnPack/2.0.1/Resources/Localization/M9/m3_object_sources.csv \
+            --m3-index UnPack/2.0.1/_reports/m3_resource_type_index.csv \
+            --unpack-root UnPack/2.0.1 \
+            --dest UnPack/2.0.1/Resources/Localization/M9/NameTables \
+            > UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/names.log 2>&1
+          code=$?
+          tail -c 20000 UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/names.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Staticaly scan ExeFS NSO for RNK callers and property hash sites
+        if: steps.tests.outputs.exit_code == '0' && steps.names.outputs.exit_code == '0'
+        id: exefs
+        shell: bash
+        run: |
+          set +e
+          python Scripts/resources/m9_rnk_exefs_consumers.py \
+            --main 2.0.1/exefs/main \
+            --typed-report UnPack/2.0.1/Resources/Localization/M9/Properties/m9_typed_field_report.json \
+            --rnk-report UnPack/2.0.1/Resources/Localization/M9/NameTables/rnk_report.json \
+            --dest UnPack/2.0.1/Resources/Localization/M9/NameTables \
+            > UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/exefs.log 2>&1
+          code=$?
+          tail -c 20000 UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/exefs.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Validate native hash origin and fail-closed categories
+        if: steps.tests.outputs.exit_code == '0' && steps.names.outputs.exit_code == '0' && steps.exefs.outputs.exit_code == '0'
+        id: verify
+        shell: bash
+        run: |
+          set +e
+          python - <<'PY' > UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/verify.log 2>&1
+          import csv,json
+          from pathlib import Path
+          base=Path('UnPack/2.0.1/Resources/Localization/M9/NameTables')
+          r=json.loads((base/'rnk_report.json').read_text(encoding='utf-8'))
+          e=json.loads((base/'exefs_property_hash_consumers.json').read_text(encoding='utf-8'))
+          assert r['native_owner_files']==3,r
+          assert r['m3_index_records_inspected']==89507,r
+          assert sorted(x['native_object_count'] for x in r['rnk_source_resolution'])==[1330,31740,68397],r
+          assert r['numeric_oid_candidates_still_unverified']==87445,r
+          assert r['verified_scene_quest_building_text_foreign_keys']==0,r
+          assert r['verified_property_semantic_names']==0,r
+          assert e['confirmed_kidsobjdb_property_consumers']==0,e
+          assert e['confirmed_scene_quest_building_text_foreign_keys']==0,e
+          assert len(r['source_name_hashes'])==3,r
+          assert e['main_format']=='NSO0',e
+          for filename in ('rnk_owner_sources.csv','rnk_resource_candidates.csv',
+             'rnk_property_hash_matches.csv','rnk_object_id_matches.csv',
+             'exefs_static_hash_sites.csv'):
+              assert (base/filename).is_file(),filename
+          print('M9.3 VERIFIED',json.dumps({
+             'name_hashes':r['source_name_hashes'],
+             'rnk_sources':r['rnk_source_resolution'],
+             'strings':r['resolved_native_irnk_strings'],
+             'static_magic_hits':len(e['magic_literals']),
+             'arm64_immediate_candidates':len(e['arm64_immediate_candidates']),
+             'confirmed_semantic_foreign_keys':0,
+          },ensure_ascii=False,indent=2))
+          PY
+          code=$?
+          cat UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/verify.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Record exact run status
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics
+          printf 'tests=%s\nnames=%s\nexefs=%s\nverify=%s\nrun_id=%s\n' \
+            "${{ steps.tests.outputs.exit_code }}" \
+            "${{ steps.names.outputs.exit_code }}" \
+            "${{ steps.exefs.outputs.exit_code }}" \
+            "${{ steps.verify.outputs.exit_code }}" \
+            "${{ github.run_id }}" \
+            > UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/status.txt
+
+      - name: Upload result or failure logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m9-3-rnk-${{ github.run_id }}
+          path: UnPack/2.0.1/Resources/Localization/M9/NameTables
+          retention-days: 30
+
+      - name: Commit evidence or diagnostic failure
+        if: always()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ "${{ steps.tests.outputs.exit_code }}" = 0 ] &&
+             [ "${{ steps.names.outputs.exit_code }}" = 0 ] &&
+             [ "${{ steps.exefs.outputs.exit_code }}" = 0 ] &&
+             [ "${{ steps.verify.outputs.exit_code }}" = 0 ]; then
+            git add -A -- UnPack/2.0.1/Resources/Localization/M9/NameTables
+          else
+            git add -A -- UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics
+          fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9.3): recovered RNK identities and static ExeFS evidence or diagnostics"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
+
+      - name: Fail if data extraction or safeguards failed
+        if: always()
+        shell: bash
+        run: |
+          test "${{ steps.tests.outputs.exit_code }}" = 0
+          test "${{ steps.names.outputs.exit_code }}" = 0
+          test "${{ steps.exefs.outputs.exit_code }}" = 0
+          test "${{ steps.verify.outputs.exit_code }}" = 0
