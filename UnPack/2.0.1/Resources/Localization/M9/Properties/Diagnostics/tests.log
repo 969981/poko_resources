@@ -1,0 +1,23 @@
+test_m9_kidsobjdb_properties (unittest.loader._FailedTest.test_m9_kidsobjdb_properties) ... ERROR
+
+======================================================================
+ERROR: test_m9_kidsobjdb_properties (unittest.loader._FailedTest.test_m9_kidsobjdb_properties)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_m9_kidsobjdb_properties
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/home/runner/work/poko_resources/poko_resources/tests/test_m9_kidsobjdb_properties.py", line 5, in <module>
+    from Scripts.resources.m9_kidsobjdb_properties import parse_property_fields
+  File "/home/runner/work/poko_resources/poko_resources/Scripts/resources/m9_kidsobjdb_properties.py", line 18, in <module>
+    from m9_kidsobjdb_framing import decode_nodes
+ModuleNotFoundError: No module named 'm9_kidsobjdb_framing'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
