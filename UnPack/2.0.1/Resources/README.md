@@ -1,5 +1,11 @@
 # Pokopia 2.0.1 Resources — 道具、图标、多语言与纹理线索
 
+## M6 — 原生物品类别与数量字段审计（新增）
+
+已直接读取原版 LINKDATA `00983.bin`（4600 × 68 字节），导出 4600 条原始记录字段与分类候选（`+0x26`、`+0x3A`），并保留全量记录十六进制证据。注意 `+0x26` 的数值尚未证明为游戏官方分类枚举。单组游戏玩法上限 99 与存档 `byte` 的 255 表示范围属于不同层；未发现原生逐物品上限证据时，`native_max_stack` 保持空白。
+
+入口：[分类与上限证据说明](Items/Native_2.0.1/NATIVE_ITEM_FIELDS.md) · [逐物品原始字段 CSV](Items/Native_2.0.1/native_item_raw_fields.csv) · [字段分布 JSON](Items/Native_2.0.1/native_item_field_analysis.json) · [可复现脚本](../../../Scripts/resources/analyze_native_item_fields.py)。
+
 ## 当前原生资源验收状态（2026-11-05，以本节为准）
 
 以下是 **2.0.1 原版 RomFS 的当前核验结果**，后面 M3/M5 章节保留了早期探索记录，部分「尚未建立映射」的历史描述已被本节进展取代。
