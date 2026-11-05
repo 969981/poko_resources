@@ -58,3 +58,75 @@ M12：`M12/item_id_lookup_0x26_original_evidence.json`。
 M13：`M13/native_stride68_candidates.json`。
 
 以上全部为**只读静态分析**，没有提交可执行补丁。
+
+
+## M14–M19：双层对象虚调用、MOD0 重定位与静态反例（2026-11-05）
+
+### 真实调用链：这是 **两个不同对象的虚表**
+
+`main+0x2F1F0` 的原版反汇编对第一步和第二步有明确寄存器数据流：
+
+```asm
+main+0x2F200  adrp x8, #0x3561000
+main+0x2F204  add  x8, x8, #0x8F0
+main+0x2F208  ldr  x8, [x8]           ; registry instance
+main+0x2F20C  ldr  w9, [x8,#0x2B70]  ; registry size
+main+0x2F210  cmp  w9, #0xC7
+main+0x2F214  mov  w9, #0x638
+main+0x2F218  csel x9, x9, xzr, hi
+main+0x2F21C  add  x8, x8, x9
+main+0x2F220  ldr  x0, [x8,#0x10]    ; registry slot 0xC7 -> V1 object
+main+0x2F228  ldr  x8, [x0]          ; first object's V1 vtable
+main+0x2F22C  ldrh w19, [x1]         ; requested 16-bit item ID
+main+0x2F234  ldr  x8, [x8,#0x38]
+main+0x2F238  blr  x8               ; V1+0x38 -> second object
+main+0x2F240  ldr  x8, [x0]          ; second object's V2 vtable
+main+0x2F244  mov  w1, w19          ; item ID
+main+0x2F24C  ldr  x2, [x8,#0x30]
+main+0x2F258  br   x2               ; V2+0x30 -> item lookup, tail-call
+```
+
+原生查询路径应表达为：
+
+`registry_global -> instance[0x648] -> V1 object -> V1+0x38 -> V2 table object -> V2+0x30(itemID) -> wrapper -> wrapper+8 -> category candidate`。
+
+注意 `+0x648` 是 **registry 实例** 内的有效槽位偏移，不是静态 `main+0x35618F0+0x648`。
+
+### M14：NSO 动态重定位真实结构
+
+- `MOD0` 位于 `main+0x274A074`，属于 rodata；`text+4` 保存的是可直接定位该处的映像虚拟地址。
+- `dynamic` 位置 `main+0x3481968`，`RELA` 位于 `main+0x274A0B8`。
+- 1,760 项重定位，类型分别为 1,732 项 `R_AARCH64_ABS64 (257)`、28 项 `GLOB_DAT (1025)`，**没有** `RELATIVE (1027)` 项。
+- 另外从 rodata/data 原始字节找到 252,187 个指向代码段的静态指针单元，无法仅凭邻近指针密度认出 V1/V2 类别。
+
+### M15：全局注册表引用与偏移
+
+- 通过 `ADRP+ADD` 确认 `main+0x35618F0` 的引用；M15 原始扫描列出 2,689 处对应的字面地址配对。
+- `0xC7` 与 `0x638`、`0x648` 的关系由访问代码确立；但其他对象中出现 `[base+0x648]` 的写入 **不能**认作注册表成员写入。
+- `0xC7` 目标类的构造函数仍未定位。
+
+### M16–M18：排除未经证明的「连续注册」猜测
+
+- `main+0xFE8AF8` 与 `main+0xFE8C50` 将 `0xC7` 传入 `main+0xA70AD8` / `main+0xA70BB4`，前后连续出现 `0xC6`、`0xC8`。
+- 两个函数对输入 ID 做 `ID-1 <= 0x707` 范围检查，继续调用 `0xA6F9E0 / 0xA6FB20` 以及状态方法；**这不是针对 0xC7 表类的直接构造证据**。
+- `main+0x2F1F0` 是一个真实的两级虚调用 ID 查询包装函数，可作为之后的关键入口。
+
+### M17：指针表与 68 字节乘法交叉分析
+
+- 识别 8,960 组可能的函数指针数组起点，以及 200 处经线性常量传播筛选的 `×68` 指令。
+- 在候选虚表 `+0x30` 方法入口后 0x160 字节范围内没有直接匹配：**0 个**。
+- 这是有限范围的否定结果，不表示 V2 没有调用下层 helper、没有预构建指针索引，也不代表物品运行时记录一定是 68 字节。
+
+### M19：注册表全局指针的直接写入
+
+- 静态 `ADRP+ADD` 解析命中 2,689 处；
+- 经小范围寄存器生存期和无分支检查，**未定位**能证明直接写入 `[main+0x35618F0]` 的原生指令；
+- 全局初始化可能经过别名指针、通用初始化例程或跨函数传播；M19 并不能证明没有全局写入。
+
+### 当前真正未闭合的链条
+
+`V1 对象实际构造 -> V1+0x38 目标地址 -> 返回 V2 对象 -> V2+0x30 目标地址 -> wrapper+8 实际指针分配/加载 -> 00983.bin 原始 4600×68 记录`。
+
+**截至 M19：没有确认 V1/V2 的具体虚表目标函数，也没有确认 `ID × 68` 对应原始 00983.bin 数据基址；因此不可将当前候选归档为已恢复的完整原生分类枚举。**
+
+可复查证据在 `M14/`、`M15/`、`M16/`、`M17/`、`M18/`、`M19/` 目录中，对应 GitHub Actions 测试均采用原版 SHA-256 严格校验。
