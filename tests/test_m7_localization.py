@@ -32,6 +32,13 @@ class NativeTextTests(unittest.TestCase):
         self.assertEqual(table.rows[2][2],(8,))
         self.assertEqual(table.rows[0][1][0],64+3*8)
         self.assertEqual(table.nonempty,2)
+    def test_full_width_unicode_spaces_are_valid_text(self):
+        data=make([["なにを　しますか？"],["新刊公告　3月"],["おや　なにか　おさがしですか？"]])
+        table,status=parse(data,2323,"native/02323.bin")
+        self.assertEqual(status,"PARSED")
+        self.assertEqual(table.rows[0][0][0],"なにを　しますか？")
+        self.assertEqual(table.rows[1][0][0],"新刊公告　3月")
+
     def test_record32_six_raw_forms(self):
         data=make([["a","","b","","c",""],["d","e","","f","","g"]],width=32)
         t,status=parse(data,500,"test")
