@@ -41,6 +41,18 @@
       "0d34474d": 1
     },
     "type_hash_is_only_an_index_label": true,
+    "type_hash_labels_from_m3_types": {
+      "afbec60c": "g1t",
+      "f20de437": "texinfo",
+      "8e39aa37": "ktid",
+      "20a6a0bb": "kidsobjdb"
+    },
+    "missing_g1t_original_records": 557,
+    "missing_texinfo_original_files": 12,
+    "missing_texinfo_sprite_slots_upper_bound": 15,
+    "missing_ktid_original_records": 322,
+    "missing_kidsobjdb_original_records": 371,
+    "original_missing_texture_container_count": 5,
     "missing_image_identity_attributed_to_missing_fdata_count": 0,
     "caveat": "No direct per-portrait source path exists for the 79 missing reference PNGs, so 27 absent FDATA cannot be asserted to contain any of them."
   },
