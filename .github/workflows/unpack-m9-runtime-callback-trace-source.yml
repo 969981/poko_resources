@@ -1,0 +1,61 @@
+name: M9.23 - read-only GDB target trace source and validator unit tests
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_gdb_owner_callback_trace.py"
+      - "Scripts/resources/m9_runtime_callback_trace_validator.py"
+      - "tests/test_m9_runtime_callback_trace_validator.py"
+      - ".github/workflows/unpack-m9-runtime-callback-trace-source.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pokopia-m9-23-gdb-tracer-unit-tests
+  cancel-in-progress: false
+
+jobs:
+  validate-read-only-probe-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m9_gdb_owner_callback_trace.py
+            Scripts/resources/m9_runtime_callback_trace_validator.py
+            tests/test_m9_runtime_callback_trace_validator.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check tracer syntax without importing GDB
+        run: python -m py_compile Scripts/resources/m9_gdb_owner_callback_trace.py Scripts/resources/m9_runtime_callback_trace_validator.py
+
+      - name: Test synthetic record validation, not runtime execution
+        env:
+          PYTHONPATH: "."
+        run: python -m unittest discover -s tests -p 'test_m9_runtime_callback_trace_validator.py' -v
+
+      - name: Confirm this CI cannot claim live debugger hits
+        run: |
+          python - <<'PY'
+          from Scripts.resources.m9_runtime_callback_trace_validator import validate,SHA
+          import json
+          only_session=json.dumps({"kind":"m9_23_capture_session",
+            "main_base":"0x7100000000",
+            "expected_unrelocated_original_main_sha256":SHA})
+          r=validate([only_session])
+          assert r['breakpoint_hits']==0
+          assert r['inner_descriptor_entry_hits_with_expected_vptr_and_slot_bytes']==0
+          assert r['specific_vptr_slot0x38_indirect_call_path_proven'] is False
+          assert r['M7_script_text_foreign_keys_proven']==0
+          print('M9.23 source-only CI PASS; no real GDB capture claimed')
+          PY
