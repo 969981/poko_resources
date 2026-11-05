@@ -1,0 +1,402 @@
+{
+  "status": "REGISTRY_0XC7_REFERENCES__WRITER_CLASS_UNRESOLVED",
+  "sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "registry_index": "0xc7",
+  "registry_global_va": "0x35618f0",
+  "registry_slot_offset": "0x638",
+  "effective_registry_member_offset": "0x648",
+  "raw_opcode_counts": {
+    "add_sub:0x638": 87,
+    "add_sub:0x648": 77,
+    "add_sub:0xc7": 5,
+    "cmp:0x648": 4,
+    "cmp:0xc7": 1240,
+    "load:0x638": 185,
+    "load:0x648": 220,
+    "movz:0x638": 444,
+    "movz:0x648": 27,
+    "movz:0xc7": 147,
+    "registry_global_adrp_add": 2689,
+    "store:0x638": 151,
+    "store:0x648": 151
+  },
+  "id_opcode_total": 1387,
+  "slot_opcode_total": 871,
+  "registry_global_exact_adrp_add_total": 2689,
+  "proven_registry_writer": false,
+  "proven_registry_0xc7_class_constructor": false,
+  "proven_0xc7_vtable_plus30_function": false,
+  "proven_00983_record_pointer_source": false,
+  "top_candidates": [
+    {
+      "pc": "0xed90",
+      "kind": "store",
+      "value": "0x638",
+      "score_co_location_only": 9,
+      "near_global": [],
+      "near_slots": [
+        "0xeda8",
+        "0xedac",
+        "0xedc4"
+      ]
+    },
+    {
+      "pc": "0x10400",
+      "kind": "store",
+      "value": "0x638",
+      "score_co_location_only": 9,
+      "near_global": [],
+      "near_slots": [
+        "0x10418",
+        "0x1041c",
+        "0x10434"
+      ]
+    },
+    {
+      "pc": "0x2f210",
+      "kind": "cmp",
+      "value": "0xc7",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x2f200"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x3a654",
+      "kind": "cmp",
+      "value": "0xc7",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x3a4f0",
+        "0x3a644"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0xf3c4c",
+      "kind": "store",
+      "value": "0x638",
+      "score_co_location_only": 9,
+      "near_global": [],
+      "near_slots": [
+        "0xf3c54"
+      ]
+    },
+    {
+      "pc": "0xfc3cc",
+      "kind": "cmp",
+      "value": "0xc7",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0xfc49c"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x100924",
+      "kind": "cmp",
+      "value": "0xc7",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x100914"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x100ccc",
+      "kind": "cmp",
+      "value": "0xc7",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x100cbc"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x114fc0",
+      "kind": "load",
+      "value": "0x638",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x114e80",
+        "0x114f64",
+        "0x114fd8",
+        "0x11503c",
+        "0x1150a0",
+        "0x115104"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x115098",
+      "kind": "load",
+      "value": "0x648",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x114f64",
+        "0x114fd8",
+        "0x11503c",
+        "0x1150a0",
+        "0x115104",
+        "0x115198"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x115c14",
+      "kind": "cmp",
+      "value": "0xc7",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x115c40",
+        "0x115d2c"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x115d24",
+      "kind": "cmp",
+      "value": "0xc7",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x115c40",
+        "0x115d2c",
+        "0x115e18"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x118c74",
+      "kind": "cmp",
+      "value": "0xc7",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x118b20"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x119aa0",
+      "kind": "cmp",
+      "value": "0xc7",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x119a10",
+        "0x119aa8"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x119bbc",
+      "kind": "cmp",
+      "value": "0xc7",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x119aa8"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x11aa90",
+      "kind": "load",
+      "value": "0x638",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x11a94c",
+        "0x11aa34",
+        "0x11aaa8",
+        "0x11ab0c",
+        "0x11ab70",
+        "0x11abd4"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x11ab68",
+      "kind": "load",
+      "value": "0x648",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x11aa34",
+        "0x11aaa8",
+        "0x11ab0c",
+        "0x11ab70",
+        "0x11abd4",
+        "0x11ac64"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x11adac",
+      "kind": "load",
+      "value": "0x638",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x11ac64",
+        "0x11ad50",
+        "0x11adc4",
+        "0x11ae28",
+        "0x11ae8c",
+        "0x11aef0"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x11ae84",
+      "kind": "load",
+      "value": "0x648",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x11ad50",
+        "0x11adc4",
+        "0x11ae28",
+        "0x11ae8c",
+        "0x11aef0"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x11baac",
+      "kind": "load",
+      "value": "0x638",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x11b964",
+        "0x11ba50",
+        "0x11bac4",
+        "0x11bb28",
+        "0x11bb8c",
+        "0x11bbf0"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x11bb84",
+      "kind": "load",
+      "value": "0x648",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x11ba50",
+        "0x11bac4",
+        "0x11bb28",
+        "0x11bb8c",
+        "0x11bbf0"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x1276b8",
+      "kind": "cmp",
+      "value": "0xc7",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x1276a8"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x1515a0",
+      "kind": "cmp",
+      "value": "0xc7",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x151528"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x151fc8",
+      "kind": "cmp",
+      "value": "0xc7",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x151e50",
+        "0x151f3c"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x15ab48",
+      "kind": "cmp",
+      "value": "0xc7",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x15ab98"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x16e12c",
+      "kind": "load",
+      "value": "0x638",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x16dfc4"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x16e2b0",
+      "kind": "store",
+      "value": "0x638",
+      "score_co_location_only": 9,
+      "near_global": [],
+      "near_slots": [
+        "0x16e29c"
+      ]
+    },
+    {
+      "pc": "0x179894",
+      "kind": "cmp",
+      "value": "0xc7",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x1799c0"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x181008",
+      "kind": "store",
+      "value": "0x638",
+      "score_co_location_only": 9,
+      "near_global": [],
+      "near_slots": [
+        "0x181020"
+      ]
+    },
+    {
+      "pc": "0x1d7548",
+      "kind": "store",
+      "value": "0x648",
+      "score_co_location_only": 9,
+      "near_global": [],
+      "near_slots": [
+        "0x1d759c"
+      ]
+    },
+    {
+      "pc": "0x1f6064",
+      "kind": "cmp",
+      "value": "0xc7",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x1f6054"
+      ],
+      "near_slots": []
+    },
+    {
+      "pc": "0x1f6cc4",
+      "kind": "cmp",
+      "value": "0xc7",
+      "score_co_location_only": 9,
+      "near_global": [
+        "0x1f6c34",
+        "0x1f6cb4",
+        "0x1f6dac"
+      ],
+      "near_slots": []
+    }
+  ]
+}
