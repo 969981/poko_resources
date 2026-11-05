@@ -1,0 +1,20 @@
+{
+  "version": "2.0.1",
+  "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "original_registered_KIDS_class_count": 2,
+  "registered_class_labels": {
+    "ScreenLayoutTexturePackSettings": "0x9d1afa46",
+    "StaticScreenLayoutTextures": "0x79991e79"
+  },
+  "ScreenLayoutTexturePackSettings_origin_type_hash": "0x9d1afa46",
+  "StaticScreenLayoutTextures_origin_type_hash": "0x79991e79",
+  "named_typed_classes_same_static_ScreenLayout_registration_family": true,
+  "source_to_texture_property_hash": "0x2856a1b3",
+  "paired_texture_pack_key_array_hash": "0xe88c8d60",
+  "paired_texture_pack_object_array_hash": "0x34cbb458",
+  "static_original_class_metadata_chain_proven": true,
+  "runtime_texture_pack_query_consumer_proven": false,
+  "runtime_species_ID_or_form_selection_proven": false,
+  "game_ID_to_icon_Source_OID_proven": false,
+  "warning": "Two real class registrations and vtable property schemas are static metadata evidence, not a game instance/source lookup call. A common registrar x19 register may represent registry context, NOT a Pokémon object."
+}
