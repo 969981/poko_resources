@@ -59,7 +59,11 @@ jobs:
             "LayoutTexturesRenderStateObjectHash":"c8bb66da",
             "LayoutTexturesInfoDataResourceHash":"2276fc56",
             "WrapStaticScreenLayoutTexturesObjectHash":"2856a1b3"}
-          assert s["all_original_property_raw_values_match_M25_legacy_columns"]
+          assert s["all_original_wrap_hash_raw_values_match_M25_legacy_column"]
+          assert 0<=s["render_state_values_equal_legacy_M25_g1t_file_hash_count"]<=628
+          assert 0<=s["info_data_values_equal_legacy_M25_texinfo_file_hash_count"]<=628
+          assert not s["render_state_field_is_identical_to_M25_file_hash_without_check"]
+          assert not s["info_data_field_is_identical_to_M25_file_hash_without_check"]
           assert s["M25_column_target_texture_oid_is_original_wrap_static_screen_layout_textures_object_hash"]
           assert s["unique_original_wrap_object_hashes"]==628
           assert not s["direct_source_to_final_texture_object_relation_proven"]
