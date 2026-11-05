@@ -1,0 +1,63 @@
+{
+  "version": "2.0.1",
+  "original_root_rdx_sha256": "22a38306a19d7311e4c282b72714994a162a3e9c63454f9cc7caed38d614c5cd",
+  "original_root_rdb_sha256": "47f715d98cbe8718ce0c5e51dd4666c6587796a51f72b904a76bde8d227be786",
+  "original_rdb_entry_count": 60722,
+  "root_rdx_entry_count": 45,
+  "raw_ff03_rdx_entry_count": 10,
+  "raw_ff03_entries_present_in_git_archive": 0,
+  "priority_original_fdata": {
+    "0x03a38715.fdata": {
+      "rdx_position": 5,
+      "raw_platform_flag": "ff03",
+      "rdb_entries_checked": 623,
+      "inferred_type_hash_counts": {
+        "afbec60c": 227,
+        "8e39aa37": 180,
+        "563bdef1": 112,
+        "b340861a": 60,
+        "1ab40ae8": 24,
+        "56efe45c": 16,
+        "ed410290": 4
+      },
+      "g1t_records": 227,
+      "ktid_records": 180,
+      "stored_bytes_per_rdb": 31881791,
+      "unpacked_bytes_per_rdb": 88883092,
+      "first_7z_volume_tracked": false,
+      "source_container_recovered": false
+    },
+    "0xfd6af828.fdata": {
+      "rdx_position": 44,
+      "raw_platform_flag": "ff03",
+      "rdb_entries_checked": 525,
+      "inferred_type_hash_counts": {
+        "afbec60c": 294,
+        "8e39aa37": 133,
+        "563bdef1": 30,
+        "b340861a": 30,
+        "1ab40ae8": 25,
+        "56efe45c": 9,
+        "ed410290": 4
+      },
+      "g1t_records": 294,
+      "ktid_records": 133,
+      "stored_bytes_per_rdb": 50856868,
+      "unpacked_bytes_per_rdb": 183269008,
+      "first_7z_volume_tracked": false,
+      "source_container_recovered": false
+    }
+  },
+  "priority_original_g1t_records_verified_from_rdb": 521,
+  "g1t_reference_in_existing_native_index_counts": {
+    "NO_LINK_IN_THREE_EXISTING_SOURCE_INDICES": 521
+  },
+  "root_rdx_ff03_directory_semantics_proven": false,
+  "original_ff03_platform_owner_proven": false,
+  "original_priority_fdata_binary_bytes_available": false,
+  "missing_79_native_portrait_sources_verified": 0,
+  "native_species_id_bindings_verified": 0,
+  "native_villager_id_bindings_verified": 0,
+  "next_gate": "Find original ff03 source container(s), confirm platform and IDRK headers, or establish a game ID to typed object consumer chain.",
+  "warning": "No G1T hash hit in existing indices is NOT proof these FDATA contain no portraits; archives and native consumers were not recovered."
+}

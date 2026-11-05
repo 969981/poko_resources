@@ -1,0 +1,3 @@
+pointer_or_hash_cell,source_adrp_rva,source_second_instruction_rva,operation,gap_instructions,address_resolution_grade,semantic_consumer_proven,villager_id_to_object_proven
+0x34963b8,0xbb858c,0xbb85b8,LDR_X_CELL,11,LOOKAHEAD_REGISTER_LIVENESS_UNPROVEN,NO,NO
+0x34963b8,0xbb85b0,0xbb85b8,LDR_X_CELL,2,LOOKAHEAD_REGISTER_LIVENESS_UNPROVEN,NO,NO
