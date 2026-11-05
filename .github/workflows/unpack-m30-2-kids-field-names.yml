@@ -1,0 +1,88 @@
+name: M30.2 - Decode original KIDS field descriptor rodata labels
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m30_2_kids_descriptor_source_labels.py"
+      - ".github/workflows/unpack-m30-2-kids-field-names.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m30-2-field-names-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify-source-qualified-field-labels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout exact original NSO and descriptor decoding sources
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m20_native_species_item_targets.py
+            Scripts/resources/m30_2_kids_descriptor_source_labels.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pinned native NSO decoder
+        run: python -m pip install "lz4>=4,<5"
+
+      - name: Verify three descriptor pointer addresses before running
+        run: python -m Scripts.resources.m30_2_kids_descriptor_source_labels --self-test
+
+      - name: Decode original KIDS descriptor text pointers from NSO0 rodata
+        run: python -m Scripts.resources.m30_2_kids_descriptor_source_labels
+
+      - name: Certify native source hash and no game ID assertions
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M30")
+          result=json.loads((root/"m30_2_original_KIDS_field_descriptor_labels.json").read_text(encoding="utf-8"))
+          s=result["summary"]
+          assert len(result["original_descriptor_rows"])==3
+          assert s["original_main_sha256"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert s["all_pointer_targets_are_rodata_text"]
+          assert s["property_strings_are_not_function_pointers"]
+          assert not s["native_species_ID_to_KIDS_source_OID_proven"]
+          assert not s["game_villager_ID_to_texture_proven"]
+          assert all(x["source_section"]=="rodata" and x["nul_terminated"] and
+              not x["property_runtime_game_ID_field_verified"] for x in result["original_descriptor_rows"])
+          print("Verified original 3 KIDS descriptor text pointers and no unproved species ID")
+          PY
+
+      - name: Upload property-label source-byte evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m30-2-original-KIDS-three-property-labels
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M30/m30_2_*
+          if-no-files-found: warn
+
+      - name: Commit exact original property descriptor labels
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M30/m30_2_*
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m30.2): read exact KIDS property-label UTF8 bytes from original NSO"
+          for n in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
