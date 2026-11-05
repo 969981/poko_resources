@@ -1,0 +1,49 @@
+name: M29.1 - Strict original runtime GDB JSONL trace validator
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m29_1_validate_gdb_trace.py"
+      - ".github/workflows/unpack-m29-1-gdb-trace-validator.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  reject-unproven-game-ID-claims:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout M29 runtime evidence validator
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m29_1_validate_gdb_trace.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Python syntax-verify standalone validator
+        run: python -m py_compile Scripts/resources/m29_1_validate_gdb_trace.py
+
+      - name: Test original source PC, x30, descriptor and falsified-ID gates
+        run: python -m Scripts.resources.m29_1_validate_gdb_trace --self-test
+
+      - name: Audit no claim of a live emulator trace from CI
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          src=Path("Scripts/resources/m29_1_validate_gdb_trace.py").read_text(encoding="utf-8")
+          for symbol in ("same_session_is_same_runtime_instance_proof",
+                         "game_species_ID_to_KIDS_lookup_proven",
+                         "game_villager_ID_to_icon_proven",
+                         "static_code_Build_ID_verified_against_running_target"):
+              assert f'"{symbol}":False' in src
+          print("M29.1 mock-only tests; real game emulator runtime NOT connected")
+          PY
