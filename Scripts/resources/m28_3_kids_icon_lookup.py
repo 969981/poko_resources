@@ -7,6 +7,8 @@ Reproducible examples:
   python -m Scripts.resources.m28_3_kids_icon_lookup --verify-all
 
 A number in a TEXINFO resource name is NOT an authenticated game species ID.
+M31.5 corrected M25 target_texture_oid: that numeric value is a WRAPPER
+IDOK OID, not a final G1T/TEXINFO file or a directly selected sprite.
 Every result is checked against original 2.0.1 KIDSOBJDB bytes, 3543
 paired u32s and the M25 typed Source OID -> texture -> PNG index.
 """
@@ -61,6 +63,12 @@ def load():
     original=read_csv(INDEX)
     if len(original)!=629:raise ValueError("M25 typed texture provenance not complete")
     by_slot={}
+    by_slot_two_hop={}
+    def _scalar(node,hash_value):
+        prop=node["fields"].get(hash_value)
+        if not prop or prop["kind"]!=5 or prop["count"]!=1:
+            raise ValueError(f"Original typed KIDS field missing {hash_value:08x}")
+        return struct.unpack_from("<I",data,prop["offset"])[0]
     for row in original:
         if row["original_owner_oid"]=="b4a1803b":
             idx=int(row["original_array_index"])
@@ -68,13 +76,41 @@ def load():
             if int(row["source_oid"],16)!=vv[idx]:
                 raise ValueError("Original KIDS source OID and M25 texture provenance disagree")
             by_slot[idx]=row
-    if len(by_slot)!=628:raise ValueError("M25 628 original KIDS slots not verified")
+            source=objects.get(int(row["source_oid"],16))
+            if source is None or source["type"]!=0x79991E79:
+                raise ValueError(f"Original StaticScreenLayoutTextures source IDOK not found at slot {idx}")
+            if _scalar(source,0xC8BB66DA)!=0 or _scalar(source,0x2276FC56)!=0:
+                raise ValueError("First hop original static texture parent fields are not zero")
+            wrapped=_scalar(source,0x2856A1B3)
+            if f"{wrapped:08x}"!=row["target_texture_oid"]:
+                raise ValueError("Legacy target_texture_oid differs from the actual wrap object hash")
+            child=objects.get(wrapped)
+            if child is None or child["type"]!=0x79991E79:
+                raise ValueError("Original second-hop StaticScreenLayoutTextures IDOK not found")
+            child_g1t=_scalar(child,0xC8BB66DA)
+            child_info=_scalar(child,0x2276FC56)
+            if (f"{child_g1t:08x}"!=row["g1t_hash"] or
+                f"{child_info:08x}"!=row["texinfo_hash"] or
+                _scalar(child,0x2856A1B3)!=0):
+                raise ValueError("Second-hop original field values do not match M25 G1T/TEXINFO")
+            by_slot_two_hop[idx]={
+                "original_wrapper_IDOK_oid":f"{wrapped:08x}",
+                "original_wrapper_node_byte_offset":child["offset"],
+                "original_source_node_byte_offset":source["offset"],
+                "original_wrapper_render_state_hash_matches_G1T":f"{child_g1t:08x}",
+                "original_wrapper_info_data_hash_matches_TEXINFO":f"{child_info:08x}",
+                "original_two_hop_byte_provenance_verified":True,
+            }
+    if len(by_slot)!=628 or len(by_slot_two_hop)!=628:
+        raise ValueError("M25 628 original KIDS two-hop source OIDs not verified")
     all_constants=json.loads(CONSTANTS.read_text(encoding="utf-8"))
     constants={(c["family"],c["variant"]):c for c in all_constants}
     if len(constants)!=14:raise ValueError("M27 14 string model groups missing")
     by_key={v:i for i,v in enumerate(kv)}
     if len(by_key)!=SIZE:raise ValueError("Original key collisions require explicit handling")
-    return {"keys":kv,"values":vv,"sources":by_slot,"constants":constants,"key_to_slot":by_key}
+    return {"keys":kv,"values":vv,"sources":by_slot,
+            "native_two_hop":by_slot_two_hop,
+            "constants":constants,"key_to_slot":by_key}
 
 def parse_name(name):
     m=NAME.fullmatch(name)
@@ -88,6 +124,7 @@ def parse_name(name):
 def slot_info(db,slot):
     if not 0<=slot<SIZE:raise ValueError("Native array index out of bounds [0..3542]")
     source=db["sources"].get(slot)
+    typed=db["native_two_hop"].get(slot)
     data={
         "version":"2.0.1",
         "original_kids_source_class":"0x9D1AFA46",
@@ -97,7 +134,17 @@ def slot_info(db,slot):
         "original_array_value_u32":f"{db['values'][slot]:08x}",
         "has_M25_verified_source_to_texture_link":bool(source),
         "source_oid":source["source_oid"] if source else f"{db['values'][slot]:08x}",
+        # Retained only for historical M28.3 clients: this field is the
+        # wrapper object OID, NOT a final texture file hash.
         "texture_oid":source["target_texture_oid"] if source else None,
+        "legacy_texture_oid_is_actually_wrapper_IDOK_oid":bool(source),
+        "original_wrapper_IDOK_oid":typed["original_wrapper_IDOK_oid"] if typed else None,
+        "original_wrapper_render_state_file_hash":(
+            typed["original_wrapper_render_state_hash_matches_G1T"] if typed else None),
+        "original_wrapper_info_data_file_hash":(
+            typed["original_wrapper_info_data_hash_matches_TEXINFO"] if typed else None),
+        "source_to_wrapper_to_G1T_TEXINFO_bytes_verified":bool(typed),
+        "final_texture_object_ID_proven_from_legacy_texture_oid":False,
         "original_texinfo_names":source["original_texture_name_variants"].split(";") if source else [],
         "original_g1t_hash":source["g1t_hash"] if source else None,
         "original_texinfo_hash":source["texinfo_hash"] if source else None,
@@ -140,7 +187,8 @@ def by_name(db,name):
     for idx,source in db["sources"].items():
         if name in source["original_texture_name_variants"].split(";"):
             alias_hits.append({"slot":idx,"source_oid":source["source_oid"],
-                               "texture_oid":source["target_texture_oid"]})
+                               "legacy_texture_oid_is_wrapper_IDOK":True,
+                               "original_wrapper_IDOK_oid":source["target_texture_oid"]})
     answer.update(
         original=original,
         source_oid_and_key_both_match=exact,
@@ -161,7 +209,8 @@ def validate_all(db):
         if not (ans["status"]=="EXACT_ORIGINAL_SOURCE_NAME_AND_OID" and
                 ans["original"]["native_original_array_index"]==int(x["original_slot"]) and
                 ans["original"]["source_oid"]==x["original_source_oid"] and
-                ans["original"]["original_key_u32"]==x["original_key_hash"]):
+                ans["original"]["original_key_u32"]==x["original_key_hash"] and
+                ans["original"]["source_to_wrapper_to_G1T_TEXINFO_bytes_verified"]):
             fails.append({"name":x["original_name"],"actual":ans.get("status")})
         else:got+=1
     if fails:raise ValueError(f"Source model failed {len(fails)} original M27 records: {fails[:5]}")
@@ -169,7 +218,8 @@ def validate_all(db):
             "matched_named_original_KIDS_icon_records":got,
             "all_records_validated":got==626,
             "native_game_species_id_verified":False,
-            "native_runtime_ID_to_KIDS_source_oid_verified":False}
+            "native_runtime_ID_to_KIDS_source_oid_verified":False,
+            "all_628_original_KIDS_two_hop_asset_links_verified":len(db["native_two_hop"])==628}
 
 def selftest():
     assert parse_name("icon_poke_0043_00_00_00")==("normal","0043","00_00_00")
