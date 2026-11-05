@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Export all 272 item sprites from the native 2.0.1 MountPoint_2 BC7 atlas.
 
-Physical source and TEXINFO/UV names are validated. GOB16 was selected after
+Physical source and TEXINFO/UV names are validated. Ounce16 was selected after
 9 distributed comparisons with independent PokoHex PNGs. A score is only a
 heuristic: output stays in Extra272Candidates; overlapping IDs are NOT overwritten.
 """
@@ -43,7 +43,7 @@ def main():
     tex = textures[0]
     if (tex["width"], tex["height"], tex["format"]) != (2048, 1024, 0x66):
         raise ValueError(f"unexpected source texture: {tex['width']} x {tex['height']}, {tex['format']:#x}")
-    with Image.open(io.BytesIO(decode_png(tex["payload"], 2048, 1024, "gob16", 0x66))) as img:
+    with Image.open(io.BytesIO(decode_png(tex["payload"], 2048, 1024, "ounce16", 0x66))) as img:
         surface = img.convert("RGBA")
 
     rows, scores, overlap_ids, ids = [], [], [], set()
@@ -99,7 +99,7 @@ def main():
         w.writerows(rows)
     summary = {
         "source_g1t": g1t.as_posix(), "source_texinfo": texinfo.as_posix(),
-        "g1t_format": "BC7 0x66", "layout": "gob16", "orientation": "top-v",
+        "g1t_format": "BC7 0x66", "layout": "ounce16", "orientation": "top-v",
         "texture_size": [2048, 1024],
         "native_texinfo_records": 272, "png_count": len(rows),
         "icon_size": [72, 72], "reference_count": len(scores),
