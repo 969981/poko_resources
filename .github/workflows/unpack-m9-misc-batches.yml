@@ -1,0 +1,135 @@
+name: M9 - Export 3930 native UI and misc PNGs in 17 auditable batches
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/export_native_misc_batches.py"
+      - "tests/test_export_native_misc_batches.py"
+      - ".github/workflows/unpack-m9-misc-batches.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-misc-batches-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        batch: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    steps:
+      - name: Sparse checkout index and decoder without bulk native payloads
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/g1t_to_png.py
+            Scripts/resources/crop_native_item_atlas.py
+            Scripts/resources/export_native_misc_samples.py
+            Scripts/resources/export_native_misc_batches.py
+            tests/test_export_native_misc_batches.py
+            UnPack/2.0.1/Resources/Textures/Indexes/native_misc_texture_index.csv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install native BC7 / BC3 image decoding
+        run: python -m pip install "Pillow>=11,<13"
+
+      - name: Test complete source partitioning and source-key uniqueness
+        if: matrix.batch == 0
+        run: python -m unittest discover -s tests -p "test_export_native_misc_batches.py" -v
+
+      - name: Resolve exact 240 source rows, then expand sparse checkout
+        env:
+          M5_BATCH: ${{ matrix.batch }}
+        run: |
+          python -m Scripts.resources.export_native_misc_batches --batch "$M5_BATCH" --batch-size 240 --plan /tmp/misc-batch-plan.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          plan=json.loads(Path("/tmp/misc-batch-plan.json").read_text(encoding="utf-8"))
+          paths={
+              "Scripts/resources/g1t_to_png.py",
+              "Scripts/resources/crop_native_item_atlas.py",
+              "Scripts/resources/export_native_misc_samples.py",
+              "Scripts/resources/export_native_misc_batches.py",
+              "tests/test_export_native_misc_batches.py",
+              "UnPack/2.0.1/Resources/Textures/Indexes/native_misc_texture_index.csv"
+          }
+          for r in plan["rows"]:
+              paths.add(r["texinfo_path"])
+              paths.add(r["g1t_path"])
+          Path("/tmp/misc-batch-native-checkout.txt").write_text(
+              "\n".join(sorted(paths))+"\n",encoding="utf-8")
+          print("Source rows:",len(plan["rows"]),"required files:",len(paths))
+          PY
+          git sparse-checkout set --no-cone --stdin < /tmp/misc-batch-native-checkout.txt
+
+      - name: Decode original G1T via Ounce and retain UV, hash and per-source status
+        env:
+          M5_BATCH: ${{ matrix.batch }}
+        run: |
+          python -m Scripts.resources.export_native_misc_batches --batch "$M5_BATCH" --batch-size 240 --read-plan /tmp/misc-batch-plan.json
+          python - <<'PY'
+          import csv,json,os,hashlib
+          from pathlib import Path
+          from PIL import Image
+          i=int(os.environ["M5_BATCH"])
+          base=Path(f"UnPack/2.0.1/Resources/Textures/MiscNativeBatches/batch_{i:02d}")
+          audit=json.loads((base/"batch_audit.json").read_text(encoding="utf-8"))
+          with (base/"misc_native_sample_manifest.csv").open(encoding="utf-8",newline="") as f:
+              entries=list(csv.DictReader(f))
+          assert len(entries)==audit["indexed_rows_in_batch"]
+          assert audit["png_success"]+audit["png_unavailable"]==len(entries)
+          assert audit["source_scope_rows"]==3930 and audit["total_batches"]==17
+          for row in entries:
+              if not row["png_path"]: continue
+              p=Path(row["png_path"])
+              assert p.exists()
+              assert hashlib.sha256(p.read_bytes()).hexdigest()==row["png_sha256"]
+              with Image.open(p) as image:
+                  assert image.format=="PNG"
+                  assert image.size==(int(row["crop_width"]),int(row["crop_height"]))
+                  image.verify()
+          print("Batch",i,"native records",len(entries),"actual PNG",audit["png_success"],"unavailable",audit["png_unavailable"])
+          PY
+
+      - name: Publish original-source PNGs, failures and labeled previews
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-201-ui-native-batch-${{ matrix.batch }}
+          path: UnPack/2.0.1/Resources/Textures/MiscNativeBatches/
+          retention-days: 14
+          if-no-files-found: warn
+
+      - name: Commit this batch only, preserving independent existing batches
+        env:
+          M5_BATCH: ${{ matrix.batch }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          PADDED=$(printf "%02d" "$M5_BATCH")
+          git add --sparse -A -- "UnPack/2.0.1/Resources/Textures/MiscNativeBatches/batch_${PADDED}"
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "data(m9): export original UI misc batch ${PADDED} of 17"
+          for i in $(seq 1 20); do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+            sleep 2
+          done
+          exit 1
