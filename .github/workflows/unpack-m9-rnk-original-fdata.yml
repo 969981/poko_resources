@@ -1,0 +1,99 @@
+name: M9.8 - strict RNK recovery from original FDATA
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_rnk_from_original_fdata.py"
+      - "tests/test_m9_rnk_from_original_fdata.py"
+      - ".github/workflows/unpack-m9-rnk-original-fdata.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-8-original-fdata-rnk
+  cancel-in-progress: false
+
+jobs:
+  native-rnk-verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/unpack/__init__.py
+            Scripts/unpack/core.py
+            Scripts/resources/m9_rnk_name_tables.py
+            Scripts/resources/m9_rnk_from_original_fdata.py
+            tests/test_m9_rnk_from_original_fdata.py
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/rnk_original_rdb_matches.csv
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/rnk_original_fdata_recovery.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/rnk_recovered_irnk_strings.csv
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xea42a223.fdata
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x5c83387f.fdata
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x898afd6d.fdata
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Test strict original IDRK and IRNK byte parsing
+        env:
+          PYTHONPATH: "."
+        run: python -m unittest discover -s tests -p 'test_m9_rnk_from_original_fdata.py' -v
+
+      - name: Inspect original FDATA physical sources (missing is a reported result)
+        env:
+          PYTHONPATH: "."
+        run: |
+          python Scripts/resources/m9_rnk_from_original_fdata.py \
+            --audit-csv UnPack/2.0.1/Resources/Localization/M9/NameTables/rnk_original_rdb_matches.csv \
+            --fdata-dir 2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE \
+            --dest UnPack/2.0.1/Resources/Localization/M9/NameTables
+
+      - name: Protect script/text foreign-key evidence
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('UnPack/2.0.1/Resources/Localization/M9/NameTables')
+          report=json.loads((root/'rnk_original_fdata_recovery.json').read_text(encoding='utf-8'))
+          assert len(report['sources'])==3
+          assert report['new_script_scene_quest_building_text_foreign_keys']==0
+          assert report['verified_semantic_property_names']==0
+          assert report['numeric_oid_candidates_still_unverified']==87445
+          assert all(not r['semantic_property_name_verified'] and not r['text_fk_verified'] for r in report['sources'])
+          print('M9.8 original FDATA evidence gate PASS')
+          PY
+
+      - name: Upload recovery evidence or precise missing inputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m9-8-original-fdata-rnk
+          path: |
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/rnk_original_fdata_recovery.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/rnk_recovered_irnk_strings.csv
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Commit verified decode or unresolved-source report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- UnPack/2.0.1/Resources/Localization/M9/NameTables/rnk_original_fdata_recovery.json \
+                     UnPack/2.0.1/Resources/Localization/M9/NameTables/rnk_recovered_irnk_strings.csv
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9.8): strict RNK provenance or missing physical FDATA"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
