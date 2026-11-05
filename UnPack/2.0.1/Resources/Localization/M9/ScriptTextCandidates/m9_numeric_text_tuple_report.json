@@ -1,0 +1,28 @@
+{
+  "status": "M9_TYPED_FIELD_TO_M7_NUMERIC_PAIR_TRIAGE_NOT_FOREIGN_KEYS",
+  "m7_groups_loaded": 195,
+  "m7_rows_looked_up_only_as_unverified_context": 0,
+  "source_sha256": {
+    "root:49689": "ea4e260c1bc6b0feea16ca16d9c65ca017454a9c7754277e088ecd97d49a5a9a",
+    "root:49334": "ee4f3885744af85ae34df856805b849485246928dbb54628feac7bf355b9050f",
+    "root:42257": "f96972dc847e679aa01d602c0fc5897bdd81e7b09eeea1567cd75b0e9d279e51"
+  },
+  "samples_with_raw_byte_revalidation": 0,
+  "example_limit": 500,
+  "zero_row_id_hypotheses_excluded_for_noise_control": true,
+  "unverified_local_oid_candidates_preserved": 87445,
+  "verified_script_to_text_foreign_keys": 0,
+  "new_quest_dialogue_building_classifications": 0,
+  "source_caller_schema_status": "NOT_RESTORED",
+  "warnings": [
+    "Two scalar words from one object do not establish a table selector and row selector.",
+    "Native field type codes 4/5 are byte-width classes; u32 comparisons do not prove integer ID semantics.",
+    "Nearby properties may be unrelated and M7 index overlap may be coincidental.",
+    "Nine-language text is an optional contextual lookup, not proof the object ever displays it.",
+    "No existing M8/M9 verified edges or UNKNOWN categories are modified."
+  ],
+  "fields_scanned": 1176984,
+  "native_nodes_scanned": 101467,
+  "unverified_group_row_numeric_tuples": 0,
+  "hypothesis_property_pair_histogram": []
+}
