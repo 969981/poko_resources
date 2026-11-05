@@ -31,7 +31,7 @@ class NativeMaterialCrosswalkTest(unittest.TestCase):
         blob,catalog=self.fixture()
         with self.assertRaisesRegex(ValueError,"source SHA"):
             m.build(blob,catalog)
-        with patch.object(m,"ORIGINAL_SHA",hashlib.sha256(blob).hexdigest()):
+        with patch.object(m,"ORIGINAL_SHA",hashlib.sha256(blob[:-1]).hexdigest()):
             with self.assertRaisesRegex(ValueError,"68-byte"):
                 m.build(blob[:-1],catalog)
 
