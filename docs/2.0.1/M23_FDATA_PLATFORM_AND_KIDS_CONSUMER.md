@@ -98,3 +98,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\Scripts\unpack\Find-M23Ori
 **来源恢复：** 优先找齐 `0x03a38715.fdata` 和 `0xfd6af828.fdata`，逐条验证 521 个 IDRK，再从新的 KTID/TEXINFO/ObjectDB 恢复真实名称与 PNG；将 79 张未匹配参考头像重新对账。
 
 **原生消费者：** 在运行时追 `main+0xBB85CC` 安装写入和 `main+0x366E6F0` 对象真实内容，再追 `main+0x1FDC1E0` 的类型 Hash 注册者及 `main+0xCE854C` 的间接属性方法，最后定位 `game villager ID → source OID → target texture OID` 的读取边。缺少动态回读和原生身份字段时，只能标记 `UNVERIFIED`。
+
+## M24 / M24.1 后续原生身份追踪
+
+详见 [[M24_KIDS_GENERIC_REGISTRY_AND_ID_ANCHORS]]。本轮发现 `main+0x1FDC1E0` 有 3,946 处原生直接调用／尾分支，因此不能将其当作村民头像专属消费者；已验证从方法表起点起的 16 个连续函数指针，但它们是否全部归属同一张逻辑方法表仍需进一步确认。另取得 `pokemon_dex_id`、`RegisterPokemonNum`、`m_mainPokemonList` 等 7 条字符串的真实 ExeFS 引用，仍没有与 KIDS source OID 闭合，保持 79 未匹配 + 9 歧义与 0 原生 ID 正式映射。
