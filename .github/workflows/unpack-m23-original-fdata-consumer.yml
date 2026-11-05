@@ -1,0 +1,112 @@
+name: M23 - Original FF03 FDATA and native portrait consumer triage
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m23_platform_fdata_audit.py"
+      - "Scripts/resources/m23_native_portrait_consumer_triage.py"
+      - ".github/workflows/unpack-m23-original-fdata-consumer.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m23-original-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  audit-original-sources-and-consumers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout pinned original RDX RDB NSO and indexed metadata
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdx
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdb
+            2.0.1/exefs/main
+            Scripts/unpack/core.py
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m20_native_species_item_targets.py
+            Scripts/resources/m23_platform_fdata_audit.py
+            Scripts/resources/m23_native_portrait_consumer_triage.py
+            UnPack/2.0.1/_reports/missing_input_records.csv
+            UnPack/2.0.1/Resources/Textures/Indexes/layout-textures.tsv
+            UnPack/2.0.1/Resources/Textures/Indexes/native_misc_texture_index.csv
+            UnPack/2.0.1/Resources/Pokemon/pokemon_texture_index.csv
+            UnPack/2.0.1/Resources/Pokemon/NativeCallers/M20/m20_3_schema_pointer_backrefs.json
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M22/m22_nine_ambiguous_native_object_refs.csv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install original NSO/ARM64 bounded decoder
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Self test original byte and ARM64 address analyzers
+        run: |
+          python -m Scripts.resources.m23_platform_fdata_audit --self-test
+          python -m Scripts.resources.m23_native_portrait_consumer_triage --self-test
+
+      - name: Validate exact original RDX/RDB and 521 G1T references
+        run: python -m Scripts.resources.m23_platform_fdata_audit
+
+      - name: Trace original NSO property-pointer ownership candidates
+        run: python -m Scripts.resources.m23_native_portrait_consumer_triage
+
+      - name: Verify no unproven platform or villager identity promotion
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          root=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M23")
+          sources=json.loads((root/"m23_platform_source_report.json").read_text(encoding="utf-8"))
+          refs=list(csv.DictReader((root/"m23_521_missing_g1t_original_rdb.csv").open(encoding="utf-8",newline="")))
+          consumer=json.loads((root/"m23_original_property_consumer_triage.json").read_text(encoding="utf-8"))
+          assert sources["root_rdx_entry_count"]==45
+          assert sources["raw_ff03_rdx_entry_count"]==10
+          assert sources["raw_ff03_entries_present_in_git_archive"]==0
+          assert sources["priority_original_g1t_records_verified_from_rdb"]==521
+          assert len(refs)==521
+          assert not sources["original_ff03_platform_owner_proven"]
+          assert not sources["root_rdx_ff03_directory_semantics_proven"]
+          assert sources["g1t_reference_in_existing_native_index_counts"]=={
+              "NO_LINK_IN_THREE_EXISTING_SOURCE_INDICES":521},sources
+          assert sources["native_villager_id_bindings_verified"]==0
+          assert consumer["pointer_chain_bytes_verified"] is True
+          assert consumer["m22_typed_source_object_edge_rows_verified"]==54
+          assert consumer["direct_bl_or_b_to_property_dispatch"]==0
+          assert not consumer["original_species_id_to_texture_consumer_verified"]
+          print("M23 exact original metadata and conservative consumer evidence accepted")
+          PY
+
+      - name: Upload original-source audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-m23-ff03-fdata-and-consumer-evidence
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M23/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Commit source-checked reports and independent code sites
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M23/
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m23): verified original FF03 inputs and read-only NSO code sites"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
