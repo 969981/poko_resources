@@ -2,7 +2,7 @@
 """M5: export ALL 1,333 source-linked native two-layer item atlas sprites.
 
 Unlike exploratory previews, this job fixes the empirically verified layout
-candidate (GOB height 16, top V origin). It always preserves source evidence,
+candidate (Ounce/0x18 GOB height 16, top V origin). It always preserves source evidence,
 keeps PokoHex references untouched, and reports discrepancies. Distinct
 reference PNGs are NOT treated as proof of identical native pixels.
 """
@@ -67,7 +67,7 @@ def export(g1t: Path, texinfo: Path, uv_manifest: Path, references: Path,
         raise ValueError("unexpected G1T atlas dimensions or format")
     layers = []
     for t in tex:
-        data = decode_png(t["payload"], t["width"], t["height"], "gob16", t["format"])
+        data = decode_png(t["payload"], t["width"], t["height"], "ounce16", t["format"])
         with Image.open(io.BytesIO(data)) as im:
             layers.append(im.convert("RGBA"))
 
@@ -117,7 +117,7 @@ def export(g1t: Path, texinfo: Path, uv_manifest: Path, references: Path,
         "atlas_dimensions_per_layer": [2048, 2048],
         "g1t_platform": "0x18",
         "g1t_format": "0x66 BC7",
-        "layout": "gob16",
+        "layout": "ounce16",
         "v_origin": "top",
         "native_atlas_records": 1333,
         "generated_pngs": len(rows),
