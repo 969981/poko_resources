@@ -1,0 +1,612 @@
+{
+  "original_missing_records": 29,
+  "matched_blob_aliases": 29,
+  "parseable_g1t_records": 29,
+  "statuses": {
+    "G1T_HEADER_AND_OFFSETS_PARSED": 29
+  },
+  "results": [
+    {
+      "texture_name": "icon_poke_0092_00_00_00",
+      "texinfo_hash": "021466cc",
+      "g1t_hash": "0367bb17",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_000834_0367bb17.g1t",
+      "file_size": 65588,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 256,
+          "height": 256,
+          "payload_length": 65536
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_0059_00_00_00",
+      "texinfo_hash": "04475a57",
+      "g1t_hash": "28a02c22",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_009798_28a02c22.g1t",
+      "file_size": 65588,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 256,
+          "height": 256,
+          "payload_length": 65536
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_0317_00_00_00",
+      "texinfo_hash": "3042fc9c",
+      "g1t_hash": "2169b8e7",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_008031_2169b8e7.g1t",
+      "file_size": 65588,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 256,
+          "height": 256,
+          "payload_length": 65536
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_0199_00_00_00",
+      "texinfo_hash": "3274fb14",
+      "g1t_hash": "238db35f",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_008527_238db35f.g1t",
+      "file_size": 65588,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 256,
+          "height": 256,
+          "payload_length": 65536
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_1113_00_51_00",
+      "texinfo_hash": "3a2d5f11",
+      "g1t_hash": "28699ddc",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_009738_28699ddc.g1t",
+      "file_size": 65588,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 256,
+          "height": 256,
+          "payload_length": 65536
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_uni_0126_00_00_00",
+      "texinfo_hash": "3b4dd667",
+      "g1t_hash": "21e73032",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_008149_21e73032.g1t",
+      "file_size": 4148,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 64,
+          "height": 64,
+          "payload_length": 4096
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_0723_00_00_00",
+      "texinfo_hash": "407a807b",
+      "g1t_hash": "28840446",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_009767_28840446.g1t",
+      "file_size": 65588,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 256,
+          "height": 256,
+          "payload_length": 65536
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_uni_0136_00_00_00",
+      "texinfo_hash": "4151a1c6",
+      "g1t_hash": "231d8311",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_008444_231d8311.g1t",
+      "file_size": 4148,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 64,
+          "height": 64,
+          "payload_length": 4096
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_uni_0146_00_00_00",
+      "texinfo_hash": "47556d25",
+      "g1t_hash": "2453d5f0",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_008712_2453d5f0.g1t",
+      "file_size": 4148,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 64,
+          "height": 64,
+          "payload_length": 4096
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_uni_0156_00_00_00",
+      "texinfo_hash": "4d593884",
+      "g1t_hash": "258a28cf",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_009029_258a28cf.g1t",
+      "file_size": 4148,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 64,
+          "height": 64,
+          "payload_length": 4096
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_uni_0934_00_00_00",
+      "texinfo_hash": "5214c6cc",
+      "g1t_hash": "22981b17",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_008325_22981b17.g1t",
+      "file_size": 4148,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 64,
+          "height": 64,
+          "payload_length": 4096
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_uni_0954_00_00_00",
+      "texinfo_hash": "5e1c5d8a",
+      "g1t_hash": "2504c0d5",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_008885_2504c0d5.g1t",
+      "file_size": 4148,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 64,
+          "height": 64,
+          "payload_length": 4096
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_uni_0186_00_00_00",
+      "texinfo_hash": "5f649aa1",
+      "g1t_hash": "292d216c",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_009932_292d216c.g1t",
+      "file_size": 4148,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 64,
+          "height": 64,
+          "payload_length": 4096
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_0065_00_00_00",
+      "texinfo_hash": "6f2d8932",
+      "g1t_hash": "218e007d",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_008061_218e007d.g1t",
+      "file_size": 65588,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 256,
+          "height": 256,
+          "payload_length": 65536
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_uni_0422_12_00_00",
+      "texinfo_hash": "73ea46a5",
+      "g1t_hash": "24516f70",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_008710_24516f70.g1t",
+      "file_size": 4148,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 64,
+          "height": 64,
+          "payload_length": 4096
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_0530_00_00_00",
+      "texinfo_hash": "7e4c0dd5",
+      "g1t_hash": "27964ea0",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_009520_27964ea0.g1t",
+      "file_size": 65588,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 256,
+          "height": 256,
+          "payload_length": 65536
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_0471_00_00_00",
+      "texinfo_hash": "7f650d11",
+      "g1t_hash": "28a84bdc",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_009806_28a84bdc.g1t",
+      "file_size": 65588,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 256,
+          "height": 256,
+          "payload_length": 65536
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_0036_00_00_00",
+      "texinfo_hash": "911e9996",
+      "g1t_hash": "253ee2e1",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_008952_253ee2e1.g1t",
+      "file_size": 65588,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 256,
+          "height": 256,
+          "payload_length": 65536
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_uni_0245_00_00_00",
+      "texinfo_hash": "9d959965",
+      "g1t_hash": "28142230",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_009655_28142230.g1t",
+      "file_size": 4148,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 64,
+          "height": 64,
+          "payload_length": 4096
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_uni_0255_00_00_00",
+      "texinfo_hash": "a39964c4",
+      "g1t_hash": "294a750f",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_009957_294a750f.g1t",
+      "file_size": 4148,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 64,
+          "height": 64,
+          "payload_length": 4096
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_uni_0185_00_00_00",
+      "texinfo_hash": "a4eefa20",
+      "g1t_hash": "0399186b",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_000877_0399186b.g1t",
+      "file_size": 4148,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 64,
+          "height": 64,
+          "payload_length": 4096
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_0040_00_00_00",
+      "texinfo_hash": "b0dcb66f",
+      "g1t_hash": "03b7543a",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_000902_03b7543a.g1t",
+      "file_size": 65588,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 256,
+          "height": 256,
+          "payload_length": 65536
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_0007_00_00_00",
+      "texinfo_hash": "b30fa9fa",
+      "g1t_hash": "28efc545",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_009875_28efc545.g1t",
+      "file_size": 65588,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 256,
+          "height": 256,
+          "payload_length": 65536
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_0147_00_00_00",
+      "texinfo_hash": "e13d4ab7",
+      "g1t_hash": "23dd4c82",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_008606_23dd4c82.g1t",
+      "file_size": 65588,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 256,
+          "height": 256,
+          "payload_length": 65536
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_uni_0314_00_00_00",
+      "texinfo_hash": "e1ca6388",
+      "g1t_hash": "283175d3",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_009687_283175d3.g1t",
+      "file_size": 4148,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 64,
+          "height": 64,
+          "payload_length": 4096
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_0088_00_00_00",
+      "texinfo_hash": "e25649f3",
+      "g1t_hash": "24ef49be",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_008860_24ef49be.g1t",
+      "file_size": 65588,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 256,
+          "height": 256,
+          "payload_length": 65536
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_uni_0324_00_00_00",
+      "texinfo_hash": "e7ce2ee7",
+      "g1t_hash": "2967c8b2",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_009984_2967c8b2.g1t",
+      "file_size": 4148,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 64,
+          "height": 64,
+          "payload_length": 4096
+        }
+      ],
+      "expected_record_count": 1
+    },
+    {
+      "texture_name": "icon_poke_at_home",
+      "texinfo_hash": "f552e8cf",
+      "g1t_hash": "24e5b69a",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_008846_24e5b69a.g1t",
+      "file_size": 12714108,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 2048,
+          "height": 2048,
+          "payload_length": 4194304
+        },
+        {
+          "index": 1,
+          "format": "0x66",
+          "width": 4096,
+          "height": 1024,
+          "payload_length": 4194304
+        },
+        {
+          "index": 2,
+          "format": "0x66",
+          "width": 512,
+          "height": 256,
+          "payload_length": 131072
+        },
+        {
+          "index": 3,
+          "format": "0x66",
+          "width": 4096,
+          "height": 1024,
+          "payload_length": 4194304
+        }
+      ],
+      "expected_record_count": 479
+    },
+    {
+      "texture_name": "icon_poke_uni_0067_00_00_00",
+      "texinfo_hash": "fd1cd7a3",
+      "g1t_hash": "23002f6e",
+      "restored_file": "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_008420_23002f6e.g1t",
+      "file_size": 4148,
+      "status": "G1T_HEADER_AND_OFFSETS_PARSED",
+      "error": null,
+      "platform": "0x18",
+      "texture_entries": [
+        {
+          "index": 0,
+          "format": "0x66",
+          "width": 64,
+          "height": 64,
+          "payload_length": 4096
+        }
+      ],
+      "expected_record_count": 1
+    }
+  ],
+  "warning": "All aliases refer to original decoded FDATA blobs. Header success does NOT prove swizzle, UV crops or image identity. Other original G1T entries are audited separately."
+}
