@@ -53,7 +53,7 @@ jobs:
           from pathlib import Path
           base=Path("UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M12")
           j=json.loads((base/"item_id_lookup_0x26_original_evidence.json").read_text(encoding="utf-8"))
-          assert j["matched_original_instruction_count"]==23
+          assert j["matched_original_instruction_count"]==35
           assert j["proven_4600_item_id_lookup_to_0x26_field_consumption"]
           assert j["item_count"]==4600 and j["item_record_stride"]==68
           assert not j["proven_00983_loader"]
