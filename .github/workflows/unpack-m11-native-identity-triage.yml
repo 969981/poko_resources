@@ -1,0 +1,83 @@
+name: M11 - Original item-group and Pokemon sprite caller-dataflow triage
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m11_native_identity_consumer_triage.py"
+      - "tests/test_m11_native_identity_consumer_triage.py"
+      - ".github/workflows/unpack-m11-native-identity-triage.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m11-native-caller-triage-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  native-code-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m11_native_identity_consumer_triage.py
+            Scripts/resources/trace_native_species_item_callers.py
+            tests/test_m11_native_identity_consumer_triage.py
+            2.0.1/exefs/main
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin
+            UnPack/2.0.1/Resources/Pokemon/NativeCallers/main_string_xrefs.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install only NSO segment and bounded ARM64 context dependencies
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Test same-register 0x22/0x26 scoring and false-positive rejection
+        run: python -m unittest discover -s tests -p "test_m11_native_identity_consumer_triage.py" -v
+
+      - name: Verify original source SHA, rodata strings, and candidate original ARM64 contexts
+        run: python -m Scripts.resources.m11_native_identity_consumer_triage
+
+      - name: Preserve evidence limits and full-source coverage assertions
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("UnPack/2.0.1/Resources/Pokemon/NativeCallers/M11/m11_native_callsite_triage.json").read_text(encoding="utf-8"))
+          assert d["status"]=="NATIVE_ARM64_TRIAGE_NOT_PROVEN_ID_BINDING"
+          assert d["nso_text_bytes"]==41194624
+          assert d["native_item_record_stride"]==68
+          assert d["species_id_to_texture_verified_count"]==0
+          assert d["material_type_enum_confirmed"] is False
+          assert d["specific_rodata_callsite_count"]>0
+          assert d["item_candidate_loads"]["total_load_0x26"]>100
+          assert not any(x["native_item_base_verified"] for x in d["item_candidate_loads"]["top"])
+          print("ARM64 source xrefs:",d["specific_rodata_callsite_count"],
+              "item +0x26 raw loads:",d["item_candidate_loads"]["total_load_0x26"],
+              "ranked leads:",d["item_candidate_loads"]["ranked_candidates"])
+          PY
+
+      - name: Commit annotated machine-code evidence to branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -- UnPack/2.0.1/Resources/Pokemon/NativeCallers/M11
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m11): original Pokemon and item-type code-context evidence, no unproven ID mapping"
+          for i in 1 2 3 4 5 6 7 8; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+            sleep 2
+          done
+          exit 1
