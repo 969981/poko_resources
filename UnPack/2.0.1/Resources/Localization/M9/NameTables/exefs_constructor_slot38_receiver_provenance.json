@@ -1,0 +1,205 @@
+{
+  "report": {
+    "status": "M9_NATIVE_CONSTRUCTOR_SLOT38_RECEIVER_DISAMBIGUATED",
+    "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+    "specific_virtual_slot0x38_call_pc": 13996624,
+    "source_object_receiver_register": "x22",
+    "x22_source_pc": 13996448,
+    "source_vptr_slot0x30_call_pc": 13996460,
+    "inner_created_object_register": "x23",
+    "x23_source_pc": 13996464,
+    "inner_object_vptr_assignment_pc": 13996488,
+    "inner_object_owner_escape_pc": 13996660,
+    "same_register_instance_at_slot38_and_created_inner_object": false,
+    "runtime_source_and_created_object_pointer_inequality_verified": false,
+    "specific_inner_class_slot38_callback_invocation_verified": false,
+    "specific_callback_main_d59420_called_at_d59250_verified": false,
+    "runtime_method_execution_observed": false,
+    "KIDSOBJDB_native_getter_verified": false,
+    "new_M7_foreign_keys": 0,
+    "warnings": [
+      "The slot+0x38 BLR at D59250 dereferences x22, which was saved from original x0 before D591AC.",
+      "The inner x23 object comes from x0 after D591AC; the native dataflow sources differ.",
+      "Distinct register definitions do not exclude coincident pointer values at runtime.",
+      "No evidence here shows inner x23.vptr+0x38 calls D59420; original callback slot membership alone does not prove dispatch."
+    ]
+  },
+  "register_x22_source_and_overwrites": [
+    {
+      "pc": 13996288,
+      "mnemonic": "mov",
+      "operands": "x22, x2",
+      "writes": [
+        "x22"
+      ],
+      "u32": "aa0203f6"
+    },
+    {
+      "pc": 13996448,
+      "mnemonic": "mov",
+      "operands": "x22, x0",
+      "writes": [
+        "x22"
+      ],
+      "u32": "aa0003f6"
+    },
+    {
+      "pc": 13996640,
+      "mnemonic": "mov",
+      "operands": "x22, x0",
+      "writes": [
+        "x22"
+      ],
+      "u32": "aa0003f6"
+    },
+    {
+      "pc": 13996704,
+      "mnemonic": "ldp",
+      "operands": "x22, x21, [sp, #0x50]",
+      "writes": [
+        "x22",
+        "x21"
+      ],
+      "u32": "a94557f6"
+    }
+  ],
+  "register_x23_source_and_overwrites": [
+    {
+      "pc": 13996464,
+      "mnemonic": "mov",
+      "operands": "x23, x0",
+      "writes": [
+        "x23"
+      ],
+      "u32": "aa0003f7"
+    },
+    {
+      "pc": 13996708,
+      "mnemonic": "ldp",
+      "operands": "x24, x23, [sp, #0x40]",
+      "writes": [
+        "x24",
+        "x23"
+      ],
+      "u32": "a9445ff8"
+    }
+  ],
+  "exact_original_instruction_evidence": [
+    {
+      "name": "incoming_owner_alias",
+      "pc": 13996284,
+      "mnemonic": "mov",
+      "operands": "x19, x3",
+      "writes": [
+        "x19"
+      ],
+      "u32": "aa0303f3"
+    },
+    {
+      "name": "source_x22_alias",
+      "pc": 13996448,
+      "mnemonic": "mov",
+      "operands": "x22, x0",
+      "writes": [
+        "x22"
+      ],
+      "u32": "aa0003f6"
+    },
+    {
+      "name": "source_vptr",
+      "pc": 13996452,
+      "mnemonic": "ldr",
+      "operands": "x8, [x0]",
+      "writes": [
+        "x8"
+      ],
+      "u32": "f9400008"
+    },
+    {
+      "name": "source_method_slot0x30",
+      "pc": 13996456,
+      "mnemonic": "ldr",
+      "operands": "x8, [x8, #0x30]",
+      "writes": [
+        "x8"
+      ],
+      "u32": "f9401908"
+    },
+    {
+      "name": "source_call",
+      "pc": 13996460,
+      "mnemonic": "blr",
+      "operands": "x8",
+      "writes": [
+        "lr"
+      ],
+      "u32": "d63f0100"
+    },
+    {
+      "name": "created_x23_alias",
+      "pc": 13996464,
+      "mnemonic": "mov",
+      "operands": "x23, x0",
+      "writes": [
+        "x23"
+      ],
+      "u32": "aa0003f7"
+    },
+    {
+      "name": "created_vptr_write",
+      "pc": 13996488,
+      "mnemonic": "stp",
+      "operands": "x8, xzr, [x23]",
+      "writes": [],
+      "u32": "a9007ee8"
+    },
+    {
+      "name": "source_this_arg",
+      "pc": 13996608,
+      "mnemonic": "mov",
+      "operands": "x0, x22",
+      "writes": [
+        "x0"
+      ],
+      "u32": "aa1603e0"
+    },
+    {
+      "name": "source_obj_vptr",
+      "pc": 13996612,
+      "mnemonic": "ldr",
+      "operands": "x8, [x22]",
+      "writes": [
+        "x8"
+      ],
+      "u32": "f94002c8"
+    },
+    {
+      "name": "source_method_slot0x38",
+      "pc": 13996620,
+      "mnemonic": "ldr",
+      "operands": "x8, [x8, #0x38]",
+      "writes": [
+        "x8"
+      ],
+      "u32": "f9401d08"
+    },
+    {
+      "name": "source_method_blr",
+      "pc": 13996624,
+      "mnemonic": "blr",
+      "operands": "x8",
+      "writes": [
+        "lr"
+      ],
+      "u32": "d63f0100"
+    },
+    {
+      "name": "created_owner_store",
+      "pc": 13996660,
+      "mnemonic": "str",
+      "operands": "x23, [x19, #0x28]",
+      "writes": [],
+      "u32": "f9001677"
+    }
+  ]
+}
