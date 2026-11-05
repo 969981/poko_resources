@@ -1,0 +1,80 @@
+name: M5 - Verify 29 Recovered Pokemon G1Ts
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/verify_restored_pokemon_g1t.py"
+      - ".github/workflows/unpack-m5-recover-pokemon-g1t.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokemon-m5-recover-g1t-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify-native-aliases:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/g1t_to_png.py
+            Scripts/resources/verify_restored_pokemon_g1t.py
+            UnPack/2.0.1/Resources/Pokemon/pokemon_texture_index.csv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Resolve all 29 exact native G1T blob paths from Git tree
+        run: |
+          git ls-tree -r --name-only HEAD -- UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native > /tmp/original-tree.txt
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+          tree=Path("/tmp/original-tree.txt").read_text().splitlines()
+          file=Path("UnPack/2.0.1/Resources/Pokemon/pokemon_texture_index.csv")
+          with file.open(encoding="utf-8",newline="") as f:
+              rows=[r for r in csv.DictReader(f) if r["status"]=="MISSING_PHYSICAL_G1T"]
+          assert len(rows)==29
+          paths=[
+              "Scripts/resources/g1t_to_png.py",
+              "Scripts/resources/verify_restored_pokemon_g1t.py",
+              "UnPack/2.0.1/Resources/Pokemon/pokemon_texture_index.csv",
+              "UnPack/2.0.1/Resources/Pokemon/restore_29_g1t_report.json"
+          ]
+          for r in rows:
+              hash_=r["g1t_index_hash_candidates"]
+              matches=[name for name in tree if name.endswith("_"+hash_+".g1t")]
+              assert len(matches)==1,(r["texture_name"],matches)
+              paths+=matches
+          Path("/tmp/sparse-selected.txt").write_text("\n".join(paths)+"\n")
+          print("Sparse inputs:",len(paths))
+          PY
+          git sparse-checkout set --no-cone --stdin < /tmp/sparse-selected.txt
+
+      - name: Verify 29 original G1T alias headers and offsets
+        run: python -m Scripts.resources.verify_restored_pokemon_g1t
+
+      - name: Commit header evidence report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Pokemon/restore_29_g1t_report.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m5): record native header proofs for 29 recovered Pokémon G1Ts"
+          for i in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
