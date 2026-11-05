@@ -1,0 +1,96 @@
+name: M9.18 - exact owner callback static pointer table xrefs
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_owner_callback_table_xrefs.py"
+      - "tests/test_m9_owner_callback_table_xrefs.py"
+      - ".github/workflows/unpack-m9-owner-callback-tables.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-18-owner-table
+  cancel-in-progress: false
+
+jobs:
+  exact-entry-reference-analysis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m9_owner_callback_table_xrefs.py
+            tests/test_m9_owner_callback_table_xrefs.py
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_specific_virtual_slot0.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_two_callback_pointer_tables.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install "lz4>=4,<5"
+
+      - name: Test exact QWORD callback pointer probes
+        env:
+          PYTHONPATH: "."
+        run: python -m unittest discover -s tests -p 'test_m9_owner_callback_table_xrefs.py' -v
+
+      - name: Locate the two proven owner member callbacks in native static tables
+        env:
+          PYTHONPATH: "."
+        run: |
+          python Scripts/resources/m9_owner_callback_table_xrefs.py \
+            --main 2.0.1/exefs/main \
+            --m9-17 UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_specific_virtual_slot0.json \
+            --dest UnPack/2.0.1/Resources/Localization/M9/NameTables
+
+      - name: Preserve static-only and missing FDATA statuses
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_two_callback_pointer_tables.json')
+          d=json.loads(p.read_text(encoding='utf-8'))
+          r=d['report']
+          assert r['status']=='M9_SPECIFIC_OWNER_CALLBACK_POINTER_TABLE_XREFS'
+          assert r['verified_original_slot0_callsite_pc']==0xd58f10
+          assert r['native_qword_pointer_hits']==len(d['data_pointer_xrefs'])
+          assert r['nearby_two_entry_pointer_pairs']==len(d['same_table_neighborhood_candidates'])
+          assert r['same_runtime_owner_type_proven'] is False
+          assert r['registered_dispatch_consumer_proven'] is False
+          assert r['original_descriptor_callback_slot0x38_actual_dispatch_proven'] is False
+          assert r['script_to_M7_foreign_keys']==0
+          print('M9.18 static pointer table crossrefs PASS')
+          PY
+
+      - name: Upload original bytes evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m9-18-owner-callback-pointer-tables
+          path: UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_two_callback_pointer_tables.json
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Commit original native pointer xrefs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_two_callback_pointer_tables.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9.18): exact owner callback entries in original static pointer tables"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
