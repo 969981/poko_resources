@@ -1,0 +1,96 @@
+name: M24 - KIDS original object registration callgraph
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m24_kids_consumer_callgraph.py"
+      - ".github/workflows/unpack-m24-kids-consumer.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m24-kids-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  original-static-caller-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Sparse checkout original 2.0.1 NSO and M19 M22 M23 evidence
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m20_native_species_item_targets.py
+            Scripts/resources/m24_kids_consumer_callgraph.py
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M23/m23_1_original_kids_table_install.json
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M22/m22_nine_ambiguous_native_object_refs.csv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install source-byte NSO and AArch64 parsers
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Verify bounded adjacent xref and instruction decoder
+        run: python -m Scripts.resources.m24_kids_consumer_callgraph --self-test
+
+      - name: Trace original registration callee and local owner-global references
+        run: python -m Scripts.resources.m24_kids_consumer_callgraph
+
+      - name: Validate preserved native provenance and no ID guess
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          path=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M24")
+          x=json.loads((path/"m24_original_consumer_summary.json").read_text(encoding="utf-8"))
+          graph=json.loads((path/"m24_direct_calls_and_asm.json").read_text(encoding="utf-8"))
+          rows=list(csv.DictReader((path/"m24_owner_global_adjacent_xrefs.csv").open(encoding="utf-8",newline="")))
+          assert x["m22_typed_native_edge_rows"]==54
+          assert len(x["m22_ambiguous_portrait_ids"])==9
+          assert x["m23_1_static_initialization_rechecked"]
+          assert x["native_villager_id_bindings_verified"]==0
+          assert x["native_species_id_bindings_verified"]==0
+          assert x["original_method_class_owner_verified"] is False
+          assert x["game_villager_id_field_consumer_verified"] is False
+          assert x["registry_type_hash"]=="0x79991e79"
+          assert x["original_owner_bss_va"]=="0x366e6f0"
+          assert graph["windows"]["native_KIDS_type_registration_0x1fdc1e0"]
+          assert graph["windows"]["native_schema_method_0xce854c"]
+          assert all(r["dynamic_object_semantics_proven"] in ("False","false") for r in rows)
+          print("Original NSO scoped source proof and zero speculative game-ID binding validated")
+          PY
+
+      - name: Upload M24 research evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-m24-original-kids-consumer
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M24/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Commit original validated consumer report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M24/
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m24): audit original KIDS registration global and direct consumer calls"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
