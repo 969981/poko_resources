@@ -1,0 +1,43 @@
+{
+  "version": "2.0.1",
+  "original_sha256": "86f90b4c11da9bc2b3e28889a5090ff507f96ca713fe4fad1dd50f6f692d7541",
+  "original_3543_key_value_slots_verified": 3543,
+  "source_icon_OIDs_verified": 628,
+  "source_icon_rows_with_4digit_numeric_pattern": 626,
+  "excluded_nonnumeric_image_records": [
+    {
+      "slot": 742,
+      "names": "icon_poke_blank"
+    },
+    {
+      "slot": 1056,
+      "names": "icon_poke_uni_hatena"
+    }
+  ],
+  "independent_holdout_bytes_both_key_and_value_exact": 612,
+  "numeric_31_template_groups": 14,
+  "single_observation_variant_groups": 4,
+  "normal_canonical_template_rows": 292,
+  "uni_canonical_template_rows": 292,
+  "all_model_predicted_keys_match": true,
+  "all_model_predicted_source_OIDs_match": true,
+  "observed_base31_powers": {
+    "normal": {
+      "key_p14": "59db6a41",
+      "value_p69": "38e0609f"
+    },
+    "uni": {
+      "key_p18": "cdaa61c1",
+      "value_p73": "1a70f91f"
+    }
+  },
+  "synthetic_numeric_names_tested_across_all_groups": 140000,
+  "numeric_candidate_probe_key_match_count": 626,
+  "numeric_candidate_probe_both_key_value_exact_count": 626,
+  "numeric_probe_new_non_M25_source_OIDs_confirmed": 0,
+  "numeric_probe_key_only_conflicts": 0,
+  "native_hash31_implementation_located": false,
+  "native_species_ID_to_source_OID_verified": false,
+  "original_numeric_name_is_national_dex_ID_proven": false,
+  "warning": "Mathematical 31-polynomial source-byte model, including independently tested holdouts, is not yet an original game native hash implementation or gameplay species ID consumer. One-sample form groups cannot be independently validated."
+}
