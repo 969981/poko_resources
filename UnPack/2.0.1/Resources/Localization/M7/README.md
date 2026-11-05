@@ -50,3 +50,13 @@ GitHub Actions 入口：`.github/workflows/unpack-m7-localization.yml`。生成�
 ## 尚缺的第三类证据：功能分类
 
 下一步须从游戏脚本、Lua 参数、对象/资源引用中恢复 `caller/resource hash → text table entry → row index`。在此之前 `category=UNKNOWN`，不能凭关键词自动标为 Dialogue / Quest / Buildings / Tutorials / UI。原生表的相对偏移与“表内记录 ID”虽然已定位，但 **资源级外键** 尚未建立。
+
+## M7 失败原因与修复（2026-11-05）
+
+第一次全量工作流运行 [41943292840](https://github.com/969981/poko_resources/actions/runs/41943292840) 的单元测试与扫描均返回 0，但最终锚点校验未通过。此次输出解析了 2,649 张文本表、755,319 个记录／形态，得到了 161 组九语言候选；其中 2323、3304、4645 组曾被错误拒绝。
+
+从原始二进制逐项验证，根因是 Python 的 `str.isprintable()` 把日语、繁体与简体文本中合法的全角空格 `U+3000` 判为不可打印；例如 `02323.bin` 某条日文 `なにを　しますか？`，以及 `03304.bin` 日文、`04645.bin` 名称表中的其他全角空格。已修正为 `c.isprintable() or c.isspace()`，并新增针对该问题的回归测试。
+
+工作流现会在失败时回写 `Diagnostics/status.txt`、`tests.log`、`parse.log`、`verify.log`，保留完整的退出状态与最近日志，并在后续最后一步仍将失败报告为失败，不假装验收通过。
+
+不要将首次失败时的部分输出当作最终九语言库；以最新一次 workflow 的 `m7_report.json` 和四组锚点的 `PASS` 为验收依据。
