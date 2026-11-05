@@ -60,13 +60,15 @@ jobs:
               assert report["pokohex_reference_count"]==reference,report
               assert report["native_texinfo_png_candidates"]==native,report
               assert 0<=report["pixel_exact_matched_reference_icons"]<=reference,report
+              assert 1<=report["visual_near_identical_reference_candidates"]<=reference,report
+              assert sum(report["reference_status_counts"].values())==reference,report
               rows=list(csv.DictReader((dest/"native_icon_crosswalk.csv").open(encoding="utf-8",newline="")))
               assert len({r["reference_sprite_id"] for r in rows})==reference
               assert all(r["status"] in ("PIXEL_EXACT_UNIQUE","PIXEL_EXACT_MULTIPLE_SOURCES",
-                                        "NO_PIXEL_EXACT_NATIVE") for r in rows)
+                                        "VISUAL_NEAR_IDENTICAL_CANDIDATE","NO_CONFIDENT_IMAGE_CANDIDATE") for r in rows)
               assert all("nearest_normalized_mae" in r and r["nearest_normalized_mae"] for r in rows)
-              print(name,report["pixel_exact_matched_reference_icons"],"/",reference,
-                    "strictly pixel-exact; unmatched candidates retain independent visual scores")
+              print(name,report["visual_near_identical_reference_candidates"],"/",reference,
+                    "high-separation visual candidates; all original ID mappings remain unverified")
           PY
 
       - name: Upload independent evidence and native image artifacts
