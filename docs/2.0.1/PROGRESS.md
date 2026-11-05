@@ -61,3 +61,13 @@ python -m unittest discover -s tests -v
 - 外部 DWOriginsAssetTool 的 RDOK `object_hash / parent_database_hash / parent_object_hash / property_count` 布局与本次 40 条实际字节吻合，定位为 **强静态支持、运行时语义未证明**。
 - 已提交 `m3_rdok_crosswalk.py` (字段 Hash 频率与 ExeFS 字符串只读扫描)、`m3_rdok_sqlite.py` (候选关联导入 SQLite 的 SHA/IDOK/路径/原始字节验证)，相关 GitHub Actions 处于排队状态时不得称测试通过。
 - 重要更正：旧研究中 `MissionSettings_array.bfbs` / `MissionInfo_array.bfbs` 来自 **SV DLC** 的 pkNX 资源路径，不能当作 Pokopia 真实资源名；仅保留静态负例检索。Pokopia 自己的 BFBS schema、字段 Hash 文本与运行时加载关系仍未完成确认。
+
+## M25–M26 原生村民图标与 KIDS 双数组（2026-11-05）
+
+- M25：原始 KIDSOBJDB 678/678 数据库逐字节扫描，找到一个 3,543 元素的原生图标源对象字段，分出 314 常规 + 314 uni 图标槽位；从已归档原始 TEXINFO 解码 `.bin` 和原始 G1T 实际补出 26 PNG，其中 17 张与此前缺失参考肖像达到独立高置信视觉对应。原生村民候选覆盖更新为 **307/378**；原始 `Villagers/Native_2.0.1/Icons/` 现有 307 张实体 PNG。
+- M26：对剩余 62 张 PokoHex 肖像编号 `317–378` 与全套 **629 原生 Source OID / 635 张 SHA 校验的 PNG** 重新比对，**0 个新增可靠匹配**。9 张多候选得到了各组最优互斥视觉推荐，但**尚未证明运行时游戏 ID**。
+- M26.2–M26.3：原始 NSO0 已确认 BSS 类 `main+0x367AD40`、类型方法表 `main+0x33135C8`、属性枚举函数 `main+0xDD1B48`，并直接从原生 rodata 三项属性描述器返回 `0x2F610FEA`、`0xE88C8D60`、`0x34CBB458`。
+- M26.4：从原始 KIDSOBJDB 恢复 **3,543 对连续原生 u32**；前一个字段 `0xE88C8D60` 的值全部唯一且不等于 0，后一个字段 `0x34CBB458` 有 628 个条目可逐项关联到已确认 Source OID。常见名称 Hash 假设试验没有命中。尚缺真正的**运行时物种/村民 ID → 原生键或数组索引 → Source OID** 读取调用链。
+- M23 的两个 FF03 容器 `0x03a38715.fdata` 和 `0xfd6af828.fdata` 仍未获取原始负载；M25 已恢复的 26 张 PNG 源自**已有** `0x00011c54.fdata`，不可误记为 FF03 已恢复。
+
+详见 [[M26_VILLAGER_ROSTER_AND_KIDS_PARALLEL_ARRAYS]] 和 [[M25_NATIVE_POKEMON_ICON_REGISTRY]]。所有结果由 2.0.1 原生字节和 Actions 独立验证，未写入未经证明的游戏正式身份映射。
