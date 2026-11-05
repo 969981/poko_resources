@@ -101,6 +101,40 @@ def descriptor_survey(parts):
     }
 
 
+def confirm_crypto_nid_namespace(descriptor_report):
+    """Native strings align with OpenSSL obj_mac.h NID 982,983,984.
+
+    The original binary, not the external header, supplies all three labels.
+    This is an explicit negative control for the same-number LINKDATA entry.
+    """
+    expected={
+        982:("md_gost12_256","GOST R 34.11-2012 with 256 bit hash"),
+        983:("md_gost12_512","GOST R 34.11-2012 with 512 bit hash"),
+        984:("id-tc26-signwithdigest","id-tc26-signwithdigest"),
+    }
+    records={r["registry_index"]:r for r in descriptor_report["samples"]}
+    checked=[]
+    for index,(short_name,long_name) in expected.items():
+        r=records[index]
+        slots=r["candidate_pointers_by_u32_position"]
+        got_short=slots["0x00"]["ascii_candidate"]
+        got_long=slots["0x08"]["ascii_candidate"]
+        if (got_short,got_long)!=(short_name,long_name) or (
+            int(r["verified_reader_word_at_0x10"],16)!=index):
+            raise ValueError("NATIVE_OPENSSL_NID_982_983_984_BYTES_DID_NOT_MATCH")
+        checked.append({"nid":index,"short_name":got_short,
+                        "long_name":got_long,
+                        "source_descriptor_rva":r["descriptor_rva"],
+                        "evidence":"ORIGINAL_NSO_RODATA_AND_DATA_BYTES"})
+    return {
+        "status":"OPENSSL_OBJ_MAC_NID_NAMESPACE_IDENTIFIED_FROM_ORIGINAL_BYTES",
+        "verified_native_nid_rows":checked,
+        "external_independent_reference":"https://github.com/openssl/openssl/blob/master/include/openssl/obj_mac.h",
+        "numeric_983_is_linkdata_item_resource_id":False,
+        "correction_to_m11":"M11's literal 983 registry lookup is an OpenSSL crypto OID registry lookup, NOT proof of loading LD_C0_R.BIN entry 00983.bin."
+    }
+
+
 def disassembly(code,base,pc,before=16,after=192):
     from capstone import Cs,CS_ARCH_ARM64,CS_MODE_ARM
     md=Cs(CS_ARCH_ARM64,CS_MODE_ARM)
@@ -255,17 +289,20 @@ def analyze(main,item):
     seg=next(x for x in parts if x["name"]=="text")
     code,base=seg["data"],seg["mem_offset"]
     descriptor_layout=verify_indexed_lookup_table(code,base)
+    descriptors=descriptor_survey(parts)
+    crypto=confirm_crypto_nid_namespace(descriptors)
     paths=[chain(code,base,pc) for pc in CALLERS]
     destinations={*LOOKUPS,0x1443780,0x1471990}
     return {
-        "status":"M20_983_DESCRIPTOR_AND_GLOBAL_XREF_EVIDENCE_WITH_UNLINKED_ITEM_CONSUMER",
+        "status":"M20_CRYPTO_NID_983_DISPROVES_PRIOR_ITEM_LOADER_HYPOTHESIS",
         "sha256_main":sha_main,"sha256_item":sha_item,
         "original_table_record_count":4600,"original_table_record_stride":68,
         "original_table_header_bytes":64,
         "original_table_byte_length":len(item),
         "native_983_lookup_chains":paths,
         "indexed_descriptor_layout":descriptor_layout,
-        "original_40_byte_descriptor_samples":descriptor_survey(parts),
+        "original_40_byte_descriptor_samples":descriptors,
+        "verified_openssl_crypto_nid_namespace":crypto,
         "wrapper_and_calex_disassembly":{hex(t):disassembly(code,base,t,16,256) for t in LOOKUPS},
         "direct_bl_callers":all_bl_callers(code,base,destinations),
         "global_static_xrefs":exact_global_xrefs(code,base),
@@ -274,6 +311,7 @@ def analyze(main,item):
         "semantic_proofs":{
             "983_descriptor_indexed_by_original_main":True,
             "global_cache_store_from_983_chain":True,
+            "983_is_open_ssl_crypto_nid_not_item_entry":True,
             "global_cache_runtime_load_back_to_item_accessor":False,
             "983_descriptor_is_original_00983_bin":False,
             "concrete_registry_0xc7_virtual_method":False,
@@ -281,7 +319,7 @@ def analyze(main,item):
             "native_material_enum_class_names":False,
             "native_per_item_max_stack":False
         },
-        "warning":"The 983 registry descriptor, the 4600-item virtual accessor, and physical 00983.bin records are separate components until pointer/caller provenance connects them."
+        "warning":"Correction: literal 983 is OpenSSL NID md_gost12_512 from original bytes, a different namespace from LINKDATA 00983.bin. Investigate the 4600-ID registry 0xC7 caller independently; do not use this crypto global as an item-table pointer."
     }
 
 
@@ -298,6 +336,7 @@ def main():
     summary={k:report[k] for k in (
         "status","sha256_main","sha256_item","original_table_byte_length",
         "native_983_lookup_chains","indexed_descriptor_layout",
+        "verified_openssl_crypto_nid_namespace",
         "global_static_xrefs","unqualified_global_offset_survey",
         "independent_item_consumers","semantic_proofs","warning"
     )}
