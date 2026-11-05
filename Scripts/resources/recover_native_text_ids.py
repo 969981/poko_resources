@@ -132,6 +132,29 @@ class Shard:
         self.writer.writerow(row);self.count+=1
     def close(self):self.file.close()
 
+
+class JSONShard:
+    """Write standards-compliant JSON arrays, sharded to avoid oversized blobs."""
+    def __init__(self, root, name):
+        self.root=root;self.name=name;self.part=-1;self.file=None
+        self.current=0;self.count=0;self.next()
+    def next(self):
+        if self.file:
+            self.file.write("\n]\n")
+            self.file.close()
+        self.part+=1
+        self.current=0
+        self.file=(self.root/f"{self.name}_{self.part:03d}.json").open("w",encoding="utf-8")
+        self.file.write("[\n")
+    def add(self, row):
+        if self.current and self.file.tell()>32*1024*1024:self.next()
+        if self.current:self.file.write(",\n")
+        self.file.write(json.dumps(row,ensure_ascii=False))
+        self.current+=1;self.count+=1
+    def close(self):
+        self.file.write("\n]\n")
+        self.file.close()
+
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--decoded-root",type=Path,required=True)
@@ -177,6 +200,7 @@ def main():
               ["start_entry","end_entry","record_count","forms","evidence_grade","category",
                "locale_order","jp_kana","ko_hangul","zht_han","zhs_han"],gr)
     write_csv(root/"ambiguous_runs.csv",["first_entry","last_entry","file_count","reason"],ambiguous)
+    (root/"nine_language_groups.json").write_text(json.dumps(gr,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     raw=Shard(root,"native_records",
               ["entry","source_path","source_sha256","text_id","form_index","record_width",
                "absolute_byte_offset","raw_metadata","text","linked_group_start","link_grade"])
@@ -189,6 +213,7 @@ def main():
                              raw_metadata=";".join(f"0x{x:08x}" for x in metadata),
                              text=value,linked_group_start=group,link_grade=grade))
     raw.close()
+    joined_json=JSONShard(root,"nine_language_records")
     joined=Shard(root,"nine_language_records",
                  ["start_entry","text_id","form_index","category","evidence_grade",
                   *LANGS,*(x+"_entry" for x in LANGS),*(x+"_offset" for x in LANGS)])
@@ -204,12 +229,15 @@ def main():
                     row[lang+"_entry"]=entry
                     row[lang+"_offset"]=source.rows[text_id][1][form]
                 joined.add(row)
+                joined_json.add(row)
     joined.close()
+    joined_json.close()
     found={run[0] for run,_ in groups}
     report=dict(status="M7_NATIVE_RECORDS_PARSED_UNVERIFIED_REFERENCES",
                 input_files=len(sources),parsed_text_tables=len(tables),
                 nine_language_groups=len(groups),native_record_forms_exported=raw.count,
-                nine_language_rows_exported=joined.count,ambiguous_runs=len(ambiguous),
+                nine_language_rows_exported=joined.count, json_rows_exported=joined_json.count,
+                ambiguous_runs=len(ambiguous),
                 known_anchor_groups={str(x):("PASS" if x in found else "NOT_LINKED") for x in ANCHORS},
                 id_semantics="ZERO_BASED_TABLE_RECORD_ORDINAL",
                 category_evidence="NOT_YET_AVAILABLE",
