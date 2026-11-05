@@ -78,6 +78,41 @@ def find_xrefs(code,base):
                 break
     return refs
 
+def verify_indexed_lookup_table(code,base):
+    """Byte-verify original indexed descriptor table, not an item record."""
+    from capstone import Cs,CS_ARCH_ARM64,CS_MODE_ARM
+    from .trace_native_item_provenance import cmp_immediate
+    cmp=cmp_immediate(readword(code,base,0x1445e3c))
+    mov=readword(code,base,0x1445e50)
+    adrp=readword(code,base,0x1445e44)
+    add=readword(code,base,0x1445e48)
+    ldr=readword(code,base,0x1445e58)
+    d=Cs(CS_ARCH_ARM64,CS_MODE_ARM)
+    madd=list(d.disasm(code[0x1445e54-base:0x1445e58-base],0x1445e54))
+    if not (cmp and cmp["constant"]==0x4aa and cmp["compare_register"]==0 and
+        movz_immediate(mov)==0x28 and (mov&31)==9 and
+        adrp_target(adrp,0x1445e44)==0x3354000 and (adrp&31)==8 and
+        (add&0xff000000)==0x91000000 and (add&31)==8 and
+        ((add>>5)&31)==8 and ((add>>10)&0xfff)==0x500 and
+        madd and madd[0].mnemonic=="umaddl" and
+        madd[0].op_str.replace(" ","")=="x9,w0,w9,x8" and
+        (ldr&0xffc00000)==0xb9400000 and (ldr&31)==9 and
+        ((ldr>>5)&31)==9 and ((ldr>>10)&0xfff)*4==0x10):
+        raise ValueError("ORIGINAL_983_INTERNAL_LOOKUP_LAYOUT_MISMATCH")
+    return {"lookup_function_rva":hex(FIRST),
+        "max_accepted_input_id":0x4aa,
+        "indexed_slot_count_if_zero_based":0x4aa+1,
+        "descriptor_stride":0x28,
+        "table_base_rva":hex(0x3354500),
+        "entry_word_offset":0x10,
+        "verified_instructions":{
+            "compare":"cmp w0, #0x4aa",
+            "stride_load":"mov w9, #0x28",
+            "index":"umaddl x9, w0, w9, x8",
+            "field":"ldr w9, [x9, #0x10]"
+        },
+        "semantic_grade":"NATIVE_DESCRIPTOR_INDEX_LAYOUT_VERIFIED_NOT_LINKDATA_ID_983_PROVEN"}
+
 def analyze(main,table):
     from capstone import Cs,CS_ARCH_ARM64,CS_MODE_ARM
     sha=hashlib.sha256(main).hexdigest()
@@ -94,6 +129,7 @@ def analyze(main,table):
         "main_sha256":sha,"item_table_sha256":tsha,
         "literal_983_call_chains":[chain(code,base,pc) for pc in CALLERS],
         "global_rva":hex(PAGE+DISP),
+        "native_index_descriptor_layout":verify_indexed_lookup_table(code,base),
         "global_xrefs":find_xrefs(code,base),
         "callee_disassembly":{
            hex(pc):windows(md,code,base,pc,before=16,after=136)
@@ -121,6 +157,7 @@ def main():
        report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     print("M11_3_CHAIN",json.dumps({
       "chains":report["literal_983_call_chains"],
+      "descriptor_layout":report["native_index_descriptor_layout"],
       "global_rva":report["global_rva"],
       "xref_count":report["global_xref_count"],
       "xrefs":report["global_xrefs"][:24]},separators=(",",":")))
