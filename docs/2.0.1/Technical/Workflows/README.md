@@ -13,4 +13,4 @@ updated: 2026-11-05
 | [[02-Texture-To-PNG]] | TEXINFO + G1T → PNG / manifest | 布局/UV/身份分别验证 |
 | [[03-Localization-To-CSV]] | LINKDATA → 九语言文本 / 表索引 | 不重排零基行号 |
 
-全部命令默认在仓库根目录 Windows PowerShell 下执行；脚本参数与最新源码不符时优先运行 `python -m <module> --help`。更多旧版完整配方：[[../12-Reproducible-Recipes]]。
+全部命令默认在仓库根目录 Windows PowerShell 下执行；脚本参数与最新源码不符时优先运行 `python -m <module> --help`。更多旧版完整配方：[[12-Reproducible-Recipes]]。

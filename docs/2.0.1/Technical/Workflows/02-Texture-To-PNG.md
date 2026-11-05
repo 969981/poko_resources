@@ -38,4 +38,4 @@ python -m Scripts.resources.reconcile_native_misc_batches
 
 对每张 PNG 保存双源路径、SHA、layer、UV、尺寸、实际选用布局与证据等级；609 条宝可梦纹理记录是**候选来源**，不得据此自动填原生物种 ID。
 
-参见 [[../Formats/04-TEXINFO-G1T]] 和 [[../13-Resource-Provenance-Map]]。
+参见 [[docs/2.0.1/Technical/Formats/04-TEXINFO-G1T]] 和 [[13-Resource-Provenance-Map]]。

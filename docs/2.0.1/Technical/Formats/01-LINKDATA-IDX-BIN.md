@@ -52,4 +52,4 @@ python -m Scripts.unpack.linkdata --idx 2.0.1/romfs/LI_C0_R.IDX --bin _work/2.0.
 
 必须记录：原始 IDX/BIN 的 SHA-256、记录号、四个原始字段、raw SHA、decoded SHA、成功或错误代码。典型错误：`IDX_SIZE_NOT_MULTIPLE_OF_32`、`IDX_OFFSET_ALIGNMENT_MISMATCH`、`LINK_CHUNK_BOUNDS`、`LINK_TOTAL_UNPACKED_SIZE_MISMATCH`。仅 `INDEXED` 不代表从 BIN 提取完成。
 
-相关：[[../Workflows/01-Restore-And-Decode]]、[[../README|技术首页]]。
+相关：[[docs/2.0.1/Technical/Workflows/01-Restore-And-Decode]]、[[docs/2.0.1/Technical/README|技术首页]]。

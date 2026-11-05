@@ -61,4 +61,4 @@ python -m Scripts.unpack.ktrdb --base _work/2.0.1-restored/romfs/motor_asset_re/
 
 状态需区分 `CONTAINER_NOT_PRESENT`、`UNSUPPORTED_FOOTER_LAYOUT`、提取成功与解码成功。不能因为本地缺少分卷/FDATA 就写“解析器不支持格式”。
 
-相关：[[03-KIDSOBJDB-IDOK-RDOK]]、[[04-TEXINFO-G1T]]、[[../Workflows/01-Restore-And-Decode]]。
+相关：[[03-KIDSOBJDB-IDOK-RDOK]]、[[04-TEXINFO-G1T]]、[[docs/2.0.1/Technical/Workflows/01-Restore-And-Decode]]。

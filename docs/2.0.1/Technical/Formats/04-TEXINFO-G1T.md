@@ -62,4 +62,4 @@ python -m Scripts.resources.export_native_pokemon_icons
 
 主图集的 UV 索引位于 `UnPack/2.0.1/Resources/Textures/Indexes/item_atlas_1333_uv.csv`，输出与旧 PokoHex 参考图必须隔离保存。宝可梦 609 条是**纹理索引条目**，不是经证明的 609 个原生物种。
 
-相关：[[../Workflows/02-Texture-To-PNG]]、[[../README|技术首页]]。
+相关：[[docs/2.0.1/Technical/Workflows/02-Texture-To-PNG]]、[[docs/2.0.1/Technical/README|技术首页]]。

@@ -55,4 +55,4 @@ python -m Scripts.resources.link_native_text_references --decoded-root UnPack/2.
 
 逐条记录原始解码文件 SHA、`entry`、`text_id`、`form_index`、`absolute_byte_offset`、原字符串和控制符。后续追踪场景/任务/建筑，必须证明外部脚本/对象字段真正引用了 `table_id + text_id` 的组合。
 
-相关：[[05-Native-Item-00983]]、[[../Workflows/03-Localization-To-CSV]]、[[../README|技术首页]]。
+相关：[[05-Native-Item-00983]]、[[docs/2.0.1/Technical/Workflows/03-Localization-To-CSV]]、[[docs/2.0.1/Technical/README|技术首页]]。

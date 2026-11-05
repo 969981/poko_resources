@@ -39,4 +39,4 @@ python -m Scripts.unpack.ktrdb --base _work/2.0.1-restored/romfs/motor_asset_re/
 
 在验收表中区分 `INDEXED`、`EXTRACTED`、`DECOMPRESSED`、`DECODE_FAILED`、`CONTAINER_NOT_PRESENT`、`UNSUPPORTED_FOOTER_LAYOUT`。对任意成功条目记录原始索引位置、压缩原字节 SHA、解码 SHA、最终输出相对路径；失败不允许静默跳过。
 
-延伸格式：[[../Formats/01-LINKDATA-IDX-BIN]]、[[../Formats/02-RDB-RDX-FDATA-IDRK]]。
+延伸格式：[[docs/2.0.1/Technical/Formats/01-LINKDATA-IDX-BIN]]、[[docs/2.0.1/Technical/Formats/02-RDB-RDX-FDATA-IDRK]]。

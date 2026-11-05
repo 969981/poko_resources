@@ -37,4 +37,4 @@ python -m Scripts.resources.link_native_text_references --decoded-root UnPack/2.
 
 M7 原生输出可检查 `Resources/Localization/M7/native_table_inventory.csv`、`nine_language_groups.csv`，不要将语种连续分组误当作场景/剧情分类已完成。
 
-参见 [[../Formats/06-Native-Text-Tables]]、[[../Formats/05-Native-Item-00983]]、[[../13-Resource-Provenance-Map]]。
+参见 [[docs/2.0.1/Technical/Formats/06-Native-Text-Tables]]、[[docs/2.0.1/Technical/Formats/05-Native-Item-00983]]、[[13-Resource-Provenance-Map]]。

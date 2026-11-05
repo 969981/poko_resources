@@ -51,4 +51,4 @@ python -m Scripts.resources.export_native_localization --decoded-root UnPack/2.0
 
 必须把“原生资源结构 → ID 到记录定位 → 消费字段的原生指令/运行时值 → 语义检验”闭合才能正式赋义。**ExeFS 中 OpenSSL NID 983 与 `00983.bin` 无关**，不能使用该误匹配充当 loader 证据；参见 [M20 原始反证](../../M20_ITEM983_CACHE_ORIGIN.md)。
 
-相关：[[06-Native-Text-Tables]]、[[03-KIDSOBJDB-IDOK-RDOK]]、[[../Workflows/03-Localization-To-CSV]]。
+相关：[[06-Native-Text-Tables]]、[[03-KIDSOBJDB-IDOK-RDOK]]、[[docs/2.0.1/Technical/Workflows/03-Localization-To-CSV]]。
