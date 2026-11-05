@@ -65,7 +65,7 @@ jobs:
           assert not s["native_hash31_function_verified"]
           assert not s["native_kids_twin_array_consumer_verified"]
           assert not s["game_species_id_to_array_key_verified"]
-          assert all(not r["native_31_recurrence_proven"] and not
+          assert all(not r["original_31_recurrence_proven"] and not
               r["KIDS_icon_registry_consumer_proven"] and not
               r["native_game_species_id_binding_proven"]
               for r in details["ranked_candidates"])
