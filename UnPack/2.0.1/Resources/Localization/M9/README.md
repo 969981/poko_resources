@@ -64,3 +64,17 @@
 原始属性 CSV 采用 24 MiB 左右的分片避免 GitHub 单文件 100 MiB 限制。输出目录为 [`M9/Properties`](./Properties)，主要文件包括 `native_typed_fields_*.csv`、`unverified_local_oid_candidates_*.csv`、`m9_typed_field_report.json`。
 
 解析参考为 [eArmada8 / yumia_decode_kidsobjdb](https://github.com/eArmada8/yumia_fdata_tools/blob/9d8dc1fb7436f14ffec42acb6d719cea1214abbd/ktid/yumia_decode_kidsobjdb.py) 与 [PieceMetal / KidsObjectDatabase](https://github.com/PieceMetal/DWOriginsAssetTool/blob/22d744f37d4a55a7b684bd8c6d7fd14665c0152d/Core/KidsObjectDatabase.cs)，并由本项目真实 2.0.1 文件验收。
+
+## M9.3～M9.5 — `_RNK0000` 名称资源 Hash 与 ExeFS 消费证据（2026-11-05）
+
+已完成三轮原版 2.0.1 数据分析（Actions [M9.3 #41951158981](https://github.com/969981/poko_resources/actions/runs/41951158981)、[M9.4 #41951784826](https://github.com/969981/poko_resources/actions/runs/41951784826)、[M9.5 #41952223555](https://github.com/969981/poko_resources/actions/runs/41952223555) 全部成功）。
+
+从三个 `_DOK0000` 头部 `u32@+0x14` 恢复的配套 `_RNK0000` 名称资源 Hash 分别为 `aa91cb96`、`a91711c6`、`cb3c8b15`。现有 89,507 条 M3 索引和已跟踪相关 FDATA 路径里没有找到匹配的真实 `_RNK0000` 文件，**RNK 字符串尚未恢复**。
+
+另一方面，原版 ExeFS 在 3 处地址构建了属性 Hash 并通过两次同址相邻 `STP` 把 Hash 与 rodata 字符串指针写入同一个描述符路径：
+
+- `main+0xCA2C80`：`0x0b6e1578` ↔ `DisplaysetObjectNameHash`
+- `main+0xD38530`：`0xe21ff09f` ↔ `ObjectNameHashArray`
+- `main+0xD59460`：`0xf92c5190` ↔ `TexturesRenderStateObjectHash`
+
+它们是 **ExeFS 指令级 Hash/字符串元数据关联候选**，不是已取得 RNK 表的属性名称，也不证明游戏实际 KIDSOBJDB getter 读取了对应字段。其余 87,445 条 `u32==local OID` 候选全部维持未验证，剧情/任务/建筑文本正式外键仍为 0。详细证据、字节偏移、完整 ARM64 反汇编、CSV/JSON 和核验入口见 [`NameTables/README.md`](./NameTables/README.md)。
