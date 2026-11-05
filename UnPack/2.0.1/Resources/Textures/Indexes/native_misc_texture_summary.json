@@ -1,0 +1,51 @@
+{
+  "game_version": "2.0.1",
+  "input_texinfo_records": 7566,
+  "non_item_non_pokemon_records": 4348,
+  "linked_native_g1t": 3930,
+  "statuses": {
+    "INDEXED_ORIGINAL_TEXINFO_G1T_PAIR": 3930,
+    "G1T_ABSENT_OR_AMBIGUOUS_IN_PRIMARY_PACK": 368,
+    "MISSING_OR_AMBIGUOUS_KIDSOBJDB_INDEX_EDGE": 50
+  },
+  "name_heuristic_categories": {
+    "ui_gameplay_name_candidate": 1172,
+    "ui_icon_name_candidate": 1579,
+    "material_name_candidate": 5,
+    "other_native_sprite_name": 1592
+  },
+  "top_families": {
+    "icon": 1580,
+    "still": 713,
+    "0000": 396,
+    "seal": 324,
+    "0500": 258,
+    "0300": 231,
+    "0200": 126,
+    "FurniturePattern": 122,
+    "shop": 110,
+    "furniture": 82,
+    "0001": 65,
+    "0400": 61,
+    "0800": 44,
+    "food": 25,
+    "0230": 22,
+    "8000": 20,
+    "0231": 17,
+    "0503": 16,
+    "0810": 15,
+    "0100": 13,
+    "0600": 12,
+    "0560": 11,
+    "0430": 10,
+    "prt": 10,
+    "0030": 9,
+    "0501": 7,
+    "0801": 6,
+    "0440": 5,
+    "0220": 5,
+    "259": 5
+  },
+  "material_identity_verified": false,
+  "warning": "Category is from resource names only. KIDSOBJDB pairs are native index edges; pixel/decode evidence requires per-file G1T validation."
+}
