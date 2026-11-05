@@ -54,6 +54,25 @@ def scan(code,base):
         if e["kind"] in ("mul_long","madd"):muls.append(e)
     return constants,fields,muls,counts
 
+def straightline_constant_live(code,base,start,end,regno):
+    """Only accept MOVZ -> multiplication when no branch or register clobber intervenes."""
+    if not (base<=start<end<=base+len(code)) or end-start>0x100:
+        return False
+    from capstone import Cs,CS_ARCH_ARM64,CS_MODE_ARM
+    md=Cs(CS_ARCH_ARM64,CS_MODE_ARM)
+    md.detail=True
+    size=0
+    for ins in md.disasm(code[start-base:end-base],start):
+        size+=ins.size
+        if ins.address==start:
+            continue
+        if ins.mnemonic in ("bl","blr","b","br","ret","retab","cbz","cbnz","tbz","tbnz") or ins.mnemonic.startswith("b."):
+            return False
+        _,writes=ins.regs_access()
+        if any(md.reg_name(x) in ("w"+str(regno),"x"+str(regno)) for x in writes):
+            return False
+    return size==end-start
+
 def build(code,base):
     c,fields,muls,counts=scan(code,base)
     fpcs=[x["pc"] for x in fields]
@@ -65,7 +84,7 @@ def build(code,base):
             width="w" if m["kind"]=="mul_long" else m["width"]
             arr=c.get((68,reg,width),[])
             at=bisect_left(arr,m["pc"])-1
-            if at>=0 and 0<m["pc"]-arr[at]<=0x100:
+            if at>=0 and 0<m["pc"]-arr[at]<=0x100 and straightline_constant_live(code,base,arr[at],m["pc"],reg):
                 likely.append({"pc":hex(arr[at]),"reg":width+str(reg),
                                "warning":"no CFG clobber proof"})
         if not likely:continue
@@ -111,15 +130,15 @@ def run(main,item):
     if fmt!="NSO0":raise ValueError("Wrong original executable kind")
     code=next(x for x in parts if x["name"]=="text")
     windows,total,counts=build(code["data"],code["mem_offset"])
-    return {"status":"ORIGINAL_68_STRIDE_MUL_CANDIDATES_ONLY",
+    return {"status":"STRAIGHTLINE_68_MULTIPLY_CANDIDATES_NOT_TABLE_PROOF",
             "sha256_main":sha_main,"sha256_item":sha_item,
             "item_count":4600,"item_stride":68,
             "total_candidates":total,"top_nonoverlapping_count":len(windows),
             "opcode_counts":counts,"top_candidates":windows,
             "verified_00983_loader":False,"verified_item_ID_times_68_base":False,
             "notes":[
-               "UMADDL / SMADDL / MADD with MOVZ #68 near source register.",
-               "Same-register offset loads are candidate edges, no CFG clobber proof.",
+               "UMADDL / SMADDL / MADD with MOVZ #68 and no intervening writes or branches on the linear path.",
+               "Straight-line constant propagation is checked; same-output offset loads still need source provenance.",
                "Allocator, indirect table lookup, and 00983.bin file-source provenance remain untraced.",
                "Optimized 68 = (ID * 17) << 2 and helper or literal-pool calculations may be missed."
             ]}
@@ -134,6 +153,9 @@ def selftest():
     code=struct.pack("<4I",wz,maddl,0x79400000|(0x11<<10)|(1<<5)|4,
                      0x39400000|(0x26<<10)|(1<<5)|5)
     c,fields,muls,counts=scan(code,0)
+    assert straightline_constant_live(code,0,0,4,10)
+    clobbered=struct.pack("<3I",wz,0x52800000|10,maddl)
+    assert not straightline_constant_live(clobbered,0,0,8,10)
     assert len(fields)==2 and len(muls)==1
     fake=bytearray(64+4600*68)
     struct.pack_into("<II",fake,0,4600,3)
