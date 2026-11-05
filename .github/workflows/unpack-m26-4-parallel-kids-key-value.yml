@@ -54,8 +54,8 @@ jobs:
               rows=list(csv.DictReader(f))
           assert len(rows)==summary["original_parallel_array_element_count"]==3543
           assert summary["verified_M25_native_icon_source_OID_pairs"]==628
-          assert summary["original_first_array_hash"]=="0xe88c8d60"
-          assert summary["original_second_array_hash"]=="0x34cbb458"
+          assert summary["original_first_array_hash"]=="e88c8d60"
+          assert summary["original_second_array_hash"]=="34cbb458"
           assert summary["parallel_arrays_exactly_adjacent"]
           assert sum(r["icon_source_oid_matches_original_registry"]=="1" for r in rows)==628
           assert not summary["native_game_species_id_to_array_index_proven"]
