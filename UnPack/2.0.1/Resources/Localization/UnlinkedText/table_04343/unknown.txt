@@ -1,0 +1,51 @@
+
+<oneline>Gib dem Pokémon<br><$cdef(27)><dgt2;1(lnum2)> <accclass><$inamewithnum;0(lnum1,lnum2)></color>.
+Baue ein neues Haus.
+Baue das Habitat <$cdef(27)><$hatname;0(lnum1)></color>.
+<oneline>Bereite <acciart;0()><$cdef(27)><accclass><fqty(1)><$iname;0(lnum1)></color> für<br><$cdef(27)><$cname;1(lnum4)></color> zu.
+
+
+
+
+<oneline>Mach den Weg zum <$cdef(27)><$gquestdest;0(lnum1)></color><br>leicht begehbar.
+
+
+
+
+
+
+
+<oneline>Platziere <acciart;0()><$cdef(27)><accclass><fqty(1)><$iname;0(lnum1)> </color>in der<br>Nähe<slide><br>der<slide><br>Bleibe<slide><br>des Pokémon.
+<oneline>Bringe <$cdef(27)><$cname;1(lnum2)></color> in die Nähe von<br><$cdef(27)><$cname;0(lnum1)></color>.
+<oneline>Mache ein Foto von dir und<br><$cdef(27)><$cname;0(lnum1)></color>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sprich mit <$cdef(27)><$cname;0(lnum1)></color>.

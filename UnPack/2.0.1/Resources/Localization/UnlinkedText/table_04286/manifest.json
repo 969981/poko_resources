@@ -1,0 +1,29 @@
+{
+  "entry": 4286,
+  "language": "UNKNOWN",
+  "category": "UNKNOWN",
+  "evidence_grade": "UNLINKED_NATIVE_RECORD",
+  "text_id_semantics": "ZERO_BASED_NATIVE_TABLE_RECORD_ORDINAL",
+  "record_count": 128,
+  "record_width": 8,
+  "forms_per_record": 1,
+  "header_version_raw_u32": 2,
+  "source": {
+    "path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04286.bin",
+    "sha256": "1c75c14e9fc669a92e39f75ec8effcb3aadbf84c8a58eaa3d1a4c6768c55230f",
+    "bytes": 3680
+  },
+  "outputs": {
+    "txt": "unknown.txt",
+    "txt_sha256": "9120621e5952750bf39b48aa90468b232d16585e363f6214712224ff6bfaf143",
+    "all_forms_jsonl": "unknown.forms.jsonl",
+    "all_forms_jsonl_sha256": "82f414e014a1ec03a8050c84e227a0f01282fe04c8941bbca76a5946aa391753",
+    "lines": 128
+  },
+  "notes": [
+    "No confirmed language, nine-language alignment, or game caller relation.",
+    "TXT: one physical line per native record, only form index zero.",
+    "TXT retains game tags but escapes physical LF, CR, TAB, backslash.",
+    "JSONL retains all native forms, exact text, offsets and u32 metadata."
+  ]
+}
