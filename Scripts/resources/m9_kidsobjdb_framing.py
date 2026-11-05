@@ -151,8 +151,6 @@ def main():
     all_rows=[]
     files=[]
     for s in sorted(src,key=lambda r:r["m3_record_id"]):
-        if s["native_extension_hint"] if "native_extension_hint" in s else False:
-            raise ValueError("Unexpected untrusted native_extension_hint column")
         path=args.unpack_root/s["output_path"]
         data=path.read_bytes()
         if hash256(data)!=s["output_sha256"]:
