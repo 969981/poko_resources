@@ -1,0 +1,97 @@
+name: M31 - Original ScreenLayout method tables and bounded consumers
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m31_screenlayout_native_method_tables.py"
+      - ".github/workflows/unpack-m31-screenlayout-method-tables.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m31-screenlayout-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify-original-ScreenLayout-method-tables:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout pinned original NSO and class table reader
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          fetch-depth: 0
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m20_native_species_item_targets.py
+            Scripts/resources/m31_screenlayout_native_method_tables.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install source NSO decoder and ARM64 disassembler
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Selftest original registered ScreenLayout table anchors
+        run: python -m Scripts.resources.m31_screenlayout_native_method_tables --self-test
+
+      - name: Verify bounded method table pointers and source callsites
+        run: python -m Scripts.resources.m31_screenlayout_native_method_tables
+
+      - name: Fail closed if vtable size or game ID source is assumed
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M31")
+          s=json.loads((p/"m31_original_method_table_consumer_summary.json").read_text(encoding="utf-8"))
+          d=json.loads((p/"m31_original_screen_layout_method_table_bounded_scan.json").read_text(encoding="utf-8"))
+          assert s["original_main_sha256"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert s["registered_classes_examined"]==2
+          assert s["bounded_u64_slots_examined_per_class"]==16
+          assert s["total_u64_cells_read"]==32
+          expected={"ScreenLayoutTexturePackSettings":"0000000009d1afa46",
+                    "StaticScreenLayoutTextures":"00000000079991e79"}
+          for name,t in d["original_class_method_table_candidates"].items():
+              assert len(t["original_raw_u64_entries"])==16
+              assert t["original_raw_u64_entries"][3]["prior_verified_class_property_method"]
+              assert not t["bounded_inspection_is_complete_vtable_proof"]
+              assert all(not r["native_key_to_object_runtime_lookup_proven"] and
+                  not r["game_species_ID_consumer_proven"]
+                  for r in t["original_raw_u64_entries"])
+          assert not s["consumer_of_3543_texture_pack_key_array_proven"]
+          assert not s["runtime_entity_species_form_to_icon_key_proven"]
+          assert not s["native_game_ID_binding_proven"]
+          print("PASS original ScreenLayout table inventory with no invented runtime ID proof")
+          PY
+
+      - name: Upload complete bounded original method table results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m31-original-ScreenLayout-two-method-table-inventory
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M31/
+          if-no-files-found: warn
+          retention-days: 21
+
+      - name: Commit original native method table inspection
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M31/
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m31): original ScreenLayout method-table entry inventory and bounded callers"
+          for n in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
