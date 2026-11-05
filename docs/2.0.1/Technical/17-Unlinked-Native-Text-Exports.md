@@ -90,3 +90,10 @@ M9/ScriptTextCandidates/m9_numeric_text_tuple_report.json 的 verified_script_to
 - UnPack/2.0.1/Resources/Localization/M7/README.md：原生记录和语言候选规则。
 - UnPack/2.0.1/Resources/Localization/M8/m8_report.json：已知外键。
 - UnPack/2.0.1/Resources/Localization/M9/README.md：原生对象字段与调用者证据。
+
+
+## M7.1 结构与原文复查（2026-11-05）
+
+已增加 [[18-Native-Text-Families]]：使用 983 张原始二进制及其 M7 SHA-256 基线重新扫描，得到 22 组具有九文件唯一结构和文字脚本证据的候选（198 张表）、61 个歧义长区间位置（549 张）、18 个低内容区间（162 张）、56 张不成组文件。M8 已知的两组原生角色表（18 张）用作正向对照，因此仍有 965 张身份没有通过原生读取者验证。
+
+候选文件见 UnPack/2.0.1/Resources/Localization/TextFamilies/nine_language_hypotheses_NOT_VERIFIED.csv。它不改变原始 TXT、manifest 和正式 TextCatalog 的身份字段；视觉/词义线索只用于缩小后续 ExeFS/Lua/资源消费者验证范围。
