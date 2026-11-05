@@ -297,6 +297,12 @@ def main():
         "status","source_main_sha256","inspected_instruction_slots","field_opcodes",
         "coaccess_summary","coaccess_candidates_total","verified_00983_loader_or_base_producer",
         "verified_99_stack_merge_limit")},indent=2))
+    print("M11_TOP_REGISTER_CHAIN_SITES",json.dumps([
+        {"pc":c["pc"],"coaccess":c["coaccess"],
+         "base_producer":c["base_producer"],
+         "nearby_immediate_positions":c["nearby_immediate_positions"]}
+        for c in report["top_bounded_candidates"][:12]
+    ],separators=(",",":")))
 
 
 if __name__ == "__main__":
