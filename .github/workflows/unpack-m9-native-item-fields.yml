@@ -1,0 +1,78 @@
+name: M9 - Audit native 4600 item record fields and material candidates
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/audit_native_item_fields.py"
+      - "tests/test_audit_native_item_fields.py"
+      - ".github/workflows/unpack-m9-native-item-fields.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-item-fields-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  audit-source-table:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/audit_native_item_fields.py
+            tests/test_audit_native_item_fields.py
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/native_item_catalog.csv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Synthetic record offsets and fail-closed type tests
+        run: python -m unittest discover -s tests -p "test_audit_native_item_fields.py" -v
+
+      - name: Audit actual native 2.0.1 entry 983 and its full 4600-slot name-index reference
+        run: python -m Scripts.resources.audit_native_item_fields
+
+      - name: Check item raw field counts without guessing material enum
+        run: |
+          python - <<'PY'
+          import json,csv
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Items/Native_2.0.1")
+          a=json.loads((p/"native_item_field_report.json").read_text(encoding="utf-8"))
+          with (p/"native_item_field_audit.csv").open(encoding="utf-8",newline="") as f:
+              rows=list(csv.DictReader(f))
+          assert len(rows)==a["record_count"]==4600
+          assert a["candidate_field"]["offset"]==38
+          assert a["native_material_item_ids_verified"]==0
+          assert a["verified_field"]["offset"]==34
+          assert len({r["item_id"] for r in rows})==4600
+          assert int(rows[107]["raw_candidate_0x26_u8"])==16
+          assert int(rows[6]["raw_candidate_0x26_u8"])==15
+          print("Original field profiles written. Semantic material enum: UNVERIFIED.")
+          PY
+
+      - name: Commit original-byte evidence ledger and conservative candidate report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -- UnPack/2.0.1/Resources/Items/Native_2.0.1/native_item_field_audit.csv UnPack/2.0.1/Resources/Items/Native_2.0.1/native_item_field_report.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9): audit 4600 native 68-byte item records and candidate classification fields"
+          for i in 1 2 3 4 5 6 7 8; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+            sleep 1
+          done
+          exit 1
