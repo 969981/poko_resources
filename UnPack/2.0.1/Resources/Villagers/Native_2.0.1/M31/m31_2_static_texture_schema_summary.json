@@ -1,0 +1,25 @@
+{
+  "game_version": "2.0.1",
+  "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "original_kids_objdb_sha256": "86f90b4c11da9bc2b3e28889a5090ff507f96ca713fe4fad1dd50f6f692d7541",
+  "native_class_original_name": "StaticScreenLayoutTextures",
+  "class_type_hash": "79991e79",
+  "native_property_descriptor_count": 3,
+  "all_original_property_labels_read_from_rodata": true,
+  "original_property_hash_list": [
+    "c8bb66da",
+    "2276fc56",
+    "2856a1b3"
+  ],
+  "original_property_name_list": [
+    "LayoutTexturesRenderStateObjectHash",
+    "LayoutTexturesInfoDataResourceHash",
+    "WrapStaticScreenLayoutTexturesObjectHash"
+  ],
+  "representative_native_source_OID": "06ab845f",
+  "representative_native_texture_OID": "c1a6d60c",
+  "representative_property_is_original_typed_u32_OID": true,
+  "runtime_texture_selection_consumer_confirmed": false,
+  "real_pokemon_species_or_form_ID_confirmed": false,
+  "warning": "Native property schema and representative typed Source OID->Texture OID are source-backed; no gameplay species/form-to-asset query edge has been recovered."
+}

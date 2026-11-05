@@ -1,0 +1,239 @@
+{
+  "summary": {
+    "game_version": "2.0.1",
+    "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+    "original_kids_objdb_sha256": "86f90b4c11da9bc2b3e28889a5090ff507f96ca713fe4fad1dd50f6f692d7541",
+    "native_class_original_name": "StaticScreenLayoutTextures",
+    "class_type_hash": "79991e79",
+    "native_property_descriptor_count": 3,
+    "all_original_property_labels_read_from_rodata": true,
+    "original_property_hash_list": [
+      "c8bb66da",
+      "2276fc56",
+      "2856a1b3"
+    ],
+    "original_property_name_list": [
+      "LayoutTexturesRenderStateObjectHash",
+      "LayoutTexturesInfoDataResourceHash",
+      "WrapStaticScreenLayoutTexturesObjectHash"
+    ],
+    "representative_native_source_OID": "06ab845f",
+    "representative_native_texture_OID": "c1a6d60c",
+    "representative_property_is_original_typed_u32_OID": true,
+    "runtime_texture_selection_consumer_confirmed": false,
+    "real_pokemon_species_or_form_ID_confirmed": false,
+    "warning": "Native property schema and representative typed Source OID->Texture OID are source-backed; no gameplay species/form-to-asset query edge has been recovered."
+  },
+  "native_original_descriptor_records": [
+    {
+      "descriptor_index": 0,
+      "original_type_hash": "79991e79",
+      "original_property_hash": "c8bb66da",
+      "original_property_name_utf8": "LayoutTexturesRenderStateObjectHash",
+      "original_property_name_hex": "4c61796f7574546578747572657352656e64657253746174654f626a65637448617368",
+      "original_property_name_rodata_va": "0x279ff20",
+      "original_field_label_data_pointer_cell": "0x3330928",
+      "original_KIDS_sample_object_has_field": true,
+      "original_sample_field_kind": 5,
+      "original_sample_field_count": 1,
+      "original_sample_field_data_offset": 14704,
+      "source_OID_to_texture_OID_field": false,
+      "native_runtime_object_lookup_consumer_proven": false,
+      "game_species_ID_binding_proven": false
+    },
+    {
+      "descriptor_index": 1,
+      "original_type_hash": "79991e79",
+      "original_property_hash": "2276fc56",
+      "original_property_name_utf8": "LayoutTexturesInfoDataResourceHash",
+      "original_property_name_hex": "4c61796f75745465787475726573496e666f446174615265736f7572636548617368",
+      "original_property_name_rodata_va": "0x27faa50",
+      "original_field_label_data_pointer_cell": "0x3330930",
+      "original_KIDS_sample_object_has_field": true,
+      "original_sample_field_kind": 5,
+      "original_sample_field_count": 1,
+      "original_sample_field_data_offset": 14708,
+      "source_OID_to_texture_OID_field": false,
+      "native_runtime_object_lookup_consumer_proven": false,
+      "game_species_ID_binding_proven": false
+    },
+    {
+      "descriptor_index": 2,
+      "original_type_hash": "79991e79",
+      "original_property_hash": "2856a1b3",
+      "original_property_name_utf8": "WrapStaticScreenLayoutTexturesObjectHash",
+      "original_property_name_hex": "5772617053746174696353637265656e4c61796f757454657874757265734f626a65637448617368",
+      "original_property_name_rodata_va": "0x27c6ddd",
+      "original_field_label_data_pointer_cell": "0x3330938",
+      "original_KIDS_sample_object_has_field": true,
+      "original_sample_field_kind": 5,
+      "original_sample_field_count": 1,
+      "original_sample_field_data_offset": 14712,
+      "source_OID_to_texture_OID_field": true,
+      "native_runtime_object_lookup_consumer_proven": false,
+      "game_species_ID_binding_proven": false
+    }
+  ],
+  "property_method_original_asm": [
+    {
+      "pc": "0xce854c",
+      "word": "2a1f03e8",
+      "asm": "mov w8, wzr"
+    },
+    {
+      "pc": "0xce8550",
+      "word": "34000242",
+      "asm": "cbz w2, #0xce8598"
+    },
+    {
+      "pc": "0xce8554",
+      "word": "7100087f",
+      "asm": "cmp w3, #2"
+    },
+    {
+      "pc": "0xce8558",
+      "word": "54000208",
+      "asm": "b.hi #0xce8598"
+    },
+    {
+      "pc": "0xce855c",
+      "word": "9000da48",
+      "asm": "adrp x8, #0x2830000"
+    },
+    {
+      "pc": "0xce8560",
+      "word": "91324108",
+      "asm": "add x8, x8, #0xc90"
+    },
+    {
+      "pc": "0xce8564",
+      "word": "90013249",
+      "asm": "adrp x9, #0x3330000"
+    },
+    {
+      "pc": "0xce8568",
+      "word": "9124a129",
+      "asm": "add x9, x9, #0x928"
+    },
+    {
+      "pc": "0xce856c",
+      "word": "b863d90b",
+      "asm": "ldr w11, [x8, w3, sxtw #2]"
+    },
+    {
+      "pc": "0xce8570",
+      "word": "f863d92c",
+      "asm": "ldr x12, [x9, w3, sxtw #3]"
+    },
+    {
+      "pc": "0xce8574",
+      "word": "5280002a",
+      "asm": "mov w10, #1"
+    },
+    {
+      "pc": "0xce8578",
+      "word": "72a0a00a",
+      "asm": "movk w10, #0x500, lsl #16"
+    },
+    {
+      "pc": "0xce857c",
+      "word": "29002c2a",
+      "asm": "stp w10, w11, [x1]"
+    },
+    {
+      "pc": "0xce8580",
+      "word": "d000d56b",
+      "asm": "adrp x11, #0x2796000"
+    },
+    {
+      "pc": "0xce8584",
+      "word": "9101b16b",
+      "asm": "add x11, x11, #0x6c"
+    },
+    {
+      "pc": "0xce8588",
+      "word": "a900ac2c",
+      "asm": "stp x12, x11, [x1, #8]"
+    },
+    {
+      "pc": "0xce858c",
+      "word": "7100045f",
+      "asm": "cmp w2, #1"
+    },
+    {
+      "pc": "0xce8590",
+      "word": "540000a1",
+      "asm": "b.ne #0xce85a4"
+    },
+    {
+      "pc": "0xce8594",
+      "word": "2a0203e8",
+      "asm": "mov w8, w2"
+    },
+    {
+      "pc": "0xce8598",
+      "word": "6b02011f",
+      "asm": "cmp w8, w2"
+    },
+    {
+      "pc": "0xce859c",
+      "word": "1a823100",
+      "asm": "csel w0, w8, w2, lo"
+    },
+    {
+      "pc": "0xce85a0",
+      "word": "d65f03c0",
+      "asm": "ret"
+    },
+    {
+      "pc": "0xce85a4",
+      "word": "7100047f",
+      "asm": "cmp w3, #1"
+    },
+    {
+      "pc": "0xce85a8",
+      "word": "540001c8",
+      "asm": "b.hi #0xce85e0"
+    },
+    {
+      "pc": "0xce85ac",
+      "word": "93407c6c",
+      "asm": "sxtw x12, w3"
+    },
+    {
+      "pc": "0xce85b0",
+      "word": "9100058d",
+      "asm": "add x13, x12, #1"
+    },
+    {
+      "pc": "0xce85b4",
+      "word": "b86d790e",
+      "asm": "ldr w14, [x8, x13, lsl #2]"
+    },
+    {
+      "pc": "0xce85b8",
+      "word": "f86dd92d",
+      "asm": "ldr x13, [x9, w13, sxtw #3]"
+    },
+    {
+      "pc": "0xce85bc",
+      "word": "2903382a",
+      "asm": "stp w10, w14, [x1, #0x18]"
+    },
+    {
+      "pc": "0xce85c0",
+      "word": "a9022c2d",
+      "asm": "stp x13, x11, [x1, #0x20]"
+    },
+    {
+      "pc": "0xce85c4",
+      "word": "7100085f",
+      "asm": "cmp w2, #2"
+    },
+    {
+      "pc": "0xce85c8",
+      "word": "54fffe60",
+      "asm": "b.eq #0xce8594"
+    }
+  ]
+}
