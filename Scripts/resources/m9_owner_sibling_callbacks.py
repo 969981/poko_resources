@@ -99,7 +99,7 @@ def decode_sibling(code,base,row):
         # but object class identity and runtime target still unproven.
         if n+3>=len(rows):break
         insts=rows[n:n+4]
-        a,b,c,d=(ldrx(int(r["u32"],16)) for r in insts[:3])
+        a,b,c=(ldrx(int(r["u32"],16)) for r in insts[:3])
         if not(a and b and c):continue
         if a["offset"]!=0x28 or b["base"]!=a["dst"] or b["offset"]!=0:continue
         if c["base"]!=b["dst"] or c["offset"]!=0x38:continue
