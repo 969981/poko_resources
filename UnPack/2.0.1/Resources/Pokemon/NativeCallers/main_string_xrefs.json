@@ -598,9 +598,1714 @@
       "target_group": "MATERIAL_CRAFT_REFERENCE"
     }
   ],
-  "arm64_string_xrefs_count": 0,
-  "arm64_string_xrefs": [],
-  "ldrb_struct_offset_0x26_samples": [],
+  "arm64_survey_coverage": {
+    "inspected_instructions": 10298656,
+    "text_bytes": 41194624,
+    "byte_coverage": 41194624,
+    "algorithm": "strict raw AArch64 word/ADRP/ADD/LDRB masks"
+  },
+  "tracked_literal_anchors": 39,
+  "arm64_string_xrefs_count": 44,
+  "arm64_string_xrefs": [
+    {
+      "address": 5782552,
+      "adrp_address": 5782548,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41843626,
+      "string": "https://api-dev.po-pokemon.com/serial.update",
+      "adrp_word": "90011328",
+      "add_word": "912ea908"
+    },
+    {
+      "address": 5782560,
+      "adrp_address": 5782556,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41809281,
+      "string": "https://api.po-pokemon.com/serial.update",
+      "adrp_word": "900112e9",
+      "add_word": "91160529"
+    },
+    {
+      "address": 5782576,
+      "adrp_address": 5782572,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41897002,
+      "string": "https://api-dev.po-pokemon.com/serial.auth",
+      "adrp_word": "b0011388",
+      "add_word": "9130a908"
+    },
+    {
+      "address": 5782584,
+      "adrp_address": 5782580,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41509041,
+      "string": "https://api.po-pokemon.com/serial.auth",
+      "adrp_word": "f0011089",
+      "add_word": "9102c529"
+    },
+    {
+      "address": 6077944,
+      "adrp_address": 6077940,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41472222,
+      "string": "m_craftStationHistory",
+      "adrp_word": "d0010e03",
+      "add_word": "91037863"
+    },
+    {
+      "address": 6078604,
+      "adrp_address": 6078600,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41826640,
+      "string": "m_pokemonHistory",
+      "adrp_word": "f00110a3",
+      "add_word": "91254063"
+    },
+    {
+      "address": 6078832,
+      "adrp_address": 6078828,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41526854,
+      "string": "m_pokemonDexHistory",
+      "adrp_word": "d0010e63",
+      "add_word": "91191863"
+    },
+    {
+      "address": 6078916,
+      "adrp_address": 6078912,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41509123,
+      "string": "m_pokemonDexReadHistory",
+      "adrp_word": "d0010e43",
+      "add_word": "91040c63"
+    },
+    {
+      "address": 6083820,
+      "adrp_address": 6083816,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41545196,
+      "string": "m_pokemonCenterState",
+      "adrp_word": "b0010e83",
+      "add_word": "9137b063"
+    },
+    {
+      "address": 6085980,
+      "adrp_address": 6085976,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41826657,
+      "string": "m_craftCount",
+      "adrp_word": "d00110a3",
+      "add_word": "91258463"
+    },
+    {
+      "address": 6086856,
+      "adrp_address": 6086852,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41739730,
+      "string": "m_PokemonHintOpenGroupFlag",
+      "adrp_word": "90011003",
+      "add_word": "91174863"
+    },
+    {
+      "address": 6089860,
+      "adrp_address": 6089856,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41381273,
+      "string": "m_CommonJoinPokemonInventorySaveData",
+      "adrp_word": "90010d42",
+      "add_word": "91366442"
+    },
+    {
+      "address": 6116416,
+      "adrp_address": 6116412,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41490285,
+      "string": "m_specialCraftCnt",
+      "adrp_word": "90010de3",
+      "add_word": "911db463"
+    },
+    {
+      "address": 6137992,
+      "adrp_address": 6137988,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41418204,
+      "string": "craftstation",
+      "adrp_word": "b0010d3a",
+      "add_word": "9137735a"
+    },
+    {
+      "address": 6163940,
+      "adrp_address": 6163936,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41509382,
+      "string": "m_RefineCraftRecipeID",
+      "adrp_word": "d0010da3",
+      "add_word": "91081863"
+    },
+    {
+      "address": 6168292,
+      "adrp_address": 6168288,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41739890,
+      "string": "m_isPokemonCenterRoadCheckOk",
+      "adrp_word": "b0010f63",
+      "add_word": "9119c863"
+    },
+    {
+      "address": 6199372,
+      "adrp_address": 6199368,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41472624,
+      "string": "m_uCraftBuildStageID",
+      "adrp_word": "90010d23",
+      "add_word": "9109c063"
+    },
+    {
+      "address": 6199508,
+      "adrp_address": 6199504,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41775539,
+      "string": "m_uCraftBuildAssignStageID",
+      "adrp_word": "d0010f63",
+      "add_word": "9106cc63"
+    },
+    {
+      "address": 6217316,
+      "adrp_address": 6217312,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41418511,
+      "string": "m_CraftRefine_v1",
+      "adrp_word": "d0010c97",
+      "add_word": "913c3ef7"
+    },
+    {
+      "address": 6217644,
+      "adrp_address": 6217640,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41454793,
+      "string": "m_CraftRefine",
+      "adrp_word": "f0010cd7",
+      "add_word": "913326f7"
+    },
+    {
+      "address": 6217992,
+      "adrp_address": 6217988,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41509755,
+      "string": "m_CraftChangeColor_v1",
+      "adrp_word": "90010d57",
+      "add_word": "910deef7"
+    },
+    {
+      "address": 6218344,
+      "adrp_address": 6218340,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41509777,
+      "string": "m_CraftChangeColor",
+      "adrp_word": "90010d57",
+      "add_word": "910e46f7"
+    },
+    {
+      "address": 6231236,
+      "adrp_address": 6231232,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41418511,
+      "string": "m_CraftRefine_v1",
+      "adrp_word": "d0010c77",
+      "add_word": "913c3ef7"
+    },
+    {
+      "address": 6231564,
+      "adrp_address": 6231560,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41454793,
+      "string": "m_CraftRefine",
+      "adrp_word": "f0010cb7",
+      "add_word": "913326f7"
+    },
+    {
+      "address": 6231912,
+      "adrp_address": 6231908,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41509755,
+      "string": "m_CraftChangeColor_v1",
+      "adrp_word": "b0010d37",
+      "add_word": "910deef7"
+    },
+    {
+      "address": 6232264,
+      "adrp_address": 6232260,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41509777,
+      "string": "m_CraftChangeColor",
+      "adrp_word": "b0010d37",
+      "add_word": "910e46f7"
+    },
+    {
+      "address": 6241784,
+      "adrp_address": 6241780,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41545633,
+      "string": "m_PokemonSkill",
+      "adrp_word": "f0010d42",
+      "add_word": "913e8442"
+    },
+    {
+      "address": 6242048,
+      "adrp_address": 6242044,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41545633,
+      "string": "m_PokemonSkill",
+      "adrp_word": "f0010d42",
+      "add_word": "913e8442"
+    },
+    {
+      "address": 6242184,
+      "adrp_address": 6242180,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41545633,
+      "string": "m_PokemonSkill",
+      "adrp_word": "f0010d42",
+      "add_word": "913e8442"
+    },
+    {
+      "address": 6242476,
+      "adrp_address": 6242472,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41545633,
+      "string": "m_PokemonSkill",
+      "adrp_word": "d0010d42",
+      "add_word": "913e8442"
+    },
+    {
+      "address": 6243000,
+      "adrp_address": 6242996,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41916290,
+      "string": "m_CraftBuild_v1",
+      "adrp_word": "b0011038",
+      "add_word": "911e0b18"
+    },
+    {
+      "address": 6243340,
+      "adrp_address": 6243336,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41757480,
+      "string": "m_CraftBuild",
+      "adrp_word": "d0010ef8",
+      "add_word": "912ca318"
+    },
+    {
+      "address": 6260792,
+      "adrp_address": 6260788,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41792812,
+      "string": "m_sEventPopWildPokemon",
+      "adrp_word": "f0010f03",
+      "add_word": "9114b063"
+    },
+    {
+      "address": 6270400,
+      "adrp_address": 6270396,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41490700,
+      "string": "m_craftStationId",
+      "adrp_word": "f0010ca3",
+      "add_word": "91243063"
+    },
+    {
+      "address": 6270468,
+      "adrp_address": 6270464,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41596887,
+      "string": "m_craftRecipeId",
+      "adrp_word": "b0010d83",
+      "add_word": "911f5c63"
+    },
+    {
+      "address": 6270728,
+      "adrp_address": 6270724,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41454821,
+      "string": "m_craftMainHelpPokemonKind",
+      "adrp_word": "d0010c63",
+      "add_word": "91339463"
+    },
+    {
+      "address": 6270796,
+      "adrp_address": 6270792,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41615118,
+      "string": "m_craftHelpTable",
+      "adrp_word": "b0010da3",
+      "add_word": "913c3863"
+    },
+    {
+      "address": 6279528,
+      "adrp_address": 6279524,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41757493,
+      "string": "m_mainPokemonList",
+      "adrp_word": "b0010ea3",
+      "add_word": "912cd463"
+    },
+    {
+      "address": 6348712,
+      "adrp_address": 6348708,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41740448,
+      "string": "m_CloudJoinPokemonInventorySaveData",
+      "adrp_word": "b0010e02",
+      "add_word": "91228042"
+    },
+    {
+      "address": 18042644,
+      "adrp_address": 18042640,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41904954,
+      "string": "craft",
+      "adrp_word": "d000b601",
+      "add_word": "912ce821"
+    },
+    {
+      "address": 18042956,
+      "adrp_address": 18042952,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41764920,
+      "string": "craft_num",
+      "adrp_word": "f000b4e1",
+      "add_word": "9120e021"
+    },
+    {
+      "address": 18045764,
+      "adrp_address": 18045760,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41886208,
+      "string": "RegisterPokemonNum",
+      "adrp_word": "b000b5e1",
+      "add_word": "91080021"
+    },
+    {
+      "address": 18048984,
+      "adrp_address": 18048980,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41534569,
+      "string": "pokemon_dex",
+      "adrp_word": "d000b321",
+      "add_word": "9111a421"
+    },
+    {
+      "address": 18049700,
+      "adrp_address": 18049696,
+      "kind": "ADRP_ADD_RAW_AARCH64",
+      "target_va": 41621282,
+      "string": "pokemon_dex_id",
+      "adrp_word": "f000b3c1",
+      "add_word": "911c8821"
+    }
+  ],
+  "ldrb_struct_offset_0x26_samples": [
+    {
+      "address": 17416,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409828",
+      "prior_instruction_words": [
+        "a9015ff8",
+        "a90257f6",
+        "a9034ff4",
+        "910003fd",
+        "d001a3f8"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 17496,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a88",
+      "prior_instruction_words": [
+        "aa1403e0",
+        "aa1303e1",
+        "52800082",
+        "52800097",
+        "9444dacb"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 17544,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a88",
+      "prior_instruction_words": [
+        "aa1403e1",
+        "aa1503e2",
+        "94168b59",
+        "37000120",
+        "aa1f03f5"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 17560,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a88",
+      "prior_instruction_words": [
+        "aa1f03f5",
+        "39409a88",
+        "370801a8",
+        "14000016",
+        "aa1f03f7"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 17592,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a88",
+      "prior_instruction_words": [
+        "aa1403e0",
+        "aa1603e1",
+        "52800022",
+        "52800035",
+        "9444dab3"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 239476,
+      "kind": "LDRB_0X26",
+      "instruction_word": "3940996d",
+      "prior_instruction_words": [
+        "f100054a",
+        "9100218c",
+        "54000160",
+        "f940018b",
+        "b4ffff8b"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 239548,
+      "kind": "LDRB_0X26",
+      "instruction_word": "3940996d",
+      "prior_instruction_words": [
+        "f100054a",
+        "9100218c",
+        "54000320",
+        "f940018b",
+        "b4ffff8b"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 239700,
+      "kind": "LDRB_0X26",
+      "instruction_word": "3940994c",
+      "prior_instruction_words": [
+        "f1000529",
+        "9100216b",
+        "54000160",
+        "f940016a",
+        "b4ffff8a"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 239772,
+      "kind": "LDRB_0X26",
+      "instruction_word": "3940994c",
+      "prior_instruction_words": [
+        "f1000529",
+        "9100216b",
+        "540002e0",
+        "f940016a",
+        "b4ffff8a"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 242728,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409908",
+      "prior_instruction_words": [
+        "f9400408",
+        "f9462d29",
+        "2a1f03e0",
+        "f100011f",
+        "9a880128"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 307684,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d08",
+      "prior_instruction_words": [
+        "79c0312a",
+        "37f8020a",
+        "79c0312a",
+        "37f801ca",
+        "8b0816c8"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 307808,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d08",
+      "prior_instruction_words": [
+        "79c0312a",
+        "37f801ca",
+        "79c0312a",
+        "37f8018a",
+        "8b0816c8"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 307924,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d08",
+      "prior_instruction_words": [
+        "79c0312a",
+        "37f801ca",
+        "79c0312a",
+        "37f8018a",
+        "8b0816c8"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 308040,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d08",
+      "prior_instruction_words": [
+        "79c0312a",
+        "37f801ca",
+        "79c0312a",
+        "37f8018a",
+        "8b0816c8"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 308156,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d08",
+      "prior_instruction_words": [
+        "79c0312a",
+        "37f801ca",
+        "79c0312a",
+        "37f8018a",
+        "8b0816c8"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 308272,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d08",
+      "prior_instruction_words": [
+        "79c0312a",
+        "37f801ca",
+        "79c0312a",
+        "37f8018a",
+        "8b0816c8"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 308388,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d08",
+      "prior_instruction_words": [
+        "79c0312a",
+        "37f801ca",
+        "79c0312a",
+        "37f8018a",
+        "8b0816c8"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 331540,
+      "kind": "LDRB_0X26",
+      "instruction_word": "3940996d",
+      "prior_instruction_words": [
+        "f100054a",
+        "9100218c",
+        "540001c0",
+        "f940018b",
+        "b4ffff8b"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 331636,
+      "kind": "LDRB_0X26",
+      "instruction_word": "3940996d",
+      "prior_instruction_words": [
+        "f100054a",
+        "9100218c",
+        "54000340",
+        "f940018b",
+        "b4ffff8b"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 340856,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404fe8",
+      "prior_instruction_words": [
+        "79c057e8",
+        "11000509",
+        "6b0902bf",
+        "5400076c",
+        "12003d09"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 341040,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404fe8",
+      "prior_instruction_words": [
+        "2a1f03e5",
+        "781fa3b6",
+        "781fc3b5",
+        "97ff0a6e",
+        "35000060"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 391580,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404e68",
+      "prior_instruction_words": [
+        "b90002a8",
+        "a9424ff4",
+        "f9400bf5",
+        "a8c37bfd",
+        "d65f0fff"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 391956,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404e69",
+      "prior_instruction_words": [
+        "39401192",
+        "2a0f03f1",
+        "71000a5f",
+        "54fffdc0",
+        "17fffff0"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 392096,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404e69",
+      "prior_instruction_words": [
+        "92403de9",
+        "5280028b",
+        "9bab2922",
+        "b5000842",
+        "14000057"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 411664,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404fe8",
+      "prior_instruction_words": [
+        "9407a547",
+        "79404be8",
+        "785e83a9",
+        "6b09011f",
+        "54fff7a1"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 412248,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404e6e",
+      "prior_instruction_words": [
+        "a9434ff4",
+        "f9400bf7",
+        "a94257f6",
+        "a8c47bfd",
+        "d65f0fff"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 412508,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d2b",
+      "prior_instruction_words": [
+        "7940512a",
+        "7940812b",
+        "6b0b015f",
+        "54fff780",
+        "f940092a"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 687668,
+      "kind": "LDRB_0X26",
+      "instruction_word": "3940998d",
+      "prior_instruction_words": [
+        "9101016b",
+        "91000929",
+        "f140097f",
+        "54000480",
+        "8b0b010c"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 764408,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409849",
+      "prior_instruction_words": [
+        "eb28c2ff",
+        "540001ca",
+        "8b170e69",
+        "f9400522",
+        "b4ffff62"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 786788,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d2a",
+      "prior_instruction_words": [
+        "7a481144",
+        "7940452a",
+        "7a481144",
+        "7940492a",
+        "7a481144"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 997136,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d08",
+      "prior_instruction_words": [
+        "b9001168",
+        "79400088",
+        "79002968",
+        "79400088",
+        "9ba14d08"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1039368,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "340003ca",
+        "52000129",
+        "7100013f",
+        "7a401904",
+        "54000340"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1050236,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "2a090108",
+        "34000088",
+        "b9400e88",
+        "7127111f",
+        "54fffc8b"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1051636,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a8c",
+      "prior_instruction_words": [
+        "79404a89",
+        "6b09011f",
+        "39401269",
+        "1a9f07e8",
+        "38019e68"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1052240,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a8b",
+      "prior_instruction_words": [
+        "b940228a",
+        "b9400aab",
+        "6b0b015f",
+        "1a9f07ea",
+        "38019e6a"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1052276,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a89",
+      "prior_instruction_words": [
+        "79c0528a",
+        "6b0a013f",
+        "17ffff6d",
+        "52800028",
+        "39006668"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1113984,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d01",
+      "prior_instruction_words": [
+        "51000429",
+        "710f9d3f",
+        "54000da9",
+        "f100011f",
+        "9a8802a8"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1114460,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d01",
+      "prior_instruction_words": [
+        "52800108",
+        "1a960116",
+        "f9400688",
+        "f100011f",
+        "9a8802a8"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1176788,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d08",
+      "prior_instruction_words": [
+        "79404908",
+        "79001068",
+        "f9400408",
+        "f100011f",
+        "9a880128"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1178376,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d08",
+      "prior_instruction_words": [
+        "79404908",
+        "79001068",
+        "f9400408",
+        "f100011f",
+        "9a880128"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1179964,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d08",
+      "prior_instruction_words": [
+        "79404908",
+        "79001068",
+        "f9400408",
+        "f100011f",
+        "9a880128"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1181552,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d08",
+      "prior_instruction_words": [
+        "79404908",
+        "79001068",
+        "f9400408",
+        "f100011f",
+        "9a880128"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1183140,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d08",
+      "prior_instruction_words": [
+        "79404908",
+        "79001068",
+        "f9400408",
+        "f100011f",
+        "9a880128"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1184728,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d08",
+      "prior_instruction_words": [
+        "79404908",
+        "79001068",
+        "f9400408",
+        "f100011f",
+        "9a880128"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1361044,
+      "kind": "LDRB_0X26",
+      "instruction_word": "3940992b",
+      "prior_instruction_words": [
+        "0b0b014b",
+        "3900912b",
+        "3940952b",
+        "0b0b014b",
+        "3900952b"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1371620,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409828",
+      "prior_instruction_words": [
+        "a90967fa",
+        "a90a5ff8",
+        "a90b57f6",
+        "a90c4ff4",
+        "9101c3fd"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1371704,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "52800048",
+        "f81e83a8",
+        "aa1303e0",
+        "52800042",
+        "943fb053"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1371756,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "aa1303e1",
+        "aa1503e2",
+        "941160e0",
+        "37000100",
+        "f81e03bf"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1371772,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "f81e03bf",
+        "39409a68",
+        "361801a8",
+        "14000016",
+        "f81e83bf"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1371804,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "52800028",
+        "f81e03a8",
+        "aa1303e0",
+        "52800022",
+        "943fb03a"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1371876,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "52800028",
+        "f81d83a8",
+        "aa1303e0",
+        "52800022",
+        "943fb028"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1371928,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "aa1303e1",
+        "aa1503e2",
+        "941160b5",
+        "37000100",
+        "f81d03bf"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1371944,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "f81d03bf",
+        "39409a68",
+        "361801a8",
+        "14000016",
+        "f81d83bf"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1371976,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "52800028",
+        "f81d03a8",
+        "aa1303e0",
+        "52800022",
+        "943fb00f"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372048,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "52800028",
+        "f9001fe8",
+        "aa1303e0",
+        "52800022",
+        "943faffd"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372100,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "aa1303e1",
+        "aa1503e2",
+        "9411608a",
+        "37000100",
+        "f9001bff"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372116,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "f9001bff",
+        "39409a68",
+        "361801a8",
+        "14000016",
+        "f9001fff"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372148,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "52800028",
+        "f9001be8",
+        "aa1303e0",
+        "52800022",
+        "943fafe4"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372220,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "52800028",
+        "f90017e8",
+        "aa1303e0",
+        "52800022",
+        "943fafd2"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372272,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "aa1303e1",
+        "aa1503e2",
+        "9411605f",
+        "37000100",
+        "f90013ff"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372288,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "f90013ff",
+        "39409a68",
+        "361801a8",
+        "14000016",
+        "f90017ff"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372320,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "52800028",
+        "f90013e8",
+        "aa1303e0",
+        "52800022",
+        "943fafb9"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372392,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "52800028",
+        "f9000fe8",
+        "aa1303e0",
+        "52800022",
+        "943fafa7"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372444,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "aa1303e1",
+        "aa1503e2",
+        "94116034",
+        "37000100",
+        "f9000bff"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372460,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "f9000bff",
+        "39409a68",
+        "361801a8",
+        "14000016",
+        "f9000fff"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372492,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "52800028",
+        "f9000be8",
+        "aa1303e0",
+        "52800022",
+        "943faf8e"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372564,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "52800028",
+        "f90007e8",
+        "aa1303e0",
+        "52800022",
+        "943faf7c"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372616,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "aa1303e1",
+        "aa1503e2",
+        "94116009",
+        "37000100",
+        "f90003ff"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372632,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "f90003ff",
+        "39409a68",
+        "361801a8",
+        "14000016",
+        "f90007ff"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372664,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "52800028",
+        "f90003e8",
+        "aa1303e0",
+        "52800022",
+        "943faf63"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372732,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "91016e81",
+        "aa1303e0",
+        "52800022",
+        "5280003b",
+        "943faf52"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372784,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "aa1303e1",
+        "aa1503e2",
+        "94115fdf",
+        "37000100",
+        "aa1f03fc"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372800,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "aa1f03fc",
+        "39409a68",
+        "36180188",
+        "14000015",
+        "aa1f03fb"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372828,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "91017281",
+        "aa1303e0",
+        "52800022",
+        "5280003c",
+        "943faf3a"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372916,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "b9402268",
+        "52800729",
+        "72a06009",
+        "6b09011f",
+        "54000369"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1372984,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "91012a81",
+        "aa1303e0",
+        "528001c2",
+        "528001d7",
+        "943faf13"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1373020,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "b9402268",
+        "52800729",
+        "72a06009",
+        "6b09011f",
+        "54fffce8"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1373104,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "943faef9",
+        "f85f43a8",
+        "f804a288",
+        "b85fc3a8",
+        "b8052288"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1373156,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "aa1303e1",
+        "aa1503e2",
+        "94115f82",
+        "37000100",
+        "aa1f03f8"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1373172,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "aa1f03f8",
+        "39409a68",
+        "36180188",
+        "14000015",
+        "aa1f03f7"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1373200,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "91017a81",
+        "aa1303e0",
+        "52800022",
+        "52800038",
+        "943faedd"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1373268,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "91017e81",
+        "aa1303e0",
+        "52800082",
+        "52800099",
+        "943faecc"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1373320,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "aa1303e1",
+        "aa1503e2",
+        "94115f59",
+        "37000100",
+        "aa1f03fa"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1373336,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "aa1f03fa",
+        "39409a68",
+        "36180188",
+        "14000015",
+        "aa1f03f9"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1373364,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409a68",
+      "prior_instruction_words": [
+        "91018e81",
+        "aa1303e0",
+        "52800022",
+        "5280003a",
+        "943faeb4"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1500196,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d8c",
+      "prior_instruction_words": [
+        "79c031ae",
+        "37f800ce",
+        "79c031ae",
+        "37f8008e",
+        "8b0c166c"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1500276,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d8c",
+      "prior_instruction_words": [
+        "79c031ae",
+        "37f800ce",
+        "79c031ae",
+        "37f8008e",
+        "8b0c166c"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1500356,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d8c",
+      "prior_instruction_words": [
+        "79c031ae",
+        "37f800ce",
+        "79c031ae",
+        "37f8008e",
+        "8b0c166c"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1500436,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d8c",
+      "prior_instruction_words": [
+        "79c031ae",
+        "37f800ce",
+        "79c031ae",
+        "37f8008e",
+        "8b0c166c"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1500516,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d8c",
+      "prior_instruction_words": [
+        "79c031ae",
+        "37f800ce",
+        "79c031ae",
+        "37f8008e",
+        "8b0c166c"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1500596,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d8c",
+      "prior_instruction_words": [
+        "79c031ae",
+        "37f800ce",
+        "79c031ae",
+        "37f8008e",
+        "8b0c166c"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1500676,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404d08",
+      "prior_instruction_words": [
+        "79c0312a",
+        "37ffeb8a",
+        "79c0312a",
+        "37ffeb4a",
+        "8b081668"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1507256,
+      "kind": "LDRH_0X26",
+      "instruction_word": "79404f39",
+      "prior_instruction_words": [
+        "711ffb3f",
+        "54ffff08",
+        "8b181419",
+        "79c0333a",
+        "37fffeba"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1767460,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409828",
+      "prior_instruction_words": [
+        "a90467fa",
+        "a9055ff8",
+        "a90657f6",
+        "a9074ff4",
+        "910083fd"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1767584,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409aa8",
+      "prior_instruction_words": [
+        "914c8288",
+        "aa1503e0",
+        "52a00642",
+        "91006101",
+        "943e2db9"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1769592,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409828",
+      "prior_instruction_words": [
+        "d503237f",
+        "a9bd7bfd",
+        "f9000bf5",
+        "a9024ff4",
+        "910003fd"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1772660,
+      "kind": "LDRB_0X26",
+      "instruction_word": "3940996d",
+      "prior_instruction_words": [
+        "f100054a",
+        "9100218c",
+        "54000160",
+        "f940018b",
+        "b4ffff8b"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1772732,
+      "kind": "LDRB_0X26",
+      "instruction_word": "3940996c",
+      "prior_instruction_words": [
+        "f100054a",
+        "91002129",
+        "540001c0",
+        "f940012b",
+        "b4ffff8b"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1800240,
+      "kind": "LDRB_0X26",
+      "instruction_word": "39409909",
+      "prior_instruction_words": [
+        "f8408e68",
+        "79404909",
+        "51000529",
+        "710ff93f",
+        "54ffff08"
+      ],
+      "needs_base_register_dataflow": true
+    },
+    {
+      "address": 1806356,
+      "kind": "LDRB_0X26",
+      "instruction_word": "3940996d",
+      "prior_instruction_words": [
+        "f100054a",
+        "9100218c",
+        "54000160",
+        "f940018b",
+        "b4ffff8b"
+      ],
+      "needs_base_register_dataflow": true
+    }
+  ],
   "species_id_confirmed": 0,
   "material_enum_confirmed": false,
   "warning": "String or ldrb offsets in ExeFS are candidate anchors only. Confirm struct base, caller, ID input dataflow and runtime bindings before assigning any species/material type."
