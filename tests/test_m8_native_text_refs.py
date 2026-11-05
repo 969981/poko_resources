@@ -112,6 +112,21 @@ class M8NativeReferenceTests(unittest.TestCase):
         self.assertEqual(rows[1]["jp_raw_flag"],256)
         self.assertEqual(rows[1]["en_raw_flag"],258)
         self.assertEqual(rows[1]["category"],"Reactions")
+    def test_role_text_parser_retains_korean_private_use_glyph(self):
+        from Scripts.resources.recover_native_text_ids import parse
+        data=bytearray(64+2*8)
+        struct.pack_into("<II",data,0,2,2)
+        glyph=("엥"+chr(0xE01B)+"!?").encode("utf-8")
+        first=len(data)
+        struct.pack_into("<II",data,64,first-64,1)
+        data += glyph+b"\\0"
+        second=len(data)
+        struct.pack_into("<II",data,72,second-72,1)
+        data += b"test\\0"
+        table,status=parse(bytes(data),2339,"native/02339.bin")
+        self.assertEqual(status,"PARSED")
+        self.assertIn(chr(0xE01B),table.rows[0][0][0])
+
     def test_map_table_record_strides_must_match(self):
         with self.assertRaisesRegex(ValueError,"expected size"):
             check_fixed_table(bytes(64+100),4096,0,80,"bad")
