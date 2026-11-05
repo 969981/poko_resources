@@ -1,0 +1,87 @@
+{
+  "status": "ORIGINAL_NATIVE_LOCAL_CALL_GRAPH__ITEM_LOADER_UNPROVEN",
+  "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "original_item_sha256": "2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f",
+  "native_text_bytes": 41194624,
+  "registered_slot_index_candidate": "0xc7",
+  "registered_member_offset_candidate": "0x648",
+  "source_record_count": 4600,
+  "source_record_stride": 68,
+  "anchor_count": 8,
+  "local_ldr30_blr_patterns": 17,
+  "local_field_reads": 26,
+  "direct_callee_count": 10,
+  "verified_original_item_loader": false,
+  "verified_material_type_enum": false,
+  "verified_virtual_class_vtable_binding": false,
+  "anchor_summary": [
+    {
+      "rva": "0xe5a99c",
+      "role": "item_loop_A_prelookup",
+      "direct_calls": 2,
+      "indirect_ldr30_blr": 1,
+      "field_reads": 2
+    },
+    {
+      "rva": "0xe5aa38",
+      "role": "item_loop_A_vcall_region",
+      "direct_calls": 2,
+      "indirect_ldr30_blr": 2,
+      "field_reads": 3
+    },
+    {
+      "rva": "0xe5aa60",
+      "role": "item_loop_A_plus26_read",
+      "direct_calls": 2,
+      "indirect_ldr30_blr": 3,
+      "field_reads": 3
+    },
+    {
+      "rva": "0x1028968",
+      "role": "item_loop_B_prelookup",
+      "direct_calls": 9,
+      "indirect_ldr30_blr": 1,
+      "field_reads": 4
+    },
+    {
+      "rva": "0x10289e0",
+      "role": "item_loop_B_vcall_region",
+      "direct_calls": 4,
+      "indirect_ldr30_blr": 1,
+      "field_reads": 4
+    },
+    {
+      "rva": "0x10289f4",
+      "role": "item_loop_B_plus26_read",
+      "direct_calls": 3,
+      "indirect_ldr30_blr": 1,
+      "field_reads": 4
+    },
+    {
+      "rva": "0xabbb48",
+      "role": "item_id_classification_access_A",
+      "direct_calls": 0,
+      "indirect_ldr30_blr": 4,
+      "field_reads": 3
+    },
+    {
+      "rva": "0xabbbb8",
+      "role": "item_id_classification_access_B",
+      "direct_calls": 0,
+      "indirect_ldr30_blr": 4,
+      "field_reads": 3
+    }
+  ],
+  "direct_callee_targets": [
+    "0x2e74b0",
+    "0xa6f92c",
+    "0xabba30",
+    "0xeb7e20",
+    "0xeb8504",
+    "0xeb8a54",
+    "0xeb9020",
+    "0xeb9370",
+    "0xeb94e0",
+    "0xeb9e40"
+  ]
+}
