@@ -41,7 +41,7 @@ GitHub Actions 入口：`.github/workflows/unpack-m7-localization.yml`。生成�
 - `native_table_inventory.csv`：逐原始文件状态、SHA、count、布局、空槽与标志指纹；
 - `native_records_000.csv` 等：原生记录 ID、形态 ID、绝对字节偏移、flags、文本及来源；
 - `nine_language_groups.csv`：候选的连续九语言组、语种次序、证据等级；
-- `nine_language_records_000.csv` 等：同原生表内 ID 的九语言字段、来源文件号、偏移；
+- `nine_language_records_000.csv` / `nine_language_records_000.json` 等：同原生表内 ID 的九语言字段、来源文件号、偏移，JSON 为标准数组且按大小分片；
 - `ambiguous_runs.csv`：长于九份的连续同结构组等歧义；
 - `m7_report.json`：统计、锚点组完整性、已知限制。
 
