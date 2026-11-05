@@ -1,0 +1,32 @@
+{
+  "status": "PARTIAL_NATIVE_LOCALIZATION_INDEX",
+  "verified_item_ids": 4600,
+  "verified_languages": [
+    "jp",
+    "en",
+    "fr",
+    "it",
+    "de",
+    "es",
+    "zht",
+    "ko",
+    "zhs"
+  ],
+  "unverified_native_scan": {
+    "files_total": 9793,
+    "files_skipped_size": 0,
+    "files_with_tagged_text": 1964,
+    "tagged_text_candidates": 183750,
+    "truncated": false
+  },
+  "language_assignment_for_candidates": "UNKNOWN",
+  "categories_for_candidates": "UNDETERMINED",
+  "native_string_table_cross_language_links": "NOT_YET_PROVEN",
+  "warnings": [
+    "Item ID linkage is verified from existing native validation; dialogue/UI/quest/other links are not.",
+    "Tagged UTF-8 zero-delimited candidate scan is not exhaustive.",
+    "Output text IDs for candidates are empty until the native table format is decoded.",
+    "An empty candidate result must not be interpreted as absent localization.",
+    "Scan stops at candidate cap; skipped large files and truncated scans are reported."
+  ]
+}
