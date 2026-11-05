@@ -1,0 +1,91 @@
+name: M28.1 - Source-byte two-sub 31 hash recurrence trace
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m28_1_verify_local_31_recurrence.py"
+      - ".github/workflows/unpack-m28-1-31-arithmetic-chain.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m28-1-recurrence-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify-original-algebraic-recurrence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout pinned original NSO source and AArch64 opcode decoders
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m20_native_species_item_targets.py
+            Scripts/resources/m28_original_nso_31_arithmetic_candidates.py
+            Scripts/resources/m28_1_verify_local_31_recurrence.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install original NSO LZ4 and capstone
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Selftest two-sub arithmetic identity and ARM64 opcode bit masks
+        run: python -m Scripts.resources.m28_1_verify_local_31_recurrence --self-test
+
+      - name: Scan all original ARM64 for exact byte + 31-oldhash arithmetic identities
+        run: python -m Scripts.resources.m28_1_verify_local_31_recurrence
+
+      - name: Preserve native evidence levels and zero invented ID assignments
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M28")
+          s=json.loads((p/"m28_1_local_31_recurrence_summary.json").read_text(encoding="utf-8"))
+          d=json.loads((p/"m28_1_local_31_recurrence_candidates.json").read_text(encoding="utf-8"))
+          assert s["original_main_sha256"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert s["original_aligned_instruction_slots_scanned"]==10298656
+          assert s["local_two_sub_hash31_arithmetic_candidate_count"]>=len(d["candidates"])
+          assert not s["native_hash31_function_and_input_proven"]
+          assert not s["native_kids_3543_key_lookup_consumer_proven"]
+          assert not s["native_pokemon_species_id_to_source_OID_proven"]
+          assert all(not x["native_string_hash_function_verified"] and
+                     not x["native_KIDS_key_array_consumer_verified"] and
+                     not x["game_species_id_binding_verified"]
+                     for x in d["candidates"])
+          print("PASS M28.1 scoped native arithmetic evidence with no asserted game ID")
+          PY
+
+      - name: Upload original ARM64 recurrence reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m28-1-original-31-hash-byte-arithmetic-evidence
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M28/m28_1_*
+          if-no-files-found: warn
+
+      - name: Commit reproducible original ARM64 recurrence results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M28/m28_1_*
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m28.1): verify scoped ARM64 two-sub 31 polynomial arithmetic leads"
+          for n in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
