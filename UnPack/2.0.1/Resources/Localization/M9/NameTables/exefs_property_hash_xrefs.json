@@ -5,6 +5,8 @@
   "rodata_hash_sites_checked": 115,
   "direct_arm64_xref_records": 9,
   "adjacent_direct_literal_access_count": 9,
+  "adjacent_address_construction_count": 9,
+  "adjacent_value_load_count": 0,
   "arm64_code_xrefs": [
     {
       "property_hash": "0x0b6e1578",
@@ -17,7 +19,7 @@
       "instruction_kind": "ADD_ADDRESS",
       "adrp_word": "0xb000f14e",
       "second_word": "0x9110b1ce",
-      "evidence": "DIRECT_ADJACENT_ARM64_LITERAL_ACCESS",
+      "evidence": "DIRECT_ADJACENT_ARM64_HASH_ADDRESS_CONSTRUCTION",
       "property_consumer_verified": 0,
       "scene_quest_building_fk_verified": 0
     },
@@ -32,7 +34,7 @@
       "instruction_kind": "ADD_ADDRESS",
       "adrp_word": "0xf000f10e",
       "second_word": "0x911b81ce",
-      "evidence": "DIRECT_ADJACENT_ARM64_LITERAL_ACCESS",
+      "evidence": "DIRECT_ADJACENT_ARM64_HASH_ADDRESS_CONSTRUCTION",
       "property_consumer_verified": 0,
       "scene_quest_building_fk_verified": 0
     },
@@ -47,7 +49,7 @@
       "instruction_kind": "ADD_ADDRESS",
       "adrp_word": "0xd000dd4e",
       "second_word": "0x910a91ce",
-      "evidence": "DIRECT_ADJACENT_ARM64_LITERAL_ACCESS",
+      "evidence": "DIRECT_ADJACENT_ARM64_HASH_ADDRESS_CONSTRUCTION",
       "property_consumer_verified": 0,
       "scene_quest_building_fk_verified": 0
     },
@@ -62,7 +64,7 @@
       "instruction_kind": "ADD_ADDRESS",
       "adrp_word": "0xb000d6ee",
       "second_word": "0x913881ce",
-      "evidence": "DIRECT_ADJACENT_ARM64_LITERAL_ACCESS",
+      "evidence": "DIRECT_ADJACENT_ARM64_HASH_ADDRESS_CONSTRUCTION",
       "property_consumer_verified": 0,
       "scene_quest_building_fk_verified": 0
     },
@@ -77,7 +79,7 @@
       "instruction_kind": "ADD_ADDRESS",
       "adrp_word": "0xb000d6ee",
       "second_word": "0x913db1ce",
-      "evidence": "DIRECT_ADJACENT_ARM64_LITERAL_ACCESS",
+      "evidence": "DIRECT_ADJACENT_ARM64_HASH_ADDRESS_CONSTRUCTION",
       "property_consumer_verified": 0,
       "scene_quest_building_fk_verified": 0
     },
@@ -92,7 +94,7 @@
       "instruction_kind": "ADD_ADDRESS",
       "adrp_word": "0xb000d6ee",
       "second_word": "0x9100d1ce",
-      "evidence": "DIRECT_ADJACENT_ARM64_LITERAL_ACCESS",
+      "evidence": "DIRECT_ADJACENT_ARM64_HASH_ADDRESS_CONSTRUCTION",
       "property_consumer_verified": 0,
       "scene_quest_building_fk_verified": 0
     },
@@ -107,7 +109,7 @@
       "instruction_kind": "ADD_ADDRESS",
       "adrp_word": "0xf000d68e",
       "second_word": "0x910a01ce",
-      "evidence": "DIRECT_ADJACENT_ARM64_LITERAL_ACCESS",
+      "evidence": "DIRECT_ADJACENT_ARM64_HASH_ADDRESS_CONSTRUCTION",
       "property_consumer_verified": 0,
       "scene_quest_building_fk_verified": 0
     },
@@ -122,7 +124,7 @@
       "instruction_kind": "ADD_ADDRESS",
       "adrp_word": "0x9000d3ee",
       "second_word": "0x913a01ce",
-      "evidence": "DIRECT_ADJACENT_ARM64_LITERAL_ACCESS",
+      "evidence": "DIRECT_ADJACENT_ARM64_HASH_ADDRESS_CONSTRUCTION",
       "property_consumer_verified": 0,
       "scene_quest_building_fk_verified": 0
     },
@@ -137,7 +139,7 @@
       "instruction_kind": "ADD_ADDRESS",
       "adrp_word": "0x9000d22e",
       "second_word": "0x912c81ce",
-      "evidence": "DIRECT_ADJACENT_ARM64_LITERAL_ACCESS",
+      "evidence": "DIRECT_ADJACENT_ARM64_HASH_ADDRESS_CONSTRUCTION",
       "property_consumer_verified": 0,
       "scene_quest_building_fk_verified": 0
     }
