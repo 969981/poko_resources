@@ -38,6 +38,8 @@ def audit(events, source, min_distinct=3):
     matched_ids, raw_16_ids, other_ids, pointers, consumer_sites = (set() for _ in range(5))
     v1_targets, v2_targets = set(), set()
     v1_verified_targets, v2_verified_targets = set(), set()
+    method_snapshot_status_counts = Counter()
+    method_snapshots = {}
     phase_counts, phase_matched_ids, phase_consumer_sites = Counter(), {}, {}
     phase_stacks = {}
     errors, discrepancies = [], []
@@ -61,6 +63,16 @@ def audit(events, source, min_distinct=3):
         if k == "v2_tailcall":
             if row.get("v2_method"):
                 v2_targets.add(row["v2_method"])
+                snap = row.get("v2_method_code_snapshot")
+                if isinstance(snap, dict):
+                    status = snap.get("code_snapshot_status", "UNKNOWN")
+                    method_snapshot_status_counts[status] += 1
+                    if status == "READ_128_BYTES_UNVERIFIED_ORIGIN":
+                        method_snapshots[row["v2_method"]] = {
+                            "first128_sha256": snap.get("code_first128_sha256"),
+                            "captured_bytes": len(snap.get("code_first128_hex", "")) // 2,
+                            "source_proven": False,
+                        }
                 if (row.get("v2_vtable_slot_agrees") is True and
                     row.get("v2_method_from_vtable_slot") == row["v2_method"]):
                     v2_verified_targets.add(row["v2_method"])
@@ -121,6 +133,8 @@ def audit(events, source, min_distinct=3):
         "dynamic_v2_targets": sorted(v2_targets),
         "v1_targets_correlated_with_real_vtable_slot": sorted(v1_verified_targets),
         "v2_targets_correlated_with_real_vtable_slot": sorted(v2_verified_targets),
+        "v2_code_snapshot_status_counts": dict(method_snapshot_status_counts),
+        "v2_code_snapshots_need_source_mapping": method_snapshots,
         "operator_declared_phase_event_counts": dict(phase_counts),
         "operator_declared_phase_matching_ids":
             {k: sorted(v) for k,v in sorted(phase_matched_ids.items())},
