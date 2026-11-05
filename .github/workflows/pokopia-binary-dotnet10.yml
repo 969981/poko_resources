@@ -8,6 +8,7 @@ on:
       - "Pokopia.Binary/**"
       - "Pokopia.Binary.Cli/**"
       - "Pokopia.Binary.Checks/**"
+      - "tests/verify_binary_native_kids_fields.py"
       - "ThirdParty/Edoke"
       - ".gitmodules"
       - ".github/workflows/pokopia-binary-dotnet10.yml"
@@ -17,6 +18,7 @@ on:
       - "Pokopia.Binary/**"
       - "Pokopia.Binary.Cli/**"
       - "Pokopia.Binary.Checks/**"
+      - "tests/verify_binary_native_kids_fields.py"
       - "ThirdParty/Edoke"
       - ".gitmodules"
       - ".github/workflows/pokopia-binary-dotnet10.yml"
@@ -48,6 +50,9 @@ jobs:
             /Pokopia.Binary.Cli/**
             /Pokopia.Binary.Checks/**
             /UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_042753_b4b1fe49.texinfo
+            /UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native/root_000048_00390bde.kidsobjdb
+            /UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native/root_000065_004847a0.kidsobjdb
+            /tests/verify_binary_native_kids_fields.py
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "10.0.x"
@@ -90,3 +95,13 @@ jobs:
               assert all(abs(x-y) < 1e-6 for x, y in zip(row["UvCorners"], uv)), i
           print(f"PASS .NET/Python byte parity: {n} TEXINFO records")
           PY
+
+      - name: Cross-check native KIDSOBJDB field offsets and bytes against independent Python
+        shell: bash
+        run: |
+          set -euo pipefail
+          folder=UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native
+          for file in root_000048_00390bde.kidsobjdb root_000065_004847a0.kidsobjdb; do
+            dotnet run --project Pokopia.Binary.Cli -c Release --no-build -- kids-fields "$folder/$file" 8 > /tmp/kids-fields.ndjson
+            python3 tests/verify_binary_native_kids_fields.py "$folder/$file" /tmp/kids-fields.ndjson
+          done

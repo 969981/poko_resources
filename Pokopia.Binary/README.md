@@ -35,6 +35,8 @@ Offset arguments are decimal or 0x-prefixed hex; Hash arguments are hex.
     dotnet run --project Pokopia.Binary.Cli -- rdb PATH_TO_ROOT.RDB RDX_RECORD_COUNT
     dotnet run --project Pokopia.Binary.Cli -- idrk PATH_TO_FDATA 0xOFFSET
     dotnet run --project Pokopia.Binary.Cli -- kids PATH_TO_KIDSOBJDB
+    dotnet run --project Pokopia.Binary.Cli -- kids-fields PATH_TO_KIDSOBJDB 8
+    dotnet run --project Pokopia.Binary.Cli -- audit-fdata PATH_TO_ROOT.RDB PATH_TO_ROOT.RDX PATH_TO_FDATA_DIRECTORY
     dotnet run --project Pokopia.Binary.Cli -- texinfo PATH_TO_TEXINFO
     dotnet run --project Pokopia.Binary.Cli -- triple PATH_TO_KIDSOBJDB 315040
     dotnet run --project Pokopia.Binary.Cli -- find-triple PATH_TO_KIDSOBJDB 9a25ce0c d09a60bd 048fc972
@@ -73,3 +75,28 @@ No parser writes to an input file.
 
 Edoke's native SubStream is not used here because its boundary and
 end-of-stream behavior needs additional hardening for hostile offsets.
+
+## Phase 2: original-byte field ledger and physical FDATA checks
+
+`kids-fields` emits one NDJSON line for every reachable IDOK property. Each row
+contains the source block offset, its name/type hashes, field index/type/count,
+raw byte offset, byte length, a bounded sample (0–32 elements) in **original hex**
+and primitive little-endian representation. Types 0/1/2/3/4/5/8/10/12/13
+follow the existing Python fixed-width mapping. Nonfinite floats are represented
+as exact bit patterns. Unknown field types are reported without guessing any
+subsequent value offsets in that block. RDOK retains its separate opaque
+structure reporting through `kids`.
+
+`audit-fdata` walks RDB, resolves each RDX *position* to a physical FDATA file
+using the existing platform-first base/MountPoint_1/MountPoint_2 resolution
+rules, and reads just the IDRK headers at their indexed offsets. It compares
+original **name hash, type hash, unpacked size, and FDATA entry size** against
+RDB. The output status `VERIFIED_IDRK_HEADER` proves only these raw fields and
+physical access; it does not prove decompression or semantic asset identity.
+Missing/ambiguous FDATA and opaque footers remain explicitly unresolved.
+The audit is streaming and keeps at most eight physical FDATA handles open.
+
+These operations are strictly read-only and additive. Python remains responsible
+for all decompression, icon export, text handling, CSV/SQLite, and final evidence
+verification. No game classification, stack limit, or inventory limit is
+inferred solely from this field ledger.

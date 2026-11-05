@@ -114,6 +114,8 @@ Check("truncated TEXINFO rejected", () =>
     throw new Exception("Accepted truncated TEXINFO");
 });
 
+Phase2Checks.Run(Check);
+
 if (args.Length >= 1)
 {
     Check("real original 1333-sprite TEXINFO", () =>
