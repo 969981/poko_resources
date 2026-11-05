@@ -15,6 +15,7 @@ import io
 import json
 import re
 from collections import Counter
+from functools import lru_cache
 from pathlib import Path
 
 from PIL import Image, ImageDraw
@@ -76,6 +77,25 @@ def layout_for_texture(h,fmt):
     return f"ounce{gob}"
 
 
+@lru_cache(maxsize=64)
+def cached_texinfo(path):
+    return parse_texinfo(Path(path).read_bytes())
+
+
+@lru_cache(maxsize=4)
+def cached_g1t(path):
+    data=Path(path).read_bytes()
+    platform,textures=parse_g1t(data)
+    return hashlib.sha256(data).hexdigest(),platform,textures
+
+
+@lru_cache(maxsize=4)
+def cached_surface(path,layer,layout):
+    _,_,textures=cached_g1t(path)
+    tex=textures[layer]
+    return decode_png(tex["payload"],tex["width"],tex["height"],layout,tex["format"])
+
+
 def export(selected,outdir):
     outdir.mkdir(parents=True,exist_ok=True)
     records=[]
@@ -94,7 +114,7 @@ def export(selected,outdir):
                 raise ValueError("original TEXINFO filename/hash mismatch")
             if gtf.stem.rsplit("_",1)[-1].lower()!=r["g1t_hash"]:
                 raise ValueError("original G1T filename/hash mismatch")
-            texinfos=parse_texinfo(tif.read_bytes())
+            texinfos=cached_texinfo(str(tif))
             rec=texinfos[int(r["record_index"])]
             if rec["name"]!=r["texture_name"] or rec["uv_status"]!="RECT_OK":
                 raise ValueError("native TEXINFO sprite name or rectangular UV mismatch")
@@ -103,9 +123,8 @@ def export(selected,outdir):
             if any(abs(rec[k]-float(r[f"uv_{k}"]))>0.000002 for k in
                    ("u0","v0","u1","v1")):
                 raise ValueError("original UV differs from indexed TEXINFO record")
-            raw=gtf.read_bytes()
-            row["g1t_sha256"]=hashlib.sha256(raw).hexdigest()
-            platform,textures=parse_g1t(raw)
+            digest,platform,textures=cached_g1t(str(gtf))
+            row["g1t_sha256"]=digest
             if platform!=0x18:
                 raise ValueError(f"expected Switch2 platform 0x18, got {platform:#x}")
             layer=int(r["layer"])
@@ -116,7 +135,7 @@ def export(selected,outdir):
             row.update(original_format=f"{fmt:#x}",canvas_width=str(w),canvas_height=str(h))
             layout=layout_for_texture(h,fmt)
             row["layout"]=layout
-            data=decode_png(tex["payload"],w,h,layout,fmt)
+            data=cached_surface(str(gtf),layer,layout)
             with Image.open(io.BytesIO(data)) as im:
                 crop,rect=crop_uv(im.convert("RGBA"),
                                    {f"uv_{k}":str(rec[k]) for k in ("u0","v0","u1","v1")})
