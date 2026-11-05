@@ -96,3 +96,29 @@
 | UI、素材等原生纹理 | 3,930 可关联，25 已抽样 | 按批次完整输出与人工抽查 |
 
 所有结论以 GitHub Actions 实际执行报告为准；文档及脚本都不能自动把“候选”升级为“已确认”。
+
+
+## M11–M15 原生类别/物种消费者复核（2026-11-05）
+
+本轮按 **source hash → 原始 ARM64 指令 → 函数参数/返回指针 → 记录字段** 追踪，不再把有相同名字的图标或数字直接判为宝可梦物种 ID。
+
+### 原生物品分类新增的真实数据流
+
+[M12 原生 4600-ID 消费者工作流](https://github.com/969981/poko_resources/actions/runs/41950116511) 通过，23 条原始 ARM64 指令逐字节核验。位置 `main+0xE5AA60` 和 `main+0x10289F4`：`W20` 遍历 4600 个 ID，经 vtable +0x30 获取对象，返回对象 `+0x08` 的指针用于读取 `+0x26`，判定范围 1..20，`+0x39` 在第二条路径中也被读取。这个流程比“全主程序扫描到 +0x26”更有意义。但**返回指针是否源自 `00983.bin` 的 68-byte 原始记录尚未确认**。
+
+原版 00983.bin 的 `+0x26 = 0x10` 对应 **48 个有名称的 ID**；独立的[公开材料清单](https://pokopia.pokemonhubs.com/items/)将这些 48 项列为材料，但把 `南瓜棒棒糖`（ID 532，原生 `0x0F`）与 `苔石`（ID 1291，原生 `0x0A`）也归入 50 种材料。因此：
+
+- `0x10` 是 **高置信度的原生主要材料分组候选**，不是“所有游戏可用于合成的材料”的完整判定。
+- 输出 `Items/Native_2.0.1/native_material_candidate_crosswalk.csv`，包含完整日/英/德/西/法/意/韩/简中/繁中九语言、50 个物品 ID、原生三组原始字段及外部资料分类证据标签。
+- [M14 核验工作流](https://github.com/969981/poko_resources/actions/runs/41951153070) 成功；`native_material_candidate_summary.json` 记录原生 48 项、独立指南 50 项、跨分组两个例外、`official_native_enum_name_verified=false`。
+- 对于完全意义上的“原生分类枚举已确认”，仍缺 `00983.bin → 实际 Loader/分配对象 → itemId*68 → +0x26 枚举消费者` 的对象身份与原生枚举名称。
+
+[M15 可选择的只读 GDB 原生记录对照流程](M15_RUNTIME_PROOF.md) 新增 `Scripts/resources/m15_gdb_verify_item983_runtime.py`，在真实 2.0.1 guest AArch64 执行中自动继续断点，逐条对比来源表与返回对象指向内存的完整 68 字节。脚本提交不等于实际取得运行时证据；必须另有真实 JSONL 及多 ID 记录匹配才能提升等级。
+
+### 物种 ID：排除“名称相近就直接绑定”的误报
+
+- M11 对原版 `pokemon_dex_id`、`m_mainPokemonList`、`m_craftMainHelpPokemonKind` 等 **10 处**重点字符串引用恢复周边 ARM64 指令与目标 rodata 字节，输出 `Pokemon/NativeCallers/M11/`。这些成员名的引用周围存在通用属性注册/序列化相关指令，**未识别同一函数中按物种 ID 选择 G1T Hash 的流程**。
+- [M13 原生字段/资源符号追踪](https://github.com/969981/poko_resources/actions/runs/41950947069) 在 NSO 的 11.4 MB rodata 中找到 **910 条** Item/Pokemon/Texture/Craft 等候选名称与 **571 处** ARM64 ADRP/ADD/ADR 引用；包括 8 个 Pokémon 身份相关名称引用，但无足以证明 `species ID → TEXINFO/G1T hash` 的消费者证据。
+- 原版可执行 rodata 未检出 `icon_poke_` 直接文本；这不能证明游戏没有该图像，只说明名字可能在图集 TEXINFO 或使用动态哈希/表映射。普通/UNI 纹理的 609 个原始资源 Hash 仍保持与物种 ID 分离。
+
+**当前验收状态：M14 九语言材料候选表已实现；M12 原生类别值消费者已定位但 00983 加载路径未闭合；宝可梦原生物种 ID 映射仍 0 条确认。**
