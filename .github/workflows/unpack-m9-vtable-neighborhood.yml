@@ -1,0 +1,103 @@
+name: M9.10 - vtable neighborhood provenance xrefs
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_vtable_neighborhood.py"
+      - "tests/test_m9_vtable_neighborhood.py"
+      - ".github/workflows/unpack-m9-vtable-neighborhood.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-10-vtable-neighborhood
+  cancel-in-progress: false
+
+jobs:
+  native-vtable-triage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/m9_vtable_neighborhood.py
+            Scripts/resources/m9_descriptor_pointer_slot_xrefs.py
+            Scripts/resources/m9_rnk_exefs_xrefs.py
+            Scripts/resources/trace_native_species_item_callers.py
+            tests/test_m9_vtable_neighborhood.py
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_pointer_slot_xrefs.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_vtable_neighborhood_report.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_vtable_neighborhood_xrefs.csv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install "lz4>=4,<5"
+
+      - name: Run instruction-level regression tests
+        env:
+          PYTHONPATH: "."
+        run: python -m unittest discover -s tests -p 'test_m9_vtable_neighborhood.py' -v
+
+      - name: Scan native code for nearby vptr/address point references
+        env:
+          PYTHONPATH: "."
+        run: |
+          python Scripts/resources/m9_vtable_neighborhood.py \
+            --main 2.0.1/exefs/main \
+            --pointer-evidence UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_pointer_slot_xrefs.json \
+            --dest UnPack/2.0.1/Resources/Localization/M9/NameTables
+
+      - name: Verify evidence boundaries
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_vtable_neighborhood_report.json')
+          doc=json.loads(p.read_text(encoding='utf-8'))
+          r=doc['report']
+          assert len(r['per_hash'])==3
+          assert r['static_address_candidates']==len(doc['xrefs'])
+          assert r['verified_vtable_address_points']==0
+          assert r['verified_indirect_runtime_callers']==0
+          assert r['verified_KIDSOBJDB_property_getters']==0
+          assert r['new_scene_quest_building_text_foreign_keys']==0
+          assert all(not x['script_text_fk_confirmed']
+                     and not x['indirect_runtime_call_confirmed'] for x in doc['xrefs'])
+          print('M9.10 vtable-neighborhood scan PASS',r['static_address_candidates'])
+          PY
+
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m9-10-vtable-neighborhood
+          path: |
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_vtable_neighborhood_report.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_vtable_neighborhood_xrefs.csv
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Commit verified candidate evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_vtable_neighborhood_report.json \
+                     UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_vtable_neighborhood_xrefs.csv
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9.10): ARM64 descriptor vtable-neighborhood xrefs"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
