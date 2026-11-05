@@ -1,0 +1,71 @@
+{
+  "version": "2.0.1",
+  "reference_count_m21": 378,
+  "unresolved": 88,
+  "ambiguous_visual": 9,
+  "far_visual": 79,
+  "far_consecutive_317_378": 62,
+  "far_scattered": 17,
+  "native_variant_rows_original_u32_verified": 54,
+  "ambiguous_portrait_ids": [
+    16,
+    18,
+    96,
+    98,
+    218,
+    220,
+    296,
+    297,
+    298
+  ],
+  "typed_link_unique_original_files": 1,
+  "typed_link_hash": "2856a1b3",
+  "native_villager_id_semantic_bindings_verified": 0,
+  "native_species_id_semantic_bindings_verified": 0,
+  "original_fdata_coverage": {
+    "version": "2.0.1",
+    "original_missing_input_files": 27,
+    "original_unavailable_index_records": 6118,
+    "missing_index_rows_loaded": 6118,
+    "missing_original_file_type_hash_counts": {
+      "bf6b52c7": 4536,
+      "afbec60c": 557,
+      "20a6a0bb": 371,
+      "8e39aa37": 322,
+      "563bdef1": 143,
+      "b340861a": 91,
+      "1ab40ae8": 50,
+      "56efe45c": 26,
+      "f20de437": 12,
+      "ed410290": 9,
+      "0d34474d": 1
+    },
+    "type_hash_is_only_an_index_label": true,
+    "missing_image_identity_attributed_to_missing_fdata_count": 0,
+    "caveat": "No direct per-portrait source path exists for the 79 missing reference PNGs, so 27 absent FDATA cannot be asserted to contain any of them."
+  },
+  "other_original_png_sweep": {
+    "other_original_pngs_swept": 3930,
+    "batch_count": 17,
+    "swept_prefixes": {
+      "icon": 1512,
+      "still": 660,
+      "0000": 356,
+      "seal": 313,
+      "0500": 258,
+      "0300": 226,
+      "FurniturePattern": 122,
+      "shop": 106,
+      "furniture": 82,
+      "0001": 65,
+      "0400": 61,
+      "food": 24,
+      "0503": 16,
+      "0100": 13,
+      "0560": 11
+    },
+    "strong_cross_family_visual_candidate_count": 0,
+    "note": "No visual-only association can establish a native villager ID or a missing source version."
+  },
+  "caveat": "PokoHex IDs and M19 native sprite OIDs remain separate ID domains; typed source->target edges do not prove game ID binding."
+}

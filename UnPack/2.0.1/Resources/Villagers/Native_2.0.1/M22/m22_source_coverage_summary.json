@@ -1,0 +1,22 @@
+{
+  "version": "2.0.1",
+  "original_missing_input_files": 27,
+  "original_unavailable_index_records": 6118,
+  "missing_index_rows_loaded": 6118,
+  "missing_original_file_type_hash_counts": {
+    "bf6b52c7": 4536,
+    "afbec60c": 557,
+    "20a6a0bb": 371,
+    "8e39aa37": 322,
+    "563bdef1": 143,
+    "b340861a": 91,
+    "1ab40ae8": 50,
+    "56efe45c": 26,
+    "f20de437": 12,
+    "ed410290": 9,
+    "0d34474d": 1
+  },
+  "type_hash_is_only_an_index_label": true,
+  "missing_image_identity_attributed_to_missing_fdata_count": 0,
+  "caveat": "No direct per-portrait source path exists for the 79 missing reference PNGs, so 27 absent FDATA cannot be asserted to contain any of them."
+}
