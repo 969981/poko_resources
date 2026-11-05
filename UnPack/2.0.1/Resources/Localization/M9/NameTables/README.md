@@ -199,3 +199,17 @@ RNK 物理文件仍未取得；脚本→M7 正式外键仍 **0**。
 **限制：** 两个函数的 owner 均来自 x3 且成员偏移相同，仍没有动态证据确认运行时传入的是同一个持有者实例；实际 BLR 目标仅在虚表未改写且为已知类时可静态解析。M9.17 证明了具体指令点和类虚表首槽的原生字节，不证明游戏运行时调用记录，更不证明 slot+0x38 的描述符消费者、KIDSOBJDB getter 或剧情/任务/建筑 M7 外键。正式新增这些外键 **0**。
 
 下一阶段优先追上层 x3 参数／注册表中对象类型身份，闭合实际 **vptr+0x38** 消费路径，再由 Native getter 与 M7 行号进行对账。原始 RNK 的 3 份 FDATA 物理数据依然缺失，不能伪造 IRNK 字符串。
+
+
+## M9.18：精确入口在原生 .data 的双回调指针表位置（2026-11-05）
+
+[M9.18 #41958960997](https://github.com/969981/poko_resources/actions/runs/41958960997) **Success**。不再扩大全局 BLR，而是以 M9.16/M9.17 逐字节确认的两个函数入口为目标，扫描原版 NSO 的非文本数据段中精确 64 位指针。
+
+| 函数 | 已确认 PACIBSP 入口 | 原始 .data 指针地址 | 同一地址邻域 |
+|---|---|---|---|
+| 持有者清理/消费回调 | main+0xD58E34 | 0x32FDE38 | +8 main+0xD58F50，+0x10 main+0xD58F58 |
+| 持有者构造/填充回调 | main+0xD590E0 | 0x32FDF38 | +8 main+0xD592B4，+0x10 main+0xD593AC |
+
+**两个入口都在原生 .data 中找到精确 qword，位置相差 0x100 字节**。两处静态指针块相邻且共享若干外部函数指针布局，增强了“相关虚回调接口”的结构假设，但尚未通过实例 vptr、注册器构造和 x3 实参证明它们运行时属于同一类／同一 owner。报告 exefs_owner_two_callback_pointer_tables.json 中仍保持 registered_dispatch_consumer_proven=false、same_runtime_owner_type_proven=false。
+
+M9.17 的具体静态间接调用点 main+0xD58F10/slot0 已闭合到 owner+0x28；**目标描述符 slot+0x38 的实际调用点仍未闭合**。RNK 三个 FDATA 物理来源与脚本→M7 外键状态也保持未完成，不能升级证据。
