@@ -1,0 +1,60 @@
+{
+  "status": "M9_PARTIAL_TYPED_GRAPH_AND_UNVERIFIED_M3_PROBES",
+  "m3_resources_indexed": 89507,
+  "m3_type_signatures": {
+    "UNKNOWN_BINARY": 82129,
+    "KIDSOBJDB_SIGNATURE": 4144,
+    "G1M_MODEL_CONTAINER": 3204,
+    "G1A_ANIMATION_CONTAINER": 29,
+    "EMPTY": 1
+  },
+  "m7_groups_loaded": 195,
+  "typed_foreign_keys_total": 5365,
+  "typed_edges_by_domain": {
+    "Item": 3675,
+    "MapPartVariation": 1632,
+    "Reactions": 47,
+    "Skills": 11
+  },
+  "m3_kidsobjdb_objects_source_verified": 3,
+  "raw_node_markers_exported": 11330,
+  "unverified_numeric_candidates": 0,
+  "literal_markers_exported": 0,
+  "sample_probes": [
+    {
+      "m3_record_id": "root:49689",
+      "name_hash": "d14d76ef",
+      "node_markers": 68397,
+      "untyped_numeric_matches": 0,
+      "literal_marker_count": 0,
+      "raw_candidate_groups": {}
+    },
+    {
+      "m3_record_id": "root:49334",
+      "name_hash": "cfd2bd1f",
+      "node_markers": 1330,
+      "untyped_numeric_matches": 0,
+      "literal_marker_count": 0,
+      "raw_candidate_groups": {}
+    },
+    {
+      "m3_record_id": "root:42257",
+      "name_hash": "b290631c",
+      "node_markers": 31740,
+      "untyped_numeric_matches": 0,
+      "literal_marker_count": 0,
+      "raw_candidate_groups": {}
+    }
+  ],
+  "new_scene_quest_building_typed_foreign_keys": 0,
+  "m3_object_member_schema": "NOT_RESTORED",
+  "script_callers": "NOT_VERIFIED",
+  "untyped_matches_are_foreign_keys": false,
+  "warnings": [
+    "M3 type hash and native object header are not a typed field schema.",
+    "An IDOK marker is not evidence of a typed node member or caller.",
+    "Any u32 equal to an M7 table number in arbitrary native bytes is ONLY a candidate.",
+    "M8 native typed references are reused; no scene/quest/building foreign keys were invented.",
+    "Do not recategorize MapParts as Buildings based on object names or text."
+  ]
+}
