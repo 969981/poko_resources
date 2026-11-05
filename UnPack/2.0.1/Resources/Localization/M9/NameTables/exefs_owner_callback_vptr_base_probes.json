@@ -1,0 +1,50 @@
+{
+  "report": {
+    "status": "M9_SPECIFIC_TWO_CALLBACK_VPTR_BASE_PROBE",
+    "original_exefs_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+    "exact_known_callback_pointer_slots_verified": 2,
+    "vptr_offset_hypothesis": 56,
+    "derived_address_point_probes": 2,
+    "specific_target_adrp_add_candidate_rows": 0,
+    "rows_saved": 0,
+    "specific_target_xref_counts_by_va": {},
+    "confirmed_object_constructor_vptr_assignments": 0,
+    "confirmed_x3_same_owner_dispatch": 0,
+    "confirmed_specific_slot0x38_runtime_dispatch": 0,
+    "KIDSOBJDB_property_getters_verified": 0,
+    "new_M7_script_text_FKs": 0,
+    "limitations": [
+      "Deriving vptr=callback_slot-0x38 assumes slot placement; pointer byte identity alone does not establish vptr use.",
+      "ADRP+ADD exact target is a native address construction but can be for an unrelated purpose.",
+      "Nearby STR writes need register-flow and object-class proof, and same owner x3 needs caller identity.",
+      "No script or M7 foreign-key promotion from callback or table adjacency."
+    ]
+  },
+  "derived_address_point_hypotheses": [
+    {
+      "function": "owner_cleanup_callback",
+      "known_callback_slot_va": 53468728,
+      "known_callback_pc": 13995572,
+      "hypothesized_vptr": 53468672,
+      "hypothesized_slot_offset": 56,
+      "vptr_slot0_qword": 33443608,
+      "slot0_in_native_executable_range": true,
+      "callback_at_derived_vptr_plus_0x38_exact": true,
+      "proven_vptr": false,
+      "proven_same_owner_class": false
+    },
+    {
+      "function": "owner_constructor_callback",
+      "known_callback_slot_va": 53468984,
+      "known_callback_pc": 13996256,
+      "hypothesized_vptr": 53468928,
+      "hypothesized_slot_offset": 56,
+      "vptr_slot0_qword": 33443600,
+      "slot0_in_native_executable_range": true,
+      "callback_at_derived_vptr_plus_0x38_exact": true,
+      "proven_vptr": false,
+      "proven_same_owner_class": false
+    }
+  ],
+  "code_address_xrefs": []
+}
