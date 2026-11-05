@@ -1,0 +1,73 @@
+name: M21 - Original C7 item default BSS initialization xrefs
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/trace_native_item_bss_initializers.py"
+      - ".github/workflows/unpack-m21-bss-item-default-xrefs.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-201-m21-bss
+  cancel-in-progress: false
+
+jobs:
+  trace-original-default-records:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/trace_native_item_bss_initializers.py
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M21
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install native NSO decompression and disassembly
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+      - name: Verify byte-accurate BSS ADRP/ADD xrefs and forged-source rejection
+        run: python -m Scripts.resources.trace_native_item_bss_initializers --self-test
+      - name: Trace exact C7 and C9 default-record BSS pointer sources
+        run: python -m Scripts.resources.trace_native_item_bss_initializers
+      - name: Check source hashes and evidence boundaries
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M21/native_default_item_BSS_xrefs.json")
+          j=json.loads(p.read_text(encoding="utf8"))
+          assert j["original_main_sha256"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert j["original_item_sha256"]=="2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f"
+          assert j["default_pointer_cells"]["0x3483c58"]=="0x35b6128"
+          assert j["default_pointer_cells"]["0x3484a38"]=="0x35b617c"
+          assert not j["confirmed_item_default_constructor"]
+          assert not j["confirmed_record_wrapper_plus8_source"]
+          assert not j["confirmed_00983_table_loader"]
+          print("PASS source-backed BSS pointer targets")
+          PY
+      - name: Commit original BSS pointer evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -- UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M21
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m21): original item default BSS pointer xrefs and constructor candidates"
+          for i in 1 2 3 4 5 6 7 8; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+            sleep 2
+          done
+          exit 1
