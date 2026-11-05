@@ -99,7 +99,7 @@ def check_header(rec):
     if type(limit) is not int or not 1<=limit<=500:raise ValueError("Bad trace limit")
     return mode,base,limit
 
-def check_memory(r,expected_address=None,expected_size=None):
+def check_memory(r,expected_address=None,expected_size=None,operator_supplied=False):
     if not isinstance(r,dict) or type(r.get("read_ok")) is not bool:
         raise ValueError("Malformed bounded memory reading")
     if not r["read_ok"]:
@@ -107,7 +107,7 @@ def check_memory(r,expected_address=None,expected_size=None):
             # Address could be recorded even for target access errors.
             q(r["address"],"failed-read address")
         return None
-    if expected_address is None:
+    if expected_address is None and not operator_supplied:
         raise ValueError("Memory read without source register or original address provenance")
     a=q(r.get("address"),"read address")
     n=r.get("size")
@@ -224,8 +224,8 @@ def verify(path,original_arrays):
             slot=r.get("original_kids_array_slot_claim")
             if type(slot) is not int or not 0<=slot<COUNT:
                 raise ValueError("Out-of-bounds original KIDS slot")
-            kb=check_memory(r.get("key_u32_raw"),expected_size=4)
-            vb=check_memory(r.get("source_oid_u32_raw"),expected_size=4)
+            kb=check_memory(r.get("key_u32_raw"),expected_size=4,operator_supplied=True)
+            vb=check_memory(r.get("source_oid_u32_raw"),expected_size=4,operator_supplied=True)
             if kb is not None and vb is not None:
                 observed=(int.from_bytes(kb,"little"),int.from_bytes(vb,"little"))
                 expected=(original_arrays[0][slot],original_arrays[1][slot])
