@@ -253,6 +253,9 @@ def analyze(main: bytes, item_table: bytes, max_output=120):
         "numeric_imm_opcode_counts": {
             str(k): {"cmp":len(compares[k]),"movz":len(movz[k])} for k in IMMEDIATES
         },
+        "static_literal_anchor_samples": {
+            str(k): [hex(pc) for pc in movz[k][:100]] for k in (68, 983, 4600)
+        },
         "coaccess_summary": summary,
         "coaccess_candidates_total": matches,
         "top_bounded_candidates": ranked,
@@ -297,6 +300,11 @@ def main():
         "status","source_main_sha256","inspected_instruction_slots","field_opcodes",
         "coaccess_summary","coaccess_candidates_total","verified_00983_loader_or_base_producer",
         "verified_99_stack_merge_limit")},indent=2))
+    print("M11_NATIVE_IMMEDIATE_ANCHORS",
+          json.dumps({"counts":report["numeric_imm_opcode_counts"],
+                      "movz_983":report["static_literal_anchor_samples"]["983"],
+                      "movz_4600":report["static_literal_anchor_samples"]["4600"]},
+                     separators=(",",":")))
     print("M11_TOP_REGISTER_CHAIN_SITES",json.dumps([
         {"pc":c["pc"],"coaccess":c["coaccess"],
          "base_producer":c["base_producer"],
