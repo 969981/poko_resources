@@ -1,0 +1,42 @@
+name: M5 - Native Pokemon G1T Swizzle Forensics Samples
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - ".github/workflows/unpack-m5-pokemon-forensics.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  collect-original-byte-samples:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_017070_47b4eb66.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_050731_d58f20b8.g1t
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_000147_00a2d79b.texinfo
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_000204_00de13ed.texinfo
+
+      - name: Copy exact original bytes for local swizzle diagnostics
+        run: |
+          mkdir -p g1t-diagnostic
+          cp UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_017070_47b4eb66.g1t g1t-diagnostic/
+          cp UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_050731_d58f20b8.g1t g1t-diagnostic/
+          cp UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_000147_00a2d79b.texinfo g1t-diagnostic/
+          cp UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native/root_000204_00de13ed.texinfo g1t-diagnostic/
+          sha256sum g1t-diagnostic/* | tee g1t-diagnostic/SHA256SUMS.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m5-native-pokemon-g1t-forensics
+          path: g1t-diagnostic/
+          retention-days: 14
