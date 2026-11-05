@@ -206,3 +206,8 @@ python -m Scripts.resources.m30_1_review_original_runtime_witness --input m30_ki
 ### 总结
 
 KIDS 的**ScreenLayout 静态类型与字段命名**已推进到真正的源代码注册关系。下一步不该继续猜 \`0043\` 是否图鉴号，而要找到**谁实际调用 TexturePack Key→Object 查询**及该调用上游是否从运行时 Pokémon 实例读取物种和形态；取得同对象证据前，头像统计仍为 **307 / 9 / 62**，正式 ID 绑定为 **0**。
+
+
+## M31 后续原始字段语义纠正
+
+参见 [[M31_KIDS_TWO_HOP_SCREENLAYOUT_TEXTURE_PROVENANCE]]。M30 中为方便表述使用的 `Source OID → Texture OID` 是历史简称，现已严格恢复为 **`Source OID → WrapStaticScreenLayoutTexturesObjectHash → 包装 IDOK → RenderState/G1T 文件 Hash 与 InfoData/TEXINFO 文件 Hash`**。628 个原生 Source 各连接一个真实存在的包装 IDOK，二者类型都是 `0x79991E79`。原始父对象的 RenderState/InfoData 字段均为 0；真正与 G1T/TEXINFO 资源文件 Hash 相符的值在**第二层包装对象**中。以上为原始字节证据，不等于用户角色/形态选择时实际运行的查询。
