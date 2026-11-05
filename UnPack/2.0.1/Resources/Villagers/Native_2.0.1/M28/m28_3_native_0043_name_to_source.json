@@ -1,0 +1,42 @@
+{
+  "requested_original_texture_name": "icon_poke_0043_00_00_00",
+  "original_family": "normal",
+  "original_variant": "00_00_00",
+  "reverse_four_decimal_component": "3400",
+  "model_evidence_grade": "MULTI_SAMPLE_EXACT_MODEL",
+  "predicted_original_key_hash": "469e2c00",
+  "predicted_source_oid": "06ab845f",
+  "key_present_in_original_3543_array": true,
+  "native_game_species_id_verified": false,
+  "original": {
+    "version": "2.0.1",
+    "original_kids_source_class": "0x9D1AFA46",
+    "original_class_source_oid": "0xB4A1803B",
+    "native_original_array_index": 455,
+    "original_key_u32": "469e2c00",
+    "original_array_value_u32": "06ab845f",
+    "has_M25_verified_source_to_texture_link": true,
+    "source_oid": "06ab845f",
+    "texture_oid": "c1a6d60c",
+    "original_texinfo_names": [
+      "icon_poke_0043_00_00_00"
+    ],
+    "original_g1t_hash": "ab6768bd",
+    "original_texinfo_hash": "2198d172",
+    "source_qualified_png_paths": [
+      "UnPack/2.0.1/Resources/Pokemon/NativeRecoveryM25/Icons/slot0455__icon_poke_0043_00_00_00__2198d172__ab6768bd.png"
+    ],
+    "native_game_species_id_verified": false,
+    "runtime_villager_id_to_source_oid_verified": false
+  },
+  "source_oid_and_key_both_match": true,
+  "requested_texinfo_name_is_native_source_alias": true,
+  "alternative_native_texture_name_alias_sources": [
+    {
+      "slot": 455,
+      "source_oid": "06ab845f",
+      "texture_oid": "c1a6d60c"
+    }
+  ],
+  "status": "EXACT_ORIGINAL_SOURCE_NAME_AND_OID"
+}
