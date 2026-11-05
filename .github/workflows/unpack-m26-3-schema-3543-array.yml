@@ -1,0 +1,94 @@
+name: M26.3 - KIDS 3-field original descriptor consumer plus 3543-u32 table
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m26_3_kids_three_property_descriptor.py"
+      - ".github/workflows/unpack-m26-3-schema-3543-array.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m26-3-schema-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate-original-KIDS-type-and-3-field-schema:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Sparse checkout original native NSO and KIDS type data
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m20_native_species_item_targets.py
+            Scripts/resources/m16_verify_pokemon_texture_kidsobjdb.py
+            Scripts/resources/m26_3_kids_three_property_descriptor.py
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native/root_019167_50ae86ef.kidsobjdb
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install native NSO parser
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Verify original three-field metadata geometry
+        run: python -m Scripts.resources.m26_3_kids_three_property_descriptor --self-test
+
+      - name: Cross-check original class descriptor method and exact raw KIDS record
+        run: python -m Scripts.resources.m26_3_kids_three_property_descriptor
+
+      - name: Validate raw 3543 entry source array and no species-ID promotion
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26")
+          s=json.loads((d/"m26_3_native_property_schema_summary.json").read_text(encoding="utf-8"))
+          p=json.loads((d/"m26_3_three_original_property_descriptors.json").read_text(encoding="utf-8"))
+          assert s["original_class_type_hash"]=="0x9d1afa46"
+          assert s["original_property_descriptor_method"]=="0xdd1b48"
+          assert s["original_property_descriptor_table"]=="0x2838834"
+          assert s["original_type_vtable_method_slot"]=="0x33135e0"
+          assert s["original_icon_source_array_descriptor_index"]==2
+          assert s["original_icon_array_field_hash"]=="0x34cbb458"
+          assert s["original_icon_array_elements"]==3543
+          assert s["original_icon_array_data_byte_offset"]==378728
+          assert len(p["original_native_descriptor_rows"])==3
+          assert p["original_native_descriptor_rows"][2]["original_kids_node_has_descriptor_field"]
+          assert not s["original_game_species_id_to_array_index_verified"]
+          assert not s["original_game_villager_id_to_source_OID_verified"]
+          print("M26.3 original class vtable + schema + raw KIDS data evidence verified")
+          PY
+
+      - name: Upload M26.3 native field proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m26-3-original-3-field-KIDS-3543-u32-schema
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26/m26_3_*
+          if-no-files-found: warn
+
+      - name: Commit original schema consumer evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26/m26_3_*
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m26.3): source-byte KIDS class descriptor consumer and 3543-entry original property"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
