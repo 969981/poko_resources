@@ -98,7 +98,7 @@ def collect_pokemon() -> list[dict[str, str]]:
     src = ROOT / "Pokemon/NativeCandidates/pokemon_native_manifest.csv"
     records = []
     for row in load_csv(src):
-        if not re.fullmatch(r"icon_poke_(?:uni_)?\d{4}_\d{2}_\d{2}_\d{2}", row["texture_name"]):
+        if not row["texture_name"].startswith("icon_poke_"):
             continue
         records.append({
             "name": row["texture_name"],
