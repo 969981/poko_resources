@@ -119,10 +119,10 @@ class M8NativeReferenceTests(unittest.TestCase):
         glyph=("엥"+chr(0xE01B)+"!?").encode("utf-8")
         first=len(data)
         struct.pack_into("<II",data,64,first-64,1)
-        data += glyph+b"\\0"
+        data += glyph+bytes([0])
         second=len(data)
         struct.pack_into("<II",data,72,second-72,1)
-        data += b"test\\0"
+        data += b"test"+bytes([0])
         table,status=parse(bytes(data),2339,"native/02339.bin")
         self.assertEqual(status,"PARSED")
         self.assertIn(chr(0xE01B),table.rows[0][0][0])
