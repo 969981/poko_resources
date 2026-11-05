@@ -1,0 +1,57 @@
+{
+  "status": "M9_ORIGINAL_RDB_RESOURCE_HASH_AUDIT_ONLY",
+  "original_catalogs": {
+    "root": {
+      "records": 60722,
+      "rdb_sha256": "47f715d98cbe8718ce0c5e51dd4666c6587796a51f72b904a76bde8d227be786",
+      "rdx_sha256": "22a38306a19d7311e4c282b72714994a162a3e9c63454f9cc7caed38d614c5cd",
+      "advertised_records": 60722,
+      "rdx_entries": 45
+    },
+    "system": {
+      "records": 25110,
+      "rdb_sha256": "bbb32eaa334025e74fc392ed4deffea9faddac3e5d333f7d01f517cd1e179176",
+      "rdx_sha256": "db0b933405e37d1c0c74f9f475a24857ed644530533eed744a36cde55a55f1c5",
+      "advertised_records": 25110,
+      "rdx_entries": 5
+    }
+  },
+  "m3_index_records_rechecked": 89507,
+  "per_hash": [
+    {
+      "expected_rnk_hash": "a91711c6",
+      "original_rdb_index_hits": 1,
+      "rdb_record_ids": [
+        "root:40061"
+      ],
+      "result": "ORIGINAL_RDB_INDEX_HIT_PAYLOAD_UNVERIFIED"
+    },
+    {
+      "expected_rnk_hash": "aa91cb96",
+      "original_rdb_index_hits": 1,
+      "rdb_record_ids": [
+        "root:40411"
+      ],
+      "result": "ORIGINAL_RDB_INDEX_HIT_PAYLOAD_UNVERIFIED"
+    },
+    {
+      "expected_rnk_hash": "cb3c8b15",
+      "original_rdb_index_hits": 1,
+      "rdb_record_ids": [
+        "root:48184"
+      ],
+      "result": "ORIGINAL_RDB_INDEX_HIT_PAYLOAD_UNVERIFIED"
+    }
+  ],
+  "rnk_payloads_verified": 0,
+  "irnk_strings_recovered": 0,
+  "new_script_scene_quest_building_text_foreign_keys": 0,
+  "previous_numeric_oid_candidates_preserved_unverified": 87445,
+  "limitations": [
+    "This audit checks original root.rdb and system.rdb indices, not unindexed resource bundles.",
+    "An absent RDB index entry does not establish that no matching file exists anywhere in the game.",
+    "Presence of a hash in an RDB is NOT proof of _RNK0000 magic or of any semantic property name.",
+    "The git tree check records availability; split archives are not reconstructed or validated here.",
+    "No script/ExeFS consumer dataflow or M7 text foreign key is inferred from resource hashes."
+  ]
+}
