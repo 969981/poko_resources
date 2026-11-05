@@ -1,0 +1,101 @@
+name: M9.7 - trace ExeFS descriptor function references
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_descriptor_reader_trace.py"
+      - "tests/test_m9_descriptor_reader_trace.py"
+      - ".github/workflows/unpack-m9-descriptor-entry-xrefs.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-7-descriptor-entry-xrefs
+  cancel-in-progress: false
+
+jobs:
+  inspect-entry-consumers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/m9_descriptor_reader_trace.py
+            Scripts/resources/m9_rnk_exefs_xrefs.py
+            Scripts/resources/trace_native_species_item_callers.py
+            tests/test_m9_descriptor_reader_trace.py
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_hash_writes.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_entry_xrefs.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_entry_xrefs.csv
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install "lz4>=4,<5"
+
+      - name: Unit-test raw ARM64 reference decoding
+        env:
+          PYTHONPATH: "."
+        run: python -m unittest discover -s tests -p 'test_m9_descriptor_reader_trace.py' -v
+
+      - name: Resolve branch and pointer references to original descriptor entries
+        env:
+          PYTHONPATH: "."
+        run: |
+          python Scripts/resources/m9_descriptor_reader_trace.py \
+            --main 2.0.1/exefs/main \
+            --writers UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_hash_writes.json \
+            --dest UnPack/2.0.1/Resources/Localization/M9/NameTables
+
+      - name: Ensure structural evidence is not promoted to getter or foreign key
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path=Path('UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_entry_xrefs.json')
+          doc=json.loads(path.read_text(encoding='utf-8'))
+          report=doc['report']
+          assert report['status']=='M9_DESCRIPTOR_ENTRY_REFERENCE_TRIAGE_ONLY'
+          assert len(report['entry_functions'])==3
+          assert {x['descriptor_record_stride_bytes'] for x in report['entry_functions']}=={24}
+          assert report['verified_descriptor_buffer_readers']==0
+          assert report['verified_kidsobjdb_property_getters']==0
+          assert report['new_script_scene_quest_building_text_foreign_keys']==0
+          assert all(x['evidence_grade']=='NATIVE_STATIC_ENTRY_REFERENCE_ONLY' for x in doc['xrefs'])
+          assert all(not x['runtime_reader_verified'] and not x['text_fk_verified'] for x in doc['xrefs'])
+          print('M9.7 entry-xref evidence gate PASS',report['xref_by_kind'])
+          PY
+
+      - name: Upload xref evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m9-7-descriptor-entry-xrefs
+          path: |
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_entry_xrefs.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_entry_xrefs.csv
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Commit verified native xref survey
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_entry_xrefs.json \
+                     UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_descriptor_entry_xrefs.csv
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9.7): original ExeFS descriptor entry xrefs"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
