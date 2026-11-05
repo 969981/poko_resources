@@ -1,0 +1,75 @@
+name: M9 - Probe native Pokemon and item category callers in ExeFS
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/trace_native_species_item_callers.py"
+      - "tests/test_trace_native_species_item_callers.py"
+      - ".github/workflows/unpack-m9-native-exefs-consumers.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-original-main-xrefs-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  exefs-survey:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            tests/test_trace_native_species_item_callers.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install bounded NSO LZ4 and ARM64 disassembler
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Validate section bounds and native string anchor locations
+        run: python -m unittest discover -s tests -p "test_trace_native_species_item_callers.py" -v
+
+      - name: Recover actual NSO segments, icon_poke strings and ARM64 literal consumers
+        run: python -m Scripts.resources.trace_native_species_item_callers
+
+      - name: Keep source evidence distinct from species ID proof
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Pokemon/NativeCallers/main_string_xrefs.json")
+          d=json.loads(p.read_text(encoding="utf-8"))
+          assert d["species_id_confirmed"]==0 and d["material_enum_confirmed"] is False
+          assert len(d["original_main_sha256"])==64
+          assert d["format"] in ("NSO0","ELF_UNMAPPED") or d["format"].startswith("UNKNOWN_")
+          print("Native ExeFS format",d["format"],"icon strings",d["pokemon_literal_count"],
+                "static xrefs",d["arm64_string_xrefs_count"])
+          PY
+
+      - name: Commit native ExeFS static evidence, no unjustified ID claims
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -- UnPack/2.0.1/Resources/Pokemon/NativeCallers/main_string_xrefs.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9): survey original ExeFS Pokemon string xrefs and category byte loads"
+          for i in 1 2 3 4 5 6; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+            sleep 2
+          done
+          exit 1
