@@ -1,0 +1,259 @@
+{
+  "status": "ORIGINAL_68_STRIDE_MUL_CANDIDATES_ONLY",
+  "sha256_main": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "sha256_item": "2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f",
+  "total_candidates": 299,
+  "opcode_counts": {
+    "constant:4600": 53,
+    "constant:68": 1199,
+    "constant:983": 10,
+    "field:ldrb": 3249,
+    "field:ldrh": 701,
+    "madd:madd": 29986,
+    "mul_long:smaddl": 4446,
+    "mul_long:umaddl": 21848
+  },
+  "verified_00983_loader": false,
+  "verified_item_ID_times_68_base": false,
+  "shortlist": [
+    {
+      "pc": "0x21354c",
+      "op": "smaddl",
+      "dest": "x25",
+      "score": 8,
+      "constant68_producers": [
+        {
+          "pc": "0x213544",
+          "reg": "w9",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [
+        {
+          "pc": "0x213498",
+          "op": "ldrb",
+          "offset": "0x26",
+          "base": "x19"
+        }
+      ],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x601fe4",
+      "op": "smaddl",
+      "dest": "x8",
+      "score": 8,
+      "constant68_producers": [
+        {
+          "pc": "0x601fd8",
+          "reg": "w9",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [
+        {
+          "pc": "0x601f2c",
+          "op": "ldrb",
+          "offset": "0x26",
+          "base": "x21"
+        }
+      ],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x2e2f90",
+      "op": "umaddl",
+      "dest": "x8",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x2e2f54",
+          "reg": "w8",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x2f9ed0",
+      "op": "umaddl",
+      "dest": "x11",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x2f9dd8",
+          "reg": "w8",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x36888c",
+      "op": "umaddl",
+      "dest": "x10",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x3687f8",
+          "reg": "w9",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x3e50c0",
+      "op": "umaddl",
+      "dest": "x10",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x3e5000",
+          "reg": "w10",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x4740ec",
+      "op": "umaddl",
+      "dest": "x8",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x474058",
+          "reg": "w8",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x50446c",
+      "op": "umaddl",
+      "dest": "x12",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x50440c",
+          "reg": "w7",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x504a1c",
+      "op": "umaddl",
+      "dest": "x9",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x5049f8",
+          "reg": "w7",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x505050",
+      "op": "umaddl",
+      "dest": "x2",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x504fd4",
+          "reg": "w14",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x505488",
+      "op": "umaddl",
+      "dest": "x8",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x5053f8",
+          "reg": "w2",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x505558",
+      "op": "umaddl",
+      "dest": "x14",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x50550c",
+          "reg": "w2",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x5056b8",
+      "op": "umaddl",
+      "dest": "x8",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x505650",
+          "reg": "w2",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x50573c",
+      "op": "umaddl",
+      "dest": "x10",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x505650",
+          "reg": "w2",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x5059bc",
+      "op": "umaddl",
+      "dest": "x8",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x505990",
+          "reg": "w9",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    }
+  ]
+}
