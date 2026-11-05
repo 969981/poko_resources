@@ -1,0 +1,69 @@
+name: M24 - Verify original item consumer matrix provenance
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m24_item_consumer_matrix.py"
+      - "UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M24/**"
+      - ".github/workflows/unpack-m24-item-consumer-matrix.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pokopia-201-m24-item-consumers
+  cancel-in-progress: false
+
+jobs:
+  rebuild-and-compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m24_item_consumer_matrix.py
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M12
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M20
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M24
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile and deterministically reconstruct matrix
+        run: |
+          python -m py_compile Scripts/resources/m24_item_consumer_matrix.py
+          python -m Scripts.resources.m24_item_consumer_matrix --out _work/m24
+      - name: Verify committed 17-caller matrix and fail-closed flags
+        run: |
+          python - <<'PY'
+          import csv
+          import json
+          from pathlib import Path
+          committed=Path("UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M24")
+          generated=Path("_work/m24")
+          s=json.loads((generated/"m24_summary.json").read_text(encoding="utf8"))
+          c=json.loads((committed/"m24_summary.json").read_text(encoding="utf8"))
+          assert s==c, "M24 committed summary drifted from original M12/M20 sources"
+          with (committed/"m24_wrapper_consumer_matrix.csv").open(encoding="utf8",newline="") as f:
+              cr=list(csv.DictReader(f))
+          with (generated/"m24_wrapper_consumer_matrix.csv").open(encoding="utf8",newline="") as f:
+              gr=list(csv.DictReader(f))
+          assert cr==gr, "M24 source-qualified 17-caller CSV drifted"
+          assert s["direct_BL_callers"]==17
+          assert s["wrapper_plus8_in_bounded_window"]==12
+          assert s["rows_with_nearby_post_call_field_access"]==13
+          assert s["nearby_wrapper_callers_with_0x26_read"]==0
+          assert not s["dynamic_v2_method_known"]
+          assert not s["official_item_kind_enum_proven"]
+          assert not s["runtime_three_complete_68byte_records_verified"]
+          print("PASS: exact 17-caller original static report; runtime fields remain unverified")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m24-rebuilt-original-item-consumer-matrix
+          path: _work/m24/
+          retention-days: 14
