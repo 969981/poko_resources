@@ -123,3 +123,9 @@ python -m Scripts.resources.m27_reverse_decimal_hash31
 [GitHub Actions M27 完整源数据复验](https://github.com/969981/poko_resources/actions/runs/41995425771) 成功。它从原始 KIDSOBJDB 验证 SHA/3543 项数，再对照 M26/M25 原始数据，生成 CSV、常量和 JSON；任何来源 SHA 改变、数组偏移改变、预期 Source OID 不符或数学模型不符都会停止。
 
 后续最短路线：在原始 NSO 中查找实际 31 倍递推／字节累加函数；从该函数的真实调用者回溯资源键输入，继而核验是否确实连接 KIDS \`0xE88C8D60\` 与 \`0x34CBB458\` 的并行索引。所有推测函数都要以原始机器码和上下文记录，不得直接升格为完整 runtime ID 映射。
+
+## M28 原始 ExeFS 搜索与实用检索结果
+
+参见 [[M28_ORIGINAL_HASH31_CONSUMER_AND_LOOKUP]]。原始 NSO 41,194,624 字节的 text 段经 10,298,656 指令槽位扫描，找到 319 条 32-bit `LSL #5` 候选（309 ADD、10 SUB），但直接的两 SUB `31×Hash+byte` 和 `33×Hash−2×Hash` 模式均 **0 条符合**；这只说明特定指令模板未命中，不能否认 M27 在原生 KIDS 字节上完整验证的 31 多项式数学模型。
+
+新增 `Scripts/resources/m28_3_kids_icon_lookup.py`：按 TEXINFO 原名或原始数组槽位直接核验 `key → Source OID → Texture OID → G1T/TEXINFO/PNG`，已对全部 626 条数字化资源进行独立原生字节复核。另有 `Scripts/gdb/m28_pokopia_native_id_readonly_trace.py` 用于在用户自身 AArch64 GDB 会话按原生代码入口进行限量只读采样，目前仅做 Python 静态校验，未连接实际游戏。正式游戏身份映射仍未完成。
