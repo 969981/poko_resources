@@ -1,0 +1,26 @@
+{
+  "version": "2.0.1",
+  "original_KIDSOBJDB_sha256": "86f90b4c11da9bc2b3e28889a5090ff507f96ca713fe4fad1dd50f6f692d7541",
+  "original_source_IDOK_nodes_in_database": 7087,
+  "two_hop_source_wrapper_G1T_TEXINFO_entries_verified": 628,
+  "unique_original_source_OIDs": 628,
+  "unique_original_wrapper_IDOK_OIDs": 628,
+  "source_and_wrapper_both_class_StaticScreenLayoutTextures": true,
+  "native_class_hash": "79991e79",
+  "original_typed_field_labels": {
+    "c8bb66da": "LayoutTexturesRenderStateObjectHash",
+    "2276fc56": "LayoutTexturesInfoDataResourceHash",
+    "2856a1b3": "WrapStaticScreenLayoutTexturesObjectHash"
+  },
+  "parent_source_render_info_u32_both_zero_count": 628,
+  "wrapper_child_3rd_wrap_property_zero_count": 628,
+  "second_hop_wrapper_render_field_equals_M25_G1T_hash_count": 628,
+  "second_hop_wrapper_info_field_equals_M25_TEXINFO_hash_count": 628,
+  "old_target_texture_oid_column_semantics": "FIRST_HOP_WRAP_STATIC_SCREEN_LAYOUT_TEXTURES_OBJECT_HASH",
+  "existing_M25_extra_non_owner_icon_outside_628": 1,
+  "source_file_hash_matches_original_schema_and_M25_index": true,
+  "native_Executed_texture_resource_loader_verified": false,
+  "native_species_form_ID_to_original_KIDS_OID_verified": false,
+  "native_villager_ID_to_picture_verified": false,
+  "note": "Original source bytes now directly prove every 628 two-hop object chain and child G1T/TEXINFO file hash values. This is asset provenance, not runtime source selection by game species or forms."
+}
