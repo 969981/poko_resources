@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Export 14 extra item PNG CANDIDATES from mixed-format source G1T atlas.
 
-13 BC7 (GOB8) and one BGRA (GOB16). Does not overwrite proven 1,333
+13 BC7 (Ounce8) and one BGRA (Ounce16). Does not overwrite proven 1,333
 native item icons or the imported PokoHex reference directory.
 """
 from __future__ import annotations
@@ -29,7 +29,7 @@ def main():
     records=parse_texinfo(texinfo.read_bytes())
     if platform!=0x18 or len(layers)!=2 or len(records)!=14:
         raise ValueError("unexpected secondary atlas container")
-    expected=[(512,256,0x66,"gob8"),(128,128,0x0a,"gob16")]
+    expected=[(512,256,0x66,"ounce8"),(128,128,0x0a,"ounce16")]
     canvases=[]
     for layer, (w,h,fmt,layout) in zip(layers,expected):
         if (layer["width"],layer["height"],layer["format"])!=(w,h,fmt):
@@ -64,7 +64,7 @@ def main():
         w=csv.DictWriter(f,fieldnames=cols);w.writeheader();w.writerows(rows)
     scores=[r["reference_distance"] for r in rows if r["reference_distance"]!=""]
     summary={"count":14,"source_g1t":path.as_posix(),"source_texinfo":texinfo.as_posix(),
-             "layers":{"BC7_gob8":13,"BGRA_gob16":1},
+             "layers":{"BC7_ounce8":13,"BGRA_ounce16":1},
              "ref_comparison":len(scores),"max_difference":max(scores) if scores else None,
              "median_difference":median(scores) if scores else None,
              "note":"These 14 source-derived PNG crops are in Extra14Candidates for visual review and do not overwrite formally reviewed Icons."}
