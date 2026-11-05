@@ -4,6 +4,6 @@ test_sqlite_cannot_promote_raw_candidate (test_m9_caller_reference_graph.M9Tests
 test_untyped_numeric_never_becomes_foreign_key (test_m9_caller_reference_graph.M9Tests.test_untyped_numeric_never_becomes_foreign_key) ... ok
 
 ----------------------------------------------------------------------
-Ran 4 tests in 0.032s
+Ran 4 tests in 0.012s
 
 OK
