@@ -66,7 +66,14 @@ jobs:
           assert name["predicted_original_key_hash"]=="469e2c00"
           assert name["predicted_source_oid"]=="06ab845f"
           assert name["original"]["native_original_array_index"]==455
-          assert name["original"]["texture_oid"]=="c1a6d60c"
+          assert name["original"]["texture_oid"]=="c1a6d60c"  # historical wrapper alias
+          assert name["original"]["legacy_texture_oid_is_actually_wrapper_IDOK_oid"]
+          assert name["original"]["original_wrapper_IDOK_oid"]=="c1a6d60c"
+          assert name["original"]["original_wrapper_render_state_file_hash"]=="ab6768bd"
+          assert name["original"]["original_wrapper_info_data_file_hash"]=="2198d172"
+          assert name["original"]["source_to_wrapper_to_G1T_TEXINFO_bytes_verified"]
+          assert name["original"]["final_texture_object_ID_proven_from_legacy_texture_oid"] is False
+          assert result["all_628_original_KIDS_two_hop_asset_links_verified"]
           assert slot["source_oid"]=="06ab845f"
           assert not result["native_game_species_id_verified"]
           assert not name["native_game_species_id_verified"]
