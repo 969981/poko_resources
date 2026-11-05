@@ -102,6 +102,8 @@ def analyze(originals: dict[str, bytes], links: list[dict], crosswalk: list[dict
         dst_tex=scalar(b["fields"],TEXINFO)
         if any(x is None for x in (src_g1t,src_tex,dst_g1t,dst_tex)):
             raise ValueError("One endpoint lacks exact G1T/TEXINFO hash fields")
+        classes["empty_source_g1t" if src_g1t==0 else "nonzero_source_g1t"]+=1
+        classes["empty_source_texinfo" if src_tex==0 else "nonzero_source_texinfo"]+=1
         classes["same_g1t" if src_g1t==dst_g1t else "distinct_g1t"]+=1
         classes["same_texinfo" if src_tex==dst_tex else "distinct_texinfo"]+=1
         classes["source_is_other_icon" if source_oid in indexes else "source_not_in_icon_index"]+=1
