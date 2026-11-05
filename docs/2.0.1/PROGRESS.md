@@ -71,3 +71,11 @@ python -m unittest discover -s tests -v
 - M23 的两个 FF03 容器 `0x03a38715.fdata` 和 `0xfd6af828.fdata` 仍未获取原始负载；M25 已恢复的 26 张 PNG 源自**已有** `0x00011c54.fdata`，不可误记为 FF03 已恢复。
 
 详见 [[M26_VILLAGER_ROSTER_AND_KIDS_PARALLEL_ARRAYS]] 和 [[M25_NATIVE_POKEMON_ICON_REGISTRY]]。所有结果由 2.0.1 原生字节和 Actions 独立验证，未写入未经证明的游戏正式身份映射。
+
+## M27 — KIDS 图标数组 31 多项式与四位数字逆序拟合（2026-11-05）
+
+- 直接用原始 `root_019167_50ae86ef.kidsobjdb`（SHA-256 钉住）校验 3,543 对 u32，以及 M25 的 628 个 Source OID。
+- 找到以 `31` 为乘数的四位数字 **逆序字符串**公式：常规图标 key/OID 指数 `11/66`，uni 图标 `15/70`，每形态有独立的常数项。样例 `0043→3400`，原生 slot455 key=`0x469E2C00`、Source OID=`0x06AB845F`。
+- 总计 **626 条**有 4 位数字的图标满足模型，其中独立留出样本 **612/612 同时匹配 key 和 OID**，14 组中的 4 组为单样本未独立验证。非数字的 `icon_poke_blank` 与 `icon_poke_uni_hatena` 保留原始字段。
+- 枚举 14 组 × `0000–9999` = 140,000 个候选，从原始 3,543 项双数组中得到 **626 条键和值同时一致**、新图标对象 0 条；这并不能证明游戏完全没有其它来源或版本图像。
+- M27 只完成**数学模型与原始字节对账**，尚未证明 NSO 中真实 Hash 实现、字符串来源或游戏物种 ID 消费者；307/9/62 状态保持不变。参见 [[M27_ORIGINAL_KIDS_REVERSE31_NUMERIC_HASH]]。
