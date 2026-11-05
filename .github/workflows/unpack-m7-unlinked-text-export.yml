@@ -1,0 +1,208 @@
+name: M7 - Export 983 unlinked native text tables (UNKNOWN locale)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/export_unlinked_native_text.py"
+      - "Scripts/resources/export_native_text_files.py"
+      - "Scripts/resources/recover_native_text_ids.py"
+      - "tests/test_unlinked_native_text_export.py"
+      - "UnPack/2.0.1/Resources/Localization/M7/nine_language_groups.csv"
+      - "UnPack/2.0.1/Resources/Localization/M7/native_table_inventory.csv"
+      - ".github/workflows/unpack-m7-unlinked-text-export.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m7-unlinked-native-text
+  cancel-in-progress: false
+
+jobs:
+  export-unlinked:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Sparse checkout parser, M7 inventory, and existing unlinked exports
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          persist-credentials: true
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/export_unlinked_native_text.py
+            Scripts/resources/export_native_text_files.py
+            Scripts/resources/recover_native_text_ids.py
+            tests/test_unlinked_native_text_export.py
+            UnPack/2.0.1/Resources/Localization/M7/nine_language_groups.csv
+            UnPack/2.0.1/Resources/Localization/M7/native_table_inventory.csv
+            UnPack/2.0.1/Resources/Localization/UnlinkedText
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Select only M7 PARSED tables outside every nine-language group
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY' > /tmp/m7-unlinked-source-paths.txt
+          import csv
+          from pathlib import Path
+          base = Path("UnPack/2.0.1/Resources/Localization/M7")
+          with (base / "nine_language_groups.csv").open(encoding="utf-8-sig", newline="") as f:
+              groups = list(csv.DictReader(f))
+          with (base / "native_table_inventory.csv").open(encoding="utf-8-sig", newline="") as f:
+              inventory = list(csv.DictReader(f))
+          assert len(groups) == 195
+          linked = set()
+          for group in groups:
+              start = int(group["start_entry"])
+              assert int(group["end_entry"]) == start + 8
+              for entry in range(start, start + 9):
+                  assert entry not in linked
+                  linked.add(entry)
+          assert len(linked) == 1755
+          parsed = {int(row["entry"]): row for row in inventory if row["status"] == "PARSED"}
+          assert len(parsed) == 2738, len(parsed)
+          assert linked <= set(parsed)
+          unlinked = sorted(set(parsed) - linked)
+          assert len(unlinked) == 983, len(unlinked)
+          for entry in unlinked:
+              print(f"UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/{entry:05d}.bin")
+          PY
+          git sparse-checkout add --stdin < /tmp/m7-unlinked-source-paths.txt
+          python - <<'PY'
+          from pathlib import Path
+          files = Path("/tmp/m7-unlinked-source-paths.txt").read_text().splitlines()
+          missing = [x for x in files if not Path(x).is_file()]
+          if missing:
+              raise SystemExit(f"Missing {len(missing)} original inputs: {missing[:20]}")
+          print(f"Verified original file checkout for {len(files)} unlinked tables")
+          PY
+
+      - name: Run synthetic native parser and exporter regression tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p 'test_unlinked_native_text_export.py' -v
+          python -m unittest discover -s tests -p 'test_native_text_file_export.py' -v || {
+            echo 'The optional four-anchor suite requires its own checkout; primary unlinked tests passed.'
+          }
+
+      - name: Export unlinked original native text (no locale guesses)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python Scripts/resources/export_unlinked_native_text.py \
+            > /tmp/m7-unlinked-native-text.log 2>&1 || {
+              tail -n 120 /tmp/m7-unlinked-native-text.log
+              exit 1
+            }
+          cat /tmp/m7-unlinked-native-text.log
+
+      - name: Audit all 983 manifests, first-form TXT and lossless JSONL
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, hashlib, itertools, json
+          from pathlib import Path
+          from Scripts.resources.export_native_text_files import txt_escape
+          base = Path("UnPack/2.0.1")
+          root = base / "Resources/Localization/UnlinkedText"
+          m7 = base / "Resources/Localization/M7"
+          with (m7 / "nine_language_groups.csv").open(encoding="utf-8-sig", newline="") as f:
+              groups = list(csv.DictReader(f))
+          linked = {int(g["start_entry"]) + i for g in groups for i in range(9)}
+          with (m7 / "native_table_inventory.csv").open(encoding="utf-8-sig", newline="") as f:
+              inventory = {int(r["entry"]): r for r in csv.DictReader(f)}
+          expected = {e: x for e, x in inventory.items() if x["status"] == "PARSED" and e not in linked}
+          report = json.loads((root / "unlinked_text_export_report.json").read_text(encoding="utf-8"))
+          assert report["status"] == "UNLINKED_NATIVE_TEXT_EXPORTED_WITH_M7_PROVENANCE"
+          assert report["full_game_coverage"] == "NOT_CLAIMED"
+          assert report["tables_exported"] == len(expected) == 983
+          assert {x["entry"] for x in report["table_entries"]} == set(expected)
+          assert {int(d.name[-5:]) for d in root.glob("table_*") if d.is_dir()} == set(expected)
+          total_records = 0
+          total_slots = 0
+          for entry, source in sorted(expected.items()):
+              folder = root / f"table_{entry:05d}"
+              m = json.loads((folder / "manifest.json").read_text(encoding="utf-8"))
+              assert m["entry"] == entry
+              assert m["language"] == "UNKNOWN" and m["category"] == "UNKNOWN"
+              assert m["evidence_grade"] == "UNLINKED_NATIVE_RECORD"
+              assert m["record_count"] == int(source["record_count"])
+              assert m["record_width"] == int(source["record_width"])
+              assert m["forms_per_record"] == (1 if m["record_width"] == 8 else 6)
+              native_path = base / "romfs/LD_C0_R.BIN/decoded" / f"{entry:05d}.bin"
+              actual_native_sha = hashlib.sha256(native_path.read_bytes()).hexdigest()
+              assert m["source"]["sha256"] == source["sha256"] == actual_native_sha
+              count, forms = m["record_count"], m["forms_per_record"]
+              total_records += count
+              total_slots += count * forms
+              output = m["outputs"]
+              for name, sha in [
+                  ("txt", "txt_sha256"),
+                  ("all_forms_jsonl", "all_forms_jsonl_sha256")
+              ]:
+                  data = (folder / output[name]).read_bytes()
+                  assert hashlib.sha256(data).hexdigest() == output[sha]
+              assert output["lines"] == count
+              with (folder / output["txt"]).open(encoding="utf-8", newline="") as txt, \
+                   (folder / output["all_forms_jsonl"]).open(encoding="utf-8") as jf:
+                  seen = 0
+                  for line, raw in itertools.zip_longest(txt, jf):
+                      assert line is not None and raw is not None
+                      record = json.loads(raw)
+                      assert record["text_id"] == seen
+                      assert len(record["forms"]) == forms
+                      assert len(record["absolute_byte_offsets"]) == forms
+                      assert len(record["raw_metadata_u32"]) == (1 if forms == 1 else 2)
+                      assert line.endswith("\n") and line[:-1] == txt_escape(record["forms"][0])
+                      seen += 1
+                  assert seen == count
+          assert report["native_records"] == total_records
+          assert report["native_record_form_slots"] == total_slots == 174238
+          print(f"PASS: {len(expected)} unlinked native tables, {total_records} records, "
+                f"{total_slots} record/form slots; no assigned locale or category")
+          PY
+
+      - name: Upload verified unknown-locale text tables
+        if: success()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-201-m7-unlinked-unknown-locale-text
+          path: UnPack/2.0.1/Resources/Localization/UnlinkedText
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Publish verified standalone TXT, JSONL, and provenance
+        if: success()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- UnPack/2.0.1/Resources/Localization/UnlinkedText
+          if git diff --cached --quiet; then echo "No changed unlinked native text exports"; exit 0; fi
+          git commit -m "data(m7): export 983 unlinked native text tables with provenance"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
+
+      - name: Upload bounded failure details
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-201-m7-unlinked-failure
+          path: /tmp/m7-unlinked-native-text.log
+          retention-days: 30
+          if-no-files-found: ignore
