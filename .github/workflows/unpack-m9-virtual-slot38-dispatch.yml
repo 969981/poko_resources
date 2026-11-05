@@ -1,0 +1,95 @@
+name: M9.14 - original virtual offset 0x38 indirect call shape triage
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_vptr_dispatch_slot38.py"
+      - "tests/test_m9_vptr_dispatch_slot38.py"
+      - ".github/workflows/unpack-m9-virtual-slot38-dispatch.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-14-dispatch
+  cancel-in-progress: false
+
+jobs:
+  generic-dispatch-patterns:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/m9_vptr_dispatch_slot38.py
+            Scripts/resources/trace_native_species_item_callers.py
+            tests/test_m9_vptr_dispatch_slot38.py
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_verified_vptr_stores.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_virtual_slot_0x38_dispatch_candidates.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install "lz4>=4,<5"
+
+      - name: Validate generic virtual call shape decoder
+        env:
+          PYTHONPATH: "."
+        run: python -m unittest discover -s tests -p 'test_m9_vptr_dispatch_slot38.py' -v
+
+      - name: Scan original ExeFS for virtual slot offset +0x38 callsite shapes
+        env:
+          PYTHONPATH: "."
+        run: |
+          python Scripts/resources/m9_vptr_dispatch_slot38.py \
+            --main 2.0.1/exefs/main \
+            --verified-vptr UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_verified_vptr_stores.json \
+            --dest UnPack/2.0.1/Resources/Localization/M9/NameTables
+
+      - name: Verify no false getter or M7 foreign key
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_virtual_slot_0x38_dispatch_candidates.json')
+          r=json.loads(p.read_text(encoding='utf-8'))
+          s=r['report']
+          assert s['status']=='M9_GENERIC_INDIRECT_SLOT_0X38_DISPATCH_TRIAGE'
+          assert s['known_original_slot_offset']==0x38
+          assert s['known_descriptor_callback']==0xd59420
+          assert s['specific_runtime_object_dispatches_verified']==0
+          assert s['KIDSOBJDB_getter_callers_verified']==0
+          assert s['new_script_scene_quest_building_text_foreign_keys']==0
+          assert all(not x['specific_descriptor_callback_proven'] for x in r['examples'])
+          print('M9.14 generic dispatch shapes PASS',s['scan_counts'])
+          PY
+
+      - name: Upload candidate evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m9-14-virtual-slot38
+          path: UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_virtual_slot_0x38_dispatch_candidates.json
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Commit verified static callsite triage
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_virtual_slot_0x38_dispatch_candidates.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9.14): generic native virtual slot38 dispatch candidates"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
