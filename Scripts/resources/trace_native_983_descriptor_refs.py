@@ -66,11 +66,24 @@ def inspect(main,item):
                     "raw_40_sha256":hashlib.sha256(raw).hexdigest(),
                     "u32_words":[hex(x) for x in struct.unpack("<10I",raw)],
                     "u64_interpretations":refs})
+    item983=next(x for x in out if x["id"]==983)
+    id982=next(x for x in out if x["id"]==982)
+    id984=next(x for x in out if x["id"]==984)
+    observed=(id982["u64_interpretations"][0]["string"],
+              item983["u64_interpretations"][0]["string"],
+              id984["u64_interpretations"][0]["string"],
+              item983["u64_interpretations"][1]["string"])
+    expected=("md_gost12_256","md_gost12_512","id-tc26-signwithdigest",
+              "GOST R 34.11-2012 with 512 bit hash")
+    if observed!=expected:
+        raise ValueError("Original 983 descriptor crypto OID identity changed: "+repr(observed))
     return {"status":"NATIVE_983_40BYTE_DESCRIPTOR_POINTER_REFERENTS",
             "original_main_sha256":ma,"original_item_sha256":it,
             "descriptor_base_va":hex(DESCRIPTOR_BASE),"descriptor_stride":40,
             "descriptors":out,
             "confirmed_983_is_00983_file":False,
+            "descriptor_983_crypto_oid_identity_proven":True,
+            "numeric_983_not_usable_as_linkdata_file_evidence":True,
             "confirmed_983_pointer_is_4600x68_table":False,
             "confirmed_V1_V2_constructor_link":False,
             "notes":[
@@ -100,7 +113,9 @@ def main():
     (a.out/"descriptor_983_referents.json").write_text(json.dumps(r,ensure_ascii=False,indent=2)+"\n",encoding="utf8")
     brief={k:r[k] for k in ("status","original_main_sha256","original_item_sha256",
                             "descriptor_base_va","descriptor_stride",
-                            "confirmed_983_is_00983_file","confirmed_983_pointer_is_4600x68_table",
+                            "confirmed_983_is_00983_file","descriptor_983_crypto_oid_identity_proven",
+                            "numeric_983_not_usable_as_linkdata_file_evidence",
+                            "confirmed_983_pointer_is_4600x68_table",
                             "confirmed_V1_V2_constructor_link")}
     brief["descriptors"]=r["descriptors"]
     (a.out/"descriptor_983_referents_summary.json").write_text(json.dumps(brief,ensure_ascii=False,indent=2)+"\n",encoding="utf8")
