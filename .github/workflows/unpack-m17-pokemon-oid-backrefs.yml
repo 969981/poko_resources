@@ -1,0 +1,90 @@
+name: M17 - Scan typed KIDSOBJDB backrefs to original Pokemon texture objects
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m17_pokemon_object_backrefs.py"
+      - ".github/workflows/unpack-m17-pokemon-oid-backrefs.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-201-m17-pokemon-oid
+  cancel-in-progress: false
+
+jobs:
+  typed-native-pokemon-oid-backrefs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m16_verify_pokemon_texture_kidsobjdb.py
+            Scripts/resources/m17_pokemon_object_backrefs.py
+            UnPack/2.0.1/Resources/Pokemon/pokemon_identity_crosswalk.csv
+            UnPack/2.0.1/Resources/Pokemon/NativeCallers/M17
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify failure closed on invalid database and empty target
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from tempfile import TemporaryDirectory
+          from Scripts.resources.m17_pokemon_object_backrefs import candidates
+          with TemporaryDirectory() as d:
+              f=Path(d)/'corrupt.kidsobjdb'
+              f.write_bytes(b'not a database')
+              rows,summary=candidates([f],{0x1234:['icon_poke_1234']})
+              assert rows==[]
+              assert summary['source_parse_status']['PARSE_FAILED']==1
+              assert summary['native_species_id_binding_verified']==0
+          print('PASS invalid KIDS source rejected')
+          PY
+      - name: Scan original typed reference values against all 609 icon-object targets
+        run: python -m Scripts.resources.m17_pokemon_object_backrefs
+      - name: Verify actual source coverage and no fabricated species IDs
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          d=Path('UnPack/2.0.1/Resources/Pokemon/NativeCallers/M17')
+          j=json.loads((d/'m17_report.json').read_text(encoding='utf-8'))
+          with (d/'pokemon_typed_icon_oid_backrefs.csv').open(encoding='utf-8',newline='') as f:
+              r=list(csv.DictReader(f))
+          assert j['source_database_files']==678
+          assert j['original_u32_matches']==len(r)
+          assert j['native_species_id_binding_verified']==0
+          assert all(x['proven_species_id_binding']=='0' for x in r)
+          assert all(x['evidence'].endswith('CONSUMER_UNVERIFIED') for x in r)
+          print(f"Validated original 678 files, {len(r)} typed matches; species identity stays unresolved.")
+          PY
+      - name: Publish evidence for inspection
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-201-m17-native-pokemon-oid-backrefs
+          path: UnPack/2.0.1/Resources/Pokemon/NativeCallers/M17/
+          if-no-files-found: error
+      - name: Commit auditable typed evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Pokemon/NativeCallers/M17
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m17): classify native Pokemon OID typed backrefs without assigning species"
+          for i in 1 2 3 4 5 6; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+            sleep 2
+          done
+          exit 1
