@@ -176,9 +176,19 @@ def export_category(category: str, native: list[dict[str, str]], copy_native: bo
                          key=lambda pair: (pair[0], pair[1]["path"]))[:2]
         best_distance, best_native = nearest[0] if nearest else (None, None)
         second_distance = nearest[1][0] if len(nearest) > 1 else None
-        found = indexed.get(identity, [])
-        status = ("PIXEL_EXACT_UNIQUE" if len(found) == 1 else
-                  "PIXEL_EXACT_MULTIPLE_SOURCES" if found else "NO_PIXEL_EXACT_NATIVE")
+        exact = indexed.get(identity, [])
+        if exact:
+            found = exact
+            status = "PIXEL_EXACT_UNIQUE" if len(exact) == 1 else "PIXEL_EXACT_MULTIPLE_SOURCES"
+        elif (best_native and dimension_matches and best_distance is not None
+              and best_distance <= 0.015
+              and (second_distance is None or second_distance - best_distance >= 0.015)):
+            # 32px visually close with a clear lead, but NOT pixel-exact or game-ID proof.
+            found = [best_native]
+            status = "VISUAL_NEAR_IDENTICAL_CANDIDATE"
+        else:
+            found = []
+            status = "NO_CONFIDENT_IMAGE_CANDIDATE"
         targets = found if found else [None]
         for native_row in targets:
             export_path = ""
@@ -226,7 +236,8 @@ def export_category(category: str, native: list[dict[str, str]], copy_native: bo
             if not file.exists() or hashlib.sha256(file.read_bytes()).hexdigest() != r["sha"]:
                 shutil.copyfile(r["path"], file)
 
-    refs_matched = {r["reference_sprite_id"] for r in results if r["match_count"] != "0"}
+    refs_exact = {r["reference_sprite_id"] for r in results if r["status"].startswith("PIXEL_EXACT_")}
+    refs_visual = {r["reference_sprite_id"] for r in results if r["status"] == "VISUAL_NEAR_IDENTICAL_CANDIDATE"}
     statuses = dict(Counter({r["reference_sprite_id"]: r["status"] for r in results}.values()))
     write_csv(dest / "native_icon_crosswalk.csv", results)
     print(category, "reference nearest-native examples:", [
@@ -236,13 +247,14 @@ def export_category(category: str, native: list[dict[str, str]], copy_native: bo
         "version": "2.0.1", "category": category,
         "pokohex_reference_count": len(refs),
         "native_texinfo_png_candidates": len(native),
-        "pixel_exact_matched_reference_icons": len(refs_matched),
-        "unmatched_reference_icons": len(refs) - len(refs_matched),
-        "native_pngs_used_by_exact_matches": len(used_native),
+        "pixel_exact_matched_reference_icons": len(refs_exact),
+        "visual_near_identical_reference_candidates": len(refs_visual),
+        "unmatched_reference_icons": len(refs) - len(refs_exact) - len(refs_visual),
+        "native_pngs_used_by_exact_or_visual_candidates": len(used_native),
         "reference_status_counts": statuses,
-        "evidence": "RGBA visible-pixel SHA256 identity, sourced from verified native TEXINFO/G1T PNG manifests",
+        "evidence": "Original-source TEXINFO/G1T PNG SHA256 and pixel RGBA; nonexact image candidates are 32x32 alpha-aware normalized-MAE <=0.015 with runner-up margin >=0.015.",
         "id_provenance": "Game-ID and portrait-ID columns, when present, originate in pinned PokoHex; no native runtime ID binding is implied.",
-        "limitations": "Nearest visual similarity is a ranked REVIEW HINT only. It is not treated as matched native ID, and cannot establish the original game species/villager ID.",
+        "limitations": "VISUAL_NEAR_IDENTICAL_CANDIDATE links are review-only, not pixel-exact and NOT original game-ID proof; transparent pixels are normalized for strict comparisons.",
     }
     (dest / "native_icon_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return summary
