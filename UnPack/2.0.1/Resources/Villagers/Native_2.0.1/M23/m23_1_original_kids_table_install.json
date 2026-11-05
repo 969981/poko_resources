@@ -6,6 +6,12 @@
   "stp_destination_pointer_source_global": "0x34963b0",
   "stp_installed_table_pointer_source_global": "0x34963b8",
   "registered_method_table_pointer": "0x32f0ee0",
+  "static_owner_address_from_initialized_global": "0x366e6f0",
+  "owner_in_original_nso_bss_range": true,
+  "original_nso_data_end_rva": "0x34cbec0",
+  "original_nso_bss_start_rva": "0x34cbec0",
+  "original_nso_bss_end_rva": "0x3d20000",
+  "owner_pointer_liveness_at_runtime_verified": false,
   "registered_method_pointer_offset": "0x18",
   "original_code_pointer_at_vtable_offset": "0xce854c",
   "original_data_global_cells": {
