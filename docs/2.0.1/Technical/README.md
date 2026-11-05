@@ -62,3 +62,9 @@ updated: 2026-11-05
 专题中的结构、偏移、错误码以链接的当前解析脚本为依据；未完成的物种 ID、材料枚举及任务/建筑外键仍为待验证结论。
 
 更新日期：2026-11-05。
+
+## 真实样本与验收手册（2026-11-05）
+
+- **真实 Hex 样本**：[[docs/2.0.1/Technical/Samples/README|Samples 样本索引]] · [GitHub 浏览](Samples/README.md)。覆盖 00983.bin、04645.bin、108 字节 TEXINFO、M7 九语言偏移及导出来源。
+- **质量门禁 / 回归**：[[docs/2.0.1/Technical/Validation/README|Validation 验收索引]] · [GitHub 浏览](Validation/README.md)。覆盖 byte-to-output provenance、已有测试命令、仓库历史审计和未完成外键。
+- 上述 Hex 来自仓库中真实文件的本次读取；源文件 SHA-256 以已提交报告核对；**未重跑全部本地 ROM 解析与 PNG 导出**。
