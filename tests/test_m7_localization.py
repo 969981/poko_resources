@@ -39,6 +39,15 @@ class NativeTextTests(unittest.TestCase):
         self.assertEqual(table.rows[0][0][0],"なにを　しますか？")
         self.assertEqual(table.rows[1][0][0],"新刊公告　3月")
 
+    def test_private_use_game_font_codepoint_is_preserved(self):
+        raw="엥\\ue01b!?"
+        # The Korean local text table contains a U+E01B custom glyph.
+        raw="엥"+chr(0xE01B)+"!?"
+        table,status=parse(make([[raw],["plain"]]),2339,"native/02339.bin")
+        self.assertEqual(status,"PARSED")
+        self.assertEqual(table.rows[0][0][0],raw)
+        self.assertIn(chr(0xE01B),table.rows[0][0][0])
+
     def test_record32_six_raw_forms(self):
         data=make([["a","","b","","c",""],["d","e","","f","","g"]],width=32)
         t,status=parse(data,500,"test")
