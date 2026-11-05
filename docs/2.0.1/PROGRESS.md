@@ -79,3 +79,10 @@ python -m unittest discover -s tests -v
 - 总计 **626 条**有 4 位数字的图标满足模型，其中独立留出样本 **612/612 同时匹配 key 和 OID**，14 组中的 4 组为单样本未独立验证。非数字的 `icon_poke_blank` 与 `icon_poke_uni_hatena` 保留原始字段。
 - 枚举 14 组 × `0000–9999` = 140,000 个候选，从原始 3,543 项双数组中得到 **626 条键和值同时一致**、新图标对象 0 条；这并不能证明游戏完全没有其它来源或版本图像。
 - M27 只完成**数学模型与原始字节对账**，尚未证明 NSO 中真实 Hash 实现、字符串来源或游戏物种 ID 消费者；307/9/62 状态保持不变。参见 [[M27_ORIGINAL_KIDS_REVERSE31_NUMERIC_HASH]]。
+
+## M28 — 原始 NSO Hash31 候选扫描与源对象查询（2026-11-05）
+
+- 对 2.0.1 原始 NSO text 完整扫描 **10,298,656** 个 AArch64 指令槽位，找到 319 条 `LSL #5` 32 位加减操作（309 ADD、10 SUB），119 条附近有字节读取；检索的两 SUB `31×Hash+字节`、`33×Hash−2×Hash` 的严格局部模板均无命中，**不代表真实 Hash 算法不存在**。
+- **M28.3 已交付可使用的原生资源检索工具** `Scripts/resources/m28_3_kids_icon_lookup.py`，从原始 KIDSOBJDB 和 M27 数学模型将纹理名称还原到真实数组 key / Source OID / Texture OID / G1T / TEXINFO 和 PNG，**626/626** 原生数字图标查找独立对账成功；`icon_poke_0043_00_00_00` 的原生 key=`0x469E2C00`，Source OID=`0x06AB845F`，Texture OID=`0xC1A6D60C`，真实数组槽位 455。
+- 新建只读 GDB 采样 `Scripts/gdb/m28_pokopia_native_id_readonly_trace.py`，观测 `main+0xDD1B48`、`0xDD1C30`、`0x1136AA4`、`0x5FD168` 的动态调用者与寄存器；**目前仅通过静态语法和非修改检查，未在游戏运行时验证**。
+- 因未闭合 game ID → 原始键 / Source OID，身份绑定仍是 **0**。村民头像仍 **307 高置信视觉候选 + 9 多候选 + 62 未定位**。见 [[M28_ORIGINAL_HASH31_CONSUMER_AND_LOOKUP]]。
