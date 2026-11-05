@@ -40,6 +40,14 @@ public static class KidsFieldReader
             : $"nonfinite:0x{bits:x8}";
     }
 
+    private static string Vector(ReadOnlySpan<byte> bytes)
+    {
+        var parts = new string[bytes.Length / 4];
+        for (int i = 0; i < parts.Length; i++)
+            parts[i] = Float(bytes.Slice(i * 4, 4));
+        return "[" + string.Join(",", parts) + "]";
+    }
+
     private static string Primitive(uint type, ReadOnlySpan<byte> b) => type switch
     {
         0 => unchecked((sbyte)b[0]).ToString(CultureInfo.InvariantCulture),
@@ -49,8 +57,7 @@ public static class KidsFieldReader
         4 => BinaryPrimitives.ReadInt32LittleEndian(b).ToString(CultureInfo.InvariantCulture),
         5 => BinaryPrimitives.ReadUInt32LittleEndian(b).ToString(CultureInfo.InvariantCulture),
         8 => Float(b),
-        10 or 12 or 13 => "[" + string.Join(",", Enumerable.Range(0, b.Length / 4)
-            .Select(i => Float(b.Slice(i * 4, 4)))) + "]",
+        10 or 12 or 13 => Vector(b),
         _ => throw new InvalidDataException("KIDS_UNSUPPORTED_PRIMITIVE")
     };
 
