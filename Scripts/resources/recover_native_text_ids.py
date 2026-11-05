@@ -163,6 +163,10 @@ def main():
     args=ap.parse_args()
     if not args.decoded_root.is_dir():ap.error("Decoded LINKDATA directory missing")
     root=args.dest;root.mkdir(parents=True,exist_ok=True)
+    # Remove stale derived shards, while preserving README and real samples.
+    for glob in ("native_records_*.csv","nine_language_records_*.csv",
+                 "nine_language_records_*.json"):
+        for old in root.glob(glob):old.unlink()
     tables={}
     sources=[]
     for path in sorted(args.decoded_root.glob("*.bin")):
