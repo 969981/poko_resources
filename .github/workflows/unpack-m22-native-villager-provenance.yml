@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: pokopia-m22-villager-\${{ github.ref }}
+  group: pokopia-m22-villager-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
