@@ -105,3 +105,13 @@ python -m unittest discover -s tests -v
 - M30.5 **正式确认两套 Type Hash 的原生类型名**：`ScreenLayoutTexturePackSettings (0x9D1AFA46)`，原始 `main+0xBAA528 → main+0xBE19B4`；`StaticScreenLayoutTextures (0x79991E79)`，原始 `main+0xBA6A1C → main+0xBB8558`。两条注册路径原始机器码、TypeHash MOVZ/MOVK、BSS 对象、VTable、属性方法双向证实。**这只是原始静态资源注册结构，尚无真实角色 ID → TexturePack Query 的运行时连接**。
 - 新增 `Scripts/gdb/m30_pokopia_two_phase_witness.py`，按 `identity`／`kids` 两阶段请求各两个硬件断点，有限内存字节采样，验证断点原始 opcode，并可加操作员场景标注；`Scripts/resources/m30_1_review_original_runtime_witness.py` 将其离线与原始 3543 对 Key/Object 和三个属性 Hash 对账。**模拟数据测试与原始 ROM 交叉验收成功；模拟器实际硬件断点、同角色真实 ID 消费者仍未验证**。
 - **头像现状：307 张原生高置信视觉候选、9 张多候选、62 张未定位，正式原生 game ID 绑定 0。** 参见 [[M30_SCREENLAYOUT_NATIVE_CLASS_AND_WITNESS]]；原始 M30–M30.5 五个工作流均完成并成功。
+
+
+## M31 — 628 条真实两跳 KIDS 包装资源链（2026-11-05）
+
+- 原始 2.0.1 NSO 方法表：`ScreenLayoutTexturePackSettings (0x9D1AFA46)` 和 `StaticScreenLayoutTextures (0x79991E79)` 的 `vtable+0x10` 都指向 `main+0x1FE4FA0`，后者经 `ldr x8,[x8,#0x18]`、`blr x8` 逐项调用类型属性描述器处理函数。**这是 KIDS 通用字段枚举，不是已经找到的游戏图标 ID 查询。**
+- 恢复 `StaticScreenLayoutTextures` 三个正式原生字段名称：`LayoutTexturesRenderStateObjectHash (0xC8BB66DA)`、`LayoutTexturesInfoDataResourceHash (0x2276FC56)`、`WrapStaticScreenLayoutTexturesObjectHash (0x2856A1B3)`。
+- 628/628 个原生图标 Source OID，均为 `0x79991E79` 父 IDOK；父对象前两字段都是 0，第三字段指向真实存在的不同包装 IDOK；**628/628 包装对象都在同一个原始 7,087 节点数据库中，类型也是 `0x79991E79`**。
+- 628/628 个包装对象的 RenderState 值与 M25 的 G1T 文件 Hash **一致**，InfoData 值与 M25 的 TEXINFO 文件 Hash **一致**，末尾 Wrap 值均为 0。所有 628 条已生成精确的 **Source→包装 IDOK→G1T/TEXINFO 两跳资源来源 CSV**。原始父/子对象全部直接从 KIDSOBJDB 字节校验。
+- 更正历史字段：M25–M30 中 `target_texture_oid` 的数值应叫 **`WrapStaticScreenLayoutTexturesObjectHash` / 包装 IDOK OID**，不是最终 G1T/TEXINFO 文件 Hash。M28.3 查询脚本已增加包装层读回校验和新命名，旧 `texture_oid` 字段只作为兼容别名并附明确警告。
+- 当前只完成**资源端**两跳链，真正游戏运行时 `species/form ID → TexturePack Key → 数组槽位` 的函数消费者仍未知；**正式身份绑定 0，头像统计 307 高置信视觉 / 9 多候选 / 62 未定位**。见 [[M31_KIDS_TWO_HOP_SCREENLAYOUT_TEXTURE_PROVENANCE]]。
