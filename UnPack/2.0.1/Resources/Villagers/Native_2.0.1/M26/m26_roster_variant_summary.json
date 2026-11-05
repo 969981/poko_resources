@@ -1,0 +1,21 @@
+{
+  "version": "2.0.1",
+  "reference_pokohex_roster_total": 378,
+  "original_native_visual_candidates_confirmed_m25": 307,
+  "still_unmatched_reference_portraits": 62,
+  "reference_missing_id_range": [
+    317,
+    378
+  ],
+  "third_party_public_named_villager_records_for_missing": 62,
+  "reference_game_record_id_min": 508,
+  "reference_game_record_id_max": 607,
+  "ambiguous_reference_portraits_with_preferred_visual_only_assignment": 9,
+  "ambiguous_reference_groups": 4,
+  "source_distinct_visual_assignments": true,
+  "native_villager_id_bindings_proven": 0,
+  "native_species_id_bindings_proven": 0,
+  "third_party_reference_is_native_version_proof": false,
+  "status": "VISUAL_PROPOSALS_ONLY__M25_NATIVE_SOURCE_BYTES_UNCHANGED",
+  "warning": "PokoHex is_public and game_record_id are third-party metadata. One-to-one visual assignment is not proof of original game species ID or 2.0.1 asset availability for the 62 missing portraits."
+}
