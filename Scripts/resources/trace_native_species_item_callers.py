@@ -92,14 +92,27 @@ def arm64_scan(text_segment,string_targets,max_type_loads=300):
         raise RuntimeError("ARM64 static scan requires capstone>=5") from exc
     md=Cs(CS_ARCH_ARM64,CS_MODE_ARM)
     md.detail=True
+    # NSO text may contain instruction gaps or embedded literal pools;
+    # without skipdata Capstone stops at its first undecodable word.
+    md.skipdata=True
     refs=[]
     candidate_loads=[]
     # ADRP may be followed by one or more independent instructions before ADD.
     active=deque(maxlen=20)
     prior=deque(maxlen=8)
+    inspected=0
+    skipped=0
+    last_offset=0
     pages={t["virtual_offset"]//4096 for t in string_targets}
     targets={t["virtual_offset"]:t for t in string_targets}
     for inst in md.disasm(text_segment["data"],text_segment["mem_offset"]):
+        inspected+=1
+        last_offset=max(last_offset,inst.address-text_segment["mem_offset"]+inst.size)
+        if inst.mnemonic.startswith(".byte"):
+            skipped+=1
+            prior.clear()
+            active.clear()
+            continue
         prev=list(prior)
         mnemonic=inst.mnemonic
         operands=inst.operands
@@ -135,7 +148,8 @@ def arm64_scan(text_segment,string_targets,max_type_loads=300):
         prior.append(inst)
         while active and inst.address-active[0][0]>20:
             active.popleft()
-    return refs,candidate_loads
+    return refs,candidate_loads,{"inspected_instructions":inspected,"last_byte_scanned":last_offset,
+         "text_bytes":len(text_segment["data"]),"skipdata_entries":skipped}
 
 
 def analyze(blob, max_xref=100):
@@ -143,14 +157,17 @@ def analyze(blob, max_xref=100):
     matches=scan_strings(parts)
     icon=[x for x in matches if x["target_group"]=="POKEMON_ICON"]
     others=[x for x in matches if x["target_group"]!="POKEMON_ICON"]
-    refs,loads=[],[]
+    refs,loads,coverage=[],[],{}
     code=next((p for p in parts if p["name"]=="text"),None)
-    if code and icon:
-        refs,loads=arm64_scan(code,icon)
-    elif code:
-        # Without a native icon string target, ldrb candidates alone cannot
-        # identify the item table. Keep that limitation explicit.
-        refs,loads=arm64_scan(code,[])
+    # NSO contains no literal icon_poke_ in many optimized builds. Trace
+    # native adjacent PokemonKind/crafting terms too, but do NOT treat these
+    # as verified sprite or material enum consumers.
+    anchors=icon+[
+        x for x in others if re.search(r"pokemon|craft|recipe|itemkind|item_type",
+                                        x["text"],re.IGNORECASE)
+    ]
+    if code:
+        refs,loads,coverage=arm64_scan(code,anchors)
     return {
         "status":"STATIC_FORENSICS_ONLY__NATIVE_ID_NOT_PROVEN",
         "original_main_sha256":hashlib.sha256(blob).hexdigest(),
@@ -161,6 +178,8 @@ def analyze(blob, max_xref=100):
         "pokemon_literals":icon[:max_xref],
         "other_related_string_count":len(others),
         "other_related_strings":others[:max_xref],
+        "arm64_survey_coverage":coverage,
+        "tracked_literal_anchors":len(anchors),
         "arm64_string_xrefs_count":len(refs),
         "arm64_string_xrefs":refs[:max_xref],
         "ldrb_struct_offset_0x26_samples":loads[:max_xref],
