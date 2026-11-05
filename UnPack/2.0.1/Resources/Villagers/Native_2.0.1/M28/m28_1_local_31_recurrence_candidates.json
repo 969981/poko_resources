@@ -1,0 +1,20 @@
+{
+  "summary": {
+    "game_version": "2.0.1",
+    "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+    "original_aligned_instruction_slots_scanned": 10298656,
+    "original_32bit_shift5_opcodes": {
+      "ADD": 309,
+      "SUB": 10
+    },
+    "local_two_sub_hash31_arithmetic_candidate_count": 0,
+    "exact_adjacent_hash31_arithmetic_identities": 0,
+    "nonadjacent_requiring_register_liveness": 0,
+    "shortlisted_assembly_windows": 0,
+    "native_hash31_function_and_input_proven": false,
+    "native_kids_3543_key_lookup_consumer_proven": false,
+    "native_pokemon_species_id_to_source_OID_proven": false,
+    "warning": "Even an exact sub/byte/sub word chain is only original machine-code arithmetic, not proof of a KIDS icon hash or native species ID caller. LDRB byte-register liveness beyond adjacent instructions is not established."
+  },
+  "candidates": []
+}
