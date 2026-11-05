@@ -39,7 +39,7 @@ def main():
     candidates=[]
     for layer,tex in enumerate(textures):
         # Format-specific ranges: block-linear candidate height is bounded by the image rows.
-        layouts=["linear","gob1","gob2","gob4","gob8"] if layer==0 else ["linear","gob1","gob2","gob4","gob8","gob16"]
+        layouts=["linear","gob1","gob2","gob4","gob8","ounce8"] if layer==0 else ["linear","gob1","gob2","gob4","gob8","gob16","ounce16"]
         entries=[e for e in rec if e["texture_layer_raw_u32"]==layer]
         for layout in layouts:
             try:
