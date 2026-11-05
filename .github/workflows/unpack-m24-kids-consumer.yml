@@ -6,6 +6,7 @@ on:
     branches: ["2.0.1_unpack"]
     paths:
       - "Scripts/resources/m24_kids_consumer_callgraph.py"
+      - "Scripts/resources/m24_1_pokemon_identity_anchors.py"
       - ".github/workflows/unpack-m24-kids-consumer.yml"
 
 permissions:
@@ -32,6 +33,8 @@ jobs:
             Scripts/resources/trace_native_species_item_callers.py
             Scripts/resources/m20_native_species_item_targets.py
             Scripts/resources/m24_kids_consumer_callgraph.py
+            Scripts/resources/m24_1_pokemon_identity_anchors.py
+            UnPack/2.0.1/Resources/Pokemon/NativeCallers/main_string_xrefs.json
             UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M23/m23_1_original_kids_table_install.json
             UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M22/m22_nine_ambiguous_native_object_refs.csv
 
@@ -43,10 +46,15 @@ jobs:
         run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
 
       - name: Verify bounded adjacent xref and instruction decoder
-        run: python -m Scripts.resources.m24_kids_consumer_callgraph --self-test
+        run: |
+          python -m Scripts.resources.m24_kids_consumer_callgraph --self-test
+          python -m Scripts.resources.m24_1_pokemon_identity_anchors --self-test
 
       - name: Trace original registration callee and local owner-global references
         run: python -m Scripts.resources.m24_kids_consumer_callgraph
+
+      - name: Cross-check original Pokemon identity string caller windows
+        run: python -m Scripts.resources.m24_1_pokemon_identity_anchors
 
       - name: Validate preserved native provenance and no ID guess
         run: |
@@ -56,12 +64,18 @@ jobs:
           path=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M24")
           x=json.loads((path/"m24_original_consumer_summary.json").read_text(encoding="utf-8"))
           graph=json.loads((path/"m24_direct_calls_and_asm.json").read_text(encoding="utf-8"))
+          identity=json.loads((path/"m24_1_identity_anchors_summary.json").read_text(encoding="utf-8"))
           rows=list(csv.DictReader((path/"m24_owner_global_adjacent_xrefs.csv").open(encoding="utf-8",newline="")))
           assert x["m22_typed_native_edge_rows"]==54
           assert len(x["m22_ambiguous_portrait_ids"])==9
           assert x["m23_1_static_initialization_rechecked"]
           assert x["native_villager_id_bindings_verified"]==0
           assert x["native_species_id_bindings_verified"]==0
+          assert identity["anchor_counts"]["pokemon_dex_id"]>=1
+          assert identity["anchor_counts"]["RegisterPokemonNum"]>=1
+          assert identity["anchor_counts"]["m_mainPokemonList"]>=1
+          assert not identity["gameplay_consumer_to_source_oid_verified"]
+          assert identity["9_ambiguous_identity_resolved"]==0
           assert x["original_method_class_owner_verified"] is False
           assert x["game_villager_id_field_consumer_verified"] is False
           assert x["registry_type_hash"]=="0x79991e79"
