@@ -6,6 +6,7 @@ on:
     branches: ["2.0.1_unpack"]
     paths:
       - "Scripts/resources/trace_item_textures.py"
+      - "tests/test_trace_item_textures.py"
       - "Scripts/resources/g1t_to_png.py"
       - "UnPack/2.0.1/Resources/Textures/Indexes/**"
       - ".github/workflows/unpack-m5-item-links.yml"
@@ -30,6 +31,7 @@ jobs:
           filter: blob:none
           sparse-checkout: |
             Scripts/resources
+            tests
             UnPack/2.0.1/Resources/Textures/Indexes
             UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native
             UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native
@@ -40,6 +42,9 @@ jobs:
 
       - name: Set up Pillow for BC7 and BC3
         run: python -m pip install "Pillow>=11,<13"
+
+      - name: Test strict one-record and multi-record TEXINFO linkage
+        run: python -m unittest discover -s tests -p "test_trace_item_textures.py" -v
 
       - name: Trace actual TEXINFO and G1T for four known item IDs
         run: |
@@ -61,7 +66,18 @@ jobs:
           report = json.loads((base/"Textures/item_native_link_summary.json").read_text(encoding="utf-8"))
           assert report["inventory_items"] == 1615, report
           assert report["mapping_rows"] == 3229, report
-          assert report["link_status"].get("VERIFIED_NATIVE_FIELDS", 0) >= 4, report
+          assert report["link_status"].get("VERIFIED_NATIVE_FIELDS", 0) >= 2500, report
+          assert report["texinfo_parser"].startswith("Shared parse_texinfo"), report
+          with (base/"Textures/item_native_link_audit.csv").open(encoding="utf-8",newline="") as f:
+              audited=list(csv.DictReader(f))
+          main_atlas=[r for r in audited if r["texinfo_hash"]=="b4b1fe49"]
+          assert len(main_atlas)==1333,len(main_atlas)
+          assert all(r["status"]=="VERIFIED_NATIVE_FIELDS" for r in main_atlas), {
+              k:sum(r["status"]==k for r in main_atlas)
+              for k in sorted(set(r["status"] for r in main_atlas))
+          }
+          assert len(set(r["texinfo_record_index"] for r in main_atlas))==1333
+          print("Verified original 1333-record atlas references")
           with (base/"Textures/item_native_preview_manifest.csv").open(encoding="utf-8", newline="") as f:
               previews = list(csv.DictReader(f))
           good = [x for x in previews if x["status"] == "PNG_CANDIDATE_UNVERIFIED"]
