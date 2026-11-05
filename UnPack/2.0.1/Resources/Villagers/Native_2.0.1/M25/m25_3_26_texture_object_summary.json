@@ -1,0 +1,18 @@
+{
+  "original_root_sha256": "86f90b4c11da9bc2b3e28889a5090ff507f96ca713fe4fad1dd50f6f692d7541",
+  "original_array_26_gap_slots": 26,
+  "source_object_type_checked": "79991e79",
+  "source_typed_edge_property_hash": "2856a1b3",
+  "typed_original_target_statuses": {
+    "TARGET_ORIGINAL_OBJECT_PRESENT": 26
+  },
+  "target_nonzero_g1t_hash_count": 26,
+  "target_nonzero_texinfo_hash_count": 26,
+  "tracked_original_native_source_count": 132305,
+  "tracked_original_source_coverage_by_g1t_texinfo": {
+    "g1t_1_texinfo_0": 26
+  },
+  "native_species_ids_proven": 0,
+  "native_villager_ids_proven": 0,
+  "warning": "A texture resource found by an adjacent gap is not a proven ID or decoded original PNG until source G1T and TEXINFO bytes and images are verified."
+}
