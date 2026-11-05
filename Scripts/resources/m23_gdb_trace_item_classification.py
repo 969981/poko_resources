@@ -38,6 +38,21 @@ def read_u64(inferior, addr):
     return struct.unpack("<Q", bytes(inferior.read_memory(addr, 8)))[0]
 
 
+def capture_method_bytes(inferior, method, sampled, max_distinct=32):
+    """Bounded guest code snapshot for later offline original-ExeFS comparison."""
+    if method in sampled or len(sampled) >= max_distinct:
+        return {"code_snapshot_status": "DUPLICATE_OR_SNAPSHOT_LIMIT"}
+    sampled.add(method)
+    try:
+        code = bytes(inferior.read_memory(method, 128))
+        return {"code_snapshot_status": "READ_128_BYTES_UNVERIFIED_ORIGIN",
+                "code_first128_hex": code.hex(),
+                "code_first128_sha256": hashlib.sha256(code).hexdigest()}
+    except Exception as exc:
+        return {"code_snapshot_status": "CODE_UNREADABLE",
+                "code_snapshot_error": str(exc)[:160]}
+
+
 def caller_stack(frame, base, limit=8):
     """Read-only guest ARM64 stack sample, bounded to avoid expensive traces."""
     frames = []
@@ -84,6 +99,8 @@ class ProbeBreakpoint(gdb.Breakpoint):
                              v1_method_from_vtable_slot=hex(slot_target),
                              v1_vtable_slot_agrees=(method == slot_target),
                              v1_method_candidate_rva=hex(method - p.base),
+                             v1_method_code_snapshot=capture_method_bytes(
+                                 inferior, method, p.v1_sampled),
                              status="DYNAMIC_V1_TARGET__CLASS_UNVERIFIED")
             elif self.rva == 0x2F258:
                 obj, vt, method = reg(f, "x0"), reg(f, "x8"), reg(f, "x2")
@@ -96,6 +113,8 @@ class ProbeBreakpoint(gdb.Breakpoint):
                              v2_method_from_vtable_slot=hex(slot_target),
                              v2_vtable_slot_agrees=(vt == actual_vtable and method == slot_target),
                              v2_method_candidate_rva=hex(method - p.base),
+                             v2_method_code_snapshot=capture_method_bytes(
+                                 inferior, method, p.v2_sampled),
                              status="DYNAMIC_V2_TARGET__LOADER_UNVERIFIED")
             else:
                 item_id = reg(f, "x19" if self.rva == 0xABBB64 else "x20") & 0xffff
@@ -144,6 +163,7 @@ class Probe:
         self.hits, self.errors = 0, 0
         self.phase = "unlabeled"
         self.exact_ids = set()
+        self.v1_sampled, self.v2_sampled = set(), set()
         self.out = out.open("w", encoding="utf-8", buffering=1)
         self.out.write(json.dumps({
             "schema": SCHEMA, "event": "session",
