@@ -17,7 +17,7 @@ import shutil
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from PIL import Image
+from PIL import Image, ImageChops, ImageStat
 
 ROOT = Path("UnPack/2.0.1/Resources")
 ROMFS_NATIVE = "UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native"
@@ -28,6 +28,8 @@ HEADERS = [
     "native_png_sha256", "native_texinfo_path", "native_g1t_path",
     "native_texinfo_hash", "native_g1t_hash", "native_record_index",
     "native_layer", "native_source_kind", "pixel_rgba_sha256",
+    "nearest_native_candidate", "nearest_normalized_mae", "second_normalized_mae",
+    "nearest_native_png", "nearest_native_source_hashes",
 ]
 
 
@@ -54,6 +56,19 @@ def pixel_identity(path: Path) -> tuple[int, int, str]:
         if pixels[i + 3] == 0:
             pixels[i:i + 3] = b"\x00\x00\x00"
     return width, height, hashlib.sha256(pixels).hexdigest()
+
+
+def visible_thumb(path: Path) -> Image.Image:
+    """32x32 visible RGBA, including alpha, for review-only nearest-neighbor ranking."""
+    with Image.open(path) as im:
+        original = im.convert("RGBA")
+        visible = Image.alpha_composite(Image.new("RGBA", original.size), original)
+        return visible.resize((32, 32), Image.Resampling.LANCZOS)
+
+
+def normalized_distance(left: Image.Image, right: Image.Image) -> float:
+    stats = ImageStat.Stat(ImageChops.difference(left, right))
+    return sum(stats.mean) / (4 * 255.0)
 
 
 def check_file(path: Path, expected_sha256: str) -> None:
@@ -142,7 +157,8 @@ def export_category(category: str, native: list[dict[str, str]], copy_native: bo
         source = Path(r["path"])
         check_file(source, r["sha"])
         identity = pixel_identity(source)
-        r = {**r, "pixel": identity[2], "width": identity[0], "height": identity[1]}
+        r = {**r, "pixel": identity[2], "width": identity[0], "height": identity[1],
+             "thumb": visible_thumb(source)}
         indexed[identity].append(r)
         nrows.append(r)
 
@@ -153,6 +169,13 @@ def export_category(category: str, native: list[dict[str, str]], copy_native: bo
         ref_file = ROOT / ref["icon_path"]
         check_file(ref_file, ref["sha256"])
         identity = pixel_identity(ref_file)
+        reference_thumb = visible_thumb(ref_file)
+        dimension_matches = [r for r in nrows if r["width"] == identity[0] and r["height"] == identity[1]]
+        candidates = dimension_matches if dimension_matches else nrows
+        nearest = sorted(((normalized_distance(reference_thumb, r["thumb"]), r) for r in candidates),
+                         key=lambda pair: (pair[0], pair[1]["path"]))[:2]
+        best_distance, best_native = nearest[0] if nearest else (None, None)
+        second_distance = nearest[1][0] if len(nearest) > 1 else None
         found = indexed.get(identity, [])
         status = ("PIXEL_EXACT_UNIQUE" if len(found) == 1 else
                   "PIXEL_EXACT_MULTIPLE_SOURCES" if found else "NO_PIXEL_EXACT_NATIVE")
@@ -186,6 +209,11 @@ def export_category(category: str, native: list[dict[str, str]], copy_native: bo
                 "native_layer": native_row["layer"] if native_row else "",
                 "native_source_kind": native_row["kind"] if native_row else "",
                 "pixel_rgba_sha256": native_row["pixel"] if native_row else "",
+                "nearest_native_candidate": best_native["name"] if best_native else "",
+                "nearest_normalized_mae": f"{best_distance:.8f}" if best_distance is not None else "",
+                "second_normalized_mae": f"{second_distance:.8f}" if second_distance is not None else "",
+                "nearest_native_png": best_native["path"] if best_native else "",
+                "nearest_native_source_hashes": (best_native["thash"] + ":" + best_native["ghash"]) if best_native else "",
             })
 
     # Every sprite with a native source is retained as a native sprite, even if
@@ -201,6 +229,9 @@ def export_category(category: str, native: list[dict[str, str]], copy_native: bo
     refs_matched = {r["reference_sprite_id"] for r in results if r["match_count"] != "0"}
     statuses = dict(Counter({r["reference_sprite_id"]: r["status"] for r in results}.values()))
     write_csv(dest / "native_icon_crosswalk.csv", results)
+    print(category, "reference nearest-native examples:", [
+        (r["reference_sprite_id"], r["nearest_native_candidate"], r["nearest_normalized_mae"],
+         r["second_normalized_mae"]) for r in results[:12]])
     summary = {
         "version": "2.0.1", "category": category,
         "pokohex_reference_count": len(refs),
@@ -211,7 +242,7 @@ def export_category(category: str, native: list[dict[str, str]], copy_native: bo
         "reference_status_counts": statuses,
         "evidence": "RGBA visible-pixel SHA256 identity, sourced from verified native TEXINFO/G1T PNG manifests",
         "id_provenance": "Game-ID and portrait-ID columns, when present, originate in pinned PokoHex; no native runtime ID binding is implied.",
-        "limitations": "Pixel identity is not proof of original native species/villager ID; visual-only or fuzzy candidates are intentionally never joined.",
+        "limitations": "Nearest visual similarity is a ranked REVIEW HINT only. It is not treated as matched native ID, and cannot establish the original game species/villager ID.",
     }
     (dest / "native_icon_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return summary
