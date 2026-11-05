@@ -17,12 +17,14 @@ from functools import lru_cache
 import struct
 from pathlib import Path
 
-from g1t_to_png import parse_g1t, decode_png
+from g1t_to_png import parse_g1t, decode_png, parse_texinfo
 
 COLUMNS = ["item_id", "sprite_name", "variant", "texinfo_hash", "g1t_hash",
            "g1t_pack", "g1t_bytes", "object_hash", "objdb_file",
            "texinfo_path", "g1t_path", "objdb_path", "name_matches",
-           "g1t_size_matches", "object_found", "objdb_fields_match", "status"]
+           "g1t_size_matches", "object_found", "objdb_fields_match", "status",
+           "texinfo_record_index", "texinfo_record_count", "texinfo_layer",
+           "texinfo_uv_status", "failure_reason"]
 
 
 def table(path):
@@ -53,14 +55,21 @@ def choose(paths, pack=None):
     return paths[0] if len(paths) == 1 else None
 
 
-def texinfo_name(path):
-    data = path.read_bytes()
-    if len(data) < 68 or int.from_bytes(data[:4], "little") != 1:
-        return ""
-    try:
-        return data[4:68].split(b"\0", 1)[0].decode("ascii")
-    except UnicodeDecodeError:
-        return ""
+@lru_cache(maxsize=128)
+def texinfo_records(path):
+    """Decode every native TEXINFO sprite, including multi-record atlases.
+
+    Use the same strict parser as texture indexing and icon atlas export.
+    """
+    return tuple(parse_texinfo(Path(path).read_bytes()))
+
+
+def texinfo_sprite(path, sprite_name):
+    """Exact sprite name match, rejecting duplicates rather than guessing."""
+    matches = [rec for rec in texinfo_records(str(path)) if rec["name"] == sprite_name]
+    if len(matches) > 1:
+        raise ValueError(f"duplicate TEXINFO sprite name {sprite_name!r}: {len(matches)} records")
+    return matches[0] if matches else None
 
 
 @lru_cache(maxsize=20)
@@ -121,16 +130,33 @@ def main():
         else:
             tex = g1t = obj = None
         expected_name = item["sprite_name"]
-        name_ok = bool(tex and texinfo_name(tex) == expected_name)
+        sprite, tex_error = None, ""
+        if tex:
+            try:
+                sprite = texinfo_sprite(tex, expected_name)
+            except (ValueError, OSError) as exc:
+                tex_error = str(exc)
+        name_ok = sprite is not None
         size_ok = bool(g1t and g1t.stat().st_size == int(item["g1t_bytes"]))
         obj_ok = bool(obj)
         strict_ok = bool(link and obj and field_matches(obj, link["object_hash"], pair[1], pair[0]))
+        failure_reason = ""
         if not link:
-            status = "AMBIGUOUS_OR_MISSING_LAYOUT"
-        elif name_ok and size_ok and obj_ok and strict_ok:
-            status = "VERIFIED_NATIVE_FIELDS"
+            status, failure_reason = "AMBIGUOUS_OR_MISSING_LAYOUT", "KIDSOBJDB index edge is not unique"
+        elif not (tex and g1t and obj):
+            unavailable = [name for name, source in (("TEXINFO", tex), ("G1T", g1t), ("KIDSOBJDB", obj)) if source is None]
+            status = "NATIVE_SOURCE_UNAVAILABLE"
+            failure_reason = "Missing or ambiguous files in selected source checkout: " + ",".join(unavailable)
+        elif tex_error:
+            status, failure_reason = "TEXINFO_PARSE_FAILED", tex_error
+        elif not name_ok:
+            status, failure_reason = "TEXINFO_SPRITE_MISSING", "Sprite name absent from all native TEXINFO records"
+        elif not size_ok:
+            status, failure_reason = "G1T_SIZE_MISMATCH", "Native G1T size differs from indexed file size"
+        elif not strict_ok:
+            status, failure_reason = "KIDSOBJDB_FIELDS_MISMATCH", "Original KIDSOBJDB hash triple not found"
         else:
-            status = "NATIVE_MISMATCH"
+            status = "VERIFIED_NATIVE_FIELDS"
         count[status] += 1
         rows.append({**{k: item.get(k, "") for k in COLUMNS},
                      "object_hash": link["object_hash"] if link else "",
@@ -142,7 +168,12 @@ def main():
                      "g1t_size_matches": str(size_ok),
                      "object_found": str(obj_ok),
                      "objdb_fields_match": str(strict_ok),
-                     "status": status})
+                     "status": status,
+                     "texinfo_record_index": sprite["record_index"] if sprite else "",
+                     "texinfo_record_count": sprite["record_count"] if sprite else "",
+                     "texinfo_layer": sprite["texture_layer_raw_u32"] if sprite else "",
+                     "texinfo_uv_status": sprite["uv_status"] if sprite else "",
+                     "failure_reason": failure_reason})
 
     out = args.output / "Textures"
     out.mkdir(parents=True, exist_ok=True)
@@ -197,7 +228,9 @@ def main():
                "link_status": dict(count), "g1t_scanned": sum(map(len, allg1t.values())),
                "texinfo_scanned": sum(map(len, alltex.values())),
                "previews": dict(counts),
-               "warning": "VERIFIED_NATIVE_FIELDS requires real TEXINFO name, real G1T size, original pack and KIDSOBJDB field triple at offsets +0,+0x30,+0x34. Image layout and atlas crops are still unverified."}
+               "texinfo_parser": "Shared parse_texinfo: strict count + all 104-byte records, exact sprite name",
+               "pixel_check": "NOT_RUN_BY_THIS_AUDIT",
+               "warning": "VERIFIED_NATIVE_FIELDS proves native TEXINFO sprite membership, indexed G1T size and KIDSOBJDB triple. NATIVE_SOURCE_UNAVAILABLE means missing/ambiguous input, not a disproved link. PNG identity is audited separately in Items/Native_2.0.1/native_icon_coverage.json."}
     (out / "item_native_link_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     with (out / "item_native_preview_manifest.csv").open("w", encoding="utf-8", newline="") as f:
         fields = ["sprite", "layout", "source", "sha256", "png", "status", "reason"]
