@@ -1,0 +1,294 @@
+{
+  "report": {
+    "status": "M9_STATIC_DESCRIPTOR_POINTER_SLOT_REFS_ONLY",
+    "source_exefs_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+    "static_pointer_slots": [
+      {
+        "hash": "0x0b6e1578",
+        "slot_va": 53399392,
+        "entry_pc": 13249600,
+        "surrounding_qwords": [
+          {
+            "va": 53399328,
+            "value": "0x0000000001fe4f38",
+            "is_entry": false
+          },
+          {
+            "va": 53399336,
+            "value": "0x0000000001fe4f40",
+            "is_entry": false
+          },
+          {
+            "va": 53399344,
+            "value": "0x0000000001fe4f64",
+            "is_entry": false
+          },
+          {
+            "va": 53399352,
+            "value": "0x0000000000000000",
+            "is_entry": false
+          },
+          {
+            "va": 53399360,
+            "value": "0x0000000000000000",
+            "is_entry": false
+          },
+          {
+            "va": 53399368,
+            "value": "0x0000000000ca2c08",
+            "is_entry": false
+          },
+          {
+            "va": 53399376,
+            "value": "0x0000000000ca2c0c",
+            "is_entry": false
+          },
+          {
+            "va": 53399384,
+            "value": "0x0000000001fe4fa0",
+            "is_entry": false
+          },
+          {
+            "va": 53399392,
+            "value": "0x0000000000ca2c40",
+            "is_entry": true
+          },
+          {
+            "va": 53399400,
+            "value": "0x0000000000ca2cf8",
+            "is_entry": false
+          },
+          {
+            "va": 53399408,
+            "value": "0x0000000000ca2d04",
+            "is_entry": false
+          },
+          {
+            "va": 53399416,
+            "value": "0x0000000000ca2d10",
+            "is_entry": false
+          },
+          {
+            "va": 53399424,
+            "value": "0x0000000000ca2d18",
+            "is_entry": false
+          },
+          {
+            "va": 53399432,
+            "value": "0x0000000001fe4ef8",
+            "is_entry": false
+          },
+          {
+            "va": 53399440,
+            "value": "0x0000000001fe4f88",
+            "is_entry": false
+          },
+          {
+            "va": 53399448,
+            "value": "0x0000000001fe4f90",
+            "is_entry": false
+          },
+          {
+            "va": 53399456,
+            "value": "0x0000000001fe4f98",
+            "is_entry": false
+          }
+        ]
+      },
+      {
+        "hash": "0xe21ff09f",
+        "slot_va": 53452832,
+        "entry_pc": 13862080,
+        "surrounding_qwords": [
+          {
+            "va": 53452768,
+            "value": "0x0000000001fea948",
+            "is_entry": false
+          },
+          {
+            "va": 53452776,
+            "value": "0x0000000001fea94c",
+            "is_entry": false
+          },
+          {
+            "va": 53452784,
+            "value": "0x0000000001fea954",
+            "is_entry": false
+          },
+          {
+            "va": 53452792,
+            "value": "0x0000000000000000",
+            "is_entry": false
+          },
+          {
+            "va": 53452800,
+            "value": "0x0000000000000000",
+            "is_entry": false
+          },
+          {
+            "va": 53452808,
+            "value": "0x0000000000d38488",
+            "is_entry": false
+          },
+          {
+            "va": 53452816,
+            "value": "0x0000000000d3848c",
+            "is_entry": false
+          },
+          {
+            "va": 53452824,
+            "value": "0x0000000001fe4fa0",
+            "is_entry": false
+          },
+          {
+            "va": 53452832,
+            "value": "0x0000000000d384c0",
+            "is_entry": true
+          },
+          {
+            "va": 53452840,
+            "value": "0x0000000000d38570",
+            "is_entry": false
+          },
+          {
+            "va": 53452848,
+            "value": "0x0000000000d3857c",
+            "is_entry": false
+          },
+          {
+            "va": 53452856,
+            "value": "0x0000000000d38588",
+            "is_entry": false
+          },
+          {
+            "va": 53452864,
+            "value": "0x0000000000d38590",
+            "is_entry": false
+          },
+          {
+            "va": 53452872,
+            "value": "0x0000000001fe4ef8",
+            "is_entry": false
+          },
+          {
+            "va": 53452880,
+            "value": "0x0000000001fe4f88",
+            "is_entry": false
+          },
+          {
+            "va": 53452888,
+            "value": "0x0000000001fe4f90",
+            "is_entry": false
+          },
+          {
+            "va": 53452896,
+            "value": "0x0000000001fe4f98",
+            "is_entry": false
+          }
+        ]
+      },
+      {
+        "hash": "0xf92c5190",
+        "slot_va": 53469144,
+        "entry_pc": 13997088,
+        "surrounding_qwords": [
+          {
+            "va": 53469080,
+            "value": "0x0000000000000000",
+            "is_entry": false
+          },
+          {
+            "va": 53469088,
+            "value": "0x0000000000d593cc",
+            "is_entry": false
+          },
+          {
+            "va": 53469096,
+            "value": "0x0000000000d593d0",
+            "is_entry": false
+          },
+          {
+            "va": 53469104,
+            "value": "0x0000000000000000",
+            "is_entry": false
+          },
+          {
+            "va": 53469112,
+            "value": "0x0000000000000000",
+            "is_entry": false
+          },
+          {
+            "va": 53469120,
+            "value": "0x0000000000d593d4",
+            "is_entry": false
+          },
+          {
+            "va": 53469128,
+            "value": "0x0000000000d593d8",
+            "is_entry": false
+          },
+          {
+            "va": 53469136,
+            "value": "0x0000000001fe4fa0",
+            "is_entry": false
+          },
+          {
+            "va": 53469144,
+            "value": "0x0000000000d59420",
+            "is_entry": true
+          },
+          {
+            "va": 53469152,
+            "value": "0x0000000000d594dc",
+            "is_entry": false
+          },
+          {
+            "va": 53469160,
+            "value": "0x0000000000d594e8",
+            "is_entry": false
+          },
+          {
+            "va": 53469168,
+            "value": "0x0000000000d594f4",
+            "is_entry": false
+          },
+          {
+            "va": 53469176,
+            "value": "0x0000000000d594fc",
+            "is_entry": false
+          },
+          {
+            "va": 53469184,
+            "value": "0x0000000001fe4ef8",
+            "is_entry": false
+          },
+          {
+            "va": 53469192,
+            "value": "0x0000000001fe4f88",
+            "is_entry": false
+          },
+          {
+            "va": 53469200,
+            "value": "0x0000000001fe4f90",
+            "is_entry": false
+          },
+          {
+            "va": 53469208,
+            "value": "0x0000000001fe4f98",
+            "is_entry": false
+          }
+        ]
+      }
+    ],
+    "code_reference_candidates": 0,
+    "verified_runtime_descriptor_reader": 0,
+    "verified_native_property_getter": 0,
+    "verified_scene_quest_building_text_fk": 0,
+    "limitations": [
+      "ADRP plus adjacent LDR/ADD only identifies a possible pointer-slot access.",
+      "Instruction window matching does not prove the loaded function pointer was invoked.",
+      "Even a proven callback invocation is not a KIDSOBJDB getter or a script-to-M7 FK."
+    ]
+  },
+  "code_xrefs": []
+}
