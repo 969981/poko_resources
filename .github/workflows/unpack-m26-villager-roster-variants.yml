@@ -1,0 +1,90 @@
+name: M26 - PokoHex 62 reference roster and 9 visual variants
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m26_villager_roster_variant_assignment.py"
+      - ".github/workflows/unpack-m26-villager-roster-variants.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m26-roster-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  source-qualified-reference-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout immutable M25 sources and PokoHex reference catalog
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m26_villager_roster_variant_assignment.py
+            UnPack/2.0.1/Resources/Villagers/villager_catalog.csv
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M25/m25_6_complete_378_villager_candidate_inventory.csv
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M25/m25_9_nine_ambiguous_native_array_slot_dossier.csv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Test strict variant solver and roster constraints
+        run: python -m Scripts.resources.m26_villager_roster_variant_assignment --self-test
+
+      - name: Resolve candidate one-to-one visual assignments without promoting IDs
+        run: python -m Scripts.resources.m26_villager_roster_variant_assignment
+
+      - name: Verify all third-party references and provenance guards
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26")
+          j=json.loads((p/"m26_roster_variant_summary.json").read_text(encoding="utf-8"))
+          def rows(file):
+              with (p/file).open(encoding="utf-8",newline="") as f:return list(csv.DictReader(f))
+          roster=rows("m26_62_third_party_portrait_roster.csv")
+          variants=rows("m26_9_visual_only_disjoint_slot_assignments.csv")
+          groups=rows("m26_4_visual_variant_group_alternatives.csv")
+          assert len(roster)==j["still_unmatched_reference_portraits"]==62
+          assert len(variants)==9 and len(groups)==4
+          assert j["original_native_visual_candidates_confirmed_m25"]==307
+          assert j["native_villager_id_bindings_proven"]==0
+          assert j["native_species_id_bindings_proven"]==0
+          assert not j["third_party_reference_is_native_version_proof"]
+          assert all(not r["original_runtime_villager_id_binding_verified"] for r in variants)
+          assert sorted(int(r["reference_pokohex_portrait_id"]) for r in roster)==list(range(317,379))
+          assert len({r["candidate_native_array_slot"] for r in variants})==9
+          print("PASS M26 PokoHex-only roster and variant candidates")
+          PY
+
+      - name: Upload reviewable M26 source evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m26-thirdparty-roster-and-native-variant-hypotheses
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26/
+          if-no-files-found: warn
+
+      - name: Commit independent non-game-ID candidate files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26/m26_62_* UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26/m26_9_* UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26/m26_4_* UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26/m26_roster_variant_summary.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m26): source-separated 62 PokoHex references and nine distinct visual variant candidates"
+          for i in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
