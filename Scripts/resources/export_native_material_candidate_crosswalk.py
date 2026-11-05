@@ -23,7 +23,7 @@ SECONDARY_PUBLIC_IDS=(
 )
 FIELDS=("item_id","record_file_offset","raw_item_kind_candidate_u8_0x26",
         "raw_secondary_group_u8_0x39","raw_another_group_u8_0x3A",
-        "native_name_index_u16_0x22","jp","en","zhs","zht",
+        "native_name_index_u16_0x22","jp","en","de","es","fr","it","ko","zhs","zht",
         "secondary_public_material_list","evidence","native_enum_name_verified",
         "native_983_consumer_link_verified")
 
@@ -53,7 +53,7 @@ def build(blob,catalog):
             "raw_secondary_group_u8_0x39":blob[pos+0x39],
             "raw_another_group_u8_0x3A":blob[pos+0x3a],
             "native_name_index_u16_0x22":name_index,
-            **{k:native[k] for k in ("jp","en","zhs","zht")},
+            **{k:native[k] for k in ("jp","en","de","es","fr","it","ko","zhs","zht")},
             "secondary_public_material_list":int(external),
             "evidence":"NATIVE_2_0_1_RECORD_RAW_GROUP_PLUS_PUBLIC_REFERENCE"
                          if external else "NATIVE_2_0_1_RECORD_RAW_GROUP_ONLY",
