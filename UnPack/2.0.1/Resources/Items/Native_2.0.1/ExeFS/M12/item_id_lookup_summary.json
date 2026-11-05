@@ -1,0 +1,70 @@
+{
+  "status": "ID_LOOKUP_AND_RETURNED_FIELD_DATAFLOW_CONFIRMED__NATIVE_TABLE_LOADER_UNRESOLVED",
+  "source_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "source_item_sha256": "2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f",
+  "item_count": 4600,
+  "item_record_stride": 68,
+  "matched_original_instruction_count": 23,
+  "proven_4600_item_id_lookup_to_0x26_field_consumption": true,
+  "proven_00983_loader": false,
+  "proven_record_address_equals_item_table_base_plus_id_times_68": false,
+  "proven_runtime_returned_struct_matches_00983_record": false,
+  "enum_definition_proven": false,
+  "field_histograms_from_exact_original_00983": {
+    "kind_candidate": {
+      "raw_record_offset": "0x26",
+      "all_4600_slots": {
+        "0": 860,
+        "4": 142,
+        "5": 165,
+        "6": 1043,
+        "8": 228,
+        "10": 415,
+        "11": 397,
+        "12": 34,
+        "13": 96,
+        "14": 68,
+        "15": 61,
+        "16": 48,
+        "17": 23,
+        "18": 929,
+        "19": 91
+      },
+      "max_observed": 19
+    },
+    "secondary_group_candidate": {
+      "raw_record_offset": "0x39",
+      "all_4600_slots": {
+        "0": 3105,
+        "1": 1195,
+        "2": 63,
+        "3": 211,
+        "6": 26
+      },
+      "max_observed": 6
+    },
+    "other_group_candidate": {
+      "raw_record_offset": "0x3a",
+      "all_4600_slots": {
+        "0": 771,
+        "1": 234,
+        "2": 1447,
+        "6": 212,
+        "7": 533,
+        "8": 68,
+        "12": 46,
+        "13": 163,
+        "14": 96,
+        "15": 881,
+        "16": 6,
+        "17": 1,
+        "18": 56,
+        "19": 25,
+        "20": 13,
+        "21": 48
+      },
+      "max_observed": 21
+    }
+  },
+  "next_blocker": "Resolve global object registry class and concrete +0x30 vtable method, trace its storage-pointer source to original 00983.bin table allocation and 68-byte indexing."
+}
