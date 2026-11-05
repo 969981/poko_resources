@@ -1,0 +1,10 @@
+test_adjacent_adrp_ldr_w_targets_exact_hash_value (test_m9_rnk_exefs_xrefs.Arm64ReferenceTests.test_adjacent_adrp_ldr_w_targets_exact_hash_value) ... ok
+test_adrp_decoder_signed_and_unsigned_pages (test_m9_rnk_exefs_xrefs.Arm64ReferenceTests.test_adrp_decoder_signed_and_unsigned_pages) ... ok
+test_nearby_add_only_candidate_not_consumption_proof (test_m9_rnk_exefs_xrefs.Arm64ReferenceTests.test_nearby_add_only_candidate_not_consumption_proof) ... ok
+test_no_random_32bit_constant_marked_as_adrp (test_m9_rnk_exefs_xrefs.Arm64ReferenceTests.test_no_random_32bit_constant_marked_as_adrp) ... ok
+test_no_wrong_adrp_base_register_match (test_m9_rnk_exefs_xrefs.Arm64ReferenceTests.test_no_wrong_adrp_base_register_match) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK
