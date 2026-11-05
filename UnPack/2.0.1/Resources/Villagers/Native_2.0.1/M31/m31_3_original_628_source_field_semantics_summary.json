@@ -1,0 +1,30 @@
+{
+  "version": "2.0.1",
+  "original_root_kids_sha256": "86f90b4c11da9bc2b3e28889a5090ff507f96ca713fe4fad1dd50f6f692d7541",
+  "original_kids_node_count": 7087,
+  "original_icon_source_OID_records_verified": 628,
+  "source_OID_records_three_typed_property_fields_verified": 628,
+  "original_native_type_name": "StaticScreenLayoutTextures",
+  "original_native_type_hash": "79991e79",
+  "original_field_name_hashes": {
+    "LayoutTexturesRenderStateObjectHash": "c8bb66da",
+    "LayoutTexturesInfoDataResourceHash": "2276fc56",
+    "WrapStaticScreenLayoutTexturesObjectHash": "2856a1b3"
+  },
+  "all_original_wrap_hash_raw_values_match_M25_legacy_column": true,
+  "render_state_values_equal_legacy_M25_g1t_file_hash_count": 0,
+  "info_data_values_equal_legacy_M25_texinfo_file_hash_count": 0,
+  "distinct_original_render_state_hashes": 1,
+  "distinct_original_info_data_hashes": 1,
+  "unique_original_wrap_object_hashes": 628,
+  "wrapper_hashes_locally_present_as_IDOK": 628,
+  "wrapper_hashes_not_locally_present_as_IDOK": 0,
+  "M25_column_target_texture_oid_is_original_wrap_static_screen_layout_textures_object_hash": true,
+  "render_state_field_is_identical_to_M25_file_hash_without_check": false,
+  "info_data_field_is_identical_to_M25_file_hash_without_check": false,
+  "raw_hash_equals_file_hash_is_not_a_proven_resource_consumer": true,
+  "direct_source_to_final_texture_object_relation_proven": false,
+  "native_species_id_to_icon_source_OID_proven": false,
+  "game_villager_id_to_wrapper_hash_proven": false,
+  "warning": "M25 target_texture_oid is the raw WrapStaticScreenLayoutTexturesObjectHash field. M25 g1t_hash and texinfo_hash are OTHER index/catalog provenance; their equality to raw render-state/info-data fields is measured, not assumed. None alone proves runtime asset selection."
+}
