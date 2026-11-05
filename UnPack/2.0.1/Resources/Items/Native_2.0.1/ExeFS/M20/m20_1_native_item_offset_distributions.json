@@ -1,0 +1,623 @@
+{
+  "status": "M20_1_ORIGINAL_00983_OFFSET_DISTRIBUTIONS_ONLY",
+  "source_sha256": "2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f",
+  "fields": {
+    "0x0c": {
+      "raw_byte_distinct_count": 256,
+      "raw_byte_top_values": [
+        {
+          "value": 0,
+          "count": 1571
+        },
+        {
+          "value": 30,
+          "count": 20
+        },
+        {
+          "value": 12,
+          "count": 20
+        },
+        {
+          "value": 32,
+          "count": 20
+        },
+        {
+          "value": 31,
+          "count": 19
+        },
+        {
+          "value": 16,
+          "count": 19
+        },
+        {
+          "value": 20,
+          "count": 19
+        },
+        {
+          "value": 34,
+          "count": 19
+        },
+        {
+          "value": 41,
+          "count": 19
+        },
+        {
+          "value": 38,
+          "count": 19
+        },
+        {
+          "value": 10,
+          "count": 18
+        },
+        {
+          "value": 13,
+          "count": 18
+        },
+        {
+          "value": 14,
+          "count": 18
+        },
+        {
+          "value": 17,
+          "count": 18
+        },
+        {
+          "value": 18,
+          "count": 18
+        },
+        {
+          "value": 21,
+          "count": 18
+        },
+        {
+          "value": 22,
+          "count": 18
+        },
+        {
+          "value": 35,
+          "count": 18
+        },
+        {
+          "value": 47,
+          "count": 18
+        },
+        {
+          "value": 40,
+          "count": 18
+        }
+      ],
+      "records": 4600,
+      "original_record_stride": 68,
+      "proven_same_memory_as_wrapper_plus8": false,
+      "semantic_enum_verified": false
+    },
+    "0x14": {
+      "raw_byte_distinct_count": 184,
+      "raw_byte_top_values": [
+        {
+          "value": 0,
+          "count": 2103
+        },
+        {
+          "value": 18,
+          "count": 1310
+        },
+        {
+          "value": 99,
+          "count": 354
+        },
+        {
+          "value": 1,
+          "count": 235
+        },
+        {
+          "value": 58,
+          "count": 111
+        },
+        {
+          "value": 87,
+          "count": 81
+        },
+        {
+          "value": 48,
+          "count": 53
+        },
+        {
+          "value": 84,
+          "count": 42
+        },
+        {
+          "value": 52,
+          "count": 22
+        },
+        {
+          "value": 233,
+          "count": 20
+        },
+        {
+          "value": 157,
+          "count": 14
+        },
+        {
+          "value": 198,
+          "count": 10
+        },
+        {
+          "value": 70,
+          "count": 7
+        },
+        {
+          "value": 72,
+          "count": 7
+        },
+        {
+          "value": 71,
+          "count": 7
+        },
+        {
+          "value": 73,
+          "count": 7
+        },
+        {
+          "value": 237,
+          "count": 7
+        },
+        {
+          "value": 17,
+          "count": 7
+        },
+        {
+          "value": 231,
+          "count": 5
+        },
+        {
+          "value": 228,
+          "count": 4
+        }
+      ],
+      "records": 4600,
+      "original_record_stride": 68,
+      "proven_same_memory_as_wrapper_plus8": false,
+      "semantic_enum_verified": false
+    },
+    "0x18": {
+      "raw_byte_distinct_count": 5,
+      "raw_byte_top_values": [
+        {
+          "value": 0,
+          "count": 3792
+        },
+        {
+          "value": 34,
+          "count": 374
+        },
+        {
+          "value": 40,
+          "count": 321
+        },
+        {
+          "value": 185,
+          "count": 111
+        },
+        {
+          "value": 43,
+          "count": 2
+        }
+      ],
+      "records": 4600,
+      "original_record_stride": 68,
+      "proven_same_memory_as_wrapper_plus8": false,
+      "semantic_enum_verified": false
+    },
+    "0x1e": {
+      "raw_byte_distinct_count": 32,
+      "raw_byte_top_values": [
+        {
+          "value": 0,
+          "count": 2272
+        },
+        {
+          "value": 1,
+          "count": 1447
+        },
+        {
+          "value": 80,
+          "count": 355
+        },
+        {
+          "value": 10,
+          "count": 226
+        },
+        {
+          "value": 14,
+          "count": 111
+        },
+        {
+          "value": 9,
+          "count": 95
+        },
+        {
+          "value": 171,
+          "count": 34
+        },
+        {
+          "value": 164,
+          "count": 23
+        },
+        {
+          "value": 49,
+          "count": 5
+        },
+        {
+          "value": 3,
+          "count": 5
+        },
+        {
+          "value": 36,
+          "count": 5
+        },
+        {
+          "value": 182,
+          "count": 2
+        },
+        {
+          "value": 150,
+          "count": 1
+        },
+        {
+          "value": 78,
+          "count": 1
+        },
+        {
+          "value": 79,
+          "count": 1
+        },
+        {
+          "value": 82,
+          "count": 1
+        },
+        {
+          "value": 81,
+          "count": 1
+        },
+        {
+          "value": 88,
+          "count": 1
+        },
+        {
+          "value": 95,
+          "count": 1
+        },
+        {
+          "value": 84,
+          "count": 1
+        }
+      ],
+      "records": 4600,
+      "original_record_stride": 68,
+      "proven_same_memory_as_wrapper_plus8": false,
+      "semantic_enum_verified": false
+    },
+    "0x26": {
+      "raw_byte_distinct_count": 15,
+      "raw_byte_top_values": [
+        {
+          "value": 6,
+          "count": 1043
+        },
+        {
+          "value": 18,
+          "count": 929
+        },
+        {
+          "value": 0,
+          "count": 860
+        },
+        {
+          "value": 10,
+          "count": 415
+        },
+        {
+          "value": 11,
+          "count": 397
+        },
+        {
+          "value": 8,
+          "count": 228
+        },
+        {
+          "value": 5,
+          "count": 165
+        },
+        {
+          "value": 4,
+          "count": 142
+        },
+        {
+          "value": 13,
+          "count": 96
+        },
+        {
+          "value": 19,
+          "count": 91
+        },
+        {
+          "value": 14,
+          "count": 68
+        },
+        {
+          "value": 15,
+          "count": 61
+        },
+        {
+          "value": 16,
+          "count": 48
+        },
+        {
+          "value": 12,
+          "count": 34
+        },
+        {
+          "value": 17,
+          "count": 23
+        }
+      ],
+      "records": 4600,
+      "original_record_stride": 68,
+      "proven_same_memory_as_wrapper_plus8": false,
+      "semantic_enum_verified": false
+    },
+    "0x27": {
+      "raw_byte_distinct_count": 54,
+      "raw_byte_top_values": [
+        {
+          "value": 0,
+          "count": 4547
+        },
+        {
+          "value": 55,
+          "count": 1
+        },
+        {
+          "value": 56,
+          "count": 1
+        },
+        {
+          "value": 57,
+          "count": 1
+        },
+        {
+          "value": 58,
+          "count": 1
+        },
+        {
+          "value": 59,
+          "count": 1
+        },
+        {
+          "value": 60,
+          "count": 1
+        },
+        {
+          "value": 61,
+          "count": 1
+        },
+        {
+          "value": 62,
+          "count": 1
+        },
+        {
+          "value": 63,
+          "count": 1
+        },
+        {
+          "value": 64,
+          "count": 1
+        },
+        {
+          "value": 1,
+          "count": 1
+        },
+        {
+          "value": 2,
+          "count": 1
+        },
+        {
+          "value": 3,
+          "count": 1
+        },
+        {
+          "value": 4,
+          "count": 1
+        },
+        {
+          "value": 5,
+          "count": 1
+        },
+        {
+          "value": 6,
+          "count": 1
+        },
+        {
+          "value": 7,
+          "count": 1
+        },
+        {
+          "value": 8,
+          "count": 1
+        },
+        {
+          "value": 9,
+          "count": 1
+        }
+      ],
+      "records": 4600,
+      "original_record_stride": 68,
+      "proven_same_memory_as_wrapper_plus8": false,
+      "semantic_enum_verified": false
+    },
+    "0x3a": {
+      "raw_byte_distinct_count": 16,
+      "raw_byte_top_values": [
+        {
+          "value": 2,
+          "count": 1447
+        },
+        {
+          "value": 15,
+          "count": 881
+        },
+        {
+          "value": 0,
+          "count": 771
+        },
+        {
+          "value": 7,
+          "count": 533
+        },
+        {
+          "value": 1,
+          "count": 234
+        },
+        {
+          "value": 6,
+          "count": 212
+        },
+        {
+          "value": 13,
+          "count": 163
+        },
+        {
+          "value": 14,
+          "count": 96
+        },
+        {
+          "value": 8,
+          "count": 68
+        },
+        {
+          "value": 18,
+          "count": 56
+        },
+        {
+          "value": 21,
+          "count": 48
+        },
+        {
+          "value": 12,
+          "count": 46
+        },
+        {
+          "value": 19,
+          "count": 25
+        },
+        {
+          "value": 20,
+          "count": 13
+        },
+        {
+          "value": 16,
+          "count": 6
+        },
+        {
+          "value": 17,
+          "count": 1
+        }
+      ],
+      "records": 4600,
+      "original_record_stride": 68,
+      "proven_same_memory_as_wrapper_plus8": false,
+      "semantic_enum_verified": false
+    },
+    "0x41": {
+      "raw_byte_distinct_count": 20,
+      "raw_byte_top_values": [
+        {
+          "value": 0,
+          "count": 3117
+        },
+        {
+          "value": 32,
+          "count": 974
+        },
+        {
+          "value": 80,
+          "count": 100
+        },
+        {
+          "value": 16,
+          "count": 96
+        },
+        {
+          "value": 48,
+          "count": 95
+        },
+        {
+          "value": 34,
+          "count": 50
+        },
+        {
+          "value": 20,
+          "count": 43
+        },
+        {
+          "value": 8,
+          "count": 33
+        },
+        {
+          "value": 81,
+          "count": 29
+        },
+        {
+          "value": 4,
+          "count": 13
+        },
+        {
+          "value": 49,
+          "count": 10
+        },
+        {
+          "value": 145,
+          "count": 9
+        },
+        {
+          "value": 144,
+          "count": 9
+        },
+        {
+          "value": 68,
+          "count": 5
+        },
+        {
+          "value": 177,
+          "count": 5
+        },
+        {
+          "value": 176,
+          "count": 5
+        },
+        {
+          "value": 2,
+          "count": 3
+        },
+        {
+          "value": 64,
+          "count": 2
+        },
+        {
+          "value": 50,
+          "count": 1
+        },
+        {
+          "value": 17,
+          "count": 1
+        }
+      ],
+      "records": 4600,
+      "original_record_stride": 68,
+      "proven_same_memory_as_wrapper_plus8": false,
+      "semantic_enum_verified": false
+    }
+  },
+  "warning": "Numerical similarity does not bind 00983 offsets to the queried runtime pointer."
+}
