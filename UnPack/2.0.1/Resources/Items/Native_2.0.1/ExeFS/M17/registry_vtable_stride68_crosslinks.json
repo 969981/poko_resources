@@ -1,0 +1,22 @@
+{
+  "status": "METHOD_68_STRIDE_CROSSREFERENCE_UNBOUND_TO_REGISTRY_CLASS",
+  "source_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "source_item_sha256": "2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f",
+  "raw_executable_pointer_count": 252187,
+  "vtable_like_pointer_runs": 8960,
+  "straightline_68_multipliers": 200,
+  "vtable_plus30_68_matches": 0,
+  "matched_method_candidates": [],
+  "registry_index": "0xc7",
+  "registry_global_va": "0x35618f0",
+  "registry_slot_offset": "0x648",
+  "registry_concrete_vtable_confirmed": false,
+  "method_return_object_plus8_to_00983_confirmed": false,
+  "true_item_id_to_record_offset_confirmed": false,
+  "warnings": [
+    "Dense pointer runs may be callback tables, not C++ vtables.",
+    "68-byte arrays are common; same method address region does not establish the physical record base.",
+    "The function may call another helper that performs the indexing and be absent from this shortlist.",
+    "Registry 0xC7 instance constructor and its virtual pointer assignment remain necessary."
+  ]
+}
