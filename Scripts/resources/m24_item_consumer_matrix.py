@@ -9,6 +9,8 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import hashlib
+import struct
 from pathlib import Path
 
 ROOT = Path("UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS")
@@ -18,6 +20,8 @@ M201 = ROOT / "M20/m20_1_original_wrapper_caller_offsets.csv"
 OUT = ROOT / "M24"
 MAIN_SHA = "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
 ITEM_SHA = "2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f"
+ITEM_BINARY = Path("UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin")
+BASELINE_IDS = (6, 101, 302)
 ANCHORS = {
     "0xe5aa60": "#0x26",
     "0x10289f4": "#0x26",
@@ -104,12 +108,42 @@ def build(m12: dict, m20: dict, rows: list[dict]) -> tuple[list[dict], dict]:
     return report, summary
 
 
+def exact_original_baselines(item_path: Path) -> list[dict]:
+    blob = item_path.read_bytes()
+    if (hashlib.sha256(blob).hexdigest() != ITEM_SHA or
+            len(blob) != 64 + 4600*68 or
+            struct.unpack_from("<II", blob) != (4600, 3)):
+        raise ValueError("M24_ORIGINAL_ITEM_TABLE_SHA_OR_HEADER_MISMATCH")
+    rows = []
+    for item_id in BASELINE_IDS:
+        at = 64 + item_id*68
+        record = blob[at:at+68]
+        if len(record) != 68:
+            raise ValueError("M24_TRUNCATED_SOURCE_BASELINE")
+        name_index = struct.unpack_from("<H", record, 0x22)[0]
+        if not name_index:
+            raise ValueError("M24_EMPTY_SOURCE_ITEM_SAMPLE")
+        rows.append({
+            "item_id": item_id, "file_offset_dec": at, "file_offset_hex": hex(at),
+            "name_index_u16": name_index,
+            "kind_26_u8": record[0x26], "group_39_u8": record[0x39],
+            "group_3a_u8": record[0x3a],
+            "source_68byte_sha256": hashlib.sha256(record).hexdigest(),
+            "source_68byte_hex": record.hex(),
+            "source_file_sha256": ITEM_SHA,
+            "runtime_full_68byte_match": "NOT_COLLECTED",
+            "evidence": "ORIGINAL_00983_SOURCE_BYTES_ONLY",
+        })
+    return rows
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--m12", type=Path, default=M12)
     p.add_argument("--m20", type=Path, default=M20)
     p.add_argument("--m20-caller-csv", type=Path, default=M201)
     p.add_argument("--out", type=Path, default=OUT)
+    p.add_argument("--original-item-table", type=Path, default=ITEM_BINARY)
     args = p.parse_args()
     m12 = json.loads(args.m12.read_text(encoding="utf-8"))
     m20 = json.loads(args.m20.read_text(encoding="utf-8"))
@@ -121,6 +155,12 @@ def main():
         writer = csv.DictWriter(f, fieldnames=COLS)
         writer.writeheader()
         writer.writerows(rows)
+    baselines = exact_original_baselines(args.original_item_table)
+    with (args.out / "m24_three_original_68byte_baselines.csv").open(
+            "w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(baselines[0]))
+        writer.writeheader()
+        writer.writerows(baselines)
     (args.out / "m24_summary.json").write_text(
         json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(summary, ensure_ascii=False, indent=2))
