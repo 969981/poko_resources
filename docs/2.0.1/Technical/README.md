@@ -52,4 +52,13 @@ updated: 2026-11-05
 - 要解决运行错误或核验结果：[[14-Troubleshooting-And-Validation]] → [[08-Evidence-And-Open-Questions]]。
 - 要在 Obsidian 新建专题：[[15-Obsidian-Workflow]] → [[09-Research-Template]]。
 
+## 深入专题：字节布局与复现手册（新增）
+
+原有 01–15 为总览，下列新索引按具体二进制格式与转换流程拆分，支持 Obsidian Wiki 链接和 GitHub 相对链接：
+
+- **格式专题**：[[Formats/README|Formats 格式索引]] · [GitHub 格式目录](Formats/README.md)；包括 LINKDATA IDX/BIN、RDB/RDX/FDATA/IDRK、KIDSOBJDB、TEXINFO/G1T、00983 物品表、原生文本表。
+- **完整操作流程**：[[Workflows/README|Workflows 操作流程]] · [GitHub 操作目录](Workflows/README.md)；包括分卷还原、纹理 PNG 生成、九语言 CSV/JSON。
+
+专题中的结构、偏移、错误码以链接的当前解析脚本为依据；未完成的物种 ID、材料枚举及任务/建筑外键仍为待验证结论。
+
 更新日期：2026-11-05。
