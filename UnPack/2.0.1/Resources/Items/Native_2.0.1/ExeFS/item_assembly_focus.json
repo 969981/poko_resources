@@ -1,0 +1,2821 @@
+{
+  "status": "STATIC_OPCODE_CANDIDATES_NOT_PROVEN_CALLERS",
+  "source_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "counts": {
+    "cmp:0x100:cmp_w": 591,
+    "cmp:0x100:cmp_x": 157,
+    "cmp:0x44:cmp_w": 45,
+    "cmp:0x44:cmp_x": 11,
+    "cmp:0x63:cmp_w": 406,
+    "cmp:0x63:cmp_x": 48,
+    "cmp:0x64:cmp_w": 232,
+    "cmp:0x64:cmp_x": 36,
+    "cmp:0xff:cmp_w": 1323,
+    "cmp:0xff:cmp_x": 1537,
+    "load:0x22:ldrb": 860,
+    "load:0x22:ldrh": 410,
+    "load:0x26:ldrb": 1804,
+    "load:0x26:ldrh": 239,
+    "load:0x2a:ldrb": 86,
+    "load:0x2a:ldrh": 222,
+    "load:0x39:ldrb": 252,
+    "load:0x3a:ldrb": 333,
+    "load:0x3a:ldrh": 52,
+    "load:0x41:ldrb": 448,
+    "load:0x42:ldrb": 126,
+    "load:0x42:ldrh": 384,
+    "load:0x8:ldr_w": 23802,
+    "load:0x8:ldr_x": 73872,
+    "load:0x8:ldrb": 5477,
+    "load:0x8:ldrh": 4332,
+    "movz:0x100:movz_w": 1571,
+    "movz:0x100:movz_x": 27,
+    "movz:0x11f8:movz_w": 53,
+    "movz:0x44:movz_w": 1198,
+    "movz:0x44:movz_x": 1,
+    "movz:0x63:movz_w": 82,
+    "movz:0x64:movz_w": 1906,
+    "movz:0x64:movz_x": 10,
+    "movz:0xff:movz_w": 3456,
+    "movz:0xff:movz_x": 2
+  },
+  "sample_instruction_windows": {
+    "field_0x26_byte": [
+      {
+        "instruction_key": "load:0x26:ldrb",
+        "pc": "0x4408",
+        "context": [
+          {
+            "pc": "0x43e8",
+            "asm": "ret "
+          },
+          {
+            "pc": "0x43ec",
+            "asm": "pacibsp "
+          },
+          {
+            "pc": "0x43f0",
+            "asm": "stp x29, x30, [sp, #-0x40]!"
+          },
+          {
+            "pc": "0x43f4",
+            "asm": "stp x24, x23, [sp, #0x10]"
+          },
+          {
+            "pc": "0x43f8",
+            "asm": "stp x22, x21, [sp, #0x20]"
+          },
+          {
+            "pc": "0x43fc",
+            "asm": "stp x20, x19, [sp, #0x30]"
+          },
+          {
+            "pc": "0x4400",
+            "asm": "mov x29, sp"
+          },
+          {
+            "pc": "0x4404",
+            "asm": "adrp x24, #0x3482000"
+          },
+          {
+            "pc": "0x4408",
+            "asm": "ldrb w8, [x1, #0x26]"
+          },
+          {
+            "pc": "0x440c",
+            "asm": "mov x21, x2"
+          },
+          {
+            "pc": "0x4410",
+            "asm": "ldr x24, [x24, #0xab8]"
+          },
+          {
+            "pc": "0x4414",
+            "asm": "mov x20, x1"
+          },
+          {
+            "pc": "0x4418",
+            "asm": "mov x22, x0"
+          },
+          {
+            "pc": "0x441c",
+            "asm": "add x19, x0, #8"
+          },
+          {
+            "pc": "0x4420",
+            "asm": "tbnz w8, #3, #0x4444"
+          },
+          {
+            "pc": "0x4424",
+            "asm": "ldr x0, [x24]"
+          },
+          {
+            "pc": "0x4428",
+            "asm": "cbz x0, #0x4444"
+          },
+          {
+            "pc": "0x442c",
+            "asm": "adrp x3, #0x27d6000"
+          },
+          {
+            "pc": "0x4430",
+            "asm": "add x3, x3, #0xf25"
+          },
+          {
+            "pc": "0x4434",
+            "asm": "mov x1, x20"
+          },
+          {
+            "pc": "0x4438",
+            "asm": "mov x2, x21"
+          },
+          {
+            "pc": "0x443c",
+            "asm": "bl #0x5a71e0"
+          },
+          {
+            "pc": "0x4440",
+            "asm": "tbz w0, #0, #0x4494"
+          },
+          {
+            "pc": "0x4444",
+            "asm": "mov x0, x20"
+          }
+        ]
+      },
+      {
+        "instruction_key": "load:0x26:ldrb",
+        "pc": "0x4458",
+        "context": [
+          {
+            "pc": "0x4438",
+            "asm": "mov x2, x21"
+          },
+          {
+            "pc": "0x443c",
+            "asm": "bl #0x5a71e0"
+          },
+          {
+            "pc": "0x4440",
+            "asm": "tbz w0, #0, #0x4494"
+          },
+          {
+            "pc": "0x4444",
+            "asm": "mov x0, x20"
+          },
+          {
+            "pc": "0x4448",
+            "asm": "mov x1, x19"
+          },
+          {
+            "pc": "0x444c",
+            "asm": "mov w2, #4"
+          },
+          {
+            "pc": "0x4450",
+            "asm": "mov w23, #4"
+          },
+          {
+            "pc": "0x4454",
+            "asm": "bl #0x113af80"
+          },
+          {
+            "pc": "0x4458",
+            "asm": "ldrb w8, [x20, #0x26]"
+          },
+          {
+            "pc": "0x445c",
+            "asm": "add x22, x22, #0xc"
+          },
+          {
+            "pc": "0x4460",
+            "asm": "tbnz w8, #3, #0x44a4"
+          },
+          {
+            "pc": "0x4464",
+            "asm": "ldr x0, [x24]"
+          },
+          {
+            "pc": "0x4468",
+            "asm": "cbz x0, #0x44a4"
+          },
+          {
+            "pc": "0x446c",
+            "asm": "adrp x3, #0x27ca000"
+          },
+          {
+            "pc": "0x4470",
+            "asm": "add x3, x3, #0xba"
+          },
+          {
+            "pc": "0x4474",
+            "asm": "mov x1, x20"
+          },
+          {
+            "pc": "0x4478",
+            "asm": "mov x2, x21"
+          },
+          {
+            "pc": "0x447c",
+            "asm": "bl #0x5a71e0"
+          },
+          {
+            "pc": "0x4480",
+            "asm": "tbnz w0, #0, #0x44a4"
+          },
+          {
+            "pc": "0x4484",
+            "asm": "mov x21, xzr"
+          },
+          {
+            "pc": "0x4488",
+            "asm": "ldrb w8, [x20, #0x26]"
+          },
+          {
+            "pc": "0x448c",
+            "asm": "tbnz w8, #1, #0x44c0"
+          },
+          {
+            "pc": "0x4490",
+            "asm": "b #0x44e8"
+          },
+          {
+            "pc": "0x4494",
+            "asm": "mov x23, xzr"
+          }
+        ]
+      },
+      {
+        "instruction_key": "load:0x26:ldrb",
+        "pc": "0x4488",
+        "context": [
+          {
+            "pc": "0x4468",
+            "asm": "cbz x0, #0x44a4"
+          },
+          {
+            "pc": "0x446c",
+            "asm": "adrp x3, #0x27ca000"
+          },
+          {
+            "pc": "0x4470",
+            "asm": "add x3, x3, #0xba"
+          },
+          {
+            "pc": "0x4474",
+            "asm": "mov x1, x20"
+          },
+          {
+            "pc": "0x4478",
+            "asm": "mov x2, x21"
+          },
+          {
+            "pc": "0x447c",
+            "asm": "bl #0x5a71e0"
+          },
+          {
+            "pc": "0x4480",
+            "asm": "tbnz w0, #0, #0x44a4"
+          },
+          {
+            "pc": "0x4484",
+            "asm": "mov x21, xzr"
+          },
+          {
+            "pc": "0x4488",
+            "asm": "ldrb w8, [x20, #0x26]"
+          },
+          {
+            "pc": "0x448c",
+            "asm": "tbnz w8, #1, #0x44c0"
+          },
+          {
+            "pc": "0x4490",
+            "asm": "b #0x44e8"
+          },
+          {
+            "pc": "0x4494",
+            "asm": "mov x23, xzr"
+          },
+          {
+            "pc": "0x4498",
+            "asm": "ldrb w8, [x20, #0x26]"
+          },
+          {
+            "pc": "0x449c",
+            "asm": "add x22, x22, #0xc"
+          },
+          {
+            "pc": "0x44a0",
+            "asm": "tbz w8, #3, #0x4464"
+          },
+          {
+            "pc": "0x44a4",
+            "asm": "mov x0, x20"
+          },
+          {
+            "pc": "0x44a8",
+            "asm": "mov x1, x22"
+          },
+          {
+            "pc": "0x44ac",
+            "asm": "mov w2, #1"
+          },
+          {
+            "pc": "0x44b0",
+            "asm": "mov w21, #1"
+          },
+          {
+            "pc": "0x44b4",
+            "asm": "bl #0x113af80"
+          },
+          {
+            "pc": "0x44b8",
+            "asm": "ldrb w8, [x20, #0x26]"
+          },
+          {
+            "pc": "0x44bc",
+            "asm": "tbz w8, #1, #0x44e8"
+          },
+          {
+            "pc": "0x44c0",
+            "asm": "ldr w8, [x19]"
+          },
+          {
+            "pc": "0x44c4",
+            "asm": "mov w9, #0x11f6"
+          }
+        ]
+      }
+    ],
+    "field_0x3a_byte": [
+      {
+        "instruction_key": "load:0x3a:ldrb",
+        "pc": "0x3ae50",
+        "context": [
+          {
+            "pc": "0x3ae30",
+            "asm": "retab "
+          },
+          {
+            "pc": "0x3ae34",
+            "asm": "ldrb w9, [x8, #0x39]"
+          },
+          {
+            "pc": "0x3ae38",
+            "asm": "sub w9, w9, #1"
+          },
+          {
+            "pc": "0x3ae3c",
+            "asm": "cmp w9, #0x3f"
+          },
+          {
+            "pc": "0x3ae40",
+            "asm": "b.hs #0x3ae50"
+          },
+          {
+            "pc": "0x3ae44",
+            "asm": "mov w0, #1"
+          },
+          {
+            "pc": "0x3ae48",
+            "asm": "ldp x29, x30, [sp], #0x10"
+          },
+          {
+            "pc": "0x3ae4c",
+            "asm": "retab "
+          },
+          {
+            "pc": "0x3ae50",
+            "asm": "ldrb w9, [x8, #0x3a]"
+          },
+          {
+            "pc": "0x3ae54",
+            "asm": "sub w9, w9, #1"
+          },
+          {
+            "pc": "0x3ae58",
+            "asm": "cmp w9, #0x3f"
+          },
+          {
+            "pc": "0x3ae5c",
+            "asm": "b.hs #0x3ae6c"
+          },
+          {
+            "pc": "0x3ae60",
+            "asm": "mov w0, #1"
+          },
+          {
+            "pc": "0x3ae64",
+            "asm": "ldp x29, x30, [sp], #0x10"
+          },
+          {
+            "pc": "0x3ae68",
+            "asm": "retab "
+          },
+          {
+            "pc": "0x3ae6c",
+            "asm": "ldrb w9, [x8, #0x3b]"
+          },
+          {
+            "pc": "0x3ae70",
+            "asm": "sub w9, w9, #1"
+          },
+          {
+            "pc": "0x3ae74",
+            "asm": "cmp w9, #0x3f"
+          },
+          {
+            "pc": "0x3ae78",
+            "asm": "b.hs #0x3ae88"
+          },
+          {
+            "pc": "0x3ae7c",
+            "asm": "mov w0, #1"
+          },
+          {
+            "pc": "0x3ae80",
+            "asm": "ldp x29, x30, [sp], #0x10"
+          },
+          {
+            "pc": "0x3ae84",
+            "asm": "retab "
+          },
+          {
+            "pc": "0x3ae88",
+            "asm": "ldrb w9, [x8, #0x3c]"
+          },
+          {
+            "pc": "0x3ae8c",
+            "asm": "sub w9, w9, #1"
+          }
+        ]
+      },
+      {
+        "instruction_key": "load:0x3a:ldrb",
+        "pc": "0x3b5a4",
+        "context": [
+          {
+            "pc": "0x3b584",
+            "asm": "mov w8, #1"
+          },
+          {
+            "pc": "0x3b588",
+            "asm": "ldr x9, [x22]"
+          },
+          {
+            "pc": "0x3b58c",
+            "asm": "lsl x8, x8, x23"
+          },
+          {
+            "pc": "0x3b590",
+            "asm": "orr x8, x9, x8"
+          },
+          {
+            "pc": "0x3b594",
+            "asm": "str x8, [x22]"
+          },
+          {
+            "pc": "0x3b598",
+            "asm": "ldr x8, [x21, #8]"
+          },
+          {
+            "pc": "0x3b59c",
+            "asm": "cmp x8, #0"
+          },
+          {
+            "pc": "0x3b5a0",
+            "asm": "csel x9, x24, x8, eq"
+          },
+          {
+            "pc": "0x3b5a4",
+            "asm": "ldrb w23, [x9, #0x3a]"
+          },
+          {
+            "pc": "0x3b5a8",
+            "asm": "sub w9, w23, #1"
+          },
+          {
+            "pc": "0x3b5ac",
+            "asm": "and w9, w9, #0xff"
+          },
+          {
+            "pc": "0x3b5b0",
+            "asm": "cmp w9, #0x3e"
+          },
+          {
+            "pc": "0x3b5b4",
+            "asm": "b.hi #0x3b600"
+          },
+          {
+            "pc": "0x3b5b8",
+            "asm": "sub x2, x29, #4"
+          },
+          {
+            "pc": "0x3b5bc",
+            "asm": "add x3, sp, #8"
+          },
+          {
+            "pc": "0x3b5c0",
+            "asm": "sturb wzr, [x29, #-4]"
+          },
+          {
+            "pc": "0x3b5c4",
+            "asm": "mov w0, w23"
+          },
+          {
+            "pc": "0x3b5c8",
+            "asm": "mov w1, w20"
+          },
+          {
+            "pc": "0x3b5cc",
+            "asm": "strb wzr, [sp, #8]"
+          },
+          {
+            "pc": "0x3b5d0",
+            "asm": "bl #0x3bba0"
+          },
+          {
+            "pc": "0x3b5d4",
+            "asm": "ldrb w8, [sp, #8]"
+          },
+          {
+            "pc": "0x3b5d8",
+            "asm": "cbz w8, #0x3b5fc"
+          },
+          {
+            "pc": "0x3b5dc",
+            "asm": "ldr w8, [x19]"
+          },
+          {
+            "pc": "0x3b5e0",
+            "asm": "add w8, w8, #1"
+          }
+        ]
+      },
+      {
+        "instruction_key": "load:0x3a:ldrb",
+        "pc": "0x3b75c",
+        "context": [
+          {
+            "pc": "0x3b73c",
+            "asm": "cmp x8, #0"
+          },
+          {
+            "pc": "0x3b740",
+            "asm": "csel x9, x24, x8, eq"
+          },
+          {
+            "pc": "0x3b744",
+            "asm": "ldrb w0, [x9, #0x39]"
+          },
+          {
+            "pc": "0x3b748",
+            "asm": "sub w9, w0, #1"
+          },
+          {
+            "pc": "0x3b74c",
+            "asm": "cmp w9, #0x3e"
+          },
+          {
+            "pc": "0x3b750",
+            "asm": "b.ls #0x3b804"
+          },
+          {
+            "pc": "0x3b754",
+            "asm": "cmp x8, #0"
+          },
+          {
+            "pc": "0x3b758",
+            "asm": "csel x9, x24, x8, eq"
+          },
+          {
+            "pc": "0x3b75c",
+            "asm": "ldrb w0, [x9, #0x3a]"
+          },
+          {
+            "pc": "0x3b760",
+            "asm": "sub w9, w0, #1"
+          },
+          {
+            "pc": "0x3b764",
+            "asm": "cmp w9, #0x3e"
+          },
+          {
+            "pc": "0x3b768",
+            "asm": "b.ls #0x3b84c"
+          },
+          {
+            "pc": "0x3b76c",
+            "asm": "cmp x8, #0"
+          },
+          {
+            "pc": "0x3b770",
+            "asm": "csel x9, x24, x8, eq"
+          },
+          {
+            "pc": "0x3b774",
+            "asm": "ldrb w0, [x9, #0x3b]"
+          },
+          {
+            "pc": "0x3b778",
+            "asm": "sub w9, w0, #1"
+          },
+          {
+            "pc": "0x3b77c",
+            "asm": "cmp w9, #0x3e"
+          },
+          {
+            "pc": "0x3b780",
+            "asm": "b.ls #0x3b894"
+          },
+          {
+            "pc": "0x3b784",
+            "asm": "cmp x8, #0"
+          },
+          {
+            "pc": "0x3b788",
+            "asm": "csel x9, x24, x8, eq"
+          },
+          {
+            "pc": "0x3b78c",
+            "asm": "ldrb w0, [x9, #0x3c]"
+          },
+          {
+            "pc": "0x3b790",
+            "asm": "sub w9, w0, #1"
+          },
+          {
+            "pc": "0x3b794",
+            "asm": "cmp w9, #0x3e"
+          },
+          {
+            "pc": "0x3b798",
+            "asm": "b.ls #0x3b8dc"
+          }
+        ]
+      }
+    ],
+    "cmp_99": [
+      {
+        "instruction_key": "cmp:0x63:cmp_w",
+        "pc": "0x1bc3c",
+        "context": [
+          {
+            "pc": "0x1bc1c",
+            "asm": "b.hi #0x1bc00"
+          },
+          {
+            "pc": "0x1bc20",
+            "asm": "ldr x0, [x25]"
+          },
+          {
+            "pc": "0x1bc24",
+            "asm": "add x1, sp, #0x10"
+          },
+          {
+            "pc": "0x1bc28",
+            "asm": "mov x2, sp"
+          },
+          {
+            "pc": "0x1bc2c",
+            "asm": "bl #0xa5a640"
+          },
+          {
+            "pc": "0x1bc30",
+            "asm": "cbz x0, #0x1bc00"
+          },
+          {
+            "pc": "0x1bc34",
+            "asm": "ldrb w20, [x0, #8]"
+          },
+          {
+            "pc": "0x1bc38",
+            "asm": "sub w8, w20, #1"
+          },
+          {
+            "pc": "0x1bc3c",
+            "asm": "cmp w8, #0x63"
+          },
+          {
+            "pc": "0x1bc40",
+            "asm": "b.hi #0x1bc00"
+          },
+          {
+            "pc": "0x1bc44",
+            "asm": "ldr x8, [x26]"
+          },
+          {
+            "pc": "0x1bc48",
+            "asm": "ldr w9, [x8, #0x2b70]"
+          },
+          {
+            "pc": "0x1bc4c",
+            "asm": "cmp w9, #0x136"
+          },
+          {
+            "pc": "0x1bc50",
+            "asm": "b.ls #0x1bc5c"
+          },
+          {
+            "pc": "0x1bc54",
+            "asm": "mov w9, #0x136"
+          },
+          {
+            "pc": "0x1bc58",
+            "asm": "b #0x1bc60"
+          },
+          {
+            "pc": "0x1bc5c",
+            "asm": "mov x9, xzr"
+          },
+          {
+            "pc": "0x1bc60",
+            "asm": "add x8, x8, #0x10"
+          },
+          {
+            "pc": "0x1bc64",
+            "asm": "ldr x0, [x8, x9, lsl #3]"
+          },
+          {
+            "pc": "0x1bc68",
+            "asm": "cbz x0, #0x1bc00"
+          },
+          {
+            "pc": "0x1bc6c",
+            "asm": "ldr x8, [x0]"
+          },
+          {
+            "pc": "0x1bc70",
+            "asm": "mov w1, wzr"
+          },
+          {
+            "pc": "0x1bc74",
+            "asm": "ldr x8, [x8, #0x38]"
+          },
+          {
+            "pc": "0x1bc78",
+            "asm": "blr x8"
+          }
+        ]
+      },
+      {
+        "instruction_key": "cmp:0x63:cmp_w",
+        "pc": "0x21f90",
+        "context": [
+          {
+            "pc": "0x21f70",
+            "asm": "add x29, sp, #0x10"
+          },
+          {
+            "pc": "0x21f74",
+            "asm": "mov x19, x3"
+          },
+          {
+            "pc": "0x21f78",
+            "asm": "sub x3, x29, #4"
+          },
+          {
+            "pc": "0x21f7c",
+            "asm": "stur wzr, [x29, #-4]"
+          },
+          {
+            "pc": "0x21f80",
+            "asm": "mov x20, x1"
+          },
+          {
+            "pc": "0x21f84",
+            "asm": "bl #0x212a0"
+          },
+          {
+            "pc": "0x21f88",
+            "asm": "cbz w0, #0x21fd0"
+          },
+          {
+            "pc": "0x21f8c",
+            "asm": "ldursw x8, [x29, #-4]"
+          },
+          {
+            "pc": "0x21f90",
+            "asm": "cmp w8, #0x63"
+          },
+          {
+            "pc": "0x21f94",
+            "asm": "b.gt #0x21fe0"
+          },
+          {
+            "pc": "0x21f98",
+            "asm": "add x8, x20, x8"
+          },
+          {
+            "pc": "0x21f9c",
+            "asm": "ldrh w9, [x20, #0xc]"
+          },
+          {
+            "pc": "0x21fa0",
+            "asm": "mov w0, #1"
+          },
+          {
+            "pc": "0x21fa4",
+            "asm": "ldrb w12, [x8, #0x15]"
+          },
+          {
+            "pc": "0x21fa8",
+            "asm": "add w9, w9, w12"
+          },
+          {
+            "pc": "0x21fac",
+            "asm": "ldrh w10, [x20, #0xe]"
+          },
+          {
+            "pc": "0x21fb0",
+            "asm": "ldrh w11, [x20, #0x10]"
+          },
+          {
+            "pc": "0x21fb4",
+            "asm": "ldrb w13, [x8, #0x79]"
+          },
+          {
+            "pc": "0x21fb8",
+            "asm": "ldrb w8, [x8, #0xdd]"
+          },
+          {
+            "pc": "0x21fbc",
+            "asm": "add w8, w11, w8"
+          },
+          {
+            "pc": "0x21fc0",
+            "asm": "strh w9, [x19]"
+          },
+          {
+            "pc": "0x21fc4",
+            "asm": "add w9, w10, w13"
+          },
+          {
+            "pc": "0x21fc8",
+            "asm": "strh w8, [x19, #4]"
+          },
+          {
+            "pc": "0x21fcc",
+            "asm": "strh w9, [x19, #2]"
+          }
+        ]
+      },
+      {
+        "instruction_key": "cmp:0x63:cmp_w",
+        "pc": "0x2ab88",
+        "context": [
+          {
+            "pc": "0x2ab68",
+            "asm": "add x2, x8, #0x28"
+          },
+          {
+            "pc": "0x2ab6c",
+            "asm": "mov x3, xzr"
+          },
+          {
+            "pc": "0x2ab70",
+            "asm": "mov x4, xzr"
+          },
+          {
+            "pc": "0x2ab74",
+            "asm": "mov w6, wzr"
+          },
+          {
+            "pc": "0x2ab78",
+            "asm": "bl #0x1cde0"
+          },
+          {
+            "pc": "0x2ab7c",
+            "asm": "tbz w0, #0, #0x2ac88"
+          },
+          {
+            "pc": "0x2ab80",
+            "asm": "ldr s8, [sp]"
+          },
+          {
+            "pc": "0x2ab84",
+            "asm": "fcvtzs w8, s8"
+          },
+          {
+            "pc": "0x2ab88",
+            "asm": "cmp w8, #0x63"
+          },
+          {
+            "pc": "0x2ab8c",
+            "asm": "b.gt #0x2ac80"
+          },
+          {
+            "pc": "0x2ab90",
+            "asm": "cbz w21, #0x2aba8"
+          },
+          {
+            "pc": "0x2ab94",
+            "asm": "ldrsh w0, [x20]"
+          },
+          {
+            "pc": "0x2ab98",
+            "asm": "ldrsh w1, [x20, #2]"
+          },
+          {
+            "pc": "0x2ab9c",
+            "asm": "ldrsh w2, [x20, #4]"
+          },
+          {
+            "pc": "0x2aba0",
+            "asm": "bl #0x27e50"
+          },
+          {
+            "pc": "0x2aba4",
+            "asm": "cbnz w0, #0x2ac80"
+          },
+          {
+            "pc": "0x2aba8",
+            "asm": "ldr x8, [x19]"
+          },
+          {
+            "pc": "0x2abac",
+            "asm": "mov x0, x19"
+          },
+          {
+            "pc": "0x2abb0",
+            "asm": "ldr x8, [x8, #0x28]"
+          },
+          {
+            "pc": "0x2abb4",
+            "asm": "blr x8"
+          },
+          {
+            "pc": "0x2abb8",
+            "asm": "mov w8, #0x42c80000"
+          },
+          {
+            "pc": "0x2abbc",
+            "asm": "fadd s9, s8, s0"
+          },
+          {
+            "pc": "0x2abc0",
+            "asm": "fmov s0, w8"
+          },
+          {
+            "pc": "0x2abc4",
+            "asm": "fdiv s0, s9, s0"
+          }
+        ]
+      }
+    ],
+    "cmp_100": [
+      {
+        "instruction_key": "cmp:0x64:cmp_w",
+        "pc": "0x5f454",
+        "context": [
+          {
+            "pc": "0x5f434",
+            "asm": "stur wzr, [x29, #-0x28]"
+          },
+          {
+            "pc": "0x5f438",
+            "asm": "mov x6, xzr"
+          },
+          {
+            "pc": "0x5f43c",
+            "asm": "stp xzr, xzr, [x29, #-0x38]"
+          },
+          {
+            "pc": "0x5f440",
+            "asm": "stur w8, [x29, #-0x30]"
+          },
+          {
+            "pc": "0x5f444",
+            "asm": "stur wzr, [x29, #-0x1c]"
+          },
+          {
+            "pc": "0x5f448",
+            "asm": "bl #0x212a0"
+          },
+          {
+            "pc": "0x5f44c",
+            "asm": "cbz w0, #0x5f364"
+          },
+          {
+            "pc": "0x5f450",
+            "asm": "ldursw x8, [x29, #-0x1c]"
+          },
+          {
+            "pc": "0x5f454",
+            "asm": "cmp w8, #0x64"
+          },
+          {
+            "pc": "0x5f458",
+            "asm": "b.ge #0x5f364"
+          },
+          {
+            "pc": "0x5f45c",
+            "asm": "mov w9, #0x478"
+          },
+          {
+            "pc": "0x5f460",
+            "asm": "mov w10, #0x8e68"
+          },
+          {
+            "pc": "0x5f464",
+            "asm": "umaddl x9, w26, w9, x28"
+          },
+          {
+            "pc": "0x5f468",
+            "asm": "movk w10, #0x32, lsl #16"
+          },
+          {
+            "pc": "0x5f46c",
+            "asm": "add x9, x9, x10"
+          },
+          {
+            "pc": "0x5f470",
+            "asm": "add x8, x9, x8"
+          },
+          {
+            "pc": "0x5f474",
+            "asm": "ldrh w10, [x9, #0xc]"
+          },
+          {
+            "pc": "0x5f478",
+            "asm": "ldrh w11, [x9, #0xe]"
+          },
+          {
+            "pc": "0x5f47c",
+            "asm": "ldrh w9, [x9, #0x10]"
+          },
+          {
+            "pc": "0x5f480",
+            "asm": "ldrb w12, [x8, #0x15]"
+          },
+          {
+            "pc": "0x5f484",
+            "asm": "ldrb w13, [x8, #0x79]"
+          },
+          {
+            "pc": "0x5f488",
+            "asm": "ldrb w8, [x8, #0xdd]"
+          },
+          {
+            "pc": "0x5f48c",
+            "asm": "add w23, w9, w8"
+          },
+          {
+            "pc": "0x5f490",
+            "asm": "adrp x8, #0x3483000"
+          }
+        ]
+      },
+      {
+        "instruction_key": "cmp:0x64:cmp_w",
+        "pc": "0x72260",
+        "context": [
+          {
+            "pc": "0x72240",
+            "asm": "ldp x20, x19, [sp, #0x30]"
+          },
+          {
+            "pc": "0x72244",
+            "asm": "ldp x22, x21, [sp, #0x20]"
+          },
+          {
+            "pc": "0x72248",
+            "asm": "ldp x29, x30, [sp, #0x10]"
+          },
+          {
+            "pc": "0x7224c",
+            "asm": "add sp, sp, #0x40"
+          },
+          {
+            "pc": "0x72250",
+            "asm": "retab "
+          },
+          {
+            "pc": "0x72254",
+            "asm": "ldr w8, [x19, #0x200]"
+          },
+          {
+            "pc": "0x72258",
+            "asm": "add w8, w8, #1"
+          },
+          {
+            "pc": "0x7225c",
+            "asm": "str w8, [x19, #0x200]"
+          },
+          {
+            "pc": "0x72260",
+            "asm": "cmp w8, #0x64"
+          },
+          {
+            "pc": "0x72264",
+            "asm": "b.ls #0x72290"
+          },
+          {
+            "pc": "0x72268",
+            "asm": "mov w0, wzr"
+          },
+          {
+            "pc": "0x7226c",
+            "asm": "ldp x20, x19, [sp, #0x30]"
+          },
+          {
+            "pc": "0x72270",
+            "asm": "ldp x22, x21, [sp, #0x20]"
+          },
+          {
+            "pc": "0x72274",
+            "asm": "ldp x29, x30, [sp, #0x10]"
+          },
+          {
+            "pc": "0x72278",
+            "asm": "add sp, sp, #0x40"
+          },
+          {
+            "pc": "0x7227c",
+            "asm": "retab "
+          },
+          {
+            "pc": "0x72280",
+            "asm": "mov w8, #0xff"
+          },
+          {
+            "pc": "0x72284",
+            "asm": "strb w8, [x19, #0x1f8]"
+          },
+          {
+            "pc": "0x72288",
+            "asm": "mov w8, #1"
+          },
+          {
+            "pc": "0x7228c",
+            "asm": "strb w8, [x19, #0x208]"
+          },
+          {
+            "pc": "0x72290",
+            "asm": "mov w0, #1"
+          },
+          {
+            "pc": "0x72294",
+            "asm": "ldp x20, x19, [sp, #0x30]"
+          },
+          {
+            "pc": "0x72298",
+            "asm": "ldp x22, x21, [sp, #0x20]"
+          },
+          {
+            "pc": "0x7229c",
+            "asm": "ldp x29, x30, [sp, #0x10]"
+          }
+        ]
+      },
+      {
+        "instruction_key": "cmp:0x64:cmp_w",
+        "pc": "0x88890",
+        "context": [
+          {
+            "pc": "0x88870",
+            "asm": "ldr x8, [x8]"
+          },
+          {
+            "pc": "0x88874",
+            "asm": "add x10, x8, #0x30"
+          },
+          {
+            "pc": "0x88878",
+            "asm": "add x8, x8, #0x38"
+          },
+          {
+            "pc": "0x8887c",
+            "asm": "csel x8, x10, x8, eq"
+          },
+          {
+            "pc": "0x88880",
+            "asm": "ldr x0, [x8]"
+          },
+          {
+            "pc": "0x88884",
+            "asm": "cbz x0, #0x888ac"
+          },
+          {
+            "pc": "0x88888",
+            "asm": "bl #0x2779c8"
+          },
+          {
+            "pc": "0x8888c",
+            "asm": "ands w8, w0, #0xffff"
+          },
+          {
+            "pc": "0x88890",
+            "asm": "cmp w8, #0x64"
+          },
+          {
+            "pc": "0x88894",
+            "asm": "cset w8, eq"
+          },
+          {
+            "pc": "0x88898",
+            "asm": "tst w0, #0xffff"
+          },
+          {
+            "pc": "0x8889c",
+            "asm": "csinc w0, w8, wzr, ne"
+          },
+          {
+            "pc": "0x888a0",
+            "asm": "ldp x20, x19, [sp, #0x10]"
+          },
+          {
+            "pc": "0x888a4",
+            "asm": "ldp x29, x30, [sp], #0x20"
+          },
+          {
+            "pc": "0x888a8",
+            "asm": "retab "
+          },
+          {
+            "pc": "0x888ac",
+            "asm": "mov w0, #1"
+          },
+          {
+            "pc": "0x888b0",
+            "asm": "ldp x20, x19, [sp, #0x10]"
+          },
+          {
+            "pc": "0x888b4",
+            "asm": "ldp x29, x30, [sp], #0x20"
+          },
+          {
+            "pc": "0x888b8",
+            "asm": "retab "
+          },
+          {
+            "pc": "0x888bc",
+            "asm": "adrp x9, #0x3483000"
+          },
+          {
+            "pc": "0x888c0",
+            "asm": "ldrb w8, [x0, #8]"
+          },
+          {
+            "pc": "0x888c4",
+            "asm": "cmp w8, #0"
+          },
+          {
+            "pc": "0x888c8",
+            "asm": "ldr x9, [x9, #0xbd0]"
+          },
+          {
+            "pc": "0x888cc",
+            "asm": "ldr x9, [x9]"
+          }
+        ]
+      }
+    ]
+  },
+  "closest_cmp_to_candidate_field": [
+    {
+      "cmp_pc": "0x265f5c",
+      "cmp_value": 100,
+      "closest_candidate_loads": [
+        {
+          "pc": "0x265f48",
+          "offset": "0x26",
+          "distance_bytes": 20
+        }
+      ],
+      "status": "PROXIMITY_ONLY_NOT_PROVEN_QUANTITY_WRITEBACK",
+      "context": [
+        {
+          "pc": "0x265f3c",
+          "asm": "stp x22, x21, [sp, #0x50]"
+        },
+        {
+          "pc": "0x265f40",
+          "asm": "stp x20, x19, [sp, #0x60]"
+        },
+        {
+          "pc": "0x265f44",
+          "asm": "add x29, sp, #0x20"
+        },
+        {
+          "pc": "0x265f48",
+          "asm": "ldrb w8, [x0, #0x26]"
+        },
+        {
+          "pc": "0x265f4c",
+          "asm": "mov x19, x0"
+        },
+        {
+          "pc": "0x265f50",
+          "asm": "cbz w8, #0x265fb4"
+        },
+        {
+          "pc": "0x265f54",
+          "asm": "ldrb w20, [x19, #0x20]"
+        },
+        {
+          "pc": "0x265f58",
+          "asm": "sub w8, w20, #1"
+        },
+        {
+          "pc": "0x265f5c",
+          "asm": "cmp w8, #0x64"
+        },
+        {
+          "pc": "0x265f60",
+          "asm": "b.lo #0x265f6c"
+        },
+        {
+          "pc": "0x265f64",
+          "asm": "ldrb w8, [x19, #0x21]"
+        },
+        {
+          "pc": "0x265f68",
+          "asm": "cbz w8, #0x265fb4"
+        },
+        {
+          "pc": "0x265f6c",
+          "asm": "ldrh w8, [x19, #8]"
+        },
+        {
+          "pc": "0x265f70",
+          "asm": "adrp x21, #0x3568000"
+        },
+        {
+          "pc": "0x265f74",
+          "asm": "add x21, x21, #0x370"
+        },
+        {
+          "pc": "0x265f78",
+          "asm": "sturh w8, [x29, #-4]"
+        },
+        {
+          "pc": "0x265f7c",
+          "asm": "adrp x8, #0x3483000"
+        },
+        {
+          "pc": "0x265f80",
+          "asm": "ldr x8, [x8, #0xbd0]"
+        },
+        {
+          "pc": "0x265f84",
+          "asm": "ldr x0, [x8]"
+        },
+        {
+          "pc": "0x265f88",
+          "asm": "cbz x0, #0x265fa0"
+        },
+        {
+          "pc": "0x265f8c",
+          "asm": "sub x1, x29, #4"
+        },
+        {
+          "pc": "0x265f90",
+          "asm": "bl #0x281360"
+        },
+        {
+          "pc": "0x265f94",
+          "asm": "add x8, x0, #0x4f8"
+        },
+        {
+          "pc": "0x265f98",
+          "asm": "cmp x0, #0"
+        }
+      ]
+    },
+    {
+      "cmp_pc": "0xa40a5c",
+      "cmp_value": 99,
+      "closest_candidate_loads": [
+        {
+          "pc": "0xa40a44",
+          "offset": "0x3a",
+          "distance_bytes": 24
+        },
+        {
+          "pc": "0xa40a80",
+          "offset": "0x3a",
+          "distance_bytes": 36
+        },
+        {
+          "pc": "0xa40a30",
+          "offset": "0x3a",
+          "distance_bytes": 44
+        },
+        {
+          "pc": "0xa40a94",
+          "offset": "0x3a",
+          "distance_bytes": 56
+        },
+        {
+          "pc": "0xa409f4",
+          "offset": "0x3a",
+          "distance_bytes": 104
+        },
+        {
+          "pc": "0xa409e0",
+          "offset": "0x3a",
+          "distance_bytes": 124
+        },
+        {
+          "pc": "0xa409a4",
+          "offset": "0x3a",
+          "distance_bytes": 184
+        },
+        {
+          "pc": "0xa40990",
+          "offset": "0x3a",
+          "distance_bytes": 204
+        }
+      ],
+      "status": "PROXIMITY_ONLY_NOT_PROVEN_QUANTITY_WRITEBACK",
+      "context": [
+        {
+          "pc": "0xa40a3c",
+          "asm": "b #0xa40a78"
+        },
+        {
+          "pc": "0xa40a40",
+          "asm": "mov x9, x25"
+        },
+        {
+          "pc": "0xa40a44",
+          "asm": "ldrb w10, [x25, #0x3a]"
+        },
+        {
+          "pc": "0xa40a48",
+          "asm": "cmp w10, #0xc"
+        },
+        {
+          "pc": "0xa40a4c",
+          "asm": "b.ne #0xa40a78"
+        },
+        {
+          "pc": "0xa40a50",
+          "asm": "ldr w1, [x9, #0xc]"
+        },
+        {
+          "pc": "0xa40a54",
+          "asm": "sub w9, w1, #1"
+        },
+        {
+          "pc": "0xa40a58",
+          "asm": "and w9, w9, #0xff"
+        },
+        {
+          "pc": "0xa40a5c",
+          "asm": "cmp w9, #0x63"
+        },
+        {
+          "pc": "0xa40a60",
+          "asm": "b.hi #0xa40a78"
+        },
+        {
+          "pc": "0xa40a64",
+          "asm": "mov x0, x19"
+        },
+        {
+          "pc": "0xa40a68",
+          "asm": "mov w2, w20"
+        },
+        {
+          "pc": "0xa40a6c",
+          "asm": "mov x3, x26"
+        },
+        {
+          "pc": "0xa40a70",
+          "asm": "bl #0xa5b680"
+        },
+        {
+          "pc": "0xa40a74",
+          "asm": "ldr x8, [x21, #8]"
+        },
+        {
+          "pc": "0xa40a78",
+          "asm": "cbz x8, #0xa40a90"
+        },
+        {
+          "pc": "0xa40a7c",
+          "asm": "mov x9, x8"
+        },
+        {
+          "pc": "0xa40a80",
+          "asm": "ldrb w10, [x8, #0x3a]"
+        },
+        {
+          "pc": "0xa40a84",
+          "asm": "cmp w10, #0x15"
+        },
+        {
+          "pc": "0xa40a88",
+          "asm": "b.eq #0xa40aa0"
+        },
+        {
+          "pc": "0xa40a8c",
+          "asm": "b #0xa40ac8"
+        },
+        {
+          "pc": "0xa40a90",
+          "asm": "mov x9, x25"
+        },
+        {
+          "pc": "0xa40a94",
+          "asm": "ldrb w10, [x25, #0x3a]"
+        },
+        {
+          "pc": "0xa40a98",
+          "asm": "cmp w10, #0x15"
+        }
+      ]
+    },
+    {
+      "cmp_pc": "0x14c27ac",
+      "cmp_value": 99,
+      "closest_candidate_loads": [
+        {
+          "pc": "0x14c2788",
+          "offset": "0x26",
+          "distance_bytes": 36
+        }
+      ],
+      "status": "PROXIMITY_ONLY_NOT_PROVEN_QUANTITY_WRITEBACK",
+      "context": [
+        {
+          "pc": "0x14c278c",
+          "asm": "cmp w8, #0x12"
+        },
+        {
+          "pc": "0x14c2790",
+          "asm": "b.lo #0x14c1958"
+        },
+        {
+          "pc": "0x14c2794",
+          "asm": "b.ne #0x14c2540"
+        },
+        {
+          "pc": "0x14c2798",
+          "asm": "ldr x8, [sp, #0x50]"
+        },
+        {
+          "pc": "0x14c279c",
+          "asm": "mov x1, x9"
+        },
+        {
+          "pc": "0x14c27a0",
+          "asm": "mov x0, x10"
+        },
+        {
+          "pc": "0x14c27a4",
+          "asm": "mov x3, x11"
+        },
+        {
+          "pc": "0x14c27a8",
+          "asm": "ldrb w8, [x8, #0x25]"
+        },
+        {
+          "pc": "0x14c27ac",
+          "asm": "cmp w8, #0x63"
+        },
+        {
+          "pc": "0x14c27b0",
+          "asm": "b.lo #0x14c1958"
+        },
+        {
+          "pc": "0x14c27b4",
+          "asm": "b.ne #0x14c2540"
+        },
+        {
+          "pc": "0x14c27b8",
+          "asm": "ldr x8, [sp, #0x50]"
+        },
+        {
+          "pc": "0x14c27bc",
+          "asm": "mov x1, x9"
+        },
+        {
+          "pc": "0x14c27c0",
+          "asm": "mov x0, x10"
+        },
+        {
+          "pc": "0x14c27c4",
+          "asm": "mov x3, x11"
+        },
+        {
+          "pc": "0x14c27c8",
+          "asm": "ldrb w8, [x8, #0x24]"
+        },
+        {
+          "pc": "0x14c27cc",
+          "asm": "cmp w8, #0x1a"
+        },
+        {
+          "pc": "0x14c27d0",
+          "asm": "b.lo #0x14c1958"
+        },
+        {
+          "pc": "0x14c27d4",
+          "asm": "b.ne #0x14c2540"
+        },
+        {
+          "pc": "0x14c27d8",
+          "asm": "ldr x8, [sp, #0x50]"
+        },
+        {
+          "pc": "0x14c27dc",
+          "asm": "mov x1, x9"
+        },
+        {
+          "pc": "0x14c27e0",
+          "asm": "mov x0, x10"
+        },
+        {
+          "pc": "0x14c27e4",
+          "asm": "mov x3, x11"
+        },
+        {
+          "pc": "0x14c27e8",
+          "asm": "ldrb w8, [x8, #0x23]"
+        }
+      ]
+    },
+    {
+      "cmp_pc": "0xf52f7c",
+      "cmp_value": 99,
+      "closest_candidate_loads": [
+        {
+          "pc": "0xf52f48",
+          "offset": "0x3a",
+          "distance_bytes": 52
+        }
+      ],
+      "status": "PROXIMITY_ONLY_NOT_PROVEN_QUANTITY_WRITEBACK",
+      "context": [
+        {
+          "pc": "0xf52f5c",
+          "asm": "add x10, x10, #0x1c1"
+        },
+        {
+          "pc": "0xf52f60",
+          "asm": "adr x11, #0xf52f70"
+        },
+        {
+          "pc": "0xf52f64",
+          "asm": "ldrb w12, [x10, x9]"
+        },
+        {
+          "pc": "0xf52f68",
+          "asm": "add x11, x11, x12, lsl #2"
+        },
+        {
+          "pc": "0xf52f6c",
+          "asm": "br x11"
+        },
+        {
+          "pc": "0xf52f70",
+          "asm": "bl #0xa3dbc4"
+        },
+        {
+          "pc": "0xf52f74",
+          "asm": "sub w8, w0, #1"
+        },
+        {
+          "pc": "0xf52f78",
+          "asm": "and w8, w8, #0xff"
+        },
+        {
+          "pc": "0xf52f7c",
+          "asm": "cmp w8, #0x63"
+        },
+        {
+          "pc": "0xf52f80",
+          "asm": "b.hi #0xf53160"
+        },
+        {
+          "pc": "0xf52f84",
+          "asm": "mov w10, #0x27d"
+        },
+        {
+          "pc": "0xf52f88",
+          "asm": "mov x8, x19"
+        },
+        {
+          "pc": "0xf52f8c",
+          "asm": "str wzr, [x19]"
+        },
+        {
+          "pc": "0xf52f90",
+          "asm": "ldr x9, [x8, #0x18]!"
+        },
+        {
+          "pc": "0xf52f94",
+          "asm": "strh w10, [x19, #8]"
+        },
+        {
+          "pc": "0xf52f98",
+          "asm": "ldr x10, [x19, #0x20]"
+        },
+        {
+          "pc": "0xf52f9c",
+          "asm": "cmp x9, x10"
+        },
+        {
+          "pc": "0xf52fa0",
+          "asm": "b.eq #0xf531b8"
+        },
+        {
+          "pc": "0xf52fa4",
+          "asm": "ldr x10, [x19, #0x10]"
+        },
+        {
+          "pc": "0xf52fa8",
+          "asm": "mov w11, #0x88"
+        },
+        {
+          "pc": "0xf52fac",
+          "asm": "madd x9, x9, x11, x10"
+        },
+        {
+          "pc": "0xf52fb0",
+          "asm": "and w10, w0, #0xff"
+        },
+        {
+          "pc": "0xf52fb4",
+          "asm": "str wzr, [x9]"
+        },
+        {
+          "pc": "0xf52fb8",
+          "asm": "str w10, [x9, #8]"
+        }
+      ]
+    },
+    {
+      "cmp_pc": "0x54d7ac",
+      "cmp_value": 100,
+      "closest_candidate_loads": [
+        {
+          "pc": "0x54d84c",
+          "offset": "0x3a",
+          "distance_bytes": 160
+        }
+      ],
+      "status": "PROXIMITY_ONLY_NOT_PROVEN_QUANTITY_WRITEBACK",
+      "context": [
+        {
+          "pc": "0x54d78c",
+          "asm": "ldr x0, [x19]"
+        },
+        {
+          "pc": "0x54d790",
+          "asm": "add x1, x22, x21"
+        },
+        {
+          "pc": "0x54d794",
+          "asm": "mov x2, xzr"
+        },
+        {
+          "pc": "0x54d798",
+          "asm": "mov w3, #2"
+        },
+        {
+          "pc": "0x54d79c",
+          "asm": "ldr x8, [x0]"
+        },
+        {
+          "pc": "0x54d7a0",
+          "asm": "ldr x8, [x8, #0x20]"
+        },
+        {
+          "pc": "0x54d7a4",
+          "asm": "blr x8"
+        },
+        {
+          "pc": "0x54d7a8",
+          "asm": "add x21, x21, #2"
+        },
+        {
+          "pc": "0x54d7ac",
+          "asm": "cmp x21, #0x64"
+        },
+        {
+          "pc": "0x54d7b0",
+          "asm": "b.ne #0x54d78c"
+        },
+        {
+          "pc": "0x54d7b4",
+          "asm": "ldr x0, [x19]"
+        },
+        {
+          "pc": "0x54d7b8",
+          "asm": "add x1, x20, #0xa2"
+        },
+        {
+          "pc": "0x54d7bc",
+          "asm": "mov x2, xzr"
+        },
+        {
+          "pc": "0x54d7c0",
+          "asm": "mov w3, #1"
+        },
+        {
+          "pc": "0x54d7c4",
+          "asm": "ldr x8, [x0]"
+        },
+        {
+          "pc": "0x54d7c8",
+          "asm": "ldr x8, [x8, #0x20]"
+        },
+        {
+          "pc": "0x54d7cc",
+          "asm": "blr x8"
+        },
+        {
+          "pc": "0x54d7d0",
+          "asm": "ldp x20, x19, [sp, #0x20]"
+        },
+        {
+          "pc": "0x54d7d4",
+          "asm": "mov w0, #1"
+        },
+        {
+          "pc": "0x54d7d8",
+          "asm": "ldp x22, x21, [sp, #0x10]"
+        },
+        {
+          "pc": "0x54d7dc",
+          "asm": "ldp x29, x30, [sp], #0x30"
+        },
+        {
+          "pc": "0x54d7e0",
+          "asm": "retab "
+        },
+        {
+          "pc": "0x54d7e4",
+          "asm": "pacibsp "
+        },
+        {
+          "pc": "0x54d7e8",
+          "asm": "stp x29, x30, [sp, #-0x20]!"
+        }
+      ]
+    },
+    {
+      "cmp_pc": "0x2e536c",
+      "cmp_value": 100,
+      "closest_candidate_loads": [
+        {
+          "pc": "0x2e5424",
+          "offset": "0x3a",
+          "distance_bytes": 184
+        }
+      ],
+      "status": "PROXIMITY_ONLY_NOT_PROVEN_QUANTITY_WRITEBACK",
+      "context": [
+        {
+          "pc": "0x2e534c",
+          "asm": "ldr x0, [x22]"
+        },
+        {
+          "pc": "0x2e5350",
+          "asm": "cbz x0, #0x2e53a4"
+        },
+        {
+          "pc": "0x2e5354",
+          "asm": "and w2, w21, #0xffff"
+        },
+        {
+          "pc": "0x2e5358",
+          "asm": "mov w1, w20"
+        },
+        {
+          "pc": "0x2e535c",
+          "asm": "bl #0x2e5680"
+        },
+        {
+          "pc": "0x2e5360",
+          "asm": "and w8, w20, #0xffff"
+        },
+        {
+          "pc": "0x2e5364",
+          "asm": "cmp w8, #0x7a"
+        },
+        {
+          "pc": "0x2e5368",
+          "asm": "b.eq #0x2e5374"
+        },
+        {
+          "pc": "0x2e536c",
+          "asm": "cmp w8, #0x64"
+        },
+        {
+          "pc": "0x2e5370",
+          "asm": "b.ne #0x2e537c"
+        },
+        {
+          "pc": "0x2e5374",
+          "asm": "ldr x0, [x22]"
+        },
+        {
+          "pc": "0x2e5378",
+          "asm": "bl #0x2e5980"
+        },
+        {
+          "pc": "0x2e537c",
+          "asm": "adrp x8, #0x3561000"
+        },
+        {
+          "pc": "0x2e5380",
+          "asm": "add x8, x8, #0x6e0"
+        },
+        {
+          "pc": "0x2e5384",
+          "asm": "ldr x0, [x8]"
+        },
+        {
+          "pc": "0x2e5388",
+          "asm": "cbz x0, #0x2e53a4"
+        },
+        {
+          "pc": "0x2e538c",
+          "asm": "mov w1, w20"
+        },
+        {
+          "pc": "0x2e5390",
+          "asm": "bl #0xa57fe0"
+        },
+        {
+          "pc": "0x2e5394",
+          "asm": "cbz x0, #0x2e53a4"
+        },
+        {
+          "pc": "0x2e5398",
+          "asm": "ldr x0, [x22]"
+        },
+        {
+          "pc": "0x2e539c",
+          "asm": "mov w2, w21"
+        },
+        {
+          "pc": "0x2e53a0",
+          "asm": "bl #0x2e5c60"
+        },
+        {
+          "pc": "0x2e53a4",
+          "asm": "adrp x8, #0x3483000"
+        },
+        {
+          "pc": "0x2e53a8",
+          "asm": "mov w1, w20"
+        }
+      ]
+    },
+    {
+      "cmp_pc": "0x332454",
+      "cmp_value": 100,
+      "closest_candidate_loads": [
+        {
+          "pc": "0x332384",
+          "offset": "0x26",
+          "distance_bytes": 208
+        }
+      ],
+      "status": "PROXIMITY_ONLY_NOT_PROVEN_QUANTITY_WRITEBACK",
+      "context": [
+        {
+          "pc": "0x332434",
+          "asm": "ldp x29, x30, [sp], #0x40"
+        },
+        {
+          "pc": "0x332438",
+          "asm": "retab "
+        },
+        {
+          "pc": "0x33243c",
+          "asm": "add x0, x29, #0x1c"
+        },
+        {
+          "pc": "0x332440",
+          "asm": "mov w1, w21"
+        },
+        {
+          "pc": "0x332444",
+          "asm": "mov w2, wzr"
+        },
+        {
+          "pc": "0x332448",
+          "asm": "bl #0x286240"
+        },
+        {
+          "pc": "0x33244c",
+          "asm": "sub w8, w0, #1"
+        },
+        {
+          "pc": "0x332450",
+          "asm": "and w8, w8, #0xff"
+        },
+        {
+          "pc": "0x332454",
+          "asm": "cmp w8, #0x64"
+        },
+        {
+          "pc": "0x332458",
+          "asm": "mov w8, #9"
+        },
+        {
+          "pc": "0x33245c",
+          "asm": "csel w0, w8, wzr, lo"
+        },
+        {
+          "pc": "0x332460",
+          "asm": "ldp x20, x19, [sp, #0x30]"
+        },
+        {
+          "pc": "0x332464",
+          "asm": "ldr x23, [sp, #0x10]"
+        },
+        {
+          "pc": "0x332468",
+          "asm": "ldp x22, x21, [sp, #0x20]"
+        },
+        {
+          "pc": "0x33246c",
+          "asm": "ldp x29, x30, [sp], #0x40"
+        },
+        {
+          "pc": "0x332470",
+          "asm": "retab "
+        },
+        {
+          "pc": "0x332474",
+          "asm": "pacibsp "
+        },
+        {
+          "pc": "0x332478",
+          "asm": "stp x29, x30, [sp, #-0x20]!"
+        },
+        {
+          "pc": "0x33247c",
+          "asm": "str x19, [sp, #0x10]"
+        },
+        {
+          "pc": "0x332480",
+          "asm": "mov x29, sp"
+        },
+        {
+          "pc": "0x332484",
+          "asm": "ldr w19, [x0, #0xc]"
+        },
+        {
+          "pc": "0x332488",
+          "asm": "bl #0x77ecb0"
+        },
+        {
+          "pc": "0x33248c",
+          "asm": "tbz w0, #0, #0x3324c0"
+        },
+        {
+          "pc": "0x332490",
+          "asm": "adrp x8, #0x3483000"
+        }
+      ]
+    },
+    {
+      "cmp_pc": "0xabf1d4",
+      "cmp_value": 99,
+      "closest_candidate_loads": [
+        {
+          "pc": "0xabf0f8",
+          "offset": "0x26",
+          "distance_bytes": 220
+        }
+      ],
+      "status": "PROXIMITY_ONLY_NOT_PROVEN_QUANTITY_WRITEBACK",
+      "context": [
+        {
+          "pc": "0xabf1b4",
+          "asm": "ldp x29, x30, [sp], #0x20"
+        },
+        {
+          "pc": "0xabf1b8",
+          "asm": "retab "
+        },
+        {
+          "pc": "0xabf1bc",
+          "asm": "pacibsp "
+        },
+        {
+          "pc": "0xabf1c0",
+          "asm": "stp x29, x30, [sp, #-0x20]!"
+        },
+        {
+          "pc": "0xabf1c4",
+          "asm": "str x19, [sp, #0x10]"
+        },
+        {
+          "pc": "0xabf1c8",
+          "asm": "mov x29, sp"
+        },
+        {
+          "pc": "0xabf1cc",
+          "asm": "and w19, w0, #0xff"
+        },
+        {
+          "pc": "0xabf1d0",
+          "asm": "sub w8, w19, #1"
+        },
+        {
+          "pc": "0xabf1d4",
+          "asm": "cmp w8, #0x63"
+        },
+        {
+          "pc": "0xabf1d8",
+          "asm": "b.hi #0xabf250"
+        },
+        {
+          "pc": "0xabf1dc",
+          "asm": "adrp x8, #0x3561000"
+        },
+        {
+          "pc": "0xabf1e0",
+          "asm": "add x8, x8, #0x8f0"
+        },
+        {
+          "pc": "0xabf1e4",
+          "asm": "ldr x8, [x8]"
+        },
+        {
+          "pc": "0xabf1e8",
+          "asm": "ldr w9, [x8, #0x2b70]"
+        },
+        {
+          "pc": "0xabf1ec",
+          "asm": "cmp w9, #0x8a"
+        },
+        {
+          "pc": "0xabf1f0",
+          "asm": "mov w9, #0x450"
+        },
+        {
+          "pc": "0xabf1f4",
+          "asm": "csel x9, x9, xzr, hi"
+        },
+        {
+          "pc": "0xabf1f8",
+          "asm": "add x8, x8, x9"
+        },
+        {
+          "pc": "0xabf1fc",
+          "asm": "ldr x0, [x8, #0x10]"
+        },
+        {
+          "pc": "0xabf200",
+          "asm": "cbz x0, #0xabf244"
+        },
+        {
+          "pc": "0xabf204",
+          "asm": "ldr x8, [x0]"
+        },
+        {
+          "pc": "0xabf208",
+          "asm": "mov w1, wzr"
+        },
+        {
+          "pc": "0xabf20c",
+          "asm": "ldr x8, [x8, #0x38]"
+        },
+        {
+          "pc": "0xabf210",
+          "asm": "blr x8"
+        }
+      ]
+    }
+  ],
+  "cross_field_proximity": [
+    {
+      "pc": "0x5e8d94",
+      "field": "0x3a",
+      "other_field_neighbors": [
+        {
+          "pc": "0x5e8cd4",
+          "field": "0x22"
+        },
+        {
+          "pc": "0x5e8cf4",
+          "field": "0x26"
+        },
+        {
+          "pc": "0x5e8dac",
+          "field": "0x26"
+        },
+        {
+          "pc": "0x5e8de0",
+          "field": "0x26"
+        },
+        {
+          "pc": "0x5e8dfc",
+          "field": "0x26"
+        },
+        {
+          "pc": "0x5e8e3c",
+          "field": "0x26"
+        },
+        {
+          "pc": "0x5e8e70",
+          "field": "0x26"
+        },
+        {
+          "pc": "0x5e8e7c",
+          "field": "0x26"
+        },
+        {
+          "pc": "0x5e8ef4",
+          "field": "0x26"
+        }
+      ],
+      "status": "UNVERIFIED_SHARED_RECORD_BASE",
+      "context": [
+        {
+          "pc": "0x5e8d74",
+          "asm": "ldrb w8, [sp, #0x36]"
+        },
+        {
+          "pc": "0x5e8d78",
+          "asm": "strh w8, [x20, #0x260]"
+        },
+        {
+          "pc": "0x5e8d7c",
+          "asm": "ldrb w8, [sp, #0x37]"
+        },
+        {
+          "pc": "0x5e8d80",
+          "asm": "strh w8, [x20, #0x262]"
+        },
+        {
+          "pc": "0x5e8d84",
+          "asm": "ldrb w8, [sp, #0x38]"
+        },
+        {
+          "pc": "0x5e8d88",
+          "asm": "strh w8, [x20, #0x264]"
+        },
+        {
+          "pc": "0x5e8d8c",
+          "asm": "ldrb w8, [sp, #0x39]"
+        },
+        {
+          "pc": "0x5e8d90",
+          "asm": "strh w8, [x20, #0x266]"
+        },
+        {
+          "pc": "0x5e8d94",
+          "asm": "ldrb w8, [sp, #0x3a]"
+        },
+        {
+          "pc": "0x5e8d98",
+          "asm": "strh w8, [x20, #0x268]"
+        },
+        {
+          "pc": "0x5e8d9c",
+          "asm": "ldrb w8, [sp, #0x3b]"
+        },
+        {
+          "pc": "0x5e8da0",
+          "asm": "strh w8, [x20, #0x26a]"
+        },
+        {
+          "pc": "0x5e8da4",
+          "asm": "ldrb w8, [sp, #0x3c]"
+        },
+        {
+          "pc": "0x5e8da8",
+          "asm": "strh w8, [x20, #0x26c]"
+        },
+        {
+          "pc": "0x5e8dac",
+          "asm": "ldrb w8, [x19, #0x26]"
+        },
+        {
+          "pc": "0x5e8db0",
+          "asm": "add x22, x22, x24"
+        },
+        {
+          "pc": "0x5e8db4",
+          "asm": "tbnz w8, #3, #0x5e8de4"
+        },
+        {
+          "pc": "0x5e8db8",
+          "asm": "adrp x9, #0x3565000"
+        },
+        {
+          "pc": "0x5e8dbc",
+          "asm": "add x9, x9, #0x150"
+        },
+        {
+          "pc": "0x5e8dc0",
+          "asm": "ldr x0, [x9]"
+        },
+        {
+          "pc": "0x5e8dc4",
+          "asm": "cbz x0, #0x5e8de4"
+        },
+        {
+          "pc": "0x5e8dc8",
+          "asm": "adrp x3, #0x27a3000"
+        },
+        {
+          "pc": "0x5e8dcc",
+          "asm": "add x3, x3, #0x3e1"
+        },
+        {
+          "pc": "0x5e8dd0",
+          "asm": "mov x1, x19"
+        }
+      ]
+    },
+    {
+      "pc": "0x1c69c8",
+      "field": "0x26",
+      "other_field_neighbors": [
+        {
+          "pc": "0x1c6858",
+          "field": "0x22"
+        },
+        {
+          "pc": "0x1c69b4",
+          "field": "0x22"
+        },
+        {
+          "pc": "0x1c6a5c",
+          "field": "0x22"
+        },
+        {
+          "pc": "0x1c6b04",
+          "field": "0x22"
+        }
+      ],
+      "status": "UNVERIFIED_SHARED_RECORD_BASE",
+      "context": [
+        {
+          "pc": "0x1c69a8",
+          "asm": "ldr x8, [x21]"
+        },
+        {
+          "pc": "0x1c69ac",
+          "asm": "ldr x8, [x8, #0x4a8]"
+        },
+        {
+          "pc": "0x1c69b0",
+          "asm": "blr x8"
+        },
+        {
+          "pc": "0x1c69b4",
+          "asm": "ldrh w8, [x19, #0x22]"
+        },
+        {
+          "pc": "0x1c69b8",
+          "asm": "strb w0, [sp, #0x34]"
+        },
+        {
+          "pc": "0x1c69bc",
+          "asm": "mov x0, x21"
+        },
+        {
+          "pc": "0x1c69c0",
+          "asm": "ldrh w9, [x19, #0x24]"
+        },
+        {
+          "pc": "0x1c69c4",
+          "asm": "and w8, w8, #0xfff"
+        },
+        {
+          "pc": "0x1c69c8",
+          "asm": "ldrh w10, [x19, #0x26]"
+        },
+        {
+          "pc": "0x1c69cc",
+          "asm": "bfi w8, w9, #0xc, #8"
+        },
+        {
+          "pc": "0x1c69d0",
+          "asm": "orr w8, w8, w10, lsl #20"
+        },
+        {
+          "pc": "0x1c69d4",
+          "asm": "str w8, [sp, #0x38]"
+        },
+        {
+          "pc": "0x1c69d8",
+          "asm": "mov w8, #1"
+        },
+        {
+          "pc": "0x1c69dc",
+          "asm": "strb w8, [sp, #0x3c]"
+        },
+        {
+          "pc": "0x1c69e0",
+          "asm": "ldr x8, [x21]"
+        },
+        {
+          "pc": "0x1c69e4",
+          "asm": "ldr x8, [x8, #0x4a8]"
+        },
+        {
+          "pc": "0x1c69e8",
+          "asm": "blr x8"
+        },
+        {
+          "pc": "0x1c69ec",
+          "asm": "mov w1, w0"
+        },
+        {
+          "pc": "0x1c69f0",
+          "asm": "mov x0, sp"
+        },
+        {
+          "pc": "0x1c69f4",
+          "asm": "bl #0x2d1070"
+        },
+        {
+          "pc": "0x1c69f8",
+          "asm": "ldr x21, [x20, #0x38]"
+        },
+        {
+          "pc": "0x1c69fc",
+          "asm": "cbz x21, #0x1c6aa0"
+        },
+        {
+          "pc": "0x1c6a00",
+          "asm": "ldr x8, [x21]"
+        },
+        {
+          "pc": "0x1c6a04",
+          "asm": "mov x0, x21"
+        }
+      ]
+    },
+    {
+      "pc": "0x1c6a70",
+      "field": "0x26",
+      "other_field_neighbors": [
+        {
+          "pc": "0x1c69b4",
+          "field": "0x22"
+        },
+        {
+          "pc": "0x1c6a5c",
+          "field": "0x22"
+        },
+        {
+          "pc": "0x1c6b04",
+          "field": "0x22"
+        },
+        {
+          "pc": "0x1c6bac",
+          "field": "0x22"
+        }
+      ],
+      "status": "UNVERIFIED_SHARED_RECORD_BASE",
+      "context": [
+        {
+          "pc": "0x1c6a50",
+          "asm": "ldr x8, [x21]"
+        },
+        {
+          "pc": "0x1c6a54",
+          "asm": "ldr x8, [x8, #0x4a8]"
+        },
+        {
+          "pc": "0x1c6a58",
+          "asm": "blr x8"
+        },
+        {
+          "pc": "0x1c6a5c",
+          "asm": "ldrh w8, [x19, #0x22]"
+        },
+        {
+          "pc": "0x1c6a60",
+          "asm": "strb w0, [sp, #0x34]"
+        },
+        {
+          "pc": "0x1c6a64",
+          "asm": "mov x0, x21"
+        },
+        {
+          "pc": "0x1c6a68",
+          "asm": "ldrh w9, [x19, #0x24]"
+        },
+        {
+          "pc": "0x1c6a6c",
+          "asm": "and w8, w8, #0xfff"
+        },
+        {
+          "pc": "0x1c6a70",
+          "asm": "ldrh w10, [x19, #0x26]"
+        },
+        {
+          "pc": "0x1c6a74",
+          "asm": "bfi w8, w9, #0xc, #8"
+        },
+        {
+          "pc": "0x1c6a78",
+          "asm": "orr w8, w8, w10, lsl #20"
+        },
+        {
+          "pc": "0x1c6a7c",
+          "asm": "str w8, [sp, #0x38]"
+        },
+        {
+          "pc": "0x1c6a80",
+          "asm": "mov w8, #1"
+        },
+        {
+          "pc": "0x1c6a84",
+          "asm": "strb w8, [sp, #0x3c]"
+        },
+        {
+          "pc": "0x1c6a88",
+          "asm": "ldr x8, [x21]"
+        },
+        {
+          "pc": "0x1c6a8c",
+          "asm": "ldr x8, [x8, #0x4a8]"
+        },
+        {
+          "pc": "0x1c6a90",
+          "asm": "blr x8"
+        },
+        {
+          "pc": "0x1c6a94",
+          "asm": "mov w1, w0"
+        },
+        {
+          "pc": "0x1c6a98",
+          "asm": "mov x0, sp"
+        },
+        {
+          "pc": "0x1c6a9c",
+          "asm": "bl #0x2d1070"
+        },
+        {
+          "pc": "0x1c6aa0",
+          "asm": "ldr x21, [x20, #0x40]"
+        },
+        {
+          "pc": "0x1c6aa4",
+          "asm": "cbz x21, #0x1c6b48"
+        },
+        {
+          "pc": "0x1c6aa8",
+          "asm": "ldr x8, [x21]"
+        },
+        {
+          "pc": "0x1c6aac",
+          "asm": "mov x0, x21"
+        }
+      ]
+    },
+    {
+      "pc": "0x1c6b18",
+      "field": "0x26",
+      "other_field_neighbors": [
+        {
+          "pc": "0x1c69b4",
+          "field": "0x22"
+        },
+        {
+          "pc": "0x1c6a5c",
+          "field": "0x22"
+        },
+        {
+          "pc": "0x1c6b04",
+          "field": "0x22"
+        },
+        {
+          "pc": "0x1c6bac",
+          "field": "0x22"
+        }
+      ],
+      "status": "UNVERIFIED_SHARED_RECORD_BASE",
+      "context": [
+        {
+          "pc": "0x1c6af8",
+          "asm": "ldr x8, [x21]"
+        },
+        {
+          "pc": "0x1c6afc",
+          "asm": "ldr x8, [x8, #0x4a8]"
+        },
+        {
+          "pc": "0x1c6b00",
+          "asm": "blr x8"
+        },
+        {
+          "pc": "0x1c6b04",
+          "asm": "ldrh w8, [x19, #0x22]"
+        },
+        {
+          "pc": "0x1c6b08",
+          "asm": "strb w0, [sp, #0x34]"
+        },
+        {
+          "pc": "0x1c6b0c",
+          "asm": "mov x0, x21"
+        },
+        {
+          "pc": "0x1c6b10",
+          "asm": "ldrh w9, [x19, #0x24]"
+        },
+        {
+          "pc": "0x1c6b14",
+          "asm": "and w8, w8, #0xfff"
+        },
+        {
+          "pc": "0x1c6b18",
+          "asm": "ldrh w10, [x19, #0x26]"
+        },
+        {
+          "pc": "0x1c6b1c",
+          "asm": "bfi w8, w9, #0xc, #8"
+        },
+        {
+          "pc": "0x1c6b20",
+          "asm": "orr w8, w8, w10, lsl #20"
+        },
+        {
+          "pc": "0x1c6b24",
+          "asm": "str w8, [sp, #0x38]"
+        },
+        {
+          "pc": "0x1c6b28",
+          "asm": "mov w8, #1"
+        },
+        {
+          "pc": "0x1c6b2c",
+          "asm": "strb w8, [sp, #0x3c]"
+        },
+        {
+          "pc": "0x1c6b30",
+          "asm": "ldr x8, [x21]"
+        },
+        {
+          "pc": "0x1c6b34",
+          "asm": "ldr x8, [x8, #0x4a8]"
+        },
+        {
+          "pc": "0x1c6b38",
+          "asm": "blr x8"
+        },
+        {
+          "pc": "0x1c6b3c",
+          "asm": "mov w1, w0"
+        },
+        {
+          "pc": "0x1c6b40",
+          "asm": "mov x0, sp"
+        },
+        {
+          "pc": "0x1c6b44",
+          "asm": "bl #0x2d1070"
+        },
+        {
+          "pc": "0x1c6b48",
+          "asm": "ldr x20, [x20, #0x48]"
+        },
+        {
+          "pc": "0x1c6b4c",
+          "asm": "cbz x20, #0x1c6bf0"
+        },
+        {
+          "pc": "0x1c6b50",
+          "asm": "ldr x8, [x20]"
+        },
+        {
+          "pc": "0x1c6b54",
+          "asm": "mov x0, x20"
+        }
+      ]
+    },
+    {
+      "pc": "0x5d0d14",
+      "field": "0x3a",
+      "other_field_neighbors": [
+        {
+          "pc": "0x5d0cb4",
+          "field": "0x22"
+        },
+        {
+          "pc": "0x5d0cc4",
+          "field": "0x26"
+        },
+        {
+          "pc": "0x5d0e28",
+          "field": "0x22"
+        },
+        {
+          "pc": "0x5d0e38",
+          "field": "0x26"
+        }
+      ],
+      "status": "UNVERIFIED_SHARED_RECORD_BASE",
+      "context": [
+        {
+          "pc": "0x5d0cf4",
+          "asm": "ldrb w9, [x23, #0x32]"
+        },
+        {
+          "pc": "0x5d0cf8",
+          "asm": "strb w9, [x8, #0x32]"
+        },
+        {
+          "pc": "0x5d0cfc",
+          "asm": "ldrh w9, [x23, #0x34]"
+        },
+        {
+          "pc": "0x5d0d00",
+          "asm": "strh w9, [x8, #0x34]"
+        },
+        {
+          "pc": "0x5d0d04",
+          "asm": "ldrb w9, [x23, #0x36]"
+        },
+        {
+          "pc": "0x5d0d08",
+          "asm": "strb w9, [x8, #0x36]"
+        },
+        {
+          "pc": "0x5d0d0c",
+          "asm": "ldrh w9, [x23, #0x38]"
+        },
+        {
+          "pc": "0x5d0d10",
+          "asm": "strh w9, [x8, #0x38]"
+        },
+        {
+          "pc": "0x5d0d14",
+          "asm": "ldrb w9, [x23, #0x3a]"
+        },
+        {
+          "pc": "0x5d0d18",
+          "asm": "strb w9, [x8, #0x3a]"
+        },
+        {
+          "pc": "0x5d0d1c",
+          "asm": "ldp x8, x9, [sp, #0x18]"
+        },
+        {
+          "pc": "0x5d0d20",
+          "asm": "mov x1, sp"
+        },
+        {
+          "pc": "0x5d0d24",
+          "asm": "mov x0, x20"
+        },
+        {
+          "pc": "0x5d0d28",
+          "asm": "stp x8, x9, [sp]"
+        },
+        {
+          "pc": "0x5d0d2c",
+          "asm": "mov w8, #1"
+        },
+        {
+          "pc": "0x5d0d30",
+          "asm": "strb w8, [sp, #0x11]"
+        },
+        {
+          "pc": "0x5d0d34",
+          "asm": "bl #0x69a230"
+        },
+        {
+          "pc": "0x5d0d38",
+          "asm": "cbz w0, #0x5d0f64"
+        },
+        {
+          "pc": "0x5d0d3c",
+          "asm": "mov w8, #0xf62a"
+        },
+        {
+          "pc": "0x5d0d40",
+          "asm": "add x8, x19, x8"
+        },
+        {
+          "pc": "0x5d0d44",
+          "asm": "cmp w0, #1"
+        },
+        {
+          "pc": "0x5d0d48",
+          "asm": "b.lt #0x5d0e9c"
+        },
+        {
+          "pc": "0x5d0d4c",
+          "asm": "mov w9, #0x14"
+        },
+        {
+          "pc": "0x5d0d50",
+          "asm": "mov w12, w0"
+        }
+      ]
+    }
+  ],
+  "warning": "All PC pairs are proximity-only, not source register or gameplay stack-limit proof."
+}
