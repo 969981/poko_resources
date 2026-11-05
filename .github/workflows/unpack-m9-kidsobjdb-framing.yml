@@ -1,0 +1,153 @@
+name: M9.1 - verify native KIDSOBJDB IDOK record framing
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_kidsobjdb_framing.py"
+      - "tests/test_m9_kidsobjdb_framing.py"
+      - ".github/workflows/unpack-m9-kidsobjdb-framing.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-kidsobjdb-framing
+  cancel-in-progress: false
+
+jobs:
+  native-object-framing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - name: Checkout precise native samples and M9 reference graph
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          fetch-depth: 1
+          persist-credentials: true
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m9_kidsobjdb_framing.py
+            tests/test_m9_kidsobjdb_framing.py
+            UnPack/2.0.1/Resources/Localization/M9
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xe634eeb2.fdata/decoded/root_042257_b290631c.fdata_idrk.bin
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/decoded/root_049334_cfd2bd1f.fdata_idrk.bin
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata/decoded/root_049689_d14d76ef.fdata_idrk.bin
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run exact node layout and SQLite safety tests
+        id: tests
+        shell: bash
+        run: |
+          mkdir -p UnPack/2.0.1/Resources/Localization/M9/Objects/Diagnostics
+          set +e
+          python -m unittest discover -s tests -p "test_m9_kidsobjdb_framing.py" -v \
+            > UnPack/2.0.1/Resources/Localization/M9/Objects/Diagnostics/tests.log 2>&1
+          code=$?
+          cat UnPack/2.0.1/Resources/Localization/M9/Objects/Diagnostics/tests.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Decode exact IDOK boundaries for all three original objects
+        id: extract
+        if: steps.tests.outputs.exit_code == '0'
+        shell: bash
+        run: |
+          set +e
+          python Scripts/resources/m9_kidsobjdb_framing.py \
+            --sources UnPack/2.0.1/Resources/Localization/M9/m3_object_sources.csv \
+            --unpack-root UnPack/2.0.1 \
+            --graph UnPack/2.0.1/Resources/Localization/M9/localization_reference_graph.sqlite \
+            --dest UnPack/2.0.1/Resources/Localization/M9/Objects \
+            > UnPack/2.0.1/Resources/Localization/M9/Objects/Diagnostics/extract.log 2>&1
+          code=$?
+          tail -c 20000 UnPack/2.0.1/Resources/Localization/M9/Objects/Diagnostics/extract.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Verify all container record counts and SQL provenance
+        id: verify
+        if: steps.tests.outputs.exit_code == '0' && steps.extract.outputs.exit_code == '0'
+        shell: bash
+        run: |
+          set +e
+          python - <<'PY' > UnPack/2.0.1/Resources/Localization/M9/Objects/Diagnostics/verify.log 2>&1
+          import json,sqlite3,csv
+          from pathlib import Path
+          root=Path("UnPack/2.0.1/Resources/Localization/M9")
+          obj=root/"Objects"
+          report=json.loads((obj/"m9_object_framing_report.json").read_text(encoding="utf-8"))
+          print(json.dumps(report,ensure_ascii=False,indent=2))
+          assert report["status"] == "M9_KIDSOBJDB_NATIVE_RECORD_FRAMING_CONFIRMED"
+          assert report["files_source_verified"] == 3
+          assert report["native_node_records_verified"] == 101467
+          assert sorted(x["verified_nodes"] for x in report["files"])==[1330,31740,68397]
+          assert all(f["final_offset"]==f["file_bytes"] for f in report["files"])
+          assert report["scene_quest_building_caller_foreign_keys"]==0
+          with sqlite3.connect(root/"localization_reference_graph.sqlite") as con:
+              assert con.execute("SELECT count(*) FROM m3_kidsobjdb_records").fetchone()[0] == 101467
+              assert con.execute("SELECT count(*) FROM verified_edges").fetchone()[0] > 3500
+              assert con.execute("SELECT count(*) FROM m3_kidsobjdb_records WHERE field_schema!='UNRESOLVED'").fetchone()[0] == 0
+          with (obj/"m3_kidsobjdb_native_records.csv").open(encoding="utf-8",newline="") as f:
+              assert sum(1 for _ in csv.DictReader(f))==101467
+          print("Byte-exact native node framing verification PASS")
+          PY
+          code=$?
+          cat UnPack/2.0.1/Resources/Localization/M9/Objects/Diagnostics/verify.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Save status and artifact even on failure
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p UnPack/2.0.1/Resources/Localization/M9/Objects/Diagnostics
+          printf 'tests=%s\nextract=%s\nverify=%s\nrun_id=%s\n' \
+            "${{ steps.tests.outputs.exit_code }}" \
+            "${{ steps.extract.outputs.exit_code }}" \
+            "${{ steps.verify.outputs.exit_code }}" \
+            "${{ github.run_id }}" > UnPack/2.0.1/Resources/Localization/M9/Objects/Diagnostics/status.txt
+
+      - name: Upload native object rows and SQL graph
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-m9-native-objects-${{ github.run_id }}
+          path: UnPack/2.0.1/Resources/Localization/M9/
+          retention-days: 30
+
+      - name: Commit exact object metadata or bounded logs
+        if: always()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ "${{ steps.tests.outputs.exit_code }}" = 0 ] &&
+             [ "${{ steps.extract.outputs.exit_code }}" = 0 ] &&
+             [ "${{ steps.verify.outputs.exit_code }}" = 0 ]; then
+            git add -A -- UnPack/2.0.1/Resources/Localization/M9/Objects
+            git add -A -- UnPack/2.0.1/Resources/Localization/M9/localization_reference_graph.sqlite
+          else
+            git add -A -- UnPack/2.0.1/Resources/Localization/M9/Objects/Diagnostics
+          fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9): byte-verified KIDSOBJDB IDOK records with object provenance"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
+
+      - name: Fail workflow if native IDOK framing was not verified
+        if: always()
+        shell: bash
+        run: |
+          test "${{ steps.tests.outputs.exit_code }}" = 0
+          test "${{ steps.extract.outputs.exit_code }}" = 0
+          test "${{ steps.verify.outputs.exit_code }}" = 0
