@@ -128,12 +128,12 @@ def report(main,item):
        ]
     }
 def selftest():
-    # ADRP X8, target page 0x35b61000 from PC at address 0x35b61000
+    # ADRP X8, target page 0x35b6000 from PC at address 0x35b6000
     global TARGETS
     old=TARGETS
     try:
         TARGETS={0x35b6128:"test"}
-        pc=0x35b61000
+        pc=0x35b6000
         # adrp x8,#pc-page; add x8,x8,#0x128
         blob=struct.pack("<2I",0x90000008,0x91000000|(0x128<<10)|(8<<5)|8)
         hits=find_xrefs(blob,pc)
