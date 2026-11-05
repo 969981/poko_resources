@@ -1,0 +1,89 @@
+name: M30.4 - Original ScreenLayout TexturePack loader code windows
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m30_4_screen_layout_loader_context.py"
+      - ".github/workflows/unpack-m30-4-screen-layout-loader.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m30-4-screen-loader-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify-original-layout-loader-call-windows:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout original main NSO plus targeted ScreenLayout code reader
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m20_native_species_item_targets.py
+            Scripts/resources/m30_4_screen_layout_loader_context.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install source NSO decoder and AArch64 disassembler
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Verify five original ScreenLayout reference sites
+        run: python -m Scripts.resources.m30_4_screen_layout_loader_context --self-test
+
+      - name: Decode original ScreenLayout TexturePack code windows and branch edges
+        run: python -m Scripts.resources.m30_4_screen_layout_loader_context
+
+      - name: Require actual original rodata/ADRP-ADD and no guessed source ID
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M30")
+          j=json.loads((p/"m30_4_screen_layout_consumer_triage_summary.json").read_text(encoding="utf-8"))
+          d=json.loads((p/"m30_4_screen_layout_texture_consumer_windows.json").read_text(encoding="utf-8"))
+          assert j["original_main_sha256"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert j["original_screen_layout_texture_rodata_anchor_count"]==5
+          assert j["verified_exact_adrp_add_string_addresses"]==5
+          assert len(d["code_regions"])==5
+          assert all(x["verified_exact_ADRP_ADD_target"] for x in d["code_regions"])
+          assert all(not x["screen_layout_loader_semantics_proven"] and
+                  not x["game_ID_to_icon_Source_OID_proven"] for x in d["code_regions"])
+          assert not j["native_KIDS_icon_source_lookup_path_confirmed"]
+          assert not j["native_species_form_ID_binding_confirmed"]
+          print("M30.4 exact original AArch64 ScreenLayout code windows verified")
+          PY
+
+      - name: Upload original loader code evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m30-4-original-ScreenLayout-TexturePack-code-windows
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M30/m30_4_*
+          if-no-files-found: warn
+
+      - name: Commit original ScreenLayout TexturePack loader triage
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M30/m30_4_*
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m30.4): native ScreenLayout TexturePack source windows and call edges"
+          for n in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
