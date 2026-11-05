@@ -132,3 +132,46 @@ M9.9 每个指针槽相邻的 64 位项呈现同一模式，值得下一轮核�
 | `0xf92c5190` | `0x32fdfd8` | `0x1fe4fa0` | `0xd594dc` | `0xd594e8` |
 
 这些属于**原始字节中的相邻代码指针结构**，不能直接叫作已经恢复的 getter vtable；下一步应识别包含该地址点的对象构造与 `[vptr + offset]` 间接派发、验证传入的缓冲区和属性 ID，然后再寻找脚本对 M7 表号与行 ID 的 typed-field 选择路径。87,445 个数值候选及 0 个剧情/任务/建筑外键的未验证状态保持不变。
+
+
+## M9.10–M9.12：ExeFS 原生 vptr 写入与描述符回调槽（2026-11-05）
+
+这三轮均基于 SHA-256 `8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f` 的原版 `2.0.1/exefs/main`，每个新结论都保留准确 PC、源指令及数据地址。
+
+- [M9.10 #41955573731](https://github.com/969981/poko_resources/actions/runs/41955573731) **Success**：针对三组已验证函数槽 `±0x100` 搜索近邻 `ADRP+ADD/LDR`。只在 `0xf92c5190` 邻域找到 3 条地址构造引用：`main+0xD591B8→0x32FDF90`、`main+0xD5962C→0x32FE0B8`、同指令窗口延迟匹配 `0x32FE010`。后者非相邻配对，不能当成稳定数据流。
+- [M9.11 #41955853719](https://github.com/969981/poko_resources/actions/runs/41955853719) **Success**：对上述指令窗口逐字节回验并反汇编，捕获对象分配后 `ADRP+ADD+ADD→STP x8,xzr,[x23/x22]` 的实际路径。报告保存为 `exefs_vptr_disassembly_windows.json`。
+- [M9.12 #41956233084](https://github.com/969981/poko_resources/actions/runs/41956233084) **Success**：确认两条原生直线数据流的对象 vptr 写入（`main+0xD591C8` 和 `main+0xD59640`）；第一条写入地址 `0x32FDFA0`。核对原生 `.data`，其 `+0x38` 位置为 `0x32FDFD8`，含实际函数指针 `main+0xD59420`，即 M9.5 对 `0xf92c5190` 的描述符填充函数入口。这是**原生对象 vptr 写入 + 回调槽成员身份**的直接证据；不是实际运行时回调、KIDSOBJDB getter、脚本外键的直接证据。第二条写入 `0x32FE0C8`，尚未证明它与本 Hash 的语义关系。
+
+因此证据链已从静态 Hash 常量升级为：
+
+```
+main+0xD591B8       ADRP/ADD +0x10 -> x8 = 0x32FDFA0
+main+0xD591C8       STP x8,xzr,[x23]（对象首字段 vptr）
+0x32FDFA0 + 0x38   -> 原始 .data 函数槽 0x32FDFD8
+*(u64*)0x32FDFD8   -> main+0xD59420
+main+0xD59420      -> 0xf92c5190 元数据描述符写入
+```
+
+证据文件：`exefs_vtable_neighborhood_report.json`、`exefs_vtable_neighborhood_xrefs.csv`、`exefs_vptr_disassembly_windows.json`、`exefs_verified_vptr_stores.json`。其中 `verified_runtime_indirect_dispatchers=0` 和 `verified_native_kidsobjdb_getters=0` 必须保留。
+
+## M9.13：M3 结构字段与 M7 文本表 ID 的负例筛查
+
+[M9.13 #41956641307](https://github.com/969981/poko_resources/actions/runs/41956641307) **Success**。新增 `Scripts/resources/m9_typed_text_tuple_triage.py` 对 **1,176,984 个已验证类型字段、101,467 个对象、195 组 M7 九语言表**做严格编号交叉筛查。规则为：
+
+1. 同一个原生 KIDSOBJDB 对象内的 **4 字节单值**属性，其中某属性的原始 `u32` 数值等于 M7 九语言组起始文件号；
+2. 该对象相距不超过 3 个属性位置的另一 `u32` 单值落在该组的非零行号范围。
+
+**结果：0 组**匹配。仅说明此受限的“双单值字段邻接”假设未命中，不排除数组、跨对象关联、其他非 KIDSOBJDB 脚本资源或其他文本解析机制。没有任何剧情/任务/建筑字段名因该扫描获得证明。详情在 `M9/ScriptTextCandidates/m9_numeric_text_tuple_report.json`，空候选 CSV 中保留列结构，既有 M8 的 5,365 条真实来源关联以及 87,445 条未验证 OID 数值候选均保持不变。
+
+## M9.14：`vptr+0x38` 的一般间接调用点扫描
+
+[M9.14 #41956930057](https://github.com/969981/poko_resources/actions/runs/41956930057) **Success**。在原版 2.0.1 ARM64 可执行段中扫描 `LDR [vptr, #0x38] → BLR` 形态，得到：
+
+- `LDR X,[X,#0x38]` 结构性匹配 **28,039** 条；
+- 在随后限定窗口内出现同目标寄存器 `BLR/BR` 的候选 **13,800** 个加载点；
+- 前一条指令也符合 `LDR vptr,[object,#0]` 的 **2,543** 个加载点；
+- 连续三指令 `LDR vptr → LDR [vptr,#0x38] → BLR` 的 **2,285** 个实例。
+
+**这些是真实的通用 ARM64 虚调用结构，但没有一个被证明实际调用 M9.12 的那一个具体对象类**。不能把所有偏移同为 `0x38` 的虚调用算作目标回调。原始字节和最多 700 条上下文样本见 `exefs_virtual_slot_0x38_dispatch_candidates.json`。继续的最短路径是从 M9.12 的两个构造点追踪对象流向哪个注册表／调用者，再与某一个具体 `BLR` 和 `x1/x2/x3` 参数设置建立连续控制流。
+
+RNK 物理文件仍未取得；脚本→M7 正式外键仍 **0**。
