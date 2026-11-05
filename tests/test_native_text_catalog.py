@@ -74,6 +74,51 @@ class NativeTextCatalog(unittest.TestCase):
             self.assertEqual(edges[0]["target_text_id"], "1")
             self.assertEqual(edges[0]["script_caller_verified"], "false")
 
+    def test_m8_pinned_role_restores_locale_identity_outside_m7_groups(self):
+        with tempfile.TemporaryDirectory() as d:
+            m7, grouped, unlinked, edge_path, dest = fixture(Path(d))
+            inventory = m7 / "native_table_inventory.csv"
+            with inventory.open("a", encoding="utf-8", newline="") as f:
+                w = csv.writer(f)
+                for entry in range(80, 89):
+                    w.writerow([entry, "PARSED", "a" * 64, 2, 8])
+            (unlinked / "unlinked_text_export_report.json").write_text(json.dumps({
+                "tables_exported": 10,
+                "table_entries": [{"entry": e} for e in [20, *range(80, 89)]],
+                "full_game_coverage": "NOT_CLAIMED"
+            }))
+            m8_path = Path(d) / "m8_roles.csv"
+            lang_columns = [f"{l}_entry" for l in
+                            ("jp", "en", "fr", "it", "de", "es", "zht", "ko", "zhs")]
+            columns = ["category", "target_group_start", "target_text_id",
+                       "target_form_index", "relationship", "evidence_grade",
+                       "parser_source_url", *lang_columns]
+            role_rows = []
+            for text_id in range(2):
+                row = dict(category="Reactions", target_group_start=80,
+                           target_text_id=text_id, target_form_index=0,
+                           relationship="explicit_native_role_table",
+                           evidence_grade="PINNED_PARSER_ROLE_PLUS_NATIVE_ROW",
+                           parser_source_url="pinned-test-parser")
+                row.update({l: 80 + i for i, l in enumerate(lang_columns)})
+                role_rows.append(row)
+            write_csv(m8_path, columns, role_rows)
+            with edge_path.open("a", encoding="utf-8", newline="") as f:
+                csv.writer(f).writerow([
+                    "reaction:1", "Reactions", "1", "33", "0", "u16 id",
+                    "80", "1", "0", "Reactions", "NATIVE_TYPED_FIELD_PARSER",
+                    "pinned-test-parser", "",
+                ])
+            report = run(m7, grouped, unlinked, edge_path, dest, m8_path)
+            self.assertEqual(report["m8_source_verified_role_tables"], 9)
+            self.assertEqual(report["unlinked_tables_with_m9_verified_typed_edges"], 9)
+            with (dest / "native_text_table_catalog.csv").open(newline="") as f:
+                catalog = {int(r["source_entry"]): r for r in csv.DictReader(f)}
+            self.assertEqual(catalog[80]["locale_candidate"], "jp")
+            self.assertEqual(catalog[88]["locale_candidate"], "zhs")
+            self.assertEqual(catalog[80]["business_category"], "Reactions")
+            self.assertEqual(catalog[20]["business_category"], "UNKNOWN")
+
     def test_reject_invalid_m9_row_index(self):
         with tempfile.TemporaryDirectory() as d:
             m7, grouped, unlinked, edge_path, dest = fixture(Path(d))
