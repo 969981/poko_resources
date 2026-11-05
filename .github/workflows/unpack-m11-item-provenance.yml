@@ -7,6 +7,8 @@ on:
     paths:
       - "Scripts/resources/trace_native_item_provenance.py"
       - "Scripts/resources/trace_native_item_decisions.py"
+      - "Scripts/resources/trace_native_item_resource_loader.py"
+      - "tests/test_trace_native_item_resource_loader.py"
       - "tests/test_trace_native_item_decisions.py"
       - "tests/test_trace_native_item_provenance.py"
       - ".github/workflows/unpack-m11-item-provenance.yml"
@@ -15,6 +17,8 @@ on:
     paths:
       - "Scripts/resources/trace_native_item_provenance.py"
       - "Scripts/resources/trace_native_item_decisions.py"
+      - "Scripts/resources/trace_native_item_resource_loader.py"
+      - "tests/test_trace_native_item_resource_loader.py"
       - "tests/test_trace_native_item_decisions.py"
       - "tests/test_trace_native_item_provenance.py"
       - ".github/workflows/unpack-m11-item-provenance.yml"
@@ -37,6 +41,8 @@ jobs:
             /Scripts/resources/trace_native_species_item_callers.py
             /Scripts/resources/trace_native_item_provenance.py
             /Scripts/resources/trace_native_item_decisions.py
+            /Scripts/resources/trace_native_item_resource_loader.py
+            /tests/test_trace_native_item_resource_loader.py
             /tests/test_trace_native_item_decisions.py
             /tests/test_trace_native_item_provenance.py
       - uses: actions/setup-python@v5
@@ -48,10 +54,14 @@ jobs:
         run: python -m unittest discover -s tests -p "test_trace_native_item_provenance.py" -v
       - name: Synthetic native byte conditional consumers with negative controls
         run: python -m unittest discover -s tests -p "test_trace_native_item_decisions.py" -v
+      - name: Synthetic original 983 call/global-store and address-negative tests
+        run: python -m unittest discover -s tests -p "test_trace_native_item_resource_loader.py" -v
       - name: Analyze actual original ExeFS with 4600 x 68 source hash lock
         run: python -m Scripts.resources.trace_native_item_provenance
       - name: Follow original byte loads into conditional uses
         run: python -m Scripts.resources.trace_native_item_decisions
+      - name: Verify exact 983 call chain and global pointer evidence in original main
+        run: python -m Scripts.resources.trace_native_item_resource_loader
       - name: Enforce source coverage and absence of unsupported semantic claims
         run: |
           python3 - <<'PY'
@@ -70,6 +80,13 @@ jobs:
           decision=json.loads((folder/"field_condition_dataflow.json").read_text())
           assert not decision["confirmed_item_record_base"] and not decision["confirmed_material_type_enum"]
           assert decision["main_sha256"]==report["source_main_sha256"]
+          loader=json.loads((folder/"literal983_global_provenance.json").read_text())
+          assert len(loader["literal_983_call_chains"])==2
+          assert loader["global_rva"]=="0x36d54c8"
+          assert not loader["confirmed_original_00983_table_pointer"]
+          assert not loader["confirmed_category_enum"] and not loader["confirmed_stack_limit"]
+          print("M11 original 983 call chains",len(loader["literal_983_call_chains"]),
+                "global xrefs",loader["global_xref_count"])
           print("M11 conditions", decision["counters"], "total", decision["conditional_candidate_total"])
           print("M11 native scanned slots", report["inspected_instruction_slots"],
                 "co-access candidate sites", report["coaccess_candidates_total"])
@@ -82,4 +99,5 @@ jobs:
             UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M11/item_consumer_review_shortlist.json
             UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M11/field_condition_dataflow.json
             UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M11/field_condition_shortlist.json
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M11/literal983_global_provenance.json
           retention-days: 30
