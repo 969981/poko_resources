@@ -1,0 +1,702 @@
+{
+  "report": {
+    "status": "M9_NATIVE_VTABLE_NEIGHBORHOOD_XREF_TRIAGE_ONLY",
+    "original_exefs_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+    "address_window_bytes_each_side": 256,
+    "scan_instruction_distances": [
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      32
+    ],
+    "static_address_candidates": 3,
+    "per_hash": [
+      {
+        "property_hash": "0x0b6e1578",
+        "entry_pc": 13249600,
+        "slot_va": 53399392,
+        "nearby_reference_count": 0,
+        "context_u64": [
+          {
+            "va": 53399264,
+            "u64": "0x0000000000ca2b3c",
+            "in_executable_text": true,
+            "delta_from_slot": -128
+          },
+          {
+            "va": 53399272,
+            "u64": "0x0000000001fe4f90",
+            "in_executable_text": true,
+            "delta_from_slot": -120
+          },
+          {
+            "va": 53399280,
+            "u64": "0x0000000001fe4f98",
+            "in_executable_text": true,
+            "delta_from_slot": -112
+          },
+          {
+            "va": 53399288,
+            "u64": "0x0000000001fe4f08",
+            "in_executable_text": true,
+            "delta_from_slot": -104
+          },
+          {
+            "va": 53399296,
+            "u64": "0x0000000001fe4f10",
+            "in_executable_text": true,
+            "delta_from_slot": -96
+          },
+          {
+            "va": 53399304,
+            "u64": "0x0000000001fe4f18",
+            "in_executable_text": true,
+            "delta_from_slot": -88
+          },
+          {
+            "va": 53399312,
+            "u64": "0x0000000001fe4f24",
+            "in_executable_text": true,
+            "delta_from_slot": -80
+          },
+          {
+            "va": 53399320,
+            "u64": "0x0000000001fe4f30",
+            "in_executable_text": true,
+            "delta_from_slot": -72
+          },
+          {
+            "va": 53399328,
+            "u64": "0x0000000001fe4f38",
+            "in_executable_text": true,
+            "delta_from_slot": -64
+          },
+          {
+            "va": 53399336,
+            "u64": "0x0000000001fe4f40",
+            "in_executable_text": true,
+            "delta_from_slot": -56
+          },
+          {
+            "va": 53399344,
+            "u64": "0x0000000001fe4f64",
+            "in_executable_text": true,
+            "delta_from_slot": -48
+          },
+          {
+            "va": 53399352,
+            "u64": "0x0000000000000000",
+            "in_executable_text": true,
+            "delta_from_slot": -40
+          },
+          {
+            "va": 53399360,
+            "u64": "0x0000000000000000",
+            "in_executable_text": true,
+            "delta_from_slot": -32
+          },
+          {
+            "va": 53399368,
+            "u64": "0x0000000000ca2c08",
+            "in_executable_text": true,
+            "delta_from_slot": -24
+          },
+          {
+            "va": 53399376,
+            "u64": "0x0000000000ca2c0c",
+            "in_executable_text": true,
+            "delta_from_slot": -16
+          },
+          {
+            "va": 53399384,
+            "u64": "0x0000000001fe4fa0",
+            "in_executable_text": true,
+            "delta_from_slot": -8
+          },
+          {
+            "va": 53399392,
+            "u64": "0x0000000000ca2c40",
+            "in_executable_text": true,
+            "delta_from_slot": 0
+          },
+          {
+            "va": 53399400,
+            "u64": "0x0000000000ca2cf8",
+            "in_executable_text": true,
+            "delta_from_slot": 8
+          },
+          {
+            "va": 53399408,
+            "u64": "0x0000000000ca2d04",
+            "in_executable_text": true,
+            "delta_from_slot": 16
+          },
+          {
+            "va": 53399416,
+            "u64": "0x0000000000ca2d10",
+            "in_executable_text": true,
+            "delta_from_slot": 24
+          },
+          {
+            "va": 53399424,
+            "u64": "0x0000000000ca2d18",
+            "in_executable_text": true,
+            "delta_from_slot": 32
+          },
+          {
+            "va": 53399432,
+            "u64": "0x0000000001fe4ef8",
+            "in_executable_text": true,
+            "delta_from_slot": 40
+          },
+          {
+            "va": 53399440,
+            "u64": "0x0000000001fe4f88",
+            "in_executable_text": true,
+            "delta_from_slot": 48
+          },
+          {
+            "va": 53399448,
+            "u64": "0x0000000001fe4f90",
+            "in_executable_text": true,
+            "delta_from_slot": 56
+          },
+          {
+            "va": 53399456,
+            "u64": "0x0000000001fe4f98",
+            "in_executable_text": true,
+            "delta_from_slot": 64
+          },
+          {
+            "va": 53399464,
+            "u64": "0x0000000001fe4f08",
+            "in_executable_text": true,
+            "delta_from_slot": 72
+          },
+          {
+            "va": 53399472,
+            "u64": "0x0000000001fe4f10",
+            "in_executable_text": true,
+            "delta_from_slot": 80
+          },
+          {
+            "va": 53399480,
+            "u64": "0x0000000001fe4f18",
+            "in_executable_text": true,
+            "delta_from_slot": 88
+          },
+          {
+            "va": 53399488,
+            "u64": "0x0000000001fe4f24",
+            "in_executable_text": true,
+            "delta_from_slot": 96
+          },
+          {
+            "va": 53399496,
+            "u64": "0x0000000001fe4f30",
+            "in_executable_text": true,
+            "delta_from_slot": 104
+          },
+          {
+            "va": 53399504,
+            "u64": "0x0000000001fe4f38",
+            "in_executable_text": true,
+            "delta_from_slot": 112
+          },
+          {
+            "va": 53399512,
+            "u64": "0x0000000001fe4f40",
+            "in_executable_text": true,
+            "delta_from_slot": 120
+          },
+          {
+            "va": 53399520,
+            "u64": "0x0000000001fe4f64",
+            "in_executable_text": true,
+            "delta_from_slot": 128
+          }
+        ]
+      },
+      {
+        "property_hash": "0xe21ff09f",
+        "entry_pc": 13862080,
+        "slot_va": 53452832,
+        "nearby_reference_count": 0,
+        "context_u64": [
+          {
+            "va": 53452704,
+            "u64": "0x0000000000d37b60",
+            "in_executable_text": true,
+            "delta_from_slot": -128
+          },
+          {
+            "va": 53452712,
+            "u64": "0x0000000000d3839c",
+            "in_executable_text": true,
+            "delta_from_slot": -120
+          },
+          {
+            "va": 53452720,
+            "u64": "0x0000000000d38468",
+            "in_executable_text": true,
+            "delta_from_slot": -112
+          },
+          {
+            "va": 53452728,
+            "u64": "0x0000000000d38470",
+            "in_executable_text": true,
+            "delta_from_slot": -104
+          },
+          {
+            "va": 53452736,
+            "u64": "0x0000000000d38478",
+            "in_executable_text": true,
+            "delta_from_slot": -96
+          },
+          {
+            "va": 53452744,
+            "u64": "0x0000000000d38480",
+            "in_executable_text": true,
+            "delta_from_slot": -88
+          },
+          {
+            "va": 53452752,
+            "u64": "0x0000000001fea934",
+            "in_executable_text": true,
+            "delta_from_slot": -80
+          },
+          {
+            "va": 53452760,
+            "u64": "0x0000000001fea940",
+            "in_executable_text": true,
+            "delta_from_slot": -72
+          },
+          {
+            "va": 53452768,
+            "u64": "0x0000000001fea948",
+            "in_executable_text": true,
+            "delta_from_slot": -64
+          },
+          {
+            "va": 53452776,
+            "u64": "0x0000000001fea94c",
+            "in_executable_text": true,
+            "delta_from_slot": -56
+          },
+          {
+            "va": 53452784,
+            "u64": "0x0000000001fea954",
+            "in_executable_text": true,
+            "delta_from_slot": -48
+          },
+          {
+            "va": 53452792,
+            "u64": "0x0000000000000000",
+            "in_executable_text": true,
+            "delta_from_slot": -40
+          },
+          {
+            "va": 53452800,
+            "u64": "0x0000000000000000",
+            "in_executable_text": true,
+            "delta_from_slot": -32
+          },
+          {
+            "va": 53452808,
+            "u64": "0x0000000000d38488",
+            "in_executable_text": true,
+            "delta_from_slot": -24
+          },
+          {
+            "va": 53452816,
+            "u64": "0x0000000000d3848c",
+            "in_executable_text": true,
+            "delta_from_slot": -16
+          },
+          {
+            "va": 53452824,
+            "u64": "0x0000000001fe4fa0",
+            "in_executable_text": true,
+            "delta_from_slot": -8
+          },
+          {
+            "va": 53452832,
+            "u64": "0x0000000000d384c0",
+            "in_executable_text": true,
+            "delta_from_slot": 0
+          },
+          {
+            "va": 53452840,
+            "u64": "0x0000000000d38570",
+            "in_executable_text": true,
+            "delta_from_slot": 8
+          },
+          {
+            "va": 53452848,
+            "u64": "0x0000000000d3857c",
+            "in_executable_text": true,
+            "delta_from_slot": 16
+          },
+          {
+            "va": 53452856,
+            "u64": "0x0000000000d38588",
+            "in_executable_text": true,
+            "delta_from_slot": 24
+          },
+          {
+            "va": 53452864,
+            "u64": "0x0000000000d38590",
+            "in_executable_text": true,
+            "delta_from_slot": 32
+          },
+          {
+            "va": 53452872,
+            "u64": "0x0000000001fe4ef8",
+            "in_executable_text": true,
+            "delta_from_slot": 40
+          },
+          {
+            "va": 53452880,
+            "u64": "0x0000000001fe4f88",
+            "in_executable_text": true,
+            "delta_from_slot": 48
+          },
+          {
+            "va": 53452888,
+            "u64": "0x0000000001fe4f90",
+            "in_executable_text": true,
+            "delta_from_slot": 56
+          },
+          {
+            "va": 53452896,
+            "u64": "0x0000000001fe4f98",
+            "in_executable_text": true,
+            "delta_from_slot": 64
+          },
+          {
+            "va": 53452904,
+            "u64": "0x0000000001fe4f08",
+            "in_executable_text": true,
+            "delta_from_slot": 72
+          },
+          {
+            "va": 53452912,
+            "u64": "0x0000000001fe4f10",
+            "in_executable_text": true,
+            "delta_from_slot": 80
+          },
+          {
+            "va": 53452920,
+            "u64": "0x0000000001fe4f18",
+            "in_executable_text": true,
+            "delta_from_slot": 88
+          },
+          {
+            "va": 53452928,
+            "u64": "0x0000000001fe4f24",
+            "in_executable_text": true,
+            "delta_from_slot": 96
+          },
+          {
+            "va": 53452936,
+            "u64": "0x0000000001fe4f30",
+            "in_executable_text": true,
+            "delta_from_slot": 104
+          },
+          {
+            "va": 53452944,
+            "u64": "0x0000000001fe4f38",
+            "in_executable_text": true,
+            "delta_from_slot": 112
+          },
+          {
+            "va": 53452952,
+            "u64": "0x0000000001fe4f40",
+            "in_executable_text": true,
+            "delta_from_slot": 120
+          },
+          {
+            "va": 53452960,
+            "u64": "0x0000000001fe4f64",
+            "in_executable_text": true,
+            "delta_from_slot": 128
+          }
+        ]
+      },
+      {
+        "property_hash": "0xf92c5190",
+        "entry_pc": 13997088,
+        "slot_va": 53469144,
+        "nearby_reference_count": 3,
+        "context_u64": [
+          {
+            "va": 53469016,
+            "u64": "0x0000000000d593bc",
+            "in_executable_text": true,
+            "delta_from_slot": -128
+          },
+          {
+            "va": 53469024,
+            "u64": "0x0000000000d593c4",
+            "in_executable_text": true,
+            "delta_from_slot": -120
+          },
+          {
+            "va": 53469032,
+            "u64": "0x0000000001fea934",
+            "in_executable_text": true,
+            "delta_from_slot": -112
+          },
+          {
+            "va": 53469040,
+            "u64": "0x0000000001fea940",
+            "in_executable_text": true,
+            "delta_from_slot": -104
+          },
+          {
+            "va": 53469048,
+            "u64": "0x0000000001fea948",
+            "in_executable_text": true,
+            "delta_from_slot": -96
+          },
+          {
+            "va": 53469056,
+            "u64": "0x0000000001fea94c",
+            "in_executable_text": true,
+            "delta_from_slot": -88
+          },
+          {
+            "va": 53469064,
+            "u64": "0x0000000001fea954",
+            "in_executable_text": true,
+            "delta_from_slot": -80
+          },
+          {
+            "va": 53469072,
+            "u64": "0x0000000000000000",
+            "in_executable_text": true,
+            "delta_from_slot": -72
+          },
+          {
+            "va": 53469080,
+            "u64": "0x0000000000000000",
+            "in_executable_text": true,
+            "delta_from_slot": -64
+          },
+          {
+            "va": 53469088,
+            "u64": "0x0000000000d593cc",
+            "in_executable_text": true,
+            "delta_from_slot": -56
+          },
+          {
+            "va": 53469096,
+            "u64": "0x0000000000d593d0",
+            "in_executable_text": true,
+            "delta_from_slot": -48
+          },
+          {
+            "va": 53469104,
+            "u64": "0x0000000000000000",
+            "in_executable_text": true,
+            "delta_from_slot": -40
+          },
+          {
+            "va": 53469112,
+            "u64": "0x0000000000000000",
+            "in_executable_text": true,
+            "delta_from_slot": -32
+          },
+          {
+            "va": 53469120,
+            "u64": "0x0000000000d593d4",
+            "in_executable_text": true,
+            "delta_from_slot": -24
+          },
+          {
+            "va": 53469128,
+            "u64": "0x0000000000d593d8",
+            "in_executable_text": true,
+            "delta_from_slot": -16
+          },
+          {
+            "va": 53469136,
+            "u64": "0x0000000001fe4fa0",
+            "in_executable_text": true,
+            "delta_from_slot": -8
+          },
+          {
+            "va": 53469144,
+            "u64": "0x0000000000d59420",
+            "in_executable_text": true,
+            "delta_from_slot": 0
+          },
+          {
+            "va": 53469152,
+            "u64": "0x0000000000d594dc",
+            "in_executable_text": true,
+            "delta_from_slot": 8
+          },
+          {
+            "va": 53469160,
+            "u64": "0x0000000000d594e8",
+            "in_executable_text": true,
+            "delta_from_slot": 16
+          },
+          {
+            "va": 53469168,
+            "u64": "0x0000000000d594f4",
+            "in_executable_text": true,
+            "delta_from_slot": 24
+          },
+          {
+            "va": 53469176,
+            "u64": "0x0000000000d594fc",
+            "in_executable_text": true,
+            "delta_from_slot": 32
+          },
+          {
+            "va": 53469184,
+            "u64": "0x0000000001fe4ef8",
+            "in_executable_text": true,
+            "delta_from_slot": 40
+          },
+          {
+            "va": 53469192,
+            "u64": "0x0000000001fe4f88",
+            "in_executable_text": true,
+            "delta_from_slot": 48
+          },
+          {
+            "va": 53469200,
+            "u64": "0x0000000001fe4f90",
+            "in_executable_text": true,
+            "delta_from_slot": 56
+          },
+          {
+            "va": 53469208,
+            "u64": "0x0000000001fe4f98",
+            "in_executable_text": true,
+            "delta_from_slot": 64
+          },
+          {
+            "va": 53469216,
+            "u64": "0x0000000001fe4f08",
+            "in_executable_text": true,
+            "delta_from_slot": 72
+          },
+          {
+            "va": 53469224,
+            "u64": "0x0000000001fe4f10",
+            "in_executable_text": true,
+            "delta_from_slot": 80
+          },
+          {
+            "va": 53469232,
+            "u64": "0x0000000001fe4f18",
+            "in_executable_text": true,
+            "delta_from_slot": 88
+          },
+          {
+            "va": 53469240,
+            "u64": "0x0000000001fe4f24",
+            "in_executable_text": true,
+            "delta_from_slot": 96
+          },
+          {
+            "va": 53469248,
+            "u64": "0x0000000001fe4f30",
+            "in_executable_text": true,
+            "delta_from_slot": 104
+          },
+          {
+            "va": 53469256,
+            "u64": "0x0000000001fe4f38",
+            "in_executable_text": true,
+            "delta_from_slot": 112
+          },
+          {
+            "va": 53469264,
+            "u64": "0x0000000001fe4f40",
+            "in_executable_text": true,
+            "delta_from_slot": 120
+          },
+          {
+            "va": 53469272,
+            "u64": "0x0000000001fe4f64",
+            "in_executable_text": true,
+            "delta_from_slot": 128
+          }
+        ]
+      }
+    ],
+    "candidate_address_point_count": 3,
+    "verified_vtable_address_points": 0,
+    "verified_indirect_runtime_callers": 0,
+    "verified_KIDSOBJDB_property_getters": 0,
+    "new_scene_quest_building_text_foreign_keys": 0,
+    "limitations": [
+      "Native data region pointer slots are real, but neighboring addresses need vptr construction/use proof.",
+      "ADRP/LDR can fetch an arbitrary static value; it does not prove callback invocation.",
+      "Nonadjacent ADRP uses may be register-clobbered across intervening instructions.",
+      "New M7 text foreign keys are forbidden without typed resource field + native caller trace."
+    ]
+  },
+  "xrefs": [
+    {
+      "property_hash": "0xf92c5190",
+      "entry_callback": 13997088,
+      "pointer_slot": 53469144,
+      "address_point": 53469072,
+      "delta_from_slot": -72,
+      "adrp_pc": 13996472,
+      "consumer_pc": 13996476,
+      "instruction_kind": "ADRP_ADD_ADDRESS",
+      "distance_instructions": 1,
+      "adrp_word": "90012d28",
+      "consumer_word": "913e4108",
+      "evidence_grade": "ADJACENT_ARM64_ADDRESS_CONSTRUCTION",
+      "vtable_address_point_confirmed": false,
+      "indirect_runtime_call_confirmed": false,
+      "script_text_fk_confirmed": false
+    },
+    {
+      "property_hash": "0xf92c5190",
+      "entry_callback": 13997088,
+      "pointer_slot": 53469144,
+      "address_point": 53469200,
+      "delta_from_slot": 56,
+      "adrp_pc": 13997612,
+      "consumer_pc": 13997628,
+      "instruction_kind": "ADRP_ADD_ADDRESS",
+      "distance_instructions": 4,
+      "adrp_word": "b0012d28",
+      "consumer_word": "91004108",
+      "evidence_grade": "NONADJACENT_ARM64_ADDRESS_CANDIDATE",
+      "vtable_address_point_confirmed": false,
+      "indirect_runtime_call_confirmed": false,
+      "script_text_fk_confirmed": false
+    },
+    {
+      "property_hash": "0xf92c5190",
+      "entry_callback": 13997088,
+      "pointer_slot": 53469144,
+      "address_point": 53469368,
+      "delta_from_slot": 224,
+      "adrp_pc": 13997612,
+      "consumer_pc": 13997616,
+      "instruction_kind": "ADRP_ADD_ADDRESS",
+      "distance_instructions": 1,
+      "adrp_word": "b0012d28",
+      "consumer_word": "9102e108",
+      "evidence_grade": "ADJACENT_ARM64_ADDRESS_CONSTRUCTION",
+      "vtable_address_point_confirmed": false,
+      "indirect_runtime_call_confirmed": false,
+      "script_text_fk_confirmed": false
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+property_hash,entry_callback,pointer_slot,address_point,delta_from_slot,adrp_pc,consumer_pc,instruction_kind,distance_instructions,adrp_word,consumer_word,evidence_grade,vtable_address_point_confirmed,indirect_runtime_call_confirmed,script_text_fk_confirmed
+0xf92c5190,13997088,53469144,53469072,-72,13996472,13996476,ADRP_ADD_ADDRESS,1,90012d28,913e4108,ADJACENT_ARM64_ADDRESS_CONSTRUCTION,False,False,False
+0xf92c5190,13997088,53469144,53469200,56,13997612,13997628,ADRP_ADD_ADDRESS,4,b0012d28,91004108,NONADJACENT_ARM64_ADDRESS_CANDIDATE,False,False,False
+0xf92c5190,13997088,53469144,53469368,224,13997612,13997616,ADRP_ADD_ADDRESS,1,b0012d28,9102e108,ADJACENT_ARM64_ADDRESS_CONSTRUCTION,False,False,False
