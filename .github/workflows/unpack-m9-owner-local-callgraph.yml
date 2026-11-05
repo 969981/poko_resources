@@ -1,0 +1,96 @@
+name: M9.16 - localized owner constructor x19 callgraph
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_owner_local_callgraph.py"
+      - "tests/test_m9_owner_local_callgraph.py"
+      - ".github/workflows/unpack-m9-owner-local-callgraph.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-16-owner-callgraph
+  cancel-in-progress: false
+
+jobs:
+  trace-native-owner:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m9_owner_object_escape.py
+            Scripts/resources/m9_owner_local_callgraph.py
+            tests/test_m9_owner_local_callgraph.py
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_0x28_escape_trace.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_x19_local_callgraph.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Test direct call target and nonsemantic source tracking
+        env:
+          PYTHONPATH: "."
+        run: python -m unittest discover -s tests -p 'test_m9_owner_local_callgraph.py' -v
+
+      - name: Original ExeFS exact owner x19 source and incoming callsites
+        env:
+          PYTHONPATH: "."
+        run: |
+          python Scripts/resources/m9_owner_local_callgraph.py \
+            --main 2.0.1/exefs/main \
+            --owner-proof UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_0x28_escape_trace.json \
+            --dest UnPack/2.0.1/Resources/Localization/M9/NameTables
+
+      - name: Preserve raw proof and unknown semantics
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_x19_local_callgraph.json').read_text(encoding='utf-8'))
+          r=d['report']
+          assert r['verified_member_store_pc']==0xd59274
+          assert r['verified_owner_member_store'] is True
+          assert r['owner_x19_semantic_type_restored'] is False
+          assert r['verified_direct_owner_constructor_caller']==0
+          assert r['verified_specific_virtual_dispatch']==0
+          assert r['verified_scene_quest_building_m7_text_fk']==0
+          assert r['total_direct_bl_xrefs_into_region'] == sum(x['native_direct_bl_call_count'] for x in d['incoming_direct_bl_references'])
+          print('M9.16 original owner callgraph PASS')
+          PY
+
+      - name: Archive byte-verified native candidate evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m9-16-owner-local-callgraph
+          path: UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_x19_local_callgraph.json
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Commit verified native context to research branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_x19_local_callgraph.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9.16): local owner register and direct caller xrefs"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
