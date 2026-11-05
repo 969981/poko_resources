@@ -1,0 +1,96 @@
+name: M28 - Original NSO ARM64 31-polynomial candidate scan
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m28_original_nso_31_arithmetic_candidates.py"
+      - ".github/workflows/unpack-m28-arm64-hash31-candidates.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m28-hash31-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify-original-31-multiply-callsite-candidates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Sparse checkout pinned original NSO0 and AArch64 parsers
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m20_native_species_item_targets.py
+            Scripts/resources/m28_original_nso_31_arithmetic_candidates.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install native NSO and ARM64 instruction decoder
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Test ARM64 opcode masks with positive and negative cases
+        run: python -m Scripts.resources.m28_original_nso_31_arithmetic_candidates --self-test
+
+      - name: Source-byte scan original NSO 32-bit shifted-5 and MADD with nearby 31
+        run: python -m Scripts.resources.m28_original_nso_31_arithmetic_candidates
+
+      - name: Validate evidence provenance and no guessed game ID
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          out=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M28")
+          s=json.loads((out/"m28_31_instruction_search_summary.json").read_text(encoding="utf-8"))
+          details=json.loads((out/"m28_31_arithmetic_candidates.json").read_text(encoding="utf-8"))
+          assert s["version"]=="2.0.1"
+          assert s["original_main_sha256"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert s["original_aligned_instruction_slots_scanned"]>1000000
+          assert len(details["ranked_candidates"])==s["ranked_candidate_windows_saved"]
+          assert set(details["anchor_disassembly"])=={
+              "native_property_descriptor_method","native_type_getter",
+              "pokemon_dex_id_string_reference","main_pokemon_list_string_reference",
+              "generic_type_register"}
+          assert not s["native_hash31_function_verified"]
+          assert not s["native_kids_twin_array_consumer_verified"]
+          assert not s["game_species_id_to_array_key_verified"]
+          assert all(not r["native_31_recurrence_proven"] and not
+              r["KIDS_icon_registry_consumer_proven"] and not
+              r["native_game_species_id_binding_proven"]
+              for r in details["ranked_candidates"])
+          print("M28 exact original NSO arithmetic signatures and uncertainty verified")
+          PY
+
+      - name: Upload original NSO bounded evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m28-native-ARM64-hash31-arithmetic-candidate-windows
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M28/
+          if-no-files-found: warn
+          retention-days: 21
+
+      - name: Commit original ARM64 candidate report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M28/
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m28): original NSO 31-polynomial instruction candidates with source-byte proof"
+          for n in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
