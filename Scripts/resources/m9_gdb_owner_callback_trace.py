@@ -83,7 +83,7 @@ class TracePoint(gdb.Breakpoint):
             self.enabled=False
             return False
         ctx={name:as_register(name) for name in
-             ("pc","x0","x1","x2","x3","x8","x19","x22","x23")}
+             ("pc","lr","x0","x1","x2","x3","x8","x19","x22","x23")}
         try:
             inferior=gdb.selected_inferior()
             x0vp=ptr(inferior,ctx["x0"])
@@ -92,6 +92,12 @@ class TracePoint(gdb.Breakpoint):
             owner_x3_p28=ptr(inferior,ctx["x3"]+0x28 if ctx["x3"] is not None else None)
             owner_x19_p28=ptr(inferior,ctx["x19"]+0x28 if ctx["x19"] is not None else None)
             desc=ptr(inferior,x0vp+0x38 if x0vp else None)
+            caller_pc=ctx["lr"]-4 if ctx["lr"] is not None and ctx["lr"]>=4 else None
+            try:
+                caller_word=int.from_bytes(inferior.read_memory(caller_pc,4).tobytes(),"little") if caller_pc else None
+            except (gdb.error,ValueError,MemoryError):
+                caller_word=None
+            caller_is_blr=(caller_word & 0xfffffc1f)==0xd63f0000 if caller_word is not None else None
             row={
                 "kind":"m9_23_native_runtime_breakpoint_hit",
                 "unix_timestamp":time.time(),
@@ -109,6 +115,9 @@ class TracePoint(gdb.Breakpoint):
                 "known_inner_vptr_absolute":hex(self.owner.main_base+INNER_VPTR_OFFSET),
                 "x0_has_known_inner_vptr":x0vp==(self.owner.main_base+INNER_VPTR_OFFSET) if x0vp is not None else None,
                 "descriptor_callback_pc_expected":hex(self.owner.main_base+DESCRIPTOR_CALLBACK_OFFSET),
+                "candidate_caller_pc_from_lr_minus4":h(caller_pc),
+                "caller_instruction_word":h(caller_word),
+                "caller_instruction_is_arm64_blr":caller_is_blr,
                 "actual_descriptor_callback_breakpoint_hit":self.name=="actual_inner_descriptor_callback_entry",
                 "same_runtime_owner_instance_proven":False,
                 "M7_script_text_fk_verified":False,
