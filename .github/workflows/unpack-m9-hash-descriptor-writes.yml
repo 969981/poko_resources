@@ -90,6 +90,17 @@ jobs:
               assert not rec["runtime_property_lookup_verified"]
               assert not rec["scene_quest_building_text_fk_verified"]
           assert (root/"exefs_descriptor_hash_writes.csv").is_file()
+          names=json.loads((root/"exefs_hash_name_candidates.json").read_text(encoding="utf-8"))
+          expected={
+              "0x0b6e1578":"DisplaysetObjectNameHash",
+              "0xe21ff09f":"ObjectNameHashArray",
+              "0xf92c5190":"TexturesRenderStateObjectHash",
+          }
+          observed={x["property_hash"]:x["exefs_string_candidate"] for x in names}
+          assert observed == expected, observed
+          assert all(not x["rnk_name_table_verified"] for x in names)
+          assert all(not x["runtime_property_getter_verified"] for x in names)
+          assert (root/"exefs_hash_name_candidates.csv").is_file()
           print("Inspected:",r["inspected_hash_constructor_sites"])
           print("Stores:",r["hash_sites_with_explicit_memory_store"])
           print("Paired descriptor writes:",r["hash_sites_with_paired_descriptor_store"])
