@@ -1,0 +1,31 @@
+{
+  "version": "2.0.1",
+  "unresolved_ambiguous_pokohex_portrait_ids": [
+    16,
+    18,
+    96,
+    98,
+    218,
+    220,
+    296,
+    297,
+    298
+  ],
+  "original_native_source_to_texture_candidate_rows": 54,
+  "source_oid_to_original_array_slot_links_verified": 54,
+  "groups_with_multisource_visual_candidates": 9,
+  "rows_per_reference": {
+    "16": 6,
+    "18": 6,
+    "96": 6,
+    "98": 6,
+    "218": 6,
+    "220": 6,
+    "296": 6,
+    "297": 6,
+    "298": 6
+  },
+  "native_runtime_villager_id_bindings_verified": 0,
+  "native_runtime_species_id_bindings_verified": 0,
+  "warning": "Array position provenance does not disambiguate PokoHex portrait IDs; runtime per-NPC ID/variant consumer still required."
+}
