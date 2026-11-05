@@ -1,0 +1,90 @@
+name: M29 - Original Pokémon identity anchors and KIDS class access
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m29_native_identity_anchor_caller_provenance.py"
+      - ".github/workflows/unpack-m29-native-identity-KIDS-caller.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m29-KIDS-caller-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify-original-identity-record-roles:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Sparse checkout original NSO0 and original ARM64 decoders
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m20_native_species_item_targets.py
+            Scripts/resources/m29_native_identity_anchor_caller_provenance.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install original NSO parser and AArch64 disassembler
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Selftest original string/record/class anchor coordinates
+        run: python -m Scripts.resources.m29_native_identity_anchor_caller_provenance --self-test
+
+      - name: Trace native identity strings and static KIDS class global xrefs
+        run: python -m Scripts.resources.m29_native_identity_anchor_caller_provenance
+
+      - name: Preserve code facts without falsely naming a runtime species ID
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M29")
+          s=json.loads((p/"m29_native_identity_consumer_triage_summary.json").read_text(encoding="utf-8"))
+          details=json.loads((p/"m29_original_identity_anchor_context_and_KIDS_class_refs.json").read_text(encoding="utf-8"))
+          assert s["original_exefs_main_sha256"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert s["verified_three_identity_or_list_rodata_anchors"]==3
+          assert s["pokemon_dex_id_anchor_has_three_u16_field_reads"]==[4,6,8]
+          assert s["main_pokemon_list_has_flag_byte_at_offset"]=="0x26"
+          assert set(details["source_anchor_windows"])=={"RegisterPokemonNum","pokemon_dex_id","m_mainPokemonList"}
+          assert s["native_kids_class_global_refs_count"]>=0
+          assert not s["exact_native_game_species_field_proven"]
+          assert not s["same_instance_entity_id_to_kids_source_oid_proven"]
+          assert not s["native_species_ID_to_texture_OID_verified"]
+          assert all(not a["KIDS_Source_OID_correlated_same_instance_proven"] for a in details["source_anchor_windows"].values())
+          print("PASS M29 original code/rodata/branch sources; no unsupported ID assignment")
+          PY
+
+      - name: Upload inspectable original ID and class xref evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m29-original-KIDS-class-and-pokemon-identity-anchors
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M29/
+          if-no-files-found: warn
+
+      - name: Commit verified original native code context report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M29/
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m29): original Pokémon key-value/log anchors and class table source refs"
+          for n in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
