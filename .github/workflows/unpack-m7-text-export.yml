@@ -1,0 +1,121 @@
+name: M7 - Export native text files (UTF-8 TXT and JSONL)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/export_native_text_files.py"
+      - "tests/test_native_text_file_export.py"
+      - ".github/workflows/unpack-m7-text-export.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m7-native-text-files
+  cancel-in-progress: false
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Sparse checkout M7 anchor decoded files and provenance
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          persist-credentials: true
+          sparse-checkout: |
+            Scripts/resources/export_native_text_files.py
+            Scripts/resources/recover_native_text_ids.py
+            tests/test_native_text_file_export.py
+            UnPack/2.0.1/Resources/Localization/M7/nine_language_groups.csv
+            UnPack/2.0.1/Resources/Localization/M7/native_table_inventory.csv
+            UnPack/2.0.1/Resources/Localization/TextExports
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02323.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02324.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02325.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02326.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02327.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02328.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02329.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02330.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02331.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02350.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02351.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02352.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02353.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02354.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02355.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02356.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02357.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02358.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/03304.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/03305.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/03306.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/03307.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/03308.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/03309.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/03310.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/03311.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/03312.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04645.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04646.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04647.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04648.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04649.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04650.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04651.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04652.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04653.bin
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test structure, escaping, forms, and SHA-failure behavior
+        run: python -m unittest discover -s tests -p 'test_native_text_file_export.py' -v
+      - name: Export four anchored nine-language groups from original decoded bytes
+        run: python Scripts/resources/export_native_text_files.py
+      - name: Check output record counts and every language file
+        run: |
+          python - <<'PY'
+          import json, hashlib
+          from pathlib import Path
+          root=Path('UnPack/2.0.1/Resources/Localization/TextExports')
+          report=json.loads((root/'text_export_report.json').read_text(encoding='utf-8'))
+          assert report['status']=='NATIVE_TEXT_EXPORTED_WITH_M7_PROVENANCE'
+          assert report['groups_exported']==4
+          assert {x['start_entry'] for x in report['table_groups']}=={2323,2350,3304,4645}
+          for item in report['table_groups']:
+              directory=root/f"table_{item['start_entry']:05d}"
+              m=json.loads((directory/'manifest.json').read_text(encoding='utf-8'))
+              assert len(m['sources'])==len(m['outputs'])==9
+              for lang in m['locale_order']:
+                  meta=m['outputs'][lang]
+                  for name, key in [('txt','txt_sha256'),('all_forms_jsonl','all_forms_jsonl_sha256')]:
+                      b=(directory/meta[name]).read_bytes()
+                      assert hashlib.sha256(b).hexdigest()==meta[key]
+                  assert meta['lines']==m['record_count']
+          PY
+      - name: Upload verified text exports
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-201-native-text-export
+          path: UnPack/2.0.1/Resources/Localization/TextExports
+          retention-days: 30
+      - name: Commit verified exports
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A -- UnPack/2.0.1/Resources/Localization/TextExports
+          if git diff --cached --quiet; then echo 'No changed text files'; exit 0; fi
+          git commit -m 'data(m7): export native nine-language TXT and lossless JSONL'
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
