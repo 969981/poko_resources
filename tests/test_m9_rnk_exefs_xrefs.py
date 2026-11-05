@@ -22,14 +22,14 @@ class Arm64ReferenceTests(unittest.TestCase):
         self.assertEqual(len(rows),1)
         self.assertEqual(rows[0]["literal_virtual_offset"],0x200c)
         self.assertEqual(rows[0]["instruction_kind"],"LDR_W")
-        self.assertEqual(rows[0]["evidence"],"DIRECT_ADJACENT_ARM64_LITERAL_ACCESS")
+        self.assertEqual(rows[0]["evidence"],"DIRECT_ADJACENT_ARM64_HASH_VALUE_LOAD")
         self.assertEqual(rows[0]["property_consumer_verified"],0)
     def test_nearby_add_only_candidate_not_consumption_proof(self):
         code=struct.pack("<III",adrp(3,2),0xd503201f,add_x(4,3,12))
         rows=find_references(code,0,{0x200c:0xA91711C6})
         self.assertEqual(len(rows),1)
         self.assertEqual(rows[0]["instruction_kind"],"ADD_ADDRESS")
-        self.assertEqual(rows[0]["evidence"],"NONADJACENT_AARCH64_POSSIBLE_ACCESS")
+        self.assertEqual(rows[0]["evidence"],"NONADJACENT_AARCH64_POSSIBLE_ADDRESS")
         self.assertEqual(rows[0]["property_consumer_verified"],0)
     def test_no_wrong_adrp_base_register_match(self):
         code=struct.pack("<II",adrp(3,2),ldr_w(1,2,12))
