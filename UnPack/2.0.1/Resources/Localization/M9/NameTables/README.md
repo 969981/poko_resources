@@ -6,13 +6,13 @@
 
 对 M9.2 已逐字节验证的三份原生 KIDSOBJDB，读取 `_DOK0000` 文件头 `u32@0x14`，不是在属性值中猜名称：
 
-| 原始 KIDSOBJDB 资源 Hash | 原生名称资源 Hash | 本仓库 M3 索引与已跟踪 FDATA | 对应 IRNK 字符串 |
+| 原始 KIDSOBJDB 资源 Hash | 原生名称资源 Hash | M3 派生索引（不等于原始 RDB） | 对应 IRNK 字符串 |
 |---|---|---|---|
 | `d14d76ef` | `aa91cb96` | 0 匹配 | 未取得 |
 | `cfd2bd1f` | `a91711c6` | 0 匹配 | 未取得 |
 | `b290631c` | `cb3c8b15` | 0 匹配 | 未取得 |
 
-核对 89,507 条 M3 资源索引后，三组均为 `RNK_NAME_FILE_MISSING`。这是**当前仓库输入未找到匹配的名称文件**，并非断言整个游戏或其他版本必然不存在。不得因此自动生成或填入名称。
+核对 89,507 条 M3 派生资源索引后，三组均为 `RNK_NAME_FILE_MISSING`。**M9.6 已补做原始 root/system RDB 逐条核对，确认三个 Hash 均有真实原始记录（见下文）；此前的 0 匹配只表示 M3 已解码覆盖不足，绝不表示原始 RDB 无记录。** 原始 FDATA 仍未纳入仓库，不得因此生成属性名称。
 
 解析器 [`Scripts/resources/m9_rnk_name_tables.py`](https://github.com/969981/poko_resources/blob/2.0.1_unpack/Scripts/resources/m9_rnk_name_tables.py) 已实现标准结构：
 
@@ -72,3 +72,47 @@ M9.2 的三份库中共有 101,467 个对象、1,176,984 条已验证类型的�
 3. 寻找实际脚本／任务对象中的 `property_hash → (text table resource key, row id)` 消费函数，再与 M7 的 179+ 组候选/原始九语言记录对账。脚本引用缺失时不得设定 Quest/Dialogue/Building 分类。
 
 原生文件不重写，所有派生 CSV/JSON 与校验日志存放在本目录的子目录中。
+
+
+## M9.6：原始 root/system RDB 复核已突破 M3 索引缺失
+
+[Actions #41953543449](https://github.com/969981/poko_resources/actions/runs/41953543449) **Success**。新增 `Scripts/resources/m9_rnk_original_rdb_audit.py`，用已验证的原始 RDB/RDX 解析器扫描 `root.rdb` 60,722 条、`system.rdb` 25,110 条记录，并检查三条 RDB 给出的 FDATA 来源文件是否在原始 Git 树出现。
+
+| RNK Hash | 原生 root RDB 记录 | RDB entry 字节偏移 | 配套 FDATA（尚缺） | FDATA 字节偏移 | 存储 IDRK 字节数 | 预期解压字节数 |
+|---|---|---:|---|---:|---:|---:|
+| `a91711c6` | `root:40061` | 3,795,248 | `0xea42a223.fdata` | 4,011,152 | 105,313 | 796,572 |
+| `aa91cb96` | `root:40411` | 3,828,344 | `0x5c83387f.fdata` | 22,728,928 | 5,934,913 | 29,946,788 |
+| `cb3c8b15` | `root:48184` | 4,563,988 | `0x898afd6d.fdata` | 16 | 2,342,018 | 12,353,940 |
+
+三条原始 RDB 的 `type_hash` 均为 `bf6b52c7`，`footer_magic=0x0401`。这都是 **RDB 索引真实记录**，但配套物理文件未出现在本分支原始 FDATA 路径及 MountPoint 目录中，仍未执行文件内 `IDRK → _RNK0000/IRNK0000` 字节验证。不能写成“RNK 已恢复”。
+
+完整证据：`rnk_original_rdb_audit.json`、`rnk_original_rdb_matches.csv`。这次修正了“原始 RDB 没有名称 Hash”的潜在错误判断。
+
+## M9.7：描述符填充函数的入口和静态指针槽
+
+[Actions #41953892512](https://github.com/969981/poko_resources/actions/runs/41953892512) **Success**。ARM64 指令显示三处 Hash 写入属于按 `x2` 数量、`x3` 索引选择、向 `x1` 缓冲区写入 **24 字节结构体** 的描述符填充函数。具体调用约定仍需调用点验证。
+
+| 属性 Hash | 入口候选 | 对应 `.data` 64 位入口地址指针槽 |
+|---|---|---|
+| `0x0b6e1578` | `main+0xCA2C40` | `main+0x32ECF60` |
+| `0xe21ff09f` | `main+0xD384C0` | `main+0x32FA020` |
+| `0xf92c5190` | `main+0xD59420` | `main+0x32FDFD8` |
+
+扫描直接 `BL/B`、`ADRP+ADD`、`.data/rodata` 静态 64 位指针，共找到 **3 处真实静态指针字节匹配**，没有恢复直接调用点。下一轮应围绕这三个指针槽追踪指针表及其间接调用方，并继续追踪描述符填充后的读取端；不能把指针槽匹配当成 getter 或脚本外键。
+
+完整证据：`exefs_descriptor_entry_xrefs.json/csv`；分析器 `Scripts/resources/m9_descriptor_reader_trace.py`。
+
+## M9.8：补齐物理 FDATA 后的严格提取器
+
+新增 `Scripts/resources/m9_rnk_from_original_fdata.py` 和单元测试、Actions 工作流。使用 M9.6 已证明的 RDB 来源、`fdata_offset`、`entry_size`、`name_hash`、`type_hash`、解压长度校验 `IDRK`，然后执行既有的 `parse_rnk` 严格解析，输出原始字节 SHA-256 和逐条 IRNK 来源。**这项工具不凭缺失资源编造字符串，当前执行是否成功以本轮 CI 结果和报告为准。**
+
+在仓库根目录提供有权使用的原始物理 FDATA 后可运行：
+
+```bash
+PYTHONPATH=. python Scripts/resources/m9_rnk_from_original_fdata.py \
+  --audit-csv UnPack/2.0.1/Resources/Localization/M9/NameTables/rnk_original_rdb_matches.csv \
+  --fdata-dir /path/to/your/KIDS_PLATFORM_OUNCE \
+  --dest UnPack/2.0.1/Resources/Localization/M9/NameTables
+```
+
+只有 `rnk_original_fdata_recovery.json` 中的 `verified_native_rnk=true` 才代表 RNK 字节验证成功。即使成功，`semantic_property_name_verified`、`text_fk_verified` 仍保持 false，直到恢复实际脚本及 getter 证据。87,445 条数值候选依然未升级。
