@@ -1,0 +1,122 @@
+name: M7/M9 - Verified native text provenance catalog
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/build_native_text_catalog.py"
+      - "Scripts/resources/export_native_text_files.py"
+      - "Scripts/resources/recover_native_text_ids.py"
+      - "tests/test_native_text_catalog.py"
+      - "UnPack/2.0.1/Resources/Localization/M7/nine_language_groups.csv"
+      - "UnPack/2.0.1/Resources/Localization/M7/native_table_inventory.csv"
+      - "UnPack/2.0.1/Resources/Localization/M9/verified_resource_text_edges.csv"
+      - "UnPack/2.0.1/Resources/Localization/TextExports/text_export_report.json"
+      - "UnPack/2.0.1/Resources/Localization/UnlinkedText/unlinked_text_export_report.json"
+      - ".github/workflows/unpack-m7-m9-text-catalog.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m7-m9-native-text-catalog
+  cancel-in-progress: false
+
+jobs:
+  verify-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          persist-credentials: true
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/build_native_text_catalog.py
+            Scripts/resources/export_native_text_files.py
+            Scripts/resources/recover_native_text_ids.py
+            tests/test_native_text_catalog.py
+            UnPack/2.0.1/Resources/Localization/M7/nine_language_groups.csv
+            UnPack/2.0.1/Resources/Localization/M7/native_table_inventory.csv
+            UnPack/2.0.1/Resources/Localization/TextExports/text_export_report.json
+            UnPack/2.0.1/Resources/Localization/UnlinkedText/unlinked_text_export_report.json
+            UnPack/2.0.1/Resources/Localization/M9/verified_resource_text_edges.csv
+            UnPack/2.0.1/Resources/Localization/TextCatalog
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Test conservative table and row-edge provenance logic
+        run: python -m unittest discover -s tests -p 'test_native_text_catalog.py' -v
+
+      - name: Build verified native text catalog
+        run: python Scripts/resources/build_native_text_catalog.py
+
+      - name: Validate generated tabular source coverage and M9 row references
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, json
+          from collections import Counter
+          from pathlib import Path
+          root = Path("UnPack/2.0.1/Resources/Localization/TextCatalog")
+          report = json.loads((root / "native_text_catalog_report.json").read_text(encoding="utf-8"))
+          assert report["status"] == "M7_ALL_PARSED_TEXT_TABLES_CATALOGED_WITH_EXISTING_M9_TYPED_EDGES"
+          assert report["native_text_tables"] == 2738
+          assert report["nine_language_candidate_groups"] == 195
+          assert report["nine_language_source_tables"] == 1755
+          assert report["unlinked_native_text_tables"] == 983
+          assert report["typed_resource_edges_from_m9"] == 5365
+          assert report["verified_new_script_to_text_caller_edges"] == 0
+          assert report["unlinked_tables_with_m9_verified_typed_edges"] == 0
+          assert report["m9_groups_with_verified_typed_edges"] == [2332, 4645, 4942]
+          with (root / "native_text_table_catalog.csv").open(encoding="utf-8", newline="") as f:
+              tables = list(csv.DictReader(f))
+          assert len(tables) == 2738
+          assert sum(x["linkage"] == "NINE_LANGUAGE_CANDIDATE" for x in tables) == 1755
+          assert sum(x["linkage"] == "UNLINKED_NATIVE_RECORD" for x in tables) == 983
+          assert all(x["business_category"] == "UNKNOWN" for x in tables)
+          with (root / "m9_verified_text_row_links.csv").open(encoding="utf-8", newline="") as f:
+              edges = list(csv.DictReader(f))
+          assert len(edges) == 5365
+          assert all(x["script_caller_verified"] == "false" for x in edges)
+          summary = Counter((x["target_group_start"], x["source_domain"]) for x in edges)
+          assert summary == Counter({
+              ("4645", "Item"): 3675,
+              ("4645", "MapPartVariation"): 1632,
+              ("2332", "Reactions"): 47,
+              ("4942", "Skills"): 11,
+          }), summary
+          print("PASS: 2,738 parsed tables, 5,365 unchanged M9 typed edges, no invented script callers")
+          PY
+
+      - name: Upload catalog for download
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-201-native-text-provenance-catalog
+          path: UnPack/2.0.1/Resources/Localization/TextCatalog
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Commit verified catalog and provenance report
+        if: success()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- UnPack/2.0.1/Resources/Localization/TextCatalog
+          if git diff --cached --quiet; then echo "Catalog unchanged"; exit 0; fi
+          git commit -m "data(m7-m9): publish full native text catalog and existing typed-row references"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
