@@ -1,0 +1,68 @@
+name: M16 - Original registry 0xC7 argument and construction calls
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/trace_native_registry_0xc7_argument_calls.py"
+      - ".github/workflows/unpack-m16-native-registry-c7-args.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-201-m16-registry-args
+  cancel-in-progress: false
+
+jobs:
+  native-registry-args:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/trace_native_registry_0xc7_argument_calls.py
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M16
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install NSO and ARM64 dependencies
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+      - name: Validate straightline arguments and invalid source rejection
+        run: python -m Scripts.resources.trace_native_registry_0xc7_argument_calls --self-test
+      - name: Trace native 0xC7 calls
+        run: python -m Scripts.resources.trace_native_registry_0xc7_argument_calls
+      - name: Verify output provenance
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M16/registry_0xc7_parameter_calls.json")
+          j=json.loads(p.read_text(encoding="utf-8"))
+          assert j["original_main_sha256"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert not j["registration_constructor_confirmed"]
+          assert not j["vtable_0x30_target_confirmed"]
+          print("PASS: register call survey remains candidate-only")
+          PY
+      - name: Commit original callsite evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -- UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M16
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m16): record original registry C7 construction-call candidates"
+          for n in 1 2 3 4 5 6 7 8; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+            sleep 2
+          done
+          exit 1
