@@ -1,0 +1,74 @@
+name: M17 - Correlate original vtable+0x30 methods and item stride68
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/crosslink_native_item_vtable_stride.py"
+      - ".github/workflows/unpack-m17-vtable-stride68-crosslinks.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-201-m17-vtable-stride
+  cancel-in-progress: false
+
+jobs:
+  native-vtable-stride-crosslinks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/trace_native_item_registry_vtables.py
+            Scripts/resources/trace_native_item_stride68.py
+            Scripts/resources/crosslink_native_item_vtable_stride.py
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M17
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install native NSO and ARM64 parser
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+      - name: Test vtable pointer run extraction and source rejection
+        run: python -m Scripts.resources.crosslink_native_item_vtable_stride --self-test
+      - name: Correlate original executable method targets and 68-byte multiplies
+        run: python -m Scripts.resources.crosslink_native_item_vtable_stride
+      - name: Check exact source hashes and no ungrounded class binding
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M17/registry_vtable_stride68_crosslinks.json")
+          j=json.loads(p.read_text(encoding="utf-8"))
+          assert j["source_main_sha256"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert j["source_item_sha256"]=="2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f"
+          assert j["registry_index"]=="0xc7"
+          assert not j["registry_concrete_vtable_confirmed"]
+          assert not j["method_return_object_plus8_to_00983_confirmed"]
+          assert not j["true_item_id_to_record_offset_confirmed"]
+          print("PASS provenance guards")
+          PY
+      - name: Commit original crosslink evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -- UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M17
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m17): original vtable +0x30 and stride68 crosslinks"
+          for n in 1 2 3 4 5 6 7 8; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+            sleep 2
+          done
+          exit 1
