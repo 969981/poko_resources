@@ -41,7 +41,7 @@ def refs(code,base):
             dest=w&31
             # Check directly following STR/STRB; do not assert whole CFG.
             matches=[]
-            for at in range(d+4,min(len(code)-4,d+0x78),4):
+            for at in range(d+4,min(len(code)-4,d+0x78)+1,4):
                 w2=struct.unpack_from("<I",code,at)[0]
                 opcode=w2&0xffc00000
                 if opcode in (0xf9000000,0xb9000000) and ((w2>>5)&31)==dest:
