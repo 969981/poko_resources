@@ -87,10 +87,10 @@ def run():
                 "wrapper_original_field_data_offset":record["offset"],
                 "wrapper_scalar_u32_hex":h(scalar) if scalar is not None else "",
                 "scalar_matches_prior_M25_g1t_file_hash":(
-                    int(h(scalar)==s["legacy_M25_g1t_hash_same_raw_u32"])
+                    int(h(scalar)==s["prior_M25_g1t_file_hash"])
                     if scalar is not None else ""),
                 "scalar_matches_prior_M25_texinfo_file_hash":(
-                    int(h(scalar)==s["legacy_M25_texinfo_hash_same_raw_u32"])
+                    int(h(scalar)==s["prior_M25_texinfo_file_hash"])
                     if scalar is not None else ""),
                 "scalar_resolves_to_IDOK_object":int(child is not None) if scalar is not None else "",
                 "scalar_resolved_IDOK_object_type":h(child["type"]) if child else "",
