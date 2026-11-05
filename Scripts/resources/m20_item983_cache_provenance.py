@@ -46,12 +46,12 @@ def inspect_pointer(parts, addr, preview_len=112):
         raw, section=section_read(parts,addr,preview_len)
     except ValueError:
         return {"address":hex(addr),"status":"UNMAPPED_OR_BSS_POINTER"}
-    head=raw.split(b"\\0",1)[0]
+    head=raw.split(bytes([0]),1)[0]
     valid=bool(head) and all(0x20<=c<0x7f for c in head)
     return {
         "address":hex(addr),"section":section,
-        "status":"ASCII_NUL_TERMINATED" if valid and b"\\0" in raw else "RAW_BYTES_ONLY",
-        "ascii_candidate":head.decode("ascii") if valid and b"\\0" in raw else None,
+        "status":"ASCII_NUL_TERMINATED" if valid and bytes([0]) in raw else "RAW_BYTES_ONLY",
+        "ascii_candidate":head.decode("ascii") if valid and bytes([0]) in raw else None,
         "first_48_bytes_hex":raw[:48].hex(),
         "byte_identity_is_semantic_resource_name":False
     }
