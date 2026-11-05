@@ -1,0 +1,79 @@
+name: M19 - Verify both endpoints of original Pokemon texture-object edges
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m19_pokemon_texture_object_edges.py"
+      - ".github/workflows/unpack-m19-pokemon-texture-object-edges.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-201-m19-pokemon-edges
+  cancel-in-progress: false
+
+jobs:
+  original-typed-edge-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m16_verify_pokemon_texture_kidsobjdb.py
+            Scripts/resources/m19_pokemon_texture_object_edges.py
+            UnPack/2.0.1/Resources/Pokemon/pokemon_identity_crosswalk.csv
+            UnPack/2.0.1/Resources/Pokemon/NativeCallers/M17
+            UnPack/2.0.1/Resources/Pokemon/NativeCallers/M19
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native/root_019167_50ae86ef.kidsobjdb
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native/root_053829_e2e43333.kidsobjdb
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test fail-closed provenance handling
+        run: python -m Scripts.resources.m19_pokemon_texture_object_edges --self-test
+      - name: Check both object endpoints and exact native property bytes
+        run: python -m Scripts.resources.m19_pokemon_texture_object_edges
+      - name: Check evidence schema
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          out=Path('UnPack/2.0.1/Resources/Pokemon/NativeCallers/M19')
+          j=json.loads((out/'m19_texture_object_edge_summary.json').read_text(encoding='utf-8'))
+          with (out/'m19_verified_texture_object_edges.csv').open(encoding='utf-8',newline='') as f:
+              rows=list(csv.DictReader(f))
+          assert len(rows)==j['verified_distinct_object_edges']
+          assert j['original_source_count']==2
+          assert j['species_id_bindings_verified']==0
+          assert all(not x['native_species_id_verified'] for x in rows)
+          assert all(x['same_object']=='0' for x in rows)
+          print('PASS exact original bytes and unverified semantics are preserved')
+          PY
+      - name: Publish verifiable endpoint evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-201-m19-original-texture-object-edges
+          path: UnPack/2.0.1/Resources/Pokemon/NativeCallers/M19/
+          if-no-files-found: error
+      - name: Commit certified native object edges
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Pokemon/NativeCallers/M19
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m19): byte-verify both native Pokemon texture object endpoints"
+          for i in 1 2 3 4 5 6 7 8; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+            sleep 2
+          done
+          exit 1
