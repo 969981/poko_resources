@@ -37,25 +37,40 @@ def audit(events, source, min_distinct=3):
     kinds = Counter()
     matched_ids, raw_16_ids, other_ids, pointers, consumer_sites = (set() for _ in range(5))
     v1_targets, v2_targets = set(), set()
+    v1_verified_targets, v2_verified_targets = set(), set()
+    phase_counts, phase_matched_ids, phase_consumer_sites = Counter(), {}, {}
+    phase_stacks = {}
     errors, discrepancies = [], []
     for lineno, row in enumerate(events[1:], 2):
         if row.get("schema") != SCHEMA:
             raise ValueError(f"M23_SCHEMA_INVALID_LINE_{lineno}")
         k = row.get("event")
         kinds[k] += 1
+        phase = str(row.get("phase") or "unlabeled")
+        if phase not in {"unlabeled", "inventory", "crafting", "construction", "materials"}:
+            errors.append({"line": lineno, "reason": "INVALID_OPERATOR_PHASE"})
+            phase = "unlabeled"
+        if k in FIELD_EVENTS:
+            phase_counts[phase] += 1
         if k == "v1_call":
             if row.get("v1_method"):
                 v1_targets.add(row["v1_method"])
+                if (row.get("v1_vtable_slot_agrees") is True and
+                    row.get("v1_method_from_vtable_slot") == row["v1_method"]):
+                    v1_verified_targets.add(row["v1_method"])
         if k == "v2_tailcall":
             if row.get("v2_method"):
                 v2_targets.add(row["v2_method"])
+                if (row.get("v2_vtable_slot_agrees") is True and
+                    row.get("v2_method_from_vtable_slot") == row["v2_method"]):
+                    v2_verified_targets.add(row["v2_method"])
         if k not in FIELD_EVENTS:
             continue
         i = row.get("item_id")
         if row.get("status") == "READ_ERROR":
             errors.append({"line": lineno, "reason": row.get("reason", "")})
             continue
-        if not isinstance(i, int) or not 0 <= i < COUNT:
+        if not isinstance(i, int) or not 0 < i < COUNT:
             errors.append({"line": lineno, "reason": "invalid item id"})
             continue
         try:
@@ -72,8 +87,17 @@ def audit(events, source, min_distinct=3):
                  row.get("source_raw_kind_u8") == original[0x26] and
                  row.get("runtime_raw_kind_u8") == mem[0x26] and
                  row.get("status") == "FULL_68_BYTE_MATCH")
-        if equal:
+        if equal and struct.unpack_from("<H", original, 0x22)[0] > 0:
             matched_ids.add(i)
+            phase_matched_ids.setdefault(phase, set()).add(i)
+            phase_consumer_sites.setdefault(phase, set()).add(k)
+            stack = row.get("guest_call_stack") or []
+            if isinstance(stack, list):
+                pcs = [x.get("candidate_main_rva") for x in stack[:8]
+                       if isinstance(x, dict) and isinstance(x.get("candidate_main_rva"), str)]
+                if pcs:
+                    phase_stacks.setdefault(phase, set()).add(tuple(pcs))
+
             (raw_16_ids if original[0x26] == 0x10 else other_ids).add(i)
             pointers.add(row.get("record_ptr"))
             consumer_sites.add(k)
@@ -95,6 +119,16 @@ def audit(events, source, min_distinct=3):
         "matched_consumer_sites": sorted(consumer_sites),
         "dynamic_v1_targets": sorted(v1_targets),
         "dynamic_v2_targets": sorted(v2_targets),
+        "v1_targets_correlated_with_real_vtable_slot": sorted(v1_verified_targets),
+        "v2_targets_correlated_with_real_vtable_slot": sorted(v2_verified_targets),
+        "operator_declared_phase_event_counts": dict(phase_counts),
+        "operator_declared_phase_matching_ids":
+            {k: sorted(v) for k,v in sorted(phase_matched_ids.items())},
+        "operator_declared_phase_consumer_sites":
+            {k: sorted(v) for k,v in sorted(phase_consumer_sites.items())},
+        "operator_declared_phase_unique_call_stacks":
+            {k: len(v) for k,v in sorted(phase_stacks.items())},
+        "inventory_crafting_construction_material_semantics_proven": False,
         "read_errors": errors[:30],
         "mismatches": discrepancies[:30],
         "min_distinct_required": min_distinct,
@@ -103,6 +137,7 @@ def audit(events, source, min_distinct=3):
         "official_item_kind_enum_proven": False,
         "per_item_max_stack_proven": False,
         "mapped_exefs_build_verified": False,
+        "operator_phase_labels_are_game_verified": False,
         "warning": "Disk input hashes and user GDB logs do not independently attest the live game build, original loader or official enum names."
     }
 
