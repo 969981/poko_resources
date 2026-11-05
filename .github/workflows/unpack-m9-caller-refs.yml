@@ -1,0 +1,167 @@
+name: M9 - link M3 object provenance and M7 localization references
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_caller_reference_graph.py"
+      - "tests/test_m9_caller_reference_graph.py"
+      - ".github/workflows/unpack-m9-caller-refs.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-localization
+  cancel-in-progress: false
+
+jobs:
+  resource-caller-analysis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact M3/M7/M8 sources and three native KIDSOBJDB samples
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          persist-credentials: true
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m9_caller_reference_graph.py
+            tests/test_m9_caller_reference_graph.py
+            UnPack/2.0.1/_reports/m3_resource_type_index.csv
+            UnPack/2.0.1/Resources/Localization/M7/nine_language_groups.csv
+            UnPack/2.0.1/Resources/Localization/M8/native_item_text_refs.csv
+            UnPack/2.0.1/Resources/Localization/M8/map_part_item_name_refs.csv
+            UnPack/2.0.1/Resources/Localization/M8/native_role_text_refs.csv
+            UnPack/2.0.1/Resources/Localization/M9
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xe634eeb2.fdata/decoded/root_042257_b290631c.fdata_idrk.bin
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/decoded/root_049334_cfd2bd1f.fdata_idrk.bin
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata/decoded/root_049689_d14d76ef.fdata_idrk.bin
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Unit test schema/fingerprint protection and untyped-candidate isolation
+        id: test
+        shell: bash
+        run: |
+          mkdir -p UnPack/2.0.1/Resources/Localization/M9/Diagnostics
+          set +e
+          python -m unittest discover -s tests -p "test_m9_caller_reference_graph.py" -v \
+             > UnPack/2.0.1/Resources/Localization/M9/Diagnostics/tests.log 2>&1
+          code=$?
+          cat UnPack/2.0.1/Resources/Localization/M9/Diagnostics/tests.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Verify M3 object SHA and join M8 native field links with M7
+        id: extract
+        if: steps.test.outputs.exit_code == '0'
+        shell: bash
+        run: |
+          set +e
+          python Scripts/resources/m9_caller_reference_graph.py \
+            --m3-index UnPack/2.0.1/_reports/m3_resource_type_index.csv \
+            --m7-groups UnPack/2.0.1/Resources/Localization/M7/nine_language_groups.csv \
+            --m8-dir UnPack/2.0.1/Resources/Localization/M8 \
+            --unpack-root UnPack/2.0.1 \
+            --sample UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xe634eeb2.fdata/decoded/root_042257_b290631c.fdata_idrk.bin \
+            --sample UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/decoded/root_049334_cfd2bd1f.fdata_idrk.bin \
+            --sample UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata/decoded/root_049689_d14d76ef.fdata_idrk.bin \
+            --dest UnPack/2.0.1/Resources/Localization/M9 \
+            > UnPack/2.0.1/Resources/Localization/M9/Diagnostics/extract.log 2>&1
+          code=$?
+          tail -c 20000 UnPack/2.0.1/Resources/Localization/M9/Diagnostics/extract.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Validate typed source FKs and no false positive classification
+        if: steps.test.outputs.exit_code == '0' && steps.extract.outputs.exit_code == '0'
+        id: verify
+        shell: bash
+        run: |
+          set +e
+          python - <<'PY' > UnPack/2.0.1/Resources/Localization/M9/Diagnostics/verify.log 2>&1
+          import csv, json, sqlite3
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Localization/M9")
+          s=json.loads((p/"m9_report.json").read_text(encoding="utf-8"))
+          print(json.dumps(s,indent=2,ensure_ascii=False))
+          assert s["m3_resources_indexed"] >= 89500
+          assert s["m3_type_signatures"]["KIDSOBJDB_SIGNATURE"] >= 4100
+          assert s["m7_groups_loaded"] == 179
+          assert s["m3_kidsobjdb_objects_source_verified"] == 3
+          assert s["typed_foreign_keys_total"] > 3500
+          assert s["typed_edges_by_domain"]["Item"] > 3500
+          assert s["typed_edges_by_domain"]["Reactions"] == 47
+          assert s["typed_edges_by_domain"]["Skills"] == 11
+          assert s["new_scene_quest_building_typed_foreign_keys"] == 0
+          assert not s["untyped_matches_are_foreign_keys"]
+          with sqlite3.connect(p/"localization_reference_graph.sqlite") as con:
+              assert con.execute("SELECT count(*) FROM verified_edges").fetchone()[0] == s["typed_foreign_keys_total"]
+              assert con.execute("SELECT count(*) FROM native_sources").fetchone()[0] == 3
+              assert con.execute("SELECT count(*) FROM candidate_numeric_matches WHERE is_verified_fk != 0").fetchone()[0] == 0
+          with (p/"unverified_numeric_candidates.csv").open(encoding="utf-8",newline="") as f:
+              assert all(r["is_verified_fk"]=="0" for r in csv.DictReader(f))
+          print("M9 evidence separation and checks PASS")
+          PY
+          code=$?
+          cat UnPack/2.0.1/Resources/Localization/M9/Diagnostics/verify.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Save exact logs and run identity
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p UnPack/2.0.1/Resources/Localization/M9/Diagnostics
+          printf 'tests=%s\nextract=%s\nverify=%s\nrun_id=%s\n' \
+             "${{ steps.test.outputs.exit_code }}" \
+             "${{ steps.extract.outputs.exit_code }}" \
+             "${{ steps.verify.outputs.exit_code }}" \
+             "${{ github.run_id }}" \
+             > UnPack/2.0.1/Resources/Localization/M9/Diagnostics/status.txt
+
+      - name: Upload outputs even if failed
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-m9-${{ github.run_id }}
+          path: UnPack/2.0.1/Resources/Localization/M9
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Commit verified M9 artifacts or failure logs
+        if: always()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ "${{ steps.test.outputs.exit_code }}" = 0 ] &&
+             [ "${{ steps.extract.outputs.exit_code }}" = 0 ] &&
+             [ "${{ steps.verify.outputs.exit_code }}" = 0 ]; then
+            git add -A -- UnPack/2.0.1/Resources/Localization/M9
+          else
+            git add -A -- UnPack/2.0.1/Resources/Localization/M9/Diagnostics
+          fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9): native object provenance and evidence-graded text reference graph"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
+
+      - name: Reject unverified caller graph as completed work
+        if: always()
+        shell: bash
+        run: |
+          test "${{ steps.test.outputs.exit_code }}" = 0
+          test "${{ steps.extract.outputs.exit_code }}" = 0
+          test "${{ steps.verify.outputs.exit_code }}" = 0
