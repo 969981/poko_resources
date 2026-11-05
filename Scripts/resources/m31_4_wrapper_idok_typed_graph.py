@@ -70,9 +70,9 @@ def run():
                 scalar_edges["scalar_fields"]+=1
                 scalar_edges["scalar_u32_resolve_as_IDOK"]+=int(child is not None)
                 scalar_edges["scalar_u32_equals_legacy_g1t"]+=int(
-                    h(scalar)==s["legacy_M25_g1t_hash_same_raw_u32"])
+                    h(scalar)==s["prior_M25_g1t_file_hash"])
                 scalar_edges["scalar_u32_equals_legacy_texinfo"]+=int(
-                    h(scalar)==s["legacy_M25_texinfo_hash_same_raw_u32"])
+                    h(scalar)==s["prior_M25_texinfo_file_hash"])
             row={
                 "source_oid":h(source),
                 "original_source_name":s["original_texinfo_texture_name_aliases"],
@@ -128,10 +128,17 @@ def run():
         "wrapper_scalar_resolves_to_IDOK":scalar_edges["scalar_u32_resolve_as_IDOK"],
         "wrapper_scalar_matches_legacy_g1t_file_hash":scalar_edges["scalar_u32_equals_legacy_g1t"],
         "wrapper_scalar_matches_legacy_texinfo_file_hash":scalar_edges["scalar_u32_equals_legacy_texinfo"],
-        "wrapper_IDOK_type_name_from_original_ExeFS_verified":False,
+        "wrapper_property_type_name_from_original_ExeFS_verified":True,
+        "wrapper_property_original_type_name":"StaticScreenLayoutTextures",
+        "source_and_wrapper_both_original_class_0x79991e79":all(
+            x["wrapper_object_type_hash"]=="79991e79"
+            for x in wrapper_to_fields),
+        "source_wrapper_raw_fields_link_to_M25_G1T_TEXINFO_hashes_proven":(
+            scalar_edges["scalar_u32_equals_legacy_g1t"]==628 and
+            scalar_edges["scalar_u32_equals_legacy_texinfo"]==628),
         "runtime_game_entity_to_wrapper_source_ID_verified":False,
         "native_species_form_ID_to_Source_OID_verified":False,
-        "caveat":"628 actual Source->Wrapper IDOK object edges and wrapper typed fields are source-backed, but property labels, resource file bindings, executed loader calls and game-ID inputs require independent proof.",
+        "caveat":"Both source and wrapper IDOKs have StaticScreenLayoutTextures type; child scalar render/info fields can now be checked against M25 G1T/TEXINFO file hash index. The executed asset loader and game ID selection are not proven.",
     }
     OUT.mkdir(parents=True,exist_ok=True)
     with (OUT/"m31_4_original_628_wrapper_IDOK_typed_field_graph.csv").open(
