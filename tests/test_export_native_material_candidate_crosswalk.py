@@ -10,7 +10,7 @@ class NativeMaterialCrosswalkTest(unittest.TestCase):
         catalog=[]
         for i in range(4600):
             catalog.append({"item_id":str(i),"native_name_index":"0",
-                            "jp":f"j{i}","en":f"e{i}","zhs":f"z{i}","zht":f"t{i}"})
+                            "jp":f"j{i}","en":f"e{i}","de":f"d{i}","es":f"s{i}","fr":f"f{i}","it":f"i{i}","ko":f"k{i}","zhs":f"z{i}","zht":f"t{i}"})
         for i in m.SECONDARY_PUBLIC_IDS:
             data[64+i*68+0x26]=(15 if i==532 else 10 if i==1291 else 16)
         return bytes(data),catalog
