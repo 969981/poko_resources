@@ -1,8 +1,8 @@
 {
-  "status": "ORIGINAL_68_STRIDE_MUL_CANDIDATES_ONLY",
+  "status": "STRAIGHTLINE_68_MULTIPLY_CANDIDATES_NOT_TABLE_PROOF",
   "sha256_main": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
   "sha256_item": "2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f",
-  "total_candidates": 299,
+  "total_candidates": 200,
   "opcode_counts": {
     "constant:4600": 53,
     "constant:68": 1199,
@@ -61,179 +61,14 @@
       "same_output_register_field_loads": []
     },
     {
-      "pc": "0x2e2f90",
+      "pc": "0x5054f8",
       "op": "umaddl",
       "dest": "x8",
       "score": 5,
       "constant68_producers": [
         {
-          "pc": "0x2e2f54",
-          "reg": "w8",
-          "warning": "no CFG clobber proof"
-        }
-      ],
-      "nearby_fields": [],
-      "same_output_register_field_loads": []
-    },
-    {
-      "pc": "0x2f9ed0",
-      "op": "umaddl",
-      "dest": "x11",
-      "score": 5,
-      "constant68_producers": [
-        {
-          "pc": "0x2f9dd8",
-          "reg": "w8",
-          "warning": "no CFG clobber proof"
-        }
-      ],
-      "nearby_fields": [],
-      "same_output_register_field_loads": []
-    },
-    {
-      "pc": "0x36888c",
-      "op": "umaddl",
-      "dest": "x10",
-      "score": 5,
-      "constant68_producers": [
-        {
-          "pc": "0x3687f8",
+          "pc": "0x5054e8",
           "reg": "w9",
-          "warning": "no CFG clobber proof"
-        }
-      ],
-      "nearby_fields": [],
-      "same_output_register_field_loads": []
-    },
-    {
-      "pc": "0x3e50c0",
-      "op": "umaddl",
-      "dest": "x10",
-      "score": 5,
-      "constant68_producers": [
-        {
-          "pc": "0x3e5000",
-          "reg": "w10",
-          "warning": "no CFG clobber proof"
-        }
-      ],
-      "nearby_fields": [],
-      "same_output_register_field_loads": []
-    },
-    {
-      "pc": "0x4740ec",
-      "op": "umaddl",
-      "dest": "x8",
-      "score": 5,
-      "constant68_producers": [
-        {
-          "pc": "0x474058",
-          "reg": "w8",
-          "warning": "no CFG clobber proof"
-        }
-      ],
-      "nearby_fields": [],
-      "same_output_register_field_loads": []
-    },
-    {
-      "pc": "0x50446c",
-      "op": "umaddl",
-      "dest": "x12",
-      "score": 5,
-      "constant68_producers": [
-        {
-          "pc": "0x50440c",
-          "reg": "w7",
-          "warning": "no CFG clobber proof"
-        }
-      ],
-      "nearby_fields": [],
-      "same_output_register_field_loads": []
-    },
-    {
-      "pc": "0x504a1c",
-      "op": "umaddl",
-      "dest": "x9",
-      "score": 5,
-      "constant68_producers": [
-        {
-          "pc": "0x5049f8",
-          "reg": "w7",
-          "warning": "no CFG clobber proof"
-        }
-      ],
-      "nearby_fields": [],
-      "same_output_register_field_loads": []
-    },
-    {
-      "pc": "0x505050",
-      "op": "umaddl",
-      "dest": "x2",
-      "score": 5,
-      "constant68_producers": [
-        {
-          "pc": "0x504fd4",
-          "reg": "w14",
-          "warning": "no CFG clobber proof"
-        }
-      ],
-      "nearby_fields": [],
-      "same_output_register_field_loads": []
-    },
-    {
-      "pc": "0x505488",
-      "op": "umaddl",
-      "dest": "x8",
-      "score": 5,
-      "constant68_producers": [
-        {
-          "pc": "0x5053f8",
-          "reg": "w2",
-          "warning": "no CFG clobber proof"
-        }
-      ],
-      "nearby_fields": [],
-      "same_output_register_field_loads": []
-    },
-    {
-      "pc": "0x505558",
-      "op": "umaddl",
-      "dest": "x14",
-      "score": 5,
-      "constant68_producers": [
-        {
-          "pc": "0x50550c",
-          "reg": "w2",
-          "warning": "no CFG clobber proof"
-        }
-      ],
-      "nearby_fields": [],
-      "same_output_register_field_loads": []
-    },
-    {
-      "pc": "0x5056b8",
-      "op": "umaddl",
-      "dest": "x8",
-      "score": 5,
-      "constant68_producers": [
-        {
-          "pc": "0x505650",
-          "reg": "w2",
-          "warning": "no CFG clobber proof"
-        }
-      ],
-      "nearby_fields": [],
-      "same_output_register_field_loads": []
-    },
-    {
-      "pc": "0x50573c",
-      "op": "umaddl",
-      "dest": "x10",
-      "score": 5,
-      "constant68_producers": [
-        {
-          "pc": "0x505650",
-          "reg": "w2",
           "warning": "no CFG clobber proof"
         }
       ],
@@ -249,6 +84,171 @@
         {
           "pc": "0x505990",
           "reg": "w9",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x508030",
+      "op": "smaddl",
+      "dest": "x8",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x508024",
+          "reg": "w9",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x5080d0",
+      "op": "smaddl",
+      "dest": "x16",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x5080c8",
+          "reg": "w17",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x508158",
+      "op": "smaddl",
+      "dest": "x16",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x508150",
+          "reg": "w17",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x508348",
+      "op": "smaddl",
+      "dest": "x8",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x508340",
+          "reg": "w9",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x5083e0",
+      "op": "smaddl",
+      "dest": "x8",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x5083cc",
+          "reg": "w11",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x508e1c",
+      "op": "smaddl",
+      "dest": "x8",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x508e14",
+          "reg": "w10",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x508ef0",
+      "op": "smaddl",
+      "dest": "x12",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x508eec",
+          "reg": "w17",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x508fb4",
+      "op": "smaddl",
+      "dest": "x9",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x508fa4",
+          "reg": "w13",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x5090a0",
+      "op": "umaddl",
+      "dest": "x11",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x509098",
+          "reg": "w12",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x509154",
+      "op": "smaddl",
+      "dest": "x11",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x509144",
+          "reg": "w12",
+          "warning": "no CFG clobber proof"
+        }
+      ],
+      "nearby_fields": [],
+      "same_output_register_field_loads": []
+    },
+    {
+      "pc": "0x5091f4",
+      "op": "smaddl",
+      "dest": "x8",
+      "score": 5,
+      "constant68_producers": [
+        {
+          "pc": "0x5091ec",
+          "reg": "w17",
           "warning": "no CFG clobber proof"
         }
       ],
