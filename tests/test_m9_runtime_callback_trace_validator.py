@@ -44,8 +44,17 @@ class RuntimeCaptureTests(unittest.TestCase):
                               method=hex(BASE+0xd59420))]
         result=validate([json.dumps(x) for x in records])
         self.assertEqual(result["inner_descriptor_entry_hits_with_expected_vptr_and_slot_bytes"],1)
+        self.assertEqual(result["inner_descriptor_entry_hits_with_expected_vptr_and_blr_at_LR_minus4"],0)
         self.assertFalse(result["specific_vptr_slot0x38_indirect_call_path_proven"])
         self.assertEqual(result["M7_script_text_foreign_keys_proven"],0)
+
+    def test_blr_caller_inspection_is_not_full_object_dataflow_proof(self):
+        event=hit("actual_inner_descriptor_callback_entry",0xd59420,
+                  vptr=hex(BASE+0x32fdfa0),method=hex(BASE+0xd59420))
+        event["caller_instruction_is_arm64_blr"]=True
+        result=validate([json.dumps(header()),json.dumps(event)])
+        self.assertEqual(result["inner_descriptor_entry_hits_with_expected_vptr_and_blr_at_LR_minus4"],1)
+        self.assertFalse(result["specific_vptr_slot0x38_indirect_call_path_proven"])
 
     def test_other_receiver_is_not_inner_class_hit(self):
         records=[header(),hit("source_x22_slot38_blr",0xd59250,
