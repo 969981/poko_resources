@@ -96,3 +96,12 @@ python -m unittest discover -s tests -v
 - 为真正的模拟器取证修改 `Scripts/gdb/m28_pokopia_native_id_readonly_trace.py`：默认要求硬件断点（无软件断点静默回退），补记 `x19–x26` 等记录寄存器。新增 `Scripts/resources/m29_1_validate_gdb_trace.py`，可将 **用户真实 GDB JSONL** 检查 PC/基址/LR/原始版本与描述器字段，并导出调用者清单；CI 仅通过模拟输入的校验，**不等于实际运行时取证成功**。
 - 本轮未发现真实游戏 species/villager ID → KIDS key/Source OID 消费者；村民资源仍为 **307 张高置信原生视觉候选、9 张多候选、62 张未定位，原生游戏 ID 绑定 0**。
 - 见 [[M29_NATIVE_IDENTITY_CALLER_AND_RUNTIME_PROOF]] 和 M29 成功的 [GitHub Actions](https://github.com/969981/poko_resources/actions/runs/42009731562)。
+
+
+## M30 — ScreenLayout 原始字段名与两类资源注册（2026-11-05）
+
+- 从 **2.0.1 原始 ExeFS rodata**，按源字节恢复 `0x9D1AFA46` 类型的三项属性真实名称：`ScreenLayoutTexturePackObjectNameHash` (`0x2F610FEA`)、`TexturePackKeyHashArray` (`0xE88C8D60`, 3543 u32)、`TexturePackObjectHashArray` (`0x34CBB458`, 3543 u32)。先前的三个 data cell 是**属性字符串指针**，不是函数指针。
+- 限定 `ScreenLayout/TexturePack` 的原始字符串扫描：**48** 条原生 rodata 记录、**31** 处原始相邻 `ADRP+ADD` 代码引用。M30.4 对五个相关注册入口得到 **59** 条局部直接 BL 引用，不应把它们视为真实物种 ID 消费者。
+- M30.5 **正式确认两套 Type Hash 的原生类型名**：`ScreenLayoutTexturePackSettings (0x9D1AFA46)`，原始 `main+0xBAA528 → main+0xBE19B4`；`StaticScreenLayoutTextures (0x79991E79)`，原始 `main+0xBA6A1C → main+0xBB8558`。两条注册路径原始机器码、TypeHash MOVZ/MOVK、BSS 对象、VTable、属性方法双向证实。**这只是原始静态资源注册结构，尚无真实角色 ID → TexturePack Query 的运行时连接**。
+- 新增 `Scripts/gdb/m30_pokopia_two_phase_witness.py`，按 `identity`／`kids` 两阶段请求各两个硬件断点，有限内存字节采样，验证断点原始 opcode，并可加操作员场景标注；`Scripts/resources/m30_1_review_original_runtime_witness.py` 将其离线与原始 3543 对 Key/Object 和三个属性 Hash 对账。**模拟数据测试与原始 ROM 交叉验收成功；模拟器实际硬件断点、同角色真实 ID 消费者仍未验证**。
+- **头像现状：307 张原生高置信视觉候选、9 张多候选、62 张未定位，正式原生 game ID 绑定 0。** 参见 [[M30_SCREENLAYOUT_NATIVE_CLASS_AND_WITNESS]]；原始 M30–M30.5 五个工作流均完成并成功。
