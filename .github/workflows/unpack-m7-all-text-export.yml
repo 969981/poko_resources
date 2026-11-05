@@ -1,0 +1,195 @@
+name: M7 - Export all 195 native nine-language text groups
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - ".github/workflows/unpack-m7-all-text-export.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m7-all-text-export
+  cancel-in-progress: false
+
+jobs:
+  export-all:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Sparse checkout exporter, M7 evidence, and existing exports
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          persist-credentials: true
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/export_native_text_files.py
+            Scripts/resources/recover_native_text_ids.py
+            tests/test_native_text_file_export.py
+            UnPack/2.0.1/Resources/Localization/M7/nine_language_groups.csv
+            UnPack/2.0.1/Resources/Localization/M7/native_table_inventory.csv
+            UnPack/2.0.1/Resources/Localization/TextExports
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Restrict source checkout to the 1,755 referenced original binaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY' > /tmp/m7-sparse-paths.txt
+          import csv
+          from pathlib import Path
+          groups = Path("UnPack/2.0.1/Resources/Localization/M7/nine_language_groups.csv")
+          with groups.open(encoding="utf-8-sig", newline="") as f:
+              rows = list(csv.DictReader(f))
+          assert len(rows) == 195, f"Expected the reviewed M7 baseline of 195 groups, found {len(rows)}"
+          ids = set()
+          for row in rows:
+              first = int(row["start_entry"])
+              assert int(row["end_entry"]) == first + 8
+              for entry in range(first, first + 9):
+                  assert entry not in ids, f"Overlapping native group source: {entry}"
+                  ids.add(entry)
+          assert len(ids) == 1755
+          for entry in sorted(ids):
+              print(f"UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/{entry:05d}.bin")
+          PY
+          git sparse-checkout add --no-cone --stdin < /tmp/m7-sparse-paths.txt
+          python - <<'PY'
+          from pathlib import Path
+          missing = [line for line in Path("/tmp/m7-sparse-paths.txt").read_text().splitlines()
+                     if not Path(line).is_file()]
+          if missing:
+              raise SystemExit("Missing original LINKDATA files:\n" + "\n".join(missing[:30]))
+          print("Found all 1,755 original LINKDATA source files")
+          PY
+
+      - name: Run existing native text exporter regression tests
+        run: python -m unittest discover -s tests -p 'test_native_text_file_export.py' -v
+
+      - name: Export every M7 nine-language candidate (original bytes, not CSV retranslation)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python Scripts/resources/export_native_text_files.py --all-groups \
+            > /tmp/m7-full-text-export.log 2>&1 || {
+              tail -n 100 /tmp/m7-full-text-export.log
+              exit 1
+            }
+          tail -n 25 /tmp/m7-full-text-export.log
+
+      - name: Validate all 195 manifests, hashes, text IDs, forms, and nine languages
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv
+          import hashlib
+          import itertools
+          import json
+          from pathlib import Path
+
+          root = Path("UnPack/2.0.1/Resources/Localization/TextExports")
+          m7 = Path("UnPack/2.0.1/Resources/Localization/M7")
+          with (m7 / "nine_language_groups.csv").open(encoding="utf-8-sig", newline="") as f:
+              expected = {int(g["start_entry"]): g for g in csv.DictReader(f)}
+          with (m7 / "native_table_inventory.csv").open(encoding="utf-8-sig", newline="") as f:
+              inventory = {int(g["entry"]): g for g in csv.DictReader(f)}
+
+          report = json.loads((root / "text_export_report.json").read_text(encoding="utf-8"))
+          assert report["status"] == "NATIVE_TEXT_EXPORTED_WITH_M7_PROVENANCE"
+          assert report["full_game_coverage"] == "NOT_CLAIMED"
+          assert report["groups_exported"] == len(expected) == 195
+          assert report["locale_count"] == 9
+          assert {g["start_entry"] for g in report["table_groups"]} == set(expected)
+          assert {int(p.name[-5:]) for p in root.glob("table_*") if p.is_dir()} == set(expected)
+          languages = ("jp", "en", "fr", "it", "de", "es", "zht", "ko", "zhs")
+          forms_seen = 0
+          for start, group in expected.items():
+              d = root / f"table_{start:05d}"
+              m = json.loads((d / "manifest.json").read_text(encoding="utf-8"))
+              count, forms = int(group["record_count"]), int(group["forms"])
+              assert (m["table_start"], m["table_end"]) == (start, start + 8)
+              assert (m["record_count"], m["forms_per_record"]) == (count, forms)
+              assert m["locale_order"] == list(languages)
+              assert m["category"] == group["category"]
+              assert len(m["sources"]) == len(m["outputs"]) == 9
+              forms_seen += count * forms
+
+              for offset, lang in enumerate(languages):
+                  src, meta = m["sources"][lang], m["outputs"][lang]
+                  entry = start + offset
+                  assert src["entry"] == entry
+                  assert inventory[entry]["status"] == "PARSED"
+                  assert src["sha256"] == inventory[entry]["sha256"]
+                  assert meta["lines"] == count
+
+                  for file_key, hash_key in (
+                      ("txt", "txt_sha256"),
+                      ("all_forms_jsonl", "all_forms_jsonl_sha256")
+                  ):
+                      data = (d / meta[file_key]).read_bytes()
+                      assert hashlib.sha256(data).hexdigest() == meta[hash_key], (start, lang, file_key)
+
+                  with (d / meta["txt"]).open(encoding="utf-8", newline="") as txt, \
+                       (d / meta["all_forms_jsonl"]).open(encoding="utf-8") as jsonl:
+                      from Scripts.resources.export_native_text_files import txt_escape
+                      seen = 0
+                      for line, raw in itertools.zip_longest(txt, jsonl):
+                          assert line is not None and raw is not None, (start, lang, "row count")
+                          item = json.loads(raw)
+                          assert item["text_id"] == seen, (start, lang, seen)
+                          assert len(item["forms"]) == forms
+                          assert len(item["absolute_byte_offsets"]) == forms
+                          assert line.endswith("\n") and line[:-1] == txt_escape(item["forms"][0])
+                          seen += 1
+                      assert seen == count, (start, lang, seen, count)
+          assert forms_seen == 74089, forms_seen
+          print(f"Validated {len(expected)} groups, {len(expected) * 9} source files, "
+                f"{forms_seen} record/form slots, and all nine language outputs per group")
+          PY
+
+      - name: Upload all verified exports for download
+        if: success()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-201-m7-all-nine-language-text
+          path: UnPack/2.0.1/Resources/Localization/TextExports
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Commit verified TXT, JSONL, manifests, and aggregate report
+        if: success()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- UnPack/2.0.1/Resources/Localization/TextExports
+          if git diff --cached --quiet; then
+            echo "All 195 groups are already published"
+            exit 0
+          fi
+          git commit -m "data(m7): export all 195 native nine-language TXT and JSONL groups"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
+
+      - name: Upload bounded failure log (no partial publication)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-201-m7-full-text-failure
+          path: /tmp/m7-full-text-export.log
+          if-no-files-found: ignore
+          retention-days: 30
