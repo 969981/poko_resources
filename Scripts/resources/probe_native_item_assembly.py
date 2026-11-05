@@ -102,6 +102,30 @@ def audit(blob):
                           "other_field_neighbors":neighbors[:10],
                           "status":"UNVERIFIED_SHARED_RECORD_BASE"})
     pairs.sort(key=lambda p:(-len(p["other_field_neighbors"]),int(p["pc"],16)))
+    # Compare-to-field distance only; equality of basic block or register flow is NOT checked.
+    limit_positions=[]
+    for index,(word,) in enumerate(struct.iter_unpack("<I",code[:len(code)&~3])):
+        d=decode(word)
+        if d and d[0]=="cmp" and d[1] in (99,100):
+            limit_positions.append((base+index*4,d[1]))
+    from bisect import bisect_left,bisect_right
+    field_pcs=[p for p,f in field_sites]
+    limit_nearby=[]
+    for limit_pc,constant in limit_positions:
+        lo=bisect_left(field_pcs,limit_pc-0x100)
+        hi=bisect_right(field_pcs,limit_pc+0x100)
+        adjacent=[{"pc":hex(p),"offset":hex(f),"distance_bytes":abs(p-limit_pc)}
+                  for p,f in field_sites[lo:hi] if f in (0x26,0x3a)]
+        if adjacent:
+            adjacent.sort(key=lambda x:x["distance_bytes"])
+            limit_nearby.append({
+                "cmp_pc":hex(limit_pc),"cmp_value":constant,
+                "closest_candidate_loads":adjacent[:8],
+                "status":"PROXIMITY_ONLY_NOT_PROVEN_QUANTITY_WRITEBACK"})
+    limit_nearby.sort(key=lambda e:(e["closest_candidate_loads"][0]["distance_bytes"],int(e["cmp_pc"],16)))
+    for e in limit_nearby[:18]:
+        e["context"]=asm(md,code,base,int(e["cmp_pc"],16))
+
     for pair in pairs[:40]:
         pair["context"]=asm(md,code,base,int(pair["pc"],16))
     return {
@@ -113,6 +137,7 @@ def audit(blob):
       "opcode_counts":dict(sorted(counts.items())),
       "sample_assembly":candidates,
       "cross_field_proximity":pairs[:90],
+      "quantity_cmp_near_field":limit_nearby[:80],
       "official_category_enum_confirmed":False,
       "stack_merge_99_confirmed":False,
       "per_item_stack_override_confirmed":False,
@@ -158,6 +183,25 @@ def main():
         "",
     ]
     (args.output/"ITEM_ASSEMBLY_RESEARCH.md").write_text("\n".join(lines),encoding="utf-8")
+    # Connector-readable shortlist; the full report is often too large to fetch.
+    groups={
+      "field_0x26_byte":lambda e:e["instruction_key"]=="load:0x26:ldrb",
+      "field_0x3a_byte":lambda e:e["instruction_key"]=="load:0x3a:ldrb",
+      "cmp_99":lambda e:e["instruction_key"] in ("cmp:0x63:cmp_w","cmp:0x63:cmp_x"),
+      "cmp_100":lambda e:e["instruction_key"] in ("cmp:0x64:cmp_w","cmp:0x64:cmp_x"),
+    }
+    focus_report={
+       "status":report["status"],
+       "source_sha256":report["source_sha256"],
+       "counts":report["opcode_counts"],
+       "sample_instruction_windows":{name:[e for e in report["sample_assembly"] if check(e)][:3]
+                                     for name,check in groups.items()},
+       "closest_cmp_to_candidate_field":report["quantity_cmp_near_field"][:8],
+       "cross_field_proximity":report["cross_field_proximity"][:5],
+       "warning":"All PC pairs are proximity-only, not source register or gameplay stack-limit proof."
+    }
+    (args.output/"item_assembly_focus.json").write_text(
+        json.dumps(focus_report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps({"status":report["status"],
        "source_sha256":report["source_sha256"],
        "text_bytes":report["text_bytes"],
