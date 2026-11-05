@@ -62,6 +62,8 @@ jobs:
               assert r["known_anchor_groups"][start] == "PASS", (start,r)
           assert list(root.glob("native_records_*.csv"))
           assert list(root.glob("nine_language_records_*.csv"))
+          assert list(root.glob("nine_language_records_*.json"))
+          assert r["nine_language_rows_exported"] == r["json_rows_exported"]
           PY
 
       - name: Upload exact generated files for independent review
