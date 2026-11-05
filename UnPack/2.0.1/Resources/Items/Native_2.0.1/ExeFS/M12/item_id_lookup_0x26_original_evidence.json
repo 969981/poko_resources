@@ -6,7 +6,7 @@
   "item_record_stride": 68,
   "item_header_bytes": 64,
   "native_table_names_offset_0x22_verified_by_prior_nine_language_audit": true,
-  "matched_original_instruction_count": 23,
+  "matched_original_instruction_count": 35,
   "matched_original_instructions": [
     {
       "pc": "0xe5a99c",
@@ -122,13 +122,74 @@
       "pc": "0x1028a40",
       "instruction": "cmp w9, #9",
       "original_code_word": "3f250071"
+    },
+    {
+      "pc": "0xabbaec",
+      "instruction": "and w19, w0, #0xffff",
+      "original_code_word": "133c0012"
+    },
+    {
+      "pc": "0xabbaf0",
+      "instruction": "mov w9, #0x11f6",
+      "original_code_word": "c93e8252"
+    },
+    {
+      "pc": "0xabbaf4",
+      "instruction": "sub w8, w19, #1",
+      "original_code_word": "68060051"
+    },
+    {
+      "pc": "0xabbaf8",
+      "instruction": "cmp w8, w9",
+      "original_code_word": "1f01096b"
+    },
+    {
+      "pc": "0xabbb40",
+      "instruction": "mov w1, w19",
+      "original_code_word": "e103132a"
+    },
+    {
+      "pc": "0xabbb44",
+      "instruction": "ldr x8, [x8, #0x30]",
+      "original_code_word": "081940f9"
+    },
+    {
+      "pc": "0xabbb48",
+      "instruction": "blr x8",
+      "original_code_word": "00013fd6"
+    },
+    {
+      "pc": "0xabbb50",
+      "instruction": "ldr x8, [x0, #8]",
+      "original_code_word": "080440f9"
+    },
+    {
+      "pc": "0xabbb64",
+      "instruction": "ldrb w8, [x8, #0x3a]",
+      "original_code_word": "08e94039"
+    },
+    {
+      "pc": "0xabbb68",
+      "instruction": "cmp w8, #0xf",
+      "original_code_word": "1f3d0071"
+    },
+    {
+      "pc": "0xabbbd4",
+      "instruction": "ldrb w8, [x8, #0x3a]",
+      "original_code_word": "08e94039"
+    },
+    {
+      "pc": "0xabbbd8",
+      "instruction": "cmp w8, #0x15",
+      "original_code_word": "1f550071"
     }
   ],
   "control_flow_summary": [
     "At 0xE5A99C and 0x1028968 W28 is initialized to 4600, used as loop bound for X20.",
     "Both routines pass W20 as W1 to an indirect vtable function at +0x30.",
     "Both routines read pointer +8 from the returned object, then byte +0x26 from that pointer (or fallback).",
-    "0x1028A38 also reads +0x39. Value-range checks follow these returned-object loads."
+    "0x1028A38 also reads +0x39. Value-range checks follow these returned-object loads.",
+    "0xABBAD8 validates (ID-1)<=4598, queries registry entry by ID, then reads +0x3A and tests values 15 and 21."
   ],
   "field_histograms_from_exact_original_00983": {
     "kind_candidate": {
