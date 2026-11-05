@@ -4,12 +4,13 @@
   "pokohex_reference_count": 10,
   "native_texinfo_png_candidates": 14,
   "pixel_exact_matched_reference_icons": 0,
-  "unmatched_reference_icons": 10,
-  "native_pngs_used_by_exact_matches": 0,
+  "visual_near_identical_reference_candidates": 10,
+  "unmatched_reference_icons": 0,
+  "native_pngs_used_by_exact_or_visual_candidates": 10,
   "reference_status_counts": {
-    "NO_PIXEL_EXACT_NATIVE": 10
+    "VISUAL_NEAR_IDENTICAL_CANDIDATE": 10
   },
-  "evidence": "RGBA visible-pixel SHA256 identity, sourced from verified native TEXINFO/G1T PNG manifests",
+  "evidence": "Original-source TEXINFO/G1T PNG SHA256 and pixel RGBA; nonexact image candidates are 32x32 alpha-aware normalized-MAE <=0.015 with runner-up margin >=0.015.",
   "id_provenance": "Game-ID and portrait-ID columns, when present, originate in pinned PokoHex; no native runtime ID binding is implied.",
-  "limitations": "Nearest visual similarity is a ranked REVIEW HINT only. It is not treated as matched native ID, and cannot establish the original game species/villager ID."
+  "limitations": "VISUAL_NEAR_IDENTICAL_CANDIDATE links are review-only, not pixel-exact and NOT original game-ID proof; transparent pixels are normalized for strict comparisons."
 }
