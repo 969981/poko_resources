@@ -51,7 +51,7 @@ def analyze(main:bytes,prior:dict):
         val=struct.unpack("<Q",buf)[0]
         nearby.append({
             "cell":hex(addr),"value":hex(val),
-            "executable_pointer":base<=val<end and val%4==0,
+            "executable_pointer":base+0x100<=val<end and val%4==0,
             "offset_from_method_cell":addr-CELL})
     # An executable pointer run is suggestive of a method table but cannot
     # locate its vptr address or prove its class without constructor stores.
@@ -60,10 +60,12 @@ def analyze(main:bytes,prior:dict):
     for n in range(0,16):
         addr=CELL-n*8
         before=sum(addr+i*8 in executable for i in range(n+1))
+        uninterrupted=all(addr+i*8 in executable for i in range(n+1))
         after=sum(addr+i*8 in executable for i in range(n+1, n+8))
         candidate_starts.append({
             "candidate_table_start":hex(addr),"method_pointer_offset":hex(CELL-addr),
-            "contiguous_executable_pointer_cells_through_method":before,
+            "executable_pointer_cells_through_method":before,
+            "all_entries_to_method_executable":uninterrupted,
             "next_seven_executable_pointer_cells":after,
             "vtable_identity_proven":False})
     low=CELL-MAX_DIST;high=CELL+MAX_DIST
