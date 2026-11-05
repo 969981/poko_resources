@@ -84,72 +84,79 @@ def scan_strings(parts):
     return found
 
 
-def arm64_scan(text_segment,string_targets,max_type_loads=300):
-    try:
-        from capstone import Cs, CS_ARCH_ARM64, CS_MODE_ARM
-        from capstone.arm64_const import ARM64_OP_IMM,ARM64_OP_REG,ARM64_OP_MEM
-    except ImportError as exc:
-        raise RuntimeError("ARM64 static scan requires capstone>=5") from exc
-    md=Cs(CS_ARCH_ARM64,CS_MODE_ARM)
-    md.detail=True
-    # NSO text may contain instruction gaps or embedded literal pools;
-    # without skipdata Capstone stops at its first undecodable word.
-    md.skipdata=True
-    refs=[]
-    candidate_loads=[]
-    # ADRP may be followed by one or more independent instructions before ADD.
-    active=deque(maxlen=20)
-    prior=deque(maxlen=8)
-    inspected=0
-    skipped=0
-    last_offset=0
-    pages={t["virtual_offset"]//4096 for t in string_targets}
+def arm64_scan(text_segment, string_targets, max_type_loads=300):
+    """Bounded raw ARM64 instruction scan; no 41-MB Capstone detail objects.
+
+    ADRP + ADD immediates can be verified via fixed AArch64 instruction masks.
+    This enumerates static candidates, not caller dataflow or proven identity.
+    """
+    blob=text_segment["data"]
+    base=text_segment["mem_offset"]
     targets={t["virtual_offset"]:t for t in string_targets}
-    for inst in md.disasm(text_segment["data"],text_segment["mem_offset"]):
-        inspected+=1
-        last_offset=max(last_offset,inst.address-text_segment["mem_offset"]+inst.size)
-        if inst.mnemonic.startswith(".byte"):
-            skipped+=1
-            prior.clear()
-            active.clear()
-            continue
-        prev=list(prior)
-        mnemonic=inst.mnemonic
-        operands=inst.operands
-        if mnemonic=="adrp" and len(operands)>=2 and operands[0].type==ARM64_OP_REG and operands[1].type==ARM64_OP_IMM:
-            # Capstone IMM is page-absolute in ARM64 disassembly.
-            page=int(operands[1].imm)
-            if page//4096 in pages:
-                active.append((inst.address,operands[0].reg,page))
-        elif mnemonic=="adr" and len(operands)>=2 and operands[1].type==ARM64_OP_IMM:
-            v=int(operands[1].imm)
-            if v in targets:
-                refs.append({"address":inst.address,"kind":"ADR","string":targets[v]["text"],
-                             "target_va":v,"disasm":f"{inst.mnemonic} {inst.op_str}"})
-        elif mnemonic=="add" and len(operands)>=3 and operands[0].type==ARM64_OP_REG and operands[1].type==ARM64_OP_REG and operands[2].type==ARM64_OP_IMM:
-            dst,src,imm=operands[:3]
-            for at,reg,page in list(active):
-                if src.reg==reg and inst.address-at<=20:
-                    v=page+int(imm.imm)
-                    if v in targets:
-                        refs.append({"address":inst.address,"adrp_address":at,
-                                     "kind":"ADRP_ADD_STRING","string":targets[v]["text"],
-                                     "target_va":v,"disasm":f"{inst.mnemonic} {inst.op_str}",
-                                     "previous_instructions":[f"{x.mnemonic} {x.op_str}" for x in prev]})
-        if len(candidate_loads)<max_type_loads and mnemonic.startswith("ldrb"):
-            # A field access at struct offset +0x26 is a candidate, not proof
-            # the base register is pointing at a 68-byte item record.
-            for op in operands:
-                if op.type==ARM64_OP_MEM and int(op.mem.disp)==0x26:
-                    candidate_loads.append({
-                        "address":inst.address,"instruction":f"{mnemonic} {inst.op_str}",
-                        "previous_instructions":[f"{x.mnemonic} {x.op_str}" for x in prev]
-                    })
-        prior.append(inst)
-        while active and inst.address-active[0][0]>20:
-            active.popleft()
-    return refs,candidate_loads,{"inspected_instructions":inspected,"last_byte_scanned":last_offset,
-         "text_bytes":len(text_segment["data"]),"skipdata_entries":skipped}
+    pages={addr>>12 for addr in targets}
+    refs=[]
+    loads=[]
+    aligned=len(blob)&~3
+    seen=0
+    for off in range(0,aligned,4):
+        word=struct.unpack_from("<I",blob,off)[0]
+        pc=base+off
+        seen+=1
+        # ADRP Rd, page: immlo bits[30:29], immhi bits[23:5].
+        if pages and (word & 0x9F000000)==0x90000000:
+            immlo=(word>>29)&3
+            immhi=(word>>5)&0x7FFFF
+            signed=(immhi<<2)|immlo
+            if signed&(1<<20): signed-=1<<21
+            page=(pc&~0xFFF)+(signed<<12)
+            if (page>>12) in pages:
+                reg=word&31
+                for stride in (4,8,12,16,20):
+                    if off+stride+4>aligned: break
+                    nextword=struct.unpack_from("<I",blob,off+stride)[0]
+                    # ADD Xd, Xn, #imm12[, LSL #12]
+                    if (nextword&0xFF000000)!=0x91000000:
+                        continue
+                    rn=(nextword>>5)&31
+                    if rn!=reg: continue
+                    shift=(nextword>>22)&3
+                    if shift not in (0,1): continue
+                    imm=(nextword>>10)&0xFFF
+                    va=page+(imm<<(12 if shift==1 else 0))
+                    if va in targets:
+                        refs.append({
+                            "address":pc+stride,"adrp_address":pc,
+                            "kind":"ADRP_ADD_RAW_AARCH64",
+                            "target_va":va,"string":targets[va]["text"],
+                            "adrp_word":f"{word:08x}",
+                            "add_word":f"{nextword:08x}"})
+        # ADR Rd, address (without page).
+        elif pages and (word & 0x9F000000)==0x10000000:
+            val=(((word>>5)&0x7FFFF)<<2)|((word>>29)&3)
+            if val&(1<<20):val-=1<<21
+            target=pc+val
+            if target in targets:
+                refs.append({"address":pc,"kind":"ADR_RAW_AARCH64",
+                             "target_va":target,"string":targets[target]["text"],
+                             "instruction_word":f"{word:08x}"})
+        if len(loads)<max_type_loads:
+            # LDRB Wt, [Xn, #imm12], unscaled instruction kind may differ.
+            is_byte=(word&0xFFC00000)==0x39400000 and ((word>>10)&0xFFF)==0x26
+            # LDRH Wt,[Xn,#imm12*2]; byte displacement 0x26 = 0x13*2.
+            is_half=(word&0xFFC00000)==0x79400000 and ((word>>10)&0xFFF)==0x13
+            if is_byte or is_half:
+                nearby=[
+                    f"{struct.unpack_from('<I',blob,x)[0]:08x}"
+                    for x in range(max(0,off-20),off,4)
+                ]
+                loads.append({"address":pc,"kind":"LDRB_0X26" if is_byte else "LDRH_0X26",
+                              "instruction_word":f"{word:08x}",
+                              "prior_instruction_words":nearby,
+                              "needs_base_register_dataflow":True})
+    return refs,loads,{
+        "inspected_instructions":seen,"text_bytes":len(blob),
+        "byte_coverage":aligned,"algorithm":"strict raw AArch64 word/ADRP/ADD/LDRB masks"
+    }
 
 
 def analyze(blob, max_xref=100):
