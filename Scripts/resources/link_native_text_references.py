@@ -14,7 +14,10 @@ import json
 import struct
 from pathlib import Path
 
-from recover_native_text_ids import LANGS, parse as parse_text
+try:
+    from .recover_native_text_ids import LANGS, parse as parse_text
+except ImportError:  # direct `python Scripts/resources/...py`
+    from recover_native_text_ids import LANGS, parse as parse_text
 
 VERSION_PIN = "c71d2b73fb9d8cfe99c1067e6bfadfd19f60bf78"
 PARSER_SOURCES = {
@@ -235,7 +238,7 @@ def main():
         raise ValueError("Previous native item validation not MATCH")
     if m7["known_anchor_groups"]["4645"] != "PASS":
         raise ValueError("M7 nine-language item-name group not anchored")
-    if tuple(m7["verified_languages"]) != LANGS if "verified_languages" in m7 else False:
+    if "verified_languages" in m7 and tuple(m7["verified_languages"]) != LANGS:
         raise ValueError("M7 locale order mismatch")
 
     provenance = []
