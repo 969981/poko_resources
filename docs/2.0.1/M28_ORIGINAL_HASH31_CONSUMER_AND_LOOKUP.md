@@ -145,3 +145,8 @@ pokopia-m28-stop
 ## M29 GDB 取证工具安全改进
 
 参见 [[M29_NATIVE_IDENTITY_CALLER_AND_RUNTIME_PROOF]]。现在 GDB 调试脚本请求 **`gdb.BP_HARDWARE_BREAKPOINT` 硬件断点**，且没有默认软件断点回退，避免此前普通软件断点可能临时改写游戏指令字节的问题。模拟器 GDB Stub **支持性未知，尚未实测**；若不支持需要按实际目标重新设计调试方案。已同时补充 `x19–x26`、`x28`，并通过 M29.1 的离线 JSONL 校验器生成按真实返回地址归类的证据清单；仍不代表运行时物种 ID 已绑定。任何先前关于 GDB 断点绝对不会改动目标代码的说法，都必须以当前硬件断点版本及目标支持性为限。
+
+
+## M31.5 两跳包装对象纠正（重要）
+
+历史 M28.3 的 `texture_oid` 输出实际是包装 IDOK 对象 `WrapStaticScreenLayoutTexturesObjectHash (0x2856A1B3)`，**不是最终 G1T 或 TEXINFO 文件 Hash**。M31 已从原始 KIDSOBJDB 精确闭合 628 条 `Source→包装 IDOK→G1T/TEXINFO` 链；`Scripts/resources/m28_3_kids_icon_lookup.py` 现有 `original_wrapper_IDOK_oid`、`original_wrapper_render_state_file_hash`、`original_wrapper_info_data_file_hash`、`source_to_wrapper_to_G1T_TEXINFO_bytes_verified`，并保留旧 `texture_oid` 作为明确标注的兼容别名。对例子 `icon_poke_0043_00_00_00`，包装 OID=`0xC1A6D60C`，包装对象中两项文件 Hash 分别为 `0xAB6768BD` (G1T) 与 `0x2198D172` (TEXINFO)。见 [[M31_KIDS_TWO_HOP_SCREENLAYOUT_TEXTURE_PROVENANCE]]。
