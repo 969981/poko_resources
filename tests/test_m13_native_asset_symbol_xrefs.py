@@ -17,7 +17,7 @@ class NativeSymbolTests(unittest.TestCase):
 
     def test_arm64_adrp_add_identifies_native_literal_address(self):
         # From .text RVA 0x1000 an ADRP jumps to page 0x3000
-        adrp=0x90000001|(2<<5)
+        adrp=0x90000001|(2<<29)  # immlo=2 pages, not immhi=2 (8 pages)
         add=0x91000000|(0x123<<10)|(1<<5)|1
         blob=struct.pack("<3I",adrp,add,0xd503201f)
         refs=scan_xrefs(blob,0x1000,[{"rva":0x3123,"text":"pokemon_dex_id",
