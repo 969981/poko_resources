@@ -1,0 +1,191 @@
+{
+  "status": "ORIGINAL_NATIVE_THREE_PROPERTY_INDEXED_HASH_READ_VERIFIED__SEMANTIC_ROLE_UNBOUND",
+  "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "native_hash_array_base": "0x2830c90",
+  "native_hash_array_source_section": "rodata",
+  "indexed_property_hashes": [
+    {
+      "native_array_index": 0,
+      "hash": "0xc8bb66da",
+      "semantic_label": "G1T_RESOURCE_HASH"
+    },
+    {
+      "native_array_index": 1,
+      "hash": "0x2276fc56",
+      "semantic_label": "TEXINFO_RESOURCE_HASH"
+    },
+    {
+      "native_array_index": 2,
+      "hash": "0x2856a1b3",
+      "semantic_label": "UNKNOWN_TYPED_EDGE_TARGET_HASH"
+    }
+  ],
+  "function_entry_candidate": "0xce854c",
+  "verified_original_instruction_sequence": [
+    {
+      "pc": "0xce8538",
+      "word": "aa1303e0",
+      "asm": "mov x0, x19"
+    },
+    {
+      "pc": "0xce853c",
+      "word": "f9400bf3",
+      "asm": "ldr x19, [sp, #0x10]"
+    },
+    {
+      "pc": "0xce8540",
+      "word": "a8c27bfd",
+      "asm": "ldp x29, x30, [sp], #0x20"
+    },
+    {
+      "pc": "0xce8544",
+      "word": "d50323ff",
+      "asm": "autibsp"
+    },
+    {
+      "pc": "0xce8548",
+      "word": "14697602",
+      "asm": "b #0x2745d50"
+    },
+    {
+      "pc": "0xce854c",
+      "word": "2a1f03e8",
+      "asm": "mov w8, wzr"
+    },
+    {
+      "pc": "0xce8550",
+      "word": "34000242",
+      "asm": "cbz w2, #0xce8598"
+    },
+    {
+      "pc": "0xce8554",
+      "word": "7100087f",
+      "asm": "cmp w3, #2"
+    },
+    {
+      "pc": "0xce8558",
+      "word": "54000208",
+      "asm": "b.hi #0xce8598"
+    },
+    {
+      "pc": "0xce855c",
+      "word": "9000da48",
+      "asm": "adrp x8, #0x2830000"
+    },
+    {
+      "pc": "0xce8560",
+      "word": "91324108",
+      "asm": "add x8, x8, #0xc90"
+    },
+    {
+      "pc": "0xce8564",
+      "word": "90013249",
+      "asm": "adrp x9, #0x3330000"
+    },
+    {
+      "pc": "0xce8568",
+      "word": "9124a129",
+      "asm": "add x9, x9, #0x928"
+    },
+    {
+      "pc": "0xce856c",
+      "word": "b863d90b",
+      "asm": "ldr w11, [x8, w3, sxtw #2]"
+    },
+    {
+      "pc": "0xce8570",
+      "word": "f863d92c",
+      "asm": "ldr x12, [x9, w3, sxtw #3]"
+    },
+    {
+      "pc": "0xce8574",
+      "word": "5280002a",
+      "asm": "mov w10, #1"
+    },
+    {
+      "pc": "0xce8578",
+      "word": "72a0a00a",
+      "asm": "movk w10, #0x500, lsl #16"
+    },
+    {
+      "pc": "0xce857c",
+      "word": "29002c2a",
+      "asm": "stp w10, w11, [x1]"
+    },
+    {
+      "pc": "0xce8580",
+      "word": "d000d56b",
+      "asm": "adrp x11, #0x2796000"
+    },
+    {
+      "pc": "0xce8584",
+      "word": "9101b16b",
+      "asm": "add x11, x11, #0x6c"
+    },
+    {
+      "pc": "0xce8588",
+      "word": "a900ac2c",
+      "asm": "stp x12, x11, [x1, #8]"
+    },
+    {
+      "pc": "0xce858c",
+      "word": "7100045f",
+      "asm": "cmp w2, #1"
+    },
+    {
+      "pc": "0xce8590",
+      "word": "540000a1",
+      "asm": "b.ne #0xce85a4"
+    },
+    {
+      "pc": "0xce8594",
+      "word": "2a0203e8",
+      "asm": "mov w8, w2"
+    },
+    {
+      "pc": "0xce8598",
+      "word": "6b02011f",
+      "asm": "cmp w8, w2"
+    },
+    {
+      "pc": "0xce859c",
+      "word": "1a823100",
+      "asm": "csel w0, w8, w2, lo"
+    },
+    {
+      "pc": "0xce85a0",
+      "word": "d65f03c0",
+      "asm": "ret"
+    },
+    {
+      "pc": "0xce85a4",
+      "word": "7100047f",
+      "asm": "cmp w3, #1"
+    }
+  ],
+  "index_register": "w3",
+  "native_index_upper_bound_constant": 2,
+  "field_hash_read": "ldr w11, [x8, w3, sxtw #2]",
+  "parallel_pointer_array_base_candidate": "0x3330928",
+  "parallel_pointer_array_mapped_section": "data",
+  "parallel_pointer_array_raw_bytes_hex": "20ff79020000000050aa7f0200000000dd6d7c0200000000",
+  "output_hash_write": "stp w10, w11, [x1]",
+  "output_following_pointer_write": "stp x12, x11, [x1, #8]",
+  "direct_bl_callers_total": 0,
+  "direct_bl_callers": [],
+  "direct_b_tail_callers_total": 0,
+  "direct_b_tail_callers": [],
+  "raw_function_pointer_cells": [
+    {
+      "pointer_cell_va": "0x32f0ef8",
+      "source_section": "data",
+      "raw_target_va": "0xce854c",
+      "class_or_vtable_verified": false
+    }
+  ],
+  "raw_function_pointer_cells_total": 1,
+  "native_schema_hash_array_read_verified": true,
+  "native_property_semantic_identity_verified": false,
+  "pokemon_species_id_binding_verified": false,
+  "warning": "The native function indexes a 3-hash array and writes hash to memory. This is not proof of field name, species ID or runtime use by a specific object."
+}
