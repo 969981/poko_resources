@@ -1,0 +1,18 @@
+{
+  "version": "2.0.1",
+  "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "original_code_segment_length": 41194624,
+  "original_aligned_instruction_slots_scanned": 10298656,
+  "original_native_ldrb_instruction_count": 119285,
+  "add_sub_shift5_word_candidates": 319,
+  "madd_mul_instruction_count": 15446,
+  "madd_mul_near_movable_31_constant_candidate_count": 0,
+  "combined_candidate_count": 319,
+  "candidate_count_with_nearby_byte_load": 119,
+  "candidate_count_with_nearby_backward_direct_branch": 114,
+  "ranked_candidate_windows_saved": 250,
+  "native_hash31_function_verified": false,
+  "native_kids_twin_array_consumer_verified": false,
+  "game_species_id_to_array_key_verified": false,
+  "caveat": "32-bit LSL5 ADD/SUB and nearby MADD with MOVZ #31 are instruction-pattern leads, not verified hash function implementations. Candidate code may include unrelated arithmetic."
+}
