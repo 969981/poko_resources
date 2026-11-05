@@ -1,0 +1,90 @@
+[
+  {
+    "m3_record_id": "root:42257",
+    "original_source": "2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xe634eeb2.fdata",
+    "output_path": "romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xe634eeb2.fdata/decoded/root_042257_b290631c.fdata_idrk.bin",
+    "output_sha256": "f96972dc847e679aa01d602c0fc5897bdd81e7b09eeea1567cd75b0e9d279e51",
+    "name_hash": "b290631c",
+    "type_hash": "20a6a0bb",
+    "declared_nodes": 31740,
+    "verified_nodes": 31740,
+    "final_offset": 4584592,
+    "file_bytes": 4584592,
+    "padding_lengths": {
+      "0": 31680,
+      "3": 60
+    },
+    "frequent_unknown_word_at_offset_16": {
+      "0xff7dbfd4": 20425,
+      "0xd40b3c8f": 3296,
+      "0x3059b9c3": 3296,
+      "0x63026395": 2513,
+      "0x7eda1fc0": 1232,
+      "0xa880e514": 710,
+      "0x38b68188": 267,
+      "0x2eb03e5f": 1
+    },
+    "node_structural_status": "EXACT_NATIVE_FRAMING",
+    "member_semantics": "UNRESOLVED",
+    "external_text_references": "NOT_PROVEN"
+  },
+  {
+    "m3_record_id": "root:49334",
+    "original_source": "2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata",
+    "output_path": "romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/decoded/root_049334_cfd2bd1f.fdata_idrk.bin",
+    "output_sha256": "ee4f3885744af85ae34df856805b849485246928dbb54628feac7bf355b9050f",
+    "name_hash": "cfd2bd1f",
+    "type_hash": "20a6a0bb",
+    "declared_nodes": 1330,
+    "verified_nodes": 1330,
+    "final_offset": 510056,
+    "file_bytes": 510056,
+    "padding_lengths": {
+      "0": 788,
+      "1": 76,
+      "2": 388,
+      "3": 78
+    },
+    "frequent_unknown_word_at_offset_16": {
+      "0xc27bf870": 780,
+      "0xf7c0d0f0": 405,
+      "0xe2715252": 145
+    },
+    "node_structural_status": "EXACT_NATIVE_FRAMING",
+    "member_semantics": "UNRESOLVED",
+    "external_text_references": "NOT_PROVEN"
+  },
+  {
+    "m3_record_id": "root:49689",
+    "original_source": "2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata",
+    "output_path": "romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata/decoded/root_049689_d14d76ef.fdata_idrk.bin",
+    "output_sha256": "ea4e260c1bc6b0feea16ca16d9c65ca017454a9c7754277e088ecd97d49a5a9a",
+    "name_hash": "d14d76ef",
+    "type_hash": "20a6a0bb",
+    "declared_nodes": 68397,
+    "verified_nodes": 68397,
+    "final_offset": 17228668,
+    "file_bytes": 17228668,
+    "padding_lengths": {
+      "0": 58622,
+      "3": 9775
+    },
+    "frequent_unknown_word_at_offset_16": {
+      "0x11a85121": 19774,
+      "0x34f2ec8b": 18051,
+      "0xd8004a77": 9775,
+      "0xa99dfa37": 7563,
+      "0xf4c31252": 6126,
+      "0xed0038d4": 2925,
+      "0xec5647e9": 1172,
+      "0x3059b9c3": 1172,
+      "0xff7dbfd4": 1026,
+      "0x0fe035d1": 412,
+      "0x5a22481c": 378,
+      "0x3b6f1dab": 23
+    },
+    "node_structural_status": "EXACT_NATIVE_FRAMING",
+    "member_semantics": "UNRESOLVED",
+    "external_text_references": "NOT_PROVEN"
+  }
+]

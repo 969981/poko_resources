@@ -1,0 +1,9 @@
+test_corrupt_padding_rejected (test_m9_kidsobjdb_framing.M9NativeFramingTests.test_corrupt_padding_rejected) ... ok
+test_mismatched_header_count_rejected (test_m9_kidsobjdb_framing.M9NativeFramingTests.test_mismatched_header_count_rejected) ... ok
+test_sqlite_object_nodes_stay_untyped (test_m9_kidsobjdb_framing.M9NativeFramingTests.test_sqlite_object_nodes_stay_untyped) ... ok
+test_two_nodes_lengths_padding_and_container_end (test_m9_kidsobjdb_framing.M9NativeFramingTests.test_two_nodes_lengths_padding_and_container_end) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.009s
+
+OK

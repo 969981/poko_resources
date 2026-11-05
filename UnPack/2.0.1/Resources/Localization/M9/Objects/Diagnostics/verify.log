@@ -1,0 +1,38 @@
+{
+  "status": "M9_KIDSOBJDB_NATIVE_RECORD_FRAMING_CONFIRMED",
+  "files_source_verified": 3,
+  "native_node_records_verified": 101467,
+  "files": [
+    {
+      "m3_record_id": "root:42257",
+      "declared_nodes": 31740,
+      "verified_nodes": 31740,
+      "final_offset": 4584592,
+      "file_bytes": 4584592
+    },
+    {
+      "m3_record_id": "root:49334",
+      "declared_nodes": 1330,
+      "verified_nodes": 1330,
+      "final_offset": 510056,
+      "file_bytes": 510056
+    },
+    {
+      "m3_record_id": "root:49689",
+      "declared_nodes": 68397,
+      "verified_nodes": 68397,
+      "final_offset": 17228668,
+      "file_bytes": 17228668
+    }
+  ],
+  "sqlite_native_node_rows": 101467,
+  "field_type_semantics": "UNRESOLVED",
+  "scene_quest_building_caller_foreign_keys": 0,
+  "evidence": "IDOK_COUNT_HEADER_AND_LENGTH_ALIGNMENT_EXACT",
+  "warnings": [
+    "A verified IDOK record boundary is not a decoded object member.",
+    "The raw u32 words at offsets 12..28 are retained, not assigned false field names.",
+    "No scene/quest/building text foreign key is inferred from native record numbering."
+  ]
+}
+Byte-exact native node framing verification PASS
