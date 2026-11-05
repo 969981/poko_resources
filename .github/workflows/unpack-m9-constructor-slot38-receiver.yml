@@ -1,0 +1,100 @@
+name: M9.22 - exact constructor slot38 receiver x22 vs created x23
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_constructor_slot38_receiver.py"
+      - "tests/test_m9_constructor_slot38_receiver.py"
+      - ".github/workflows/unpack-m9-constructor-slot38-receiver.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-22-constructor-receiver
+  cancel-in-progress: false
+
+jobs:
+  verify-specific-virtual-receiver:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m9_owner_local_callgraph.py
+            Scripts/resources/m9_owner_object_escape.py
+            Scripts/resources/m9_constructor_slot38_receiver.py
+            tests/test_m9_constructor_slot38_receiver.py
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_complete_callback_control_flow.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_constructor_slot38_receiver_provenance.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Test original register source disambiguation and false-positive rejection
+        env:
+          PYTHONPATH: "."
+        run: python -m unittest discover -s tests -p 'test_m9_constructor_slot38_receiver.py' -v
+
+      - name: Verify original ARM64 x22/x23 lifetimes
+        env:
+          PYTHONPATH: "."
+        run: |
+          python Scripts/resources/m9_constructor_slot38_receiver.py \
+            --main 2.0.1/exefs/main \
+            --m9-21 UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_complete_callback_control_flow.json \
+            --dest UnPack/2.0.1/Resources/Localization/M9/NameTables
+
+      - name: Preserve target identity and evidence grades
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_constructor_slot38_receiver_provenance.json')
+          d=json.loads(p.read_text(encoding='utf-8')); r=d['report']
+          assert r['status']=='M9_NATIVE_CONSTRUCTOR_SLOT38_RECEIVER_DISAMBIGUATED'
+          assert r['specific_virtual_slot0x38_call_pc']==0xd59250
+          assert r['source_object_receiver_register']=='x22'
+          assert r['inner_created_object_register']=='x23'
+          assert r['x22_source_pc']==0xd591a0
+          assert r['x23_source_pc']==0xd591b0
+          assert r['runtime_source_and_created_object_pointer_inequality_verified'] is False
+          assert r['specific_inner_class_slot38_callback_invocation_verified'] is False
+          assert r['specific_callback_main_d59420_called_at_d59250_verified'] is False
+          assert r['new_M7_foreign_keys']==0
+          print('M9.22 x22 target object disambiguation PASS')
+          PY
+
+      - name: Save precise original native trace
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m9-22-disjoint-constructor-register-sources
+          path: UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_constructor_slot38_receiver_provenance.json
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Commit original native dataflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_constructor_slot38_receiver_provenance.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9.22): original x22 +0x38 receiver is not newly created x23 provenance"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
