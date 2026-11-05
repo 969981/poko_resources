@@ -1,0 +1,23 @@
+{
+  "version": "2.0.1",
+  "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "original_class_type_hash": "0x9d1afa46",
+  "original_class_global_owner_cell": "0x349c2e0",
+  "original_class_global_table_cell": "0x349c2e8",
+  "original_class_bss_owner_initial_va": "0x367ad40",
+  "original_class_method_table_installed_at": "0x33135c8",
+  "original_class_store_instruction": "0xbe1a28",
+  "original_class_typehash_getter_method_slot_offset": "0x28",
+  "original_class_typehash_getter": "0xdd1c30",
+  "original_3543_icon_source_property_hash": "0x34cbb458",
+  "original_property_descriptor_address": "0x2838834",
+  "property_hash_byte_offset_in_descriptor": 8,
+  "original_descriptor_adrp_add_verified": true,
+  "original_vtable_first_16_code_pointer_entries": 16,
+  "original_vtable_first_16_values_in_text": 16,
+  "type_hash_and_descriptor_metadata_source_proven": true,
+  "descriptor_native_game_ID_consumer_proven": false,
+  "game_species_ID_to_3543_array_index_proven": false,
+  "native_villager_ID_to_icon_source_OID_proven": false,
+  "warning": "Verified original BSS class, installed method table, descriptor address/hash; not a caller-level or runtime assignment of a native species ID."
+}
