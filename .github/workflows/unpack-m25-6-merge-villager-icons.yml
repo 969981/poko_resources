@@ -1,0 +1,91 @@
+name: M25.6 - Merge original 17 portraits into native villager Icons
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m25_6_merge_17_villager_native_icons.py"
+      - ".github/workflows/unpack-m25-6-merge-villager-icons.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m25-6-merge-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  combine-source-qualified-native-portrait-candidates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout all previously established source-qualified PNGs
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m25_6_merge_17_villager_native_icons.py
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/Icons
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/native_icon_crosswalk.csv
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M25/m25_5_79_portrait_visual_crosscheck.csv
+            UnPack/2.0.1/Resources/Pokemon/NativeRecoveryM25
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check strict 378 candidate inventory schema
+        run: python -m Scripts.resources.m25_6_merge_17_villager_native_icons --self-test
+
+      - name: Add 17 SHA256-verified original PNGs to villager Icons
+        run: python -m Scripts.resources.m25_6_merge_17_villager_native_icons
+
+      - name: Verify 307 visual candidates 9 unresolved variants and 62 missing
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1")
+          summary=json.loads((p/"M25/m25_6_complete_villager_coverage_summary.json").read_text(encoding="utf-8"))
+          rows=list(csv.DictReader((p/"M25/m25_6_complete_378_villager_candidate_inventory.csv").open(encoding="utf-8",newline="")))
+          assert len(rows)==378
+          assert summary["combined_high_confidence_visual_candidates"]==307
+          assert summary["m25_new_original_visual_candidates"]==17
+          assert summary["ambiguous_multiple_native_candidates"]==9
+          assert summary["not_yet_native_mapped"]==62
+          assert summary["native_game_villager_id_bindings_verified"]==0
+          assert all(not x["runtime_villager_id_binding_verified"] for x in rows)
+          assert len(list((p/"Icons").glob("*.png")))==307
+          remaining=[int(x["portrait_id_pokohex"]) for x in rows if x["candidate_status"]=="NO_CONFIDENT_SOURCE_2_0_1"]
+          assert remaining==list(range(317,379))
+          print("PASS exact 378/307/9/62 native visual candidate inventory")
+          PY
+
+      - name: Upload merged native portrait evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-m25-6-villager-307-native-visual-candidates
+          path: |
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M25/m25_6_*
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/Icons/
+          if-no-files-found: warn
+          retention-days: 21
+
+      - name: Commit 17 exact-source PNG copies and 378 candidate inventory
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M25/m25_6_* UnPack/2.0.1/Resources/Villagers/Native_2.0.1/Icons/
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "feat(m25.6): 307 original-backed villager icon candidates with 62 missing and 9 ambiguous"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
