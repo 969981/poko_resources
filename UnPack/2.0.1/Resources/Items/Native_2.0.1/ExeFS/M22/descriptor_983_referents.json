@@ -1,0 +1,471 @@
+{
+  "status": "NATIVE_983_40BYTE_DESCRIPTOR_POINTER_REFERENTS",
+  "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "original_item_sha256": "2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f",
+  "descriptor_base_va": "0x3354500",
+  "descriptor_stride": 40,
+  "descriptors": [
+    {
+      "id": 0,
+      "descriptor_va": "0x3354500",
+      "section": "data",
+      "raw_40_hex": "b19e7e020000000085d9770200000000000000000000000000000000000000000000000000000000",
+      "raw_40_sha256": "6dd82b8f25cadb45c537874d87996888b84da2541a3b79e88748dc250a1e6393",
+      "u32_words": [
+        "0x27e9eb1",
+        "0x0",
+        "0x277d985",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0"
+      ],
+      "u64_interpretations": [
+        {
+          "field_offset": "0x0",
+          "raw_u64": "0x27e9eb1",
+          "mapped": true,
+          "section": "rodata",
+          "string": "UNDEF",
+          "hex_prefix": "554e4445460052534120446174612053656375726974792c20496e632e20504b4353006d643500727361456e6372797074696f6e00706265576974684d443541",
+          "text_is_printable": true,
+          "nul_terminated_in_window": true,
+          "u32_le_sample": [
+            "0x45444e55",
+            "0x53520046",
+            "0x61442041",
+            "0x53206174",
+            "0x72756365",
+            "0x2c797469",
+            "0x636e4920",
+            "0x4b50202e"
+          ],
+          "kind": "MAPPED_IMAGE_ADDRESS"
+        },
+        {
+          "field_offset": "0x8",
+          "raw_u64": "0x277d985",
+          "mapped": true,
+          "section": "rodata",
+          "string": "undefined",
+          "hex_prefix": "756e646566696e656400706b6373372d7369676e6564416e64456e76656c6f7065644461746100636f756e7465727369676e6174757265006e73446174615479",
+          "text_is_printable": true,
+          "nul_terminated_in_window": true,
+          "u32_le_sample": [
+            "0x65646e75",
+            "0x656e6966",
+            "0x6b700064",
+            "0x2d377363",
+            "0x6e676973",
+            "0x6e416465",
+            "0x766e4564",
+            "0x706f6c65"
+          ],
+          "kind": "MAPPED_IMAGE_ADDRESS"
+        },
+        {
+          "field_offset": "0x10",
+          "raw_u64": "0x0",
+          "kind": "ZERO"
+        },
+        {
+          "field_offset": "0x18",
+          "raw_u64": "0x0",
+          "kind": "ZERO"
+        },
+        {
+          "field_offset": "0x20",
+          "raw_u64": "0x0",
+          "kind": "ZERO"
+        }
+      ]
+    },
+    {
+      "id": 982,
+      "descriptor_va": "0x335de70",
+      "section": "data",
+      "raw_40_hex": "99f77b0200000000bc1a7e0200000000d60300000800000068118802000000000000000000000000",
+      "raw_40_sha256": "b9f26b39ff50b8242793056cd2a2f34339ea860795197544ae48e884e25c9e85",
+      "u32_words": [
+        "0x27bf799",
+        "0x0",
+        "0x27e1abc",
+        "0x0",
+        "0x3d6",
+        "0x8",
+        "0x2881168",
+        "0x0",
+        "0x0",
+        "0x0"
+      ],
+      "u64_interpretations": [
+        {
+          "field_offset": "0x0",
+          "raw_u64": "0x27bf799",
+          "mapped": true,
+          "section": "rodata",
+          "string": "md_gost12_256",
+          "hex_prefix": "6d645f676f737431325f32353600415249412d3132382d43464238007368613531322d323536006473615f776974685f534841332d32353600736d342d6f6662",
+          "text_is_printable": true,
+          "nul_terminated_in_window": true,
+          "u32_le_sample": [
+            "0x675f646d",
+            "0x3174736f",
+            "0x35325f32",
+            "0x52410036",
+            "0x312d4149",
+            "0x432d3832",
+            "0x384246",
+            "0x35616873"
+          ],
+          "kind": "MAPPED_IMAGE_ADDRESS"
+        },
+        {
+          "field_offset": "0x8",
+          "raw_u64": "0x27e1abc",
+          "mapped": true,
+          "section": "rodata",
+          "string": "GOST R 34.11-2012 with 256 bit hash",
+          "hex_prefix": "474f535420522033342e31312d3230313220776974682032353620626974206861736800474f535420522033342e31302d32303132207769746820474f535420",
+          "text_is_printable": true,
+          "nul_terminated_in_window": true,
+          "u32_le_sample": [
+            "0x54534f47",
+            "0x33205220",
+            "0x31312e34",
+            "0x3130322d",
+            "0x69772032",
+            "0x32206874",
+            "0x62203635",
+            "0x68207469"
+          ],
+          "kind": "MAPPED_IMAGE_ADDRESS"
+        },
+        {
+          "field_offset": "0x10",
+          "raw_u64": "0x8000003d6",
+          "kind": "NON_POINTER_OR_COMPOSITE_U64"
+        },
+        {
+          "field_offset": "0x18",
+          "raw_u64": "0x2881168",
+          "mapped": true,
+          "section": "rodata",
+          "string": null,
+          "hex_prefix": "2a850307010102022a850307010102032a8503070101032a850307010103022a850307010103032a8503070101042a850307010104012a850307010104022a85",
+          "text_is_printable": false,
+          "nul_terminated_in_window": true,
+          "u32_le_sample": [
+            "0x703852a",
+            "0x2020101",
+            "0x703852a",
+            "0x3020101",
+            "0x703852a",
+            "0x2a030101",
+            "0x1070385",
+            "0x2a020301"
+          ],
+          "kind": "MAPPED_IMAGE_ADDRESS"
+        },
+        {
+          "field_offset": "0x20",
+          "raw_u64": "0x0",
+          "kind": "ZERO"
+        }
+      ]
+    },
+    {
+      "id": 983,
+      "descriptor_va": "0x335de98",
+      "section": "data",
+      "raw_40_hex": "b20680020000000076b0780200000000d70300000800000070118802000000000000000000000000",
+      "raw_40_sha256": "b5a65c1afb0b5648e5cf350bc6a8257c32de8ef2a34b34bee1a634b5f4e5f190",
+      "u32_words": [
+        "0x28006b2",
+        "0x0",
+        "0x278b076",
+        "0x0",
+        "0x3d7",
+        "0x8",
+        "0x2881170",
+        "0x0",
+        "0x0",
+        "0x0"
+      ],
+      "u64_interpretations": [
+        {
+          "field_offset": "0x0",
+          "raw_u64": "0x28006b2",
+          "mapped": true,
+          "section": "rodata",
+          "string": "md_gost12_512",
+          "hex_prefix": "6d645f676f737431325f3531320069642d746332362d6d61630069642d746332362d686d61632d676f73742d333431312d323031322d3531320069642d746332",
+          "text_is_printable": true,
+          "nul_terminated_in_window": true,
+          "u32_le_sample": [
+            "0x675f646d",
+            "0x3174736f",
+            "0x31355f32",
+            "0x64690032",
+            "0x3263742d",
+            "0x616d2d36",
+            "0x64690063",
+            "0x3263742d"
+          ],
+          "kind": "MAPPED_IMAGE_ADDRESS"
+        },
+        {
+          "field_offset": "0x8",
+          "raw_u64": "0x278b076",
+          "mapped": true,
+          "section": "rodata",
+          "string": "GOST R 34.11-2012 with 512 bit hash",
+          "hex_prefix": "474f535420522033342e31312d3230313220776974682035313220626974206861736800746c7366656174757265004b78525341006b782d7273610061757468",
+          "text_is_printable": true,
+          "nul_terminated_in_window": true,
+          "u32_le_sample": [
+            "0x54534f47",
+            "0x33205220",
+            "0x31312e34",
+            "0x3130322d",
+            "0x69772032",
+            "0x35206874",
+            "0x62203231",
+            "0x68207469"
+          ],
+          "kind": "MAPPED_IMAGE_ADDRESS"
+        },
+        {
+          "field_offset": "0x10",
+          "raw_u64": "0x8000003d7",
+          "kind": "NON_POINTER_OR_COMPOSITE_U64"
+        },
+        {
+          "field_offset": "0x18",
+          "raw_u64": "0x2881170",
+          "mapped": true,
+          "section": "rodata",
+          "string": null,
+          "hex_prefix": "2a850307010102032a8503070101032a850307010103022a850307010103032a8503070101042a850307010104012a850307010104022a8503070101052a8503",
+          "text_is_printable": false,
+          "nul_terminated_in_window": true,
+          "u32_le_sample": [
+            "0x703852a",
+            "0x3020101",
+            "0x703852a",
+            "0x2a030101",
+            "0x1070385",
+            "0x2a020301",
+            "0x1070385",
+            "0x2a030301"
+          ],
+          "kind": "MAPPED_IMAGE_ADDRESS"
+        },
+        {
+          "field_offset": "0x20",
+          "raw_u64": "0x0",
+          "kind": "ZERO"
+        }
+      ]
+    },
+    {
+      "id": 984,
+      "descriptor_va": "0x335dec0",
+      "section": "data",
+      "raw_40_hex": "75dc77020000000075dc770200000000d80300000700000078118802000000000000000000000000",
+      "raw_40_sha256": "dc5e8377bb2c133704aa8d311c3ec351c4c16871073624f35710fcb1b32a5ca8",
+      "u32_words": [
+        "0x277dc75",
+        "0x0",
+        "0x277dc75",
+        "0x0",
+        "0x3d8",
+        "0x7",
+        "0x2881178",
+        "0x0",
+        "0x0",
+        "0x0"
+      ],
+      "u64_interpretations": [
+        {
+          "field_offset": "0x0",
+          "raw_u64": "0x277dc75",
+          "mapped": true,
+          "section": "rodata",
+          "string": "id-tc26-signwithdigest",
+          "hex_prefix": "69642d746332362d7369676e776974686469676573740069642d746332362d7369676e776974686469676573742d676f7374333431302d323031322d35313200",
+          "text_is_printable": true,
+          "nul_terminated_in_window": true,
+          "u32_le_sample": [
+            "0x742d6469",
+            "0x2d363263",
+            "0x6e676973",
+            "0x68746977",
+            "0x65676964",
+            "0x69007473",
+            "0x63742d64",
+            "0x732d3632"
+          ],
+          "kind": "MAPPED_IMAGE_ADDRESS"
+        },
+        {
+          "field_offset": "0x8",
+          "raw_u64": "0x277dc75",
+          "mapped": true,
+          "section": "rodata",
+          "string": "id-tc26-signwithdigest",
+          "hex_prefix": "69642d746332362d7369676e776974686469676573740069642d746332362d7369676e776974686469676573742d676f7374333431302d323031322d35313200",
+          "text_is_printable": true,
+          "nul_terminated_in_window": true,
+          "u32_le_sample": [
+            "0x742d6469",
+            "0x2d363263",
+            "0x6e676973",
+            "0x68746977",
+            "0x65676964",
+            "0x69007473",
+            "0x63742d64",
+            "0x732d3632"
+          ],
+          "kind": "MAPPED_IMAGE_ADDRESS"
+        },
+        {
+          "field_offset": "0x10",
+          "raw_u64": "0x7000003d8",
+          "kind": "NON_POINTER_OR_COMPOSITE_U64"
+        },
+        {
+          "field_offset": "0x18",
+          "raw_u64": "0x2881178",
+          "mapped": true,
+          "section": "rodata",
+          "string": null,
+          "hex_prefix": "2a8503070101032a850307010103022a850307010103032a8503070101042a850307010104012a850307010104022a8503070101052a8503070101062a850307",
+          "text_is_printable": false,
+          "nul_terminated_in_window": true,
+          "u32_le_sample": [
+            "0x703852a",
+            "0x2a030101",
+            "0x1070385",
+            "0x2a020301",
+            "0x1070385",
+            "0x2a030301",
+            "0x1070385",
+            "0x852a0401"
+          ],
+          "kind": "MAPPED_IMAGE_ADDRESS"
+        },
+        {
+          "field_offset": "0x20",
+          "raw_u64": "0x0",
+          "kind": "ZERO"
+        }
+      ]
+    },
+    {
+      "id": 1194,
+      "descriptor_va": "0x335ff90",
+      "section": "data",
+      "raw_40_hex": "2cce7902000000002cce790200000000aa040000080000009d168802000000000000000000000000",
+      "raw_40_sha256": "23cd64458aaa6446599d8f0f0cb6224b1581f69e50babe9dc4b15d09aec17419",
+      "u32_words": [
+        "0x279ce2c",
+        "0x0",
+        "0x279ce2c",
+        "0x0",
+        "0x4aa",
+        "0x8",
+        "0x288169d",
+        "0x0",
+        "0x0",
+        "0x0"
+      ],
+      "u64_interpretations": [
+        {
+          "field_offset": "0x0",
+          "raw_u64": "0x279ce2c",
+          "mapped": true,
+          "section": "rodata",
+          "string": "hmacWithSHA512-256",
+          "hex_prefix": "686d6163576974685348413531322d3235360041534e315f414e59004449524543544f5259535452494e470041534e315f46424f4f4c45414e00256a750a0042",
+          "text_is_printable": true,
+          "nul_terminated_in_window": true,
+          "u32_le_sample": [
+            "0x63616d68",
+            "0x68746957",
+            "0x35414853",
+            "0x322d3231",
+            "0x41003635",
+            "0x5f314e53",
+            "0x594e41",
+            "0x45524944"
+          ],
+          "kind": "MAPPED_IMAGE_ADDRESS"
+        },
+        {
+          "field_offset": "0x8",
+          "raw_u64": "0x279ce2c",
+          "mapped": true,
+          "section": "rodata",
+          "string": "hmacWithSHA512-256",
+          "hex_prefix": "686d6163576974685348413531322d3235360041534e315f414e59004449524543544f5259535452494e470041534e315f46424f4f4c45414e00256a750a0042",
+          "text_is_printable": true,
+          "nul_terminated_in_window": true,
+          "u32_le_sample": [
+            "0x63616d68",
+            "0x68746957",
+            "0x35414853",
+            "0x322d3231",
+            "0x41003635",
+            "0x5f314e53",
+            "0x594e41",
+            "0x45524944"
+          ],
+          "kind": "MAPPED_IMAGE_ADDRESS"
+        },
+        {
+          "field_offset": "0x10",
+          "raw_u64": "0x8000004aa",
+          "kind": "NON_POINTER_OR_COMPOSITE_U64"
+        },
+        {
+          "field_offset": "0x18",
+          "raw_u64": "0x288169d",
+          "mapped": true,
+          "section": "rodata",
+          "string": null,
+          "hex_prefix": "2a864886f70d020d0000000100000011001e0000002b003f82444400000000565600111d262a354500ba00000000000000000000000000000000000000000000",
+          "text_is_printable": false,
+          "nul_terminated_in_window": true,
+          "u32_le_sample": [
+            "0x8648862a",
+            "0xd020df7",
+            "0x1000000",
+            "0x11000000",
+            "0x1e00",
+            "0x3f002b00",
+            "0x444482",
+            "0x56000000"
+          ],
+          "kind": "MAPPED_IMAGE_ADDRESS"
+        },
+        {
+          "field_offset": "0x20",
+          "raw_u64": "0x0",
+          "kind": "ZERO"
+        }
+      ]
+    }
+  ],
+  "confirmed_983_is_00983_file": false,
+  "confirmed_983_pointer_is_4600x68_table": false,
+  "confirmed_V1_V2_constructor_link": false,
+  "notes": [
+    "Resource-name strings, if found, are descriptors; verify which resource ID namespace maps to LD_C0_R.BIN.",
+    "u64 values may be composite IDs and flags, not pointers: treating all as addresses is invalid.",
+    "Mapped strings alone cannot establish that V2 get(ID) uses this descriptor's decoded bytes."
+  ]
+}
