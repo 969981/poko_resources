@@ -1,0 +1,4318 @@
+{
+  "version": "2.0.1",
+  "source": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin",
+  "correct_source": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin",
+  "expected_sha256": "2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f",
+  "byte_length": 312864,
+  "header_size": 64,
+  "record_size": 68,
+  "record_count": 4600,
+  "named_item_count": 3585,
+  "table_version": 3,
+  "verified_name_index_offset": "0x22 (u16 little-endian)",
+  "raw_category_candidates": {
+    "byte_0x26": "Strong item-kind candidate; type labels not formally verified",
+    "byte_0x3a": "Second grouping candidate; not interchangeable with 0x26",
+    "byte_0x39": "Additional classification/display grouping candidate"
+  },
+  "known_quantity_limits": {
+    "native_per_item_stack_field": "UNRESOLVED",
+    "save_file_storage": "one uint8 quantity (0-255 representable) per PokoHex.Core/Structures/Item.cs",
+    "gameplay_stack_limit": "99 reported by GameSpot; not proven from 00983.bin",
+    "bag_slot_count": "separate from per-stack count"
+  },
+  "field_groups": {
+    "0x26": {
+      "0": {
+        "count": 2,
+        "samples": [
+          {
+            "id": 3589,
+            "en": "meteor lamp",
+            "zhs": "流星台灯"
+          },
+          {
+            "id": 3700,
+            "en": "???",
+            "zhs": "？？？"
+          }
+        ]
+      },
+      "4": {
+        "count": 142,
+        "samples": [
+          {
+            "id": 302,
+            "en": "flower cushion",
+            "zhs": "花朵靠枕"
+          },
+          {
+            "id": 304,
+            "en": "flower table",
+            "zhs": "花朵桌子"
+          },
+          {
+            "id": 314,
+            "en": "camping chair",
+            "zhs": "露营椅子"
+          },
+          {
+            "id": 315,
+            "en": "sleeping bag",
+            "zhs": "睡袋"
+          },
+          {
+            "id": 425,
+            "en": "cloud table",
+            "zhs": "云朵桌子"
+          },
+          {
+            "id": 426,
+            "en": "starry-sky bed",
+            "zhs": "星空床铺"
+          },
+          {
+            "id": 427,
+            "en": "star-shaped dresser",
+            "zhs": "星形梳妆台"
+          },
+          {
+            "id": 428,
+            "en": "star closet",
+            "zhs": "星星衣柜"
+          }
+        ]
+      },
+      "5": {
+        "count": 165,
+        "samples": [
+          {
+            "id": 48,
+            "en": "iron-scaffold plank",
+            "zhs": "脚手架板"
+          },
+          {
+            "id": 401,
+            "en": "house partition (big)",
+            "zhs": "房屋隔板（大）"
+          },
+          {
+            "id": 450,
+            "en": "decorative cloth",
+            "zhs": "装饰布"
+          },
+          {
+            "id": 451,
+            "en": "ornate door",
+            "zhs": "东方风格门"
+          },
+          {
+            "id": 452,
+            "en": "ornate window",
+            "zhs": "东方风格窗"
+          },
+          {
+            "id": 453,
+            "en": "flat scale roof",
+            "zhs": "水平鳞片屋顶"
+          },
+          {
+            "id": 454,
+            "en": "sloped scale roof",
+            "zhs": "斜斜鳞片屋顶"
+          },
+          {
+            "id": 455,
+            "en": "scale hipped roof",
+            "zhs": "凸凸鳞片屋顶"
+          }
+        ]
+      },
+      "6": {
+        "count": 930,
+        "samples": [
+          {
+            "id": 90,
+            "en": "party popper",
+            "zhs": "彩花炮"
+          },
+          {
+            "id": 92,
+            "en": "Star Piece",
+            "zhs": "星星碎片"
+          },
+          {
+            "id": 100,
+            "en": "Rainbow Feather",
+            "zhs": "虹色之羽"
+          },
+          {
+            "id": 122,
+            "en": "Silver Feather",
+            "zhs": "银色之羽"
+          },
+          {
+            "id": 131,
+            "en": "someone’s journal #3",
+            "zhs": "某人的日记3"
+          },
+          {
+            "id": 132,
+            "en": "someone’s journal #4",
+            "zhs": "某人的日记4"
+          },
+          {
+            "id": 134,
+            "en": "Team R Grunt’s journal #1",
+            "zhs": "R队手下日记1"
+          },
+          {
+            "id": 135,
+            "en": "Team R Grunt’s journal #2",
+            "zhs": "R队手下日记2"
+          }
+        ]
+      },
+      "8": {
+        "count": 228,
+        "samples": [
+          {
+            "id": 42,
+            "en": "cushy wall",
+            "zhs": "皮革墙"
+          },
+          {
+            "id": 47,
+            "en": "muddy pure-white soil",
+            "zhs": "洁白的土（带泥）"
+          },
+          {
+            "id": 297,
+            "en": "gray circle flooring",
+            "zhs": "灰色圆点地板"
+          },
+          {
+            "id": 416,
+            "en": "carved coarse rock",
+            "zhs": "粗粗削岩"
+          },
+          {
+            "id": 417,
+            "en": "carved light-brown rock",
+            "zhs": "淡褐色削岩"
+          },
+          {
+            "id": 418,
+            "en": "carved yellow rock",
+            "zhs": "黄色削岩"
+          },
+          {
+            "id": 419,
+            "en": "carved red rock",
+            "zhs": "红色削岩"
+          },
+          {
+            "id": 495,
+            "en": "farm soil",
+            "zhs": "田地土"
+          }
+        ]
+      },
+      "10": {
+        "count": 383,
+        "samples": [
+          {
+            "id": 50,
+            "en": "seashore-flower seeds",
+            "zhs": "海边的花的种子"
+          },
+          {
+            "id": 51,
+            "en": "cute-flower seeds",
+            "zhs": "可爱的花的种子"
+          },
+          {
+            "id": 52,
+            "en": "palm seeds",
+            "zhs": "椰子树的种子"
+          },
+          {
+            "id": 53,
+            "en": "square-plant seeds",
+            "zhs": "方形植栽的种子"
+          },
+          {
+            "id": 55,
+            "en": "tomato seeds",
+            "zhs": "番茄的种子"
+          },
+          {
+            "id": 56,
+            "en": "bean seeds",
+            "zhs": "豆子的种子"
+          },
+          {
+            "id": 59,
+            "en": "wheat seeds",
+            "zhs": "小麦的种子"
+          },
+          {
+            "id": 60,
+            "en": "potato seeds",
+            "zhs": "马铃薯的种子"
+          }
+        ]
+      },
+      "11": {
+        "count": 393,
+        "samples": [
+          {
+            "id": 291,
+            "en": "decorative plant shelf",
+            "zhs": "装饰架（园艺）"
+          },
+          {
+            "id": 293,
+            "en": "decorative bookshelf",
+            "zhs": "装饰架（书）"
+          },
+          {
+            "id": 301,
+            "en": "Hoppip water bottle",
+            "zhs": "毽子草水壶"
+          },
+          {
+            "id": 303,
+            "en": "lunch box",
+            "zhs": "便当"
+          },
+          {
+            "id": 305,
+            "en": "juice trio",
+            "zhs": "瓶装饮料"
+          },
+          {
+            "id": 306,
+            "en": "flowery table setting",
+            "zhs": "花朵餐具套组"
+          },
+          {
+            "id": 307,
+            "en": "flower backpack",
+            "zhs": "花朵背包"
+          },
+          {
+            "id": 309,
+            "en": "flower garland",
+            "zhs": "花朵墙饰"
+          }
+        ]
+      },
+      "12": {
+        "count": 34,
+        "samples": [
+          {
+            "id": 94,
+            "en": "party curry",
+            "zhs": "派对咖喱"
+          },
+          {
+            "id": 515,
+            "en": "Sharpedo submarine",
+            "zhs": "巨牙鲨潜水艇"
+          },
+          {
+            "id": 680,
+            "en": "Basin Pokémon Center",
+            "zhs": "海底的宝可梦中心"
+          },
+          {
+            "id": 681,
+            "en": "Dewgong clock tower",
+            "zhs": "白海狮钟塔"
+          },
+          {
+            "id": 716,
+            "en": "imperial cottage",
+            "zhs": "宝都小家"
+          },
+          {
+            "id": 717,
+            "en": "imperial house",
+            "zhs": "宝都豪宅"
+          },
+          {
+            "id": 1377,
+            "en": "furnace",
+            "zhs": "火力发电机"
+          },
+          {
+            "id": 1378,
+            "en": "waterwheel",
+            "zhs": "水力发电机"
+          }
+        ]
+      },
+      "13": {
+        "count": 94,
+        "samples": [
+          {
+            "id": 292,
+            "en": "mushroom streetlight",
+            "zhs": "蘑菇路灯"
+          },
+          {
+            "id": 316,
+            "en": "camping cooking pot",
+            "zhs": "露营锅"
+          },
+          {
+            "id": 317,
+            "en": "oil lantern",
+            "zhs": "油灯"
+          },
+          {
+            "id": 377,
+            "en": "orange meteor lamp",
+            "zhs": "流星台灯（橙）"
+          },
+          {
+            "id": 378,
+            "en": "yellow meteor lamp",
+            "zhs": "流星台灯（黄）"
+          },
+          {
+            "id": 379,
+            "en": "green meteor lamp",
+            "zhs": "流星台灯（绿）"
+          },
+          {
+            "id": 380,
+            "en": "blue meteor lamp",
+            "zhs": "流星台灯（浅蓝）"
+          },
+          {
+            "id": 392,
+            "en": "indigo meteor lamp",
+            "zhs": "流星台灯（蓝）"
+          }
+        ]
+      },
+      "14": {
+        "count": 68,
+        "samples": [
+          {
+            "id": 95,
+            "en": "leaf den kit",
+            "zhs": "叶子小窝套组"
+          },
+          {
+            "id": 96,
+            "en": "leaf hut kit",
+            "zhs": "叶子小屋套组"
+          },
+          {
+            "id": 99,
+            "en": "Wasteland Pokémon Center kit",
+            "zhs": "荒野的宝可梦中心套组"
+          },
+          {
+            "id": 294,
+            "en": "pink hut kit",
+            "zhs": "粉红色小屋套组"
+          },
+          {
+            "id": 295,
+            "en": "gray hut kit",
+            "zhs": "灰色小屋套组"
+          },
+          {
+            "id": 296,
+            "en": "yellow hut kit",
+            "zhs": "黄色小屋套组"
+          },
+          {
+            "id": 326,
+            "en": "Pokémon Center rebuilding kit",
+            "zhs": "宝可梦中心重建套组"
+          },
+          {
+            "id": 327,
+            "en": "Pokémon Center rebuilding kit",
+            "zhs": "宝可梦中心重建套组"
+          }
+        ]
+      },
+      "15": {
+        "count": 60,
+        "samples": [
+          {
+            "id": 6,
+            "en": "cave mushrooms",
+            "zhs": "成熟的蘑菇"
+          },
+          {
+            "id": 7,
+            "en": "seaweed",
+            "zhs": "海藻"
+          },
+          {
+            "id": 8,
+            "en": "tomato",
+            "zhs": "番茄"
+          },
+          {
+            "id": 14,
+            "en": "bean",
+            "zhs": "豆子"
+          },
+          {
+            "id": 20,
+            "en": "wheat",
+            "zhs": "小麦"
+          },
+          {
+            "id": 21,
+            "en": "potato",
+            "zhs": "马铃薯"
+          },
+          {
+            "id": 22,
+            "en": "simple salad",
+            "zhs": "原味沙拉"
+          },
+          {
+            "id": 23,
+            "en": "seaweed salad",
+            "zhs": "海藻沙拉"
+          }
+        ]
+      },
+      "16": {
+        "count": 48,
+        "samples": [
+          {
+            "id": 101,
+            "en": "vine rope",
+            "zhs": "藤蔓绳"
+          },
+          {
+            "id": 102,
+            "en": "sea glass fragments",
+            "zhs": "海玻璃碎片"
+          },
+          {
+            "id": 105,
+            "en": "brick",
+            "zhs": "砖块"
+          },
+          {
+            "id": 106,
+            "en": "copper ore",
+            "zhs": "铜"
+          },
+          {
+            "id": 107,
+            "en": "iron ore",
+            "zhs": "铁"
+          },
+          {
+            "id": 108,
+            "en": "glass",
+            "zhs": "玻璃"
+          },
+          {
+            "id": 109,
+            "en": "nonburnable garbage",
+            "zhs": "不可燃垃圾"
+          },
+          {
+            "id": 110,
+            "en": "twine",
+            "zhs": "线团"
+          }
+        ]
+      },
+      "17": {
+        "count": 22,
+        "samples": [
+          {
+            "id": 93,
+            "en": "diploma",
+            "zhs": "奖状"
+          },
+          {
+            "id": 3960,
+            "en": "Bouldery Badge",
+            "zhs": "灰灰徽章"
+          },
+          {
+            "id": 3961,
+            "en": "Cascade-like Badge",
+            "zhs": "蓝蓝徽章"
+          },
+          {
+            "id": 3962,
+            "en": "Thunderish Badge",
+            "zhs": "橙橙徽章"
+          },
+          {
+            "id": 3963,
+            "en": "Rainbowish Badge",
+            "zhs": "虹彩徽章"
+          },
+          {
+            "id": 3964,
+            "en": "Soul-like Badge",
+            "zhs": "红粉徽章"
+          },
+          {
+            "id": 3965,
+            "en": "Marshy Badge",
+            "zhs": "金金徽章"
+          },
+          {
+            "id": 3966,
+            "en": "Volcanoey Badge",
+            "zhs": "红深徽章"
+          }
+        ]
+      },
+      "18": {
+        "count": 925,
+        "samples": [
+          {
+            "id": 523,
+            "en": "lampion",
+            "zhs": "灯笼"
+          },
+          {
+            "id": 538,
+            "en": "Pikachu sofa",
+            "zhs": "皮卡丘沙发"
+          },
+          {
+            "id": 539,
+            "en": "pearl streetlight",
+            "zhs": "珍珠路灯"
+          },
+          {
+            "id": 721,
+            "en": "buoyant block",
+            "zhs": "方块浮标"
+          },
+          {
+            "id": 722,
+            "en": "wish note",
+            "zhs": "许愿笺"
+          },
+          {
+            "id": 845,
+            "en": "house partition (medium)",
+            "zhs": "房屋隔板（中）"
+          },
+          {
+            "id": 846,
+            "en": "house partition (small)",
+            "zhs": "房屋隔板（小）"
+          },
+          {
+            "id": 847,
+            "en": "portal pod",
+            "zhs": "共享装置"
+          }
+        ]
+      },
+      "19": {
+        "count": 91,
+        "samples": [
+          {
+            "id": 44,
+            "en": "painting (landscape)",
+            "zhs": "画布（风景画）"
+          },
+          {
+            "id": 45,
+            "en": "painting (portrait)",
+            "zhs": "画布（肖像画）"
+          },
+          {
+            "id": 46,
+            "en": "painting (still life)",
+            "zhs": "画布（静物画）"
+          },
+          {
+            "id": 250,
+            "en": "eerie candle",
+            "zhs": "诡异的蜡烛"
+          },
+          {
+            "id": 318,
+            "en": "treasure",
+            "zhs": "财宝"
+          },
+          {
+            "id": 319,
+            "en": "map and compass",
+            "zhs": "地图与指南针"
+          },
+          {
+            "id": 431,
+            "en": "cloud cannon",
+            "zhs": "云朵发射筒"
+          },
+          {
+            "id": 443,
+            "en": "swim ring",
+            "zhs": "泳圈"
+          }
+        ]
+      }
+    },
+    "0x27": {
+      "0": {
+        "count": 3532,
+        "samples": [
+          {
+            "id": 6,
+            "en": "cave mushrooms",
+            "zhs": "成熟的蘑菇"
+          },
+          {
+            "id": 7,
+            "en": "seaweed",
+            "zhs": "海藻"
+          },
+          {
+            "id": 8,
+            "en": "tomato",
+            "zhs": "番茄"
+          },
+          {
+            "id": 14,
+            "en": "bean",
+            "zhs": "豆子"
+          },
+          {
+            "id": 20,
+            "en": "wheat",
+            "zhs": "小麦"
+          },
+          {
+            "id": 21,
+            "en": "potato",
+            "zhs": "马铃薯"
+          },
+          {
+            "id": 22,
+            "en": "simple salad",
+            "zhs": "原味沙拉"
+          },
+          {
+            "id": 23,
+            "en": "seaweed salad",
+            "zhs": "海藻沙拉"
+          }
+        ]
+      },
+      "1": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3751,
+            "en": "♪ Title Screen",
+            "zhs": "♪～序曲～"
+          }
+        ]
+      },
+      "2": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3752,
+            "en": "♪ Pallet Town Theme",
+            "zhs": "♪真新镇主题曲"
+          }
+        ]
+      },
+      "3": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3753,
+            "en": "♪ Professor Oak’s Laboratory",
+            "zhs": "♪大木研究所"
+          }
+        ]
+      },
+      "4": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3754,
+            "en": "♪ Road to Viridian City",
+            "zhs": "♪往常青的道路"
+          }
+        ]
+      },
+      "5": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3755,
+            "en": "♪ Pewter City Theme",
+            "zhs": "♪深灰市主题曲"
+          }
+        ]
+      },
+      "6": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3756,
+            "en": "♪ Pokémon Center",
+            "zhs": "♪宝可梦中心"
+          }
+        ]
+      },
+      "7": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3757,
+            "en": "♪ Caves of Mt. Moon",
+            "zhs": "♪月见山的洞窟"
+          }
+        ]
+      },
+      "8": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3758,
+            "en": "♪ Road to Cerulean City",
+            "zhs": "♪往华蓝的道路"
+          }
+        ]
+      },
+      "9": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3759,
+            "en": "♪ Fuchsia City Theme",
+            "zhs": "♪浅红市主题曲"
+          }
+        ]
+      },
+      "10": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3760,
+            "en": "♪ Pokémon Gym",
+            "zhs": "♪宝可梦道馆"
+          }
+        ]
+      },
+      "11": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3761,
+            "en": "♪ Road to Bill",
+            "zhs": "♪去找正辉"
+          }
+        ]
+      },
+      "12": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3762,
+            "en": "♪ Vermilion City Theme",
+            "zhs": "♪枯叶市主题曲"
+          }
+        ]
+      },
+      "13": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3763,
+            "en": "♪ The S.S. Anne",
+            "zhs": "♪圣特安努号"
+          }
+        ]
+      },
+      "14": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3764,
+            "en": "♪ Rocket Hideout",
+            "zhs": "♪火箭队基地"
+          }
+        ]
+      },
+      "15": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3765,
+            "en": "♪ Silph Co.",
+            "zhs": "♪西尔佛公司"
+          }
+        ]
+      },
+      "16": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3766,
+            "en": "♪ Battle! (Gym Leader Battle)",
+            "zhs": "♪对战（VS道馆馆主）"
+          }
+        ]
+      },
+      "17": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3767,
+            "en": "♪ Union Cave",
+            "zhs": "♪互连洞"
+          }
+        ]
+      },
+      "18": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3768,
+            "en": "♪ Ecruteak City",
+            "zhs": "♪缘朱市"
+          }
+        ]
+      },
+      "19": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3769,
+            "en": "♪ Bell Tower",
+            "zhs": "♪铃铛塔"
+          }
+        ]
+      },
+      "20": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3770,
+            "en": "♪ Fortree City",
+            "zhs": "♪茵郁市"
+          }
+        ]
+      },
+      "21": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3771,
+            "en": "♪ Sootopolis City",
+            "zhs": "♪琉璃市"
+          }
+        ]
+      },
+      "22": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3772,
+            "en": "♪ Route 209 (Day)",
+            "zhs": "♪209号道路（白天）"
+          }
+        ]
+      },
+      "23": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3773,
+            "en": "♪ Mt. Coronet",
+            "zhs": "♪天冠山"
+          }
+        ]
+      },
+      "24": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3774,
+            "en": "♪ Game Corner",
+            "zhs": "♪游戏城"
+          }
+        ]
+      },
+      "25": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3775,
+            "en": "♪ Driftveil City",
+            "zhs": "♪帆巴市"
+          }
+        ]
+      },
+      "26": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3776,
+            "en": "♪ Route 10 (Unova)",
+            "zhs": "♪10号道路"
+          }
+        ]
+      },
+      "27": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3777,
+            "en": "♪ Dress Up with Props",
+            "zhs": "♪用物品盛装打扮！"
+          }
+        ]
+      },
+      "28": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3778,
+            "en": "♪ Snowbelle City",
+            "zhs": "♪映雪市"
+          }
+        ]
+      },
+      "29": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3779,
+            "en": "♪ Boutique",
+            "zhs": "♪时装店"
+          }
+        ]
+      },
+      "30": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3780,
+            "en": "♪ Super Training!",
+            "zhs": "♪超级训练！"
+          }
+        ]
+      },
+      "31": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3781,
+            "en": "♪ Contest Spectacular!",
+            "zhs": "♪华丽现场大赛！"
+          }
+        ]
+      },
+      "32": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3782,
+            "en": "♪ Hau’oli City (Day)",
+            "zhs": "♪好奥乐市（白天）"
+          }
+        ]
+      },
+      "33": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3783,
+            "en": "♪ Aether Paradise",
+            "zhs": "♪以太乐园"
+          }
+        ]
+      },
+      "34": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3784,
+            "en": "♪ Ultra Ruin",
+            "zhs": "♪究极大厦"
+          }
+        ]
+      },
+      "35": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3785,
+            "en": "♪ Wild Area (North)",
+            "zhs": "♪旷野地带・北"
+          }
+        ]
+      },
+      "36": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3786,
+            "en": "♪ Wyndon",
+            "zhs": "♪宫门市"
+          }
+        ]
+      },
+      "37": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3787,
+            "en": "♪ Rose Tower",
+            "zhs": "♪洛兹大厦"
+          }
+        ]
+      },
+      "38": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3788,
+            "en": "♪ Battle! (Gym Leader) 1",
+            "zhs": "♪战斗！道馆馆主・1"
+          }
+        ]
+      },
+      "39": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3789,
+            "en": "♪ Jubilife Village",
+            "zhs": "♪祝庆村"
+          }
+        ]
+      },
+      "40": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3790,
+            "en": "♪ South Province",
+            "zhs": "♪南区"
+          }
+        ]
+      },
+      "41": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3798,
+            "en": "♪ The Academy",
+            "zhs": "♪学院"
+          }
+        ]
+      },
+      "42": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3799,
+            "en": "♪ Area Zero",
+            "zhs": "♪第零区"
+          }
+        ]
+      },
+      "43": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3800,
+            "en": "♪ Battle! (Gym Leader) 2",
+            "zhs": "♪战斗！道馆馆主・2"
+          }
+        ]
+      },
+      "55": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 2279,
+            "en": "♪ The Sea",
+            "zhs": "♪海"
+          }
+        ]
+      },
+      "56": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 2280,
+            "en": "♪ Violet City",
+            "zhs": "♪桔梗市"
+          }
+        ]
+      },
+      "57": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 2281,
+            "en": "♪ Dive",
+            "zhs": "♪潜水"
+          }
+        ]
+      },
+      "58": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 2282,
+            "en": "♪ Canalave City (Night)",
+            "zhs": "♪水脉市（夜晚）"
+          }
+        ]
+      },
+      "59": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 2283,
+            "en": "♪ Undella Town (Summer)",
+            "zhs": "♪涟漪镇（夏季）"
+          }
+        ]
+      },
+      "60": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 2284,
+            "en": "♪ Lumiose City",
+            "zhs": "♪密阿雷市"
+          }
+        ]
+      },
+      "61": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 2285,
+            "en": "♪ Po Town",
+            "zhs": "♪魄镇"
+          }
+        ]
+      },
+      "62": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 2286,
+            "en": "♪ Stow-on-Side",
+            "zhs": "♪溯传镇"
+          }
+        ]
+      },
+      "63": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 2287,
+            "en": "♪ Cascarrafa",
+            "zhs": "♪玻瓶市"
+          }
+        ]
+      },
+      "64": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 2288,
+            "en": "♪ Hotel Z",
+            "zhs": "♪旅馆Z"
+          }
+        ]
+      }
+    },
+    "0x2a": {
+      "1": {
+        "count": 2891,
+        "samples": [
+          {
+            "id": 6,
+            "en": "cave mushrooms",
+            "zhs": "成熟的蘑菇"
+          },
+          {
+            "id": 7,
+            "en": "seaweed",
+            "zhs": "海藻"
+          },
+          {
+            "id": 8,
+            "en": "tomato",
+            "zhs": "番茄"
+          },
+          {
+            "id": 14,
+            "en": "bean",
+            "zhs": "豆子"
+          },
+          {
+            "id": 20,
+            "en": "wheat",
+            "zhs": "小麦"
+          },
+          {
+            "id": 21,
+            "en": "potato",
+            "zhs": "马铃薯"
+          },
+          {
+            "id": 22,
+            "en": "simple salad",
+            "zhs": "原味沙拉"
+          },
+          {
+            "id": 23,
+            "en": "seaweed salad",
+            "zhs": "海藻沙拉"
+          }
+        ]
+      },
+      "9": {
+        "count": 119,
+        "samples": [
+          {
+            "id": 422,
+            "en": "star wall decoration",
+            "zhs": "星星墙饰"
+          },
+          {
+            "id": 423,
+            "en": "Jirachi lamp",
+            "zhs": "基拉祈台灯"
+          },
+          {
+            "id": 424,
+            "en": "star mat",
+            "zhs": "星星垫子"
+          },
+          {
+            "id": 425,
+            "en": "cloud table",
+            "zhs": "云朵桌子"
+          },
+          {
+            "id": 426,
+            "en": "starry-sky bed",
+            "zhs": "星空床铺"
+          },
+          {
+            "id": 427,
+            "en": "star-shaped dresser",
+            "zhs": "星形梳妆台"
+          },
+          {
+            "id": 428,
+            "en": "star closet",
+            "zhs": "星星衣柜"
+          },
+          {
+            "id": 429,
+            "en": "moon clock",
+            "zhs": "月亮钟"
+          }
+        ]
+      },
+      "10": {
+        "count": 575,
+        "samples": [
+          {
+            "id": 434,
+            "en": "Prism Scale",
+            "zhs": "美丽鳞片"
+          },
+          {
+            "id": 435,
+            "en": "shiny pearl",
+            "zhs": "亮晶晶珍珠"
+          },
+          {
+            "id": 436,
+            "en": "grubby pearl",
+            "zhs": "脏脏的珍珠"
+          },
+          {
+            "id": 437,
+            "en": "Prism Scale",
+            "zhs": "美丽鳞片"
+          },
+          {
+            "id": 438,
+            "en": "buried pearl",
+            "zhs": "埋住的珍珠"
+          },
+          {
+            "id": 439,
+            "en": "seabed flowers",
+            "zhs": "海底的花"
+          },
+          {
+            "id": 440,
+            "en": "small coral",
+            "zhs": "小珊瑚"
+          },
+          {
+            "id": 441,
+            "en": "colorful corals",
+            "zhs": "多彩珊瑚"
+          }
+        ]
+      }
+    },
+    "0x36": {
+      "0": {
+        "count": 3580,
+        "samples": [
+          {
+            "id": 6,
+            "en": "cave mushrooms",
+            "zhs": "成熟的蘑菇"
+          },
+          {
+            "id": 7,
+            "en": "seaweed",
+            "zhs": "海藻"
+          },
+          {
+            "id": 8,
+            "en": "tomato",
+            "zhs": "番茄"
+          },
+          {
+            "id": 14,
+            "en": "bean",
+            "zhs": "豆子"
+          },
+          {
+            "id": 20,
+            "en": "wheat",
+            "zhs": "小麦"
+          },
+          {
+            "id": 21,
+            "en": "potato",
+            "zhs": "马铃薯"
+          },
+          {
+            "id": 22,
+            "en": "simple salad",
+            "zhs": "原味沙拉"
+          },
+          {
+            "id": 23,
+            "en": "seaweed salad",
+            "zhs": "海藻沙拉"
+          }
+        ]
+      },
+      "1": {
+        "count": 5,
+        "samples": [
+          {
+            "id": 764,
+            "en": "workbench",
+            "zhs": "工作台"
+          },
+          {
+            "id": 1301,
+            "en": "cutting board",
+            "zhs": "砧板"
+          },
+          {
+            "id": 1302,
+            "en": "bread oven",
+            "zhs": "面包窑"
+          },
+          {
+            "id": 1303,
+            "en": "cooking pot",
+            "zhs": "锅子"
+          },
+          {
+            "id": 1304,
+            "en": "frying pan",
+            "zhs": "平底锅"
+          }
+        ]
+      }
+    },
+    "0x37": {
+      "0": {
+        "count": 3481,
+        "samples": [
+          {
+            "id": 25,
+            "en": "crushed-berry salad",
+            "zhs": "捣捣沙拉"
+          },
+          {
+            "id": 31,
+            "en": "flavorful soup",
+            "zhs": "多滋汤"
+          },
+          {
+            "id": 35,
+            "en": "fluffy bread",
+            "zhs": "松软面包"
+          },
+          {
+            "id": 40,
+            "en": "bitter hamburger steak",
+            "zhs": "成熟滋味汉堡排"
+          },
+          {
+            "id": 42,
+            "en": "cushy wall",
+            "zhs": "皮革墙"
+          },
+          {
+            "id": 43,
+            "en": "Common Candy",
+            "zhs": "普通糖果"
+          },
+          {
+            "id": 44,
+            "en": "painting (landscape)",
+            "zhs": "画布（风景画）"
+          },
+          {
+            "id": 45,
+            "en": "painting (portrait)",
+            "zhs": "画布（肖像画）"
+          }
+        ]
+      },
+      "1": {
+        "count": 75,
+        "samples": [
+          {
+            "id": 6,
+            "en": "cave mushrooms",
+            "zhs": "成熟的蘑菇"
+          },
+          {
+            "id": 7,
+            "en": "seaweed",
+            "zhs": "海藻"
+          },
+          {
+            "id": 8,
+            "en": "tomato",
+            "zhs": "番茄"
+          },
+          {
+            "id": 14,
+            "en": "bean",
+            "zhs": "豆子"
+          },
+          {
+            "id": 20,
+            "en": "wheat",
+            "zhs": "小麦"
+          },
+          {
+            "id": 21,
+            "en": "potato",
+            "zhs": "马铃薯"
+          },
+          {
+            "id": 77,
+            "en": "Soda Pop",
+            "zhs": "劲爽汽水"
+          },
+          {
+            "id": 78,
+            "en": "Moomoo Milk coffee",
+            "zhs": "哞哞鲜奶咖啡"
+          }
+        ]
+      },
+      "8": {
+        "count": 29,
+        "samples": [
+          {
+            "id": 22,
+            "en": "simple salad",
+            "zhs": "原味沙拉"
+          },
+          {
+            "id": 23,
+            "en": "seaweed salad",
+            "zhs": "海藻沙拉"
+          },
+          {
+            "id": 24,
+            "en": "shredded salad",
+            "zhs": "丝丝沙拉"
+          },
+          {
+            "id": 26,
+            "en": "crouton salad",
+            "zhs": "面包丁沙拉"
+          },
+          {
+            "id": 27,
+            "en": "simple soup",
+            "zhs": "原味汤"
+          },
+          {
+            "id": 28,
+            "en": "mushroom soup",
+            "zhs": "蘑菇汤"
+          },
+          {
+            "id": 29,
+            "en": "electrifying soup",
+            "zhs": "电电汤"
+          },
+          {
+            "id": 30,
+            "en": "healthy soup",
+            "zhs": "药膳汤"
+          }
+        ]
+      }
+    },
+    "0x38": {
+      "0": {
+        "count": 3409,
+        "samples": [
+          {
+            "id": 6,
+            "en": "cave mushrooms",
+            "zhs": "成熟的蘑菇"
+          },
+          {
+            "id": 7,
+            "en": "seaweed",
+            "zhs": "海藻"
+          },
+          {
+            "id": 8,
+            "en": "tomato",
+            "zhs": "番茄"
+          },
+          {
+            "id": 14,
+            "en": "bean",
+            "zhs": "豆子"
+          },
+          {
+            "id": 20,
+            "en": "wheat",
+            "zhs": "小麦"
+          },
+          {
+            "id": 21,
+            "en": "potato",
+            "zhs": "马铃薯"
+          },
+          {
+            "id": 22,
+            "en": "simple salad",
+            "zhs": "原味沙拉"
+          },
+          {
+            "id": 23,
+            "en": "seaweed salad",
+            "zhs": "海藻沙拉"
+          }
+        ]
+      },
+      "2": {
+        "count": 5,
+        "samples": [
+          {
+            "id": 111,
+            "en": "fluff",
+            "zhs": "棉花"
+          },
+          {
+            "id": 112,
+            "en": "squishy clay",
+            "zhs": "软塌塌黏土"
+          },
+          {
+            "id": 311,
+            "en": "cotton spores",
+            "zhs": "棉絮"
+          },
+          {
+            "id": 3923,
+            "en": "Soft Sand",
+            "zhs": "柔软沙子"
+          },
+          {
+            "id": 3938,
+            "en": "Light Clay",
+            "zhs": "光之黏土"
+          }
+        ]
+      },
+      "3": {
+        "count": 8,
+        "samples": [
+          {
+            "id": 105,
+            "en": "brick",
+            "zhs": "砖块"
+          },
+          {
+            "id": 118,
+            "en": "concrete",
+            "zhs": "混凝土"
+          },
+          {
+            "id": 119,
+            "en": "Tinkagear",
+            "zhs": "巨锻齿轮"
+          },
+          {
+            "id": 290,
+            "en": "seashell",
+            "zhs": "贝壳"
+          },
+          {
+            "id": 3906,
+            "en": "Rare Bone",
+            "zhs": "贵重骨头"
+          },
+          {
+            "id": 3908,
+            "en": "Hard Stone",
+            "zhs": "硬石头"
+          },
+          {
+            "id": 3910,
+            "en": "Metal Coat",
+            "zhs": "金属膜"
+          },
+          {
+            "id": 3918,
+            "en": "Iron Ball",
+            "zhs": "黑色铁球"
+          }
+        ]
+      },
+      "5": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 565,
+            "en": "leaf",
+            "zhs": "叶子"
+          }
+        ]
+      },
+      "6": {
+        "count": 3,
+        "samples": [
+          {
+            "id": 407,
+            "en": "lumber",
+            "zhs": "木材"
+          },
+          {
+            "id": 1419,
+            "en": "sturdy stick",
+            "zhs": "结实的树枝"
+          },
+          {
+            "id": 1482,
+            "en": "small log",
+            "zhs": "小圆木"
+          }
+        ]
+      },
+      "7": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 404,
+            "en": "stone",
+            "zhs": "石头"
+          }
+        ]
+      },
+      "8": {
+        "count": 2,
+        "samples": [
+          {
+            "id": 819,
+            "en": "glowing mushrooms",
+            "zhs": "发光蘑菇"
+          },
+          {
+            "id": 1206,
+            "en": "glowing mushrooms",
+            "zhs": "发光蘑菇"
+          }
+        ]
+      },
+      "9": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3909,
+            "en": "Mystic Water",
+            "zhs": "神秘水滴"
+          }
+        ]
+      },
+      "10": {
+        "count": 2,
+        "samples": [
+          {
+            "id": 3922,
+            "en": "Charcoal",
+            "zhs": "木炭"
+          },
+          {
+            "id": 3944,
+            "en": "Flame Orb",
+            "zhs": "火焰宝珠"
+          }
+        ]
+      },
+      "15": {
+        "count": 3,
+        "samples": [
+          {
+            "id": 101,
+            "en": "vine rope",
+            "zhs": "藤蔓绳"
+          },
+          {
+            "id": 110,
+            "en": "twine",
+            "zhs": "线团"
+          },
+          {
+            "id": 3928,
+            "en": "Destiny Knot",
+            "zhs": "红线"
+          }
+        ]
+      },
+      "16": {
+        "count": 2,
+        "samples": [
+          {
+            "id": 3924,
+            "en": "Fairy Feather",
+            "zhs": "妖精之羽"
+          },
+          {
+            "id": 3930,
+            "en": "Heart Scale",
+            "zhs": "心之鳞片"
+          }
+        ]
+      },
+      "17": {
+        "count": 4,
+        "samples": [
+          {
+            "id": 129,
+            "en": "strange strings",
+            "zhs": "神奇琴弦"
+          },
+          {
+            "id": 3914,
+            "en": "Black Glasses",
+            "zhs": "黑色眼镜"
+          },
+          {
+            "id": 3915,
+            "en": "Black Belt",
+            "zhs": "黑带"
+          },
+          {
+            "id": 3925,
+            "en": "Dragon Fang",
+            "zhs": "龙之牙"
+          }
+        ]
+      },
+      "24": {
+        "count": 3,
+        "samples": [
+          {
+            "id": 109,
+            "en": "nonburnable garbage",
+            "zhs": "不可燃垃圾"
+          },
+          {
+            "id": 1801,
+            "en": "wastepaper",
+            "zhs": "废纸"
+          },
+          {
+            "id": 3913,
+            "en": "Black Sludge",
+            "zhs": "黑色污泥"
+          }
+        ]
+      },
+      "26": {
+        "count": 10,
+        "samples": [
+          {
+            "id": 106,
+            "en": "copper ore",
+            "zhs": "铜"
+          },
+          {
+            "id": 107,
+            "en": "iron ore",
+            "zhs": "铁"
+          },
+          {
+            "id": 113,
+            "en": "gold ore",
+            "zhs": "金子"
+          },
+          {
+            "id": 114,
+            "en": "copper ingot",
+            "zhs": "铜条"
+          },
+          {
+            "id": 115,
+            "en": "iron ingot",
+            "zhs": "铁条"
+          },
+          {
+            "id": 116,
+            "en": "gold ingot",
+            "zhs": "金条"
+          },
+          {
+            "id": 120,
+            "en": "Pokémetal",
+            "zhs": "宝可金属"
+          },
+          {
+            "id": 121,
+            "en": "rare Pokémetal",
+            "zhs": "稀有宝可金属"
+          }
+        ]
+      },
+      "27": {
+        "count": 2,
+        "samples": [
+          {
+            "id": 102,
+            "en": "sea glass fragments",
+            "zhs": "海玻璃碎片"
+          },
+          {
+            "id": 108,
+            "en": "glass",
+            "zhs": "玻璃"
+          }
+        ]
+      },
+      "28": {
+        "count": 3,
+        "samples": [
+          {
+            "id": 3907,
+            "en": "Miracle Seed",
+            "zhs": "奇迹种子"
+          },
+          {
+            "id": 3912,
+            "en": "Silver Powder",
+            "zhs": "银粉"
+          },
+          {
+            "id": 3932,
+            "en": "Big Root",
+            "zhs": "大根茎"
+          }
+        ]
+      },
+      "29": {
+        "count": 11,
+        "samples": [
+          {
+            "id": 92,
+            "en": "Star Piece",
+            "zhs": "星星碎片"
+          },
+          {
+            "id": 117,
+            "en": "crystal fragment",
+            "zhs": "水晶碎片"
+          },
+          {
+            "id": 124,
+            "en": "Stardust",
+            "zhs": "星星沙子"
+          },
+          {
+            "id": 323,
+            "en": "red crystal fragment",
+            "zhs": "红色水晶碎片"
+          },
+          {
+            "id": 435,
+            "en": "shiny pearl",
+            "zhs": "亮晶晶珍珠"
+          },
+          {
+            "id": 437,
+            "en": "Prism Scale",
+            "zhs": "美丽鳞片"
+          },
+          {
+            "id": 3900,
+            "en": "Nugget",
+            "zhs": "金珠"
+          },
+          {
+            "id": 3904,
+            "en": "Silver Bottle Cap",
+            "zhs": "银色王冠"
+          }
+        ]
+      },
+      "30": {
+        "count": 3,
+        "samples": [
+          {
+            "id": 130,
+            "en": "armor fragment",
+            "zhs": "铠甲碎片"
+          },
+          {
+            "id": 3921,
+            "en": "Spell Tag",
+            "zhs": "咒术之符"
+          },
+          {
+            "id": 3933,
+            "en": "Adrenaline Orb",
+            "zhs": "胆怯球"
+          }
+        ]
+      },
+      "31": {
+        "count": 26,
+        "samples": [
+          {
+            "id": 221,
+            "en": "red paint",
+            "zhs": "颜料（红）"
+          },
+          {
+            "id": 222,
+            "en": "blue paint",
+            "zhs": "颜料（蓝）"
+          },
+          {
+            "id": 223,
+            "en": "green paint",
+            "zhs": "颜料（绿）"
+          },
+          {
+            "id": 224,
+            "en": "yellow paint",
+            "zhs": "颜料（黄）"
+          },
+          {
+            "id": 225,
+            "en": "pink paint",
+            "zhs": "颜料（粉桃）"
+          },
+          {
+            "id": 226,
+            "en": "cyan paint",
+            "zhs": "颜料（浅蓝）"
+          },
+          {
+            "id": 227,
+            "en": "white paint",
+            "zhs": "颜料（白）"
+          },
+          {
+            "id": 228,
+            "en": "black paint",
+            "zhs": "颜料（黑）"
+          }
+        ]
+      },
+      "32": {
+        "count": 2,
+        "samples": [
+          {
+            "id": 100,
+            "en": "Rainbow Feather",
+            "zhs": "虹色之羽"
+          },
+          {
+            "id": 122,
+            "en": "Silver Feather",
+            "zhs": "银色之羽"
+          }
+        ]
+      },
+      "33": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3920,
+            "en": "Never-Melt Ice",
+            "zhs": "不融冰"
+          }
+        ]
+      },
+      "34": {
+        "count": 4,
+        "samples": [
+          {
+            "id": 723,
+            "en": "large lost sunken relic",
+            "zhs": "海中大遗失物"
+          },
+          {
+            "id": 3911,
+            "en": "Twisted Spoon",
+            "zhs": "弯曲的汤匙"
+          },
+          {
+            "id": 3997,
+            "en": "large lost relic",
+            "zhs": "大遗失物"
+          },
+          {
+            "id": 3998,
+            "en": "small lost relic",
+            "zhs": "小遗失物"
+          }
+        ]
+      },
+      "35": {
+        "count": 62,
+        "samples": [
+          {
+            "id": 436,
+            "en": "grubby pearl",
+            "zhs": "脏脏的珍珠"
+          },
+          {
+            "id": 2279,
+            "en": "♪ The Sea",
+            "zhs": "♪海"
+          },
+          {
+            "id": 2280,
+            "en": "♪ Violet City",
+            "zhs": "♪桔梗市"
+          },
+          {
+            "id": 2281,
+            "en": "♪ Dive",
+            "zhs": "♪潜水"
+          },
+          {
+            "id": 2282,
+            "en": "♪ Canalave City (Night)",
+            "zhs": "♪水脉市（夜晚）"
+          },
+          {
+            "id": 2283,
+            "en": "♪ Undella Town (Summer)",
+            "zhs": "♪涟漪镇（夏季）"
+          },
+          {
+            "id": 2284,
+            "en": "♪ Lumiose City",
+            "zhs": "♪密阿雷市"
+          },
+          {
+            "id": 2285,
+            "en": "♪ Po Town",
+            "zhs": "♪魄镇"
+          }
+        ]
+      },
+      "37": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3937,
+            "en": "Throat Spray",
+            "zhs": "爽喉喷雾"
+          }
+        ]
+      },
+      "41": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3994,
+            "en": "honey",
+            "zhs": "甜甜蜜"
+          }
+        ]
+      },
+      "48": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3934,
+            "en": "Weakness Policy",
+            "zhs": "弱点保险"
+          }
+        ]
+      },
+      "49": {
+        "count": 4,
+        "samples": [
+          {
+            "id": 3917,
+            "en": "Sharp Beak",
+            "zhs": "锐利鸟嘴"
+          },
+          {
+            "id": 3919,
+            "en": "Poison Barb",
+            "zhs": "毒针"
+          },
+          {
+            "id": 3941,
+            "en": "Sticky Barb",
+            "zhs": "附着针"
+          },
+          {
+            "id": 3942,
+            "en": "Quick Claw",
+            "zhs": "先制之爪"
+          }
+        ]
+      },
+      "52": {
+        "count": 2,
+        "samples": [
+          {
+            "id": 3936,
+            "en": "Wide Lens",
+            "zhs": "广角镜"
+          },
+          {
+            "id": 3949,
+            "en": "Zoom Lens",
+            "zhs": "对焦镜"
+          }
+        ]
+      },
+      "53": {
+        "count": 2,
+        "samples": [
+          {
+            "id": 126,
+            "en": "paper",
+            "zhs": "纸"
+          },
+          {
+            "id": 3940,
+            "en": "Loaded Dice",
+            "zhs": "机变骰子"
+          }
+        ]
+      },
+      "55": {
+        "count": 2,
+        "samples": [
+          {
+            "id": 3916,
+            "en": "Silk Scarf",
+            "zhs": "丝绸围巾"
+          },
+          {
+            "id": 3943,
+            "en": "Lagging Tail",
+            "zhs": "后攻之尾"
+          }
+        ]
+      },
+      "57": {
+        "count": 2,
+        "samples": [
+          {
+            "id": 3926,
+            "en": "Leftovers",
+            "zhs": "吃剩的东西"
+          },
+          {
+            "id": 3946,
+            "en": "Room Service",
+            "zhs": "客房服务"
+          }
+        ]
+      },
+      "58": {
+        "count": 2,
+        "samples": [
+          {
+            "id": 3935,
+            "en": "Terrain Extender",
+            "zhs": "大地膜"
+          },
+          {
+            "id": 3945,
+            "en": "Ability Shield",
+            "zhs": "特性护具"
+          }
+        ]
+      }
+    },
+    "0x39": {
+      "0": {
+        "count": 2090,
+        "samples": [
+          {
+            "id": 47,
+            "en": "muddy pure-white soil",
+            "zhs": "洁白的土（带泥）"
+          },
+          {
+            "id": 93,
+            "en": "diploma",
+            "zhs": "奖状"
+          },
+          {
+            "id": 94,
+            "en": "party curry",
+            "zhs": "派对咖喱"
+          },
+          {
+            "id": 131,
+            "en": "someone’s journal #3",
+            "zhs": "某人的日记3"
+          },
+          {
+            "id": 132,
+            "en": "someone’s journal #4",
+            "zhs": "某人的日记4"
+          },
+          {
+            "id": 134,
+            "en": "Team R Grunt’s journal #1",
+            "zhs": "R队手下日记1"
+          },
+          {
+            "id": 135,
+            "en": "Team R Grunt’s journal #2",
+            "zhs": "R队手下日记2"
+          },
+          {
+            "id": 136,
+            "en": "Team R Grunt’s journal #3",
+            "zhs": "R队手下日记3"
+          }
+        ]
+      },
+      "1": {
+        "count": 1195,
+        "samples": [
+          {
+            "id": 6,
+            "en": "cave mushrooms",
+            "zhs": "成熟的蘑菇"
+          },
+          {
+            "id": 7,
+            "en": "seaweed",
+            "zhs": "海藻"
+          },
+          {
+            "id": 8,
+            "en": "tomato",
+            "zhs": "番茄"
+          },
+          {
+            "id": 14,
+            "en": "bean",
+            "zhs": "豆子"
+          },
+          {
+            "id": 20,
+            "en": "wheat",
+            "zhs": "小麦"
+          },
+          {
+            "id": 21,
+            "en": "potato",
+            "zhs": "马铃薯"
+          },
+          {
+            "id": 22,
+            "en": "simple salad",
+            "zhs": "原味沙拉"
+          },
+          {
+            "id": 23,
+            "en": "seaweed salad",
+            "zhs": "海藻沙拉"
+          }
+        ]
+      },
+      "2": {
+        "count": 63,
+        "samples": [
+          {
+            "id": 300,
+            "en": "picnic blanket",
+            "zhs": "野餐垫"
+          },
+          {
+            "id": 301,
+            "en": "Hoppip water bottle",
+            "zhs": "毽子草水壶"
+          },
+          {
+            "id": 302,
+            "en": "flower cushion",
+            "zhs": "花朵靠枕"
+          },
+          {
+            "id": 303,
+            "en": "lunch box",
+            "zhs": "便当"
+          },
+          {
+            "id": 304,
+            "en": "flower table",
+            "zhs": "花朵桌子"
+          },
+          {
+            "id": 305,
+            "en": "juice trio",
+            "zhs": "瓶装饮料"
+          },
+          {
+            "id": 306,
+            "en": "flowery table setting",
+            "zhs": "花朵餐具套组"
+          },
+          {
+            "id": 307,
+            "en": "flower backpack",
+            "zhs": "花朵背包"
+          }
+        ]
+      },
+      "3": {
+        "count": 211,
+        "samples": [
+          {
+            "id": 435,
+            "en": "shiny pearl",
+            "zhs": "亮晶晶珍珠"
+          },
+          {
+            "id": 436,
+            "en": "grubby pearl",
+            "zhs": "脏脏的珍珠"
+          },
+          {
+            "id": 439,
+            "en": "seabed flowers",
+            "zhs": "海底的花"
+          },
+          {
+            "id": 440,
+            "en": "small coral",
+            "zhs": "小珊瑚"
+          },
+          {
+            "id": 441,
+            "en": "colorful corals",
+            "zhs": "多彩珊瑚"
+          },
+          {
+            "id": 442,
+            "en": "tall coral",
+            "zhs": "竖长珊瑚"
+          },
+          {
+            "id": 449,
+            "en": "lampion",
+            "zhs": "灯笼"
+          },
+          {
+            "id": 450,
+            "en": "decorative cloth",
+            "zhs": "装饰布"
+          }
+        ]
+      },
+      "6": {
+        "count": 26,
+        "samples": [
+          {
+            "id": 535,
+            "en": "glass pane",
+            "zhs": "玻璃板"
+          },
+          {
+            "id": 536,
+            "en": "glass pane (horizontal)",
+            "zhs": "玻璃板（横放）"
+          },
+          {
+            "id": 537,
+            "en": "window pane (horizontal)",
+            "zhs": "带框玻璃（横放）"
+          },
+          {
+            "id": 602,
+            "en": "portal pod",
+            "zhs": "共享装置"
+          },
+          {
+            "id": 663,
+            "en": "wooden beam",
+            "zhs": "横木"
+          },
+          {
+            "id": 664,
+            "en": "wooden support",
+            "zhs": "木转角柱"
+          },
+          {
+            "id": 665,
+            "en": "iron support",
+            "zhs": "铁转角柱"
+          },
+          {
+            "id": 666,
+            "en": "window pane (sloped)",
+            "zhs": "带框玻璃（倾斜）"
+          }
+        ]
+      }
+    },
+    "0x3a": {
+      "0": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3983,
+            "en": "large lost relic",
+            "zhs": "大遗失物"
+          }
+        ]
+      },
+      "1": {
+        "count": 233,
+        "samples": [
+          {
+            "id": 42,
+            "en": "cushy wall",
+            "zhs": "皮革墙"
+          },
+          {
+            "id": 47,
+            "en": "muddy pure-white soil",
+            "zhs": "洁白的土（带泥）"
+          },
+          {
+            "id": 297,
+            "en": "gray circle flooring",
+            "zhs": "灰色圆点地板"
+          },
+          {
+            "id": 495,
+            "en": "farm soil",
+            "zhs": "田地土"
+          },
+          {
+            "id": 500,
+            "en": "seafloor algae",
+            "zhs": "海底的藻"
+          },
+          {
+            "id": 501,
+            "en": "star-spotted rock",
+            "zhs": "星砾岩"
+          },
+          {
+            "id": 502,
+            "en": "glossy tiling",
+            "zhs": "光滑砖"
+          },
+          {
+            "id": 503,
+            "en": "damaged glossy tiling",
+            "zhs": "破损的光滑砖"
+          }
+        ]
+      },
+      "2": {
+        "count": 1417,
+        "samples": [
+          {
+            "id": 44,
+            "en": "painting (landscape)",
+            "zhs": "画布（风景画）"
+          },
+          {
+            "id": 45,
+            "en": "painting (portrait)",
+            "zhs": "画布（肖像画）"
+          },
+          {
+            "id": 46,
+            "en": "painting (still life)",
+            "zhs": "画布（静物画）"
+          },
+          {
+            "id": 48,
+            "en": "iron-scaffold plank",
+            "zhs": "脚手架板"
+          },
+          {
+            "id": 93,
+            "en": "diploma",
+            "zhs": "奖状"
+          },
+          {
+            "id": 94,
+            "en": "party curry",
+            "zhs": "派对咖喱"
+          },
+          {
+            "id": 95,
+            "en": "leaf den kit",
+            "zhs": "叶子小窝套组"
+          },
+          {
+            "id": 96,
+            "en": "leaf hut kit",
+            "zhs": "叶子小屋套组"
+          }
+        ]
+      },
+      "6": {
+        "count": 211,
+        "samples": [
+          {
+            "id": 92,
+            "en": "Star Piece",
+            "zhs": "星星碎片"
+          },
+          {
+            "id": 100,
+            "en": "Rainbow Feather",
+            "zhs": "虹色之羽"
+          },
+          {
+            "id": 101,
+            "en": "vine rope",
+            "zhs": "藤蔓绳"
+          },
+          {
+            "id": 102,
+            "en": "sea glass fragments",
+            "zhs": "海玻璃碎片"
+          },
+          {
+            "id": 105,
+            "en": "brick",
+            "zhs": "砖块"
+          },
+          {
+            "id": 106,
+            "en": "copper ore",
+            "zhs": "铜"
+          },
+          {
+            "id": 107,
+            "en": "iron ore",
+            "zhs": "铁"
+          },
+          {
+            "id": 108,
+            "en": "glass",
+            "zhs": "玻璃"
+          }
+        ]
+      },
+      "7": {
+        "count": 518,
+        "samples": [
+          {
+            "id": 6,
+            "en": "cave mushrooms",
+            "zhs": "成熟的蘑菇"
+          },
+          {
+            "id": 7,
+            "en": "seaweed",
+            "zhs": "海藻"
+          },
+          {
+            "id": 8,
+            "en": "tomato",
+            "zhs": "番茄"
+          },
+          {
+            "id": 14,
+            "en": "bean",
+            "zhs": "豆子"
+          },
+          {
+            "id": 20,
+            "en": "wheat",
+            "zhs": "小麦"
+          },
+          {
+            "id": 21,
+            "en": "potato",
+            "zhs": "马铃薯"
+          },
+          {
+            "id": 22,
+            "en": "simple salad",
+            "zhs": "原味沙拉"
+          },
+          {
+            "id": 23,
+            "en": "seaweed salad",
+            "zhs": "海藻沙拉"
+          }
+        ]
+      },
+      "8": {
+        "count": 68,
+        "samples": [
+          {
+            "id": 723,
+            "en": "large lost sunken relic",
+            "zhs": "海中大遗失物"
+          },
+          {
+            "id": 1898,
+            "en": "Neo-Dowsing Machine",
+            "zhs": "新型探宝器"
+          },
+          {
+            "id": 2279,
+            "en": "♪ The Sea",
+            "zhs": "♪海"
+          },
+          {
+            "id": 2280,
+            "en": "♪ Violet City",
+            "zhs": "♪桔梗市"
+          },
+          {
+            "id": 2281,
+            "en": "♪ Dive",
+            "zhs": "♪潜水"
+          },
+          {
+            "id": 2282,
+            "en": "♪ Canalave City (Night)",
+            "zhs": "♪水脉市（夜晚）"
+          },
+          {
+            "id": 2283,
+            "en": "♪ Undella Town (Summer)",
+            "zhs": "♪涟漪镇（夏季）"
+          },
+          {
+            "id": 2284,
+            "en": "♪ Lumiose City",
+            "zhs": "♪密阿雷市"
+          }
+        ]
+      },
+      "13": {
+        "count": 163,
+        "samples": [
+          {
+            "id": 131,
+            "en": "someone’s journal #3",
+            "zhs": "某人的日记3"
+          },
+          {
+            "id": 132,
+            "en": "someone’s journal #4",
+            "zhs": "某人的日记4"
+          },
+          {
+            "id": 134,
+            "en": "Team R Grunt’s journal #1",
+            "zhs": "R队手下日记1"
+          },
+          {
+            "id": 135,
+            "en": "Team R Grunt’s journal #2",
+            "zhs": "R队手下日记2"
+          },
+          {
+            "id": 136,
+            "en": "Team R Grunt’s journal #3",
+            "zhs": "R队手下日记3"
+          },
+          {
+            "id": 137,
+            "en": "Team R Grunt’s journal #4",
+            "zhs": "R队手下日记4"
+          },
+          {
+            "id": 138,
+            "en": "Team R Grunt’s journal #5",
+            "zhs": "R队手下日记5"
+          },
+          {
+            "id": 139,
+            "en": "Team R Grunt’s journal #6",
+            "zhs": "R队手下日记6"
+          }
+        ]
+      },
+      "14": {
+        "count": 37,
+        "samples": [
+          {
+            "id": 748,
+            "en": "Habitat Hint #1",
+            "zhs": "栖息地提示1"
+          },
+          {
+            "id": 749,
+            "en": "Habitat Hint #1",
+            "zhs": "栖息地提示1"
+          },
+          {
+            "id": 750,
+            "en": "Habitat Hint #1",
+            "zhs": "栖息地提示1"
+          },
+          {
+            "id": 751,
+            "en": "Habitat Hint #1",
+            "zhs": "栖息地提示1"
+          },
+          {
+            "id": 779,
+            "en": "Habitat Hint #1",
+            "zhs": "栖息地提示1"
+          },
+          {
+            "id": 794,
+            "en": "Habitat Hint #1",
+            "zhs": "栖息地提示1"
+          },
+          {
+            "id": 3701,
+            "en": "Habitat Hint #1",
+            "zhs": "栖息地提示1"
+          },
+          {
+            "id": 3702,
+            "en": "Habitat Hint #1",
+            "zhs": "栖息地提示1"
+          }
+        ]
+      },
+      "15": {
+        "count": 878,
+        "samples": [
+          {
+            "id": 523,
+            "en": "lampion",
+            "zhs": "灯笼"
+          },
+          {
+            "id": 538,
+            "en": "Pikachu sofa",
+            "zhs": "皮卡丘沙发"
+          },
+          {
+            "id": 539,
+            "en": "pearl streetlight",
+            "zhs": "珍珠路灯"
+          },
+          {
+            "id": 721,
+            "en": "buoyant block",
+            "zhs": "方块浮标"
+          },
+          {
+            "id": 722,
+            "en": "wish note",
+            "zhs": "许愿笺"
+          },
+          {
+            "id": 845,
+            "en": "house partition (medium)",
+            "zhs": "房屋隔板（中）"
+          },
+          {
+            "id": 846,
+            "en": "house partition (small)",
+            "zhs": "房屋隔板（小）"
+          },
+          {
+            "id": 847,
+            "en": "portal pod",
+            "zhs": "共享装置"
+          }
+        ]
+      },
+      "18": {
+        "count": 12,
+        "samples": [
+          {
+            "id": 3589,
+            "en": "meteor lamp",
+            "zhs": "流星台灯"
+          },
+          {
+            "id": 3700,
+            "en": "???",
+            "zhs": "？？？"
+          },
+          {
+            "id": 3976,
+            "en": "PP Up",
+            "zhs": "PP提升剂"
+          },
+          {
+            "id": 3977,
+            "en": "PP Up",
+            "zhs": "PP提升剂"
+          },
+          {
+            "id": 3978,
+            "en": "PP Up",
+            "zhs": "PP提升剂"
+          },
+          {
+            "id": 3979,
+            "en": "PP Up",
+            "zhs": "PP提升剂"
+          },
+          {
+            "id": 3984,
+            "en": "handy bag",
+            "zhs": "小包包"
+          },
+          {
+            "id": 3985,
+            "en": "Packing Tips: Rookie",
+            "zhs": "整理包包的诀窍：初级"
+          }
+        ]
+      },
+      "21": {
+        "count": 47,
+        "samples": [
+          {
+            "id": 1486,
+            "en": "temple recipe set",
+            "zhs": "神殿的材料单套组"
+          },
+          {
+            "id": 1487,
+            "en": "pathway light recipe set",
+            "zhs": "围边灯的材料单套组"
+          },
+          {
+            "id": 1488,
+            "en": "scale roof recipe set",
+            "zhs": "鳞片屋顶的材料单套组"
+          },
+          {
+            "id": 1491,
+            "en": "wavy roof recipe set",
+            "zhs": "凹凸屋顶的材料单套组"
+          },
+          {
+            "id": 1492,
+            "en": "glass recipe set",
+            "zhs": "玻璃的材料单套组"
+          },
+          {
+            "id": 1494,
+            "en": "twisty pillar recipe set",
+            "zhs": "扭扭柱的材料单套组"
+          },
+          {
+            "id": 1496,
+            "en": "stylish wallpaper recipe set",
+            "zhs": "时髦壁纸的材料单套组"
+          },
+          {
+            "id": 2157,
+            "en": "gradient wall recipe set",
+            "zhs": "渐变墙的材料单套组"
+          }
+        ]
+      }
+    },
+    "0x3b": {
+      "0": {
+        "count": 2289,
+        "samples": [
+          {
+            "id": 6,
+            "en": "cave mushrooms",
+            "zhs": "成熟的蘑菇"
+          },
+          {
+            "id": 7,
+            "en": "seaweed",
+            "zhs": "海藻"
+          },
+          {
+            "id": 8,
+            "en": "tomato",
+            "zhs": "番茄"
+          },
+          {
+            "id": 14,
+            "en": "bean",
+            "zhs": "豆子"
+          },
+          {
+            "id": 20,
+            "en": "wheat",
+            "zhs": "小麦"
+          },
+          {
+            "id": 21,
+            "en": "potato",
+            "zhs": "马铃薯"
+          },
+          {
+            "id": 22,
+            "en": "simple salad",
+            "zhs": "原味沙拉"
+          },
+          {
+            "id": 23,
+            "en": "seaweed salad",
+            "zhs": "海藻沙拉"
+          }
+        ]
+      },
+      "2": {
+        "count": 325,
+        "samples": [
+          {
+            "id": 42,
+            "en": "cushy wall",
+            "zhs": "皮革墙"
+          },
+          {
+            "id": 297,
+            "en": "gray circle flooring",
+            "zhs": "灰色圆点地板"
+          },
+          {
+            "id": 438,
+            "en": "buried pearl",
+            "zhs": "埋住的珍珠"
+          },
+          {
+            "id": 440,
+            "en": "small coral",
+            "zhs": "小珊瑚"
+          },
+          {
+            "id": 441,
+            "en": "colorful corals",
+            "zhs": "多彩珊瑚"
+          },
+          {
+            "id": 442,
+            "en": "tall coral",
+            "zhs": "竖长珊瑚"
+          },
+          {
+            "id": 453,
+            "en": "flat scale roof",
+            "zhs": "水平鳞片屋顶"
+          },
+          {
+            "id": 454,
+            "en": "sloped scale roof",
+            "zhs": "斜斜鳞片屋顶"
+          }
+        ]
+      },
+      "3": {
+        "count": 104,
+        "samples": [
+          {
+            "id": 292,
+            "en": "mushroom streetlight",
+            "zhs": "蘑菇路灯"
+          },
+          {
+            "id": 401,
+            "en": "house partition (big)",
+            "zhs": "房屋隔板（大）"
+          },
+          {
+            "id": 450,
+            "en": "decorative cloth",
+            "zhs": "装饰布"
+          },
+          {
+            "id": 507,
+            "en": "sandpile",
+            "zhs": "沙丘"
+          },
+          {
+            "id": 531,
+            "en": "floating logs",
+            "zhs": "漂浮圆木"
+          },
+          {
+            "id": 544,
+            "en": "sand toys",
+            "zhs": "玩沙套组"
+          },
+          {
+            "id": 622,
+            "en": "submarine window",
+            "zhs": "潜水艇窗"
+          },
+          {
+            "id": 657,
+            "en": "teaware set",
+            "zhs": "茶器套组"
+          }
+        ]
+      },
+      "4": {
+        "count": 263,
+        "samples": [
+          {
+            "id": 44,
+            "en": "painting (landscape)",
+            "zhs": "画布（风景画）"
+          },
+          {
+            "id": 45,
+            "en": "painting (portrait)",
+            "zhs": "画布（肖像画）"
+          },
+          {
+            "id": 46,
+            "en": "painting (still life)",
+            "zhs": "画布（静物画）"
+          },
+          {
+            "id": 48,
+            "en": "iron-scaffold plank",
+            "zhs": "脚手架板"
+          },
+          {
+            "id": 282,
+            "en": "dry wildflowers",
+            "zhs": "枯萎的草地的花"
+          },
+          {
+            "id": 283,
+            "en": "dry wildflowers",
+            "zhs": "枯萎的草地的花"
+          },
+          {
+            "id": 284,
+            "en": "dry wildflowers",
+            "zhs": "枯萎的草地的花"
+          },
+          {
+            "id": 285,
+            "en": "dry wildflowers",
+            "zhs": "枯萎的草地的花"
+          }
+        ]
+      },
+      "5": {
+        "count": 128,
+        "samples": [
+          {
+            "id": 451,
+            "en": "ornate door",
+            "zhs": "东方风格门"
+          },
+          {
+            "id": 452,
+            "en": "ornate window",
+            "zhs": "东方风格窗"
+          },
+          {
+            "id": 458,
+            "en": "marine sofa",
+            "zhs": "海洋沙发"
+          },
+          {
+            "id": 459,
+            "en": "marine table",
+            "zhs": "海洋桌子"
+          },
+          {
+            "id": 460,
+            "en": "marine chair",
+            "zhs": "海洋椅子"
+          },
+          {
+            "id": 461,
+            "en": "marine dresser",
+            "zhs": "海洋梳妆台"
+          },
+          {
+            "id": 462,
+            "en": "marine chest",
+            "zhs": "海洋储物柜"
+          },
+          {
+            "id": 463,
+            "en": "marine closet",
+            "zhs": "海洋衣柜"
+          }
+        ]
+      },
+      "6": {
+        "count": 296,
+        "samples": [
+          {
+            "id": 95,
+            "en": "leaf den kit",
+            "zhs": "叶子小窝套组"
+          },
+          {
+            "id": 96,
+            "en": "leaf hut kit",
+            "zhs": "叶子小屋套组"
+          },
+          {
+            "id": 99,
+            "en": "Wasteland Pokémon Center kit",
+            "zhs": "荒野的宝可梦中心套组"
+          },
+          {
+            "id": 149,
+            "en": "ripe bean plant",
+            "zhs": "长成的豆子"
+          },
+          {
+            "id": 150,
+            "en": "ripe tomato plant",
+            "zhs": "长成的番茄"
+          },
+          {
+            "id": 152,
+            "en": "ripe potato plant",
+            "zhs": "长成的马铃薯"
+          },
+          {
+            "id": 220,
+            "en": "dry Chesto tree",
+            "zhs": "枯萎的零余树"
+          },
+          {
+            "id": 247,
+            "en": "dry Pecha tree",
+            "zhs": "枯萎的桃桃树"
+          }
+        ]
+      },
+      "7": {
+        "count": 98,
+        "samples": [
+          {
+            "id": 300,
+            "en": "picnic blanket",
+            "zhs": "野餐垫"
+          },
+          {
+            "id": 301,
+            "en": "Hoppip water bottle",
+            "zhs": "毽子草水壶"
+          },
+          {
+            "id": 302,
+            "en": "flower cushion",
+            "zhs": "花朵靠枕"
+          },
+          {
+            "id": 303,
+            "en": "lunch box",
+            "zhs": "便当"
+          },
+          {
+            "id": 304,
+            "en": "flower table",
+            "zhs": "花朵桌子"
+          },
+          {
+            "id": 305,
+            "en": "juice trio",
+            "zhs": "瓶装饮料"
+          },
+          {
+            "id": 306,
+            "en": "flowery table setting",
+            "zhs": "花朵餐具套组"
+          },
+          {
+            "id": 307,
+            "en": "flower backpack",
+            "zhs": "花朵背包"
+          }
+        ]
+      },
+      "8": {
+        "count": 82,
+        "samples": [
+          {
+            "id": 250,
+            "en": "eerie candle",
+            "zhs": "诡异的蜡烛"
+          },
+          {
+            "id": 377,
+            "en": "orange meteor lamp",
+            "zhs": "流星台灯（橙）"
+          },
+          {
+            "id": 378,
+            "en": "yellow meteor lamp",
+            "zhs": "流星台灯（黄）"
+          },
+          {
+            "id": 379,
+            "en": "green meteor lamp",
+            "zhs": "流星台灯（绿）"
+          },
+          {
+            "id": 380,
+            "en": "blue meteor lamp",
+            "zhs": "流星台灯（浅蓝）"
+          },
+          {
+            "id": 392,
+            "en": "indigo meteor lamp",
+            "zhs": "流星台灯（蓝）"
+          },
+          {
+            "id": 393,
+            "en": "violet meteor lamp",
+            "zhs": "流星台灯（紫）"
+          },
+          {
+            "id": 540,
+            "en": "Starmie doll",
+            "zhs": "宝石海星玩偶"
+          }
+        ]
+      }
+    },
+    "0x41": {
+      "0": {
+        "count": 2135,
+        "samples": [
+          {
+            "id": 42,
+            "en": "cushy wall",
+            "zhs": "皮革墙"
+          },
+          {
+            "id": 47,
+            "en": "muddy pure-white soil",
+            "zhs": "洁白的土（带泥）"
+          },
+          {
+            "id": 90,
+            "en": "party popper",
+            "zhs": "彩花炮"
+          },
+          {
+            "id": 92,
+            "en": "Star Piece",
+            "zhs": "星星碎片"
+          },
+          {
+            "id": 94,
+            "en": "party curry",
+            "zhs": "派对咖喱"
+          },
+          {
+            "id": 95,
+            "en": "leaf den kit",
+            "zhs": "叶子小窝套组"
+          },
+          {
+            "id": 96,
+            "en": "leaf hut kit",
+            "zhs": "叶子小屋套组"
+          },
+          {
+            "id": 99,
+            "en": "Wasteland Pokémon Center kit",
+            "zhs": "荒野的宝可梦中心套组"
+          }
+        ]
+      },
+      "2": {
+        "count": 3,
+        "samples": [
+          {
+            "id": 702,
+            "en": "stone-accent wall",
+            "zhs": "石墙裙"
+          },
+          {
+            "id": 1062,
+            "en": "tatami mat",
+            "zhs": "榻榻米"
+          },
+          {
+            "id": 1463,
+            "en": "railway track",
+            "zhs": "铁轨"
+          }
+        ]
+      },
+      "4": {
+        "count": 13,
+        "samples": [
+          {
+            "id": 27,
+            "en": "simple soup",
+            "zhs": "原味汤"
+          },
+          {
+            "id": 28,
+            "en": "mushroom soup",
+            "zhs": "蘑菇汤"
+          },
+          {
+            "id": 29,
+            "en": "electrifying soup",
+            "zhs": "电电汤"
+          },
+          {
+            "id": 30,
+            "en": "healthy soup",
+            "zhs": "药膳汤"
+          },
+          {
+            "id": 31,
+            "en": "flavorful soup",
+            "zhs": "多滋汤"
+          },
+          {
+            "id": 395,
+            "en": "seaweed soup",
+            "zhs": "海藻汤"
+          },
+          {
+            "id": 533,
+            "en": "watermelon smoothie",
+            "zhs": "西瓜冰沙"
+          },
+          {
+            "id": 821,
+            "en": "sea grape smoothie",
+            "zhs": "海葡萄冰沙"
+          }
+        ]
+      },
+      "8": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 3589,
+            "en": "meteor lamp",
+            "zhs": "流星台灯"
+          }
+        ]
+      },
+      "16": {
+        "count": 96,
+        "samples": [
+          {
+            "id": 50,
+            "en": "seashore-flower seeds",
+            "zhs": "海边的花的种子"
+          },
+          {
+            "id": 51,
+            "en": "cute-flower seeds",
+            "zhs": "可爱的花的种子"
+          },
+          {
+            "id": 55,
+            "en": "tomato seeds",
+            "zhs": "番茄的种子"
+          },
+          {
+            "id": 56,
+            "en": "bean seeds",
+            "zhs": "豆子的种子"
+          },
+          {
+            "id": 59,
+            "en": "wheat seeds",
+            "zhs": "小麦的种子"
+          },
+          {
+            "id": 60,
+            "en": "potato seeds",
+            "zhs": "马铃薯的种子"
+          },
+          {
+            "id": 101,
+            "en": "vine rope",
+            "zhs": "藤蔓绳"
+          },
+          {
+            "id": 110,
+            "en": "twine",
+            "zhs": "线团"
+          }
+        ]
+      },
+      "17": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 714,
+            "en": "Syrupy Apple tree sapling",
+            "zhs": "蜜汁苹果树苗"
+          }
+        ]
+      },
+      "20": {
+        "count": 43,
+        "samples": [
+          {
+            "id": 6,
+            "en": "cave mushrooms",
+            "zhs": "成熟的蘑菇"
+          },
+          {
+            "id": 7,
+            "en": "seaweed",
+            "zhs": "海藻"
+          },
+          {
+            "id": 8,
+            "en": "tomato",
+            "zhs": "番茄"
+          },
+          {
+            "id": 14,
+            "en": "bean",
+            "zhs": "豆子"
+          },
+          {
+            "id": 20,
+            "en": "wheat",
+            "zhs": "小麦"
+          },
+          {
+            "id": 21,
+            "en": "potato",
+            "zhs": "马铃薯"
+          },
+          {
+            "id": 22,
+            "en": "simple salad",
+            "zhs": "原味沙拉"
+          },
+          {
+            "id": 23,
+            "en": "seaweed salad",
+            "zhs": "海藻沙拉"
+          }
+        ]
+      },
+      "32": {
+        "count": 973,
+        "samples": [
+          {
+            "id": 44,
+            "en": "painting (landscape)",
+            "zhs": "画布（风景画）"
+          },
+          {
+            "id": 45,
+            "en": "painting (portrait)",
+            "zhs": "画布（肖像画）"
+          },
+          {
+            "id": 46,
+            "en": "painting (still life)",
+            "zhs": "画布（静物画）"
+          },
+          {
+            "id": 48,
+            "en": "iron-scaffold plank",
+            "zhs": "脚手架板"
+          },
+          {
+            "id": 93,
+            "en": "diploma",
+            "zhs": "奖状"
+          },
+          {
+            "id": 250,
+            "en": "eerie candle",
+            "zhs": "诡异的蜡烛"
+          },
+          {
+            "id": 291,
+            "en": "decorative plant shelf",
+            "zhs": "装饰架（园艺）"
+          },
+          {
+            "id": 292,
+            "en": "mushroom streetlight",
+            "zhs": "蘑菇路灯"
+          }
+        ]
+      },
+      "34": {
+        "count": 50,
+        "samples": [
+          {
+            "id": 309,
+            "en": "flower garland",
+            "zhs": "花朵墙饰"
+          },
+          {
+            "id": 313,
+            "en": "jewel wall decoration",
+            "zhs": "宝石墙饰"
+          },
+          {
+            "id": 451,
+            "en": "ornate door",
+            "zhs": "东方风格门"
+          },
+          {
+            "id": 457,
+            "en": "scale awning",
+            "zhs": "鳞片遮阳棚"
+          },
+          {
+            "id": 561,
+            "en": "pointed wooden fencing",
+            "zhs": "尖尖的木栏杆"
+          },
+          {
+            "id": 562,
+            "en": "seashell fencing",
+            "zhs": "贝壳栏杆"
+          },
+          {
+            "id": 609,
+            "en": "ocean door",
+            "zhs": "汪洋门"
+          },
+          {
+            "id": 613,
+            "en": "twisty pillar (middle)",
+            "zhs": "扭扭柱（中）"
+          }
+        ]
+      },
+      "48": {
+        "count": 95,
+        "samples": [
+          {
+            "id": 282,
+            "en": "dry wildflowers",
+            "zhs": "枯萎的草地的花"
+          },
+          {
+            "id": 283,
+            "en": "dry wildflowers",
+            "zhs": "枯萎的草地的花"
+          },
+          {
+            "id": 284,
+            "en": "dry wildflowers",
+            "zhs": "枯萎的草地的花"
+          },
+          {
+            "id": 285,
+            "en": "dry wildflowers",
+            "zhs": "枯萎的草地的花"
+          },
+          {
+            "id": 310,
+            "en": "dandy flowers",
+            "zhs": "悠然的花"
+          },
+          {
+            "id": 402,
+            "en": "dry tomato plant",
+            "zhs": "枯萎的番茄"
+          },
+          {
+            "id": 403,
+            "en": "dry bean plant",
+            "zhs": "枯萎的豆子"
+          },
+          {
+            "id": 405,
+            "en": "dry potato plant",
+            "zhs": "枯萎的马铃薯"
+          }
+        ]
+      },
+      "49": {
+        "count": 10,
+        "samples": [
+          {
+            "id": 149,
+            "en": "ripe bean plant",
+            "zhs": "长成的豆子"
+          },
+          {
+            "id": 150,
+            "en": "ripe tomato plant",
+            "zhs": "长成的番茄"
+          },
+          {
+            "id": 152,
+            "en": "ripe potato plant",
+            "zhs": "长成的马铃薯"
+          },
+          {
+            "id": 347,
+            "en": "tomato sprout",
+            "zhs": "番茄苗"
+          },
+          {
+            "id": 349,
+            "en": "bean sprout",
+            "zhs": "豆苗"
+          },
+          {
+            "id": 351,
+            "en": "wheat sprout",
+            "zhs": "小麦苗"
+          },
+          {
+            "id": 353,
+            "en": "potato sprout",
+            "zhs": "马铃薯苗"
+          },
+          {
+            "id": 496,
+            "en": "watermelon sprout",
+            "zhs": "西瓜苗"
+          }
+        ]
+      },
+      "50": {
+        "count": 1,
+        "samples": [
+          {
+            "id": 506,
+            "en": "twisty waterweed",
+            "zhs": "细长水草"
+          }
+        ]
+      },
+      "64": {
+        "count": 2,
+        "samples": [
+          {
+            "id": 1898,
+            "en": "Neo-Dowsing Machine",
+            "zhs": "新型探宝器"
+          },
+          {
+            "id": 3100,
+            "en": "Dowsing Machine",
+            "zhs": "探宝器"
+          }
+        ]
+      },
+      "68": {
+        "count": 5,
+        "samples": [
+          {
+            "id": 77,
+            "en": "Soda Pop",
+            "zhs": "劲爽汽水"
+          },
+          {
+            "id": 78,
+            "en": "Moomoo Milk coffee",
+            "zhs": "哞哞鲜奶咖啡"
+          },
+          {
+            "id": 79,
+            "en": "Roserade Tea",
+            "zhs": "罗丝雷朵茶"
+          },
+          {
+            "id": 80,
+            "en": "Chili Sauce",
+            "zhs": "辣酱"
+          },
+          {
+            "id": 91,
+            "en": "Fresh Water",
+            "zhs": "美味之水"
+          }
+        ]
+      },
+      "80": {
+        "count": 100,
+        "samples": [
+          {
+            "id": 52,
+            "en": "palm seeds",
+            "zhs": "椰子树的种子"
+          },
+          {
+            "id": 53,
+            "en": "square-plant seeds",
+            "zhs": "方形植栽的种子"
+          },
+          {
+            "id": 70,
+            "en": "Pecha seeds",
+            "zhs": "桃桃种子"
+          },
+          {
+            "id": 72,
+            "en": "Chesto seeds",
+            "zhs": "零余种子"
+          },
+          {
+            "id": 73,
+            "en": "Rawst seeds",
+            "zhs": "莓莓种子"
+          },
+          {
+            "id": 74,
+            "en": "Aspear seeds",
+            "zhs": "利木种子"
+          },
+          {
+            "id": 76,
+            "en": "Lum seeds",
+            "zhs": "木子种子"
+          },
+          {
+            "id": 156,
+            "en": "stylish-hedge seeds",
+            "zhs": "精致花篱的种子"
+          }
+        ]
+      },
+      "81": {
+        "count": 29,
+        "samples": [
+          {
+            "id": 330,
+            "en": "Leppa tree sapling",
+            "zhs": "苹野树苗"
+          },
+          {
+            "id": 332,
+            "en": "Pecha tree sapling",
+            "zhs": "桃桃树苗"
+          },
+          {
+            "id": 334,
+            "en": "Chesto tree sapling",
+            "zhs": "零余树苗"
+          },
+          {
+            "id": 337,
+            "en": "Rawst tree sapling",
+            "zhs": "莓莓树苗"
+          },
+          {
+            "id": 339,
+            "en": "Aspear tree sapling",
+            "zhs": "利木树苗"
+          },
+          {
+            "id": 341,
+            "en": "Lum tree sapling",
+            "zhs": "木子树苗"
+          },
+          {
+            "id": 343,
+            "en": "pointy tree sapling",
+            "zhs": "三角树苗"
+          },
+          {
+            "id": 345,
+            "en": "palm tree sapling",
+            "zhs": "椰子树苗"
+          }
+        ]
+      },
+      "144": {
+        "count": 9,
+        "samples": [
+          {
+            "id": 711,
+            "en": "small Syrupy Apple tree",
+            "zhs": "小苹果树"
+          },
+          {
+            "id": 879,
+            "en": "small Leppa tree",
+            "zhs": "小苹野树"
+          },
+          {
+            "id": 881,
+            "en": "small Pecha tree",
+            "zhs": "小桃桃树"
+          },
+          {
+            "id": 882,
+            "en": "small Chesto tree",
+            "zhs": "小零余树"
+          },
+          {
+            "id": 883,
+            "en": "small Rawst tree",
+            "zhs": "小莓莓树"
+          },
+          {
+            "id": 884,
+            "en": "small Aspear tree",
+            "zhs": "小利木树"
+          },
+          {
+            "id": 893,
+            "en": "small Lum tree",
+            "zhs": "小木子树"
+          },
+          {
+            "id": 1230,
+            "en": "small pointy tree",
+            "zhs": "小三角树"
+          }
+        ]
+      },
+      "145": {
+        "count": 9,
+        "samples": [
+          {
+            "id": 331,
+            "en": "small Leppa tree",
+            "zhs": "小苹野树"
+          },
+          {
+            "id": 333,
+            "en": "small Pecha tree",
+            "zhs": "小桃桃树"
+          },
+          {
+            "id": 336,
+            "en": "small Chesto tree",
+            "zhs": "小零余树"
+          },
+          {
+            "id": 338,
+            "en": "small Rawst tree",
+            "zhs": "小莓莓树"
+          },
+          {
+            "id": 340,
+            "en": "small Aspear tree",
+            "zhs": "小利木树"
+          },
+          {
+            "id": 342,
+            "en": "small Lum tree",
+            "zhs": "小木子树"
+          },
+          {
+            "id": 344,
+            "en": "small pointy tree",
+            "zhs": "小三角树"
+          },
+          {
+            "id": 346,
+            "en": "small palm tree",
+            "zhs": "小椰子树"
+          }
+        ]
+      },
+      "176": {
+        "count": 5,
+        "samples": [
+          {
+            "id": 510,
+            "en": "blooming watermelon plant",
+            "zhs": "开花的西瓜"
+          },
+          {
+            "id": 807,
+            "en": "blooming tomato plant",
+            "zhs": "开花的番茄"
+          },
+          {
+            "id": 809,
+            "en": "blooming bean plant",
+            "zhs": "开花的豆子"
+          },
+          {
+            "id": 811,
+            "en": "blooming potato plant",
+            "zhs": "开花的马铃薯"
+          },
+          {
+            "id": 817,
+            "en": "small wheat plant",
+            "zhs": "小小麦"
+          }
+        ]
+      },
+      "177": {
+        "count": 5,
+        "samples": [
+          {
+            "id": 348,
+            "en": "blooming tomato plant",
+            "zhs": "开花的番茄"
+          },
+          {
+            "id": 350,
+            "en": "blooming bean plant",
+            "zhs": "开花的豆子"
+          },
+          {
+            "id": 352,
+            "en": "small wheat plant",
+            "zhs": "小小麦"
+          },
+          {
+            "id": 354,
+            "en": "blooming potato plant",
+            "zhs": "开花的马铃薯"
+          },
+          {
+            "id": 497,
+            "en": "blooming watermelon plant",
+            "zhs": "开花的西瓜"
+          }
+        ]
+      }
+    },
+    "0x42": {
+      "0": {
+        "count": 1698,
+        "samples": [
+          {
+            "id": 47,
+            "en": "muddy pure-white soil",
+            "zhs": "洁白的土（带泥）"
+          },
+          {
+            "id": 90,
+            "en": "party popper",
+            "zhs": "彩花炮"
+          },
+          {
+            "id": 93,
+            "en": "diploma",
+            "zhs": "奖状"
+          },
+          {
+            "id": 94,
+            "en": "party curry",
+            "zhs": "派对咖喱"
+          },
+          {
+            "id": 95,
+            "en": "leaf den kit",
+            "zhs": "叶子小窝套组"
+          },
+          {
+            "id": 96,
+            "en": "leaf hut kit",
+            "zhs": "叶子小屋套组"
+          },
+          {
+            "id": 99,
+            "en": "Wasteland Pokémon Center kit",
+            "zhs": "荒野的宝可梦中心套组"
+          },
+          {
+            "id": 131,
+            "en": "someone’s journal #3",
+            "zhs": "某人的日记3"
+          }
+        ]
+      },
+      "1": {
+        "count": 81,
+        "samples": [
+          {
+            "id": 50,
+            "en": "seashore-flower seeds",
+            "zhs": "海边的花的种子"
+          },
+          {
+            "id": 51,
+            "en": "cute-flower seeds",
+            "zhs": "可爱的花的种子"
+          },
+          {
+            "id": 52,
+            "en": "palm seeds",
+            "zhs": "椰子树的种子"
+          },
+          {
+            "id": 53,
+            "en": "square-plant seeds",
+            "zhs": "方形植栽的种子"
+          },
+          {
+            "id": 55,
+            "en": "tomato seeds",
+            "zhs": "番茄的种子"
+          },
+          {
+            "id": 56,
+            "en": "bean seeds",
+            "zhs": "豆子的种子"
+          },
+          {
+            "id": 59,
+            "en": "wheat seeds",
+            "zhs": "小麦的种子"
+          },
+          {
+            "id": 60,
+            "en": "potato seeds",
+            "zhs": "马铃薯的种子"
+          }
+        ]
+      },
+      "4": {
+        "count": 590,
+        "samples": [
+          {
+            "id": 6,
+            "en": "cave mushrooms",
+            "zhs": "成熟的蘑菇"
+          },
+          {
+            "id": 7,
+            "en": "seaweed",
+            "zhs": "海藻"
+          },
+          {
+            "id": 8,
+            "en": "tomato",
+            "zhs": "番茄"
+          },
+          {
+            "id": 14,
+            "en": "bean",
+            "zhs": "豆子"
+          },
+          {
+            "id": 20,
+            "en": "wheat",
+            "zhs": "小麦"
+          },
+          {
+            "id": 21,
+            "en": "potato",
+            "zhs": "马铃薯"
+          },
+          {
+            "id": 22,
+            "en": "simple salad",
+            "zhs": "原味沙拉"
+          },
+          {
+            "id": 23,
+            "en": "seaweed salad",
+            "zhs": "海藻沙拉"
+          }
+        ]
+      },
+      "8": {
+        "count": 1064,
+        "samples": [
+          {
+            "id": 42,
+            "en": "cushy wall",
+            "zhs": "皮革墙"
+          },
+          {
+            "id": 44,
+            "en": "painting (landscape)",
+            "zhs": "画布（风景画）"
+          },
+          {
+            "id": 45,
+            "en": "painting (portrait)",
+            "zhs": "画布（肖像画）"
+          },
+          {
+            "id": 46,
+            "en": "painting (still life)",
+            "zhs": "画布（静物画）"
+          },
+          {
+            "id": 48,
+            "en": "iron-scaffold plank",
+            "zhs": "脚手架板"
+          },
+          {
+            "id": 149,
+            "en": "ripe bean plant",
+            "zhs": "长成的豆子"
+          },
+          {
+            "id": 150,
+            "en": "ripe tomato plant",
+            "zhs": "长成的番茄"
+          },
+          {
+            "id": 152,
+            "en": "ripe potato plant",
+            "zhs": "长成的马铃薯"
+          }
+        ]
+      },
+      "10": {
+        "count": 70,
+        "samples": [
+          {
+            "id": 330,
+            "en": "Leppa tree sapling",
+            "zhs": "苹野树苗"
+          },
+          {
+            "id": 332,
+            "en": "Pecha tree sapling",
+            "zhs": "桃桃树苗"
+          },
+          {
+            "id": 334,
+            "en": "Chesto tree sapling",
+            "zhs": "零余树苗"
+          },
+          {
+            "id": 337,
+            "en": "Rawst tree sapling",
+            "zhs": "莓莓树苗"
+          },
+          {
+            "id": 339,
+            "en": "Aspear tree sapling",
+            "zhs": "利木树苗"
+          },
+          {
+            "id": 341,
+            "en": "Lum tree sapling",
+            "zhs": "木子树苗"
+          },
+          {
+            "id": 343,
+            "en": "pointy tree sapling",
+            "zhs": "三角树苗"
+          },
+          {
+            "id": 345,
+            "en": "palm tree sapling",
+            "zhs": "椰子树苗"
+          }
+        ]
+      },
+      "12": {
+        "count": 82,
+        "samples": [
+          {
+            "id": 310,
+            "en": "dandy flowers",
+            "zhs": "悠然的花"
+          },
+          {
+            "id": 439,
+            "en": "seabed flowers",
+            "zhs": "海底的花"
+          },
+          {
+            "id": 440,
+            "en": "small coral",
+            "zhs": "小珊瑚"
+          },
+          {
+            "id": 441,
+            "en": "colorful corals",
+            "zhs": "多彩珊瑚"
+          },
+          {
+            "id": 442,
+            "en": "tall coral",
+            "zhs": "竖长珊瑚"
+          },
+          {
+            "id": 474,
+            "en": "seabed flowers",
+            "zhs": "海底的花"
+          },
+          {
+            "id": 475,
+            "en": "seabed flowers",
+            "zhs": "海底的花"
+          },
+          {
+            "id": 476,
+            "en": "seabed flowers",
+            "zhs": "海底的花"
+          }
+        ]
+      }
+    }
+  }
+}
