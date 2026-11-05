@@ -1,0 +1,73 @@
+{
+  "table_start": 3304,
+  "table_end": 3312,
+  "record_count": 10,
+  "forms_per_record": 1,
+  "locale_order": [
+    "jp",
+    "en",
+    "fr",
+    "it",
+    "de",
+    "es",
+    "zht",
+    "ko",
+    "zhs"
+  ],
+  "category": "UNKNOWN",
+  "evidence_grade": "STRUCTURE_AND_SCRIPT_WITNESS",
+  "text_id_semantics": "ZERO_BASED_NATIVE_TABLE_RECORD_ORDINAL",
+  "txt_escape_rule": "Backslash => \\\\, CR => \\r, LF => \\n, tab => \\t; preserve game tags and PUA",
+  "source_git_blobs": {
+    "jp": {
+      "entry": 3304,
+      "source_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/03304.bin",
+      "git_blob_sha": "3612f8150a1c75993d2e50ce53415bfa4e72c5a5"
+    },
+    "en": {
+      "entry": 3305,
+      "source_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/03305.bin",
+      "git_blob_sha": "28d0ddc60332bf359ee211ff0d43255e9f23c295"
+    },
+    "fr": {
+      "entry": 3306,
+      "source_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/03306.bin",
+      "git_blob_sha": "c05d31d48849ae38d156ecab86b291efd3c4651c"
+    },
+    "it": {
+      "entry": 3307,
+      "source_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/03307.bin",
+      "git_blob_sha": "b3a2a5be943c00a050bea355ab4c56c9b0ea5ff8"
+    },
+    "de": {
+      "entry": 3308,
+      "source_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/03308.bin",
+      "git_blob_sha": "86636ba816c41f88e94d27b9c3658d7a5e34cc1a"
+    },
+    "es": {
+      "entry": 3309,
+      "source_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/03309.bin",
+      "git_blob_sha": "0761b655265939b9e27973991ae8fcb36f863096"
+    },
+    "zht": {
+      "entry": 3310,
+      "source_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/03310.bin",
+      "git_blob_sha": "0044dad0b62f9138d919857981aea903f9612895"
+    },
+    "ko": {
+      "entry": 3311,
+      "source_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/03311.bin",
+      "git_blob_sha": "d24f8651a8f542861766e71e8bb907cf8a02d5f5"
+    },
+    "zhs": {
+      "entry": 3312,
+      "source_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/03312.bin",
+      "git_blob_sha": "ec509bbc458f9e4ae53717494390401dac6c2328"
+    }
+  },
+  "notes": [
+    "All 9 files parsed as 10 x 8-byte native text records and exported in source order",
+    "Preserved game tags and blank slots; no scene, quest, or UI category inferred",
+    "A text ID is a record ordinal local to its native table, not an external quest ID"
+  ]
+}
