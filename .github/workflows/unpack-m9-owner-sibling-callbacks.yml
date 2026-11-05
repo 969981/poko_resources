@@ -1,0 +1,95 @@
+name: M9.20 - owner callback siblings vs inner vptr+0x38
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_owner_sibling_callbacks.py"
+      - "tests/test_m9_owner_sibling_callbacks.py"
+      - ".github/workflows/unpack-m9-owner-sibling-callbacks.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-20-sibling-callbacks
+  cancel-in-progress: false
+
+jobs:
+  exact-owner-sibling-calls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m9_owner_object_escape.py
+            Scripts/resources/m9_owner_sibling_callbacks.py
+            tests/test_m9_owner_sibling_callbacks.py
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_two_callback_pointer_tables.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_sibling_callback_consumers.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Validate original callback table and virtual dispatch tests
+        env:
+          PYTHONPATH: "."
+        run: python -m unittest discover -s tests -p 'test_m9_owner_sibling_callbacks.py' -v
+
+      - name: Inspect ONLY exact original callback-table sibling method bodies
+        env:
+          PYTHONPATH: "."
+        run: |
+          python Scripts/resources/m9_owner_sibling_callbacks.py \
+            --main 2.0.1/exefs/main \
+            --table-evidence UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_two_callback_pointer_tables.json \
+            --dest UnPack/2.0.1/Resources/Localization/M9/NameTables
+
+      - name: Maintain strict evidence grades
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_sibling_callback_consumers.json')
+          d=json.loads(p.read_text(encoding='utf-8')); r=d['report']
+          assert r['status']=='M9_SPECIFIC_CALLBACK_SIBLING_CODE_TRIAGE'
+          assert r['exact_source_callback_tables']==2
+          assert r['exact_neighbor_qword_slots_verified']==12
+          assert r['specific_inner_object_vptr_0x32fdfa0_dispatch_proven']==0
+          assert r['same_owner_x3_runtime_instance_proven']==False
+          assert r['new_script_to_M7_foreign_keys']==0
+          assert all(not callback['runtime_owner_identity_verified'] for callback in d['callbacks'])
+          print('M9.20 callbacks source-verified:',r['sibling_contiguous_owner_to_slot38_blr_patterns'])
+          PY
+
+      - name: Upload bounded proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m9-20-owner-sibling-consumers
+          path: UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_sibling_callback_consumers.json
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Commit native callback evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_sibling_callback_consumers.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9.20): inspect exact cleanup/create callback neighbor bodies"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
