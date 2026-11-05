@@ -1,5 +1,26 @@
 # Pokopia 2.0.1 Resources — 道具、图标、多语言与纹理线索
 
+## 当前原生资源验收状态（2026-11-05，以本节为准）
+
+以下是 **2.0.1 原版 RomFS 的当前核验结果**，后面 M3/M5 章节保留了早期探索记录，部分「尚未建立映射」的历史描述已被本节进展取代。
+
+| 范围 | 当前结果 | 核验级别 |
+| --- | ---: | --- |
+| 九语言物品名称 | 每语言 4,600 槽、差异 0 | 原生 LINKDATA 对照一致 |
+| 原生 PNG | 1,619 条，覆盖 1,615 个唯一道具 ID | 原始 G1T + TEXINFO UV，PNG 尺寸及 SHA-256 核验 |
+| 主双层图集 | 1,333 张，72×72；727/606 分层 | 两个 2048×2048 BC7 条目，GOB16/top-V，样本对照 |
+| 次图集及特殊图集 | 272 + 14 条 | 单独保存来源，未覆盖主图集 |
+| 主图集与其他道具原生字段核验 | 2,560 / 3,229 条 | TEXINFO 精确 sprite 名 + G1T 大小 + KIDSOBJDB Hash 三元组 |
+| 当前扫描范围内无法定位原始文件 | 669 / 3,229 条 | `NATIVE_SOURCE_UNAVAILABLE`，**不是**纹理错误结论 |
+| 宝可梦纹理候选 | 609 条，580 个物理文件已定位 | Hash/文件引用；图像与物种 ID 尚待验证 |
+
+**每个道具 ID 的权威入口**：`Items/Native_2.0.1/native_icon_complete_catalog.csv`，包含原生 PNG 路径、来源组、G1T/TEXINFO Hash、SHA-256、PokoHex 对照路径和九语言名称。四个重叠 ID（1677、1764、1765、2742）保留两个原生版本，不擅自合并。详见 `Items/Native_2.0.1/native_icon_coverage.json` 和 `native_icon_variant_review.csv`。
+
+**字段逐项证据**：`Textures/item_native_link_audit.csv` 和 `Textures/item_native_link_summary.json`。脚本 `Scripts/resources/trace_item_textures.py` 已统一使用 `parse_texinfo()` 解析多记录文件，不再把「并非第一条记录」错判为 `NATIVE_MISMATCH`。回归验收：[`M5 - Audit Pokopia item texture links`](https://github.com/969981/poko_resources/actions/runs/41939099430)（成功；1,333 条主图集逐项核验）。
+
+**边界**：图像经过 PNG 解码、72×72 尺寸及 SHA-256 校验；与 PokoHex 参考图的距离是启发式对照，不证明所有像素逐点相同。1,615 个已定位 ID 不能外推为所有 3,585 个有名称的物品都应有独立图标。原生物品名称九语言已核验，不代表剧情/UI/任务全部语言文本已完成。
+
+
 此目录是 **从 `UnPack/2.0.1/romfs/` 中间层衍生出的可用资源索引**；原始、逐条解包内容继续保留在 `romfs/` 下，不做重排覆盖。当前分两套来源：
 
 1. **PokoHex 已整理资源（可直接按道具 ID 使用）**：源仓库 [969981/PokoHex](https://github.com/969981/PokoHex)，固定提交 `c71d2b73fb9d8cfe99c1067e6bfadfd19f60bf78`；9 语言名称文本和 `MenuIcon/item_*.png` 物品 PNG。它们是 PokoHex 资源，**暂未证明每个文件都来自当前 2.0.1 游戏镜像**。
