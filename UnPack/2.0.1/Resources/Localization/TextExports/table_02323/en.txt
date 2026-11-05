@@ -1,0 +1,515 @@
+
+
+This won’t work while it’s submerged.
+
+The tree is withered... Looks like it needs some water.
+
+It’s a big tree. It might produce berries after some<br>time passes.
+
+It’s some worn lumber. Is there a move that could be used<br>to cut it?
+
+It’s a big, hard rock. A simple punch won’t be strong<br>enough to break it.
+You’ve collected <$cdef(27)>five </color>stamps! You can exchange them for<br><$cdef(27)>Life Coins </color>from <timemd;0(lnum1,lnum2)> to <timemd;1(lnum3,lnum4)>.<clear><br>You can replace your stamps until <timemd;2(lnum5,lnum6)>.
+
+<oneline>You made<br><$cdef(27)><dgt5;1(lnum2)> <class><$ifullwithnum;0(lnum1,lnum2)></color>!
+<oneline>You made<br><$cdef(27)><dgt5;1(lnum2)> <class><$ifullwithnum;0(lnum1,lnum2)></color>!
+
+You learned <$cdef(27)><$sklfull;1(lnum1)></color>!
+<oneline>You got a <$cdef(27)>recipe</color> for<br><iart;0()><$cdef(27)><fqty(1)><$ifull;0(lnum1)></color>!
+*deedle-beep!*<br>A message from your Pokédex!
+You’ve earned a recipe as a reward for discovering lots<br>of Pokémon!
+Choose where to set <$cdef(27)><$sklfull;0(lnum1)></color>!
+<oneline>You got<br><$cdef(27)><dgt5;1(lnum2)> <class><$ifullwithnum;0(lnum1,lnum2)></color>!
+
+You found a trace of a Pokémon!
+
+The building is in ruins...
+What could this be?
+You received the <$cdef(27)><$spwfull(25)>d </color>items!
+
+Intense flames prevent you from picking up this item.<br>Maybe you can put out the fire somehow?
+
+You dug up some treasure! Pick it up and see what it is!
+No downloadable content available for purchase.
+No items available.
+This content has not yet been announced.
+This content is not yet available for play.
+Try going to an area you haven’t visited yet.
+Try progressing the story in <$cdef(27)><$stgmyname;0(lnum1)></color>.
+Try fulfilling <$cdef(27)><$cname;0(lnum1)></color>’s request.
+<oneline>Try completing the important request<br>“<$iqname;1(lnum2)>”<slide><br>in <$cdef(27)><$stgmyname;0(lnum1)></color>.
+You found a <$cdef(27)>recipe</color>!
+<oneline>Try heading over to the <$cdef(27)>Pokémon Center </color>in<br><$cdef(27)><$stgmyname;0(lnum1)></color>.
+You cannot receive this because you have not purchased<br>the relevant downloadable content.
+You’ve already received this.
+
+Everything went black!
+It’s an old machine...
+You came up with a <$cdef(27)>recipe</color>!
+<oneline>You and <$cdef(27)><nname;0></color> are in perfect sync<br>with<slide><br>one another!
+<oneline>You and <$cdef(27)><nname;0> </color>are now great<br>friends!
+Bring a Pokémon with the <$cdef(27)><fcap><$spwfull(10)></color> specialty over to light<br>a fire.
+You need fire to use this item. Try placing it on a campfire<br>or cooking stove.
+Looks like it will grow if you water it.
+It’s crackling with electricity. Maybe it used to be<br>connected to something?
+Would you like to search for <$cdef(27)><$cname;0(lnum1)></color>?
+Stop searching for <$cdef(27)><$cname;0(lnum1)></color>?
+<oneline>Stop searching for <$cdef(27)><$cname;0(lnum1)> </color>and<br>search<slide><br>for<slide><br><$cdef(27)><$cname;1(lnum2)> </color>instead?
+Which Pokémon would you like to search for?
+You learned about a Pokémon! Would you like to view<br>their entry in your Pokédex?
+<oneline>Ending search for <$cdef(27)><$cname;0(lnum1)></color>. Which<br>Pokémon<slide><br>would<slide><br>you<slide><br>like<slide><br>to<slide><br>search for?
+You can’t send any more items to your town’s <$cdef(27)>PC</color>.<br>Items that can’t be sent to the <$cdef(27)>PC</color> are sent to the<slide><br><$cdef(27)><fqty(1)><$ifull(1442)></color>.
+<oneline>You got a <$cdef(27)>recipe</color> for<br><iart;0()><$cdef(27)><fqty(1)><$ifull;0(lnum1)></color>!<slide><br>But you already know this <$cdef(27)>recipe</color>...
+<$cdef(27)><$strpname;0(lstr1,lnum1)> </color>reached the <$cdef(27)>PC</color>!
+Do you want to stop playing hide-and-sneak?
+<oneline><$cdef(27)><string;0(lstr1)> </color>ended the<br>game<slide><br>of<slide><br>hide-and-sneak.
+The wind is too strong for you to get any closer. Is there a<br>move that could cut through it?
+How do you want to connect?
+Do you want to stop playing hide-and-sneak?<br>This will end the game for all other players as well.
+Time to rebuild the <$cdef(27)>Pokémon Center</color>! Gather up materials<br>and Pokémon helpers!
+Flip it over?
+It looks like a Pokémon following you has unfinished<br>business in this town.
+Would you like to begin with the selected language?
+The game must restart to change the language settings.<br>Do you wish to restart the game?
+Whose items will you collect?
+Are you sure you want to play in Japanese?
+Are you sure you want to play in English?
+Are you sure you want to play in French?
+Are you sure you want to play in Italian?
+Are you sure you want to play in German?
+Are you sure you want to play in Spanish?
+
+
+<$cdef(27)><fcap><$spwfull(21)></color> with this color?
+You used Transform!
+<oneline>You came up with a <$cdef(27)>recipe</color> for<br><iart;0()><$cdef(27)><fqty(1)><$ifull;0(lnum1)></color>!
+Your bag is full and can’t hold any more. Swap this with an<br>item from your bag?
+You learned the <$cdef(27)><$emotename;0(lnum1)> </color>emote!
+
+Go to <dart;0()><$cdef(27)><$stgmyname;0(lnum1)></color>?
+You can’t go there yet.
+
+Check the settings for <dart;0()><$cdef(27)><$stgmyname;0(lnum1)></color>?
+Are these settings OK?
+*beep beep beep*<br>This Pokédex will register Pokémon who live on<slide><br>Cloud Islands!<clear><br>Work with your friends to register as many Pokémon<br>as possible!
+<oneline>How many<br><$cdef(27)><fqty(2)><class><$ifull;0(lnum1)></color><slide><$cdef(27)><br></color>will<slide><br>you<slide><br>hand<slide><br>over?<slide><br>(You have <$cdef(27)><dgt4;1(lnum2)></color>.)
+<oneline>Hand over<br><$cdef(27)><dgt4;1(lnum2)> <class><$ifullwithnum;0(lnum1,lnum2)></color><slide><br>to<slide><br>be<slide><br>made<slide><br>into<slide><br><$cdef(27)><dgt5;3(lnum4)> <class><$ifullwithnum;2(lnum3,lnum4)></color>?
+*beep beep beep*<br>You cannot pass through this area gate at your current<slide><br>Trainer rank.
+*beep beep beep*<br>You have arrived at an area gate.
+Please scan the gate panel with your Pokédex.
+*beep beep beep*<br>Your Trainer rank is <$cdef(27)><trnrank;0></color>.<slide><br>The area gate will now open.
+Begin building the <$cdef(27)><$bfull;0(lnum1)></color>?
+Begin rebuilding the <$cdef(27)><$bfull;0(lnum1)></color>?
+<oneline>How many<br><$cdef(27)><fqty(2)><class><$ifull;0(lnum1)></color><slide><br>will<slide><br>you<slide><br>hand<slide><br>over?<slide><br>(You have <$cdef(27)><dgt4;1(lnum2)></color>.)
+<oneline>Hand over<br><$cdef(27)><dgt4;1(lnum2)> <class><$ifullwithnum;0(lnum1,lnum2)></color><slide><br>to<slide><br>be<slide><br>made<slide><br>into<slide><br><$cdef(27)><dgt5;3(lnum4)> <class><$ifullwithnum;2(lnum3,lnum4)></color>?
+<oneline>How many copies of the<br><$cdef(27)><fqty(1)><$ifull;0(lnum1)></color><slide><br>will<slide><br>you make?
+Begin making <iart;0()><$cdef(27)><$bfull;0(lnum1)></color>?
+<oneline>Use <$cdef(27)><dgt4;1(lnum2)> <class><$ifullwithnum;0(lnum1,lnum2)></color><br>to make<slide><br><$cdef(27)><dgt4;3(lnum4)> <class><$ifullwithnum;2(lnum3,lnum4)></color>?
+<oneline>You opened <$cdef(27)><fqty(1)><$ifull;0(lnum1)></color>!<br>Come<slide><br>back<slide><br>in<slide><br>a<slide><br>little while.
+
+One or more players are not ready yet.
+Area gate unlocked. You may now pass through.
+*beep beep beep*<br>Calculating completion time...
+It’ll be done at <timehm;0(lnum1,lnum2)>.
+It’ll be done tomorrow.
+*beep beep beep*<br>To enter this area, you need to purchase and download<slide><br>the Pokémon Pokopia Expansion Pass.<clear><br>For more info, please visit Nintendo eShop.
+If you purchase the Pokémon Pokopia Expansion Pass and<br>update your Pokédex, you’ll be able to go to this new town!
+The <$cdef(27)><$bfull;0(lnum1)> </color>is complete!
+You rebuilt the <$cdef(27)><$bfull;0(lnum1)></color>!
+
+
+To receive a <$cdef(27)><fqty(1)><$ifull(433)></color>, you must have a<br><$cdef(27)><fqty(1)><$ifull(432)> </color>to give to a Pokémon when you accept<slide><br>their request.<clear><br>Do you want to hear their request anyway?
+You found someone’s hidden treasure!<br>It’s <iart;0()><$cdef(27)><$ifull;0(lnum1)></color>!
+
+<oneline>You learned the <$cdef(27)><$coordname;1(lnum1)> </color>look!
+A Pokémon with the <$cdef(27)><fcap><$spwfull(21)> </color>specialty might be able to<br>learn this design and reproduce it for you.
+<$cdef(27)><$cname(206)> </color>learned a new pattern!
+<oneline>You got<br><iart;0()><$cdef(27)><fqty(1)><class><$ifull;0(lnum1)></color>!
+You learned some <$cdef(27)>Packing Tips</color>!<clear><br>You can now fit a little more in your bag!
+You used a <$cdef(27)><fqty(1)><$ifull(3976)></color>. You can now use your moves a<br>lot more!
+The food you ate powered up <$cdef(27)><$sklfull;0(lnum1)></color>!
+Would you like to check out the new info you got?
+<$cdef(27)>Photo op snagged!</color>
+This will open Nintendo eShop.<clear><br>Your game will stay open and can be resumed later.<clear><br>However, you must restart the game to activate any<br>new downloadable content.<clear><br>Would you like to save now?
+Which items would you like to check?
+Receive these items?
+You can’t receive these items because your bag is full.
+<oneline><$cdef(27)><$cname;0(lnum2)></color> is once again offering some<br>special<slide><br>items<slide><br>at the<slide><br><$cdef(27)><$stgmyname;1(lnum1)></color><slide><$cdef(27)><br>Pokémon</color><slide><$cdef(27)><br>Center </color>today!<clear><br>Looks like they’ll trade these items in exchange for<br><$cdef(27)><fqty(2)><evcpitem;3></color><slide><br>for<slide><br><$cdef(27)><evcleftdnum;2></color><slide><br>more <qty;2(day,days)>!
+<oneline>Today’s the last day to trade with<br><$cdef(27)><$cname;1(lnum2)></color><slide><br>at the<slide><br><$cdef(27)><$stgmyname;0(lnum1)></color><slide><$cdef(27)><br>Pokémon Center</color>!<clear><br>If they have any items you want, be sure to bring some<br><$cdef(27)><fqty(2)><evcpitem;2></color> to trade!
+You have already registered this Pokémon. Would you like<br>to open your Pokédex?
+In your last session, you did not disconnect correctly.<clear><br>Disconnecting during a Link Play session may cause your<br>progress in the game to revert to your last save point.<clear><br>Please check that you have a stable connection before<br>enjoying Link Play.
+Your photo album is full! Would you like to open your<br>album to make room?
+You sense a strong presence coming from within. It seems<br>like someone is inside...
+
+Saving...<br>Do not turn off the power.
+<oneline>You got <$cdef(27)><dgt2;1(lnum2)></color> <$cdef(27)><class><$ifullwithnum;0(lnum1,lnum2)></color><br>from a <$cdef(27)><$spwfull(12)></color>!
+Are you sure you want to change the passcode?
+<oneline>You learned the <$cdef(27)><$hairname;1(lnum1)><br></color>hairstyle!
+Would you like to set a passcode?
+<oneline>This is <$cdef(27)><$strpname;0(lstr1,lnum1)></color>’s <$cdef(27)><fqty(1)><$ifull(1677)></color>. Would you<br>like<slide><br>to<slide><br>open it?
+Set your desired passcode.
+Enter the passcode.
+Are you sure you wish to delete the selected photos?
+Are you sure you wish to delete this photo?
+Change your highlight reel photo?
+Do you wish to return home?
+Show this human record to <$cdef(27)><$cname;0(206)></color>?
+Backup data from <timeymd;0(lnum1,lnum2,lnum3)> found.<clear><br>Would you like to recover this data and replace your<br>existing save data?
+Loading backup data. Don’t turn off the power.
+Save and quit the game?
+Recovering backup data will delete your existing save<br>data. Do you wish to proceed?
+Would you like to stay <$cdef(27)>transformed</color> like this?
+Store everything that’s in your bag?
+Store everything that’s in your handy bag?
+Retrieve all the items inside?
+Are you sure you wish to play in Chinese (Traditional)?
+Are you sure you wish to play in Korean?
+Are you sure you wish to play in Chinese (Simplified)?
+Would you like to have your handy bag accessible at<br>all times?
+Would you like to put away your handy bag?
+Which home would you like to return to?
+<oneline>Taking you back to your home in<br><dart;0()><$cdef(27)><$stgmyname;0(lnum1)></color>.
+You don’t have a home. Would you like to go to a safe<br>location nearby instead?
+You can’t return to your home right now. Would you like to<br>go to a safe location nearby instead?
+Taking you to a different location.
+You have arrived home.
+Your home could not be found. You were taken to a safe<br>location nearby instead.
+<oneline>You got<br><iart;0()><$cdef(27)><fqty(1)><class><$ifull;0(lnum1)></color>!
+
+This is someone else’s <$cdef(27)><fqty(1)><$ifull(1677)></color>. Do you want to open it?
+If you do not set a passcode, anyone will be able to open<br>this. Are you sure you want to continue?
+
+Items left inside will disappear tomorrow. Are you OK with<br>leaving everything inside?
+
+
+
+
+You have been taken to a safe location nearby.
+
+
+
+
+<oneline>You don’t have a home in<br><dart;0()><$cdef(27)><$stgmynamefull;0(lnum1)></color>.<clear><br>If you leave<br><dart;1()><$cdef(27)><$stgmynamefull;1(lnum1)></color>,<slide><br>you<slide><br>won’t<slide><br>be able<slide><br>to come<slide><br>back<slide><br>using<slide><br>Return Home.<slide><br>Is that OK?
+
+
+You got some habitat information!
+Would you like to skip the credits?
+Are you sure you wish to disband the current group of<br>players and close the connection?
+<oneline>That will be <$icon(lnum1)><moneyint;0(lnum2)>. Would you like to make<br>this purchase?
+Purchase complete.
+<$cdef(27)><gevcmainpk;0></color> seems determined to continue the event<br>through <$cdef(27)>today</color>!
+*beep beep beep*<br>New data found! Commencing Pokédex update.
+Update complete! You can now register new Pokémon.
+A message from your Pokédex!<clear><br>Today’s your lucky day—you’re going to find more<br>sparkling ripples and lost relics than usual!
+A Pokémon is the talk of the town!<clear><br>Head to <dart;0()><$cdef(27)><$stgmyname;0(lnum1)></color> to see for yourself!
+A Pokémon is the talk of the town!<clear><br>Head to the <$cdef(27)>Pokémon Center</color> to see for yourself!
+<oneline>A Pokémon is still the talk of the town today!<clear><br>Head to the<br><$cdef(27)><$stgmyname;0(lnum1)></color><slide><$cdef(27)><br>Pokémon Center</color><slide><br>to talk<slide><br>to them!
+<oneline>You got<br><iart;1()><$cdef(27)><class><$ifullwithnum;1(lnum1,lnum2)></color><slide><$cdef(27)><br></color>from<slide><br><$cdef(27)><gevcmainpk;0></color>!
+You got a lot of prizes from <$cdef(27)>Bulbasaur</color>!
+Your reward was sent to the <$cdef(27)>PC</color> in your own world.
+<$cdef(27)><gevcmainpk;0></color> seems determined to continue the event for<br><$cdef(27)><gevcleftdnum;1></color> more <qty;1(day,days)>!
+Press a button?
+Looks like it needs to be restocked... Try again tomorrow!
+<oneline><fcap><iart;0()><$cdef(27)><fqty(1)><class><$ifull;0(lnum1)><br></color>popped out!
+Please choose how you want to play.
+You’re now connected!
+<oneline>What luck! Another<br><fqty(1)><class><$cdef(27)><$ifull;0(lnum1)></color><slide><br>tumbled down!
+Would you like to <$cdef(27)><$spwfull(36)> </color>into this look?
+Cancel any changes and keep your current look?
+Communicating. Don’t turn off the power.
+Please enter the Link Code.
+That destination couldn’t be found.
+Would you like to search again?
+You need a Link Code to join this player. Please enter the<br>Link Code.
+You didn’t enter the correct Link Code. Would you like<br>to try again?
+You already have a Cloud Island. If you would like to<br>create a new one, you must first delete your existing island<slide><br>from the settings menu.
+You are the island’s owner. Would you like to change<br>the settings?
+If you change the settings, the current group of players will<br>be disbanded.
+If you need to confirm your Cloud Island’s address or Link<br>Code again, you can check the <$cdef(27)>PC</color> at its <$cdef(27)>Pokémon Center</color>!
+To search for an island, please enter the address.
+Cloud Island not found. Would you like to try entering the<br>address again?
+Search canceled.
+Your rewards were sent to the <$cdef(27)>PC</color> in your own world.
+You probably shouldn’t pass through here just yet.
+There are rumors of a new Pokémon in this town. Go find<br>them and talk with them!
+Downloadable content data is required in order to access<br>this town.<clear><br>Please ensure that the applicable content has been<br>downloaded to your system.
+You can now take on <$cdef(27)>daily challenges</color>!
+You can now shop for daily items!
+New <$cdef(27)>challenges</color> have been added, thanks to the increased<br><$cdef(27)>environment level</color> of the area!
+New items have been added to the <$cdef(27)>shop</color>, thanks to the<br>increased <$cdef(27)>environment level</color> of the area!
+<oneline>Make <$cdef(27)><dgt4;2(lnum3)><br><class><$ifullwithnum;1(lnum1,lnum3)></color><slide><br>×<dgt4;1(lnum2)>?
+<oneline>Make<br><$cdef(27)><dgt4;1(lnum2)> <class><$ifullwithnum;0(lnum1,lnum2)></color>?
+<oneline>Make<br><$cdef(27)><dgt4;1(lnum2)> <class><$ifullwithnum;0(lnum1,lnum2)></color>?
+It’s a new day! <$cdef(27)>Daily challenges</color> have been updated.
+It’s a new day! Daily items have been updated.
+There are new <$cdef(27)>challenges</color> to take on!
+New items are available!
+Selecting Fast will make text display quickly.
+Selecting Normal will make text display at a<br>moderate speed.
+Selecting Slow will make text display more gradually.
+<oneline>Finalize the <$cdef(27)><$spwfull(12)></color> and receive<br><iart;0()><$cdef(27)><class><$ifullwithnum;0(lnum1,lnum2)></color>?
+This project should take less time than usual, thanks to<br><$cdef(27)><$cname;0(215)></color>’s enthusiastic efforts!
+The building process is going smoothly, but it will take a<br>little time before construction is complete.
+The rebuild should take less time than usual, thanks to<br><$cdef(27)><$cname;0(215)></color>’s enthusiastic efforts!
+The rebuild is going smoothly, but it will take a little time<br>to finish.
+Stop building?
+It’s a new day! This page will be updated.
+You should come here with <$cdef(27)><$cname(562)></color>!
+The demolition should take less time than usual, thanks to<br><$cdef(27)><$cname;0(215)></color>’s enthusiastic efforts!
+The demolition is going smoothly, but it will take a little<br>time to finish.
+Relocation preparations should take less time than usual,<br>thanks to <$cdef(27)><$cname;0(215)></color>’s enthusiastic efforts!
+The relocation preparations are going smoothly, but it will<br>take a little time to finish.
+Stop demolishing?
+Stop preparing to relocate?
+Stop relocating?
+Stop rebuilding?
+If you’re creating a new island, it will need a name!<br>But don’t worry—you can change this name later.
+Now choose what kind of settings you want to apply to<br>this Cloud Island!
+Please enter the magic number.
+Are you sure you wish to disband the current group of<br>players and close the connection?
+Do you want to disconnect and head back home?<clear><br>All the items you have will be kept in this <$cdef(27)>PC</color>.
+You are currently the host. Would you like to disband the<br>current group of players and close the connection, or<slide><br>will you make another player the host and leave?
+Who will you choose?
+Are you sure?
+Stop remodeling?
+<oneline>Begin demolishing the<br><$cdef(27)><$bfull;0(lnum1)></color>?
+<oneline>Begin remodeling the<br><$cdef(27)><$bfull;0(lnum1)></color>?
+<oneline>Begin preparations to relocate the<br><$cdef(27)><$bfull;0(lnum1)></color>?
+<oneline>Begin relocating the<br><$cdef(27)><$bfull;0(lnum1)></color>?
+
+New personal record!
+You successfully jumped <spsjmprpnum;0> <qty;0(time,times)> in jump rope!
+<oneline>You got <$cdef(27)><dgt4;2(lnum3)></color><br><$cdef(27)><class><$ifullwithnum;1(lnum2,lnum3)></color><slide><br>from <$cdef(27)><$cname;0(lnum1)></color>!
+Your reward was sent to the <$cdef(27)>PC</color> in your own world.
+Try placing a <$cdef(27)><fqty(1)><$ifull(1396)></color> and connecting lot of<br><$cdef(27)>generators</color> to it to transmit electricity from outside.<clear><br>If you don’t have the materials to build a <$cdef(27)>generator</color>, try<br>visiting a <$cdef(27)>Dream Island</color>!
+These goggles will allow you to view Cloud Islands made<br>by other players. Would you like to put them on?<clear><br>A paid Nintendo Switch Online membership is required to<br>use this feature.
+Enter the address of the Cloud Island you wish to view.
+Cloud Island not found. Would you like to try entering the<br>address again?
+Canceling search.
+Cloud Island found. Commencing virtual mode.
+Quit virtual mode and return to your own town?
+Quitting virtual mode.
+
+Congratulations on completing the Cloud Island Pokédex!<br>Please accept this reward in honor of your hard work.
+<oneline>Are you sure you’d like to choose<br><$cdef(27)><$strpname;0(lstr1,lnum1)></color>?
+<oneline><$cdef(27)><$strpname;0(lstr1,lnum1)></color> will become the new host, and<br>you<slide><br>will<slide><br>return<slide><br>to<slide><br>your<slide><br>world.
+Stop cooking?
+<$cdef(27)><$cname;0(216)> </color>and the others are working hard and should be<br>finished soon!
+Change the pattern on which part?
+The relocation should take less time than usual thanks to<br><$cdef(27)><$cname;0(215)></color>’s enthusiastic efforts!
+The relocation is going smoothly, but it will take a little<br>more time to finish.
+The remodel should take less time than usual thanks to<br><$cdef(27)><$cname;0(215)></color>’s enthusiastic efforts!
+The remodel is going smoothly, but it will take a little more<br>time to finish.
+Save to console album?
+Call for <$cdef(27)><$cname;0(123)></color>?
+
+It is recommended that you gain a lot more knowledge<br>before visiting this town.
+You know... There’s actually a town in this area you haven’t<br>visited yet.
+Try heading to the coast where <$cdef(27)><$cname(17)></color> was!
+It doesn’t look like <$cdef(27)><$cname;0(123)> </color>is coming... Maybe they’re<br>too tired?
+You’re about to visit an area you’ve never been to before.<br>Are you sure about heading over there?
+Commission <$cdef(27)><dgt5;0(lnum1)> </color>of these?
+Confirm your request?
+Unable to start poll because one or more players are busy.
+Please wait for all players to be ready.
+Jump Rope Contest (<timeymd;0(lnum1,lnum2,lnum3)>)<br>Record: <dgt5;1(lnum4)> <qty;1(Jump,Jumps)>
+Hide-and-Sneak Contest (<timeymd;0(lnum1,lnum2,lnum3)>)<br>Record: <timerms;1(lnum4,lnum5)>
+Display a photo?
+Select which photo to display.
+You can’t add any more photos.<clear><br>If you want to display a new photo, the oldest photo will<br>be removed.
+Displaying photo...
+Remove photo on display?
+This is the <$cdef(27)><fqty(1)><$ifull(1460)></color>.<clear><br>Place it somewhere, and Pokémon with the <$cdef(27)><fcap><$spwfull(13)></color><br>specialty will put items they’ve gathered in it.<clear><br>Also, if a Pokémon who can process materials is near the<br>box, they can process the materials in it.<clear><br>Would you like to put anything inside?
+You can put food in this basket to share it with other<br>Pokémon. Would you like to put some inside?
+It looks like Pokémon can process the materials you put in<br>here. Would you like to put something inside?
+Looks like the Pokémon isn’t responding to your call...<br>Try ringing the bell when they’re flying nearby.
+You can’t go there right now because you are currently<br>playing hide-and-sneak.
+Players on a <$cdef(27)>Dream Island</color> cannot participate in jump rope.<br>Would you like to start playing now?
+Players on a <$cdef(27)>Dream Island</color> cannot participate in<br>hide-and-sneak. Would you like to start playing now?
+You cannot join the group because it is full.
+You can’t visit any more towns made by other<br>players today.
+Unable to join the group because one or more players are<br>currently busy.<clear><br>Please try again later.
+You got this week’s stamp card!
+Would you like to add today’s stamp?
+You got <moneyint;0(lnum1)> <$cdef(27)>Life Coins</color>!
+You could not exchange your stamp card because you<br>haven’t added any stamps to it.
+Stamp cards can be exchanged for <$cdef(27)>coins</color>. Check the<br>Stamp Rally menu for more information.
+You haven’t exchanged your stamp card yet. You have<br><dgt1;0(lnum1)> <qty;0(day,days)> left to do so. Check the Stamp Rally menu for<slide><br>more information.
+You still have at least one <$cdef(27)>challenge</color> to report.
+You still have at least one <$cdef(27)>challenge</color> reward to claim.
+You still have at least one <$cdef(27)>challenge</color> to report or a<br><$cdef(27)>challenge </color>reward to claim.
+There isn’t enough space here for the Pokémon to land.
+<oneline>You got the <$cdef(27)><$phfrname;0(lnum1)></color><br>photo frame!
+Ready to go with these settings?
+Multiple functions have been assigned to a single button.<br>Would you like to save the changes you made?
+Are you sure you wish to restore default settings?
+Take back the items you put in the machine?
+
+This will send the data for the photo you have selected.<br>Do you wish to proceed?
+If you place this outside and talk to it, <$cdef(27)>Drifloon</color> might<br>stop by.
+You can’t do that right now.
+This seems important... Are you sure you want to drop it?
+<oneline>In order to create new backup data for<br><$cdef(27)><$stgmyname;0(lnum1)></color>,<slide><br>any<slide><br>data<slide><br>currently<slide><br>on<slide><br>your<slide><br>console<slide><br>must<slide><br>be deleted.<clear><br>Are you sure you wish to proceed?
+You saved your progress!
+Failed to connect to the internet.<br>Would you like to try again?
+<oneline>Saving backup data for<br><$cdef(27)><$stgmyname;0(lnum1)></color>...<slide><br>Don’t<slide><br>turn<slide><br>off<slide><br>the power.
+Save successful! Save time: <timeymdhm;0(lnum1,lnum2,lnum3,lnum4,lnum5)>
+<$cdef(27)><$stgmyname;0(lnum1)> </color>not found.<br>Unable to save data.
+Unable to save data.
+You’ve already restored data today. Please try again<br>tomorrow.
+<oneline>In order to restore backup data, the session must end for<br>all players currently playing on<slide><br><dart;0()><$cdef(27)><$stgmyname;0(lnum1)></color>.<clear><br>Do you wish to proceed?
+<oneline>Restoring backup data for<br><$cdef(27)><$stgmyname;0(lnum1)></color>...<slide><br>Don’t<slide><br>turn<slide><br>off<slide><br>the power.
+Restoration successful!
+A communication error occurred.<br>Please check to make sure the island was restored.
+Would you like to add a note to this backup data?
+Confirm with these details?
+Returning to original location.
+The <$cdef(27)>wish note</color> you gave them is shining!
+You got a <$cdef(27)><fqty(1)><$ifull(433)></color>!
+
+
+<oneline>“<$cdef(27)><fcap><getmptname;0></color>” has been added to<br>your<slide><br>human records!
+
+
+
+
+
+
+Pokémon won’t move into a house unless it has at least<br>three different pieces of furniture inside.
+Give them some food?
+Take <$cdef(27)><nname;0></color> with you?
+The Pokémon might come back if you use <$cdef(27)></color><fqty(1)><$ifull(3994)> on<br>their home.
+Reporting...
+Report complete.<clear><br>If you would like to quit Link Play, please select <$keyicon(227)> from<br>the menu.
+A communication error occurred.<br>Would you like to try again?
+Report canceled.
+Something might fit in this indentation...
+That will be <$icon(lnum1)><moneyint;0(lnum2)>. Would you like to make<br>this purchase?<slide><br>(A <$cdef(27)>recipe</color> you already know is included in this item.)
+New daily items have been added to the <$cdef(27)>shop</color>, thanks to<br>the increased <$cdef(27)>environment level</color> of the area!
+You’re about to leave the Settings screen.<br>Would you like to save your changes?
+Multiple actions have been assigned to one or more<br>buttons. Would you like to save your changes?<slide><br>(Select <$cdef(27)>No</color> to return without saving.)
+It’s too hot to move. You may be able to move it if you<br>splash it with water to cool it down.
+Waiting for other players...
+This looks recently watered. You don’t need to water it<br>again for a while.
+You’re about to open the <$cdef(27)>Button Assignments </color>screen.<br>Would you like to save your previous changes?
+You’re about to open the <$cdef(27)>Language Settings</color> screen.<br>Would you like to save your previous changes?
+Try using the <$cdef(27)><fqty(1)><$ifull(1898)></color> in the<br><$cdef(27)><$stgname;0(4)></color> when you’re alone.
+Are you sure you want to change your settings?<br>(If you are currently playing with other players, please<slide><br>let them know that your group will be disbanded.)
+Are you sure you want to delete this island?<br>(If you are currently playing with other players, please<slide><br>let them know that your group will be disbanded.)
+The Cloud Island has been deleted.
+A communication error occurred.<br>Please check to make sure the island was deleted.
+Please wait for the other players to arrive.
+This stone debris is especially hard. A simple punch won’t<br>be strong enough to break it.
+It’s some metal debris. Is there a move that could break it?
+<oneline>You need <$cdef(27)><dgt4;2(lnum3)> <$ifullwithnum;1(lnum2,lnum3)> </color>to<br>make<slide><br><iart;0()><$cdef(27)><class><$ifull;0(lnum1)></color>.<slide><br>(Currently held: <$cdef(27)><dgt4;3(lnum4)></color>)
+You will be connected to the internet, and your game will<br>be saved. Would you like to continue?
+Connecting to the internet...<br>Please stand by.
+Verifying...<br>Don’t turn off the power.
+Searching for gifts...
+
+No gifts were found.
+Receiving your gift...<br>Don’t turn off the power.
+You’ve already received this gift. You can’t receive<br>it again.
+
+Do you want to stop for now?
+This code has been used in other save data.
+You can’t receive the gift provided by this code or<br>password yet.
+This code or password has expired.
+Your game can’t receive the gift provided by this code<br>or password.
+The code or password update failed...<br>You can’t receive the gift provided by this code<slide><br>or password.
+You have already received the gift provided by this code<br>or password.
+This code has already been used.<br>Once a code is used, it can’t be used in another save data.
+You failed multiple times to enter the correct code or<br>password, so you can’t connect to the server for a while.<slide><br>Please try again later.
+The gift has been received!
+You couldn’t receive it because your bag is full.
+Would you like to try entering the code or password again?
+Something has gone wrong.<br>We aren’t able to retrieve that gift right now.
+A gift was found, but you can’t receive it with this version<br>of the game.
+Cloud Island data could not be uploaded.
+It looks like <$cdef(27)><$strpname;0(lstr1,lnum1)> </color>has already left.
+It looks like this could be filled by using <$cdef(27)><$sklfull(3)></color>.
+Try clearing up the area around the <$cdef(27)>Pokémon Center</color> first<br>before playing hide-and-sneak.
+Try clearing up the area around the <$cdef(27)>Pokémon Center</color> first<br>before asking <$cdef(27)>Zorua</color> to play hide-and-sneak.
+Wait until the space in front of the <$cdef(27)>Pokémon Center</color> is free<br>before asking <$cdef(27)>Zorua</color> to play hide-and-sneak.
+Wait until the space in front of the <$cdef(27)>Pokémon Center</color> is free<br>before asking <$cdef(27)>Bulbasaur</color> to play jump rope.
+Would you like to try cooking a dish that you haven’t<br>made before?
+Undo this transformation?
+This house is now your home! You can use <$cdef(27)>Return Home</color> to<br>come back here anytime!
+Unable to start poll because one or more players are busy.
+Unable to start poll because one or more players are busy.
+You got a handy bag!<clear><br>It’s a bag that lets you take out or store items instantly.
+A communication error occurred.
+Your bag is full. Would you still like to try to get a gift?
+Are you sure you want to restore this island?
+There’s a stamp here already. Would you like to replace it?
+Your bag is full. Would you still like to try to get a gift?
+Stop searching for this Pokémon?
+There’s not enough room for <$cdef(27)>Drifloon</color> to land. Try to place<br>dolls in a larger area.
+Arrangement #1 is now playing. Which arrangement would<br>you like to put on?
+Arrangement #2 is now playing. Which arrangement would<br>you like to put on?
+Arrangement #3 is now playing. Which arrangement would<br>you like to put on?
+You’ve received an item! Select “Get Items” to claim it.
+Enter your name in this language.
+Are you OK with the name <$cdef(27)><pname;0></color>?
+<oneline>You got<br><iart;0()><$cdef(27)><fqty(1)><class><$ifull;0(lnum1)></color>!
+
+
+This might work if it’s placed near water.
+
+
+When playing with others in this town, everyone will be<br>restricted to playing in Spectator Mode.<clear><br>Certain moves and items can’t be used while playing in<br>Spectator Mode.
+This Palette Town is currently in Spectator Mode. Certain<br>moves and items can’t be used while playing in this mode.
+You cannot use moves or items right now because this area<br>is in Spectator Mode.
+You can use moves and craft stuff while playing in this town.
+Are you sure you wish to close the connection?
+Are you sure you want to close the connection and<br>return home?<clear><br>All the items you have will be kept in the <$cdef(27)>PC</color> at the<br><$cdef(27)>Pokémon Center</color>.
+You learned <$cdef(27)><$sklfull(10)></color>! Press <$keyicon(28)> while in water to swim!
+You learned <$cdef(27)><$sklfull(11)></color>! Press <$keyicon(29)> while in the air to fly!
+You can’t get any more prizes today.
+You can’t get any more prizes today.
+You got an item!
+The <$cdef(27)>shop</color> now has a wider selection of items!
+New <$cdef(27)>challenges</color> are available!
+Head back to <$cdef(27)>Drifloon</color> with <$cdef(27)><nname;0></color>?
+This <$cdef(27)><fqty(1)><$ifull(764)></color> is next to a <$cdef(27)><fqty(1)><$ifull(2045)></color>.<clear><br>That means when you use this <$cdef(27)><fqty(1)><$ifull(764)></color>, you can<br>access materials in your bag and in the <$cdef(27)><fqty(1)><$ifull(2045)></color>!
+Daily items have been added to the <$cdef(27)>shop</color>.
+Do you want to burn what you’ve placed inside to<br>generate electricity?
+A Pokémon is following you who can’t go to a different<br>area. Would you like to part ways and go without them?
+Spray water on dry trees and gather the <$cdef(27)><fqty(2)><$ifull(2340)></color><br>that grow.
+Get seeds from the shop or from Dream Islands, and plant<br>them in tilled soil to grow them.
+Ask a Pokémon with the <$cdef(27)><fcap><$spwfull(15)></color> specialty to process<br><$cdef(27)><fqty(2)><$ifull(1482)></color> for you.
+Fluffy Pokémon with the <$cdef(27)><fcap><$spwfull(4)></color> specialty may drop this<br>near their homes.
+Ask a Pokémon with the <$cdef(27)><fcap><$spwfull(17)> </color>specialty to process<br><$cdef(27)><fqty(1)><$ifull(1738)></color> for you.
+Ask a Pokémon with the <$cdef(27)><fcap><$spwfull(10)></color> specialty to process<br><$cdef(27)><fqty(2)><$ifull(112)></color> for you.
+Ask a Pokémon to process <$cdef(27)><fqty(1)><$ifull(113)></color> in a<br><$cdef(27)><fqty(1)><$ifull(1446)></color> for you.
+Ask a Pokémon to process <$cdef(27)><fqty(1)><$ifull(1090)></color> in a<br><$cdef(27)><fqty(1)><$ifull(1458)></color> for you.
+Search for these on Dream Islands or inside caves in<br><$cdef(27)><$stgname;0(3)></color>.
+Ask a Pokémon with the <$cdef(27)><fcap><$spwfull(24)></color> specialty to process<$cdef(27)><br><fqty(2)><$ifull(115)></color> for you.
+Search for the recipe in <$cdef(27)><$stgname;0(3)></color>.
+Search for the recipe in <$cdef(27)><$stgname;0(2)></color>.
+Search for the recipe in the <$cdef(27)><$stgname;0(4)></color>.
+Raise the environment level in <$cdef(27)><$stgname;0(2)></color>.
+Raise the environment level in <$cdef(27)><$stgname;0(3)></color>.
+Raise the environment level in the <$cdef(27)><$stgname;0(4)></color>.
+Press <$keyicon(52)> to use your <$cdef(27)>camera</color> and take a photo!
+Raise the environment level in <$cdef(27)><$stgname;0(1)></color>.
+How do you want to start your GameShare session?
+Canceled GameShare session.
+Preparing to communicate...<br>Don’t turn off the power.
+Are you sure you wish to end your GameShare session?<clear><br>(Items held by players other than the host will be sent to<br>the <$cdef(27)><fqty(1)><$ifull(1442)></color>.)
+Would you like to set a Link Code?
+This Cloud Island is currently not public.
+What would you like to do?
+Who would you like to send home?
+<$cdef(27)><$strpname;0(lstr1,lnum1)></color> was sent home.
+There is no one to send home.
+The host will be sent home. This will disband the current<br>player group and close the connection. Is that OK?
+Your rewards were sent to the <$cdef(27)>PC</color> in your own world.
+Unable to move to a different area due to inactivity.
+Looks like they want to meet <$cdef(27)><wowner;0></color>!<clear><br>Bring <$cdef(27)><wowner;1> </color>here to say hi!
+You sense a large presence coming from the ocean...
+Cloud Island not found.
+You can’t connect because another player does not have<br>the most recent software update.<clear><br>They need to restart and update the software to connect.
+This Cloud Island is currently not public.
+Available downloadable content has not been applied to<br>the Cloud Island.<clear><br>To update your game, the session must end for all other<br>players. Do you wish to proceed?
+

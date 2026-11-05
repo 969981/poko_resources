@@ -1,0 +1,515 @@
+
+
+Das funktioniert nicht, da es sich in einer Flüssigkeit<br>befindet.
+
+Der Baum ist vertrocknet...<br>Er braucht Wasser.
+
+Hier steht ein großer Baum... Wenn du dich ein wenig<br>geduldest, trägt er sicherlich bald Beeren.
+
+Vielleicht lässt sich dieser Haufen Bauholz ja mit<br>irgendeiner Attacke zerteilen?
+
+Das ist ein großer, harter Fels.<br>Mit einem bloßen Schlag kannst du ihn nicht zerbrechen.
+Du hast <$cdef(27)>5</color> Stempel gesammelt! Diese kannst du vom<br><timemd;0(lnum1,lnum2)> bis zum <timemd;1(lnum3,lnum4)> gegen <$cdef(27)>Life-Münzen</color> eintauschen.<clear><br>Du kannst deine Stempel noch bis zum <timemd;2(lnum5,lnum6)> ändern.
+
+<oneline>Du hast<br><$cdef(27)><dgt5;1(lnum2)> <accclass><$ifullwithnum;0(lnum1,lnum2)></color><slide><br>zubereitet!
+<oneline>Du hast<br><$cdef(27)><dgt5;1(lnum2)> <accclass><$ifullwithnum;0(lnum1,lnum2)></color><slide><br>hergestellt!
+
+Du hast <$cdef(27)><$sklfull;1(lnum1)></color> erlernt!
+<oneline>Du hast eine <$cdef(27)>Anleitung</color> für<br><acciart;0()><$cdef(27)><acc><fqty(1)><$ifull;0(lnum1)></color><slide><br>erhalten!
+*biep*<br>Du hast eine Mitteilung vom Pokédex erhalten.
+Da du zahlreiche Pokémon entdeckt hast, erhältst du<br>als Belohnung eine Anleitung!
+Wähle einen Platz für <$cdef(27)><$sklfull;0(lnum1)></color>.
+<oneline>Du hast<br><$cdef(27)><dgt5;1(lnum2)> <accclass><$ifullwithnum;0(lnum1,lnum2)></color><slide><br>erhalten!
+
+Du hast die Spur eines Pokémon aufgenommen!
+
+Das Gebäude ist zerstört...
+Was das wohl ist...?
+Du hast die <$cdef(27)><$spwicon(25)>begutachteten</color> Dinge erhalten.
+
+Das Feuer lodert zu stark, um das Item aufzuheben.<br>Vielleicht kannst du die Flammen irgendwie löschen?
+
+Du hast einen Schatz ausgegraben!<br>Heb ihn auf und sieh dir an, was du gefunden hast!
+Es sind keine herunterladbaren Inhalte zum Kauf<br>verfügbar.
+Es sind keine Items verfügbar.
+Diese Inhalte wurden noch nicht angekündigt.
+Diese Inhalte sind noch nicht zum Spielen verfügbar.
+Besuche eine Stadt, in der du noch nicht warst.
+<oneline>Setze zunächst den Handlungsstrang in<br><$cdef(27)><$stgmyname;0(lnum1)></color><slide><br>fort.
+<oneline>Erfülle zunächst den Wunsch von<br><$cdef(27)><$cname;0(lnum1)></color>.
+<oneline>Erfülle zunächst den Wichtigen Wunsch<br>„<$iqname;1(lnum2)>“<slide><br>in<slide><br><$cdef(27)><$stgmyname;0(lnum1)></color>.
+Du hast eine <$cdef(27)>Anleitung </color>gefunden!
+<oneline>Begib dich zum <$cdef(27)>Pokémon-Center </color>in<br><$cdef(27)><$stgmyname;0(lnum1)></color>.
+Das kannst du nicht empfangen, weil du nicht die<br>entsprechenden herunterladbaren Inhalte gekauft hast.
+Das hast du bereits empfangen.
+
+Dir wird schwarz vor Augen!
+Das ist eine reichlich antiquierte Maschine...
+Dir ist eine <$cdef(27)>Anleitung</color> eingefallen!
+<$cdef(27)><oneline><nname;0> </color>und du scheint euch<br>ausgezeichnet<slide><br>zu<slide><br>verstehen!
+<oneline>Du bist jetzt eng mit<br><$cdef(27)><nname;0></color><slide><br>befreundet!
+Bring ein Pokémon mit dem Talent <$cdef(27)><$spwfull(10)> </color>mit<br>und lass dir von ihm ein Feuer anzünden.
+Dieser Gegenstand kann ohne Feuer nicht benutzt werden.<br>Platziere ihn auf einem Lagerfeuer oder Gasherd.
+Mit regelmäßiger Bewässerung wächst hier was.
+Hier sprühen Funken. Einst war hier bestimmt<br>ein elektrisches Gerät angeschlossen.
+Möchtest du nach <$cdef(27)><$cname;0(lnum1)></color> suchen?
+<oneline>Möchtest du die Suche nach <$cdef(27)><$cname;0(lnum1)><br></color>abbrechen?
+<oneline>Möchtest du die Suche nach <$cdef(27)><$cname;0(lnum1)><br></color>abbrechen<slide><br>und<slide><br>stattdessen<slide><br>nach<slide><br><$cdef(27)><$cname;1(lnum2)></color><slide><br>suchen?
+Nach welchem Pokémon möchtest du suchen?
+Du hast etwas Neues über ein Pokémon erfahren.<br>Möchtest du es dir im Pokédex durchlesen?
+<oneline>Die Suche nach <$cdef(27)><$cname;0(lnum1)> </color>wird<br>abgebrochen.<slide><br>Nach welchem Pokémon möchtest du suchen?
+Es konnten keine weiteren Items an deinen <$cdef(27)>PC</color> zu Hause<br>geschickt werden. Die Sendung wurde deswegen zur<slide><br><$cdef(27)><fqty(1)><$ifull(1442)></color> geschickt.
+<oneline>Du hast eine <$cdef(27)>Anleitung</color> für<br><acciart;0()><$cdef(27)><accclass><$ifull;0(lnum1)></color><slide><br>gefunden!<slide><br>Du kennst diese <$cdef(27)>Anleitung </color>jedoch bereits.
+<$cdef(27)><$strpname;0(lstr1,lnum1)> </color>hat den <$cdef(27)>PC </color>berührt!
+Möchtest du das Schnappspiel abbrechen?
+<oneline><$cdef(27)><string;0(lstr1)></color> hat das<br>Schnappspiel<slide><br>beendet.
+Gegen diesen starken Wind kommst du nicht an. Vielleicht<br>könntest du dir mit einer Attacke einen Weg bahnen...
+Bitte wähle eine Verbindungsmethode aus.
+Möchtest du das Schnappspiel abbrechen?<br>(Es wird dann auch für alle anderen Spieler beendet.)
+Beginne mit dem Wiederaufbau des <$cdef(27)>Pokémon-Centers</color>.<clear><br>Suche die dafür nötigen Materialien und Helfer-Pokémon<br>zusammen.
+Möchtest du die Puppe wenden?
+Anscheinend hat deine Begleitung noch etwas<br>in dieser Stadt zu erledigen.
+Möchtest du das Spiel in der gewählten Sprache starten?
+Um die Sprache zu ändern, wird das Spiel neu gestartet.<br>Bist du damit einverstanden?
+Wessen Items möchtest du an dich nehmen?
+Möchtest du auf Japanisch spielen?
+Möchtest du auf Englisch spielen?
+Möchtest du auf Französisch spielen?
+Möchtest du auf Italienisch spielen?
+Möchtest du auf Deutsch spielen?
+Möchtest du auf Spanisch spielen?
+
+
+Möchtest du das zum <$cdef(27)><$spwfull(21)> </color>verwenden?
+Du verwandelst dich!
+<oneline>Dir ist eine <$cdef(27)>Anleitung</color> für<br><acciart;0()><$cdef(27)><fqty(1)><acc><$ifull;0(lnum1)></color><slide><br>eingefallen!
+In deinem Beutel ist kein Platz für weitere Items.<br>Möchtest du dafür etwas herausnehmen?
+Du hast die Reaktion <$cdef(27)><$emotename;0(lnum1)> </color>erlernt!
+
+<oneline>Möchtest du zu diesem Ort gehen:<br><$cdef(27)><$stgmyname;0(lnum1)></color>?
+Hier kommst du aktuell noch nicht weiter...
+
+<oneline>Willst du die <$cdef(27)><$stgmyname;0(lnum1)></color>-<br>Einstellungen<slide><br>überprüfen?
+Möchtest du mit diesen Einstellungen fortfahren?
+*biep-biep-biep* In diesem Pokédex werden Pokémon<br>registriert, die auf dieser Online-Insel wohnen.<clear><br>Arbeite mit deinen Freunden zusammen, um so viele<br>Pokémon wie möglich zu finden!
+<oneline>Wie viele <$cdef(27)><fqty(2)><accclass><$ifull;0(lnum1)><br></color>möchtest du<slide><br>übergeben?<slide><br>(Du besitzt <$cdef(27)><dgt4;1(lnum2)></color>.)
+<oneline>Du möchtest also<br><$cdef(27)><dgt4;1(lnum2)> <accclass><$ifullwithnum;0(lnum1,lnum2)></color><slide><br>übergeben,<slide><br>um <$cdef(27)><dgt5;3(lnum4)> <accclass><$ifullwithnum;2(lnum3,lnum4)></color><slide><br>zu erhalten?
+*biep-biep-biep-biep* Mit deinem aktuellen Trainerrang<br>kannst du dieses Gebietstor nicht passieren.
+*biep-biep-biep*<br>Du hast ein Gebietstor erreicht.
+Halte den Pokédex vor das blaue Feld am Tor.
+*biep-biep-biep-biep*<br>Dein aktueller Trainerrang ist: <$cdef(27)><trnrank;0></color>.<slide><br>Das Gebietstor wird geöffnet.
+<oneline>Willst du beginnen, <accdart;0()><$cdef(27)><$bfull;0(lnum1)></color><br>zu bauen?
+<oneline>Willst du beginnen, <accdart;0()><$cdef(27)><$bfull;0(lnum1)></color><br>wiederaufzubauen?
+<oneline>Wie viele <$cdef(27)><fqty(2)><accclass><$ifull;0(lnum1)><br></color>möchtest du<slide><br>übergeben?<slide><br>(Du besitzt <$cdef(27)><dgt4;1(lnum2)></color>.)
+<oneline>Du möchtest also<br><$cdef(27)><dgt4;1(lnum2)> <accclass><$ifullwithnum;0(lnum1,lnum2)></color><slide><br>übergeben,<slide><br>um <$cdef(27)><dgt5;3(lnum4)> <accclass><$ifullwithnum;2(lnum3,lnum4)></color><slide><br>zu erhalten?
+<oneline>Wie viele Kopien möchtest du von dem Item<br><$cdef(27)><fqty(1)><$ifull;0(lnum1)></color><slide><br>anfertigen?
+<oneline>Willst du beginnen, das Gericht<br><$cdef(27)><$bfull;0(lnum1)></color><slide><br>zuzubereiten?
+<oneline>Du möchtest also<br><$cdef(27)><dgt4;1(lnum2)> <accclass><$ifullwithnum;0(lnum1,lnum2)></color><slide><br>einsetzen,<slide><br>um <$cdef(27)><dgt4;3(lnum4)> <accclass><$ifullwithnum;2(lnum3,lnum4)></color><slide><br>zu erhalten?
+<oneline>Du hast <acciart;0()><$cdef(27)><fqty(1)><$ifull;0(lnum1)><br></color>geöffnet!<slide><br>Schau bitte später wieder vorbei.
+
+Es sind noch nicht alle Spieler bereit.
+Das Gebietstor hat sich geöffnet.<br>Du kannst jetzt hindurchgehen.
+*biep-biep-biep-biep*<br>Zeitpunkt der Fertigstellung wird berechnet...
+Um <timehm;0(lnum1,lnum2)> fertig!
+Morgen fertig!
+Um diesen Bereich betreten zu können, musst du den<br>Erweiterungspass für Pokémon Pokopia erwerben und<slide><br>herunterladen. Weitere Informationen findest du im<slide><br>Nintendo eShop.
+Wenn du den Erweiterungspass für Pokémon Pokopia<br>erwirbst und deinen Pokédex aktualisierst, wirst du diese<slide><br>neue Stadt betreten können!
+<oneline><fcap><dart;0()><$cdef(27)><$bfull;0(lnum1)> </color>wurde<br>fertiggestellt!
+<oneline><fcap><dart;0()><$cdef(27)><$bfull;0(lnum1)> </color>wurde<br>wiederaufgebaut!
+
+
+Wenn du einen <$cdef(27)><fqty(2)><$ifull(433)></color> erhalten möchtest,<br>musst du dem Pokémon, dessen Wunsch du dir anhörst,<slide><br>einen <$cdef(27)><fqty(1)><acc><$ifull(432)></color> überreichen.<clear><br>Möchtest du dir den Wunsch anhören, obwohl du keinen<br>Wunschzettel zum Überreichen dabeihast?
+<oneline>Du hast den versteckten Schatz von jemandem gefunden<br>und<slide><br><acciart;0()><$cdef(27)><accclass><$ifull;0(lnum1)></color><slide><br>erhalten!
+
+<oneline>Du hast das Aussehen <$cdef(27)><$coordname;1(lnum1)></color><br>erlernt!
+Ein Pokémon mit dem Talent <$cdef(27)><$spwfull(21)> </color>kann sich dieses<br>Muster vermutlich einprägen und es nachmalen!
+<$cdef(27)><$cname(206)> </color>hat ein neues Muster erlernt!
+<oneline>Du hast<br><acciart;0()><$cdef(27)><accclass><$ifull;0(lnum1)></color><slide><br>erhalten!
+Du hast dir <$cdef(27)>Packtipps</color> angeeignet.<clear><br>Du kannst somit nun etwas mehr Items in deinem Beutel<br>verstauen!
+Dank <$cdef(27)><fqty(1)><$ifull(3976)> </color>kannst du jetzt Attacken öfter<br>einsetzen.
+<oneline>Durch das Essen ist <$cdef(27)><$sklfull;0(lnum1)></color><br>jetzt stärker!
+Möchtest du die Informationen überprüfen,<br>die du erworben hast?
+<$cdef(27)>Du hast einen Schnappschuss gemacht!</color>
+Der Nintendo eShop wird geöffnet.<clear><br>Dein Spiel wird dabei nicht geschlossen und kann später<br>wieder fortgesetzt werden.<clear><br>Du musst allerdings das Spiel neu starten, um jegliche<br>neuen herunterladbaren Inhalte zu aktivieren.<clear><br>Möchtest du das Spiel jetzt speichern?
+Worüber möchtest du mehr Details erfahren?
+Möchtest du das empfangen?
+Du kannst das nicht empfangen, weil dein Beutel voll ist.
+<oneline>Auch heute bietet <$cdef(27)><$cname;0(lnum2)> </color>im<br><$cdef(27)>Pokémon-Center</color><slide><br>in<slide><br><$cdef(27)><$stgmyname;1(lnum1)></color><slide><br>besondere<slide><br>Gegenstände<slide><br>an.<clear><br>Du kannst dort noch <$cdef(27)><evcleftdnum;2> </color><qty;2(Tag,Tage)> lang<br><$cdef(27)><fqty(2)><evcpitem;3></color> eintauschen.
+<oneline>Heute ist der letzte Tag, an dem du im <$cdef(27)>Pokémon-Center </color>in<br><$cdef(27)><$stgmyname;0(lnum1)></color> mit<slide><br><$cdef(27)><$cname;1(lnum2)></color><slide><br>tauschen<slide><br>kannst.<clear><br>Wenn es etwas gibt, was du haben möchtest, tausche es<br>dort gegen <$cdef(27)><fqty(2)><evcpitem;2></color><slide><br>ein.
+Dieses Pokémon wurde bereits im Pokédex registriert.<br>Möchtest du den Pokédex öffnen?
+Bei deiner letzten Spiel-Session hast du die Verbindung<br>nicht ordnungsgemäß getrennt.<clear><br>Bei einem Verbindungsabbruch während der Nutzung von<br>Kommunikationsfunktionen kann es passieren, dass dein<slide><br>Spielfortschritt auf den des letzten Speicherstands<slide><br>zurückgesetzt wird.<clear><br>Vergewissere dich daher stets, dass du über eine<br>stabile Verbindung verfügst, bevor du via<slide><br>Kommunikationsfunktionen spielst.
+Dein Fotoalbum ist voll.<br>Möchtest du das Album einsehen?
+Du nimmst eine starke Präsenz aus dem Inneren wahr.<br>Es scheint sich jemand dort aufzuhalten...
+
+Speichervorgang...<br>Bitte die Konsole nicht ausschalten.
+<oneline>Du hast beim <$cdef(27)><$spwfull(12)><br></color><$cdef(27)><dgt2;1(lnum2)></color> <$cdef(27)><accclass><$ifullwithnum;0(lnum1,lnum2)></color><slide><br>erhalten!
+Bist du dir sicher, dass du den Code ändern möchtest?
+<oneline>Du hast das Styling der Frisur<br><$cdef(27)><$hairname;1(lnum1)></color><slide><br>erlernt!
+Möchtest du einen Code festlegen?
+Dieser <$cdef(27)><fqty(1)><$ifull(1677)> </color>gehört <$cdef(27)><$strpname;0(lstr1,lnum1)></color>.<br>Möchtest du ihn öffnen?
+Bitte lege einen Code fest.
+Bitte gib den Code ein.
+Möchtest du die ausgewählten Fotos wirklich löschen?
+Möchtest du dieses Foto wirklich löschen?
+Möchtest du einen neuen Schnappschuss festlegen?
+Möchtest du nach Hause zurückkehren?
+Möchtest du <$cdef(27)><$cname;0(206)> </color>dieses<br>Menschendokument zeigen?
+Es wurden Sicherungsdaten vom <timeymd;0(lnum1,lnum2,lnum3)> gefunden.<clear><br>Möchtest du den aktuellen Spielstand überschreiben und<br>die Sicherungsdaten wiederherstellen?
+Sicherungsdaten werden geladen...<br>Bitte die Konsole nicht ausschalten.
+Möchtest du speichern und das Spiel beenden?
+Durch die Wiederherstellung der Sicherungsdaten wird<br>dein aktueller Spielstand gelöscht.<clear><br>Bist du damit einverstanden?
+Möchtest du dieses Aussehen beibehalten?
+Möchtest du alle Items hineinlegen, die sich in deinem<br>Beutel befinden?
+Möchtest du alle Items hineinlegen, die sich in deiner<br>Schnelltasche befinden?
+Möchtest du alle Items entnehmen?
+Möchtest du auf Chinesisch (traditionell) spielen?
+Möchtest du auf Koreanisch spielen?
+Möchtest du auf Chinesisch (vereinfacht) spielen?
+Möchtest du immer leicht auf die Schnelltasche<br>zugreifen können?
+Möchtest du die Schnelltasche schließen?
+In welches Zuhause möchtest du zurückkehren?
+Du kehrst in folgendes Zuhause zurück:<br><$stgmyname;0(lnum1)>.
+Da du kein eigenes Zuhause besitzt, wirst du an<br>einen sicheren Ort in der Nähe gebracht.<clear><br>Bist du damit einverstanden?
+Da du gegenwärtig nicht nach Hause zurückkehren kannst,<br>wirst du an einen sicheren Ort in der Nähe gebracht.<clear><br>Bist du damit einverstanden?
+Du wirst an den alternativen Zielort gebracht...
+Du hast dein Zuhause erreicht!
+Da dein Zuhause nicht geortet werden konnte, wurdest du<br>an einen sicheren Ort in der Nähe gebracht.
+<oneline>Du hast<br><acciart;0()><$cdef(27)><fqty(1)><accclass><$ifull;0(lnum1)></color><slide><br>erhalten!
+
+Dieser <$cdef(27)><fqty(1)><$ifull(1677)> </color>gehört jemand anderem.<br>Möchtest du ihn öffnen?
+Wenn du keinen Code festlegst, kann jeder auf den<br>Inhalt zugreifen. Bist du damit einverstanden?
+
+Hier hineingelegte Items verschwinden morgen.<br>Möchtest du wirklich, dass diese Items entsorgt werden?
+
+
+
+
+Du wurdest an einen sicheren Ort in der Nähe gebracht.
+
+
+
+
+<oneline>Du besitzt kein eigenes Zuhause in<br><$stgmynamefull;0(lnum1)>.<slide><br>Daher wird es dir nicht möglich sein, über die Option<slide><br><$cdef(27)>Nach Hause zurückkehren</color> hierher zurückzukommen.<clear><br>Möchtest du dennoch fortfahren?
+
+
+Du hast Informationen zu einem Habitat erhalten!
+Möchtest du den Abspann überspringen?
+Möchtest du die Verbindung trennen und die Gruppe<br>eingeladener Spieler auflösen?
+Das macht <$icon(lnum1)><moneyint;0(lnum2)>.<br>Möchtest du den Kauf durchführen?
+Gekauft!
+<$cdef(27)><gevcmainpk;0> </color>ist <$cdef(27)>nur noch heute</color> hochmotiviert!
+*biep-biep-biep* Es wurden neue Daten gefunden!<br>Der Pokédex wird aktualisiert...
+Aktualisierung abgeschlossen.<br>Du kannst jetzt neue Pokémon registrieren.
+Mitteilung vom Pokédex:<clear><br>Heute ist dein Glückstag! Es gibt mehr funkelnde Stellen<br>im Wasser und es sind mehr Fundsachen zu finden als üblich!
+<oneline>Ein auffälliges Pokémon ist aufgetaucht...<br>Schau am besten mal in<slide><br><$cdef(27)><$stgmyname;0(lnum1)> </color>vorbei!
+<oneline>Ein auffälliges Pokémon ist aufgetaucht...<br>Schau am besten mal beim <$cdef(27)>Pokémon-Center </color>vorbei!
+<oneline>Auch heute ist das auffällige Pokémon noch da...<br>Schau beim <$cdef(27)>Pokémon-Center </color>in<slide><br><$cdef(27)><$stgmyname;0(lnum1)></color><slide><br>vorbei<slide><br>und<slide><br>rede<slide><br>mit<slide><br>ihm!
+<oneline>Du hast <genqty;1(einen,eine,ein,ein paar)> <$cdef(27)><accclass><$ifullwithnum;1(lnum1,lnum2)></color><br>von <$cdef(27)><gevcmainpk;0></color><slide><br>erhalten.
+Du hast mehrere Belohnungen von <$cdef(27)>Bisasam</color> erhalten.
+Das Geschenk wurde an deinen <$cdef(27)>PC</color> zu Hause geschickt.
+<$cdef(27)><gevcmainpk;0> </color>ist noch <$cdef(27)><gevcleftdnum;1> </color>Tage hochmotiviert!
+Möchtest du den Knopf drücken?
+Er ist gerade außer Betrieb. Bitte warte bis morgen.
+<oneline>Es ist<br><iart;0()><$cdef(27)><fqty(1)><class><$ifull;0(lnum1)></color><slide><br>herausgefallen!
+Bitte lege fest, wie du spielen möchtest.
+Die Verbindung wurde hergestellt.
+<oneline>Du Glückspilz! Es ist noch<br><iart;0()><$cdef(27)><fqty(1)><class><$ifull;0(lnum1)></color><slide><br>herausgefallen!
+Möchtest du dich mit <$cdef(27)><$spwfull(36)></color> in diese Gestalt<br>verwandeln?
+Möchtest du dein ursprüngliches Aussehen unverändert<br>beibehalten?
+Verbindung wird hergestellt...<br>Bitte die Konsole nicht ausschalten.
+Bitte gib das Passwort ein.
+Es wurde kein Zielort gefunden.
+Möchtest du einen erneuten Suchvorgang starten?
+Um dich diesem Spieler anschließen zu können, benötigst<br>du ein Passwort. Bitte gib dieses Passwort ein.
+Das Passwort ist falsch.<br>Möchtest du es erneut eingeben?
+Du hast bereits eine Online-Insel. Um eine neue zu<br>erstellen, musst du zunächst die bestehende über das<slide><br>Optionsmenü löschen.
+Du bist <gen;-2(der Verwalter,die Verwalterin,)> dieser Insel.<br>Möchtest du die Einstellungen ändern?
+Wenn du die Einstellungen änderst, werden alle Spieler<br>der aktuellen Spiel-Session entlassen.
+Die Adresse und das Passwort kannst du über den <$cdef(27)>PC</color><br>beim <$cdef(27)>Pokémon-Center </color>auf deiner Online-Insel einsehen.
+Bitte gib die Adresse der Insel ein, nach der gesucht<br>werden soll.
+Es konnte keine Online-Insel gefunden werden.<br>Möchtest du die Adresse erneut eingeben?
+Die Suche wurde abgebrochen.
+Die Geschenke wurden an deinen <$cdef(27)>PC</color> zu Hause geschickt.
+Hier solltest du besser noch nicht hindurchgehen.
+Es scheint ein neues Pokémon in dieser Stadt zu geben.<br>Suche nach ihm, um es kennenzulernen!
+Um diese Stadt betreten zu können, werden<br>herunterladbare Inhalte benötigt.<clear><br>Bitte überprüfe, ob diese Inhalte auf dein System<br>heruntergeladen wurden.
+Du kannst dich jetzt an den <$cdef(27)>täglichen Challenges</color><br>versuchen.
+Dir stehen jetzt die täglichen Angebote zur Verfügung.
+Der <$cdef(27)>Umgebungslevel</color> hat sich erhöht.<br>Dir stehen jetzt mehr <$cdef(27)>Challenges</color> zur Verfügung.
+Der <$cdef(27)>Umgebungslevel</color> hat sich erhöht.<br>Dir stehen jetzt im <$cdef(27)>Laden</color> mehr Waren zur Verfügung.
+<oneline>Möchtest du <$cdef(27)><dgt4;2(lnum3)> </color><qty;2(Set,Sets)> herstellen, <qty;2(das,die jeweils)><br><$cdef(27)><dgt4;1(lnum2)></color> <$cdef(27)><accclass><$ifullwithnum;0(lnum1,lnum2)></color><slide><br><qty;2(beinhaltet,beinhalten)>?
+<oneline>Möchtest du<br><$cdef(27)><dgt4;1(lnum2)></color> <$cdef(27)><accclass><$ifullwithnum;0(lnum1,lnum2)></color><slide><br>herstellen?
+<oneline>Möchtest du<br><$cdef(27)><dgt4;1(lnum2)> <accclass><$ifullwithnum;0(lnum1,lnum2)></color><slide><br>zubereiten?
+Ein neuer Tag ist angebrochen!<br>Die <$cdef(27)>täglichen Challenges</color> wurden aktualisiert.
+Ein neuer Tag ist angebrochen!<br>Die täglichen Angebote wurden aktualisiert.
+Dir stehen neue <$cdef(27)>Challenges</color> zur Verfügung.
+Dir stehen neue Waren im Laden zur Verfügung.
+Wähle „Schnell“ aus, um die Textgeschwindigkeit<br>zu erhöhen.
+Wähle „Normal“ aus, um dir den Text in durchschnittlicher<br>Geschwindigkeit anzeigen zu lassen.
+Wähle „Langsam“ aus, um die Textgeschwindigkeit zu<br>senken.
+<oneline>Möchtest du den <$cdef(27)><$spwicon(12)>Tausch</color> durchführen und<br><acciart;0()><accclass><$cdef(27)><$ifullwithnum;0(lnum1,lnum2)></color><slide><br>erhalten?
+<$cdef(27)><oneline><$cname;0(215)></color> ist sehr motiviert und wird<br>wahrscheinlich<slide><br>schneller fertig<slide><br>als sonst.
+Der Bau schreitet gut voran, aber es dauert noch etwas,<br>bis alles fertig ist.
+<oneline>Da sich <$cdef(27)><$cname;0(215)></color> besonders ins Zeug<br>legt,<slide><br>verläuft der Wiederaufbau schneller als gewöhnlich.
+Der Wiederaufbau verläuft nach Plan, doch es dauert wohl<br>noch etwas, bis die Bauarbeiten abgeschlossen sind.
+Möchtest du den Bau abbrechen?
+Ein neuer Tag ist angebrochen!<br>Die Anzeige wird aktualisiert.
+Du solltest mit <$cdef(27)><$cname(562)></color> herkommen.
+<oneline>Da sich <$cdef(27)><$cname;0(215)></color> besonders ins Zeug<br>legt,<slide><br>verläuft der Abriss schneller als gewöhnlich.
+Der Abriss verläuft nach Plan, doch es dauert wohl noch<br>etwas, bis die Arbeiten abgeschlossen sind.
+<oneline>Da sich <$cdef(27)><$cname;0(215)></color> besonders ins Zeug<br>legt,<slide><br>verlaufen die Umzugsvorbereitungen schneller.
+Die Umzugsvorbereitungen verlaufen nach Plan, doch es<br>dauert wohl noch etwas, bis sie zum Abschluss kommen.
+Möchtest du den Abriss abbrechen?
+Möchtest du die Umzugsvorbereitungen abbrechen?
+Möchtest du den Umzug abbrechen?
+Möchtest du den Wiederaufbau abbrechen?
+Bitte lege einen Namen für diese Insel fest.<br>Diesen kannst du später noch ändern.
+Bitte lege die Einstellungen für deine Online-Insel fest.
+Bitte gib den Zaubercode ein.
+Möchtest du die Verbindung trennen und die Gruppe<br>eingeladener Spieler auflösen?
+Möchtest du die Verbindung trennen und nach Hause<br>zurückkehren?<clear><br>Sämtliche Items in deinem Besitz werden dann<br>von diesem <$cdef(27)>PC </color>eingezogen.
+Du bist <gen;-2(der Gastgeber,die Gastgeberin,)> der Spiel-Session. Möchtest du die<br>Spiel-Session für alle beenden und die Verbindung trennen<slide><br>oder jemand anderes zum Gastgeber ernennen und gehen?
+Wen möchtest du zum Gastgeber ernennen?
+Bist du damit einverstanden?
+Möchtest du den Umbau abbrechen?
+<oneline>Möchtest du <accdart;0()><$cdef(27)><$bfull;0(lnum1)><br></color>jetzt<slide><br>abreißen<slide><br>lassen?
+<oneline>Möchtest du dieses Gebäude jetzt umbauen lassen?<br>Daraus wird dann <iart;0()><$cdef(27)><$bfull;0(lnum1)></color>.
+<oneline>Möchtest du mit den Umzugsvorbereitungen für<br><accdart;0()><$cdef(27)><$bfull;0(lnum1)> </color>beginnen?
+<oneline>Möchtest du mit dem Umzug von<br><genqty;0(dem,der,dem,den)> <$cdef(27)><$bfull;0(lnum1)> </color>beginnen?
+
+Das ist eine neue persönliche Bestleistung!
+Du bist beim Seilspringen mindestens <spsjmprpnum;0>-mal in Folge<br>gesprungen!
+<oneline>Du hast von <$cdef(27)><$cname;0(lnum1)></color><br><$cdef(27)><dgt4;2(lnum3)></color> <$cdef(27)><accclass><$ifullwithnum;1(lnum2,lnum3)></color><slide><br>erhalten!
+Das Geschenk wurde an deinen <$cdef(27)>PC </color>zu Hause geschickt.
+Stelle einen <$cdef(27)><fqty(1)><acc><$ifull(1396)> </color>auf und schließe mehrere<br><$cdef(27)>Generatoren </color>daran an, um Strom von außerhalb zu<slide><br>transportieren.<clear><br>Falls dir für den Bau der <$cdef(27)>Generatoren </color>die nötigen<br>Materialien fehlen, schau auf einer <$cdef(27)>Wunderinsel </color>vorbei.
+Möchtest du diese Brille nutzen, um einen Blick auf die<br>Online-Insel eines anderen Spielers zu werfen?<clear><br>Für die Nutzung dieser Funktion wird eine kostenpflichtige<br>Nintendo Switch Online-Mitgliedschaft benötigt.
+Bitte gib die Adresse der Online-Insel ein, auf die du<br>einen Blick werfen möchtest.
+Es konnte keine Online-Insel gefunden werden.<br>Möchtest du die Adresse erneut eingeben?
+Die Suche wird abgebrochen.
+Es wurde eine Online-Insel gefunden.<br>Der virtuelle Modus wird gestartet...
+Möchtest du den virtuellen Modus beenden und<br>nach Hause zurückkehren?
+Der virtuelle Modus wird beendet...
+
+Herzlichen Glückwunsch zur Vervollständigung des<br>Online-Insel-Pokédex!<clear><br>Hier ist eine Belohnung für deine harte Arbeit!
+<oneline>Bist du mit <$cdef(27)><$strpname;0(lstr1,lnum1)> </color>als <gen;0(Gastgeber,Gastgeberin,)><br>einverstanden?
+<oneline>Du hast <$cdef(27)><$strpname;0(lstr1,lnum1)> </color>als <gen;0(Gastgeber,Gastgeberin,)><br>festgelegt<slide><br>und<slide><br>kehrst<slide><br>nach<slide><br>Hause<slide><br>zurück.
+Möchtest du aufhören zu kochen?
+<oneline>Da sich <$cdef(27)><$cname;0(216)> </color>besonders ins Zeug<br>legt,<slide><br>ist das Essen im Nu fertig.
+Welche Fläche möchtest du umgestalten?
+<oneline>Da sich <$cdef(27)><$cname;0(215)></color> besonders ins Zeug<br>legt,<slide><br>geht der Umzug schneller als gewöhnlich vonstatten.
+Der Umzug verläuft nach Plan, doch es dauert wohl noch<br>etwas, bis er zum Abschluss kommt.
+<oneline>Da sich <$cdef(27)><$cname;0(215)> </color>besonders ins Zeug<br>legt,<slide><br>schreitet der Umbau schneller als gewöhnlich voran.
+Der Umbau verläuft nach Plan, doch es dauert wohl noch<br>etwas, bis die Arbeiten abgeschlossen sind.
+Möchtest du das Foto im Album der Konsole speichern?
+Möchtest du <$cdef(27)><$cname;0(123)> </color>rufen?
+
+Es wäre besser, du würdest dir noch etwas mehr Wissen<br>aneignen, ehe du die nächste Stadt ansteuerst.
+Hier in der Gegend gibt es eine Stadt, in der du bisher<br>noch nicht warst.
+Steuere die Küste an, wo du <$cdef(27)><$cname(17)> </color>begegnet bist!
+<$cdef(27)><$cname;0(123)> </color>kommt nicht...<br>Ob es wohl erschöpft ist?
+Du bist im Begriff, in ein Gebiet zu wechseln,<br>das du noch nicht kennst.<clear><br>Möchtest du trotzdem fortfahren?
+Du möchtest es also um <$cdef(27)><dgt5;0(lnum1)> </color>Stück bitten?
+Bist du mit dieser Auswahl zufrieden?
+Die Umfrage konnte nicht gestartet werden, da mindestens<br>ein Spieler gerade anderweitig beschäftigt ist.
+Bitte warte noch kurz, bis alle fertig sind...
+Seilspringturnier am <timeymd;0(lnum1,lnum2,lnum3)><br>Rekord: <dgt5;1(lnum4)> <qty;1(Sprung,Sprünge)>
+Schnappspielturnier am <timeymd;0(lnum1,lnum2,lnum3)><br>Rekord: <timerms;1(lnum4,lnum5)>
+Möchtest du ein Foto ausstellen?
+Wähle ein Foto, das ausgestellt werden soll.
+Mehr Fotos passen hier nicht hinein. Wenn du ein weiteres<br>Foto ausstellen möchtest, wird das älteste entfernt.
+Fotoauswahl wird ausgestellt...
+Möchtest du deine Fotoauswahl entfernen?
+Hierbei handelt es sich um eine <$cdef(27)><fqty(1)><$ifull(1460)></color>.<clear><br>Stell sie auf, wo du möchtest, und Pokémon mit dem Talent<br><$cdef(27)><$spwfull(13)> </color>platzieren aufgesammelte Gegenstände darin.<clear><br>Befindet sich in der Nähe außerdem ein Pokémon, das sich<br>auf Weiterverarbeitung versteht, verarbeitet es Materialien<slide><br>aus der Kiste.<clear><br>Möchtest du etwas hineinlegen?
+Du kannst Nahrungsmittel in diesen Korb legen,<br>um sie mit anderen Pokémon zu teilen.<clear><br>Möchtest du etwas hineinlegen?
+Legst du Materialien hinein, können Pokémon<br>diese für dich weiterverarbeiten.<clear><br>Möchtest du etwas hineinlegen?
+Das Pokémon kann gerade nicht vorbeikommen.<br>Läute die Glocke, wenn es sich in der Nähe befindet.
+Du kannst nicht dorthin gehen, solange das Schnappspiel<br>noch läuft.
+Spieler auf einer <$cdef(27)>Wunderinsel </color>können am Seilspringen<br>nicht teilnehmen.<clear><br>Möchtest du dennoch mit dem Seilspringen beginnen?
+Spieler auf einer <$cdef(27)>Wunderinsel </color>können am Schnappspiel<br>nicht teilnehmen.<clear><br>Möchtest du dennoch mit dem Schnappspiel beginnen?
+Du kannst dich dieser Gruppe nicht anschließen,<br>da sie bereits voll ist.
+Du kannst für heute keine Städte weiterer Spieler mehr<br>besuchen.
+Du kannst dich der Gruppe nicht anschließen, da<br>mindestens ein Spieler gerade anderweitig beschäftigt ist.<clear><br>Versuche es bitte später erneut.
+Das ist die Stempelkarte für diese Woche!
+Möchtest du die Stempelkarte mit dem heutigen Stempel<br>versehen?
+Du hast <moneyint;0(lnum1)> Life-Münzen erhalten!
+Deine Stempelkarte konnte nicht eingetauscht werden,<br>da sie leer ist.
+Stempelkarten können gegen <$cdef(27)>Life-Münzen</color> eingetauscht<br>werden. Im Stempelsammlung-Menü gibt es mehr Details.
+Du hast deine Stempelkarte noch nicht eingetauscht.<br>Dir <qty;0(bleibt,bleiben)> noch <dgt1;0(lnum1)> <qty;0(Tag,Tage)>, um dies nachzuholen.<clear><br>Im Stempelsammlung-Menü gibt es mehr Details.
+Du hast über mindestens eine <$cdef(27)>Challenge </color>noch keinen<br>Bericht erstattet.
+Du hast mindestens eine Belohnung für eine <$cdef(27)>Challenge</color><br>noch nicht entgegengenommen.
+Du hast über mindestens eine <$cdef(27)>Challenge </color>keinen Bericht<br>erstattet und mindestens eine Belohnung nicht<slide><br>entgegengenommen.
+Das Pokémon hat nicht genug Platz, um zu landen.
+<oneline>Du hast den Fotorahmen<br>„<$phfrname;0(lnum1)>“<slide><br>erhalten!
+Möchtest du diese Einstellungen übernehmen?
+Mindestens einem Knopf wurden mehrere Funktionen<br>zugeteilt. Möchtest du diese Einstellungen übernehmen?
+Möchtest du die Einstellungen wirklich zurücksetzen?
+Möchtest du die Items an dich nehmen, die du in die<br>Maschine gesteckt hattest?
+
+Möchtest du eine Kopie des ausgewählten Fotos<br>hineinlegen?
+Offenbar erscheint Driftlon, wenn du dies draußen<br>ablegst und damit interagierst.
+Das ist derzeit nicht möglich.
+Das scheint sehr wichtig zu sein...<br>Möchtest du es wirklich wegwerfen?
+<oneline>Um die aktuellen Sicherungsdaten von<br><$cdef(27)><$stgmyname;0(lnum1)></color><slide><br>zu<slide><br>speichern,<slide><br>werden<slide><br>auf<slide><br>der<slide><br>Konsole<slide><br>vorhandene<slide><br>Sicherungsdaten<slide><br>überschrieben.<clear><br>Möchtest du fortfahren?
+Die Daten wurden gesichert!
+Es konnte keine Internetverbindung hergestellt werden.<br>Möchtest du es noch einmal versuchen?
+<oneline>Die Sicherungsdaten von<br><$cdef(27)><$stgmyname;0(lnum1)></color><slide><br>werden<slide><br>gespeichert...<slide><br>Bitte die Konsole nicht ausschalten.
+Die Datensicherung ist abgeschlossen.<br>Datum der Sicherung: <timeymdhm;0(lnum1,lnum2,lnum3,lnum4,lnum5)>
+<$cdef(27)><oneline><$stgmyname;0(lnum1)></color> wurde nicht<br>gefunden.<slide><br>Es konnte keine Datensicherung durchgeführt werden.
+Die Datensicherung ist fehlgeschlagen.
+Heute kannst du keine Daten mehr wiederherstellen.<br>Bitte versuche es morgen wieder.
+<oneline>Wenn die Sicherungsdaten wiederhergestellt werden,<br>werden die Spieler, die sich momentan in<slide><br><$cdef(27)><$stgmyname;0(lnum1)></color><slide><br>aufhalten,<slide><br>weggeschickt.<clear><br>Möchtest du fortfahren?
+<oneline>Die Sicherungsdaten von<br><$cdef(27)><$stgmyname;0(lnum1)></color><slide><br>werden<slide><br>wiederhergestellt...<slide><br>Bitte die Konsole nicht ausschalten.
+Die Daten wurden wiederhergestellt.
+Ein Verbindungsfehler ist aufgetreten. Bitte überprüfe,<br>ob die Daten erfolgreich wiederhergestellt wurden.
+Möchtest du die Sicherungsdaten mit einer Notiz<br>versehen?
+Möchtest du fortfahren?
+Du kehrst an den ursprünglichen Ort zurück.
+Der <$cdef(27)>Wunschzettel</color>, den du überreicht hast, glitzert!
+Du erhältst einen <$cdef(27)><fqty(1)><$ifull(433)></color>!
+
+
+<oneline>Du hast das Menschendokument<br><$cdef(27)><getmptname;0></color> aufgesammelt!
+
+
+
+
+
+
+Pokémon ziehen erst dann in ein Haus ein, wenn sich<br>mindestens drei verschiedene Möbelstücke darin befinden.
+Möchtest du dem Pokémon etwas zu essen geben?
+Möchtest du <$cdef(27)><nname;0> </color>mitnehmen?
+Wenn du bei der Bleibe eines Pokémon <$cdef(27)><fqty(1)><$ifull(3994)> </color>benutzt,<br>kommt es vielleicht nach Hause zurück.
+Die Meldung wird gesendet...
+Die Meldung wurde erfolgreich gesendet.<clear><br>Wenn du die Verbindung trennen möchtest,<br>drücke <$keyicon(227)> im Hauptmenü.
+Ein Verbindungsfehler ist aufgetreten.<br>Möchtest du es noch einmal versuchen?
+Die Meldung wurde abgebrochen.
+Du hast eine Vertiefung entdeckt.<br>Was könnte hier wohl hineinpassen...?
+Das macht <$icon(lnum1)><moneyint;0(lnum2)>.<br>Möchtest du den Kauf durchführen?<clear><br>(Enthält mindestens eine <$cdef(27)>Anleitung</color>, die du bereits<br>erlernt hast.)
+Mit dem Anstieg des <$cdef(27)>Umgebungslevels </color>wurde auch die<br>Auswahl an täglichen Angeboten im <$cdef(27)>Laden </color>erweitert!
+Möchtest du deine Änderungen übernehmen,<br>bevor die Einstellungen geschlossen werden?
+Mindestens einem Knopf wurden mehrere Funktionen<br>zugeteilt. Willst du die Änderungen trotzdem speichern?<slide><br>(Wähle <$cdef(27)>Nein</color>, um sie zu verwerfen und zurückzukehren.)
+Er ist viel zu heiß, um ihn zu bewegen. Kühle ihn mit<br>Wasser ab und versuche es dann erneut.
+Es wird auf andere Spieler gewartet...
+Die Erde ist noch feucht genug. Hier muss eine Weile lang<br>nicht gegossen werden.
+Möchtest du deine bisherigen Änderungen speichern,<br>bevor das Menü der <$cdef(27)>Knopfbelegung </color>geöffnet wird?
+Möchtest du deine bisherigen Änderungen speichern,<br>bevor die <$cdef(27)>Spracheinstellungen </color>geöffnet werden?
+Benutze das <$cdef(27)><fqty(1)><$ifull(1898)></color>, wenn du alleine in<br><$cdef(27)><$stgname;0(4)> </color>bist.
+Sollen diese Einstellungen jetzt angepasst werden?<br>(Wenn du mit anderen spielst, informiere sie bitte darüber,<slide><br>dass die Spiel-Session beendet wird.)
+Möchtest du diese Insel wirklich löschen?<br>(Wenn du mit anderen spielst, informiere sie bitte darüber,<slide><br>dass die Spiel-Session beendet wird.)
+Die Online-Insel wurde gelöscht.
+Ein Verbindungsfehler ist aufgetreten.<br>Bitte überprüfe, ob die Insel erfolgreich gelöscht wurde.
+Bitte gedulde dich noch ein wenig, bis alle Spieler,<br>die gerade unterwegs sind, sich dir anschließen.
+Ein brüchiger, aber ziemlich harter Stein.<br>Mit einem bloßen Schlag kannst du ihn nicht zerbrechen.
+Dieses brüchig aussehende Metall sollte sich bestimmt<br>mit irgendeiner Attacke zerbrechen lassen...
+<oneline>Um <acciart;0()><$cdef(27)><fqty(1)><accclass><$ifull;0(lnum1)><br></color>herzustellen,<slide><br>benötigst du<slide><br><$cdef(27)><dgt4;2(lnum3)></color> <$cdef(27)><accclass><$ifullwithnum;1(lnum2,lnum3)></color>.<slide><br>(Du besitzt <$cdef(27)><dgt4;3(lnum4)></color>.)
+Eine Internetverbindung wird hergestellt und<br>das Spiel wird gespeichert. Willst du fortfahren?
+Verbindung wird hergestellt...<br>Bitte warte einen Moment.
+Deine Eingabe wird überprüft...<br>Bitte die Konsole nicht ausschalten.
+Es wird nach Geschenken gesucht...
+
+Es konnten keine Geschenke gefunden werden.
+Geschenk wird empfangen...<br>Bitte die Konsole nicht ausschalten.
+Du hast dieses Geschenk bereits empfangen,<br>daher kannst du es kein zweites Mal erhalten.
+
+Möchtest du den Vorgang abbrechen?
+Dieser Seriencode wurde bereits mit anderen<br>Speicherdaten eingelöst.
+Das zu diesem Seriencode beziehungsweise Passwort<br>gehörige Geschenk kann noch nicht empfangen werden.
+Dieser Seriencode beziehungsweise dieses Passwort<br>ist nicht mehr gültig.
+Das zu diesem Seriencode bzw. Passwort gehörige<br>Geschenk kann mit diesem Spiel nicht empfangen werden.
+Die Aktualisierung des Seriencodes beziehungsweise<br>Passworts ist fehlgeschlagen.<clear><br>Das zu diesem Seriencode bzw. Passwort gehörige<br>Geschenk kann nicht empfangen werden.
+Das zu diesem Seriencode beziehungsweise Passwort<br>gehörige Geschenk wurde bereits empfangen.
+Dieser Seriencode wurde bereits eingelöst.<br>Eingelöste Seriencodes können nicht für weitere<slide><br>Speicherdaten verwendet werden.
+Da der Seriencode beziehungsweise das Passwort<br>wiederholt falsch eingegeben wurde,<slide><br>ist vorübergehend keine Verbindung möglich.<clear><br>Bitte versuche es später noch einmal.
+Du hast das Geschenk empfangen.
+Du konntest das Geschenk nicht empfangen,<br>weil dein Beutel voll ist.
+Möchtest du den Seriencode beziehungsweise<br>das Passwort erneut eingeben?
+Es ist ein Fehler aufgetreten.<br>Das Geschenk kann gerade nicht empfangen werden.
+Es wurde ein Geschenk gefunden, aber mit dieser<br>Spielversion kann es nicht empfangen werden.
+Die Daten der Online-Insel konnten nicht<br>hochgeladen werden.
+<$cdef(27)><oneline><$strpname;0(lstr1,lnum1)></color> scheint bereits<br>gegangen<slide><br>zu sein.
+Dieser Gegenstand kann mithilfe von <$cdef(27)><$sklfull(3)><br></color>mit Wasser befüllt werden.
+Räume das Gebiet rund um das <$cdef(27)>Pokémon-Center </color>frei,<br>um das Schnappspiel spielen zu können.
+Räume die Gegend um das <$cdef(27)>Pokémon-Center</color> auf, bevor du<br><$cdef(27)>Zorua</color> darum bittest, mit dir das Schnappspiel zu spielen.
+Warte, bis vor dem <$cdef(27)>Pokémon-Center</color> Platz ist, und bitte<br>dann <$cdef(27)>Zorua</color>, mit dir das Schnappspiel zu spielen.
+Warte, bis vor dem <$cdef(27)>Pokémon-Center</color> Platz ist, und bitte<br>dann <$cdef(27)>Bisasam</color>, mit dir seilzuspringen.
+Du kannst ein neues Gericht zubereiten.<br>Möchtest du es jetzt ausprobieren?
+Möchtest du die Verwandlung beenden?
+Das ist fortan dein Zuhause! Mit <$cdef(27)>Nach Hause zurückkehren</color><br>gelangst du jederzeit auf direktem Weg dorthin zurück.
+Die Umfrage konnte nicht gestartet werden, da mindestens<br>ein Spieler gerade anderweitig beschäftigt ist.
+Die Umfrage konnte nicht gestartet werden, da mindestens<br>ein Spieler gerade anderweitig beschäftigt ist.
+Du hast die Schnelltasche erhalten!<clear><br>Mit dieser praktischen Tasche lassen sich Dinge ohne<br>Umwege sofort verstauen oder herausnehmen.
+Ein Verbindungsfehler ist aufgetreten.
+Dein Beutel ist voll.<br>Möchtest du das Geschenk trotzdem annehmen?
+Möchtest du die Wiederherstellung wirklich durchführen?
+Auf dem Feld befindet sich bereits ein anderer Stempel.<br>Möchtest du ihn durch diesen Stempel ersetzen?
+Dein Beutel ist voll.<br>Möchtest du das Geschenk trotzdem annehmen?
+Möchtest du die Suche nach dem Pokémon abbrechen?
+Hier hat <$cdef(27)>Driftlon </color>zu wenig Platz zum Herfliegen.<br>Platziere das Plüschi an einem Ort mit mehr Platz.
+Aktuell läuft Arrangement 1.<br>Welches Arrangement möchtest du abspielen?
+Aktuell läuft Arrangement 2.<br>Welches Arrangement möchtest du abspielen?
+Aktuell läuft Arrangement 3.<br>Welches Arrangement möchtest du abspielen?
+Eine Lieferung für dich ist eingetroffen.<br>Du kannst sie über „Items erhalten“ entgegennehmen.
+Bitte gib deinen Namen in dieser Sprache ein.
+Möchtest du <$cdef(27)><pname;0></color> als Namen wählen?
+<oneline>Du hast <acciart;0()><$cdef(27)><fqty(1)><$ifull;0(lnum1)></color><br>erhalten!
+
+
+Dieser Gegenstand sollte funktionieren, wenn er in der<br>Nähe von Wasser platziert wird.
+
+
+Wenn andere Spieler diese Stadt besuchen, befinden sie<br>sich im Zuschauermodus.<clear><br>Wenn du mit anderen Spielern im Zuschauermodus spielst,<br>ist die Nutzung bestimmter Attacken und Items untersagt.
+Dieses Neulandia kann nur im Zuschauermodus besucht<br>werden.<clear><br>Wenn du mit anderen Spielern im Zuschauermodus spielst,<br>ist die Nutzung bestimmter Attacken und Items untersagt.
+In diesem Gebiet ist der Zuschauermodus aktiviert,<br>sodass weder Attacken noch Items eingesetzt werden<slide><br>können.
+In dieser Stadt sind sowohl der Einsatz von Attacken<br>als auch die Herstellung von Items möglich.
+Möchtest du die Verbindung trennen?
+Möchtest du die Verbindung trennen und nach Hause<br>zurückkehren?<clear><br>Sämtliche Items in deinem Besitz werden dann<br>von dem <$cdef(27)>PC</color> beim <$cdef(27)>Pokémon-Center</color> eingezogen.
+Du hast <$cdef(27)><$sklfull(10)> </color>erlernt!<br>Drücke im Wasser <$keyicon(28)>, um zu schwimmen.
+Du hast <$cdef(27)><$sklfull(11)> </color>erlernt!<br>Drücke in der Luft <$keyicon(29)>, um zu fliegen.
+Heute werden keine weiteren Preise vergeben.
+Heute werden keine weiteren Preise vergeben.
+Du hast ein Item erhalten.
+Im <$cdef(27)>Laden</color> sind neue Items erhältlich.
+Neue <$cdef(27)>Challenges</color> sind verfügbar.
+<oneline>Möchtest du mit <$cdef(27)><nname;0> </color>zu<br><$cdef(27)>Driftlon<slide><br></color>gehen?
+Die <$cdef(27)><fqty(1)><$ifull(764)> </color>steht ja direkt neben der <$cdef(27)><fqty(1)><$ifull(2045)></color>,<br>nicht wahr?<clear><br>Wenn du <$cdef(27)><fqty(1)><$ifull(764)> </color>und <$cdef(27)><fqty(1)><$ifull(2045)> </color>auf diese Weise<br>nebeneinanderstellst, kannst du bei der Herstellung von<slide><br>Items neben den Materialien aus deinem Beutel zusätzlich<slide><br>auch auf den Inhalt der <$cdef(27)><fqty(1)><$ifull(2045)> </color>zugreifen!
+Im <$cdef(27)>Laden</color> sind neue tägliche Angebote erhältlich.
+Möchtest du die Items, die du in den Wärmekraftgenerator<br>gegeben hast, verbrennen, um Strom zu erzeugen?
+Für mindestens ein Pokémon ist ein Ortswechsel gerade<br>nicht möglich. Möchtest du Tschüss sagen und aufbrechen?
+Gieße einen vertrockneten Baum und sammle dann<br>die <$cdef(27)><fqty(2)><$ifull(2340)> </color>ein, die an ihm wachsen.
+Ziehe auf Feldern Samen groß, die du im Laden oder auf<br>Wunderinseln erhalten hast.
+Bitte ein Pokémon mit dem Talent <$cdef(27)><$spwfull(15)></color> darum,<br><$cdef(27)><fqty(2)><$ifull(1482)> </color>für dich zu verarbeiten.
+Flauschige Pokémon mit dem Talent <$cdef(27)><$spwfull(4)> </color>lassen<br>ab und zu Gegenstände in der Nähe ihrer Bleibe fallen.
+Bitte ein Pokémon mit dem Talent <$cdef(27)><$spwfull(17)> </color>darum,<br><$cdef(27)><fqty(1)><$ifull(1738)> </color>für dich zu verarbeiten.
+Bitte ein Pokémon mit dem Talent <$cdef(27)><$spwfull(10)></color> darum,<br><$cdef(27)><fqty(1)><acc><$ifull(112)> </color>für dich zu verarbeiten.
+Bitte ein Pokémon darum, das in den <$cdef(27)><fqty(1)><$ifull(1446)><br></color>eingeführte <$cdef(27)><fqty(1)><$ifull(113)> </color>für dich zu verarbeiten.
+Bitte ein Pokémon darum, den in den <$cdef(27)><fqty(1)><$ifull(1458)><br></color>eingeführten <$cdef(27)><fqty(1)><$ifull(1090)> </color>für dich zu verarbeiten.
+<oneline>Suche danach in den Höhlen von<br><$cdef(27)><$stgname;0(3)></color><slide><br>oder<slide><br>auf<slide><br>einer<slide><br>Wunderinsel.
+Bitte ein Pokémon mit dem Talent <$cdef(27)><$spwfull(24)> </color>darum,<br><$cdef(27)><fqty(1)><$ifull(115)> </color>für dich zu verarbeiten.
+<oneline>Suche in <$cdef(27)><$stgname;0(3)> </color>nach einer<br>Anleitung.
+<oneline>Suche in <$cdef(27)><$stgname;0(2)> </color>nach einer<br>Anleitung.
+<oneline>Suche in <$cdef(27)><$stgname;0(4)> </color>nach einer<br>Anleitung.
+<oneline>Erhöhe den Umgebungslevel in<br><$cdef(27)><$stgname;0(2)></color>.
+<oneline>Erhöhe den Umgebungslevel in<br><$cdef(27)><$stgname;0(3)></color>.
+<oneline>Erhöhe den Umgebungslevel in<br><$cdef(27)><$stgname;0(4)></color>.
+Drücke <$keyicon(52)>, um die <$cdef(27)>Kamera</color> einzuschalten,<br>und schieße Fotos!
+<oneline>Erhöhe den Umgebungslevel in<br><$cdef(27)><$stgname;0(1)></color>.
+Wähle eine Verbindungsart fürs Teilen über GameShare.
+GameShare wurde beendet.
+Verbindung wird hergestellt...<br>Bitte die Konsole nicht ausschalten.
+Möchtest du die GameShare-Funktion beenden?<clear><br>Sämtliche Items der Spieler, mit denen du das Spiel<br>via GameShare geteilt hast, landen nach Beendigung<slide><br>der Funktion automatisch in der <$cdef(27)><fqty(1)><$ifull(1442)></color>.
+Möchtest du ein Passwort festlegen?
+Diese Online-Insel ist derzeit nicht öffentlich.
+Was möchtest du tun?
+Wähle, welchen Spieler du nach Hause schicken möchtest.
+<$cdef(27)><$strpname;0(lstr1,lnum1)> </color>wurde nach Hause geschickt.
+Es ist niemand hier, den du nach Hause schicken könntest.
+Der Gastgeber wird nach Hause geschickt, wodurch die<br>Gruppe an eingeladenen Spielern aufgelöst und die<slide><br>Verbindung getrennt wird. Möchtest du fortfahren?
+Die Geschenke wurden an deinen <$cdef(27)>PC</color> zu Hause geschickt.
+Die Reise konnte aufgrund von Inaktivität nicht angetreten<br>werden.
+Es möchte offenbar <$cdef(27)><wowner;0></color> treffen.<br>Bitte doch <$cdef(27)><wowner;1> </color>hierherzukommen!
+Du nimmst eine starke Präsenz aus dem Meer wahr...
+Es konnte keine Online-Insel gefunden werden.
+Eine Verbindung ist nicht möglich, da die Spielversion von<br>mindestens einem anderen Spieler veraltet ist.<clear><br>Jene Spieler müssen das Spiel neu starten und die<br>Spielversion aktualisieren, um sich verbinden zu können.
+Diese Online-Insel ist derzeit nicht öffentlich.
+Es sind herunterladbare Inhalte verfügbar, die noch nicht<br>auf die Online-Insel angewendet wurden.<clear><br>Damit dein Spiel aktualisiert werden kann, muss die<br>Spiel-Session für alle anderen Spieler beendet werden.<slide><br>Bist du damit einverstanden?
+

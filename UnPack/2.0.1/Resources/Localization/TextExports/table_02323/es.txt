@@ -1,0 +1,515 @@
+
+
+No funciona si se sumerge.
+
+Este pobre árbol está muy seco... Necesita agua.
+
+Es un árbol bastante grande. Es posible que produzca<br>bayas si tienes algo de paciencia.
+
+Tal vez puedas cortar estos trozos de madera vieja<br>con algún movimiento.
+
+Es una roca grande y dura. Unos puñetazos normales<br>no servirán para romperla.
+¡Has reunido <$cdef(27)>5</color> sellos! Podrás canjearlos por <$cdef(27)>monevitas<br></color>del <timemd;0(lnum1,lnum2)> al <timemd;1(lnum3,lnum4)>.<clear><br>Puedes sustituir tus sellos por otros hasta el <timemd;2(lnum5,lnum6)>.
+
+<oneline>¡Has preparado<br><$cdef(27)><dgt5;1(lnum2)></color><slide><br><$cdef(27)><class><$ifullwithnum;0(lnum1,lnum2)></color>!
+<oneline>¡Has fabricado<br><$cdef(27)><dgt5;1(lnum2)></color><slide><br><$cdef(27)><class><$ifullwithnum;0(lnum1,lnum2)></color>!
+
+¡Has aprendido <$cdef(27)><$sklfull;1(lnum1)></color>!
+<oneline>¡Has conseguido las <$cdef(27)>instrucciones </color>para fabricar<br><$cdef(27)><fqty(2)><class><$ifull;0(lnum1)></color>!
+¡Tirorín! ¡Has recibido una notificación en la Pokédex!
+¡Has conseguido unas instrucciones como recompensa<br>por registrar muchos Pokémon!
+¡Asigna <$cdef(27)><$sklfull;0(lnum1)></color> a una ranura!
+<oneline>¡Has conseguido<br><$cdef(27)><dgt5;1(lnum2)></color><slide><br><$cdef(27)><class><$ifullwithnum;0(lnum1,lnum2)></color>!
+
+¡Has encontrado una pista sobre un Pokémon!
+
+Este edificio se ha caído a pedazos...
+¿Para qué servirá?
+¡Has recibido todo lo que te acaban de <$cdef(27)><$spwfull(25)></color>!
+
+¡Está ardiendo, te quemarías! ¿No habrá alguna forma<br>de apagar el fuego?
+
+¡Has encontrado un tesoro! ¡Recógelo a ver qué es!
+No hay contenido descargable disponible para comprar.
+No hay artículos disponibles.
+Este contenido todavía no se ha anunciado.
+Todavía no se puede jugar a este contenido.
+Deberías visitar antes un vecindario en el que aún no<br>hayas estado.
+<oneline>Deberías progresar antes en la historia<br><esde;0()><$cdef(27)><$stgmyname;0(lnum1)></color>.
+<oneline>Deberías completar antes la petición<br><esde;0()><$cdef(27)><$cname;0(lnum1)></color>.
+<oneline>Deberías completar antes la petición importante<br>"<$iqname;1(lnum2)>"<slide><br>en <dart;0()><$cdef(27)><$stgmyname;0(lnum1)></color>.
+¡Has encontrado unas <$cdef(27)>instrucciones</color> para fabricar algo!
+<oneline>Deberías ir antes al <$cdef(27)>Centro Pokémon</color><br><esde;0()><$cdef(27)><$stgmyname;0(lnum1)></color>.
+No puedes recibir esto porque no has comprado<br>el contenido descargable correspondiente.
+Ya has recibido esto.
+
+¡Todo se ha vuelto oscuro!
+Es una máquina con pinta de ser muy antigua.
+¡Se te han ocurrido las <$cdef(27)>instrucciones </color>para fabricar algo!
+<oneline>¡Te sientes más unid<gen;-2(o,a)> que nunca<br><esa;0()><$cdef(27)><nname;0></color>!
+<oneline>¡<fcap><dart;0()><$cdef(27)><nname;0> </color>y tú sois uña y carne<br>ahora!
+Trae a un Pokémon con la especialidad <$cdef(27)><$spwfull(10)><br></color>para que encienda el fuego.
+Para poder utilizar este objeto hace falta fuego.<br>Colócalo encima de una fogata o un fogón de cocina.
+Seguro que crece con algo de agua.
+A juzgar por las chispas que le salen, es probable que<br>algo estuviese conectado aquí en el pasado.
+¿Quieres buscar <esa;0()><$cdef(27)><$cname;0(lnum1)></color>?
+<oneline>¿Quieres dejar de buscar<br><esa;0()><$cdef(27)><$cname;0(lnum1)></color>?
+<oneline>¿Quieres dejar de buscar<br><esa;0()><$cdef(27)><$cname;0(lnum1)></color><slide><br>y buscar<slide><br><esa;1()><$cdef(27)><$cname;1(lnum2)></color><slide><br>en su lugar?
+¿A qué Pokémon quieres buscar?
+¡Has aprendido algo nuevo acerca de algún Pokémon!<br>¿Por qué no consultas la Pokédex?
+Se va a dejar de buscar <esa;0()><$cdef(27)><$cname;0(lnum1)></color>.<br>¿A qué otro Pokémon quieres buscar?
+No se pueden enviar más objetos al <$cdef(27)>PC</color> de tu vecindario,<br>por lo que el resto se enviará al <$cdef(27)><fqty(1)><$ifull(1442)></color>.
+<$cdef(27)><oneline></color>¡Has conseguido las <$cdef(27)>instrucciones </color>para fabricar<br><fqty(2)><class><$cdef(27)><$ifull;0(lnum1)></color>!<clear><br>Pero resulta que ya las conoces...
+¡<$cdef(27)><$strpname;0(lstr1,lnum1)></color> ha tocado el <$cdef(27)>PC</color>!
+¿Quieres dejar de jugar al escondite camuflado?
+<oneline><$cdef(27)><string;0(lstr1)></color> ha tirado<br>la toalla.
+El viento es demasiado fuerte y no te permite acercarte.<br>A lo mejor podrías usar un movimiento para abrirte paso...
+Elige cómo quieres conectarte.
+¿Quieres dejar de jugar al escondite camuflado?<br>La partida finalizará para todo el mundo.
+¡Hora de reconstruir el <$cdef(27)>Centro Pokémon</color>!<br>Reúne a los Pokémon y los materiales que necesites.
+¿Quieres darle la vuelta?
+Parece que un Pokémon que te sigue todavía tiene cosas<br>que hacer en este vecindario.
+¿Quieres empezar la partida en el idioma elegido?
+Se necesita reiniciar el juego para cambiar el idioma.<br>¿Quieres continuar?
+Elige el jugador cuyos objetos quieras retirar.
+¿Quieres jugar en japonés?
+¿Quieres jugar en inglés?
+¿Quieres jugar en francés?
+¿Quieres jugar en italiano?
+¿Quieres jugar en alemán?
+¿Quieres jugar en español de España?
+
+
+¿Quieres <$cdef(27)><$spwfull(21)> </color>esto así?
+¡<$cdef(27)><pname;0></color> ha usado <$cdef(27)>Transformación</color>!
+<oneline>¡Se te ha ocurrido cómo fabricar<br><$cdef(27)><fqty(2)><class><$ifull;0(lnum1)></color>!
+No hay suficiente espacio en la Bolsa para guardar esto.<br>¿Quieres cambiarlo por otro objeto que lleves encima?
+¡Has aprendido un nuevo gesto!<br><$cdef(27)><$emotename;0(lnum1)> </color>se ha añadido a la lista.
+
+<oneline>¿Quieres ir<br><esa;0()><$cdef(27)><$stgmyname;0(lnum1)></color>?
+No puedes ir por aquí todavía.
+
+<oneline>¿Quieres comprobar los ajustes<br><esde;0()><$cdef(27)><$stgmyname;0(lnum1)></color>?
+¿Te parece bien así?
+¡Pi, pi, piii! Esta Pokédex registrará a los Pokémon que<br>viven en tu Isla Nube.<clear><br>¡Invita a tus amigos para registrar a todos los que podáis!
+<oneline>¿Cuánt<gen;0(o,a)>s<br><$cdef(27)><class><fqty(2)><$ifull;0(lnum1)></color><slide><br>quieres darle?<slide><br>Tienes <$cdef(27)><dgt4;1(lnum2)></color>.
+<oneline>¿Quieres entregarle<br><$cdef(27)><dgt4;1(lnum2)> <class><$ifullwithnum;0(lnum1,lnum2)><slide><br></color>para que<slide><br>luego<slide><br>te dé<slide><br><$cdef(27)><dgt5;3(lnum4)></color><slide><br><$cdef(27)><class><$ifullwithnum;2(lnum3,lnum4)></color>?
+¡Pi, pi, pi, piii! No puedes pasar por este pasaje de acceso<br>con tu rango de Entrenado<gen;-2(r,ra)> actual.
+¡Pi, pi, piii! Has llegado a un pasaje de acceso.
+Acerca la Pokédex al panel de la puerta.
+¡Pi, pi, piii!<clear><br>Rango de Entrenado<gen;-2(r,ra)>: <$cdef(27)><trnrank;0></color>.<br>Se va a abrir el pasaje de acceso.
+<oneline>¿Quieres iniciar la construcción<br><esde;0()><$cdef(27)><$bfull;0(lnum1)></color>?
+<oneline>¿Quieres iniciar la reconstrucción<br><esde;0()><$cdef(27)><$bfull;0(lnum1)></color>?
+<oneline>¿Cuánt<gen;0(o,a)>s<br><$cdef(27)><fqty(2)><class><$ifull;0(lnum1)></color><slide><br>quieres darle?<slide><br>Tienes <$cdef(27)><dgt4;1(lnum2)></color>.
+<oneline>¿Quieres darle <$cdef(27)><dgt4;1(lnum2)></color><br><$cdef(27)><class><$ifullwithnum;0(lnum1,lnum2)></color><slide><br>para que te fabrique<slide><br><$cdef(27)><dgt5;3(lnum4)></color><slide><br><$cdef(27)><class><$ifullwithnum;2(lnum3,lnum4)></color>?
+<oneline>¿Cuántas copias quieres hacer<br><esde;0()><$cdef(27)><fqty(1)><class><$ifull;0(lnum1)></color>?
+<oneline>¿Quieres empezar a preparar<br><dart;0()><$cdef(27)><$bfull;0(lnum1)></color>?
+<oneline>¿Quieres usar<br><$cdef(27)><dgt4;1(lnum2)></color> <$cdef(27)><class><$ifullwithnum;0(lnum1,lnum2)><slide><br></color>para fabricar<slide><br><$cdef(27)><dgt4;3(lnum4)></color> <$cdef(27)><class><$ifullwithnum;2(lnum3,lnum4)></color>?
+<oneline>¡Has abierto <dart;0()><$cdef(27)><fqty(1)><$ifull;0(lnum1)></color>!<br>Vuelve dentro de un rato.
+
+Algún jugador no está listo todavía.
+El pasaje de acceso se ha abierto. ¡Adelante!
+Pi, pi, piii... Calculando el tiempo restante...
+Hora de finalización prevista: <timehm;0(lnum1,lnum2)>.
+Terminará mañana.
+Para entrar a esta zona es necesario comprar y descargar<br>el pase de expansión de Pokémon Pokopia.<clear><br>Para más información, accede a Nintendo eShop.
+Si compras el pase de expansión de Pokémon Pokopia<br>y actualizas la Pokédex, ¡tendrás un nuevo vecindario<slide><br>para explorar!
+<oneline>¡<fcap><dart;0()><$cdef(27)><$bfull;0(lnum1)></color> est<qty;0(á,án)><br>terminad<genqty;0(o,a,os,as)>!
+<oneline>¡Has reconstruido<br><dart;0()><$cdef(27)><$bfull;0(lnum1)></color>!
+
+
+Si no puedes entregarle un<$cdef(27)> <fqty(1)><$ifull(432)></color> al<br>Pokémon cuando te diga lo que quiere, no podrás obtener<slide><br>un <$cdef(27)><fqty(1)><$ifull(433)></color>.<clear><br>¿Quieres escuchar su petición aun así?
+<oneline>¡Has encontrado <dart;0()><$cdef(27)><$ifull;0(lnum1)><br></color>que alguien<slide><br>había escondido!
+
+<oneline>¡Has aprendido a imitar<br><dart;1()><$cdef(27)><$coordname;1(lnum1)></color>!
+Enséñale el diseño a algún Pokémon que sepa <$cdef(27)><$spwfull(21)></color><br>para que lo estudie, ¡y con suerte podrá replicarlo!
+¡El repertorio de diseños del <$cdef(27)><$cname(206)><br></color>ha aumentado!
+<oneline>¡Has conseguido<br><iart;0()><$cdef(27)><class><$ifull;0(lnum1)></color>!
+¡Has aprendido a <$cdef(27)>organizar mejor la Bolsa</color>!<br>Ahora te caben más cosas.
+Has usado un <$cdef(27)><fqty(1)><class><$ifull(3976)></color>.<br>Ahora puedes usar tus movimientos más veces.
+<oneline>¡La comida ha potenciado el movimiento<br><$cdef(27)><$sklfull;0(lnum1)></color>!
+¿Quieres ver los datos que has comprado?
+<$cdef(27)>¡Has sacado una foto de un momento especial!</color>
+Vas a acceder a Nintendo eShop.<clear><br>El juego no se cerrará, por lo que podrás retomar<br>la partida más adelante.<clear><br>Para poder disfrutar del contenido descargable, eso sí,<br>deberás reiniciar el juego.<clear><br>¿Quieres guardar tu progreso y continuar?
+¿Qué te gustaría ver en detalle?
+¿Quieres recibir esto?
+No puedes recibir esto porque tu Bolsa está llena.
+<oneline><fcap><dart;0()><$cdef(27)><$cname;0(lnum2)> </color>ha vuelto a preparar<br>unos objetos<slide><br>muy especiales<slide><br>en el <$cdef(27)>Centro Pokémon</color><slide><br><esde;1()><$cdef(27)><$stgmyname;1(lnum1)></color>.<clear><br>Tienes <$cdef(27)><evcleftdnum;2></color> dí<qty;2(a,as)> más para intercambiarlos por tus<br><fqty(2)><$cdef(27)><class><evcpitem;3></color>.
+<oneline>¡Hoy es el último día que<br><dart;1()><$cdef(27)><$cname;1(lnum2)></color><slide><br>estará<slide><br>intercambiando<slide><br>en el <$cdef(27)>Centro Pokémon</color><slide><br><esde;0()><$cdef(27)><$stgmyname;0(lnum1)></color>!<clear><br>Si te interesa algún objeto, recuerda reunir<br><$cdef(27)><fqty(2)><class><evcpitem;2></color><slide><br>y llevársel<gen;2(o,a)>s.
+Ya has registrado a este Pokémon. ¿Quieres consultar<br>la Pokédex?
+La conexión no finalizó adecuadamente la última vez.<clear><br>Cuando esto sucede durante el juego en conexión,<br>es posible que la partida no se guarde y se revierta<slide><br>tu progreso al del punto de guardado anterior.<clear><br>Asegúrate de tener una conexión estable para jugar en<br>conexión.
+El álbum está lleno. ¿Quieres echarle un vistazo?
+Sientes una presencia imponente en el interior...<br>¿Habrá alguien dentro?
+
+Guardando... No apagues la consola.
+<oneline>¡Has conseguido<br><$cdef(27)><dgt2;1(lnum2)></color> <class><$cdef(27)><$ifullwithnum;0(lnum1,lnum2)></color><slide><br>tras la <$cdef(27)>negociación</color><$cdef(27)><nbs2></color><$spwicon(12)>!
+¿Quieres cambiar el código?
+<oneline>¡Has aprendido a imitar el peinado<br><$cdef(27)><$hairname;1(lnum1)></color>!
+¿Quieres ponerle un código?
+<oneline>Esta <$cdef(27)><fqty(1)><$ifull(1677)></color> es de <$cdef(27)><$strpname;0(lstr1,lnum1)></color>.<br>¿Quieres abrirla?
+Crea un código.
+Introduce el código.
+¿Quieres borrar la selección de fotos?
+¿Quieres borrar esta foto?
+¿Quieres sustituir esta foto destacada de un momento<br>especial?
+¿Quieres usar la función <$cdef(27)>Llévame a casa</color>?
+<oneline>¿Quieres enseñarle la nota humana<br><esa;0()><$cdef(27)><$cname;0(206)></color>?
+Se ha encontrado una copia de seguridad con fecha<br>del <timeymd;0(lnum1,lnum2,lnum3)>.<clear><br>¿Quieres sobrescribir la partida guardada actual<br>y restaurar los datos de la copia de seguridad?
+Cargando la copia de seguridad... No apagues la consola.
+¿Quieres guardar y salir del juego?
+Si restauras los datos de la copia de seguridad,<br>se borrará la partida actual. ¿Quieres continuar?
+¿Te gustaría quedarte con este aspecto?
+¿Quieres guardar todo lo que tienes en la Bolsa?
+¿Quieres guardar todo lo que tienes en la Bolsa auxiliar?
+¿Quieres sacar todo lo que hay guardado aquí?
+¿Quieres jugar en chino tradicional?
+¿Quieres jugar en coreano?
+¿Quieres jugar en chino simplificado?
+¿Quieres fijar la Bolsa auxiliar y tenerla siempre visible?
+¿Quieres cerrar la Bolsa auxiliar?
+¿A qué casa quieres volver?
+<oneline>Volviendo a la casa que tienes en<br><dart;0()><$stgmyname;0(lnum1)>...
+No tienes casa, así que volverás al lugar seguro más<br>cercano. ¿Te parece bien?
+No es posible llevarte a casa ahora mismo, así que<br>volverás al lugar seguro más cercano. ¿Te parece bien?
+Iniciando viaje...
+¡Ya estás en casita!
+No ha sido posible encontrar tu casa, así que has vuelto<br>al lugar seguro más cercano.
+<oneline>¡Has conseguido<br><iart;0()><$cdef(27)><fqty(1)><class><$ifull;0(lnum1)></color>!
+
+Esta <$cdef(27)><fqty(1)><$ifull(1677)></color> pertenece a otra persona.<br>¿Quieres abrirla?
+¿Quieres eliminar el código? Si lo haces, cualquiera podría<br>acceder al contenido.
+
+Los objetos que dejes aquí dentro desaparecerán mañana.<br>¿Seguro que quieres tirarlos?
+
+
+
+
+Has vuelto al lugar seguro más cercano.
+
+
+
+
+<oneline>No podrás volver<br><esa;0()><$stgmynamefull;0(lnum1)><slide><br>con la función<slide><br><$cdef(27)>Llévame a casa</color><slide><br>porque no tienes casa aquí.<clear><br>¿Quieres viajar de todas formas?
+
+
+¡Has conseguido información sobre un hábitat!
+¿Quieres omitir los créditos?
+Se interrumpirá la conexión y se expulsará a los visitantes.<br>¿Te parece bien?
+<qty;0(Sería,Serían)> <moneyint;0(lnum2)><nbs2><$icon(lnum1)>. ¿Te parece bien?
+¡Compra realizada!
+<oneline>¡Parece que <dart;0()><$cdef(27)><gevcmainpk;0></color> quiere que <$cdef(27)>hoy </color>sea el último<br>día de<slide><br>su evento!
+Pi, pi, piii... ¡Se han encontrado datos nuevos!<br>Se va a actualizar la Pokédex.
+¡Actualización completada!<br>Ahora podrás registrar nuevos Pokémon.
+¡Has recibido una notificación en la Pokédex!<clear><br>¡Es tu día de suerte! Hoy podrás encontrar más ondas<br>relucientes en el agua y más reliquias enterradas.
+<oneline>Hay algo de revuelo con un Pokémon en<br><dart;0()><$cdef(27)><$stgmyname;0(lnum1)></color>.<slide><br>¡Ve a echar un vistazo!
+Hay algo de revuelo con un Pokémon.<br>¡Apresúrate al <$cdef(27)>Centro Pokémon</color> a ver qué sucede!
+<oneline>Todavía hay algo de revuelo con el Pokémon.<clear><br>¡Apresúrate al <$cdef(27)>Centro Pokémon<br></color><esde;0()><$cdef(27)><$stgmyname;0(lnum1)></color><slide><br>y habla con él!
+<oneline>¡<fcap><dart;0()><$cdef(27)><gevcmainpk;0> </color>te ha entregado<br><iart;1()><$cdef(27)><class><$ifullwithnum;1(lnum1,lnum2)></color>!
+¡<$cdef(27)>Bulbasaur </color>te ha entregado un montón de premios!
+El regalo se ha enviado al <$cdef(27)>PC</color> de tu vecindario.
+<oneline>¡Parece que <dart;0()><$cdef(27)><gevcmainpk;0> </color>quiere seguir con su evento<br><$cdef(27)><gevcleftdnum;1> </color>dí<qty;1(a,as)> más!
+¿Quieres pulsar un botón?
+Productos agotados. Vuelve mañana.
+<oneline>¡H<qty;0(a,an)> salido<br><iart;0()><$cdef(27)><fqty(1)><class><$ifull;0(lnum1)></color>!
+Configura los ajustes.
+Se ha establecido la conexión.
+<oneline>¡Estás de suerte! Te llevas de regalo otr<genqty;0(o,a,os,as)><br><$cdef(27)><fqty(1)><class><$ifull;0(lnum1)></color>.
+¿Quieres <$cdef(27)>transformarte</color><$cdef(27)><nbs2></color><$spwicon(36)> y adquirir este aspecto?
+¿Prefieres quedarte como estás y no cambiar de aspecto?
+Comunicación en curso... No apagues la consola.
+Introduce la contraseña.
+No se ha encontrado ningún destino.
+¿Quieres buscar de nuevo?
+Se necesita una contraseña para jugar con esta persona,<br>así que deberás introducirla.
+Contraseña incorrecta. ¿Quieres volver a intentarlo?
+Ya tienes una Isla Nube. Si quieres crear una nueva,<br>primero borra la isla actual desde la pantalla de ajustes.
+Eres <gen;-2(el creador,la creadora)> de esta isla. ¿Quieres configurar<br>los ajustes?
+Si cambias los ajustes, se expulsará a todos los jugadores<br>actuales.
+Puedes comprobar la dirección y la contraseña desde<br>el <$cdef(27)>PC</color> del <$cdef(27)>Centro Pokémon</color> de tu Isla Nube.
+Introduce la dirección de la isla que quieras buscar.
+No se ha encontrado ninguna Isla Nube.<br>¿Quieres volver a introducir la dirección?
+Se ha cancelado la búsqueda.
+Los regalos se han enviado al <$cdef(27)>PC </color>de tu vecindario.
+Ahora no es buen momento de ir por aquí.
+Parece que ha llegado un nuevo Pokémon al vecindario.<br>¿Por qué no lo buscas para saludarlo?
+Los datos del contenido descargable son necesarios<br>para visitar este vecindario.<clear><br>Asegúrate de que se hayan descargado correctamente.
+¡Ahora puedes acceder a los <$cdef(27)>retos diarios</color>!
+¡Ahora puedes comprar artículos del día!
+¡La <$cdef(27)>calidad del entorno </color>ha aumentado!<br>Se han añadido <$cdef(27)>retos </color>nuevos.
+¡La <$cdef(27)>calidad del entorno </color>ha aumentado!<br>Se han añadido artículos nuevos a la <$cdef(27)>tienda</color>.
+<oneline>¿Quieres fabricar <$cdef(27)><dgt4;2(lnum3)> </color><qty;2(lote,lotes)> de<br><$cdef(27)><dgt4;1(lnum2)></color> <$cdef(27)><class><$ifullwithnum;0(lnum1,lnum2)></color>?
+<oneline>¿Quieres fabricar<br><$cdef(27)><dgt4;1(lnum2)> <class><$ifullwithnum;0(lnum1,lnum2)></color>?
+<oneline>¿Quieres preparar <$cdef(27)><dgt4;1(lnum2)></color><br><class><$cdef(27)><$ifullwithnum;0(lnum1,lnum2)></color>?
+¡Ha cambiado el día y con él los <$cdef(27)>retos diarios</color>!
+¡Ha cambiado el día y con él los artículos del día!
+¡Hay nuevos <$cdef(27)>retos </color>disponibles!
+¡Hay nuevos artículos disponibles!
+Selecciona "Rápida" para aumentar la velocidad del texto.
+Selecciona "Normal" para que el texto se muestre<br>a la velocidad por defecto.
+Selecciona "Lenta" para disminuir la velocidad del texto.
+<oneline>Vas a recibir<br><iart;0()><$cdef(27)><class><$ifullwithnum;0(lnum1,lnum2)></color>.<slide><br>¿Te parece bien?
+La construcción terminará antes de lo previsto gracias al<br>esfuerzo <esde;0()><$cdef(27)><$cname;0(215)></color>.
+La construcción va viento en popa, pero todavía queda<br>un rato para que esté terminada.
+La reconstrucción terminará antes de lo previsto gracias al<br>esfuerzo <esde;0()><$cdef(27)><$cname;0(215)></color>.
+La reconstrucción va viento en popa, pero todavía queda<br>un rato para que esté terminada.
+¿Quieres cancelar la construcción?
+Ha cambiado el día. Se va a actualizar la pantalla.
+Deberías traer a <$cdef(27)><$cname(562)></color> contigo.
+La demolición terminará antes de lo previsto gracias al<br>esfuerzo <esde;0()><$cdef(27)><$cname;0(215)></color>.
+La demolición va viento en popa, pero todavía queda<br>un rato para que esté terminada.
+Los preparativos del traslado terminarán antes de lo<br>previsto gracias al esfuerzo <esde;0()><$cdef(27)><$cname;0(215)></color>.
+Los preparativos del traslado van viento en popa, pero<br>todavía queda un rato para que estén terminados.
+¿Quieres cancelar la demolición?
+¿Quieres cancelar los preparativos del traslado?
+¿Quieres cancelar el traslado?
+¿Quieres cancelar la reconstrucción?
+Ponle un nombre a tu isla. Podrás cambiarlo más adelante.
+Configura tu Isla Nube.
+Introduce el número mágico.
+Se interrumpirá la conexión y se expulsará a los visitantes.<br>¿Te parece bien?
+Se interrumpirá la conexión y volverás a casa.<br>¿Te parece bien?<clear><br>Ten en cuenta que todos los objetos que lleves encima<br>se guardarán en este <$cdef(27)>PC</color>.
+Eres <gen;-2(el anfitrión,la anfitriona)> de la sesión. ¿Quieres disolver el grupo<br>y finalizar la conexión, o elegir un nuevo anfitrión?
+¿Quién quieres que sea el nuevo anfitrión?
+¿Estás segur<gen;-2(o,a)>?
+¿Quieres cancelar la reforma?
+<oneline>¿Quieres iniciar la demolición<br><esde;0()><$cdef(27)><$bfull;0(lnum1)></color>?
+¿Quieres iniciar la reforma de este edificio y construir<br><dart;0()><$cdef(27)><$bfull;0(lnum1)></color>?
+<oneline>¿Quieres iniciar los preparativos del traslado<br><esde;0()><$cdef(27)><$bfull;0(lnum1)></color>?
+<oneline>¿Quieres iniciar el traslado<br><esde;0()><$cdef(27)><$bfull;0(lnum1)></color>?
+
+¡Nuevo récord personal!
+¡Has alcanzado<qty;0( , los )><spsjmprpnum;0> salt<qty;0(o,os)>!
+<oneline>¡<fcap><dart;0()><$cdef(27)><$cname;0(lnum1)></color> te ha dado <$cdef(27)><dgt4;2(lnum3)></color><br><$cdef(27)><class><$ifullwithnum;1(lnum2,lnum3)></color>!
+El regalo se ha enviado al <$cdef(27)>PC</color> de tu vecindario.
+Coloca unos <$cdef(27)><fqty(2)><$ifull(1396)></color> y conéctalos a varios<br><$cdef(27)>generadores </color>para suministrarle la energía que necesita.<clear><br>Si no tienes materiales para fabricar <$cdef(27)>generadores</color>, puedes<br>ir a una <$cdef(27)>Isla Ensueño</color> a conseguirlos.
+Estas gafas te permiten ver la Isla Nube de otros<br>jugadores. ¿Quieres ponértelas?<clear><br>Es necesaria una suscripción a Nintendo Switch Online<br>para usar esta función.
+Introduce la dirección de la Isla Nube que quieras ver.
+No se ha encontrado ninguna Isla Nube.<br>¿Quieres volver a introducir la dirección?
+Se ha cancelado la búsqueda.
+Se ha encontrado una Isla Nube.<br>Iniciando la visita virtual...
+¿Quieres terminar la visita virtual y volver a casa?
+Terminando la visita virtual...
+
+¡Enhorabuena por haber completado la Pokédex Nube<br>de esta isla! Te mereces un premio por tamaña proeza.
+<oneline>¿Te parece bien que <$cdef(27)><$strpname;0(lstr1,lnum1)></color> sea<br><gen;0(el nuevo anfitrión,la nueva anfitriona)>?
+<oneline>Se va a transferir el rol de anfitri<gen;0(ón,ona)><br>a <$cdef(27)><$strpname;0(lstr1,lnum1)></color><slide><br>para que puedas<slide><br>volver a casa.
+¿Quieres dejar de cocinar?
+La comida estará lista en un periquete gracias al esfuerzo<br><esde;0()><$cdef(27)><$cname;0(216)></color> y compañía.
+¿Qué diseño quieres cambiar?
+El traslado terminará antes de lo previsto gracias al<br>esfuerzo <esde;0()><$cdef(27)><$cname;0(215)></color>.
+El traslado va viento en popa, pero todavía queda<br>un rato para que esté terminado.
+La reforma terminará antes de lo previsto gracias al<br>esfuerzo <esde;0()><$cdef(27)><$cname;0(215)></color>.
+La reforma va viento en popa, pero todavía queda<br>un rato para que esté terminada.
+¿Quieres guardar la foto en el álbum de la consola?
+¿Quieres llamar <esa;0()><$cdef(27)><$cname;0(123)></color>?
+
+Se recomienda aprender más cosas antes de visitar<br>este vecindario.
+¿No habrá por aquí cerca un vecindario que aún no<br>has explorado?
+¡Dirígete a la zona de costa donde encontraste a <$cdef(27)><$cname(17)></color>!
+<fcap><dart;0()><$cdef(27)><$cname;0(123)></color> no viene... ¿Estará cansad<gen;0(o,a)>?
+Estás a punto de visitar una zona en la que nunca has<br>estado. ¿Seguro que quieres seguir?
+¿Quieres encargarle <$cdef(27)><dgt5;0(lnum1)></color>?
+¿Te parece bien así?
+No se ha podido iniciar la votación porque hay al menos<br>un jugador ocupado.
+Esperando a otros jugadores...
+Torneo de comba - <timeymd;0(lnum1,lnum2,lnum3)><br>Resultado final: <dgt5;1(lnum4)> salt<qty;1(o,os)>
+Torneo de escondite camuflado - <timeymd;0(lnum1,lnum2,lnum3)><br>Resultado final: <timerms;1(lnum4,lnum5)>
+¿Quieres mostrar una foto aquí?
+Elige la foto que quieras mostrar.
+No se pueden añadir más fotos. Si añades una foto nueva,<br>se borrará la más antigua.
+Añadiendo...
+¿Quieres quitar esta foto?
+Esto es una <$cdef(27)><fqty(1)><$ifull(1460)></color>. Puedes colocarla donde<br>quieras.<clear><br>Los Pokémon con la especialidad <$cdef(27)><$spwfull(13)> </color>la usarán<br>para guardar los objetos que vayan encontrando por ahí.<clear><br>Si la colocas cerca de algún Pokémon capaz de procesar<br>materiales, podrá acceder a lo que haya dentro de la caja<slide><br>y adelantar trabajo.<clear><br>¿Quieres guardar algo?
+Puedes guardar comida en esta cesta para compartirla<br>con los demás Pokémon. ¿Quieres meter algo dentro?
+Algunos Pokémon pueden procesar los materiales<br>que guardes aquí. ¿Quieres meter algo dentro?
+No serviría de nada. Hazlo sonar cuando el Pokémon<br>correspondiente esté volando cerca.
+No puedes irte en plena partida del escondite camuflado.
+Los jugadores que estén en una <$cdef(27)>Isla Ensueño </color>no podrán<br>participar. ¿Quieres saltar a la comba igualmente?
+Los jugadores que estén en una <$cdef(27)>Isla Ensueño </color>no podrán<br>participar.<clear><br>¿Quieres jugar al escondite camuflado igualmente?
+No puedes unirte a este grupo porque está lleno.
+Hoy ya no puedes visitar más mundos nuevos de otros<br>jugadores.
+No puedes unirte al grupo porque hay al menos<br>un jugador ocupado. Vuelve a intentarlo más tarde.
+¡Aquí tienes la tarjeta de sellos de esta semana!
+¿Quieres sellar la tarjeta con el sello de hoy?
+¡Has conseguido <moneyint;0(lnum1)> monevit<qty;0(a,as)>!
+No se ha podido canjear la tarjeta porque no tiene sellos.
+Las tarjetas de sellos se pueden canjear por <$cdef(27)>monevitas</color>.<clear><br>Consulta la pantalla <$cdef(27)>Colección de sellos </color>para más<br>información.
+Tienes una tarjeta de sellos sin canjear. Solo te qued<qty;0(a,an)><br><dgt1;0(lnum1)> dí<qty;0(a,as)> para poder canjearla.<clear><br>Consulta la pantalla <$cdef(27)>Colección de sellos </color>para más<br>información.
+Tienes al menos un <$cdef(27)>reto </color>sin informar.
+Tienes al menos una recompensa sin recoger.
+Tienes al menos un <$cdef(27)>reto </color>sin informar y una recompensa<br>sin recoger.
+No hay espacio para que aterrice.
+<oneline>¡Has conseguido el marco<br><$cdef(27)><$phfrname;0(lnum1)></color>!
+¿Te parece bien así?
+Hay algún botón que tiene asignada más de una función.<br>¿Seguro que quieres guardar los cambios?
+¿Quieres restablecer la configuración por defecto?
+¿Quieres recuperar lo que has metido en la máquina?
+
+¿Quieres enviar una copia de esta foto?
+Si colocas el peluche en el exterior e interactúas con él,<br>quizá venga Drifloon.
+Ahora no es el mejor momento.
+Esto parece importante... ¿Seguro que quieres tirarlo?
+Se creará una copia de seguridad del progreso actual<br><esde;0()><$cdef(27)><$stgmyname;0(lnum1)></color>.<clear><br>Si existe una copia anterior, sus datos se sobrescribirán.<br>¿Seguro que quieres continuar?
+Se ha guardado la partida.
+No se ha podido conectar a internet.<br>¿Quieres intentarlo de nuevo?
+<oneline>Guardando la copia de seguridad<br><esde;0()><$cdef(27)><$stgmyname;0(lnum1)></color>...<slide><br>No apagues la consola.
+Se ha guardado la copia de seguridad con la siguiente<br>fecha: <timeymdhm;0(lnum1,lnum2,lnum3,lnum4,lnum5)>.
+No se ha podido guardar porque no se han encontrado<br>los datos <esde;0()><$cdef(27)><$stgmyname;0(lnum1)></color>.
+No se ha podido guardar.
+No puedes volver a restaurar los datos hoy.<br>Inténtalo de nuevo mañana.
+<oneline>Al restaurar la copia de seguridad, se expulsará a todos<br>los jugadores que se encuentren en estos momentos en<slide><br><dart;0()><$cdef(27)><$stgmyname;0(lnum1)></color>.<slide><br>¿Estás de acuerdo?
+<oneline>Restaurando la copia de seguridad<br><esde;0()><$cdef(27)><$stgmyname;0(lnum1)></color>...<slide><br>No apagues la consola.
+¡Se ha restaurado la copia de seguridad!
+Se ha producido un error de comunicación. Comprueba<br>si la copia de seguridad se ha restaurado correctamente.
+¿Quieres dejar una nota en la copia de seguridad?
+¿Te parece bien así?
+Vas a volver al lugar donde estabas.
+¡El <$cdef(27)>papel para deseos</color> que le habías entregado está<br>brillando!
+Has recibido <$cdef(27)>1</color> <$cdef(27)><fqty(1)><$ifull(433)></color>.
+
+
+¡Has encontrado una nota escrita por los humanos!<br>Se titula <$cdef(27)><fqty(1)><getmptname;0></color>.
+
+
+
+
+
+
+Para hacer que un Pokémon se mude a una casa,<br>antes deberás colocar al menos tres muebles distintos.
+¿Quieres ofrecerle algo de comer?
+<oneline>¿Quieres que <dart;0()><$cdef(27)><nname;0> </color>te<br>acompañe?
+Si abres un <$cdef(27)><fqty(1)><class><$ifull(3994)> </color>en un hábitat, es posible que<br>el Pokémon que vive en él regrese.
+Enviando...
+Se ha enviado el informe. Si quieres terminar la sesión,<br>abre el menú principal y pulsa <$keyicon(227)>.
+Se ha producido un error de conexión.<br>¿Quieres volver a intentarlo?
+Se ha cancelado la denuncia.
+Es un mural de aspecto intrigante... Parece que podrías<br>colocar algo en él.
+Este artículo incluye <$cdef(27)>instrucciones </color>que ya conoces.<br>Serí<qty;0(a,an)> <moneyint;0(lnum2)><$icon(lnum1)>. ¿Te parece bien?
+¡La <$cdef(27)>calidad del entorno </color>ha aumentado!<br>Se han añadido nuevos artículos del día a la <$cdef(27)>tienda</color>.
+¿Quieres guardar los cambios realizados antes de salir?
+Hay algún botón que tiene asignada más de una función.<br>¿Seguro que quieres guardar los cambios?<slide><br>(Si seleccionas <$cdef(27)>No</color>, saldrás sin guardar los cambios).
+¡Está demasiado caliente para moverla! Échale agua para<br>enfriarla.
+Esperando al resto de jugadores...
+Ya está húmeda, así que no es necesario regarla más<br>por hoy.
+¿Quieres guardar los cambios realizados antes de acceder<br>a la <$cdef(27)>configuración de los botones</color>?
+¿Quieres guardar los cambios realizados antes de acceder<br>a la <$cdef(27)>selección de idioma</color>?
+<oneline>Prueba a usar el <$cdef(27)><fqty(1)><$ifull(1898)><br></color>en <dart;0()><$cdef(27)><$stgname;0(4)></color><slide><br>cuando estés tú sol<gen;-2(o,a)>.
+Si estás jugando con otra gente, el grupo se disolverá.<br>¿Seguro que quieres cambiar los ajustes?
+Si estás jugando con otra gente, el grupo se disolverá.<br>¿Seguro que quieres borrar esta isla?
+Has borrado tu Isla Nube.
+Se ha producido un error de comunicación.<br>Comprueba si se ha borrado correctamente.
+Espera un momento mientras el resto llega a su destino.
+Aunque algo resquebrajada, esta roca parece muy dura.<br>Unos puñetazos normales no servirán para romperla.
+Tal vez puedas romper estos trozos de metal oxidado<br>con algún movimiento.
+<$cdef(27)><oneline></color>Para imprimir una copia de<br><iart;0()><$cdef(27)><class><fqty(1)><$ifull;0(lnum1)></color><slide><br>necesitas<slide><br><$cdef(27)><dgt4;2(lnum3)> <class><$ifullwithnum;1(lnum2,lnum3)></color>,<slide><br>pero<slide><br>tienes <$cdef(27)><dgt4;3(lnum4)></color>.
+Se guardará la partida antes de establecer la conexión<br>a internet. ¿Quieres continuar?
+Estableciendo la conexión a internet...<br>Espera un momento.
+Comprobando... No apagues la consola.
+Buscando regalo...
+
+No se ha encontrado ningún regalo.
+Recibiendo regalos... No apagues la consola.
+Ya has recibido este regalo.
+
+¿Quieres cancelar el proceso?
+Este código o contraseña ya se ha usado en otra partida.
+Todavía no puedes recibir el regalo vinculado a este<br>código o contraseña.
+Este código o contraseña ha caducado.
+No puedes recibir el regalo vinculado a este código o<br>contraseña con la versión actual del programa.
+No se ha podido recibir el regalo porque se ha producido<br>un error al comprobar el código o contraseña.
+Ya has recibido el regalo vinculado a este código o<br>contraseña.
+Este código o contraseña ya se ha usado y no puede<br>volver a usarse en otra partida.
+Has introducido el código o contraseña erróneamente<br>varias veces seguidas. Vuelve a intentarlo más tarde.
+Has recibido el regalo.
+No has podido recibir el regalo porque tu Bolsa está llena.
+¿Quieres volver a introducir el código o contraseña?
+Se ha producido un error al recibir el regalo.
+Se ha encontrado un regalo, pero no puedes recibirlo<br>en la versión actual del programa.
+No se han podido subir los datos de la Isla Nube.
+<$cdef(27)><$strpname;0(lstr1,lnum1)></color> ya se ha ido.
+Podría llenarse de agua con <$cdef(27)><$sklfull(3)></color>.
+Despeja el área alrededor del <$cdef(27)>Centro Pokémon </color>para<br>poder jugar al escondite camuflado.
+Arregla el área alrededor del <$cdef(27)>Centro Pokémon </color>para<br>poder jugar con <$cdef(27)>Zorua </color>al escondite camuflado.
+Quita los obstáculos que hay delante del <$cdef(27)>Centro Pokémon</color><br>para poder jugar con <$cdef(27)>Zorua </color>al escondite camuflado.
+Quita los obstáculos que hay delante del <$cdef(27)>Centro Pokémon</color><br>para poder jugar con <$cdef(27)>Bulbasaur </color>a saltar a la comba.
+Parece que puedes preparar un plato nuevo.<br>¿Quieres probar a hacerlo?
+¿Quieres cancelar la transformación y recuperar tu<br>aspecto humano?
+¡Esta es ahora tu casa! Usa la función <$cdef(27)>Llévame a casa<br></color>para volver aquí en cualquier momento.
+No se ha podido iniciar la votación porque hay al menos<br>un jugador ocupado.
+No se ha podido iniciar la votación porque hay al menos<br>un jugador ocupado.
+¡Has conseguido la Bolsa auxiliar!<clear><br>La Bolsa auxiliar te permite acceder a algunos objetos<br>al instante.
+Se ha producido un error de comunicación.
+¿Quieres recibir el regalo aunque tu Bolsa esté llena?
+¿Seguro que quieres restaurar los datos?
+Ya hay un sello ahí. ¿Quieres sustituirlo?
+¿Quieres recibir el regalo aunque tu Bolsa esté llena?
+¿Quieres cancelar la búsqueda del Pokémon?
+<$cdef(27)>Drifloon </color>no tiene suficiente espacio para aterrizar.<br>Coloca el peluche en un lugar con más espacio.
+Está sonando la versión A de la canción.<br>¿Quieres cambiarla?
+Está sonando la versión B de la canción.<br>¿Quieres cambiarla?
+Está sonando la versión C de la canción.<br>¿Quieres cambiarla?
+Tienes algo esperándote. Recíbelo desde la opción<br><$cdef(27)>Recibir objetos</color>.
+Introduce tu nombre en este idioma.
+¿Te parece bien <$cdef(27)><pname;0></color>?
+<oneline>¡Has conseguido<br><iart;0()><$cdef(27)><fqty(1)><class><$ifull;0(lnum1)></color>!
+
+
+Puede que funcione si lo colocas cerca del agua.
+
+
+Cuando otros jugadores visiten este vecindario,<br>solo se podrá jugar en modo observación.<clear><br>Algunos movimientos y objetos no estarán disponibles.
+El modo observación está activado en esta Pradera Paleta.<br>Algunos movimientos y objetos no estarán disponibles.
+El modo observación está activado en esta área, por<br>lo que el uso de objetos y movimientos está limitado.
+Aquí puedes disfrutar del juego haciendo despliegue<br>de tus movimientos y fabricando toda clase de objetos.
+Se interrumpirá la conexión. ¿Te parece bien?
+Se interrumpirá la conexión y volverás a casa.<br>¿Te parece bien?<clear><br>Ten en cuenta que todos los objetos que lleves encima<br>se quedarán en el <$cdef(27)>PC</color> de este <$cdef(27)>Centro Pokémon</color>.
+¡Has aprendido <$cdef(27)><$sklfull(10)></color>!<br>¡Pulsa <$keyicon(28)> en el agua para nadar!
+¡Has aprendido <$cdef(27)><$sklfull(11)></color>!<br>¡Pulsa <$keyicon(29)> en el aire para planear!
+No recibirás más premios hoy.
+No recibirás más premios hoy.
+Has conseguido una recompensa.
+Se han añadido artículos nuevos a la <$cdef(27)>tienda</color>.
+Se han añadido nuevos <$cdef(27)>retos</color>.
+<oneline>¿Quieres volver junto a <$cdef(27)>Drifloon </color>con<br><dart;0()><$cdef(27)><nname;0></color>?
+Esta <$cdef(27)><fqty(1)><$ifull(764)> </color>tiene al lado un <$cdef(27)><fqty(1)><$ifull(2045)></color>.<clear><br>Si colocas una <$cdef(27)><fqty(1)><$ifull(764)> </color>y un<$cdef(27)> <fqty(1)><$ifull(2045)> </color>juntos,<br>cuando fabriques algo, podrás usar también los materiales<slide><br>guardados dentro del <$cdef(27)><fqty(1)><$ifull(2045)></color>, además de los de tu Bolsa.
+Se han añadido nuevos artículos del día a la <$cdef(27)>tienda</color>.
+¿Quieres quemar lo que has introducido en el generador<br>para producir electricidad?
+Hay al menos un Pokémon que no puede acompañarte<br>ahora mismo. ¿Quieres despedirte e irte por tu cuenta?
+Riega árboles secos y recoge las <$cdef(27)><fqty(2)><class><$ifull(2340)><br></color>que crezcan en ellos.
+Siembra y cosecha cultivos en un huerto. Puedes obtener<br>semillas en la tienda y en las Islas Ensueño.
+Pídele a un Pokémon especializado en <$cdef(27)><$spwfull(15)><br></color>que procese tus <$cdef(27)><fqty(2)><class><$ifull(1482)></color>.
+A veces las encontrarás alrededor de los hogares de<br>los Pokémon esponjosos especializados en <$cdef(27)><$spwfull(4)></color>.
+Pídele a un Pokémon especializado en <$cdef(27)><$spwfull(17)><br></color>que procese tus <$cdef(27)><fqty(1)><$ifull(1738)></color>.
+Pídele a un Pokémon especializado en <$cdef(27)><$spwfull(10)><br></color>que procese tu <$cdef(27)><fqty(1)><$ifull(112)></color>.
+Introduce <$cdef(27)><fqty(1)><$ifull(113)> </color>en un <$cdef(27)><fqty(1)><$ifull(1446)> </color>y procésalo<br>con la ayuda de un Pokémon.
+Introduce <$cdef(27)><fqty(1)><$ifull(1090)> </color>en una <$cdef(27)><fqty(1)><$ifull(1458)><br></color>y procésala con la ayuda de un Pokémon.
+<oneline>Búscalos en las Islas Ensueño y en las cuevas<br><esde;0()><$cdef(27)><$stgname;0(3)></color>.
+Pídele a un Pokémon especializado en <$cdef(27)><$spwfull(24)><br></color>que procese tus <$cdef(27)><fqty(2)><class><$ifull(115)></color>.
+<oneline>Busca las instrucciones en<br><dart;0()><$cdef(27)><$stgname;0(3)></color>.
+<oneline>Busca las instrucciones en<br><dart;0()><$cdef(27)><$stgname;0(2)></color>.
+<oneline>Busca las instrucciones en<br><dart;0()><$cdef(27)><$stgname;0(4)></color>.
+<oneline>Aumenta la calidad del entorno<br><esde;0()><$cdef(27)><$stgname;0(2)></color>.
+<oneline>Aumenta la calidad del entorno<br><esde;0()><$cdef(27)><$stgname;0(3)></color>.
+<oneline>Aumenta la calidad del entorno<br><esde;0()><$cdef(27)><$stgname;0(4)></color>.
+Saca la <$cdef(27)>cámara </color>con <$keyicon(52)> y haz algunas fotos.
+<oneline>Aumenta la calidad del entorno<br><esde;0()><$cdef(27)><$stgname;0(1)></color>.
+¿Cómo quieres conectarte a través de GameShare?
+Has dejado de usar GameShare.
+Preparando la conexión... No apagues la consola.
+¿Quieres dejar de usar GameShare?<clear><br>Los objetos del jugador invitado mediante GameShare<br>se guardarán en el <$cdef(27)><fqty(1)><$ifull(1442)></color>.
+¿Quieres establecer una contraseña?
+Esta Isla Nube no es pública ahora mismo.
+¿Qué quieres hacer?
+¿A quién quieres expulsar?
+Se ha expulsado a <$cdef(27)><$strpname;0(lstr1,lnum1)></color>.
+No hay nadie a quien expulsar.
+Si se marcha el anfitrión o anfitriona, terminará la sesión<br>y se expulsará también a los visitantes. ¿Te parece bien?
+Los regalos se han enviado al <$cdef(27)>PC</color> de tu vecindario.
+No se ha podido cambiar de zona debido a la inactividad.
+Parece que este Pokémon arde en ganas de conocer<br>a <$cdef(27)><wowner;0></color>... ¡Pídele que venga aquí!
+Sientes una gran presencia procedente del mar...
+No se ha encontrado la Isla Nube que buscas.
+Otro jugador tiene una versión antigua del juego, por lo<br>que no puede establecerse la conexión con esa persona.<slide><br>Para hacerlo, deberá reiniciar el juego y actualizarlo.
+Esta Isla Nube no es pública ahora mismo.
+El contenido descargable no se ha añadido todavía a tu<br>Isla Nube.<clear><br>Se va a expulsar a quienes estén de visita para llevar<br>a cabo la actualización. ¿Te parece bien?
+

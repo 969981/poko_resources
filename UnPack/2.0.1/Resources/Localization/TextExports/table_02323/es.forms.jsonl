@@ -1,0 +1,515 @@
+{"text_id":0,"forms":[""],"absolute_byte_offsets":[4184],"raw_metadata_u32":[0]}
+{"text_id":1,"forms":[""],"absolute_byte_offsets":[4185],"raw_metadata_u32":[0]}
+{"text_id":2,"forms":["No funciona si se sumerge."],"absolute_byte_offsets":[4186],"raw_metadata_u32":[10]}
+{"text_id":3,"forms":[""],"absolute_byte_offsets":[4213],"raw_metadata_u32":[0]}
+{"text_id":4,"forms":["Este pobre árbol está muy seco... Necesita agua."],"absolute_byte_offsets":[4214],"raw_metadata_u32":[1]}
+{"text_id":5,"forms":[""],"absolute_byte_offsets":[4265],"raw_metadata_u32":[0]}
+{"text_id":6,"forms":["Es un árbol bastante grande. Es posible que produzca<br>bayas si tienes algo de paciencia."],"absolute_byte_offsets":[4266],"raw_metadata_u32":[1]}
+{"text_id":7,"forms":[""],"absolute_byte_offsets":[4358],"raw_metadata_u32":[0]}
+{"text_id":8,"forms":["Tal vez puedas cortar estos trozos de madera vieja<br>con algún movimiento."],"absolute_byte_offsets":[4359],"raw_metadata_u32":[1]}
+{"text_id":9,"forms":[""],"absolute_byte_offsets":[4436],"raw_metadata_u32":[0]}
+{"text_id":10,"forms":["Es una roca grande y dura. Unos puñetazos normales<br>no servirán para romperla."],"absolute_byte_offsets":[4437],"raw_metadata_u32":[1]}
+{"text_id":11,"forms":["¡Has reunido <$cdef(27)>5</color> sellos! Podrás canjearlos por <$cdef(27)>monevitas<br></color>del <timemd;0(lnum1,lnum2)> al <timemd;1(lnum3,lnum4)>.<clear><br>Puedes sustituir tus sellos por otros hasta el <timemd;2(lnum5,lnum6)>."],"absolute_byte_offsets":[4520],"raw_metadata_u32":[10]}
+{"text_id":12,"forms":[""],"absolute_byte_offsets":[4756],"raw_metadata_u32":[0]}
+{"text_id":13,"forms":["<oneline>¡Has preparado<br><$cdef(27)><dgt5;1(lnum2)></color><slide><br><$cdef(27)><class><$ifullwithnum;0(lnum1,lnum2)></color>!"],"absolute_byte_offsets":[4757],"raw_metadata_u32":[1]}
+{"text_id":14,"forms":["<oneline>¡Has fabricado<br><$cdef(27)><dgt5;1(lnum2)></color><slide><br><$cdef(27)><class><$ifullwithnum;0(lnum1,lnum2)></color>!"],"absolute_byte_offsets":[4888],"raw_metadata_u32":[1]}
+{"text_id":15,"forms":[""],"absolute_byte_offsets":[5019],"raw_metadata_u32":[0]}
+{"text_id":16,"forms":["¡Has aprendido <$cdef(27)><$sklfull;1(lnum1)></color>!"],"absolute_byte_offsets":[5020],"raw_metadata_u32":[1]}
+{"text_id":17,"forms":["<oneline>¡Has conseguido las <$cdef(27)>instrucciones </color>para fabricar<br><$cdef(27)><fqty(2)><class><$ifull;0(lnum1)></color>!"],"absolute_byte_offsets":[5076],"raw_metadata_u32":[1]}
+{"text_id":18,"forms":["¡Tirorín! ¡Has recibido una notificación en la Pokédex!"],"absolute_byte_offsets":[5210],"raw_metadata_u32":[1]}
+{"text_id":19,"forms":["¡Has conseguido unas instrucciones como recompensa<br>por registrar muchos Pokémon!"],"absolute_byte_offsets":[5271],"raw_metadata_u32":[1]}
+{"text_id":20,"forms":["¡Asigna <$cdef(27)><$sklfull;0(lnum1)></color> a una ranura!"],"absolute_byte_offsets":[5357],"raw_metadata_u32":[1]}
+{"text_id":21,"forms":["<oneline>¡Has conseguido<br><$cdef(27)><dgt5;1(lnum2)></color><slide><br><$cdef(27)><class><$ifullwithnum;0(lnum1,lnum2)></color>!"],"absolute_byte_offsets":[5419],"raw_metadata_u32":[1]}
+{"text_id":22,"forms":[""],"absolute_byte_offsets":[5551],"raw_metadata_u32":[0]}
+{"text_id":23,"forms":["¡Has encontrado una pista sobre un Pokémon!"],"absolute_byte_offsets":[5552],"raw_metadata_u32":[1]}
+{"text_id":24,"forms":[""],"absolute_byte_offsets":[5598],"raw_metadata_u32":[0]}
+{"text_id":25,"forms":["Este edificio se ha caído a pedazos..."],"absolute_byte_offsets":[5599],"raw_metadata_u32":[1]}
+{"text_id":26,"forms":["¿Para qué servirá?"],"absolute_byte_offsets":[5639],"raw_metadata_u32":[1]}
+{"text_id":27,"forms":["¡Has recibido todo lo que te acaban de <$cdef(27)><$spwfull(25)></color>!"],"absolute_byte_offsets":[5661],"raw_metadata_u32":[10]}
+{"text_id":28,"forms":[""],"absolute_byte_offsets":[5736],"raw_metadata_u32":[0]}
+{"text_id":29,"forms":["¡Está ardiendo, te quemarías! ¿No habrá alguna forma<br>de apagar el fuego?"],"absolute_byte_offsets":[5737],"raw_metadata_u32":[1]}
+{"text_id":30,"forms":[""],"absolute_byte_offsets":[5818],"raw_metadata_u32":[0]}
+{"text_id":31,"forms":["¡Has encontrado un tesoro! ¡Recógelo a ver qué es!"],"absolute_byte_offsets":[5819],"raw_metadata_u32":[1]}
+{"text_id":32,"forms":["No hay contenido descargable disponible para comprar."],"absolute_byte_offsets":[5874],"raw_metadata_u32":[18]}
+{"text_id":33,"forms":["No hay artículos disponibles."],"absolute_byte_offsets":[5928],"raw_metadata_u32":[18]}
+{"text_id":34,"forms":["Este contenido todavía no se ha anunciado."],"absolute_byte_offsets":[5959],"raw_metadata_u32":[18]}
+{"text_id":35,"forms":["Todavía no se puede jugar a este contenido."],"absolute_byte_offsets":[6003],"raw_metadata_u32":[18]}
+{"text_id":36,"forms":["Deberías visitar antes un vecindario en el que aún no<br>hayas estado."],"absolute_byte_offsets":[6048],"raw_metadata_u32":[10]}
+{"text_id":37,"forms":["<oneline>Deberías progresar antes en la historia<br><esde;0()><$cdef(27)><$stgmyname;0(lnum1)></color>."],"absolute_byte_offsets":[6121],"raw_metadata_u32":[10]}
+{"text_id":38,"forms":["<oneline>Deberías completar antes la petición<br><esde;0()><$cdef(27)><$cname;0(lnum1)></color>."],"absolute_byte_offsets":[6226],"raw_metadata_u32":[10]}
+{"text_id":39,"forms":["<oneline>Deberías completar antes la petición importante<br>\"<$iqname;1(lnum2)>\"<slide><br>en <dart;0()><$cdef(27)><$stgmyname;0(lnum1)></color>."],"absolute_byte_offsets":[6325],"raw_metadata_u32":[10]}
+{"text_id":40,"forms":["¡Has encontrado unas <$cdef(27)>instrucciones</color> para fabricar algo!"],"absolute_byte_offsets":[6473],"raw_metadata_u32":[1]}
+{"text_id":41,"forms":["<oneline>Deberías ir antes al <$cdef(27)>Centro Pokémon</color><br><esde;0()><$cdef(27)><$stgmyname;0(lnum1)></color>."],"absolute_byte_offsets":[6548],"raw_metadata_u32":[10]}
+{"text_id":42,"forms":["No puedes recibir esto porque no has comprado<br>el contenido descargable correspondiente."],"absolute_byte_offsets":[6669],"raw_metadata_u32":[18]}
+{"text_id":43,"forms":["Ya has recibido esto."],"absolute_byte_offsets":[6760],"raw_metadata_u32":[18]}
+{"text_id":44,"forms":[""],"absolute_byte_offsets":[6782],"raw_metadata_u32":[0]}
+{"text_id":45,"forms":["¡Todo se ha vuelto oscuro!"],"absolute_byte_offsets":[6783],"raw_metadata_u32":[1]}
+{"text_id":46,"forms":["Es una máquina con pinta de ser muy antigua."],"absolute_byte_offsets":[6811],"raw_metadata_u32":[1]}
+{"text_id":47,"forms":["¡Se te han ocurrido las <$cdef(27)>instrucciones </color>para fabricar algo!"],"absolute_byte_offsets":[6857],"raw_metadata_u32":[1]}
+{"text_id":48,"forms":["<oneline>¡Te sientes más unid<gen;-2(o,a)> que nunca<br><esa;0()><$cdef(27)><nname;0></color>!"],"absolute_byte_offsets":[6935],"raw_metadata_u32":[1]}
+{"text_id":49,"forms":["<oneline>¡<fcap><dart;0()><$cdef(27)><nname;0> </color>y tú sois uña y carne<br>ahora!"],"absolute_byte_offsets":[7032],"raw_metadata_u32":[1]}
+{"text_id":50,"forms":["Trae a un Pokémon con la especialidad <$cdef(27)><$spwfull(10)><br></color>para que encienda el fuego."],"absolute_byte_offsets":[7122],"raw_metadata_u32":[1]}
+{"text_id":51,"forms":["Para poder utilizar este objeto hace falta fuego.<br>Colócalo encima de una fogata o un fogón de cocina."],"absolute_byte_offsets":[7226],"raw_metadata_u32":[1]}
+{"text_id":52,"forms":["Seguro que crece con algo de agua."],"absolute_byte_offsets":[7333],"raw_metadata_u32":[1]}
+{"text_id":53,"forms":["A juzgar por las chispas que le salen, es probable que<br>algo estuviese conectado aquí en el pasado."],"absolute_byte_offsets":[7368],"raw_metadata_u32":[1]}
+{"text_id":54,"forms":["¿Quieres buscar <esa;0()><$cdef(27)><$cname;0(lnum1)></color>?"],"absolute_byte_offsets":[7471],"raw_metadata_u32":[1]}
+{"text_id":55,"forms":["<oneline>¿Quieres dejar de buscar<br><esa;0()><$cdef(27)><$cname;0(lnum1)></color>?"],"absolute_byte_offsets":[7535],"raw_metadata_u32":[1]}
+{"text_id":56,"forms":["<oneline>¿Quieres dejar de buscar<br><esa;0()><$cdef(27)><$cname;0(lnum1)></color><slide><br>y buscar<slide><br><esa;1()><$cdef(27)><$cname;1(lnum2)></color><slide><br>en su lugar?"],"absolute_byte_offsets":[7620],"raw_metadata_u32":[1]}
+{"text_id":57,"forms":["¿A qué Pokémon quieres buscar?"],"absolute_byte_offsets":[7802],"raw_metadata_u32":[1]}
+{"text_id":58,"forms":["¡Has aprendido algo nuevo acerca de algún Pokémon!<br>¿Por qué no consultas la Pokédex?"],"absolute_byte_offsets":[7836],"raw_metadata_u32":[1]}
+{"text_id":59,"forms":["Se va a dejar de buscar <esa;0()><$cdef(27)><$cname;0(lnum1)></color>.<br>¿A qué otro Pokémon quieres buscar?"],"absolute_byte_offsets":[7930],"raw_metadata_u32":[1]}
+{"text_id":60,"forms":["No se pueden enviar más objetos al <$cdef(27)>PC</color> de tu vecindario,<br>por lo que el resto se enviará al <$cdef(27)><fqty(1)><$ifull(1442)></color>."],"absolute_byte_offsets":[8043],"raw_metadata_u32":[1]}
+{"text_id":61,"forms":["<$cdef(27)><oneline></color>¡Has conseguido las <$cdef(27)>instrucciones </color>para fabricar<br><fqty(2)><class><$cdef(27)><$ifull;0(lnum1)></color>!<clear><br>Pero resulta que ya las conoces..."],"absolute_byte_offsets":[8201],"raw_metadata_u32":[1]}
+{"text_id":62,"forms":["¡<$cdef(27)><$strpname;0(lstr1,lnum1)></color> ha tocado el <$cdef(27)>PC</color>!"],"absolute_byte_offsets":[8399],"raw_metadata_u32":[1]}
+{"text_id":63,"forms":["¿Quieres dejar de jugar al escondite camuflado?"],"absolute_byte_offsets":[8483],"raw_metadata_u32":[10]}
+{"text_id":64,"forms":["<oneline><$cdef(27)><string;0(lstr1)></color> ha tirado<br>la toalla."],"absolute_byte_offsets":[8532],"raw_metadata_u32":[10]}
+{"text_id":65,"forms":["El viento es demasiado fuerte y no te permite acercarte.<br>A lo mejor podrías usar un movimiento para abrirte paso..."],"absolute_byte_offsets":[8602],"raw_metadata_u32":[1]}
+{"text_id":66,"forms":["Elige cómo quieres conectarte."],"absolute_byte_offsets":[8722],"raw_metadata_u32":[1]}
+{"text_id":67,"forms":["¿Quieres dejar de jugar al escondite camuflado?<br>La partida finalizará para todo el mundo."],"absolute_byte_offsets":[8754],"raw_metadata_u32":[10]}
+{"text_id":68,"forms":["¡Hora de reconstruir el <$cdef(27)>Centro Pokémon</color>!<br>Reúne a los Pokémon y los materiales que necesites."],"absolute_byte_offsets":[8849],"raw_metadata_u32":[1]}
+{"text_id":69,"forms":["¿Quieres darle la vuelta?"],"absolute_byte_offsets":[8967],"raw_metadata_u32":[1]}
+{"text_id":70,"forms":["Parece que un Pokémon que te sigue todavía tiene cosas<br>que hacer en este vecindario."],"absolute_byte_offsets":[8994],"raw_metadata_u32":[1]}
+{"text_id":71,"forms":["¿Quieres empezar la partida en el idioma elegido?"],"absolute_byte_offsets":[9084],"raw_metadata_u32":[1]}
+{"text_id":72,"forms":["Se necesita reiniciar el juego para cambiar el idioma.<br>¿Quieres continuar?"],"absolute_byte_offsets":[9135],"raw_metadata_u32":[1]}
+{"text_id":73,"forms":["Elige el jugador cuyos objetos quieras retirar."],"absolute_byte_offsets":[9214],"raw_metadata_u32":[1]}
+{"text_id":74,"forms":["¿Quieres jugar en japonés?"],"absolute_byte_offsets":[9262],"raw_metadata_u32":[1]}
+{"text_id":75,"forms":["¿Quieres jugar en inglés?"],"absolute_byte_offsets":[9291],"raw_metadata_u32":[1]}
+{"text_id":76,"forms":["¿Quieres jugar en francés?"],"absolute_byte_offsets":[9319],"raw_metadata_u32":[1]}
+{"text_id":77,"forms":["¿Quieres jugar en italiano?"],"absolute_byte_offsets":[9348],"raw_metadata_u32":[1]}
+{"text_id":78,"forms":["¿Quieres jugar en alemán?"],"absolute_byte_offsets":[9377],"raw_metadata_u32":[1]}
+{"text_id":79,"forms":["¿Quieres jugar en español de España?"],"absolute_byte_offsets":[9405],"raw_metadata_u32":[1]}
+{"text_id":80,"forms":[""],"absolute_byte_offsets":[9445],"raw_metadata_u32":[0]}
+{"text_id":81,"forms":[""],"absolute_byte_offsets":[9446],"raw_metadata_u32":[0]}
+{"text_id":82,"forms":["¿Quieres <$cdef(27)><$spwfull(21)> </color>esto así?"],"absolute_byte_offsets":[9447],"raw_metadata_u32":[1]}
+{"text_id":83,"forms":["¡<$cdef(27)><pname;0></color> ha usado <$cdef(27)>Transformación</color>!"],"absolute_byte_offsets":[9502],"raw_metadata_u32":[1]}
+{"text_id":84,"forms":["<oneline>¡Se te ha ocurrido cómo fabricar<br><$cdef(27)><fqty(2)><class><$ifull;0(lnum1)></color>!"],"absolute_byte_offsets":[9578],"raw_metadata_u32":[1]}
+{"text_id":85,"forms":["No hay suficiente espacio en la Bolsa para guardar esto.<br>¿Quieres cambiarlo por otro objeto que lleves encima?"],"absolute_byte_offsets":[9679],"raw_metadata_u32":[1]}
+{"text_id":86,"forms":["¡Has aprendido un nuevo gesto!<br><$cdef(27)><$emotename;0(lnum1)> </color>se ha añadido a la lista."],"absolute_byte_offsets":[9794],"raw_metadata_u32":[1]}
+{"text_id":87,"forms":[""],"absolute_byte_offsets":[9897],"raw_metadata_u32":[0]}
+{"text_id":88,"forms":["<oneline>¿Quieres ir<br><esa;0()><$cdef(27)><$stgmyname;0(lnum1)></color>?"],"absolute_byte_offsets":[9898],"raw_metadata_u32":[1]}
+{"text_id":89,"forms":["No puedes ir por aquí todavía."],"absolute_byte_offsets":[9974],"raw_metadata_u32":[1]}
+{"text_id":90,"forms":[""],"absolute_byte_offsets":[10007],"raw_metadata_u32":[0]}
+{"text_id":91,"forms":["<oneline>¿Quieres comprobar los ajustes<br><esde;0()><$cdef(27)><$stgmyname;0(lnum1)></color>?"],"absolute_byte_offsets":[10008],"raw_metadata_u32":[1]}
+{"text_id":92,"forms":["¿Te parece bien así?"],"absolute_byte_offsets":[10104],"raw_metadata_u32":[1]}
+{"text_id":93,"forms":["¡Pi, pi, piii! Esta Pokédex registrará a los Pokémon que<br>viven en tu Isla Nube.<clear><br>¡Invita a tus amigos para registrar a todos los que podáis!"],"absolute_byte_offsets":[10127],"raw_metadata_u32":[1]}
+{"text_id":94,"forms":["<oneline>¿Cuánt<gen;0(o,a)>s<br><$cdef(27)><class><fqty(2)><$ifull;0(lnum1)></color><slide><br>quieres darle?<slide><br>Tienes <$cdef(27)><dgt4;1(lnum2)></color>."],"absolute_byte_offsets":[10286],"raw_metadata_u32":[1]}
+{"text_id":95,"forms":["<oneline>¿Quieres entregarle<br><$cdef(27)><dgt4;1(lnum2)> <class><$ifullwithnum;0(lnum1,lnum2)><slide><br></color>para que<slide><br>luego<slide><br>te dé<slide><br><$cdef(27)><dgt5;3(lnum4)></color><slide><br><$cdef(27)><class><$ifullwithnum;2(lnum3,lnum4)></color>?"],"absolute_byte_offsets":[10451],"raw_metadata_u32":[1]}
+{"text_id":96,"forms":["¡Pi, pi, pi, piii! No puedes pasar por este pasaje de acceso<br>con tu rango de Entrenado<gen;-2(r,ra)> actual."],"absolute_byte_offsets":[10722],"raw_metadata_u32":[1]}
+{"text_id":97,"forms":["¡Pi, pi, piii! Has llegado a un pasaje de acceso."],"absolute_byte_offsets":[10835],"raw_metadata_u32":[1]}
+{"text_id":98,"forms":["Acerca la Pokédex al panel de la puerta."],"absolute_byte_offsets":[10886],"raw_metadata_u32":[1]}
+{"text_id":99,"forms":["¡Pi, pi, piii!<clear><br>Rango de Entrenado<gen;-2(r,ra)>: <$cdef(27)><trnrank;0></color>.<br>Se va a abrir el pasaje de acceso."],"absolute_byte_offsets":[10928],"raw_metadata_u32":[1]}
+{"text_id":100,"forms":["<oneline>¿Quieres iniciar la construcción<br><esde;0()><$cdef(27)><$bfull;0(lnum1)></color>?"],"absolute_byte_offsets":[11058],"raw_metadata_u32":[1]}
+{"text_id":101,"forms":["<oneline>¿Quieres iniciar la reconstrucción<br><esde;0()><$cdef(27)><$bfull;0(lnum1)></color>?"],"absolute_byte_offsets":[11153],"raw_metadata_u32":[1]}
+{"text_id":102,"forms":["<oneline>¿Cuánt<gen;0(o,a)>s<br><$cdef(27)><fqty(2)><class><$ifull;0(lnum1)></color><slide><br>quieres darle?<slide><br>Tienes <$cdef(27)><dgt4;1(lnum2)></color>."],"absolute_byte_offsets":[11250],"raw_metadata_u32":[1]}
+{"text_id":103,"forms":["<oneline>¿Quieres darle <$cdef(27)><dgt4;1(lnum2)></color><br><$cdef(27)><class><$ifullwithnum;0(lnum1,lnum2)></color><slide><br>para que te fabrique<slide><br><$cdef(27)><dgt5;3(lnum4)></color><slide><br><$cdef(27)><class><$ifullwithnum;2(lnum3,lnum4)></color>?"],"absolute_byte_offsets":[11415],"raw_metadata_u32":[1]}
+{"text_id":104,"forms":["<oneline>¿Cuántas copias quieres hacer<br><esde;0()><$cdef(27)><fqty(1)><class><$ifull;0(lnum1)></color>?"],"absolute_byte_offsets":[11679],"raw_metadata_u32":[1]}
+{"text_id":105,"forms":["<oneline>¿Quieres empezar a preparar<br><dart;0()><$cdef(27)><$bfull;0(lnum1)></color>?"],"absolute_byte_offsets":[11787],"raw_metadata_u32":[1]}
+{"text_id":106,"forms":["<oneline>¿Quieres usar<br><$cdef(27)><dgt4;1(lnum2)></color> <$cdef(27)><class><$ifullwithnum;0(lnum1,lnum2)><slide><br></color>para fabricar<slide><br><$cdef(27)><dgt4;3(lnum4)></color> <$cdef(27)><class><$ifullwithnum;2(lnum3,lnum4)></color>?"],"absolute_byte_offsets":[11876],"raw_metadata_u32":[1]}
+{"text_id":107,"forms":["<oneline>¡Has abierto <dart;0()><$cdef(27)><fqty(1)><$ifull;0(lnum1)></color>!<br>Vuelve dentro de un rato."],"absolute_byte_offsets":[12122],"raw_metadata_u32":[1]}
+{"text_id":108,"forms":[""],"absolute_byte_offsets":[12231],"raw_metadata_u32":[0]}
+{"text_id":109,"forms":["Algún jugador no está listo todavía."],"absolute_byte_offsets":[12232],"raw_metadata_u32":[1]}
+{"text_id":110,"forms":["El pasaje de acceso se ha abierto. ¡Adelante!"],"absolute_byte_offsets":[12272],"raw_metadata_u32":[1]}
+{"text_id":111,"forms":["Pi, pi, piii... Calculando el tiempo restante..."],"absolute_byte_offsets":[12319],"raw_metadata_u32":[1]}
+{"text_id":112,"forms":["Hora de finalización prevista: <timehm;0(lnum1,lnum2)>."],"absolute_byte_offsets":[12368],"raw_metadata_u32":[1]}
+{"text_id":113,"forms":["Terminará mañana."],"absolute_byte_offsets":[12425],"raw_metadata_u32":[1]}
+{"text_id":114,"forms":["Para entrar a esta zona es necesario comprar y descargar<br>el pase de expansión de Pokémon Pokopia.<clear><br>Para más información, accede a Nintendo eShop."],"absolute_byte_offsets":[12445],"raw_metadata_u32":[10]}
+{"text_id":115,"forms":["Si compras el pase de expansión de Pokémon Pokopia<br>y actualizas la Pokédex, ¡tendrás un nuevo vecindario<slide><br>para explorar!"],"absolute_byte_offsets":[12607],"raw_metadata_u32":[10]}
+{"text_id":116,"forms":["<oneline>¡<fcap><dart;0()><$cdef(27)><$bfull;0(lnum1)></color> est<qty;0(á,án)><br>terminad<genqty;0(o,a,os,as)>!"],"absolute_byte_offsets":[12745],"raw_metadata_u32":[1]}
+{"text_id":117,"forms":["<oneline>¡Has reconstruido<br><dart;0()><$cdef(27)><$bfull;0(lnum1)></color>!"],"absolute_byte_offsets":[12862],"raw_metadata_u32":[1]}
+{"text_id":118,"forms":[""],"absolute_byte_offsets":[12941],"raw_metadata_u32":[0]}
+{"text_id":119,"forms":[""],"absolute_byte_offsets":[12942],"raw_metadata_u32":[0]}
+{"text_id":120,"forms":["Si no puedes entregarle un<$cdef(27)> <fqty(1)><$ifull(432)></color> al<br>Pokémon cuando te diga lo que quiere, no podrás obtener<slide><br>un <$cdef(27)><fqty(1)><$ifull(433)></color>.<clear><br>¿Quieres escuchar su petición aun así?"],"absolute_byte_offsets":[12943],"raw_metadata_u32":[9]}
+{"text_id":121,"forms":["<oneline>¡Has encontrado <dart;0()><$cdef(27)><$ifull;0(lnum1)><br></color>que alguien<slide><br>había escondido!"],"absolute_byte_offsets":[13184],"raw_metadata_u32":[10]}
+{"text_id":122,"forms":[""],"absolute_byte_offsets":[13300],"raw_metadata_u32":[0]}
+{"text_id":123,"forms":["<oneline>¡Has aprendido a imitar<br><dart;1()><$cdef(27)><$coordname;1(lnum1)></color>!"],"absolute_byte_offsets":[13301],"raw_metadata_u32":[1]}
+{"text_id":124,"forms":["Enséñale el diseño a algún Pokémon que sepa <$cdef(27)><$spwfull(21)></color><br>para que lo estudie, ¡y con suerte podrá replicarlo!"],"absolute_byte_offsets":[13390],"raw_metadata_u32":[1]}
+{"text_id":125,"forms":["¡El repertorio de diseños del <$cdef(27)><$cname(206)><br></color>ha aumentado!"],"absolute_byte_offsets":[13531],"raw_metadata_u32":[1]}
+{"text_id":126,"forms":["<oneline>¡Has conseguido<br><iart;0()><$cdef(27)><class><$ifull;0(lnum1)></color>!"],"absolute_byte_offsets":[13613],"raw_metadata_u32":[1]}
+{"text_id":127,"forms":["¡Has aprendido a <$cdef(27)>organizar mejor la Bolsa</color>!<br>Ahora te caben más cosas."],"absolute_byte_offsets":[13697],"raw_metadata_u32":[1]}
+{"text_id":128,"forms":["Has usado un <$cdef(27)><fqty(1)><class><$ifull(3976)></color>.<br>Ahora puedes usar tus movimientos más veces."],"absolute_byte_offsets":[13790],"raw_metadata_u32":[1]}
+{"text_id":129,"forms":["<oneline>¡La comida ha potenciado el movimiento<br><$cdef(27)><$sklfull;0(lnum1)></color>!"],"absolute_byte_offsets":[13903],"raw_metadata_u32":[1]}
+{"text_id":130,"forms":["¿Quieres ver los datos que has comprado?"],"absolute_byte_offsets":[13995],"raw_metadata_u32":[1]}
+{"text_id":131,"forms":["<$cdef(27)>¡Has sacado una foto de un momento especial!</color>"],"absolute_byte_offsets":[14037],"raw_metadata_u32":[1]}
+{"text_id":132,"forms":["Vas a acceder a Nintendo eShop.<clear><br>El juego no se cerrará, por lo que podrás retomar<br>la partida más adelante.<clear><br>Para poder disfrutar del contenido descargable, eso sí,<br>deberás reiniciar el juego.<clear><br>¿Quieres guardar tu progreso y continuar?"],"absolute_byte_offsets":[14102],"raw_metadata_u32":[18]}
+{"text_id":133,"forms":["¿Qué te gustaría ver en detalle?"],"absolute_byte_offsets":[14377],"raw_metadata_u32":[18]}
+{"text_id":134,"forms":["¿Quieres recibir esto?"],"absolute_byte_offsets":[14413],"raw_metadata_u32":[18]}
+{"text_id":135,"forms":["No puedes recibir esto porque tu Bolsa está llena."],"absolute_byte_offsets":[14437],"raw_metadata_u32":[18]}
+{"text_id":136,"forms":["<oneline><fcap><dart;0()><$cdef(27)><$cname;0(lnum2)> </color>ha vuelto a preparar<br>unos objetos<slide><br>muy especiales<slide><br>en el <$cdef(27)>Centro Pokémon</color><slide><br><esde;1()><$cdef(27)><$stgmyname;1(lnum1)></color>.<clear><br>Tienes <$cdef(27)><evcleftdnum;2></color> dí<qty;2(a,as)> más para intercambiarlos por tus<br><fqty(2)><$cdef(27)><class><evcpitem;3></color>."],"absolute_byte_offsets":[14489],"raw_metadata_u32":[10]}
+{"text_id":137,"forms":["<oneline>¡Hoy es el último día que<br><dart;1()><$cdef(27)><$cname;1(lnum2)></color><slide><br>estará<slide><br>intercambiando<slide><br>en el <$cdef(27)>Centro Pokémon</color><slide><br><esde;0()><$cdef(27)><$stgmyname;0(lnum1)></color>!<clear><br>Si te interesa algún objeto, recuerda reunir<br><$cdef(27)><fqty(2)><class><evcpitem;2></color><slide><br>y llevársel<gen;2(o,a)>s."],"absolute_byte_offsets":[14881],"raw_metadata_u32":[10]}
+{"text_id":138,"forms":["Ya has registrado a este Pokémon. ¿Quieres consultar<br>la Pokédex?"],"absolute_byte_offsets":[15269],"raw_metadata_u32":[1]}
+{"text_id":139,"forms":["La conexión no finalizó adecuadamente la última vez.<clear><br>Cuando esto sucede durante el juego en conexión,<br>es posible que la partida no se guarde y se revierta<slide><br>tu progreso al del punto de guardado anterior.<clear><br>Asegúrate de tener una conexión estable para jugar en<br>conexión."],"absolute_byte_offsets":[15340],"raw_metadata_u32":[1]}
+{"text_id":140,"forms":["El álbum está lleno. ¿Quieres echarle un vistazo?"],"absolute_byte_offsets":[15649],"raw_metadata_u32":[1]}
+{"text_id":141,"forms":["Sientes una presencia imponente en el interior...<br>¿Habrá alguien dentro?"],"absolute_byte_offsets":[15702],"raw_metadata_u32":[1]}
+{"text_id":142,"forms":[""],"absolute_byte_offsets":[15780],"raw_metadata_u32":[0]}
+{"text_id":143,"forms":["Guardando... No apagues la consola."],"absolute_byte_offsets":[15781],"raw_metadata_u32":[1]}
+{"text_id":144,"forms":["<oneline>¡Has conseguido<br><$cdef(27)><dgt2;1(lnum2)></color> <class><$cdef(27)><$ifullwithnum;0(lnum1,lnum2)></color><slide><br>tras la <$cdef(27)>negociación</color><$cdef(27)><nbs2></color><$spwicon(12)>!"],"absolute_byte_offsets":[15817],"raw_metadata_u32":[1]}
+{"text_id":145,"forms":["¿Quieres cambiar el código?"],"absolute_byte_offsets":[16028],"raw_metadata_u32":[10]}
+{"text_id":146,"forms":["<oneline>¡Has aprendido a imitar el peinado<br><$cdef(27)><$hairname;1(lnum1)></color>!"],"absolute_byte_offsets":[16058],"raw_metadata_u32":[1]}
+{"text_id":147,"forms":["¿Quieres ponerle un código?"],"absolute_byte_offsets":[16147],"raw_metadata_u32":[10]}
+{"text_id":148,"forms":["<oneline>Esta <$cdef(27)><fqty(1)><$ifull(1677)></color> es de <$cdef(27)><$strpname;0(lstr1,lnum1)></color>.<br>¿Quieres abrirla?"],"absolute_byte_offsets":[16177],"raw_metadata_u32":[10]}
+{"text_id":149,"forms":["Crea un código."],"absolute_byte_offsets":[16309],"raw_metadata_u32":[10]}
+{"text_id":150,"forms":["Introduce el código."],"absolute_byte_offsets":[16326],"raw_metadata_u32":[10]}
+{"text_id":151,"forms":["¿Quieres borrar la selección de fotos?"],"absolute_byte_offsets":[16348],"raw_metadata_u32":[1]}
+{"text_id":152,"forms":["¿Quieres borrar esta foto?"],"absolute_byte_offsets":[16389],"raw_metadata_u32":[1]}
+{"text_id":153,"forms":["¿Quieres sustituir esta foto destacada de un momento<br>especial?"],"absolute_byte_offsets":[16417],"raw_metadata_u32":[1]}
+{"text_id":154,"forms":["¿Quieres usar la función <$cdef(27)>Llévame a casa</color>?"],"absolute_byte_offsets":[16484],"raw_metadata_u32":[1]}
+{"text_id":155,"forms":["<oneline>¿Quieres enseñarle la nota humana<br><esa;0()><$cdef(27)><$cname;0(206)></color>?"],"absolute_byte_offsets":[16547],"raw_metadata_u32":[1]}
+{"text_id":156,"forms":["Se ha encontrado una copia de seguridad con fecha<br>del <timeymd;0(lnum1,lnum2,lnum3)>.<clear><br>¿Quieres sobrescribir la partida guardada actual<br>y restaurar los datos de la copia de seguridad?"],"absolute_byte_offsets":[16640],"raw_metadata_u32":[1]}
+{"text_id":157,"forms":["Cargando la copia de seguridad... No apagues la consola."],"absolute_byte_offsets":[16840],"raw_metadata_u32":[1]}
+{"text_id":158,"forms":["¿Quieres guardar y salir del juego?"],"absolute_byte_offsets":[16897],"raw_metadata_u32":[1]}
+{"text_id":159,"forms":["Si restauras los datos de la copia de seguridad,<br>se borrará la partida actual. ¿Quieres continuar?"],"absolute_byte_offsets":[16934],"raw_metadata_u32":[1]}
+{"text_id":160,"forms":["¿Te gustaría quedarte con este aspecto?"],"absolute_byte_offsets":[17038],"raw_metadata_u32":[1]}
+{"text_id":161,"forms":["¿Quieres guardar todo lo que tienes en la Bolsa?"],"absolute_byte_offsets":[17080],"raw_metadata_u32":[10]}
+{"text_id":162,"forms":["¿Quieres guardar todo lo que tienes en la Bolsa auxiliar?"],"absolute_byte_offsets":[17130],"raw_metadata_u32":[10]}
+{"text_id":163,"forms":["¿Quieres sacar todo lo que hay guardado aquí?"],"absolute_byte_offsets":[17189],"raw_metadata_u32":[10]}
+{"text_id":164,"forms":["¿Quieres jugar en chino tradicional?"],"absolute_byte_offsets":[17237],"raw_metadata_u32":[1]}
+{"text_id":165,"forms":["¿Quieres jugar en coreano?"],"absolute_byte_offsets":[17275],"raw_metadata_u32":[1]}
+{"text_id":166,"forms":["¿Quieres jugar en chino simplificado?"],"absolute_byte_offsets":[17303],"raw_metadata_u32":[1]}
+{"text_id":167,"forms":["¿Quieres fijar la Bolsa auxiliar y tenerla siempre visible?"],"absolute_byte_offsets":[17342],"raw_metadata_u32":[1]}
+{"text_id":168,"forms":["¿Quieres cerrar la Bolsa auxiliar?"],"absolute_byte_offsets":[17403],"raw_metadata_u32":[1]}
+{"text_id":169,"forms":["¿A qué casa quieres volver?"],"absolute_byte_offsets":[17439],"raw_metadata_u32":[1]}
+{"text_id":170,"forms":["<oneline>Volviendo a la casa que tienes en<br><dart;0()><$stgmyname;0(lnum1)>..."],"absolute_byte_offsets":[17469],"raw_metadata_u32":[1]}
+{"text_id":171,"forms":["No tienes casa, así que volverás al lugar seguro más<br>cercano. ¿Te parece bien?"],"absolute_byte_offsets":[17550],"raw_metadata_u32":[1]}
+{"text_id":172,"forms":["No es posible llevarte a casa ahora mismo, así que<br>volverás al lugar seguro más cercano. ¿Te parece bien?"],"absolute_byte_offsets":[17636],"raw_metadata_u32":[1]}
+{"text_id":173,"forms":["Iniciando viaje..."],"absolute_byte_offsets":[17749],"raw_metadata_u32":[1]}
+{"text_id":174,"forms":["¡Ya estás en casita!"],"absolute_byte_offsets":[17768],"raw_metadata_u32":[1]}
+{"text_id":175,"forms":["No ha sido posible encontrar tu casa, así que has vuelto<br>al lugar seguro más cercano."],"absolute_byte_offsets":[17791],"raw_metadata_u32":[1]}
+{"text_id":176,"forms":["<oneline>¡Has conseguido<br><iart;0()><$cdef(27)><fqty(1)><class><$ifull;0(lnum1)></color>!"],"absolute_byte_offsets":[17882],"raw_metadata_u32":[1]}
+{"text_id":177,"forms":[""],"absolute_byte_offsets":[17975],"raw_metadata_u32":[10]}
+{"text_id":178,"forms":["Esta <$cdef(27)><fqty(1)><$ifull(1677)></color> pertenece a otra persona.<br>¿Quieres abrirla?"],"absolute_byte_offsets":[17976],"raw_metadata_u32":[10]}
+{"text_id":179,"forms":["¿Quieres eliminar el código? Si lo haces, cualquiera podría<br>acceder al contenido."],"absolute_byte_offsets":[18072],"raw_metadata_u32":[10]}
+{"text_id":180,"forms":[""],"absolute_byte_offsets":[18160],"raw_metadata_u32":[0]}
+{"text_id":181,"forms":["Los objetos que dejes aquí dentro desaparecerán mañana.<br>¿Seguro que quieres tirarlos?"],"absolute_byte_offsets":[18161],"raw_metadata_u32":[10]}
+{"text_id":182,"forms":[""],"absolute_byte_offsets":[18254],"raw_metadata_u32":[0]}
+{"text_id":183,"forms":[""],"absolute_byte_offsets":[18255],"raw_metadata_u32":[0]}
+{"text_id":184,"forms":[""],"absolute_byte_offsets":[18256],"raw_metadata_u32":[0]}
+{"text_id":185,"forms":[""],"absolute_byte_offsets":[18257],"raw_metadata_u32":[0]}
+{"text_id":186,"forms":["Has vuelto al lugar seguro más cercano."],"absolute_byte_offsets":[18258],"raw_metadata_u32":[1]}
+{"text_id":187,"forms":[""],"absolute_byte_offsets":[18299],"raw_metadata_u32":[0]}
+{"text_id":188,"forms":[""],"absolute_byte_offsets":[18300],"raw_metadata_u32":[0]}
+{"text_id":189,"forms":[""],"absolute_byte_offsets":[18301],"raw_metadata_u32":[0]}
+{"text_id":190,"forms":[""],"absolute_byte_offsets":[18302],"raw_metadata_u32":[0]}
+{"text_id":191,"forms":["<oneline>No podrás volver<br><esa;0()><$stgmynamefull;0(lnum1)><slide><br>con la función<slide><br><$cdef(27)>Llévame a casa</color><slide><br>porque no tienes casa aquí.<clear><br>¿Quieres viajar de todas formas?"],"absolute_byte_offsets":[18303],"raw_metadata_u32":[1]}
+{"text_id":192,"forms":[""],"absolute_byte_offsets":[18522],"raw_metadata_u32":[0]}
+{"text_id":193,"forms":[""],"absolute_byte_offsets":[18523],"raw_metadata_u32":[0]}
+{"text_id":194,"forms":["¡Has conseguido información sobre un hábitat!"],"absolute_byte_offsets":[18524],"raw_metadata_u32":[1]}
+{"text_id":195,"forms":["¿Quieres omitir los créditos?"],"absolute_byte_offsets":[18573],"raw_metadata_u32":[10]}
+{"text_id":196,"forms":["Se interrumpirá la conexión y se expulsará a los visitantes.<br>¿Te parece bien?"],"absolute_byte_offsets":[18605],"raw_metadata_u32":[1]}
+{"text_id":197,"forms":["<qty;0(Sería,Serían)> <moneyint;0(lnum2)><nbs2><$icon(lnum1)>. ¿Te parece bien?"],"absolute_byte_offsets":[18690],"raw_metadata_u32":[1]}
+{"text_id":198,"forms":["¡Compra realizada!"],"absolute_byte_offsets":[18773],"raw_metadata_u32":[1]}
+{"text_id":199,"forms":["<oneline>¡Parece que <dart;0()><$cdef(27)><gevcmainpk;0></color> quiere que <$cdef(27)>hoy </color>sea el último<br>día de<slide><br>su evento!"],"absolute_byte_offsets":[18793],"raw_metadata_u32":[8]}
+{"text_id":200,"forms":["Pi, pi, piii... ¡Se han encontrado datos nuevos!<br>Se va a actualizar la Pokédex."],"absolute_byte_offsets":[18940],"raw_metadata_u32":[10]}
+{"text_id":201,"forms":["¡Actualización completada!<br>Ahora podrás registrar nuevos Pokémon."],"absolute_byte_offsets":[19025],"raw_metadata_u32":[10]}
+{"text_id":202,"forms":["¡Has recibido una notificación en la Pokédex!<clear><br>¡Es tu día de suerte! Hoy podrás encontrar más ondas<br>relucientes en el agua y más reliquias enterradas."],"absolute_byte_offsets":[19098],"raw_metadata_u32":[1]}
+{"text_id":203,"forms":["<oneline>Hay algo de revuelo con un Pokémon en<br><dart;0()><$cdef(27)><$stgmyname;0(lnum1)></color>.<slide><br>¡Ve a echar un vistazo!"],"absolute_byte_offsets":[19269],"raw_metadata_u32":[8]}
+{"text_id":204,"forms":["Hay algo de revuelo con un Pokémon.<br>¡Apresúrate al <$cdef(27)>Centro Pokémon</color> a ver qué sucede!"],"absolute_byte_offsets":[19407],"raw_metadata_u32":[8]}
+{"text_id":205,"forms":["<oneline>Todavía hay algo de revuelo con el Pokémon.<clear><br>¡Apresúrate al <$cdef(27)>Centro Pokémon<br></color><esde;0()><$cdef(27)><$stgmyname;0(lnum1)></color><slide><br>y habla con él!"],"absolute_byte_offsets":[19518],"raw_metadata_u32":[8]}
+{"text_id":206,"forms":["<oneline>¡<fcap><dart;0()><$cdef(27)><gevcmainpk;0> </color>te ha entregado<br><iart;1()><$cdef(27)><class><$ifullwithnum;1(lnum1,lnum2)></color>!"],"absolute_byte_offsets":[19716],"raw_metadata_u32":[8]}
+{"text_id":207,"forms":["¡<$cdef(27)>Bulbasaur </color>te ha entregado un montón de premios!"],"absolute_byte_offsets":[19864],"raw_metadata_u32":[8]}
+{"text_id":208,"forms":["El regalo se ha enviado al <$cdef(27)>PC</color> de tu vecindario."],"absolute_byte_offsets":[19934],"raw_metadata_u32":[8]}
+{"text_id":209,"forms":["<oneline>¡Parece que <dart;0()><$cdef(27)><gevcmainpk;0> </color>quiere seguir con su evento<br><$cdef(27)><gevcleftdnum;1> </color>dí<qty;1(a,as)> más!"],"absolute_byte_offsets":[20001],"raw_metadata_u32":[8]}
+{"text_id":210,"forms":["¿Quieres pulsar un botón?"],"absolute_byte_offsets":[20157],"raw_metadata_u32":[1]}
+{"text_id":211,"forms":["Productos agotados. Vuelve mañana."],"absolute_byte_offsets":[20185],"raw_metadata_u32":[1]}
+{"text_id":212,"forms":["<oneline>¡H<qty;0(a,an)> salido<br><iart;0()><$cdef(27)><fqty(1)><class><$ifull;0(lnum1)></color>!"],"absolute_byte_offsets":[20221],"raw_metadata_u32":[1]}
+{"text_id":213,"forms":["Configura los ajustes."],"absolute_byte_offsets":[20321],"raw_metadata_u32":[1]}
+{"text_id":214,"forms":["Se ha establecido la conexión."],"absolute_byte_offsets":[20344],"raw_metadata_u32":[1]}
+{"text_id":215,"forms":["<oneline>¡Estás de suerte! Te llevas de regalo otr<genqty;0(o,a,os,as)><br><$cdef(27)><fqty(1)><class><$ifull;0(lnum1)></color>."],"absolute_byte_offsets":[20376],"raw_metadata_u32":[1]}
+{"text_id":216,"forms":["¿Quieres <$cdef(27)>transformarte</color><$cdef(27)><nbs2></color><$spwicon(36)> y adquirir este aspecto?"],"absolute_byte_offsets":[20507],"raw_metadata_u32":[1]}
+{"text_id":217,"forms":["¿Prefieres quedarte como estás y no cambiar de aspecto?"],"absolute_byte_offsets":[20614],"raw_metadata_u32":[1]}
+{"text_id":218,"forms":["Comunicación en curso... No apagues la consola."],"absolute_byte_offsets":[20672],"raw_metadata_u32":[1]}
+{"text_id":219,"forms":["Introduce la contraseña."],"absolute_byte_offsets":[20721],"raw_metadata_u32":[1]}
+{"text_id":220,"forms":["No se ha encontrado ningún destino."],"absolute_byte_offsets":[20747],"raw_metadata_u32":[1]}
+{"text_id":221,"forms":["¿Quieres buscar de nuevo?"],"absolute_byte_offsets":[20784],"raw_metadata_u32":[1]}
+{"text_id":222,"forms":["Se necesita una contraseña para jugar con esta persona,<br>así que deberás introducirla."],"absolute_byte_offsets":[20811],"raw_metadata_u32":[1]}
+{"text_id":223,"forms":["Contraseña incorrecta. ¿Quieres volver a intentarlo?"],"absolute_byte_offsets":[20903],"raw_metadata_u32":[1]}
+{"text_id":224,"forms":["Ya tienes una Isla Nube. Si quieres crear una nueva,<br>primero borra la isla actual desde la pantalla de ajustes."],"absolute_byte_offsets":[20958],"raw_metadata_u32":[1]}
+{"text_id":225,"forms":["Eres <gen;-2(el creador,la creadora)> de esta isla. ¿Quieres configurar<br>los ajustes?"],"absolute_byte_offsets":[21073],"raw_metadata_u32":[1]}
+{"text_id":226,"forms":["Si cambias los ajustes, se expulsará a todos los jugadores<br>actuales."],"absolute_byte_offsets":[21162],"raw_metadata_u32":[1]}
+{"text_id":227,"forms":["Puedes comprobar la dirección y la contraseña desde<br>el <$cdef(27)>PC</color> del <$cdef(27)>Centro Pokémon</color> de tu Isla Nube."],"absolute_byte_offsets":[21235],"raw_metadata_u32":[1]}
+{"text_id":228,"forms":["Introduce la dirección de la isla que quieras buscar."],"absolute_byte_offsets":[21373],"raw_metadata_u32":[1]}
+{"text_id":229,"forms":["No se ha encontrado ninguna Isla Nube.<br>¿Quieres volver a introducir la dirección?"],"absolute_byte_offsets":[21428],"raw_metadata_u32":[1]}
+{"text_id":230,"forms":["Se ha cancelado la búsqueda."],"absolute_byte_offsets":[21515],"raw_metadata_u32":[1]}
+{"text_id":231,"forms":["Los regalos se han enviado al <$cdef(27)>PC </color>de tu vecindario."],"absolute_byte_offsets":[21545],"raw_metadata_u32":[8]}
+{"text_id":232,"forms":["Ahora no es buen momento de ir por aquí."],"absolute_byte_offsets":[21615],"raw_metadata_u32":[10]}
+{"text_id":233,"forms":["Parece que ha llegado un nuevo Pokémon al vecindario.<br>¿Por qué no lo buscas para saludarlo?"],"absolute_byte_offsets":[21657],"raw_metadata_u32":[10]}
+{"text_id":234,"forms":["Los datos del contenido descargable son necesarios<br>para visitar este vecindario.<clear><br>Asegúrate de que se hayan descargado correctamente."],"absolute_byte_offsets":[21755],"raw_metadata_u32":[10]}
+{"text_id":235,"forms":["¡Ahora puedes acceder a los <$cdef(27)>retos diarios</color>!"],"absolute_byte_offsets":[21902],"raw_metadata_u32":[1]}
+{"text_id":236,"forms":["¡Ahora puedes comprar artículos del día!"],"absolute_byte_offsets":[21965],"raw_metadata_u32":[1]}
+{"text_id":237,"forms":["¡La <$cdef(27)>calidad del entorno </color>ha aumentado!<br>Se han añadido <$cdef(27)>retos </color>nuevos."],"absolute_byte_offsets":[22009],"raw_metadata_u32":[1]}
+{"text_id":238,"forms":["¡La <$cdef(27)>calidad del entorno </color>ha aumentado!<br>Se han añadido artículos nuevos a la <$cdef(27)>tienda</color>."],"absolute_byte_offsets":[22119],"raw_metadata_u32":[1]}
+{"text_id":239,"forms":["<oneline>¿Quieres fabricar <$cdef(27)><dgt4;2(lnum3)> </color><qty;2(lote,lotes)> de<br><$cdef(27)><dgt4;1(lnum2)></color> <$cdef(27)><class><$ifullwithnum;0(lnum1,lnum2)></color>?"],"absolute_byte_offsets":[22246],"raw_metadata_u32":[1]}
+{"text_id":240,"forms":["<oneline>¿Quieres fabricar<br><$cdef(27)><dgt4;1(lnum2)> <class><$ifullwithnum;0(lnum1,lnum2)></color>?"],"absolute_byte_offsets":[22428],"raw_metadata_u32":[1]}
+{"text_id":241,"forms":["<oneline>¿Quieres preparar <$cdef(27)><dgt4;1(lnum2)></color><br><class><$cdef(27)><$ifullwithnum;0(lnum1,lnum2)></color>?"],"absolute_byte_offsets":[22533],"raw_metadata_u32":[1]}
+{"text_id":242,"forms":["¡Ha cambiado el día y con él los <$cdef(27)>retos diarios</color>!"],"absolute_byte_offsets":[22657],"raw_metadata_u32":[1]}
+{"text_id":243,"forms":["¡Ha cambiado el día y con él los artículos del día!"],"absolute_byte_offsets":[22727],"raw_metadata_u32":[1]}
+{"text_id":244,"forms":["¡Hay nuevos <$cdef(27)>retos </color>disponibles!"],"absolute_byte_offsets":[22784],"raw_metadata_u32":[1]}
+{"text_id":245,"forms":["¡Hay nuevos artículos disponibles!"],"absolute_byte_offsets":[22835],"raw_metadata_u32":[1]}
+{"text_id":246,"forms":["Selecciona \"Rápida\" para aumentar la velocidad del texto."],"absolute_byte_offsets":[22872],"raw_metadata_u32":[1]}
+{"text_id":247,"forms":["Selecciona \"Normal\" para que el texto se muestre<br>a la velocidad por defecto."],"absolute_byte_offsets":[22931],"raw_metadata_u32":[1]}
+{"text_id":248,"forms":["Selecciona \"Lenta\" para disminuir la velocidad del texto."],"absolute_byte_offsets":[23011],"raw_metadata_u32":[1]}
+{"text_id":249,"forms":["<oneline>Vas a recibir<br><iart;0()><$cdef(27)><class><$ifullwithnum;0(lnum1,lnum2)></color>.<slide><br>¿Te parece bien?"],"absolute_byte_offsets":[23069],"raw_metadata_u32":[1]}
+{"text_id":250,"forms":["La construcción terminará antes de lo previsto gracias al<br>esfuerzo <esde;0()><$cdef(27)><$cname;0(215)></color>."],"absolute_byte_offsets":[23191],"raw_metadata_u32":[1]}
+{"text_id":251,"forms":["La construcción va viento en popa, pero todavía queda<br>un rato para que esté terminada."],"absolute_byte_offsets":[23309],"raw_metadata_u32":[1]}
+{"text_id":252,"forms":["La reconstrucción terminará antes de lo previsto gracias al<br>esfuerzo <esde;0()><$cdef(27)><$cname;0(215)></color>."],"absolute_byte_offsets":[23402],"raw_metadata_u32":[1]}
+{"text_id":253,"forms":["La reconstrucción va viento en popa, pero todavía queda<br>un rato para que esté terminada."],"absolute_byte_offsets":[23522],"raw_metadata_u32":[1]}
+{"text_id":254,"forms":["¿Quieres cancelar la construcción?"],"absolute_byte_offsets":[23617],"raw_metadata_u32":[1]}
+{"text_id":255,"forms":["Ha cambiado el día. Se va a actualizar la pantalla."],"absolute_byte_offsets":[23654],"raw_metadata_u32":[1]}
+{"text_id":256,"forms":["Deberías traer a <$cdef(27)><$cname(562)></color> contigo."],"absolute_byte_offsets":[23707],"raw_metadata_u32":[10]}
+{"text_id":257,"forms":["La demolición terminará antes de lo previsto gracias al<br>esfuerzo <esde;0()><$cdef(27)><$cname;0(215)></color>."],"absolute_byte_offsets":[23767],"raw_metadata_u32":[1]}
+{"text_id":258,"forms":["La demolición va viento en popa, pero todavía queda<br>un rato para que esté terminada."],"absolute_byte_offsets":[23883],"raw_metadata_u32":[1]}
+{"text_id":259,"forms":["Los preparativos del traslado terminarán antes de lo<br>previsto gracias al esfuerzo <esde;0()><$cdef(27)><$cname;0(215)></color>."],"absolute_byte_offsets":[23974],"raw_metadata_u32":[1]}
+{"text_id":260,"forms":["Los preparativos del traslado van viento en popa, pero<br>todavía queda un rato para que estén terminados."],"absolute_byte_offsets":[24106],"raw_metadata_u32":[1]}
+{"text_id":261,"forms":["¿Quieres cancelar la demolición?"],"absolute_byte_offsets":[24215],"raw_metadata_u32":[1]}
+{"text_id":262,"forms":["¿Quieres cancelar los preparativos del traslado?"],"absolute_byte_offsets":[24250],"raw_metadata_u32":[1]}
+{"text_id":263,"forms":["¿Quieres cancelar el traslado?"],"absolute_byte_offsets":[24300],"raw_metadata_u32":[1]}
+{"text_id":264,"forms":["¿Quieres cancelar la reconstrucción?"],"absolute_byte_offsets":[24332],"raw_metadata_u32":[1]}
+{"text_id":265,"forms":["Ponle un nombre a tu isla. Podrás cambiarlo más adelante."],"absolute_byte_offsets":[24371],"raw_metadata_u32":[1]}
+{"text_id":266,"forms":["Configura tu Isla Nube."],"absolute_byte_offsets":[24431],"raw_metadata_u32":[1]}
+{"text_id":267,"forms":["Introduce el número mágico."],"absolute_byte_offsets":[24455],"raw_metadata_u32":[1]}
+{"text_id":268,"forms":["Se interrumpirá la conexión y se expulsará a los visitantes.<br>¿Te parece bien?"],"absolute_byte_offsets":[24485],"raw_metadata_u32":[1]}
+{"text_id":269,"forms":["Se interrumpirá la conexión y volverás a casa.<br>¿Te parece bien?<clear><br>Ten en cuenta que todos los objetos que lleves encima<br>se guardarán en este <$cdef(27)>PC</color>."],"absolute_byte_offsets":[24570],"raw_metadata_u32":[1]}
+{"text_id":270,"forms":["Eres <gen;-2(el anfitrión,la anfitriona)> de la sesión. ¿Quieres disolver el grupo<br>y finalizar la conexión, o elegir un nuevo anfitrión?"],"absolute_byte_offsets":[24753],"raw_metadata_u32":[1]}
+{"text_id":271,"forms":["¿Quién quieres que sea el nuevo anfitrión?"],"absolute_byte_offsets":[24898],"raw_metadata_u32":[1]}
+{"text_id":272,"forms":["¿Estás segur<gen;-2(o,a)>?"],"absolute_byte_offsets":[24944],"raw_metadata_u32":[1]}
+{"text_id":273,"forms":["¿Quieres cancelar la reforma?"],"absolute_byte_offsets":[24973],"raw_metadata_u32":[1]}
+{"text_id":274,"forms":["<oneline>¿Quieres iniciar la demolición<br><esde;0()><$cdef(27)><$bfull;0(lnum1)></color>?"],"absolute_byte_offsets":[25004],"raw_metadata_u32":[1]}
+{"text_id":275,"forms":["¿Quieres iniciar la reforma de este edificio y construir<br><dart;0()><$cdef(27)><$bfull;0(lnum1)></color>?"],"absolute_byte_offsets":[25097],"raw_metadata_u32":[1]}
+{"text_id":276,"forms":["<oneline>¿Quieres iniciar los preparativos del traslado<br><esde;0()><$cdef(27)><$bfull;0(lnum1)></color>?"],"absolute_byte_offsets":[25206],"raw_metadata_u32":[1]}
+{"text_id":277,"forms":["<oneline>¿Quieres iniciar el traslado<br><esde;0()><$cdef(27)><$bfull;0(lnum1)></color>?"],"absolute_byte_offsets":[25314],"raw_metadata_u32":[1]}
+{"text_id":278,"forms":[""],"absolute_byte_offsets":[25404],"raw_metadata_u32":[0]}
+{"text_id":279,"forms":["¡Nuevo récord personal!"],"absolute_byte_offsets":[25405],"raw_metadata_u32":[1]}
+{"text_id":280,"forms":["¡Has alcanzado<qty;0( , los )><spsjmprpnum;0> salt<qty;0(o,os)>!"],"absolute_byte_offsets":[25431],"raw_metadata_u32":[1]}
+{"text_id":281,"forms":["<oneline>¡<fcap><dart;0()><$cdef(27)><$cname;0(lnum1)></color> te ha dado <$cdef(27)><dgt4;2(lnum3)></color><br><$cdef(27)><class><$ifullwithnum;1(lnum2,lnum3)></color>!"],"absolute_byte_offsets":[25497],"raw_metadata_u32":[1]}
+{"text_id":282,"forms":["El regalo se ha enviado al <$cdef(27)>PC</color> de tu vecindario."],"absolute_byte_offsets":[25668],"raw_metadata_u32":[1]}
+{"text_id":283,"forms":["Coloca unos <$cdef(27)><fqty(2)><$ifull(1396)></color> y conéctalos a varios<br><$cdef(27)>generadores </color>para suministrarle la energía que necesita.<clear><br>Si no tienes materiales para fabricar <$cdef(27)>generadores</color>, puedes<br>ir a una <$cdef(27)>Isla Ensueño</color> a conseguirlos."],"absolute_byte_offsets":[25735],"raw_metadata_u32":[1]}
+{"text_id":284,"forms":["Estas gafas te permiten ver la Isla Nube de otros<br>jugadores. ¿Quieres ponértelas?<clear><br>Es necesaria una suscripción a Nintendo Switch Online<br>para usar esta función."],"absolute_byte_offsets":[26040],"raw_metadata_u32":[1]}
+{"text_id":285,"forms":["Introduce la dirección de la Isla Nube que quieras ver."],"absolute_byte_offsets":[26220],"raw_metadata_u32":[1]}
+{"text_id":286,"forms":["No se ha encontrado ninguna Isla Nube.<br>¿Quieres volver a introducir la dirección?"],"absolute_byte_offsets":[26277],"raw_metadata_u32":[1]}
+{"text_id":287,"forms":["Se ha cancelado la búsqueda."],"absolute_byte_offsets":[26364],"raw_metadata_u32":[1]}
+{"text_id":288,"forms":["Se ha encontrado una Isla Nube.<br>Iniciando la visita virtual..."],"absolute_byte_offsets":[26394],"raw_metadata_u32":[1]}
+{"text_id":289,"forms":["¿Quieres terminar la visita virtual y volver a casa?"],"absolute_byte_offsets":[26460],"raw_metadata_u32":[1]}
+{"text_id":290,"forms":["Terminando la visita virtual..."],"absolute_byte_offsets":[26514],"raw_metadata_u32":[1]}
+{"text_id":291,"forms":[""],"absolute_byte_offsets":[26546],"raw_metadata_u32":[0]}
+{"text_id":292,"forms":["¡Enhorabuena por haber completado la Pokédex Nube<br>de esta isla! Te mereces un premio por tamaña proeza."],"absolute_byte_offsets":[26547],"raw_metadata_u32":[1]}
+{"text_id":293,"forms":["<oneline>¿Te parece bien que <$cdef(27)><$strpname;0(lstr1,lnum1)></color> sea<br><gen;0(el nuevo anfitrión,la nueva anfitriona)>?"],"absolute_byte_offsets":[26657],"raw_metadata_u32":[1]}
+{"text_id":294,"forms":["<oneline>Se va a transferir el rol de anfitri<gen;0(ón,ona)><br>a <$cdef(27)><$strpname;0(lstr1,lnum1)></color><slide><br>para que puedas<slide><br>volver a casa."],"absolute_byte_offsets":[26790],"raw_metadata_u32":[1]}
+{"text_id":295,"forms":["¿Quieres dejar de cocinar?"],"absolute_byte_offsets":[26954],"raw_metadata_u32":[1]}
+{"text_id":296,"forms":["La comida estará lista en un periquete gracias al esfuerzo<br><esde;0()><$cdef(27)><$cname;0(216)></color> y compañía."],"absolute_byte_offsets":[26982],"raw_metadata_u32":[1]}
+{"text_id":297,"forms":["¿Qué diseño quieres cambiar?"],"absolute_byte_offsets":[27104],"raw_metadata_u32":[1]}
+{"text_id":298,"forms":["El traslado terminará antes de lo previsto gracias al<br>esfuerzo <esde;0()><$cdef(27)><$cname;0(215)></color>."],"absolute_byte_offsets":[27136],"raw_metadata_u32":[1]}
+{"text_id":299,"forms":["El traslado va viento en popa, pero todavía queda<br>un rato para que esté terminado."],"absolute_byte_offsets":[27249],"raw_metadata_u32":[1]}
+{"text_id":300,"forms":["La reforma terminará antes de lo previsto gracias al<br>esfuerzo <esde;0()><$cdef(27)><$cname;0(215)></color>."],"absolute_byte_offsets":[27337],"raw_metadata_u32":[1]}
+{"text_id":301,"forms":["La reforma va viento en popa, pero todavía queda<br>un rato para que esté terminada."],"absolute_byte_offsets":[27449],"raw_metadata_u32":[1]}
+{"text_id":302,"forms":["¿Quieres guardar la foto en el álbum de la consola?"],"absolute_byte_offsets":[27536],"raw_metadata_u32":[1]}
+{"text_id":303,"forms":["¿Quieres llamar <esa;0()><$cdef(27)><$cname;0(123)></color>?"],"absolute_byte_offsets":[27590],"raw_metadata_u32":[1]}
+{"text_id":304,"forms":[""],"absolute_byte_offsets":[27652],"raw_metadata_u32":[0]}
+{"text_id":305,"forms":["Se recomienda aprender más cosas antes de visitar<br>este vecindario."],"absolute_byte_offsets":[27653],"raw_metadata_u32":[1]}
+{"text_id":306,"forms":["¿No habrá por aquí cerca un vecindario que aún no<br>has explorado?"],"absolute_byte_offsets":[27724],"raw_metadata_u32":[1]}
+{"text_id":307,"forms":["¡Dirígete a la zona de costa donde encontraste a <$cdef(27)><$cname(17)></color>!"],"absolute_byte_offsets":[27796],"raw_metadata_u32":[1]}
+{"text_id":308,"forms":["<fcap><dart;0()><$cdef(27)><$cname;0(123)></color> no viene... ¿Estará cansad<gen;0(o,a)>?"],"absolute_byte_offsets":[27880],"raw_metadata_u32":[1]}
+{"text_id":309,"forms":["Estás a punto de visitar una zona en la que nunca has<br>estado. ¿Seguro que quieres seguir?"],"absolute_byte_offsets":[27973],"raw_metadata_u32":[1]}
+{"text_id":310,"forms":["¿Quieres encargarle <$cdef(27)><dgt5;0(lnum1)></color>?"],"absolute_byte_offsets":[28068],"raw_metadata_u32":[1]}
+{"text_id":311,"forms":["¿Te parece bien así?"],"absolute_byte_offsets":[28125],"raw_metadata_u32":[1]}
+{"text_id":312,"forms":["No se ha podido iniciar la votación porque hay al menos<br>un jugador ocupado."],"absolute_byte_offsets":[28148],"raw_metadata_u32":[1]}
+{"text_id":313,"forms":["Esperando a otros jugadores..."],"absolute_byte_offsets":[28228],"raw_metadata_u32":[1]}
+{"text_id":314,"forms":["Torneo de comba - <timeymd;0(lnum1,lnum2,lnum3)><br>Resultado final: <dgt5;1(lnum4)> salt<qty;1(o,os)>"],"absolute_byte_offsets":[28259],"raw_metadata_u32":[8]}
+{"text_id":315,"forms":["Torneo de escondite camuflado - <timeymd;0(lnum1,lnum2,lnum3)><br>Resultado final: <timerms;1(lnum4,lnum5)>"],"absolute_byte_offsets":[28362],"raw_metadata_u32":[9]}
+{"text_id":316,"forms":["¿Quieres mostrar una foto aquí?"],"absolute_byte_offsets":[28470],"raw_metadata_u32":[1]}
+{"text_id":317,"forms":["Elige la foto que quieras mostrar."],"absolute_byte_offsets":[28504],"raw_metadata_u32":[1]}
+{"text_id":318,"forms":["No se pueden añadir más fotos. Si añades una foto nueva,<br>se borrará la más antigua."],"absolute_byte_offsets":[28539],"raw_metadata_u32":[1]}
+{"text_id":319,"forms":["Añadiendo..."],"absolute_byte_offsets":[28631],"raw_metadata_u32":[1]}
+{"text_id":320,"forms":["¿Quieres quitar esta foto?"],"absolute_byte_offsets":[28645],"raw_metadata_u32":[1]}
+{"text_id":321,"forms":["Esto es una <$cdef(27)><fqty(1)><$ifull(1460)></color>. Puedes colocarla donde<br>quieras.<clear><br>Los Pokémon con la especialidad <$cdef(27)><$spwfull(13)> </color>la usarán<br>para guardar los objetos que vayan encontrando por ahí.<clear><br>Si la colocas cerca de algún Pokémon capaz de procesar<br>materiales, podrá acceder a lo que haya dentro de la caja<slide><br>y adelantar trabajo.<clear><br>¿Quieres guardar algo?"],"absolute_byte_offsets":[28673],"raw_metadata_u32":[1]}
+{"text_id":322,"forms":["Puedes guardar comida en esta cesta para compartirla<br>con los demás Pokémon. ¿Quieres meter algo dentro?"],"absolute_byte_offsets":[29106],"raw_metadata_u32":[1]}
+{"text_id":323,"forms":["Algunos Pokémon pueden procesar los materiales<br>que guardes aquí. ¿Quieres meter algo dentro?"],"absolute_byte_offsets":[29216],"raw_metadata_u32":[1]}
+{"text_id":324,"forms":["No serviría de nada. Hazlo sonar cuando el Pokémon<br>correspondiente esté volando cerca."],"absolute_byte_offsets":[29315],"raw_metadata_u32":[1]}
+{"text_id":325,"forms":["No puedes irte en plena partida del escondite camuflado."],"absolute_byte_offsets":[29408],"raw_metadata_u32":[1]}
+{"text_id":326,"forms":["Los jugadores que estén en una <$cdef(27)>Isla Ensueño </color>no podrán<br>participar. ¿Quieres saltar a la comba igualmente?"],"absolute_byte_offsets":[29465],"raw_metadata_u32":[1]}
+{"text_id":327,"forms":["Los jugadores que estén en una <$cdef(27)>Isla Ensueño </color>no podrán<br>participar.<clear><br>¿Quieres jugar al escondite camuflado igualmente?"],"absolute_byte_offsets":[29596],"raw_metadata_u32":[1]}
+{"text_id":328,"forms":["No puedes unirte a este grupo porque está lleno."],"absolute_byte_offsets":[29748],"raw_metadata_u32":[1]}
+{"text_id":329,"forms":["Hoy ya no puedes visitar más mundos nuevos de otros<br>jugadores."],"absolute_byte_offsets":[29798],"raw_metadata_u32":[1]}
+{"text_id":330,"forms":["No puedes unirte al grupo porque hay al menos<br>un jugador ocupado. Vuelve a intentarlo más tarde."],"absolute_byte_offsets":[29865],"raw_metadata_u32":[1]}
+{"text_id":331,"forms":["¡Aquí tienes la tarjeta de sellos de esta semana!"],"absolute_byte_offsets":[29966],"raw_metadata_u32":[1]}
+{"text_id":332,"forms":["¿Quieres sellar la tarjeta con el sello de hoy?"],"absolute_byte_offsets":[30018],"raw_metadata_u32":[1]}
+{"text_id":333,"forms":["¡Has conseguido <moneyint;0(lnum1)> monevit<qty;0(a,as)>!"],"absolute_byte_offsets":[30067],"raw_metadata_u32":[1]}
+{"text_id":334,"forms":["No se ha podido canjear la tarjeta porque no tiene sellos."],"absolute_byte_offsets":[30126],"raw_metadata_u32":[1]}
+{"text_id":335,"forms":["Las tarjetas de sellos se pueden canjear por <$cdef(27)>monevitas</color>.<clear><br>Consulta la pantalla <$cdef(27)>Colección de sellos </color>para más<br>información."],"absolute_byte_offsets":[30185],"raw_metadata_u32":[1]}
+{"text_id":336,"forms":["Tienes una tarjeta de sellos sin canjear. Solo te qued<qty;0(a,an)><br><dgt1;0(lnum1)> dí<qty;0(a,as)> para poder canjearla.<clear><br>Consulta la pantalla <$cdef(27)>Colección de sellos </color>para más<br>información."],"absolute_byte_offsets":[30358],"raw_metadata_u32":[1]}
+{"text_id":337,"forms":["Tienes al menos un <$cdef(27)>reto </color>sin informar."],"absolute_byte_offsets":[30582],"raw_metadata_u32":[1]}
+{"text_id":338,"forms":["Tienes al menos una recompensa sin recoger."],"absolute_byte_offsets":[30639],"raw_metadata_u32":[1]}
+{"text_id":339,"forms":["Tienes al menos un <$cdef(27)>reto </color>sin informar y una recompensa<br>sin recoger."],"absolute_byte_offsets":[30683],"raw_metadata_u32":[1]}
+{"text_id":340,"forms":["No hay espacio para que aterrice."],"absolute_byte_offsets":[30772],"raw_metadata_u32":[1]}
+{"text_id":341,"forms":["<oneline>¡Has conseguido el marco<br><$cdef(27)><$phfrname;0(lnum1)></color>!"],"absolute_byte_offsets":[30806],"raw_metadata_u32":[1]}
+{"text_id":342,"forms":["¿Te parece bien así?"],"absolute_byte_offsets":[30885],"raw_metadata_u32":[1]}
+{"text_id":343,"forms":["Hay algún botón que tiene asignada más de una función.<br>¿Seguro que quieres guardar los cambios?"],"absolute_byte_offsets":[30908],"raw_metadata_u32":[1]}
+{"text_id":344,"forms":["¿Quieres restablecer la configuración por defecto?"],"absolute_byte_offsets":[31012],"raw_metadata_u32":[1]}
+{"text_id":345,"forms":["¿Quieres recuperar lo que has metido en la máquina?"],"absolute_byte_offsets":[31065],"raw_metadata_u32":[1]}
+{"text_id":346,"forms":[""],"absolute_byte_offsets":[31119],"raw_metadata_u32":[0]}
+{"text_id":347,"forms":["¿Quieres enviar una copia de esta foto?"],"absolute_byte_offsets":[31120],"raw_metadata_u32":[1]}
+{"text_id":348,"forms":["Si colocas el peluche en el exterior e interactúas con él,<br>quizá venga Drifloon."],"absolute_byte_offsets":[31161],"raw_metadata_u32":[1]}
+{"text_id":349,"forms":["Ahora no es el mejor momento."],"absolute_byte_offsets":[31248],"raw_metadata_u32":[1]}
+{"text_id":350,"forms":["Esto parece importante... ¿Seguro que quieres tirarlo?"],"absolute_byte_offsets":[31278],"raw_metadata_u32":[1]}
+{"text_id":351,"forms":["Se creará una copia de seguridad del progreso actual<br><esde;0()><$cdef(27)><$stgmyname;0(lnum1)></color>.<clear><br>Si existe una copia anterior, sus datos se sobrescribirán.<br>¿Seguro que quieres continuar?"],"absolute_byte_offsets":[31334],"raw_metadata_u32":[1]}
+{"text_id":352,"forms":["Se ha guardado la partida."],"absolute_byte_offsets":[31548],"raw_metadata_u32":[1]}
+{"text_id":353,"forms":["No se ha podido conectar a internet.<br>¿Quieres intentarlo de nuevo?"],"absolute_byte_offsets":[31575],"raw_metadata_u32":[1]}
+{"text_id":354,"forms":["<oneline>Guardando la copia de seguridad<br><esde;0()><$cdef(27)><$stgmyname;0(lnum1)></color>...<slide><br>No apagues la consola."],"absolute_byte_offsets":[31646],"raw_metadata_u32":[1]}
+{"text_id":355,"forms":["Se ha guardado la copia de seguridad con la siguiente<br>fecha: <timeymdhm;0(lnum1,lnum2,lnum3,lnum4,lnum5)>."],"absolute_byte_offsets":[31777],"raw_metadata_u32":[1]}
+{"text_id":356,"forms":["No se ha podido guardar porque no se han encontrado<br>los datos <esde;0()><$cdef(27)><$stgmyname;0(lnum1)></color>."],"absolute_byte_offsets":[31887],"raw_metadata_u32":[1]}
+{"text_id":357,"forms":["No se ha podido guardar."],"absolute_byte_offsets":[32004],"raw_metadata_u32":[1]}
+{"text_id":358,"forms":["No puedes volver a restaurar los datos hoy.<br>Inténtalo de nuevo mañana."],"absolute_byte_offsets":[32029],"raw_metadata_u32":[1]}
+{"text_id":359,"forms":["<oneline>Al restaurar la copia de seguridad, se expulsará a todos<br>los jugadores que se encuentren en estos momentos en<slide><br><dart;0()><$cdef(27)><$stgmyname;0(lnum1)></color>.<slide><br>¿Estás de acuerdo?"],"absolute_byte_offsets":[32105],"raw_metadata_u32":[1]}
+{"text_id":360,"forms":["<oneline>Restaurando la copia de seguridad<br><esde;0()><$cdef(27)><$stgmyname;0(lnum1)></color>...<slide><br>No apagues la consola."],"absolute_byte_offsets":[32321],"raw_metadata_u32":[1]}
+{"text_id":361,"forms":["¡Se ha restaurado la copia de seguridad!"],"absolute_byte_offsets":[32454],"raw_metadata_u32":[1]}
+{"text_id":362,"forms":["Se ha producido un error de comunicación. Comprueba<br>si la copia de seguridad se ha restaurado correctamente."],"absolute_byte_offsets":[32496],"raw_metadata_u32":[1]}
+{"text_id":363,"forms":["¿Quieres dejar una nota en la copia de seguridad?"],"absolute_byte_offsets":[32609],"raw_metadata_u32":[1]}
+{"text_id":364,"forms":["¿Te parece bien así?"],"absolute_byte_offsets":[32660],"raw_metadata_u32":[1]}
+{"text_id":365,"forms":["Vas a volver al lugar donde estabas."],"absolute_byte_offsets":[32683],"raw_metadata_u32":[1]}
+{"text_id":366,"forms":["¡El <$cdef(27)>papel para deseos</color> que le habías entregado está<br>brillando!"],"absolute_byte_offsets":[32720],"raw_metadata_u32":[9]}
+{"text_id":367,"forms":["Has recibido <$cdef(27)>1</color> <$cdef(27)><fqty(1)><$ifull(433)></color>."],"absolute_byte_offsets":[32807],"raw_metadata_u32":[9]}
+{"text_id":368,"forms":[""],"absolute_byte_offsets":[32884],"raw_metadata_u32":[10]}
+{"text_id":369,"forms":[""],"absolute_byte_offsets":[32885],"raw_metadata_u32":[0]}
+{"text_id":370,"forms":["¡Has encontrado una nota escrita por los humanos!<br>Se titula <$cdef(27)><fqty(1)><getmptname;0></color>."],"absolute_byte_offsets":[32886],"raw_metadata_u32":[1]}
+{"text_id":371,"forms":[""],"absolute_byte_offsets":[32994],"raw_metadata_u32":[0]}
+{"text_id":372,"forms":[""],"absolute_byte_offsets":[32995],"raw_metadata_u32":[0]}
+{"text_id":373,"forms":[""],"absolute_byte_offsets":[32996],"raw_metadata_u32":[0]}
+{"text_id":374,"forms":[""],"absolute_byte_offsets":[32997],"raw_metadata_u32":[0]}
+{"text_id":375,"forms":[""],"absolute_byte_offsets":[32998],"raw_metadata_u32":[0]}
+{"text_id":376,"forms":[""],"absolute_byte_offsets":[32999],"raw_metadata_u32":[0]}
+{"text_id":377,"forms":["Para hacer que un Pokémon se mude a una casa,<br>antes deberás colocar al menos tres muebles distintos."],"absolute_byte_offsets":[33000],"raw_metadata_u32":[1]}
+{"text_id":378,"forms":["¿Quieres ofrecerle algo de comer?"],"absolute_byte_offsets":[33106],"raw_metadata_u32":[1]}
+{"text_id":379,"forms":["<oneline>¿Quieres que <dart;0()><$cdef(27)><nname;0> </color>te<br>acompañe?"],"absolute_byte_offsets":[33141],"raw_metadata_u32":[1]}
+{"text_id":380,"forms":["Si abres un <$cdef(27)><fqty(1)><class><$ifull(3994)> </color>en un hábitat, es posible que<br>el Pokémon que vive en él regrese."],"absolute_byte_offsets":[33220],"raw_metadata_u32":[1]}
+{"text_id":381,"forms":["Enviando..."],"absolute_byte_offsets":[33353],"raw_metadata_u32":[1]}
+{"text_id":382,"forms":["Se ha enviado el informe. Si quieres terminar la sesión,<br>abre el menú principal y pulsa <$keyicon(227)>."],"absolute_byte_offsets":[33365],"raw_metadata_u32":[1]}
+{"text_id":383,"forms":["Se ha producido un error de conexión.<br>¿Quieres volver a intentarlo?"],"absolute_byte_offsets":[33475],"raw_metadata_u32":[1]}
+{"text_id":384,"forms":["Se ha cancelado la denuncia."],"absolute_byte_offsets":[33548],"raw_metadata_u32":[1]}
+{"text_id":385,"forms":["Es un mural de aspecto intrigante... Parece que podrías<br>colocar algo en él."],"absolute_byte_offsets":[33577],"raw_metadata_u32":[1]}
+{"text_id":386,"forms":["Este artículo incluye <$cdef(27)>instrucciones </color>que ya conoces.<br>Serí<qty;0(a,an)> <moneyint;0(lnum2)><$icon(lnum1)>. ¿Te parece bien?"],"absolute_byte_offsets":[33658],"raw_metadata_u32":[1]}
+{"text_id":387,"forms":["¡La <$cdef(27)>calidad del entorno </color>ha aumentado!<br>Se han añadido nuevos artículos del día a la <$cdef(27)>tienda</color>."],"absolute_byte_offsets":[33805],"raw_metadata_u32":[1]}
+{"text_id":388,"forms":["¿Quieres guardar los cambios realizados antes de salir?"],"absolute_byte_offsets":[33941],"raw_metadata_u32":[1]}
+{"text_id":389,"forms":["Hay algún botón que tiene asignada más de una función.<br>¿Seguro que quieres guardar los cambios?<slide><br>(Si seleccionas <$cdef(27)>No</color>, saldrás sin guardar los cambios)."],"absolute_byte_offsets":[33998],"raw_metadata_u32":[1]}
+{"text_id":390,"forms":["¡Está demasiado caliente para moverla! Échale agua para<br>enfriarla."],"absolute_byte_offsets":[34186],"raw_metadata_u32":[1]}
+{"text_id":391,"forms":["Esperando al resto de jugadores..."],"absolute_byte_offsets":[34259],"raw_metadata_u32":[1]}
+{"text_id":392,"forms":["Ya está húmeda, así que no es necesario regarla más<br>por hoy."],"absolute_byte_offsets":[34294],"raw_metadata_u32":[1]}
+{"text_id":393,"forms":["¿Quieres guardar los cambios realizados antes de acceder<br>a la <$cdef(27)>configuración de los botones</color>?"],"absolute_byte_offsets":[34362],"raw_metadata_u32":[1]}
+{"text_id":394,"forms":["¿Quieres guardar los cambios realizados antes de acceder<br>a la <$cdef(27)>selección de idioma</color>?"],"absolute_byte_offsets":[34478],"raw_metadata_u32":[1]}
+{"text_id":395,"forms":["<oneline>Prueba a usar el <$cdef(27)><fqty(1)><$ifull(1898)><br></color>en <dart;0()><$cdef(27)><$stgname;0(4)></color><slide><br>cuando estés tú sol<gen;-2(o,a)>."],"absolute_byte_offsets":[34585],"raw_metadata_u32":[1]}
+{"text_id":396,"forms":["Si estás jugando con otra gente, el grupo se disolverá.<br>¿Seguro que quieres cambiar los ajustes?"],"absolute_byte_offsets":[34751],"raw_metadata_u32":[1]}
+{"text_id":397,"forms":["Si estás jugando con otra gente, el grupo se disolverá.<br>¿Seguro que quieres borrar esta isla?"],"absolute_byte_offsets":[34854],"raw_metadata_u32":[1]}
+{"text_id":398,"forms":["Has borrado tu Isla Nube."],"absolute_byte_offsets":[34954],"raw_metadata_u32":[1]}
+{"text_id":399,"forms":["Se ha producido un error de comunicación.<br>Comprueba si se ha borrado correctamente."],"absolute_byte_offsets":[34980],"raw_metadata_u32":[1]}
+{"text_id":400,"forms":["Espera un momento mientras el resto llega a su destino."],"absolute_byte_offsets":[35068],"raw_metadata_u32":[1]}
+{"text_id":401,"forms":["Aunque algo resquebrajada, esta roca parece muy dura.<br>Unos puñetazos normales no servirán para romperla."],"absolute_byte_offsets":[35124],"raw_metadata_u32":[1]}
+{"text_id":402,"forms":["Tal vez puedas romper estos trozos de metal oxidado<br>con algún movimiento."],"absolute_byte_offsets":[35234],"raw_metadata_u32":[1]}
+{"text_id":403,"forms":["<$cdef(27)><oneline></color>Para imprimir una copia de<br><iart;0()><$cdef(27)><class><fqty(1)><$ifull;0(lnum1)></color><slide><br>necesitas<slide><br><$cdef(27)><dgt4;2(lnum3)> <class><$ifullwithnum;1(lnum2,lnum3)></color>,<slide><br>pero<slide><br>tienes <$cdef(27)><dgt4;3(lnum4)></color>."],"absolute_byte_offsets":[35312],"raw_metadata_u32":[1]}
+{"text_id":404,"forms":["Se guardará la partida antes de establecer la conexión<br>a internet. ¿Quieres continuar?"],"absolute_byte_offsets":[35605],"raw_metadata_u32":[1]}
+{"text_id":405,"forms":["Estableciendo la conexión a internet...<br>Espera un momento."],"absolute_byte_offsets":[35698],"raw_metadata_u32":[1]}
+{"text_id":406,"forms":["Comprobando... No apagues la consola."],"absolute_byte_offsets":[35761],"raw_metadata_u32":[1]}
+{"text_id":407,"forms":["Buscando regalo..."],"absolute_byte_offsets":[35799],"raw_metadata_u32":[1]}
+{"text_id":408,"forms":[""],"absolute_byte_offsets":[35818],"raw_metadata_u32":[0]}
+{"text_id":409,"forms":["No se ha encontrado ningún regalo."],"absolute_byte_offsets":[35819],"raw_metadata_u32":[1]}
+{"text_id":410,"forms":["Recibiendo regalos... No apagues la consola."],"absolute_byte_offsets":[35855],"raw_metadata_u32":[1]}
+{"text_id":411,"forms":["Ya has recibido este regalo."],"absolute_byte_offsets":[35900],"raw_metadata_u32":[1]}
+{"text_id":412,"forms":[""],"absolute_byte_offsets":[35929],"raw_metadata_u32":[0]}
+{"text_id":413,"forms":["¿Quieres cancelar el proceso?"],"absolute_byte_offsets":[35930],"raw_metadata_u32":[1]}
+{"text_id":414,"forms":["Este código o contraseña ya se ha usado en otra partida."],"absolute_byte_offsets":[35961],"raw_metadata_u32":[1]}
+{"text_id":415,"forms":["Todavía no puedes recibir el regalo vinculado a este<br>código o contraseña."],"absolute_byte_offsets":[36020],"raw_metadata_u32":[1]}
+{"text_id":416,"forms":["Este código o contraseña ha caducado."],"absolute_byte_offsets":[36100],"raw_metadata_u32":[1]}
+{"text_id":417,"forms":["No puedes recibir el regalo vinculado a este código o<br>contraseña con la versión actual del programa."],"absolute_byte_offsets":[36140],"raw_metadata_u32":[1]}
+{"text_id":418,"forms":["No se ha podido recibir el regalo porque se ha producido<br>un error al comprobar el código o contraseña."],"absolute_byte_offsets":[36247],"raw_metadata_u32":[1]}
+{"text_id":419,"forms":["Ya has recibido el regalo vinculado a este código o<br>contraseña."],"absolute_byte_offsets":[36355],"raw_metadata_u32":[1]}
+{"text_id":420,"forms":["Este código o contraseña ya se ha usado y no puede<br>volver a usarse en otra partida."],"absolute_byte_offsets":[36424],"raw_metadata_u32":[1]}
+{"text_id":421,"forms":["Has introducido el código o contraseña erróneamente<br>varias veces seguidas. Vuelve a intentarlo más tarde."],"absolute_byte_offsets":[36513],"raw_metadata_u32":[1]}
+{"text_id":422,"forms":["Has recibido el regalo."],"absolute_byte_offsets":[36626],"raw_metadata_u32":[1]}
+{"text_id":423,"forms":["No has podido recibir el regalo porque tu Bolsa está llena."],"absolute_byte_offsets":[36650],"raw_metadata_u32":[1]}
+{"text_id":424,"forms":["¿Quieres volver a introducir el código o contraseña?"],"absolute_byte_offsets":[36711],"raw_metadata_u32":[1]}
+{"text_id":425,"forms":["Se ha producido un error al recibir el regalo."],"absolute_byte_offsets":[36767],"raw_metadata_u32":[1]}
+{"text_id":426,"forms":["Se ha encontrado un regalo, pero no puedes recibirlo<br>en la versión actual del programa."],"absolute_byte_offsets":[36814],"raw_metadata_u32":[1]}
+{"text_id":427,"forms":["No se han podido subir los datos de la Isla Nube."],"absolute_byte_offsets":[36906],"raw_metadata_u32":[1]}
+{"text_id":428,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color> ya se ha ido."],"absolute_byte_offsets":[36956],"raw_metadata_u32":[1]}
+{"text_id":429,"forms":["Podría llenarse de agua con <$cdef(27)><$sklfull(3)></color>."],"absolute_byte_offsets":[37016],"raw_metadata_u32":[1]}
+{"text_id":430,"forms":["Despeja el área alrededor del <$cdef(27)>Centro Pokémon </color>para<br>poder jugar al escondite camuflado."],"absolute_byte_offsets":[37079],"raw_metadata_u32":[1]}
+{"text_id":431,"forms":["Arregla el área alrededor del <$cdef(27)>Centro Pokémon </color>para<br>poder jugar con <$cdef(27)>Zorua </color>al escondite camuflado."],"absolute_byte_offsets":[37189],"raw_metadata_u32":[1]}
+{"text_id":432,"forms":["Quita los obstáculos que hay delante del <$cdef(27)>Centro Pokémon</color><br>para poder jugar con <$cdef(27)>Zorua </color>al escondite camuflado."],"absolute_byte_offsets":[37328],"raw_metadata_u32":[1]}
+{"text_id":433,"forms":["Quita los obstáculos que hay delante del <$cdef(27)>Centro Pokémon</color><br>para poder jugar con <$cdef(27)>Bulbasaur </color>a saltar a la comba."],"absolute_byte_offsets":[37478],"raw_metadata_u32":[1]}
+{"text_id":434,"forms":["Parece que puedes preparar un plato nuevo.<br>¿Quieres probar a hacerlo?"],"absolute_byte_offsets":[37629],"raw_metadata_u32":[1]}
+{"text_id":435,"forms":["¿Quieres cancelar la transformación y recuperar tu<br>aspecto humano?"],"absolute_byte_offsets":[37703],"raw_metadata_u32":[1]}
+{"text_id":436,"forms":["¡Esta es ahora tu casa! Usa la función <$cdef(27)>Llévame a casa<br></color>para volver aquí en cualquier momento."],"absolute_byte_offsets":[37775],"raw_metadata_u32":[1]}
+{"text_id":437,"forms":["No se ha podido iniciar la votación porque hay al menos<br>un jugador ocupado."],"absolute_byte_offsets":[37894],"raw_metadata_u32":[1]}
+{"text_id":438,"forms":["No se ha podido iniciar la votación porque hay al menos<br>un jugador ocupado."],"absolute_byte_offsets":[37974],"raw_metadata_u32":[1]}
+{"text_id":439,"forms":["¡Has conseguido la Bolsa auxiliar!<clear><br>La Bolsa auxiliar te permite acceder a algunos objetos<br>al instante."],"absolute_byte_offsets":[38054],"raw_metadata_u32":[1]}
+{"text_id":440,"forms":["Se ha producido un error de comunicación."],"absolute_byte_offsets":[38171],"raw_metadata_u32":[1]}
+{"text_id":441,"forms":["¿Quieres recibir el regalo aunque tu Bolsa esté llena?"],"absolute_byte_offsets":[38214],"raw_metadata_u32":[1]}
+{"text_id":442,"forms":["¿Seguro que quieres restaurar los datos?"],"absolute_byte_offsets":[38271],"raw_metadata_u32":[1]}
+{"text_id":443,"forms":["Ya hay un sello ahí. ¿Quieres sustituirlo?"],"absolute_byte_offsets":[38313],"raw_metadata_u32":[1]}
+{"text_id":444,"forms":["¿Quieres recibir el regalo aunque tu Bolsa esté llena?"],"absolute_byte_offsets":[38358],"raw_metadata_u32":[1]}
+{"text_id":445,"forms":["¿Quieres cancelar la búsqueda del Pokémon?"],"absolute_byte_offsets":[38415],"raw_metadata_u32":[1]}
+{"text_id":446,"forms":["<$cdef(27)>Drifloon </color>no tiene suficiente espacio para aterrizar.<br>Coloca el peluche en un lugar con más espacio."],"absolute_byte_offsets":[38461],"raw_metadata_u32":[1]}
+{"text_id":447,"forms":["Está sonando la versión A de la canción.<br>¿Quieres cambiarla?"],"absolute_byte_offsets":[38584],"raw_metadata_u32":[1]}
+{"text_id":448,"forms":["Está sonando la versión B de la canción.<br>¿Quieres cambiarla?"],"absolute_byte_offsets":[38652],"raw_metadata_u32":[1]}
+{"text_id":449,"forms":["Está sonando la versión C de la canción.<br>¿Quieres cambiarla?"],"absolute_byte_offsets":[38720],"raw_metadata_u32":[1]}
+{"text_id":450,"forms":["Tienes algo esperándote. Recíbelo desde la opción<br><$cdef(27)>Recibir objetos</color>."],"absolute_byte_offsets":[38788],"raw_metadata_u32":[1]}
+{"text_id":451,"forms":["Introduce tu nombre en este idioma."],"absolute_byte_offsets":[38880],"raw_metadata_u32":[1]}
+{"text_id":452,"forms":["¿Te parece bien <$cdef(27)><pname;0></color>?"],"absolute_byte_offsets":[38916],"raw_metadata_u32":[1]}
+{"text_id":453,"forms":["<oneline>¡Has conseguido<br><iart;0()><$cdef(27)><fqty(1)><class><$ifull;0(lnum1)></color>!"],"absolute_byte_offsets":[38963],"raw_metadata_u32":[1]}
+{"text_id":454,"forms":[""],"absolute_byte_offsets":[39056],"raw_metadata_u32":[0]}
+{"text_id":455,"forms":[""],"absolute_byte_offsets":[39057],"raw_metadata_u32":[0]}
+{"text_id":456,"forms":["Puede que funcione si lo colocas cerca del agua."],"absolute_byte_offsets":[39058],"raw_metadata_u32":[1]}
+{"text_id":457,"forms":[""],"absolute_byte_offsets":[39107],"raw_metadata_u32":[0]}
+{"text_id":458,"forms":[""],"absolute_byte_offsets":[39108],"raw_metadata_u32":[0]}
+{"text_id":459,"forms":["Cuando otros jugadores visiten este vecindario,<br>solo se podrá jugar en modo observación.<clear><br>Algunos movimientos y objetos no estarán disponibles."],"absolute_byte_offsets":[39109],"raw_metadata_u32":[1]}
+{"text_id":460,"forms":["El modo observación está activado en esta Pradera Paleta.<br>Algunos movimientos y objetos no estarán disponibles."],"absolute_byte_offsets":[39268],"raw_metadata_u32":[1]}
+{"text_id":461,"forms":["El modo observación está activado en esta área, por<br>lo que el uso de objetos y movimientos está limitado."],"absolute_byte_offsets":[39386],"raw_metadata_u32":[1]}
+{"text_id":462,"forms":["Aquí puedes disfrutar del juego haciendo despliegue<br>de tus movimientos y fabricando toda clase de objetos."],"absolute_byte_offsets":[39499],"raw_metadata_u32":[1]}
+{"text_id":463,"forms":["Se interrumpirá la conexión. ¿Te parece bien?"],"absolute_byte_offsets":[39610],"raw_metadata_u32":[1]}
+{"text_id":464,"forms":["Se interrumpirá la conexión y volverás a casa.<br>¿Te parece bien?<clear><br>Ten en cuenta que todos los objetos que lleves encima<br>se quedarán en el <$cdef(27)>PC</color> de este <$cdef(27)>Centro Pokémon</color>."],"absolute_byte_offsets":[39659],"raw_metadata_u32":[1]}
+{"text_id":465,"forms":["¡Has aprendido <$cdef(27)><$sklfull(10)></color>!<br>¡Pulsa <$keyicon(28)> en el agua para nadar!"],"absolute_byte_offsets":[39882],"raw_metadata_u32":[1]}
+{"text_id":466,"forms":["¡Has aprendido <$cdef(27)><$sklfull(11)></color>!<br>¡Pulsa <$keyicon(29)> en el aire para planear!"],"absolute_byte_offsets":[39982],"raw_metadata_u32":[1]}
+{"text_id":467,"forms":["No recibirás más premios hoy."],"absolute_byte_offsets":[40084],"raw_metadata_u32":[1]}
+{"text_id":468,"forms":["No recibirás más premios hoy."],"absolute_byte_offsets":[40116],"raw_metadata_u32":[1]}
+{"text_id":469,"forms":["Has conseguido una recompensa."],"absolute_byte_offsets":[40148],"raw_metadata_u32":[1]}
+{"text_id":470,"forms":["Se han añadido artículos nuevos a la <$cdef(27)>tienda</color>."],"absolute_byte_offsets":[40179],"raw_metadata_u32":[1]}
+{"text_id":471,"forms":["Se han añadido nuevos <$cdef(27)>retos</color>."],"absolute_byte_offsets":[40245],"raw_metadata_u32":[1]}
+{"text_id":472,"forms":["<oneline>¿Quieres volver junto a <$cdef(27)>Drifloon </color>con<br><dart;0()><$cdef(27)><nname;0></color>?"],"absolute_byte_offsets":[40294],"raw_metadata_u32":[1]}
+{"text_id":473,"forms":["Esta <$cdef(27)><fqty(1)><$ifull(764)> </color>tiene al lado un <$cdef(27)><fqty(1)><$ifull(2045)></color>.<clear><br>Si colocas una <$cdef(27)><fqty(1)><$ifull(764)> </color>y un<$cdef(27)> <fqty(1)><$ifull(2045)> </color>juntos,<br>cuando fabriques algo, podrás usar también los materiales<slide><br>guardados dentro del <$cdef(27)><fqty(1)><$ifull(2045)></color>, además de los de tu Bolsa."],"absolute_byte_offsets":[40403],"raw_metadata_u32":[1]}
+{"text_id":474,"forms":["Se han añadido nuevos artículos del día a la <$cdef(27)>tienda</color>."],"absolute_byte_offsets":[40800],"raw_metadata_u32":[1]}
+{"text_id":475,"forms":["¿Quieres quemar lo que has introducido en el generador<br>para producir electricidad?"],"absolute_byte_offsets":[40875],"raw_metadata_u32":[1]}
+{"text_id":476,"forms":["Hay al menos un Pokémon que no puede acompañarte<br>ahora mismo. ¿Quieres despedirte e irte por tu cuenta?"],"absolute_byte_offsets":[40962],"raw_metadata_u32":[1]}
+{"text_id":477,"forms":["Riega árboles secos y recoge las <$cdef(27)><fqty(2)><class><$ifull(2340)><br></color>que crezcan en ellos."],"absolute_byte_offsets":[41072],"raw_metadata_u32":[1]}
+{"text_id":478,"forms":["Siembra y cosecha cultivos en un huerto. Puedes obtener<br>semillas en la tienda y en las Islas Ensueño."],"absolute_byte_offsets":[41181],"raw_metadata_u32":[1]}
+{"text_id":479,"forms":["Pídele a un Pokémon especializado en <$cdef(27)><$spwfull(15)><br></color>que procese tus <$cdef(27)><fqty(2)><class><$ifull(1482)></color>."],"absolute_byte_offsets":[41287],"raw_metadata_u32":[1]}
+{"text_id":480,"forms":["A veces las encontrarás alrededor de los hogares de<br>los Pokémon esponjosos especializados en <$cdef(27)><$spwfull(4)></color>."],"absolute_byte_offsets":[41430],"raw_metadata_u32":[1]}
+{"text_id":481,"forms":["Pídele a un Pokémon especializado en <$cdef(27)><$spwfull(17)><br></color>que procese tus <$cdef(27)><fqty(1)><$ifull(1738)></color>."],"absolute_byte_offsets":[41562],"raw_metadata_u32":[1]}
+{"text_id":482,"forms":["Pídele a un Pokémon especializado en <$cdef(27)><$spwfull(10)><br></color>que procese tu <$cdef(27)><fqty(1)><$ifull(112)></color>."],"absolute_byte_offsets":[41698],"raw_metadata_u32":[1]}
+{"text_id":483,"forms":["Introduce <$cdef(27)><fqty(1)><$ifull(113)> </color>en un <$cdef(27)><fqty(1)><$ifull(1446)> </color>y procésalo<br>con la ayuda de un Pokémon."],"absolute_byte_offsets":[41832],"raw_metadata_u32":[1]}
+{"text_id":484,"forms":["Introduce <$cdef(27)><fqty(1)><$ifull(1090)> </color>en una <$cdef(27)><fqty(1)><$ifull(1458)><br></color>y procésala con la ayuda de un Pokémon."],"absolute_byte_offsets":[41978],"raw_metadata_u32":[1]}
+{"text_id":485,"forms":["<oneline>Búscalos en las Islas Ensueño y en las cuevas<br><esde;0()><$cdef(27)><$stgname;0(3)></color>."],"absolute_byte_offsets":[42126],"raw_metadata_u32":[1]}
+{"text_id":486,"forms":["Pídele a un Pokémon especializado en <$cdef(27)><$spwfull(24)><br></color>que procese tus <$cdef(27)><fqty(2)><class><$ifull(115)></color>."],"absolute_byte_offsets":[42232],"raw_metadata_u32":[1]}
+{"text_id":487,"forms":["<oneline>Busca las instrucciones en<br><dart;0()><$cdef(27)><$stgname;0(3)></color>."],"absolute_byte_offsets":[42374],"raw_metadata_u32":[1]}
+{"text_id":488,"forms":["<oneline>Busca las instrucciones en<br><dart;0()><$cdef(27)><$stgname;0(2)></color>."],"absolute_byte_offsets":[42459],"raw_metadata_u32":[1]}
+{"text_id":489,"forms":["<oneline>Busca las instrucciones en<br><dart;0()><$cdef(27)><$stgname;0(4)></color>."],"absolute_byte_offsets":[42544],"raw_metadata_u32":[1]}
+{"text_id":490,"forms":["<oneline>Aumenta la calidad del entorno<br><esde;0()><$cdef(27)><$stgname;0(2)></color>."],"absolute_byte_offsets":[42629],"raw_metadata_u32":[1]}
+{"text_id":491,"forms":["<oneline>Aumenta la calidad del entorno<br><esde;0()><$cdef(27)><$stgname;0(3)></color>."],"absolute_byte_offsets":[42718],"raw_metadata_u32":[1]}
+{"text_id":492,"forms":["<oneline>Aumenta la calidad del entorno<br><esde;0()><$cdef(27)><$stgname;0(4)></color>."],"absolute_byte_offsets":[42807],"raw_metadata_u32":[1]}
+{"text_id":493,"forms":["Saca la <$cdef(27)>cámara </color>con <$keyicon(52)> y haz algunas fotos."],"absolute_byte_offsets":[42896],"raw_metadata_u32":[1]}
+{"text_id":494,"forms":["<oneline>Aumenta la calidad del entorno<br><esde;0()><$cdef(27)><$stgname;0(1)></color>."],"absolute_byte_offsets":[42971],"raw_metadata_u32":[1]}
+{"text_id":495,"forms":["¿Cómo quieres conectarte a través de GameShare?"],"absolute_byte_offsets":[43060],"raw_metadata_u32":[1]}
+{"text_id":496,"forms":["Has dejado de usar GameShare."],"absolute_byte_offsets":[43111],"raw_metadata_u32":[1]}
+{"text_id":497,"forms":["Preparando la conexión... No apagues la consola."],"absolute_byte_offsets":[43141],"raw_metadata_u32":[1]}
+{"text_id":498,"forms":["¿Quieres dejar de usar GameShare?<clear><br>Los objetos del jugador invitado mediante GameShare<br>se guardarán en el <$cdef(27)><fqty(1)><$ifull(1442)></color>."],"absolute_byte_offsets":[43191],"raw_metadata_u32":[1]}
+{"text_id":499,"forms":["¿Quieres establecer una contraseña?"],"absolute_byte_offsets":[43355],"raw_metadata_u32":[1]}
+{"text_id":500,"forms":["Esta Isla Nube no es pública ahora mismo."],"absolute_byte_offsets":[43393],"raw_metadata_u32":[1]}
+{"text_id":501,"forms":["¿Qué quieres hacer?"],"absolute_byte_offsets":[43436],"raw_metadata_u32":[1]}
+{"text_id":502,"forms":["¿A quién quieres expulsar?"],"absolute_byte_offsets":[43458],"raw_metadata_u32":[1]}
+{"text_id":503,"forms":["Se ha expulsado a <$cdef(27)><$strpname;0(lstr1,lnum1)></color>."],"absolute_byte_offsets":[43487],"raw_metadata_u32":[1]}
+{"text_id":504,"forms":["No hay nadie a quien expulsar."],"absolute_byte_offsets":[43552],"raw_metadata_u32":[1]}
+{"text_id":505,"forms":["Si se marcha el anfitrión o anfitriona, terminará la sesión<br>y se expulsará también a los visitantes. ¿Te parece bien?"],"absolute_byte_offsets":[43583],"raw_metadata_u32":[1]}
+{"text_id":506,"forms":["Los regalos se han enviado al <$cdef(27)>PC</color> de tu vecindario."],"absolute_byte_offsets":[43710],"raw_metadata_u32":[1]}
+{"text_id":507,"forms":["No se ha podido cambiar de zona debido a la inactividad."],"absolute_byte_offsets":[43780],"raw_metadata_u32":[1]}
+{"text_id":508,"forms":["Parece que este Pokémon arde en ganas de conocer<br>a <$cdef(27)><wowner;0></color>... ¡Pídele que venga aquí!"],"absolute_byte_offsets":[43837],"raw_metadata_u32":[1]}
+{"text_id":509,"forms":["Sientes una gran presencia procedente del mar..."],"absolute_byte_offsets":[43952],"raw_metadata_u32":[1]}
+{"text_id":510,"forms":["No se ha encontrado la Isla Nube que buscas."],"absolute_byte_offsets":[44001],"raw_metadata_u32":[1]}
+{"text_id":511,"forms":["Otro jugador tiene una versión antigua del juego, por lo<br>que no puede establecerse la conexión con esa persona.<slide><br>Para hacerlo, deberá reiniciar el juego y actualizarlo."],"absolute_byte_offsets":[44046],"raw_metadata_u32":[1]}
+{"text_id":512,"forms":["Esta Isla Nube no es pública ahora mismo."],"absolute_byte_offsets":[44230],"raw_metadata_u32":[1]}
+{"text_id":513,"forms":["El contenido descargable no se ha añadido todavía a tu<br>Isla Nube.<clear><br>Se va a expulsar a quienes estén de visita para llevar<br>a cabo la actualización. ¿Te parece bien?"],"absolute_byte_offsets":[44273],"raw_metadata_u32":[10]}
+{"text_id":514,"forms":[""],"absolute_byte_offsets":[44457],"raw_metadata_u32":[0]}
