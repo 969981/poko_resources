@@ -1,0 +1,82 @@
+name: M6 - native localization inventory and nine-language export
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/export_native_localization.py"
+      - ".github/workflows/unpack-m6-localization.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m6-localization-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  localization:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout native decoded LINKDATA and resource tables
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            Scripts/resources/export_native_localization.py
+            UnPack/2.0.1/Resources/Items/item_catalog.csv
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/validation.json
+            UnPack/2.0.1/Resources/Localization
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded
+          sparse-checkout-cone-mode: false
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify decoded inputs are present
+        run: |
+          test -f UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin
+          test -f UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04653.bin
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded')
+          files=list(p.glob('*.bin'))
+          print('Decoded BIN files:',len(files))
+          assert len(files)>9, 'decoded LINKDATA files not accessible'
+          PY
+
+      - name: Scan native blobs and export verified nine-language item IDs
+        run: |
+          python Scripts/resources/export_native_localization.py \
+            --decoded-root UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded \
+            --dest UnPack/2.0.1/Resources/Localization/Indexes
+
+      - name: Inspect manifest and upload independently
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-native-localization-m6
+          path: UnPack/2.0.1/Resources/Localization/Indexes/
+          retention-days: 30
+
+      - name: Commit derived indexes to target branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- UnPack/2.0.1/Resources/Localization/Indexes
+          if git diff --cached --quiet; then
+            echo "No new derived localization index"
+            exit 0
+          fi
+          git commit -m "data(m6): export native localization candidate and verified nine-language item indexes"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
