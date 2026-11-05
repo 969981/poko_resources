@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/runner/work/poko_resources/poko_resources/Scripts/resources/m9_caller_reference_graph.py", line 298, in <module>
+    main()
+  File "/home/runner/work/poko_resources/poko_resources/Scripts/resources/m9_caller_reference_graph.py", line 219, in main
+    if len(groups)!=179 or 4645 not in groups:raise ValueError("M7 group count/anchor mismatch")
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: M7 group count/anchor mismatch
