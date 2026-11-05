@@ -1,0 +1,102 @@
+name: M9.15 - original object escape to owner+0x28
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_owner_object_escape.py"
+      - "tests/test_m9_owner_object_escape.py"
+      - ".github/workflows/unpack-m9-owner-object-escape.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-15-object-escape
+  cancel-in-progress: false
+
+jobs:
+  native-object-escape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/m9_owner_object_escape.py
+            Scripts/resources/trace_native_species_item_callers.py
+            tests/test_m9_owner_object_escape.py
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_verified_vptr_stores.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_0x28_escape_trace.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Native object escape tests
+        env:
+          PYTHONPATH: "."
+        run: python -m unittest discover -s tests -p 'test_m9_owner_object_escape.py' -v
+
+      - name: Verify constructor to owner+0x28 and inspect field consumers
+        env:
+          PYTHONPATH: "."
+        run: |
+          python Scripts/resources/m9_owner_object_escape.py \
+            --main 2.0.1/exefs/main \
+            --m9-12 UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_verified_vptr_stores.json \
+            --dest UnPack/2.0.1/Resources/Localization/M9/NameTables
+
+      - name: Verify native evidence and no semantic overpromotion
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_0x28_escape_trace.json')
+          d=json.loads(p.read_text(encoding='utf-8'))
+          e=d['escape']
+          r=d['report']
+          assert e['verified_member_store_pc']==0xd59274
+          assert e['save_object_pc']==0xd591b0
+          assert e['verified_vptr_write_pc']==0xd591c8
+          assert e['vtable_address']==0x32fdfa0
+          assert e['owner_member_offset']==0x28
+          assert e['callback_pc']==0xd59420
+          assert e['callee_saved_register_no_intervening_write']
+          assert r['verified_original_object_escape']
+          assert r['verified_object_dispatch_to_specific_callback']==0
+          assert r['verified_owner_identity_or_registration']==0
+          assert r['new_scene_quest_building_m7_text_foreign_keys']==0
+          assert all(not row['descriptor_callback_target_verified']
+                     for row in d['owner_field_consumers']['pattern_examples'])
+          print('M9.15 object escape verified; field consumers remain untyped')
+          PY
+
+      - name: Save exact evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m9-15-owner-member-provenance
+          path: UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_0x28_escape_trace.json
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Commit native evidence to 2.0.1_unpack
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_owner_0x28_escape_trace.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9.15): exact object escape to owner+0x28 with typed-state safeguards"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
