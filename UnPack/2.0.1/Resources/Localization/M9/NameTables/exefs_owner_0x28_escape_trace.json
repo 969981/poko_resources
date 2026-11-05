@@ -1,0 +1,3102 @@
+{
+  "report": {
+    "status": "M9_PROVEN_OBJECT_ESCAPE_TO_OWNER_0X28_WITH_UNTYPED_READ_CANDIDATES",
+    "source_exefs_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+    "verified_original_object_escape": true,
+    "specific_vptr_and_callback_slot_bytes_verified": true,
+    "owner_member_offset": 40,
+    "verified_object_dispatch_to_specific_callback": 0,
+    "verified_owner_identity_or_registration": 0,
+    "verified_kidsobjdb_getters": 0,
+    "new_scene_quest_building_m7_text_foreign_keys": 0,
+    "limitations": [
+      "Object pointer writes to x19+0x28; identity and lifetime of x19 are not yet known.",
+      "Loads from unrelated classes at the same offset may produce false positive matches.",
+      "Noncontiguous instruction patterns do not prove register identity across intervening code.",
+      "Do not equate descriptor enumeration callback with a KIDSOBJDB text getter."
+    ]
+  },
+  "escape": {
+    "status": "EXACT_NATIVE_OBJECT_ESCAPES_TO_OWNER_PLUS_0X28",
+    "source_allocation_return_register": "x0",
+    "saved_object_register": "x23",
+    "save_object_pc": 13996464,
+    "verified_vptr_write_pc": 13996488,
+    "vtable_address": 53469088,
+    "vtable_callback_offset": 56,
+    "callback_pc": 13997088,
+    "verified_member_store_pc": 13996660,
+    "owner_register": "x19",
+    "owner_member_offset": 40,
+    "owner_member_store_mnemonic": "str x23, [x19, #0x28]",
+    "callee_saved_register_no_intervening_write": true,
+    "instruction_window": [
+      {
+        "pc": 13996464,
+        "mnemonic": "mov",
+        "operands": "x23, x0",
+        "writes": [
+          "x23"
+        ],
+        "word": "aa0003f7"
+      },
+      {
+        "pc": 13996468,
+        "mnemonic": "cbz",
+        "operands": "x0, #0xd591cc",
+        "writes": [],
+        "word": "b40000c0"
+      },
+      {
+        "pc": 13996472,
+        "mnemonic": "adrp",
+        "operands": "x8, #0x32fd000",
+        "writes": [
+          "x8"
+        ],
+        "word": "90012d28"
+      },
+      {
+        "pc": 13996476,
+        "mnemonic": "add",
+        "operands": "x8, x8, #0xf90",
+        "writes": [
+          "x8"
+        ],
+        "word": "913e4108"
+      },
+      {
+        "pc": 13996480,
+        "mnemonic": "str",
+        "operands": "wzr, [x23, #0x10]",
+        "writes": [],
+        "word": "b90012ff"
+      },
+      {
+        "pc": 13996484,
+        "mnemonic": "add",
+        "operands": "x8, x8, #0x10",
+        "writes": [
+          "x8"
+        ],
+        "word": "91004108"
+      },
+      {
+        "pc": 13996488,
+        "mnemonic": "stp",
+        "operands": "x8, xzr, [x23]",
+        "writes": [],
+        "word": "a9007ee8"
+      },
+      {
+        "pc": 13996492,
+        "mnemonic": "mov",
+        "operands": "w8, #0xf000000",
+        "writes": [
+          "w8"
+        ],
+        "word": "52a1e008"
+      },
+      {
+        "pc": 13996496,
+        "mnemonic": "add",
+        "operands": "x1, sp, #0x18",
+        "writes": [
+          "x1"
+        ],
+        "word": "910063e1"
+      },
+      {
+        "pc": 13996500,
+        "mnemonic": "stur",
+        "operands": "xzr, [sp, #0x1c]",
+        "writes": [],
+        "word": "f801c3ff"
+      },
+      {
+        "pc": 13996504,
+        "mnemonic": "str",
+        "operands": "w8, [sp, #0x18]",
+        "writes": [],
+        "word": "b9001be8"
+      },
+      {
+        "pc": 13996508,
+        "mnemonic": "ldr",
+        "operands": "x8, [x21]",
+        "writes": [
+          "x8"
+        ],
+        "word": "f94002a8"
+      },
+      {
+        "pc": 13996512,
+        "mnemonic": "mov",
+        "operands": "x0, x21",
+        "writes": [
+          "x0"
+        ],
+        "word": "aa1503e0"
+      },
+      {
+        "pc": 13996516,
+        "mnemonic": "mov",
+        "operands": "w2, #1",
+        "writes": [
+          "w2"
+        ],
+        "word": "52800022"
+      },
+      {
+        "pc": 13996520,
+        "mnemonic": "mov",
+        "operands": "w3, wzr",
+        "writes": [
+          "w3"
+        ],
+        "word": "2a1f03e3"
+      },
+      {
+        "pc": 13996524,
+        "mnemonic": "stur",
+        "operands": "xzr, [sp, #0x24]",
+        "writes": [],
+        "word": "f80243ff"
+      },
+      {
+        "pc": 13996528,
+        "mnemonic": "str",
+        "operands": "wzr, [sp, #0x2c]",
+        "writes": [],
+        "word": "b9002fff"
+      },
+      {
+        "pc": 13996532,
+        "mnemonic": "ldr",
+        "operands": "x8, [x8, #0x18]",
+        "writes": [
+          "x8"
+        ],
+        "word": "f9400d08"
+      },
+      {
+        "pc": 13996536,
+        "mnemonic": "blr",
+        "operands": "x8",
+        "writes": [
+          "lr"
+        ],
+        "word": "d63f0100"
+      },
+      {
+        "pc": 13996540,
+        "mnemonic": "ldrb",
+        "operands": "w8, [sp, #0x1b]",
+        "writes": [
+          "w8"
+        ],
+        "word": "39406fe8"
+      },
+      {
+        "pc": 13996544,
+        "mnemonic": "mov",
+        "operands": "x0, x20",
+        "writes": [
+          "x0"
+        ],
+        "word": "aa1403e0"
+      },
+      {
+        "pc": 13996548,
+        "mnemonic": "and",
+        "operands": "w2, w8, #0xf",
+        "writes": [
+          "w2"
+        ],
+        "word": "12000d02"
+      },
+      {
+        "pc": 13996552,
+        "mnemonic": "ldr",
+        "operands": "w1, [sp, #0x1c]",
+        "writes": [
+          "w1"
+        ],
+        "word": "b9401fe1"
+      },
+      {
+        "pc": 13996556,
+        "mnemonic": "bl",
+        "operands": "#0x1fe76a0",
+        "writes": [
+          "lr"
+        ],
+        "word": "944a3925"
+      },
+      {
+        "pc": 13996560,
+        "mnemonic": "cbz",
+        "operands": "x0, #0xd59270",
+        "writes": [],
+        "word": "b4000300"
+      },
+      {
+        "pc": 13996564,
+        "mnemonic": "ldr",
+        "operands": "w8, [x0]",
+        "writes": [
+          "w8"
+        ],
+        "word": "b9400008"
+      },
+      {
+        "pc": 13996568,
+        "mnemonic": "mov",
+        "operands": "x20, x0",
+        "writes": [
+          "x20"
+        ],
+        "word": "aa0003f4"
+      },
+      {
+        "pc": 13996572,
+        "mnemonic": "and",
+        "operands": "x24, x8, #0xffffff",
+        "writes": [
+          "x24"
+        ],
+        "word": "92405d18"
+      },
+      {
+        "pc": 13996576,
+        "mnemonic": "cbz",
+        "operands": "w24, #0xd59270",
+        "writes": [],
+        "word": "34000298"
+      },
+      {
+        "pc": 13996580,
+        "mnemonic": "mov",
+        "operands": "x0, x20",
+        "writes": [
+          "x0"
+        ],
+        "word": "aa1403e0"
+      },
+      {
+        "pc": 13996584,
+        "mnemonic": "bl",
+        "operands": "#0x1fe7628",
+        "writes": [
+          "lr"
+        ],
+        "word": "944a3900"
+      },
+      {
+        "pc": 13996588,
+        "mnemonic": "mov",
+        "operands": "w8, #0x306e",
+        "writes": [
+          "w8"
+        ],
+        "word": "52860dc8"
+      },
+      {
+        "pc": 13996592,
+        "mnemonic": "str",
+        "operands": "xzr, [sp, #0x10]",
+        "writes": [],
+        "word": "f9000bff"
+      },
+      {
+        "pc": 13996596,
+        "mnemonic": "mul",
+        "operands": "x21, x0, x24",
+        "writes": [
+          "x21"
+        ],
+        "word": "9b187c15"
+      },
+      {
+        "pc": 13996600,
+        "mnemonic": "str",
+        "operands": "w8, [sp, #8]",
+        "writes": [],
+        "word": "b9000be8"
+      },
+      {
+        "pc": 13996604,
+        "mnemonic": "add",
+        "operands": "x2, sp, #8",
+        "writes": [
+          "x2"
+        ],
+        "word": "910023e2"
+      },
+      {
+        "pc": 13996608,
+        "mnemonic": "mov",
+        "operands": "x0, x22",
+        "writes": [
+          "x0"
+        ],
+        "word": "aa1603e0"
+      },
+      {
+        "pc": 13996612,
+        "mnemonic": "ldr",
+        "operands": "x8, [x22]",
+        "writes": [
+          "x8"
+        ],
+        "word": "f94002c8"
+      },
+      {
+        "pc": 13996616,
+        "mnemonic": "mov",
+        "operands": "x1, x21",
+        "writes": [
+          "x1"
+        ],
+        "word": "aa1503e1"
+      },
+      {
+        "pc": 13996620,
+        "mnemonic": "ldr",
+        "operands": "x8, [x8, #0x38]",
+        "writes": [
+          "x8"
+        ],
+        "word": "f9401d08"
+      },
+      {
+        "pc": 13996624,
+        "mnemonic": "blr",
+        "operands": "x8",
+        "writes": [
+          "lr"
+        ],
+        "word": "d63f0100"
+      },
+      {
+        "pc": 13996628,
+        "mnemonic": "cbz",
+        "operands": "x0, #0xd59270",
+        "writes": [],
+        "word": "b40000e0"
+      },
+      {
+        "pc": 13996632,
+        "mnemonic": "ldr",
+        "operands": "x1, [x20, #0x18]",
+        "writes": [
+          "x1"
+        ],
+        "word": "f9400e81"
+      },
+      {
+        "pc": 13996636,
+        "mnemonic": "mov",
+        "operands": "x2, x21",
+        "writes": [
+          "x2"
+        ],
+        "word": "aa1503e2"
+      },
+      {
+        "pc": 13996640,
+        "mnemonic": "mov",
+        "operands": "x22, x0",
+        "writes": [
+          "x22"
+        ],
+        "word": "aa0003f6"
+      },
+      {
+        "pc": 13996644,
+        "mnemonic": "bl",
+        "operands": "#0x2745e60",
+        "writes": [
+          "lr"
+        ],
+        "word": "9467b2ff"
+      },
+      {
+        "pc": 13996648,
+        "mnemonic": "str",
+        "operands": "x22, [x23, #8]",
+        "writes": [],
+        "word": "f90006f6"
+      },
+      {
+        "pc": 13996652,
+        "mnemonic": "str",
+        "operands": "w24, [x23, #0x10]",
+        "writes": [],
+        "word": "b90012f8"
+      },
+      {
+        "pc": 13996656,
+        "mnemonic": "mov",
+        "operands": "w9, wzr",
+        "writes": [
+          "w9"
+        ],
+        "word": "2a1f03e9"
+      },
+      {
+        "pc": 13996660,
+        "mnemonic": "str",
+        "operands": "x23, [x19, #0x28]",
+        "writes": [],
+        "word": "f9001677"
+      }
+    ],
+    "owner_semantic_class_identity_verified": false,
+    "specific_descriptor_dispatch_verified": false,
+    "KIDSOBJDB_getter_verified": false,
+    "M7_text_fk_verified": false
+  },
+  "owner_field_consumers": {
+    "all_native_ldr_from_owner_plus_0x28": 28569,
+    "owner_member_plus_callback_pattern_candidates": 106,
+    "four_instruction_exact_patterns": 5,
+    "first_owner_member_load_sites": [
+      {
+        "pc": 4264,
+        "owner_register": "x0",
+        "loaded_object_register": "x0",
+        "word": "f9401400"
+      },
+      {
+        "pc": 19116,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 19140,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 19800,
+        "owner_register": "x19",
+        "loaded_object_register": "x20",
+        "word": "f9401674"
+      },
+      {
+        "pc": 19864,
+        "owner_register": "x19",
+        "loaded_object_register": "x1",
+        "word": "f9401661"
+      },
+      {
+        "pc": 20088,
+        "owner_register": "x19",
+        "loaded_object_register": "x20",
+        "word": "f9401674"
+      },
+      {
+        "pc": 20152,
+        "owner_register": "x19",
+        "loaded_object_register": "x1",
+        "word": "f9401661"
+      },
+      {
+        "pc": 28688,
+        "owner_register": "x0",
+        "loaded_object_register": "x0",
+        "word": "f9401400"
+      },
+      {
+        "pc": 28760,
+        "owner_register": "x0",
+        "loaded_object_register": "x0",
+        "word": "f9401400"
+      },
+      {
+        "pc": 34308,
+        "owner_register": "x0",
+        "loaded_object_register": "x0",
+        "word": "f9401400"
+      },
+      {
+        "pc": 34380,
+        "owner_register": "x0",
+        "loaded_object_register": "x0",
+        "word": "f9401400"
+      },
+      {
+        "pc": 35496,
+        "owner_register": "x0",
+        "loaded_object_register": "x0",
+        "word": "f9401400"
+      },
+      {
+        "pc": 35568,
+        "owner_register": "x0",
+        "loaded_object_register": "x0",
+        "word": "f9401400"
+      },
+      {
+        "pc": 82736,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 89824,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 115888,
+        "owner_register": "x31",
+        "loaded_object_register": "x0",
+        "word": "f94017e0"
+      },
+      {
+        "pc": 117208,
+        "owner_register": "x31",
+        "loaded_object_register": "x11",
+        "word": "f94017eb"
+      },
+      {
+        "pc": 120824,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 122620,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 123824,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 130032,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 130332,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 151736,
+        "owner_register": "x20",
+        "loaded_object_register": "x8",
+        "word": "f9401688"
+      },
+      {
+        "pc": 153832,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 153852,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 159420,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 165428,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 169052,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 169228,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 171524,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 171552,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 171612,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 172192,
+        "owner_register": "x31",
+        "loaded_object_register": "x8",
+        "word": "f94017e8"
+      },
+      {
+        "pc": 173020,
+        "owner_register": "x31",
+        "loaded_object_register": "x8",
+        "word": "f94017e8"
+      },
+      {
+        "pc": 173768,
+        "owner_register": "x31",
+        "loaded_object_register": "x9",
+        "word": "f94017e9"
+      },
+      {
+        "pc": 175024,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 183784,
+        "owner_register": "x31",
+        "loaded_object_register": "x8",
+        "word": "f94017e8"
+      },
+      {
+        "pc": 183852,
+        "owner_register": "x31",
+        "loaded_object_register": "x8",
+        "word": "f94017e8"
+      },
+      {
+        "pc": 193820,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 195460,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 196092,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 244392,
+        "owner_register": "x9",
+        "loaded_object_register": "x9",
+        "word": "f9401529"
+      },
+      {
+        "pc": 244776,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      },
+      {
+        "pc": 244804,
+        "owner_register": "x10",
+        "loaded_object_register": "x8",
+        "word": "f9401548"
+      },
+      {
+        "pc": 246680,
+        "owner_register": "x8",
+        "loaded_object_register": "x11",
+        "word": "f940150b"
+      },
+      {
+        "pc": 246728,
+        "owner_register": "x8",
+        "loaded_object_register": "x11",
+        "word": "f940150b"
+      },
+      {
+        "pc": 246776,
+        "owner_register": "x8",
+        "loaded_object_register": "x11",
+        "word": "f940150b"
+      },
+      {
+        "pc": 246824,
+        "owner_register": "x8",
+        "loaded_object_register": "x11",
+        "word": "f940150b"
+      },
+      {
+        "pc": 246872,
+        "owner_register": "x8",
+        "loaded_object_register": "x11",
+        "word": "f940150b"
+      },
+      {
+        "pc": 246920,
+        "owner_register": "x8",
+        "loaded_object_register": "x8",
+        "word": "f9401508"
+      }
+    ],
+    "pattern_examples": [
+      {
+        "owner_member_load_pc": 9138204,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 9138212,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 9138216,
+        "callback_register": "x8",
+        "blr_pc": 9138220,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 13251000,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 13251020,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 13251028,
+        "callback_register": "x8",
+        "blr_pc": 13251032,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94017e0",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 13585020,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 13585044,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 13585048,
+        "callback_register": "x8",
+        "blr_pc": 13585052,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94017e0",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 13913008,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 13913028,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 13913036,
+        "callback_register": "x8",
+        "blr_pc": 13913040,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94017e0",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 13913212,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 13913232,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 13913240,
+        "callback_register": "x8",
+        "blr_pc": 13913244,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94017e0",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 18545284,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 18545288,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 18545292,
+        "callback_register": "x8",
+        "blr_pc": 18545296,
+        "exact_four_instruction_chain": true,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 18545388,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 18545392,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 18545396,
+        "callback_register": "x8",
+        "blr_pc": 18545400,
+        "exact_four_instruction_chain": true,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 19570944,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 19570952,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 19570956,
+        "callback_register": "x8",
+        "blr_pc": 19570960,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401660",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 31623172,
+        "owner_member_offset": 40,
+        "object_register": "x19",
+        "vptr_load_pc": 31623200,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 31623208,
+        "callback_register": "x8",
+        "blr_pc": 31623212,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94017f3",
+          "f9400268",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34195068,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34195072,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34195092,
+        "callback_register": "x8",
+        "blr_pc": 34195096,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34243808,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34243828,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34243832,
+        "callback_register": "x8",
+        "blr_pc": 34243836,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401660",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34244168,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34244188,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34244192,
+        "callback_register": "x8",
+        "blr_pc": 34244196,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401660",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34249984,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34249988,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34250008,
+        "callback_register": "x8",
+        "blr_pc": 34250012,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34276604,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34276612,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34276632,
+        "callback_register": "x8",
+        "blr_pc": 34276636,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34277244,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34277248,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34277268,
+        "callback_register": "x8",
+        "blr_pc": 34277272,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34277788,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34277796,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34277820,
+        "callback_register": "x8",
+        "blr_pc": 34277824,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34278932,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34278936,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34278956,
+        "callback_register": "x8",
+        "blr_pc": 34278960,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34282012,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34282016,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34282036,
+        "callback_register": "x8",
+        "blr_pc": 34282040,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34282616,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34282620,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34282660,
+        "callback_register": "x8",
+        "blr_pc": 34282664,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34284640,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34284644,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34284664,
+        "callback_register": "x8",
+        "blr_pc": 34284668,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34285508,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34285512,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34285532,
+        "callback_register": "x8",
+        "blr_pc": 34285536,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34289464,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34289468,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34289488,
+        "callback_register": "x8",
+        "blr_pc": 34289492,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34290224,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34290228,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34290248,
+        "callback_register": "x8",
+        "blr_pc": 34290252,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34291728,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34291732,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34291752,
+        "callback_register": "x8",
+        "blr_pc": 34291756,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34296956,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34296960,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34296980,
+        "callback_register": "x8",
+        "blr_pc": 34296984,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34297376,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34297380,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34297400,
+        "callback_register": "x8",
+        "blr_pc": 34297404,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34300416,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34300420,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34300440,
+        "callback_register": "x8",
+        "blr_pc": 34300444,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34300812,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34300816,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34300836,
+        "callback_register": "x8",
+        "blr_pc": 34300840,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34301448,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34301452,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34301472,
+        "callback_register": "x8",
+        "blr_pc": 34301476,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34305348,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34305352,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34305372,
+        "callback_register": "x8",
+        "blr_pc": 34305376,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34306148,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34306152,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34306172,
+        "callback_register": "x8",
+        "blr_pc": 34306176,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34731564,
+        "owner_member_offset": 40,
+        "object_register": "x23",
+        "vptr_load_pc": 34731572,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34731592,
+        "callback_register": "x8",
+        "blr_pc": 34731612,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016d7",
+          "f94002e8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34969908,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34969916,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34969924,
+        "callback_register": "x8",
+        "blr_pc": 34969928,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 34972664,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 34972672,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 34972676,
+        "callback_register": "x8",
+        "blr_pc": 34972680,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 35023144,
+        "owner_member_offset": 40,
+        "object_register": "x25",
+        "vptr_load_pc": 35023152,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 35023184,
+        "callback_register": "x8",
+        "blr_pc": 35023188,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401519",
+          "f9400328",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 35026248,
+        "owner_member_offset": 40,
+        "object_register": "x25",
+        "vptr_load_pc": 35026256,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 35026288,
+        "callback_register": "x8",
+        "blr_pc": 35026292,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401519",
+          "f9400328",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 35889824,
+        "owner_member_offset": 40,
+        "object_register": "x25",
+        "vptr_load_pc": 35889840,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 35889848,
+        "callback_register": "x8",
+        "blr_pc": 35889852,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401519",
+          "f9400328",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 35891508,
+        "owner_member_offset": 40,
+        "object_register": "x22",
+        "vptr_load_pc": 35891524,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 35891532,
+        "callback_register": "x8",
+        "blr_pc": 35891536,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401516",
+          "f94002c8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 35894520,
+        "owner_member_offset": 40,
+        "object_register": "x20",
+        "vptr_load_pc": 35894552,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 35894556,
+        "callback_register": "x8",
+        "blr_pc": 35894564,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401514",
+          "f9400288",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 35902648,
+        "owner_member_offset": 40,
+        "object_register": "x22",
+        "vptr_load_pc": 35902668,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 35902676,
+        "callback_register": "x8",
+        "blr_pc": 35902680,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401516",
+          "f94002c8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 35965060,
+        "owner_member_offset": 40,
+        "object_register": "x22",
+        "vptr_load_pc": 35965080,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 35965084,
+        "callback_register": "x8",
+        "blr_pc": 35965088,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401416",
+          "f94002c8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 35978792,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 35978808,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 35978812,
+        "callback_register": "x8",
+        "blr_pc": 35978816,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36003364,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 36003380,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36003384,
+        "callback_register": "x8",
+        "blr_pc": 36003404,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401660",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36003748,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 36003768,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36003772,
+        "callback_register": "x8",
+        "blr_pc": 36003784,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36003852,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 36003872,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36003876,
+        "callback_register": "x8",
+        "blr_pc": 36003880,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36798836,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 36798844,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36798864,
+        "callback_register": "x8",
+        "blr_pc": 36798876,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401480",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36875852,
+        "owner_member_offset": 40,
+        "object_register": "x21",
+        "vptr_load_pc": 36875860,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36875900,
+        "callback_register": "x8",
+        "blr_pc": 36875904,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016b5",
+          "f94002a8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36889992,
+        "owner_member_offset": 40,
+        "object_register": "x21",
+        "vptr_load_pc": 36890000,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36890036,
+        "callback_register": "x8",
+        "blr_pc": 36890040,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016b5",
+          "f94002a8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36890092,
+        "owner_member_offset": 40,
+        "object_register": "x21",
+        "vptr_load_pc": 36890100,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36890136,
+        "callback_register": "x8",
+        "blr_pc": 36890140,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016b5",
+          "f94002a8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36890192,
+        "owner_member_offset": 40,
+        "object_register": "x21",
+        "vptr_load_pc": 36890200,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36890236,
+        "callback_register": "x8",
+        "blr_pc": 36890240,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016b5",
+          "f94002a8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36890308,
+        "owner_member_offset": 40,
+        "object_register": "x21",
+        "vptr_load_pc": 36890316,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36890352,
+        "callback_register": "x8",
+        "blr_pc": 36890356,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016b5",
+          "f94002a8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36890408,
+        "owner_member_offset": 40,
+        "object_register": "x21",
+        "vptr_load_pc": 36890416,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36890452,
+        "callback_register": "x8",
+        "blr_pc": 36890456,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016b5",
+          "f94002a8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36890508,
+        "owner_member_offset": 40,
+        "object_register": "x20",
+        "vptr_load_pc": 36890516,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36890540,
+        "callback_register": "x8",
+        "blr_pc": 36890556,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401694",
+          "f9400288",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36893848,
+        "owner_member_offset": 40,
+        "object_register": "x22",
+        "vptr_load_pc": 36893856,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36893892,
+        "callback_register": "x8",
+        "blr_pc": 36893896,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016d6",
+          "f94002c8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36893948,
+        "owner_member_offset": 40,
+        "object_register": "x22",
+        "vptr_load_pc": 36893956,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36893992,
+        "callback_register": "x8",
+        "blr_pc": 36893996,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016d6",
+          "f94002c8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36894048,
+        "owner_member_offset": 40,
+        "object_register": "x22",
+        "vptr_load_pc": 36894056,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36894080,
+        "callback_register": "x8",
+        "blr_pc": 36894096,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016d6",
+          "f94002c8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36906408,
+        "owner_member_offset": 40,
+        "object_register": "x22",
+        "vptr_load_pc": 36906416,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36906440,
+        "callback_register": "x8",
+        "blr_pc": 36906456,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016d6",
+          "f94002c8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36906952,
+        "owner_member_offset": 40,
+        "object_register": "x21",
+        "vptr_load_pc": 36906960,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36906996,
+        "callback_register": "x8",
+        "blr_pc": 36907000,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016d5",
+          "f94002a8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36907056,
+        "owner_member_offset": 40,
+        "object_register": "x21",
+        "vptr_load_pc": 36907064,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36907100,
+        "callback_register": "x8",
+        "blr_pc": 36907104,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016b5",
+          "f94002a8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36907160,
+        "owner_member_offset": 40,
+        "object_register": "x20",
+        "vptr_load_pc": 36907168,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36907192,
+        "callback_register": "x8",
+        "blr_pc": 36907208,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401694",
+          "f9400288",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36910148,
+        "owner_member_offset": 40,
+        "object_register": "x22",
+        "vptr_load_pc": 36910156,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36910192,
+        "callback_register": "x8",
+        "blr_pc": 36910196,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016d6",
+          "f94002c8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36910252,
+        "owner_member_offset": 40,
+        "object_register": "x22",
+        "vptr_load_pc": 36910260,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36910296,
+        "callback_register": "x8",
+        "blr_pc": 36910300,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016d6",
+          "f94002c8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36910356,
+        "owner_member_offset": 40,
+        "object_register": "x22",
+        "vptr_load_pc": 36910364,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36910388,
+        "callback_register": "x8",
+        "blr_pc": 36910404,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016d6",
+          "f94002c8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36913964,
+        "owner_member_offset": 40,
+        "object_register": "x21",
+        "vptr_load_pc": 36913972,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36914008,
+        "callback_register": "x8",
+        "blr_pc": 36914012,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016d5",
+          "f94002a8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36914068,
+        "owner_member_offset": 40,
+        "object_register": "x21",
+        "vptr_load_pc": 36914076,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36914112,
+        "callback_register": "x8",
+        "blr_pc": 36914116,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016b5",
+          "f94002a8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36914172,
+        "owner_member_offset": 40,
+        "object_register": "x21",
+        "vptr_load_pc": 36914180,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36914216,
+        "callback_register": "x8",
+        "blr_pc": 36914220,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016b5",
+          "f94002a8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36914276,
+        "owner_member_offset": 40,
+        "object_register": "x21",
+        "vptr_load_pc": 36914284,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36914320,
+        "callback_register": "x8",
+        "blr_pc": 36914324,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016b5",
+          "f94002a8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 36914380,
+        "owner_member_offset": 40,
+        "object_register": "x20",
+        "vptr_load_pc": 36914388,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 36914412,
+        "callback_register": "x8",
+        "blr_pc": 36914428,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401694",
+          "f9400288",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 37199736,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 37199776,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 37199780,
+        "callback_register": "x8",
+        "blr_pc": 37199784,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401480",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 37406564,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 37406592,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 37406596,
+        "callback_register": "x8",
+        "blr_pc": 37406600,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016c0",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 37407192,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 37407220,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 37407224,
+        "callback_register": "x8",
+        "blr_pc": 37407228,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401760",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 37407828,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 37407836,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 37407864,
+        "callback_register": "x8",
+        "blr_pc": 37407868,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401480",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 37502212,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 37502228,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 37502260,
+        "callback_register": "x8",
+        "blr_pc": 37502264,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401520",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 37510976,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 37510980,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 37510984,
+        "callback_register": "x8",
+        "blr_pc": 37510988,
+        "exact_four_instruction_chain": true,
+        "words": [
+          "f9401480",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 37729716,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 37729724,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 37729744,
+        "callback_register": "x8",
+        "blr_pc": 37729752,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401480",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 37833232,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 37833252,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 37833256,
+        "callback_register": "x8",
+        "blr_pc": 37833260,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401480",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 38689600,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 38689624,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 38689628,
+        "callback_register": "x8",
+        "blr_pc": 38689632,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401760",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 38880584,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 38880588,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 38880608,
+        "callback_register": "x8",
+        "blr_pc": 38880612,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 38881888,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 38881892,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 38881912,
+        "callback_register": "x8",
+        "blr_pc": 38881916,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 38884384,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 38884388,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 38884408,
+        "callback_register": "x8",
+        "blr_pc": 38884412,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 38884440,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 38884444,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 38884464,
+        "callback_register": "x8",
+        "blr_pc": 38884468,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 38898012,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 38898028,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 38898052,
+        "callback_register": "x8",
+        "blr_pc": 38898056,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 38903624,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 38903628,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 38903648,
+        "callback_register": "x8",
+        "blr_pc": 38903652,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 38908696,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 38908700,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 38908720,
+        "callback_register": "x8",
+        "blr_pc": 38908724,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 38910620,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 38910628,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 38910648,
+        "callback_register": "x8",
+        "blr_pc": 38910652,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39294600,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 39294608,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39294620,
+        "callback_register": "x8",
+        "blr_pc": 39294628,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016c0",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39310616,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 39310648,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39310652,
+        "callback_register": "x8",
+        "blr_pc": 39310656,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401740",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39315260,
+        "owner_member_offset": 40,
+        "object_register": "x21",
+        "vptr_load_pc": 39315276,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39315284,
+        "callback_register": "x8",
+        "blr_pc": 39315288,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401515",
+          "f94002a8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39333224,
+        "owner_member_offset": 40,
+        "object_register": "x19",
+        "vptr_load_pc": 39333232,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39333236,
+        "callback_register": "x8",
+        "blr_pc": 39333240,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016f3",
+          "f9400268",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39333248,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 39333256,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39333260,
+        "callback_register": "x8",
+        "blr_pc": 39333264,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016c0",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39372776,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 39372784,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39372788,
+        "callback_register": "x8",
+        "blr_pc": 39372792,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39373620,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 39373628,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39373632,
+        "callback_register": "x8",
+        "blr_pc": 39373636,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39376196,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 39376204,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39376208,
+        "callback_register": "x8",
+        "blr_pc": 39376212,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39376412,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 39376452,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39376456,
+        "callback_register": "x8",
+        "blr_pc": 39376460,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39376444,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 39376452,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39376456,
+        "callback_register": "x8",
+        "blr_pc": 39376460,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39554360,
+        "owner_member_offset": 40,
+        "object_register": "x21",
+        "vptr_load_pc": 39554372,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39554376,
+        "callback_register": "x8",
+        "blr_pc": 39554380,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016b5",
+          "f94002a8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39554948,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 39554956,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39554960,
+        "callback_register": "x8",
+        "blr_pc": 39554964,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016a0",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39736636,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 39736644,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39736648,
+        "callback_register": "x8",
+        "blr_pc": 39736652,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39771300,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 39771308,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39771312,
+        "callback_register": "x8",
+        "blr_pc": 39771316,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39781740,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 39781744,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39781748,
+        "callback_register": "x8",
+        "blr_pc": 39781752,
+        "exact_four_instruction_chain": true,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39781880,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 39781892,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39781896,
+        "callback_register": "x8",
+        "blr_pc": 39781900,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39782016,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 39782020,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39782024,
+        "callback_register": "x8",
+        "blr_pc": 39782028,
+        "exact_four_instruction_chain": true,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39782804,
+        "owner_member_offset": 40,
+        "object_register": "x22",
+        "vptr_load_pc": 39782812,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39782848,
+        "callback_register": "x8",
+        "blr_pc": 39782852,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401516",
+          "f94002c8",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39788388,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 39788416,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39788424,
+        "callback_register": "x8",
+        "blr_pc": 39788428,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016e0",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39788408,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 39788416,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39788424,
+        "callback_register": "x8",
+        "blr_pc": 39788428,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f9401500",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      },
+      {
+        "owner_member_load_pc": 39881208,
+        "owner_member_offset": 40,
+        "object_register": "x0",
+        "vptr_load_pc": 39881216,
+        "vptr_register": "x8",
+        "callback_slot_load_pc": 39881220,
+        "callback_register": "x8",
+        "blr_pc": 39881224,
+        "exact_four_instruction_chain": false,
+        "words": [
+          "f94016a0",
+          "f9400008",
+          "f9401d08",
+          "d63f0100"
+        ],
+        "intervening_register_clobber_proven_absent": false,
+        "owner_class_identity_verified": false,
+        "descriptor_callback_target_verified": false,
+        "script_text_fk_verified": false,
+        "grade": "OWNER_FIELD_OFFSET_AND_INDIRECT_SLOT_PATTERN_ONLY"
+      }
+    ],
+    "patterns_truncated": false
+  }
+}
