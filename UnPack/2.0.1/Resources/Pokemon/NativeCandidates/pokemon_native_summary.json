@@ -1,0 +1,25 @@
+{
+  "game_version": "2.0.1",
+  "source_rows": 609,
+  "name_distinct": 603,
+  "category_rows": {
+    "pokemon_uni": 308,
+    "pokemon": 301
+  },
+  "native_png_candidates": 609,
+  "statuses": {
+    "PNG_CANDIDATE_UNVERIFIED": 609
+  },
+  "candidate_by_category": {
+    "pokemon_uni": 308,
+    "pokemon": 301
+  },
+  "source_recovery_kinds": {
+    "ORIGINAL_NATIVE_G1T": 580,
+    "RECOVERED_DECODED_BLOB_ALIAS": 29
+  },
+  "expected_standalone_native_texture_hashes": 603,
+  "duplicate_names_are_kept_by_texinfo_and_g1t_hash": true,
+  "layout_selection_rule": "BC7 Tegra GOB blockheight from source block rows, capped at 16; empirically tested on examples only",
+  "warning": "All outputs are original-source PNG CANDIDATES, not independently proven game-visible pixel-perfect icons or species IDs."
+}
