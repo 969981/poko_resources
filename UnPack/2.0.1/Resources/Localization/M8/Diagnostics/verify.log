@@ -1,0 +1,56 @@
+M8: {
+  "status": "M8_VERIFIED_NATIVE_ITEM_MAP_ROLE_EDGES",
+  "source": {
+    "native_version": "Pokopia 2.0.1",
+    "layout_parser_commit": "c71d2b73fb9d8cfe99c1067e6bfadfd19f60bf78",
+    "item_parser": "https://github.com/969981/PokoHex/blob/c71d2b73fb9d8cfe99c1067e6bfadfd19f60bf78/PokoHex.Parsing/GameItemDumper.cs",
+    "map_parser": "https://github.com/969981/PokoHex/blob/c71d2b73fb9d8cfe99c1067e6bfadfd19f60bf78/PokoHex.Parsing/GameMapDumper.cs",
+    "ability_parser": "https://github.com/969981/PokoHex/blob/c71d2b73fb9d8cfe99c1067e6bfadfd19f60bf78/PokoHex.Parsing/GameAbilityDumper.cs"
+  },
+  "item_to_text": {
+    "slots_verified_all_9_languages": 4600,
+    "items_with_native_name": 3585,
+    "items_without_name_index": 925,
+    "language_text_discrepancies": 0
+  },
+  "map_part_to_item_to_text": {
+    "linked_map_part_variations": 1963,
+    "unique_item_ids": 1374,
+    "layout_anchors": {
+      "1498": 1357,
+      "3197": 1628
+    }
+  },
+  "native_text_roles": {
+    "Reactions": {
+      "records": 128,
+      "nonempty_text_ids": 47,
+      "different_raw_flags_across_languages": 24,
+      "empty_slot_pattern_consistent": true
+    },
+    "Skills": {
+      "records": 61,
+      "nonempty_text_ids": 11,
+      "different_raw_flags_across_languages": 3,
+      "empty_slot_pattern_consistent": true
+    }
+  },
+  "source_files_sha256_indexed": 32,
+  "quest_scene_building_reference_analysis": {
+    "Quest": "NO_NATIVE_CALLER_REFERENCE_PROVEN",
+    "Dialogue": "NO_NATIVE_CALLER_REFERENCE_PROVEN",
+    "Buildings": "MAP_PART_IS_NOT_A_BUILDING_TYPE",
+    "UI": "NO_NATIVE_CALLER_REFERENCE_PROVEN",
+    "Tutorials": "NO_NATIVE_CALLER_REFERENCE_PROVEN"
+  },
+  "provenance_notes": [
+    "Item NameIndex is a u16 at 64+item_id*68+34 in decoded Entry 983.",
+    "NameIndex resolves to record ID in Entry 4645..4653; text form 0.",
+    "MapPart variation maps through native Entries 41, 40, 983 and 4645..4653.",
+    "Reaction/Skill roles are backed by version-pinned parser source and native text tables.",
+    "Language-specific raw flags differ in some Reaction/Skill entries; all preserved.",
+    "MapParts must not be silently reclassified as Buildings.",
+    "No scene/quest/mission category assigned without resource-to-text caller identity.",
+    "M7 candidate group matching is independent from these explicitly source-anchored roles."
+  ]
+}
