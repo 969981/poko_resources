@@ -1,0 +1,68 @@
+{
+  "status": "FALLBACK_POINTER_AND_EMBEDDED_RECORD_SOURCE_AUDIT",
+  "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "original_item_sha256": "2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f",
+  "item_rows": 4600,
+  "item_stride": 68,
+  "fallback_cells": [
+    {
+      "name": "C7_item_default_record",
+      "cell_va": "0x3483c58",
+      "cell_section": "data",
+      "cell_raw_hex": "28615b0300000000",
+      "pointer_raw_va": "0x35b6128",
+      "target_section": null,
+      "status": "NOT_IN_STATIC_NSO_SEGMENTS",
+      "target_68_hex": null,
+      "record_matches": {}
+    },
+    {
+      "name": "C9_type_default_record",
+      "cell_va": "0x3484a38",
+      "cell_section": "data",
+      "cell_raw_hex": "7c615b0300000000",
+      "pointer_raw_va": "0x35b617c",
+      "target_section": null,
+      "status": "NOT_IN_STATIC_NSO_SEGMENTS",
+      "target_68_hex": null,
+      "record_matches": {}
+    },
+    {
+      "name": "related_default_0x3484_8f8",
+      "cell_va": "0x34848f8",
+      "cell_section": "data",
+      "cell_raw_hex": "3c5b5b0300000000",
+      "pointer_raw_va": "0x35b5b3c",
+      "target_section": null,
+      "status": "NOT_IN_STATIC_NSO_SEGMENTS",
+      "target_68_hex": null,
+      "record_matches": {}
+    },
+    {
+      "name": "related_default_0x3484_ba8",
+      "cell_va": "0x3484ba8",
+      "cell_section": "data",
+      "cell_raw_hex": "f87a5b0300000000",
+      "pointer_raw_va": "0x35b7af8",
+      "target_section": null,
+      "status": "NOT_IN_STATIC_NSO_SEGMENTS",
+      "target_68_hex": null,
+      "record_matches": {}
+    },
+    {
+      "name": "related_default_0x3485_0b0",
+      "cell_va": "0x348500b0",
+      "status": "CELL_NOT_MAPPED"
+    }
+  ],
+  "embedded_exact_68byte_records": [],
+  "fallback_pointer_is_proven_item_record": false,
+  "V2_getter_0x30_source_proven": false,
+  "item_type_enum_proven": false,
+  "limits": [
+    "Fallback pointer cells can be initialized during startup, not visible in static NSO files.",
+    "A static pointer's bytewise equality to a record (if found) is correlation; it still needs constructor and caller provenance.",
+    "Absent embedded matches do not exclude 00983.bin being read from LINKDATA at runtime.",
+    "Do not infer V2 method identity from C7 4600/68 matching alone."
+  ]
+}
