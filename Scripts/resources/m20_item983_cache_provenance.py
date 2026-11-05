@@ -40,6 +40,23 @@ def section_read(parts, addr, length):
     raise ValueError(f"UNMAPPED_NSO_VIRTUAL_RANGE:{addr:#x}+{length:#x}")
 
 
+def inspect_pointer(parts, addr, preview_len=112):
+    """A raw 32-bit *candidate address*; never call it a semantic symbol."""
+    try:
+        raw, section=section_read(parts,addr,preview_len)
+    except ValueError:
+        return {"address":hex(addr),"status":"UNMAPPED_OR_BSS_POINTER"}
+    head=raw.split(b"\\0",1)[0]
+    valid=bool(head) and all(0x20<=c<0x7f for c in head)
+    return {
+        "address":hex(addr),"section":section,
+        "status":"ASCII_NUL_TERMINATED" if valid and b"\\0" in raw else "RAW_BYTES_ONLY",
+        "ascii_candidate":head.decode("ascii") if valid and b"\\0" in raw else None,
+        "first_48_bytes_hex":raw[:48].hex(),
+        "byte_identity_is_semantic_resource_name":False
+    }
+
+
 def inspect_descriptor(parts, index):
     if not 0<=index<TABLE_CAP:
         raise ValueError("NATIVE_REGISTRY_ID_OUT_OF_BOUNDS")
@@ -52,6 +69,11 @@ def inspect_descriptor(parts, index):
         "original_40_sha256":hashlib.sha256(raw).hexdigest(),
         "u32_words_le":[f"0x{x:08x}" for x in words],
         "verified_reader_word_at_0x10":f"0x{words[4]:08x}",
+        "candidate_pointers_by_u32_position":{
+            "0x00":inspect_pointer(parts,words[0]),
+            "0x08":inspect_pointer(parts,words[2]),
+            "0x18":inspect_pointer(parts,words[6])
+        },
         "evidence":"ORIGINAL_DESCRIPTOR_BYTES_NOT_LINKDATA_PAYLOAD_IDENTITY",
     }
 
