@@ -64,6 +64,10 @@ jobs:
           assert (result["unresolved"],result["far_visual"],result["ambiguous_visual"]) == (88,79,9)
           assert (result["far_consecutive_317_378"],result["far_scattered"]) == (62,17)
           assert result["original_fdata_coverage"]["missing_index_rows_loaded"]==6118
+          assert result["original_fdata_coverage"]["missing_g1t_original_records"]==557
+          assert result["original_fdata_coverage"]["missing_texinfo_original_files"]==12
+          assert result["original_fdata_coverage"]["missing_texinfo_sprite_slots_upper_bound"]==15
+          assert result["original_fdata_coverage"]["missing_ktid_original_records"]==322
           assert result["other_original_png_sweep"]["other_original_pngs_swept"]==3930
           assert result["native_villager_id_semantic_bindings_verified"]==0
           refs=list(csv.DictReader((p/"m22_nine_ambiguous_native_object_refs.csv").open(encoding="utf-8",newline="")))
