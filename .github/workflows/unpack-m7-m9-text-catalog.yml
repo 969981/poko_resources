@@ -12,6 +12,7 @@ on:
       - "UnPack/2.0.1/Resources/Localization/M7/nine_language_groups.csv"
       - "UnPack/2.0.1/Resources/Localization/M7/native_table_inventory.csv"
       - "UnPack/2.0.1/Resources/Localization/M9/verified_resource_text_edges.csv"
+      - "UnPack/2.0.1/Resources/Localization/M8/native_role_text_refs.csv"
       - "UnPack/2.0.1/Resources/Localization/TextExports/text_export_report.json"
       - "UnPack/2.0.1/Resources/Localization/UnlinkedText/unlinked_text_export_report.json"
       - ".github/workflows/unpack-m7-m9-text-catalog.yml"
@@ -45,6 +46,7 @@ jobs:
             UnPack/2.0.1/Resources/Localization/TextExports/text_export_report.json
             UnPack/2.0.1/Resources/Localization/UnlinkedText/unlinked_text_export_report.json
             UnPack/2.0.1/Resources/Localization/M9/verified_resource_text_edges.csv
+            UnPack/2.0.1/Resources/Localization/M8/native_role_text_refs.csv
             UnPack/2.0.1/Resources/Localization/TextCatalog
 
       - uses: actions/setup-python@v5
@@ -73,14 +75,19 @@ jobs:
           assert report["unlinked_native_text_tables"] == 983
           assert report["typed_resource_edges_from_m9"] == 5365
           assert report["verified_new_script_to_text_caller_edges"] == 0
-          assert report["unlinked_tables_with_m9_verified_typed_edges"] == 0
+          assert report["unlinked_tables_with_m9_verified_typed_edges"] == 18
+          assert report["m8_source_verified_role_groups"] == [2332, 4942]
+          assert report["m8_source_verified_role_tables"] == 18
+          assert report["m7_unlinked_with_no_m8_role_identity"] == 965
           assert report["m9_groups_with_verified_typed_edges"] == [2332, 4645, 4942]
           with (root / "native_text_table_catalog.csv").open(encoding="utf-8", newline="") as f:
               tables = list(csv.DictReader(f))
           assert len(tables) == 2738
           assert sum(x["linkage"] == "NINE_LANGUAGE_CANDIDATE" for x in tables) == 1755
           assert sum(x["linkage"] == "UNLINKED_NATIVE_RECORD" for x in tables) == 983
-          assert all(x["business_category"] == "UNKNOWN" for x in tables)
+          roles = Counter(x["business_category"] for x in tables)
+          assert roles == Counter({"UNKNOWN": 2720, "Reactions": 9, "Skills": 9}), roles
+          assert sum(x["locale_status"] == "M8_PINNED_NATIVE_ROLE_MAPPING" for x in tables) == 18
           with (root / "m9_verified_text_row_links.csv").open(encoding="utf-8", newline="") as f:
               edges = list(csv.DictReader(f))
           assert len(edges) == 5365
@@ -92,7 +99,7 @@ jobs:
               ("2332", "Reactions"): 47,
               ("4942", "Skills"): 11,
           }), summary
-          print("PASS: 2,738 parsed tables, 5,365 unchanged M9 typed edges, no invented script callers")
+          print("PASS: 2,738 tables, 18 M8 pinned role tables, 5,365 M9 typed edges, zero invented script callers")
           PY
 
       - name: Upload catalog for download
