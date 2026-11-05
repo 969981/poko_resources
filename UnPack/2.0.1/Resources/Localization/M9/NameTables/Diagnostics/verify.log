@@ -1,0 +1,52 @@
+M9.3 VERIFIED {
+  "name_hashes": {
+    "root:49689": "aa91cb96",
+    "root:49334": "a91711c6",
+    "root:42257": "cb3c8b15"
+  },
+  "rnk_sources": [
+    {
+      "m3_record_id": "root:49689",
+      "kidsobjdb_name_hash": "d14d76ef",
+      "kidsobjdb_sha256": "ea4e260c1bc6b0feea16ca16d9c65ca017454a9c7754277e088ecd97d49a5a9a",
+      "expected_rnk_name_hash": "aa91cb96",
+      "matching_m3_resource_rows": 0,
+      "tracked_path_candidates": 0,
+      "rnk_valid_sources": 0,
+      "status": "RNK_NAME_FILE_MISSING",
+      "native_object_count": 68397,
+      "unique_native_object_ids": 68397,
+      "unique_property_hashes": 80
+    },
+    {
+      "m3_record_id": "root:49334",
+      "kidsobjdb_name_hash": "cfd2bd1f",
+      "kidsobjdb_sha256": "ee4f3885744af85ae34df856805b849485246928dbb54628feac7bf355b9050f",
+      "expected_rnk_name_hash": "a91711c6",
+      "matching_m3_resource_rows": 0,
+      "tracked_path_candidates": 0,
+      "rnk_valid_sources": 0,
+      "status": "RNK_NAME_FILE_MISSING",
+      "native_object_count": 1330,
+      "unique_native_object_ids": 1330,
+      "unique_property_hashes": 109
+    },
+    {
+      "m3_record_id": "root:42257",
+      "kidsobjdb_name_hash": "b290631c",
+      "kidsobjdb_sha256": "f96972dc847e679aa01d602c0fc5897bdd81e7b09eeea1567cd75b0e9d279e51",
+      "expected_rnk_name_hash": "cb3c8b15",
+      "matching_m3_resource_rows": 0,
+      "tracked_path_candidates": 0,
+      "rnk_valid_sources": 0,
+      "status": "RNK_NAME_FILE_MISSING",
+      "native_object_count": 31740,
+      "unique_native_object_ids": 31740,
+      "unique_property_hashes": 153
+    }
+  ],
+  "strings": 0,
+  "static_magic_hits": 0,
+  "arm64_immediate_candidates": 3,
+  "confirmed_semantic_foreign_keys": 0
+}

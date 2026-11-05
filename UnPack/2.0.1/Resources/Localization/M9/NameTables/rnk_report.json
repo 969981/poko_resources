@@ -1,0 +1,64 @@
+{
+  "status": "M9_RNK_NAME_RESOURCE_PROVENANCE",
+  "m3_index_records_inspected": 89507,
+  "native_owner_files": 3,
+  "source_name_hashes": {
+    "root:49689": "aa91cb96",
+    "root:49334": "a91711c6",
+    "root:42257": "cb3c8b15"
+  },
+  "rnk_source_resolution": [
+    {
+      "m3_record_id": "root:49689",
+      "kidsobjdb_name_hash": "d14d76ef",
+      "kidsobjdb_sha256": "ea4e260c1bc6b0feea16ca16d9c65ca017454a9c7754277e088ecd97d49a5a9a",
+      "expected_rnk_name_hash": "aa91cb96",
+      "matching_m3_resource_rows": 0,
+      "tracked_path_candidates": 0,
+      "rnk_valid_sources": 0,
+      "status": "RNK_NAME_FILE_MISSING",
+      "native_object_count": 68397,
+      "unique_native_object_ids": 68397,
+      "unique_property_hashes": 80
+    },
+    {
+      "m3_record_id": "root:49334",
+      "kidsobjdb_name_hash": "cfd2bd1f",
+      "kidsobjdb_sha256": "ee4f3885744af85ae34df856805b849485246928dbb54628feac7bf355b9050f",
+      "expected_rnk_name_hash": "a91711c6",
+      "matching_m3_resource_rows": 0,
+      "tracked_path_candidates": 0,
+      "rnk_valid_sources": 0,
+      "status": "RNK_NAME_FILE_MISSING",
+      "native_object_count": 1330,
+      "unique_native_object_ids": 1330,
+      "unique_property_hashes": 109
+    },
+    {
+      "m3_record_id": "root:42257",
+      "kidsobjdb_name_hash": "b290631c",
+      "kidsobjdb_sha256": "f96972dc847e679aa01d602c0fc5897bdd81e7b09eeea1567cd75b0e9d279e51",
+      "expected_rnk_name_hash": "cb3c8b15",
+      "matching_m3_resource_rows": 0,
+      "tracked_path_candidates": 0,
+      "rnk_valid_sources": 0,
+      "status": "RNK_NAME_FILE_MISSING",
+      "native_object_count": 31740,
+      "unique_native_object_ids": 31740,
+      "unique_property_hashes": 153
+    }
+  ],
+  "resolved_native_irnk_strings": 0,
+  "irnk_key_matches_property_hashes": 0,
+  "irnk_key_matches_object_ids": 0,
+  "verified_property_semantic_names": 0,
+  "verified_scene_quest_building_text_foreign_keys": 0,
+  "numeric_oid_candidates_still_unverified": 87445,
+  "evidence_limits": [
+    "M3 header @+0x14 explicitly references companion name-file resource hash.",
+    "Only exact resource hash + _RNK0000/IRNK0000 record structure establishes name source.",
+    "IRNK keys can be object IDs and/or property hashes; collisions alone do not prove property labels.",
+    "Actual ExeFS or script property-hash usage requires instruction/control-flow verification.",
+    "The 87,445 numeric matches are still NOT foreign keys."
+  ]
+}

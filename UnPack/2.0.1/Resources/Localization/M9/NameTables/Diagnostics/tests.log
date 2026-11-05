@@ -1,0 +1,14 @@
+test_arm64_movz_movk_reconstructs_hash_but_not_caller (test_m9_rnk_exefs_consumers.ExefsHashProbeTests.test_arm64_movz_movk_reconstructs_hash_but_not_caller) ... ok
+test_far_movk_does_not_claim_pair (test_m9_rnk_exefs_consumers.ExefsHashProbeTests.test_far_movk_does_not_claim_pair) ... ok
+test_hashes_are_sourced_from_native_histogram_and_namefile (test_m9_rnk_exefs_consumers.ExefsHashProbeTests.test_hashes_are_sourced_from_native_histogram_and_namefile) ... ok
+test_explicit_owner_header_name_file_hash (test_m9_rnk_name_tables.NameTableTests.test_explicit_owner_header_name_file_hash) ... ok
+test_forged_rnk_count_rejected (test_m9_rnk_name_tables.NameTableTests.test_forged_rnk_count_rejected) ... ok
+test_m3_candidate_lookup_exact_hash_no_fuzzy_match (test_m9_rnk_name_tables.NameTableTests.test_m3_candidate_lookup_exact_hash_no_fuzzy_match) ... ok
+test_rnk_key_hash_is_not_assumed_property_name (test_m9_rnk_name_tables.NameTableTests.test_rnk_key_hash_is_not_assumed_property_name) ... ok
+test_roundtrip_rnk_irnk_utf8_and_source_offsets (test_m9_rnk_name_tables.NameTableTests.test_roundtrip_rnk_irnk_utf8_and_source_offsets) ... ok
+test_unaligned_and_corrupt_string_offsets_fail_closed (test_m9_rnk_name_tables.NameTableTests.test_unaligned_and_corrupt_string_offsets_fail_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.004s
+
+OK

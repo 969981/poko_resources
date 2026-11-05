@@ -1,0 +1,509 @@
+{
+  "status": "EXEFS_STATIC_HASH_RECONNAISSANCE_ONLY",
+  "original_exefs_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "main_format": "NSO0",
+  "inspected_hashes": 29,
+  "section_summary": [
+    {
+      "name": "text",
+      "mem_offset": 0,
+      "file_offset": 266,
+      "compressed": true,
+      "size": 41194624
+    },
+    {
+      "name": "rodata",
+      "mem_offset": 41197568,
+      "file_offset": 23151538,
+      "compressed": true,
+      "size": 11402740
+    },
+    {
+      "name": "data",
+      "mem_offset": 52600832,
+      "file_offset": 28645443,
+      "compressed": true,
+      "size": 2760384
+    }
+  ],
+  "magic_literals": [],
+  "raw_hash_matches": [
+    {
+      "hash": "0x00bae1c9",
+      "section": "rodata",
+      "aligned_u32_matches": 1,
+      "first_virtual_offsets": [
+        42053136
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0x0b534abc",
+      "section": "rodata",
+      "aligned_u32_matches": 2,
+      "first_virtual_offsets": [
+        42053200,
+        42151132
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0x0b6e1578",
+      "section": "rodata",
+      "aligned_u32_matches": 22,
+      "first_virtual_offsets": [
+        41974560,
+        41974940,
+        42054700,
+        42055392,
+        42099364,
+        42099520,
+        42099752,
+        42100100,
+        42100432,
+        42101220
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0x3fbe932d",
+      "section": "rodata",
+      "aligned_u32_matches": 8,
+      "first_virtual_offsets": [
+        42099532,
+        42099764,
+        42100120,
+        42100440,
+        42101316,
+        42102960,
+        42104016,
+        42104756
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0x4297e49c",
+      "section": "rodata",
+      "aligned_u32_matches": 3,
+      "first_virtual_offsets": [
+        42101328,
+        42102972,
+        42104888
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0x5335b95b",
+      "section": "rodata",
+      "aligned_u32_matches": 7,
+      "first_virtual_offsets": [
+        42099876,
+        42100124,
+        42100592,
+        42101320,
+        42102964,
+        42104020,
+        42104760
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0x5fd0b93d",
+      "section": "rodata",
+      "aligned_u32_matches": 3,
+      "first_virtual_offsets": [
+        42101340,
+        42102984,
+        42104032
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0x60ffb76e",
+      "section": "rodata",
+      "aligned_u32_matches": 3,
+      "first_virtual_offsets": [
+        42101336,
+        42102980,
+        42104896
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0x71dd9b9a",
+      "section": "rodata",
+      "aligned_u32_matches": 6,
+      "first_virtual_offsets": [
+        42171820,
+        42172084,
+        42172332,
+        42172680,
+        42173436,
+        42174276
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0x72365b94",
+      "section": "rodata",
+      "aligned_u32_matches": 16,
+      "first_virtual_offsets": [
+        42106168,
+        42155868,
+        42156140,
+        42156544,
+        42156824,
+        42159648,
+        42159980,
+        42160180,
+        42162520,
+        42172032
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0x7867bf0e",
+      "section": "rodata",
+      "aligned_u32_matches": 1,
+      "first_virtual_offsets": [
+        42171832
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0x95708e3b",
+      "section": "rodata",
+      "aligned_u32_matches": 2,
+      "first_virtual_offsets": [
+        42101420,
+        42103064
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0x9e1e3953",
+      "section": "rodata",
+      "aligned_u32_matches": 2,
+      "first_virtual_offsets": [
+        42160768,
+        42183004
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0xa810dd85",
+      "section": "rodata",
+      "aligned_u32_matches": 4,
+      "first_virtual_offsets": [
+        42099872,
+        42101308,
+        42102952,
+        42104748
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0xab85bd96",
+      "section": "rodata",
+      "aligned_u32_matches": 3,
+      "first_virtual_offsets": [
+        42101324,
+        42102968,
+        42104884
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0xb2e69a87",
+      "section": "rodata",
+      "aligned_u32_matches": 10,
+      "first_virtual_offsets": [
+        42171824,
+        42172088,
+        42172252,
+        42172336,
+        42172508,
+        42173000,
+        42173200,
+        42173680,
+        42173784,
+        42173964
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0xb5869388",
+      "section": "rodata",
+      "aligned_u32_matches": 2,
+      "first_virtual_offsets": [
+        42101464,
+        42103120
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0xb722ee20",
+      "section": "rodata",
+      "aligned_u32_matches": 1,
+      "first_virtual_offsets": [
+        42053228
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0xc3c650db",
+      "section": "rodata",
+      "aligned_u32_matches": 6,
+      "first_virtual_offsets": [
+        42100128,
+        42100444,
+        42101304,
+        42102948,
+        42104028,
+        42104744
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0xc9ed9068",
+      "section": "rodata",
+      "aligned_u32_matches": 3,
+      "first_virtual_offsets": [
+        42101332,
+        42102976,
+        42104892
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0xcf4a6da5",
+      "section": "rodata",
+      "aligned_u32_matches": 8,
+      "first_virtual_offsets": [
+        42099528,
+        42099760,
+        42100116,
+        42100436,
+        42101312,
+        42102956,
+        42104012,
+        42104752
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0xd4b534c8",
+      "section": "rodata",
+      "aligned_u32_matches": 7,
+      "first_virtual_offsets": [
+        42099800,
+        42100576,
+        42101448,
+        42102220,
+        42103096,
+        42104044,
+        42104784
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0xe1773a02",
+      "section": "rodata",
+      "aligned_u32_matches": 1,
+      "first_virtual_offsets": [
+        42160772
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0xf7f103b3",
+      "section": "rodata",
+      "aligned_u32_matches": 2,
+      "first_virtual_offsets": [
+        41974576,
+        42172684
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    },
+    {
+      "hash": "0xf92c5190",
+      "section": "rodata",
+      "aligned_u32_matches": 13,
+      "first_virtual_offsets": [
+        41958388,
+        41962712,
+        41972036,
+        42053108,
+        42100148,
+        42100464,
+        42101224,
+        42102852,
+        42104700,
+        42106152
+      ],
+      "status": "STATIC_LITERAL_NO_CALLER"
+    }
+  ],
+  "arm64_immediate_candidates": [
+    {
+      "hash": "0x0b6e1578",
+      "text_va_movz": 13249664,
+      "text_va_movk": 13249676,
+      "move_reg": 15,
+      "code_words": [
+        "5282af0f",
+        "72a16dcf"
+      ],
+      "status": "ARM64_IMMEDIATE_PAIR_NO_DATAFLOW"
+    },
+    {
+      "hash": "0xe21ff09f",
+      "text_va_movz": 13862192,
+      "text_va_movk": 13862200,
+      "move_reg": 16,
+      "code_words": [
+        "529e13f0",
+        "72bc43f0"
+      ],
+      "status": "ARM64_IMMEDIATE_PAIR_NO_DATAFLOW"
+    },
+    {
+      "hash": "0xf92c5190",
+      "text_va_movz": 13997152,
+      "text_va_movk": 13997164,
+      "move_reg": 15,
+      "code_words": [
+        "528a320f",
+        "72bf258f"
+      ],
+      "status": "ARM64_IMMEDIATE_PAIR_NO_DATAFLOW"
+    }
+  ],
+  "magic_string_adrp_xrefs": [],
+  "confirmed_kidsobjdb_property_consumers": 0,
+  "confirmed_scene_quest_building_text_foreign_keys": 0,
+  "warnings": [
+    "u32 bytes equal to a property hash may be data or an instruction, not a consumer.",
+    "MOVZ+MOVK pair does not establish a property lookup without register/call dataflow.",
+    "ADRP+ADD references to a magic string do not identify a specific property semantic.",
+    "No text foreign keys are created by this static survey."
+  ],
+  "tracked_property_hashes": [
+    {
+      "hash": "0x00bae1c9",
+      "typed_local_oid_matches": 2049
+    },
+    {
+      "hash": "0x0b534abc",
+      "typed_local_oid_matches": 3263
+    },
+    {
+      "hash": "0x0b6e1578",
+      "typed_local_oid_matches": 10027
+    },
+    {
+      "hash": "0x3fbe932d",
+      "typed_local_oid_matches": 99
+    },
+    {
+      "hash": "0x4297e49c",
+      "typed_local_oid_matches": 8
+    },
+    {
+      "hash": "0x5335b95b",
+      "typed_local_oid_matches": 116
+    },
+    {
+      "hash": "0x5fd0b93d",
+      "typed_local_oid_matches": 4
+    },
+    {
+      "hash": "0x60ffb76e",
+      "typed_local_oid_matches": 8
+    },
+    {
+      "hash": "0x71dd9b9a",
+      "typed_local_oid_matches": 7975
+    },
+    {
+      "hash": "0x72365b94",
+      "typed_local_oid_matches": 9775
+    },
+    {
+      "hash": "0x7867bf0e",
+      "typed_local_oid_matches": 299
+    },
+    {
+      "hash": "0x95708e3b",
+      "typed_local_oid_matches": 1
+    },
+    {
+      "hash": "0x9e1e3953",
+      "typed_local_oid_matches": 19774
+    },
+    {
+      "hash": "0xa810dd85",
+      "typed_local_oid_matches": 80
+    },
+    {
+      "hash": "0xa91711c6",
+      "typed_local_oid_matches": 0
+    },
+    {
+      "hash": "0xaa91cb96",
+      "typed_local_oid_matches": 0
+    },
+    {
+      "hash": "0xab85bd96",
+      "typed_local_oid_matches": 8
+    },
+    {
+      "hash": "0xb2e69a87",
+      "typed_local_oid_matches": 12
+    },
+    {
+      "hash": "0xb5869388",
+      "typed_local_oid_matches": 405
+    },
+    {
+      "hash": "0xb722ee20",
+      "typed_local_oid_matches": 461
+    },
+    {
+      "hash": "0xc3c650db",
+      "typed_local_oid_matches": 125
+    },
+    {
+      "hash": "0xc9ed9068",
+      "typed_local_oid_matches": 8
+    },
+    {
+      "hash": "0xcb3c8b15",
+      "typed_local_oid_matches": 0
+    },
+    {
+      "hash": "0xcf4a6da5",
+      "typed_local_oid_matches": 222
+    },
+    {
+      "hash": "0xd4b534c8",
+      "typed_local_oid_matches": 144
+    },
+    {
+      "hash": "0xe1773a02",
+      "typed_local_oid_matches": 26793
+    },
+    {
+      "hash": "0xe21ff09f",
+      "typed_local_oid_matches": 977
+    },
+    {
+      "hash": "0xf7f103b3",
+      "typed_local_oid_matches": 344
+    },
+    {
+      "hash": "0xf92c5190",
+      "typed_local_oid_matches": 4468
+    }
+  ]
+}
