@@ -1,0 +1,135 @@
+{
+  "status": "NATIVE_ARM64_TRIAGE_NOT_PROVEN_ID_BINDING",
+  "game_version": "2.0.1",
+  "main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "item_table_sha256": "2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f",
+  "nso_text_bytes": 41194624,
+  "native_item_count": 4600,
+  "native_item_record_stride": 68,
+  "verified_item_name_index_offset": 34,
+  "unverified_item_group_candidate_offset": 38,
+  "specific_rodata_callsite_count": 10,
+  "species_id_to_texture_verified_count": 0,
+  "material_type_enum_confirmed": false,
+  "next_proof": "Recover origin of xN base on +0x26 consumers as original ID-983 array; identify original Pokémon species field and its TEXINFO/G1T load consumer.",
+  "warning": "A same-register offset match and nearby constants are NOT dataflow proof; do not assign official material class/species ID from this heuristic.",
+  "species_callsite_rvas": [
+    {
+      "string": "m_pokemonDexHistory",
+      "rva": "0x5cc170"
+    },
+    {
+      "string": "m_PokemonSkill",
+      "rva": "0x5f3df8"
+    },
+    {
+      "string": "m_PokemonSkill",
+      "rva": "0x5f3f00"
+    },
+    {
+      "string": "m_PokemonSkill",
+      "rva": "0x5f3f88"
+    },
+    {
+      "string": "m_PokemonSkill",
+      "rva": "0x5f40ac"
+    },
+    {
+      "string": "m_craftRecipeId",
+      "rva": "0x5fae04"
+    },
+    {
+      "string": "m_craftMainHelpPokemonKind",
+      "rva": "0x5faf08"
+    },
+    {
+      "string": "m_craftHelpTable",
+      "rva": "0x5faf4c"
+    },
+    {
+      "string": "m_mainPokemonList",
+      "rva": "0x5fd168"
+    },
+    {
+      "string": "pokemon_dex_id",
+      "rva": "0x1136aa4"
+    }
+  ],
+  "item_best_candidates": [
+    {
+      "rva": "0x5e7f4c",
+      "score": 15,
+      "base": "x0"
+    },
+    {
+      "rva": "0xf509b4",
+      "score": 15,
+      "base": "x19"
+    },
+    {
+      "rva": "0x1a7fedc",
+      "score": 15,
+      "base": "x22"
+    },
+    {
+      "rva": "0x3cea20",
+      "score": 12,
+      "base": "x8"
+    },
+    {
+      "rva": "0x64e408",
+      "score": 12,
+      "base": "x8"
+    },
+    {
+      "rva": "0x7cd8a0",
+      "score": 12,
+      "base": "x19"
+    },
+    {
+      "rva": "0xe59cd0",
+      "score": 5,
+      "base": "x8"
+    },
+    {
+      "rva": "0xe59ce8",
+      "score": 5,
+      "base": "x24"
+    },
+    {
+      "rva": "0xe5aa60",
+      "score": 5,
+      "base": "x8"
+    },
+    {
+      "rva": "0xe5aa78",
+      "score": 5,
+      "base": "x24"
+    },
+    {
+      "rva": "0x10289f4",
+      "score": 5,
+      "base": "x8"
+    },
+    {
+      "rva": "0x1028a10",
+      "score": 5,
+      "base": "x25"
+    },
+    {
+      "rva": "0x14c494",
+      "score": 3,
+      "base": "x9"
+    },
+    {
+      "rva": "0x14efd4",
+      "score": 3,
+      "base": "x19"
+    },
+    {
+      "rva": "0x14eff4",
+      "score": 3,
+      "base": "x19"
+    }
+  ]
+}
