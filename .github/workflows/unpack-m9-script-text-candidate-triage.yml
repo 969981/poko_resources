@@ -1,0 +1,110 @@
+name: M9.13 - M3 typed object / M7 text numeric hypotheses (not FK)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_typed_text_tuple_triage.py"
+      - "tests/test_m9_typed_text_tuple_triage.py"
+      - ".github/workflows/unpack-m9-script-text-candidate-triage.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-13-script-text-triage
+  cancel-in-progress: false
+
+jobs:
+  native-field-text-hypotheses:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout source verified M3/M9 typed fields and M7 language rows
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m9_typed_text_tuple_triage.py
+            tests/test_m9_typed_text_tuple_triage.py
+            UnPack/2.0.1/Resources/Localization/M9/Properties
+            UnPack/2.0.1/Resources/Localization/M9/m3_object_sources.csv
+            UnPack/2.0.1/Resources/Localization/M7/m7_report.json
+            UnPack/2.0.1/Resources/Localization/M7/nine_language_groups.csv
+            UnPack/2.0.1/Resources/Localization/M7/nine_language_records_000.csv
+            UnPack/2.0.1/Resources/Localization/M7/nine_language_records_001.csv
+            UnPack/2.0.1/Resources/Localization/M9/ScriptTextCandidates
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xe634eeb2.fdata/decoded/root_042257_b290631c.fdata_idrk.bin
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/decoded/root_049334_cfd2bd1f.fdata_idrk.bin
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x2943e4da.fdata/decoded/root_049689_d14d76ef.fdata_idrk.bin
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Unit tests for script/text foreign key evidence isolation
+        env:
+          PYTHONPATH: "."
+        run: python -m unittest discover -s tests -p 'test_m9_typed_text_tuple_triage.py' -v
+
+      - name: Full 1,176,984 typed-field scan and raw-byte checks
+        env:
+          PYTHONPATH: "."
+        run: |
+          python Scripts/resources/m9_typed_text_tuple_triage.py \
+            --properties-dir UnPack/2.0.1/Resources/Localization/M9/Properties \
+            --m7-dir UnPack/2.0.1/Resources/Localization/M7 \
+            --sources UnPack/2.0.1/Resources/Localization/M9/m3_object_sources.csv \
+            --unpack-root UnPack/2.0.1 \
+            --dest UnPack/2.0.1/Resources/Localization/M9/ScriptTextCandidates
+
+      - name: Strict validate no unearned script/quest/text edge
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          p=Path('UnPack/2.0.1/Resources/Localization/M9/ScriptTextCandidates')
+          r=json.loads((p/'m9_numeric_text_tuple_report.json').read_text(encoding='utf-8'))
+          assert r['fields_scanned']==1176984
+          assert r['m7_groups_loaded']>=190
+          assert r['unverified_local_oid_candidates_preserved']==87445
+          assert r['verified_script_to_text_foreign_keys']==0
+          assert r['new_quest_dialogue_building_classifications']==0
+          assert r['source_caller_schema_status']=='NOT_RESTORED'
+          with (p/'m9_numeric_text_tuple_samples.csv').open(newline='',encoding='utf-8') as f:
+            rows=list(csv.DictReader(f))
+          assert len(rows)==r['samples_with_raw_byte_revalidation']
+          assert len(rows)<=r['example_limit']
+          assert all(x['native_bytes_revalidated']=='True' and
+                     x['category']=='UNKNOWN' and
+                     x['verified_text_fk']=='False' and
+                     x['verified_script_caller']=='False' for x in rows)
+          print('M9.13 native typed candidate triage PASS')
+          PY
+
+      - name: Upload full reproducible triage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m9-13-text-tuples
+          path: UnPack/2.0.1/Resources/Localization/M9/ScriptTextCandidates
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Commit verified diagnostic evidence without modifying FK graph
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- UnPack/2.0.1/Resources/Localization/M9/ScriptTextCandidates
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9.13): typed object/text tuple triage with source bytes, FK still unverified"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
