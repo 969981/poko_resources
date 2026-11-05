@@ -175,3 +175,27 @@ main+0xD59420      -> 0xf92c5190 元数据描述符写入
 **这些是真实的通用 ARM64 虚调用结构，但没有一个被证明实际调用 M9.12 的那一个具体对象类**。不能把所有偏移同为 `0x38` 的虚调用算作目标回调。原始字节和最多 700 条上下文样本见 `exefs_virtual_slot_0x38_dispatch_candidates.json`。继续的最短路径是从 M9.12 的两个构造点追踪对象流向哪个注册表／调用者，再与某一个具体 `BLR` 和 `x1/x2/x3` 参数设置建立连续控制流。
 
 RNK 物理文件仍未取得；脚本→M7 正式外键仍 **0**。
+
+
+## M9.15–M9.17：特定对象构造 → owner+0x28 → 静态虚调用点（2026-11-05）
+
+三阶段均基于原始 2.0.1 NSO SHA-256 8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f，原始 PC、机器码、寄存器和指针见 NameTables 下相应 JSON。
+
+- [M9.15 #41957811298](https://github.com/969981/poko_resources/actions/runs/41957811298) **Success**：对象从 x0 保存到 x23（main+0xD591B0），写入已验证 vptr（main+0xD591C8），并经 **main+0xD59274: str x23,[x19,#0x28]** 保存到持有者成员，中途无 x23 寄存器覆盖。定位 +0x28 成员读取 28,569 处、限定窗口里符合“成员→vptr→+0x38→BLR”形态 106 处，连续四指令形态 5 处；**同偏移不同类，不能直接认定为目标描述符调用**。证据：exefs_owner_0x28_escape_trace.json。
+- [M9.16 #41958058637](https://github.com/969981/poko_resources/actions/runs/41958058637) **Success**：限定原生代码 main+0xD57C00..0xD59C00 分析，构造侧 main+0xD590FC: mov x19,x3；清理侧 main+0xD58E54: mov x19,x3。相同参数位置与相同 +0x28 成员显示明确的本地对象生命周期关系候选。此局部范围直接 BL 入边为零，不排除间接调用。证据：exefs_owner_x19_local_callgraph.json。
+- [M9.17 #41958409303](https://github.com/969981/poko_resources/actions/runs/41958409303) **Success**：严格确认原生静态调用点 main+0xD58F10: BLR x8，其 x8 经 x23→对象 vptr 首槽加载，且 x23 从 owner+0x28 取得。持有者成员在末尾被清空。证据：exefs_owner_specific_virtual_slot0.json。
+
+### 逐字节核验的两条函数路径
+
+**构造并持有：** main+0xD590FC (mov x19,x3) → main+0xD591B0 (mov x23,x0) → main+0xD591C8 (stp x8,xzr,[x23]，x8=0x32FDFA0) → **main+0xD59274 (str x23,[x19,#0x28])**。
+
+**读取、间接调用及清空：** main+0xD58E54 (mov x19,x3) → main+0xD58EB8 (ldr x23,[x19,#0x28]) → main+0xD58F04 (ldr x8,[x23]) → main+0xD58F08 (mov x0,x23) → main+0xD58F0C (ldr x8,[x8]) → **main+0xD58F10 (blr x8)** → main+0xD58F28 (str xzr,[x19,#0x28])。
+
+| 已知类的虚表槽 | 物理地址 | 原始函数地址 | 证据含义 |
+|---|---|---|---|
+| vptr+0x0 | 0x32FDFA0 | main+0xD593CC（入口为 RET） | 同 +0x28 位置对象有真实 slot 0 间接调用代码 |
+| vptr+0x38 | 0x32FDFD8 | main+0xD59420（描述符 Hash 0xf92c5190） | 原始槽与函数已证实，但尚缺此特定类的 slot +0x38 调用者 |
+
+**限制：** 两个函数的 owner 均来自 x3 且成员偏移相同，仍没有动态证据确认运行时传入的是同一个持有者实例；实际 BLR 目标仅在虚表未改写且为已知类时可静态解析。M9.17 证明了具体指令点和类虚表首槽的原生字节，不证明游戏运行时调用记录，更不证明 slot+0x38 的描述符消费者、KIDSOBJDB getter 或剧情/任务/建筑 M7 外键。正式新增这些外键 **0**。
+
+下一阶段优先追上层 x3 参数／注册表中对象类型身份，闭合实际 **vptr+0x38** 消费路径，再由 Native getter 与 M7 行号进行对账。原始 RNK 的 3 份 FDATA 物理数据依然缺失，不能伪造 IRNK 字符串。
