@@ -59,15 +59,20 @@ jobs:
           assert j["original_table_record_stride"]==68
           assert len(j["native_983_lookup_chains"])==2
           assert j["original_40_byte_descriptor_samples"]["descriptor_count_if_zero_based"]==1195
+          nid=j["verified_openssl_crypto_nid_namespace"]
+          assert nid["status"]=="OPENSSL_OBJ_MAC_NID_NAMESPACE_IDENTIFIED_FROM_ORIGINAL_BYTES"
+          assert [x["nid"] for x in nid["verified_native_nid_rows"]]==[982,983,984]
+          assert nid["verified_native_nid_rows"][1]["short_name"]=="md_gost12_512"
           assert j["independent_item_consumers"]["native_4600_id_virtual_accessor_to_raw_fields"]
           assert all(not value for key,value in j["semantic_proofs"].items()
                      if key not in ("983_descriptor_indexed_by_original_main",
-                                    "global_cache_store_from_983_chain"))
+                                    "global_cache_store_from_983_chain",
+                                    "983_is_open_ssl_crypto_nid_not_item_entry"))
           assert j["semantic_proofs"]["983_descriptor_indexed_by_original_main"]
           assert j["semantic_proofs"]["global_cache_store_from_983_chain"]
-          print("M20 proven",len(j["native_983_lookup_chains"]),"original 983 chains,",
-                j["global_static_xrefs"]["exact_direct_load_store_site_count"],
-                "direct original global accesses; still no table origin proof")
+          assert j["semantic_proofs"]["983_is_open_ssl_crypto_nid_not_item_entry"]
+          print("M20 CORRECTION: original NID 983 = OpenSSL md_gost12_512, NOT LINKDATA entry 983; ",
+                "do not follow this crypto global into the item accessor")
           PY
       - uses: actions/upload-artifact@v4
         with:
