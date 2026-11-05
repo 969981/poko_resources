@@ -6,6 +6,9 @@ on:
     branches: ["2.0.1_unpack"]
     paths:
       - "Scripts/resources/reconcile_native_item_icons.py"
+      - "UnPack/2.0.1/Resources/Items/Native_2.0.1/native_icon_manifest.csv"
+      - "UnPack/2.0.1/Resources/Items/Native_2.0.1/Extra272Candidates/manifest.csv"
+      - "UnPack/2.0.1/Resources/Items/Native_2.0.1/Extra14Candidates/manifest.csv"
       - ".github/workflows/unpack-m5-reconcile-item-icons.yml"
 
 permissions:
