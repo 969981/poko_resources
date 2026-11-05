@@ -1,0 +1,14 @@
+{
+  "version": "2.0.1",
+  "original_source_kids_oid_count": 629,
+  "original_source_linked_distinct_png_files": 635,
+  "original_png_sha256_verified": 635,
+  "original_reference_portraits_rechecked": 62,
+  "new_confident_visual_matches": 0,
+  "still_no_confident_image_match_in_scope": 62,
+  "method": "32x32 alpha-white normalized RGBA MAE, <=0.015 and >=0.015 distinct source-OID gap; source SHA256",
+  "not_exhaustive_of_other_original_FDATA_containers": true,
+  "game_species_ids_verified": 0,
+  "game_villager_ids_verified": 0,
+  "warning": "This tests only the complete currently indexed 629 native KIDS icon source OIDs; it cannot show whether PokoHex's 62 named references are in another original platform, hidden DLC, or newer content."
+}
