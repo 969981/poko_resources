@@ -88,8 +88,10 @@ def verify_indexed_lookup_table(code,base):
     add=readword(code,base,0x1445e48)
     ldr=readword(code,base,0x1445e58)
     d=Cs(CS_ARCH_ARM64,CS_MODE_ARM)
+    branch=list(d.disasm(code[0x1445e40-base:0x1445e44-base],0x1445e40))
     madd=list(d.disasm(code[0x1445e54-base:0x1445e58-base],0x1445e54))
     if not (cmp and cmp["constant"]==0x4aa and cmp["compare_register"]==0 and
+        branch and branch[0].mnemonic=="b.hi" and
         movz_immediate(mov)==0x28 and (mov&31)==9 and
         adrp_target(adrp,0x1445e44)==0x3354000 and (adrp&31)==8 and
         (add&0xff000000)==0x91000000 and (add&31)==8 and
