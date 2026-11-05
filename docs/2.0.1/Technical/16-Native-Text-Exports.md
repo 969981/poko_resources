@@ -24,6 +24,12 @@ SHA-256 基线：UnPack/2.0.1/Resources/Localization/M7/native_table_inventory.c
 
 **范围说明：**195 组是 M7 已识别的全部 *九语言候选组*，不等于全部 2,738 个已解析原生文本表均已独立发布，也不等于剧情、任务、UI 的原生语义引用链已经闭合。结构证据较弱的四组仍维持 `STRUCTURE_ONLY`；无原生调用证据的 category 仍为 `UNKNOWN`。
 
+## 其他已解析文本与完整证据目录
+
+M7 所有 2,738 张已解析文本表中，195 组九语言候选覆盖 1,755 张；其余 983 张已经使用独立导出器发布到 UnlinkedText/，参见 [[17-Unlinked-Native-Text-Exports]]。
+
+新建 TextCatalog/ 统一索引了这 2,738 张表及 M9 已有的 5,365 条类型化资源外键。M8 的反应动作（02332–02340）和技能（04942–04950）18 张表虽然没有通过 M7 严格连续九语言匹配，但可通过固定版本的 M8 解析器识别；不能把它们误判为毫无来源的未知表。
+
 ## 重建命令
 
     python -m unittest discover -s tests -p test_native_text_file_export.py -v
