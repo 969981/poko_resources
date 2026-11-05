@@ -100,3 +100,21 @@ These operations are strictly read-only and additive. Python remains responsible
 for all decompression, icon export, text handling, CSV/SQLite, and final evidence
 verification. No game classification, stack limit, or inventory limit is
 inferred solely from this field ledger.
+
+## M10: full-index summary and source-scoped evidence graph
+
+Run the bounded summary on an original RDB/RDX pair and its physical FDATA root:
+
+    dotnet run --project Pokopia.Binary.Cli -c Release -- audit-fdata-summary ROOT.RDB ROOT.RDX FDATA_DIRECTORY
+
+This emits a single JSON report with exact parsed index count, verified IDRK
+headers, missing/ambiguous physical FDATA, unsupported footer cases, mismatches
+and bounded evidence examples. Missing .fdata files in a partial source checkout
+are not errors in the game index and are never counted as verified. Large
+split 7z files must be restored before they can be header-audited.
+
+The independently maintained Python M10 graph builder exports CSV/SQLite and
+original item-ID raw-equality candidates from M9's verified typed field ledgers.
+It does not modify or replace the existing Python unpack/decompression pipeline.
+Details and evidence grades:
+docs/2.0.1/M10_BINARY_EVIDENCE_GRAPH.md.
