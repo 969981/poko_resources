@@ -61,7 +61,7 @@ def layout_for_bc7(height: int) -> str:
     block_rows = (height + 3) // 4
     n = max(1, block_rows // 8)
     height_gobs = min(16, 1 << (n.bit_length() - 1))
-    return f"gob{height_gobs}"
+    return f"ounce{height_gobs}"
 
 
 def draw_sheet(records, category: str, output: Path):
@@ -196,7 +196,7 @@ def main() -> None:
         "source_recovery_kinds":dict(source_counts),
         "expected_standalone_native_texture_hashes":603,
         "duplicate_names_are_kept_by_texinfo_and_g1t_hash": True,
-        "layout_selection_rule": "BC7 Tegra GOB blockheight from source block rows, capped at 16; empirically tested on examples only",
+        "layout_selection_rule": "BC7 platform 0x18 Ounce GOB permutation; tested against native item references and 64/256px pokemon; GOB height based on BC block rows",
         "warning": "All outputs are original-source PNG CANDIDATES, not independently proven game-visible pixel-perfect icons or species IDs."
     }
     (DEST / "pokemon_native_summary.json").write_text(json.dumps(summary,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
