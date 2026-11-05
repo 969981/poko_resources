@@ -55,7 +55,7 @@ def run(root: Path, output: Path, allow_other_sha: bool = False) -> dict:
     groups: dict[str, dict[str, dict]] = {f"0x{o:x}": {} for o in BYTE_OFFSETS}
     output.mkdir(parents=True, exist_ok=True)
     with (output / "native_item_raw_fields.csv").open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.writer(handle)
+        writer = csv.writer(handle, lineterminator="\n")
         writer.writerow(COLUMNS)
         for item_id in range(ROW_COUNT):
             row = content[HEADER_SIZE + item_id * STRIDE:HEADER_SIZE + (item_id + 1) * STRIDE]
