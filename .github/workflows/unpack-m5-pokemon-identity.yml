@@ -1,0 +1,76 @@
+name: M5 - Crosswalk Pokemon textures to original object hash edges
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/audit_native_pokemon_identity.py"
+      - "tests/test_audit_native_pokemon_identity.py"
+      - "UnPack/2.0.1/Resources/Pokemon/NativeCandidates/pokemon_native_manifest.csv"
+      - ".github/workflows/unpack-m5-pokemon-identity.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m5-pokemon-identity-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  crosswalk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/audit_native_pokemon_identity.py
+            tests/test_audit_native_pokemon_identity.py
+            UnPack/2.0.1/Resources/Pokemon/pokemon_texture_index.csv
+            UnPack/2.0.1/Resources/Pokemon/NativeCandidates/pokemon_native_manifest.csv
+            UnPack/2.0.1/Resources/Textures/Indexes/layout-textures.tsv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify duplicate and ambiguous source linkage handling
+        run: python -m unittest discover -s tests -p "test_audit_native_pokemon_identity.py" -v
+
+      - name: Build 609 native Pokémon source and identity evidence rows
+        run: python -m Scripts.resources.audit_native_pokemon_identity
+
+      - name: Confirm all identities remain explicitly unverified
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Pokemon")
+          rows=list(csv.DictReader((p/"pokemon_identity_crosswalk.csv").open(encoding="utf-8")))
+          summary=json.loads((p/"pokemon_identity_summary.json").read_text(encoding="utf-8"))
+          assert len(rows)==609
+          assert summary["linked_png_and_kidsobjdb_index"]==609,summary
+          assert sum(bool(r["native_species_id_verified"]) for r in rows)==0
+          assert set(r["swizzle_layout"] for r in rows).issubset({"ounce2","ounce4","ounce8","ounce16","ounce32"})
+          print("609 texture→native edge→PNG records joined; NO inferred species IDs")
+          PY
+
+      - name: Commit source-qualified crosswalk, never alter PNGs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -- UnPack/2.0.1/Resources/Pokemon/pokemon_identity_crosswalk.csv UnPack/2.0.1/Resources/Pokemon/pokemon_identity_summary.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m5): crosswalk 609 Pokemon icon textures and native object hashes"
+          for i in 1 2 3 4 5 6 7 8; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+            sleep 1
+          done
+          exit 1
