@@ -47,7 +47,7 @@ def fake_items():
 
 def fake_map():
     tables={40:fixed(4096,0,80),41:fixed(4096,3,16),
-            42:fixed(255,0,4),44:fixed(4096,0,100)}
+            42:fixed(255,0,4)+bytes(4),44:fixed(4096,0,100)}
     # 1498 -> variation.part 37 -> part.item 1357
     # 3197 -> variation.part 38 -> part.item 1628
     for variation,part,item,model in [(1498,37,1357,1),(3197,38,1628,2)]:
