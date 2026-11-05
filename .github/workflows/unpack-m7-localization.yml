@@ -39,17 +39,41 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Unit tests for self-relative pointers, text ID and linkage
-        run: python -m unittest discover -s tests -p "test_m7_localization.py" -v
-
-      - name: Decode original record tables and verify consecutive nine-language groups
+      - name: Run unit tests and capture exact failure
+        id: tests
+        shell: bash
         run: |
-          python Scripts/resources/recover_native_text_ids.py             --decoded-root UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded             --dest UnPack/2.0.1/Resources/Localization/M7
+          mkdir -p UnPack/2.0.1/Resources/Localization/M7/Diagnostics
+          set +e
+          python -m unittest discover -s tests -p "test_m7_localization.py" -v > UnPack/2.0.1/Resources/Localization/M7/Diagnostics/tests.log 2>&1
+          code=$?
+          cat UnPack/2.0.1/Resources/Localization/M7/Diagnostics/tests.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
 
-      - name: Validate native anchor groups and export completeness
+      - name: Parse complete native data and capture exact failure
+        if: steps.tests.outputs.exit_code == '0'
+        id: parse
+        shell: bash
         run: |
-          python - <<'PY'
-          import csv,json
+          set +e
+          python Scripts/resources/recover_native_text_ids.py \
+            --decoded-root UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded \
+            --dest UnPack/2.0.1/Resources/Localization/M7 \
+            > UnPack/2.0.1/Resources/Localization/M7/Diagnostics/parse.log 2>&1
+          code=$?
+          tail -c 30000 UnPack/2.0.1/Resources/Localization/M7/Diagnostics/parse.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Validate native anchor groups and CSV/JSON completeness
+        if: steps.tests.outputs.exit_code == '0' && steps.parse.outputs.exit_code == '0'
+        id: verify
+        shell: bash
+        run: |
+          set +e
+          python - <<'PY' > UnPack/2.0.1/Resources/Localization/M7/Diagnostics/verify.log 2>&1
+          import json
           from pathlib import Path
           root=Path("UnPack/2.0.1/Resources/Localization/M7")
           r=json.loads((root/"m7_report.json").read_text(encoding="utf-8"))
@@ -65,27 +89,66 @@ jobs:
           assert list(root.glob("nine_language_records_*.json"))
           assert r["nine_language_rows_exported"] == r["json_rows_exported"]
           PY
+          code=$?
+          cat UnPack/2.0.1/Resources/Localization/M7/Diagnostics/verify.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
 
-      - name: Upload exact generated files for independent review
+      - name: Persist job status for inspection
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p UnPack/2.0.1/Resources/Localization/M7/Diagnostics
+          printf 'tests=%s\nparse=%s\nverify=%s\nrun_id=%s\n' \
+            "${{ steps.tests.outputs.exit_code }}" \
+            "${{ steps.parse.outputs.exit_code }}" \
+            "${{ steps.verify.outputs.exit_code }}" \
+            "${{ github.run_id }}" \
+            > UnPack/2.0.1/Resources/Localization/M7/Diagnostics/status.txt
+          for f in UnPack/2.0.1/Resources/Localization/M7/Diagnostics/*.log; do
+            [ -f "$f" ] || continue
+            tail -c 100000 "$f" > "$f.tail"
+            mv "$f.tail" "$f"
+          done
+
+      - name: Upload output and logs even after failure
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: pokopia-2.0.1-native-localization-m7
+          name: pokopia-2.0.1-m7-${{ github.run_id }}
           path: UnPack/2.0.1/Resources/Localization/M7
           retention-days: 30
+          if-no-files-found: warn
 
-      - name: Commit evidence-labelled outputs
+      - name: Commit successful output or failure diagnostics
+        if: always()
+        shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A -- UnPack/2.0.1/Resources/Localization/M7
+          if [ "${{ steps.tests.outputs.exit_code }}" = 0 ] &&
+             [ "${{ steps.parse.outputs.exit_code }}" = 0 ] &&
+             [ "${{ steps.verify.outputs.exit_code }}" = 0 ]; then
+            git add -A -- UnPack/2.0.1/Resources/Localization/M7
+          else
+            git add -A -- UnPack/2.0.1/Resources/Localization/M7/Diagnostics
+          fi
           if git diff --cached --quiet; then
-            echo "No new M7 results"
+            echo "No M7 changes to commit"
             exit 0
           fi
-          git commit -m "data(m7): native text record IDs and cautious nine-language alignment"
+          git commit -m "ci(m7): publish generated outputs or bounded failure logs"
           for attempt in 1 2 3; do
             if git push origin HEAD:2.0.1_unpack; then exit 0; fi
             git fetch origin 2.0.1_unpack
             git rebase origin/2.0.1_unpack
           done
           exit 1
+
+      - name: Fail workflow if M7 export did not validate
+        if: always()
+        shell: bash
+        run: |
+          test "${{ steps.tests.outputs.exit_code }}" = 0
+          test "${{ steps.parse.outputs.exit_code }}" = 0
+          test "${{ steps.verify.outputs.exit_code }}" = 0
