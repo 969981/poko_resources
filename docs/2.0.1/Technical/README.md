@@ -21,6 +21,12 @@ updated: 2026-11-05
 7. [[07-Data-Usage|导出数据的读取、引用及验收]]
 8. [[08-Evidence-And-Open-Questions|证据等级、反证与未完成研究]]
 9. [[09-Research-Template|单个格式/资源的研究笔记模板]]
+10. [[10-Toolchain-And-Dependencies|工具链安装、输入输出和 .NET 使用边界]]
+11. [[11-Format-Details|LINKDATA、RDB/FDATA、KIDSOBJDB、TEXINFO/G1T 原始格式卡片]]
+12. [[12-Reproducible-Recipes|Windows PowerShell 完整操作配方]]
+13. [[13-Resource-Provenance-Map|从 CSV/PNG/文本反查原始文件位置]]
+14. [[14-Troubleshooting-And-Validation|解包故障、回归测试与验收清单]]
+15. [[15-Obsidian-Workflow|Obsidian Vault、笔记模板和维护规范]]
 
 以上 Wiki 链接在 Obsidian 中可直接点开；[GitHub 兼容目录](01-Source-Layout.md)可以从浏览器访问。推荐**将整个仓库根目录作为 Obsidian Vault**，这样笔记可以链接到 `Scripts/`、`UnPack/` 和现有 `docs/2.0.1/` 的其他 Markdown 文档。无需提交个人 `.obsidian/` 配置。
 
@@ -37,5 +43,13 @@ updated: 2026-11-05
 - 每份结论记录源完整路径、游戏版本、SHA-256、条目/结构偏移、转换参数、脚本路径、验证方式；字段未经验证写 `UNKNOWN`，不凭外观推定身份。
 - 将历史进度与当前结论分开：旧文档可能保留探索阶段的「尚未支持」文字，优先以**带原始字节及最新审计报告**的研究为准。
 - 不将第三方 PokoHex 图片/文本、原生 PNG 候选、原生已证身份视为同一个等级。
+
+## 选择实际工作路线
+
+- 要从 7z/索引开始恢复：[[12-Reproducible-Recipes]] → [[03-Unpacking-Workflow]]。
+- 要查某个源文件的字节结构：[[11-Format-Details]] → [[02-Binary-Formats]]。
+- 要找一张 PNG 或一条语言文本的原始位置：[[13-Resource-Provenance-Map]] → [[04-Texture-Pipeline]] / [[05-Localization]]。
+- 要解决运行错误或核验结果：[[14-Troubleshooting-And-Validation]] → [[08-Evidence-And-Open-Questions]]。
+- 要在 Obsidian 新建专题：[[15-Obsidian-Workflow]] → [[09-Research-Template]]。
 
 更新日期：2026-11-05。
