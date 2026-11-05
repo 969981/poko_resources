@@ -1,0 +1,386 @@
+{
+  "status": "M20_3_NATIVE_METHOD_POINTER_NEIGHBORHOOD__CLASS_UNBOUND",
+  "main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "schema_function_entry": "0xce854c",
+  "schema_function_pointer_cell": "0x32f0ef8",
+  "native_function_pointer_cell_exact_verified": true,
+  "surrounding_pointer_cells": [
+    {
+      "cell": "0x32f0e58",
+      "value": "0x1fe4f88",
+      "executable_pointer": true,
+      "offset_from_method_cell": -160
+    },
+    {
+      "cell": "0x32f0e60",
+      "value": "0x1fe4f90",
+      "executable_pointer": true,
+      "offset_from_method_cell": -152
+    },
+    {
+      "cell": "0x32f0e68",
+      "value": "0x1fe4f98",
+      "executable_pointer": true,
+      "offset_from_method_cell": -144
+    },
+    {
+      "cell": "0x32f0e70",
+      "value": "0x1fe4f08",
+      "executable_pointer": true,
+      "offset_from_method_cell": -136
+    },
+    {
+      "cell": "0x32f0e78",
+      "value": "0x1fe4f10",
+      "executable_pointer": true,
+      "offset_from_method_cell": -128
+    },
+    {
+      "cell": "0x32f0e80",
+      "value": "0x1fe4f18",
+      "executable_pointer": true,
+      "offset_from_method_cell": -120
+    },
+    {
+      "cell": "0x32f0e88",
+      "value": "0x1fe4f24",
+      "executable_pointer": true,
+      "offset_from_method_cell": -112
+    },
+    {
+      "cell": "0x32f0e90",
+      "value": "0x1fe4f30",
+      "executable_pointer": true,
+      "offset_from_method_cell": -104
+    },
+    {
+      "cell": "0x32f0e98",
+      "value": "0x1fe4f38",
+      "executable_pointer": true,
+      "offset_from_method_cell": -96
+    },
+    {
+      "cell": "0x32f0ea0",
+      "value": "0x1fe4f40",
+      "executable_pointer": true,
+      "offset_from_method_cell": -88
+    },
+    {
+      "cell": "0x32f0ea8",
+      "value": "0x1fe4f64",
+      "executable_pointer": true,
+      "offset_from_method_cell": -80
+    },
+    {
+      "cell": "0x32f0eb0",
+      "value": "0xce830c",
+      "executable_pointer": true,
+      "offset_from_method_cell": -72
+    },
+    {
+      "cell": "0x32f0eb8",
+      "value": "0xce8458",
+      "executable_pointer": true,
+      "offset_from_method_cell": -64
+    },
+    {
+      "cell": "0x32f0ec0",
+      "value": "0x1ff69fc",
+      "executable_pointer": true,
+      "offset_from_method_cell": -56
+    },
+    {
+      "cell": "0x32f0ec8",
+      "value": "0x1ff6a04",
+      "executable_pointer": true,
+      "offset_from_method_cell": -48
+    },
+    {
+      "cell": "0x32f0ed0",
+      "value": "0x0",
+      "executable_pointer": true,
+      "offset_from_method_cell": -40
+    },
+    {
+      "cell": "0x32f0ed8",
+      "value": "0x0",
+      "executable_pointer": true,
+      "offset_from_method_cell": -32
+    },
+    {
+      "cell": "0x32f0ee0",
+      "value": "0xce851c",
+      "executable_pointer": true,
+      "offset_from_method_cell": -24
+    },
+    {
+      "cell": "0x32f0ee8",
+      "value": "0xce8520",
+      "executable_pointer": true,
+      "offset_from_method_cell": -16
+    },
+    {
+      "cell": "0x32f0ef0",
+      "value": "0x1fe4fa0",
+      "executable_pointer": true,
+      "offset_from_method_cell": -8
+    },
+    {
+      "cell": "0x32f0ef8",
+      "value": "0xce854c",
+      "executable_pointer": true,
+      "offset_from_method_cell": 0
+    },
+    {
+      "cell": "0x32f0f00",
+      "value": "0xce861c",
+      "executable_pointer": true,
+      "offset_from_method_cell": 8
+    },
+    {
+      "cell": "0x32f0f08",
+      "value": "0xce8628",
+      "executable_pointer": true,
+      "offset_from_method_cell": 16
+    },
+    {
+      "cell": "0x32f0f10",
+      "value": "0xce8634",
+      "executable_pointer": true,
+      "offset_from_method_cell": 24
+    },
+    {
+      "cell": "0x32f0f18",
+      "value": "0xce863c",
+      "executable_pointer": true,
+      "offset_from_method_cell": 32
+    },
+    {
+      "cell": "0x32f0f20",
+      "value": "0x1fe4ef8",
+      "executable_pointer": true,
+      "offset_from_method_cell": 40
+    },
+    {
+      "cell": "0x32f0f28",
+      "value": "0x1fe4f88",
+      "executable_pointer": true,
+      "offset_from_method_cell": 48
+    },
+    {
+      "cell": "0x32f0f30",
+      "value": "0x1fe4f90",
+      "executable_pointer": true,
+      "offset_from_method_cell": 56
+    },
+    {
+      "cell": "0x32f0f38",
+      "value": "0x1fe4f98",
+      "executable_pointer": true,
+      "offset_from_method_cell": 64
+    },
+    {
+      "cell": "0x32f0f40",
+      "value": "0x1fe4f08",
+      "executable_pointer": true,
+      "offset_from_method_cell": 72
+    },
+    {
+      "cell": "0x32f0f48",
+      "value": "0x1fe4f10",
+      "executable_pointer": true,
+      "offset_from_method_cell": 80
+    },
+    {
+      "cell": "0x32f0f50",
+      "value": "0x1fe4f18",
+      "executable_pointer": true,
+      "offset_from_method_cell": 88
+    },
+    {
+      "cell": "0x32f0f58",
+      "value": "0x1fe4f24",
+      "executable_pointer": true,
+      "offset_from_method_cell": 96
+    },
+    {
+      "cell": "0x32f0f60",
+      "value": "0x1fe4f30",
+      "executable_pointer": true,
+      "offset_from_method_cell": 104
+    },
+    {
+      "cell": "0x32f0f68",
+      "value": "0x1fe4f38",
+      "executable_pointer": true,
+      "offset_from_method_cell": 112
+    },
+    {
+      "cell": "0x32f0f70",
+      "value": "0x1fe4f40",
+      "executable_pointer": true,
+      "offset_from_method_cell": 120
+    },
+    {
+      "cell": "0x32f0f78",
+      "value": "0x1fe4f64",
+      "executable_pointer": true,
+      "offset_from_method_cell": 128
+    },
+    {
+      "cell": "0x32f0f80",
+      "value": "0xce8680",
+      "executable_pointer": true,
+      "offset_from_method_cell": 136
+    },
+    {
+      "cell": "0x32f0f88",
+      "value": "0xce8b60",
+      "executable_pointer": true,
+      "offset_from_method_cell": 144
+    },
+    {
+      "cell": "0x32f0f90",
+      "value": "0xce8d04",
+      "executable_pointer": true,
+      "offset_from_method_cell": 152
+    },
+    {
+      "cell": "0x32f0f98",
+      "value": "0xce8d0c",
+      "executable_pointer": true,
+      "offset_from_method_cell": 160
+    }
+  ],
+  "candidate_table_origins": [
+    {
+      "candidate_table_start": "0x32f0ef8",
+      "method_pointer_offset": "0x0",
+      "contiguous_executable_pointer_cells_through_method": 1,
+      "next_seven_executable_pointer_cells": 7,
+      "vtable_identity_proven": false
+    },
+    {
+      "candidate_table_start": "0x32f0ef0",
+      "method_pointer_offset": "0x8",
+      "contiguous_executable_pointer_cells_through_method": 2,
+      "next_seven_executable_pointer_cells": 7,
+      "vtable_identity_proven": false
+    },
+    {
+      "candidate_table_start": "0x32f0ee8",
+      "method_pointer_offset": "0x10",
+      "contiguous_executable_pointer_cells_through_method": 3,
+      "next_seven_executable_pointer_cells": 7,
+      "vtable_identity_proven": false
+    },
+    {
+      "candidate_table_start": "0x32f0ee0",
+      "method_pointer_offset": "0x18",
+      "contiguous_executable_pointer_cells_through_method": 4,
+      "next_seven_executable_pointer_cells": 7,
+      "vtable_identity_proven": false
+    },
+    {
+      "candidate_table_start": "0x32f0ed8",
+      "method_pointer_offset": "0x20",
+      "contiguous_executable_pointer_cells_through_method": 5,
+      "next_seven_executable_pointer_cells": 7,
+      "vtable_identity_proven": false
+    },
+    {
+      "candidate_table_start": "0x32f0ed0",
+      "method_pointer_offset": "0x28",
+      "contiguous_executable_pointer_cells_through_method": 6,
+      "next_seven_executable_pointer_cells": 7,
+      "vtable_identity_proven": false
+    },
+    {
+      "candidate_table_start": "0x32f0ec8",
+      "method_pointer_offset": "0x30",
+      "contiguous_executable_pointer_cells_through_method": 7,
+      "next_seven_executable_pointer_cells": 7,
+      "vtable_identity_proven": false
+    },
+    {
+      "candidate_table_start": "0x32f0ec0",
+      "method_pointer_offset": "0x38",
+      "contiguous_executable_pointer_cells_through_method": 8,
+      "next_seven_executable_pointer_cells": 7,
+      "vtable_identity_proven": false
+    },
+    {
+      "candidate_table_start": "0x32f0eb8",
+      "method_pointer_offset": "0x40",
+      "contiguous_executable_pointer_cells_through_method": 9,
+      "next_seven_executable_pointer_cells": 7,
+      "vtable_identity_proven": false
+    },
+    {
+      "candidate_table_start": "0x32f0eb0",
+      "method_pointer_offset": "0x48",
+      "contiguous_executable_pointer_cells_through_method": 10,
+      "next_seven_executable_pointer_cells": 7,
+      "vtable_identity_proven": false
+    },
+    {
+      "candidate_table_start": "0x32f0ea8",
+      "method_pointer_offset": "0x50",
+      "contiguous_executable_pointer_cells_through_method": 11,
+      "next_seven_executable_pointer_cells": 7,
+      "vtable_identity_proven": false
+    },
+    {
+      "candidate_table_start": "0x32f0ea0",
+      "method_pointer_offset": "0x58",
+      "contiguous_executable_pointer_cells_through_method": 12,
+      "next_seven_executable_pointer_cells": 7,
+      "vtable_identity_proven": false
+    },
+    {
+      "candidate_table_start": "0x32f0e98",
+      "method_pointer_offset": "0x60",
+      "contiguous_executable_pointer_cells_through_method": 13,
+      "next_seven_executable_pointer_cells": 7,
+      "vtable_identity_proven": false
+    },
+    {
+      "candidate_table_start": "0x32f0e90",
+      "method_pointer_offset": "0x68",
+      "contiguous_executable_pointer_cells_through_method": 14,
+      "next_seven_executable_pointer_cells": 7,
+      "vtable_identity_proven": false
+    },
+    {
+      "candidate_table_start": "0x32f0e88",
+      "method_pointer_offset": "0x70",
+      "contiguous_executable_pointer_cells_through_method": 15,
+      "next_seven_executable_pointer_cells": 7,
+      "vtable_identity_proven": false
+    },
+    {
+      "candidate_table_start": "0x32f0e80",
+      "method_pointer_offset": "0x78",
+      "contiguous_executable_pointer_cells_through_method": 16,
+      "next_seven_executable_pointer_cells": 7,
+      "vtable_identity_proven": false
+    }
+  ],
+  "native_raw_pointers_to_table_neighborhood": [
+    {
+      "pointer_cell": "0x34963b8",
+      "target_near_method_slot": "0x32f0ed0",
+      "distance_from_method_slot": -40,
+      "constructor_verified": false
+    }
+  ],
+  "native_raw_pointers_to_neighborhood_total": 1,
+  "adrp_page_references": 0,
+  "nearby_address_xrefs_total": 0,
+  "nearby_address_xrefs_first": [],
+  "code_windows_first": [],
+  "concrete_schema_vtable_identity_verified": false,
+  "schema_class_constructor_verified": false,
+  "pokemon_species_id_verified": false,
+  "warning": "A raw code pointer in data is not enough to identify vtable base, class, constructor, or species field."
+}
