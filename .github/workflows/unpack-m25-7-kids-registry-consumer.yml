@@ -1,0 +1,88 @@
+name: M25.7 - KIDS registry property hash native ExeFS consumer scan
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m25_7_native_registry_hash_code_consumer.py"
+      - ".github/workflows/unpack-m25-7-kids-registry-consumer.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m25-7-registry-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  native-registry-code-consumer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout original NSO and newly proven KIDS 3543-value registry
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m20_native_species_item_targets.py
+            Scripts/resources/m25_7_native_registry_hash_code_consumer.py
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M25/m25_2_original_registry_summary.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install original AArch64 NSO tools
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Verify scoped native hash audit source constants
+        run: python -m Scripts.resources.m25_7_native_registry_hash_code_consumer --self-test
+
+      - name: Locate exact original ARM64 property and registry type hash references
+        run: python -m Scripts.resources.m25_7_native_registry_hash_code_consumer
+
+      - name: Verify no unsupported game species ID semantic assignment
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M25")
+          s=json.loads((p/"m25_7_original_registry_hash_consumer_summary.json").read_text(encoding="utf-8"))
+          r=json.loads((p/"m25_7_original_registry_hash_assembly.json").read_text(encoding="utf-8"))
+          assert s["original_KIDS_u32_array_elements"]==3543
+          assert s["original_pokemon_source_OID_links_in_array"]==602
+          assert set(r)=={"array_3543_property","array_owner_type","array_owner_oid","source_to_texture_property"}
+          assert not s["native_registry_array_consumer_semantics_proven"]
+          assert not s["game_species_id_to_array_slot_verified"]
+          assert not s["game_villager_id_to_source_OID_verified"]
+          print("PASS original property hash evidence without unproven ID assignment")
+          PY
+
+      - name: Retain original NSO code-trace evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-m25-7-registry-native-code-xrefs
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M25/m25_7_*
+          if-no-files-found: warn
+          retention-days: 21
+
+      - name: Commit audited 3543-array native hash references
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M25/m25_7_*
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m25.7): original ExeFS source hash refs for KIDS icon registry table"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
