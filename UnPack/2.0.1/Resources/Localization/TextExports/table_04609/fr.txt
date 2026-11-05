@@ -1,0 +1,801 @@
+
+<$kgfull;0(lnum1)>
+<$kgicon(lnum1)>
+<$kgtext;0(lnum1)>
+<$keyicon(lnum1)><$kgtext;0(lnum2)>
+<$etname;0(lnum1)>
+<$pkname;0(lnum1)>
+<fcap><$hatname;0(lnum1)>
+<$msname;0(lnum1)>
+<$msdscp;0(lnum1)>
+<$pkclass;0(lnum1)>
+<$pkheight;0(lnum1)>
+<$pkweight;0(lnum1)>
+<$pkdscp;0(lnum1)>
+<fcap><fqty(1)><$iname;0(lnum1)>
+<fqty(1)><fcap><$iname;0(lnum1)>
+Confort : <flow><$stflevel;0(lnum1)>
+<$sklname;0(lnum1)>
+<$idscp;0(lnum1)>
+<$pkform;0(lnum1)>
+<fcap><$phfrname;0(lnum1)>
+<fcap><$phfilname;0(lnum1)>
+<$shchname;0(lnum1)>
+<$stgmyname;0(lnum1)>
+<fcap><fqty(1)><$iname;0(lnum1)>
+<timerms;0(lnum1,lnum2)>
+<timemd;0(lnum1,lnum2)>
+<timehm;0(lnum1,lnum2)>
+<string;0(lstr1)>
+<$cname;0(lnum1)>
+Localisation
+
+
+
+
+
+???
+
+
+Rien
+
+Total
+コ
+
+<$cdef(27)><fcap><fqty(1)><$iname;0(lnum1)></color>
+
+???
+<ratio;0(lnum1,lnum2)>
+Pokédex
+Enregistrés
+<$strsname;0(lstr1,lnum1)>
+<pkdexnum;0(lnum1)>
+×
+Habitadex
+
+En ligne
+Hors ligne
+
+
+Encore <dgt3;0(lnum1)>
+<dgt10;0(lnum1)>
+<$cdef(27)><fcap><fqty(1)><$iname;0(lnum1)> </color>× <dgt4;1(lnum2)>
+
+
+Habitat proche
+
+
+
+
+
+<ratio;0(lnum1,lnum2)>
+
+
+
+
+
+
+
+<$cdef(27)><fcap><fqty(1)><$ifull;0(lnum1)> </color>× <dgt4;1(lnum2)>
+
+<$stgmyname;0(lnum1)>
+<$cdef(27)><fcap><$sklfull;0(lnum1)></color>
+Démarrer la construction
+Démarrer la reconstruction
+
+<moneyint;0(lnum1)>
+<$icon(lnum1)> ???
+Traitez des requêtes ! <$icon(lnum1)>
+Traitez des requêtes ! <$icon(lnum1)>
+Apprenez des capacités ! <$icon(lnum1)>
+<$chopen;0(lnum2)> <$icon(lnum1)>
+<$keyicon(153)> <fcap><fqty(1)><$inamewithnum;0(lnum1,lnum2)>
+<$keyicon(153)> ???
+
+<fcap><fqty(1)><$iname;0(lnum1)><nbs2><$icon(11199)>
+
+
+
+
+
+
+
+
+Lieu de vie de ???
+Lieu de vie <frdedef;0()><$cdef(27)><$cname;0(lnum1)></color>
+
+
+
+<$uqname;0(lnum1)>
+<$gqname;0(lnum1)>
+<$uqdscp;0(lnum1)>
+<$gqdscp;0(lnum1,lnum2)>
+Choses à faire
+
+Défis journaliers
+???
+Taille
+Poids
+Type
+<$typname;0(lnum1)>
+Horaires
+Météo
+Spécialité
+Environnement
+Préférences
+Caractéristiques
+Environnement
+Personnalité
+???
+Suivant
+<$pkname;0(lnum2)>
+<fcap><$hatname;0(lnum2)>
+
+<$temptxt;0(lnum1)>
+<fcap><$illutxt;0(lnum1)>
+<fcap><$humitxt;0(lnum1)>
+Vous n'avez pas encore découvert cet habitat.
+<fcap><$cdef(27)><$spwname;0(lnum2)></color><nbs2><$icon(lnum1)>
+Rapport prêt !
+
+
+
+-<moneyint;0(lnum1)>
++<moneyint;0(lnum1)>
+<dgt2;0(lnum1)>
+Épuisé
+<dgt2;0(lnum1)>
+
+Acheter
+En stock
+
+Commander
+Rapport sur le confort
+
+----
+
+
+
+
+
+
+Qualité de l'environnement
+Max.
+Souhaitez-vous jouer avec cette apparence ?
+
+Mot de passe
+Adresse
+<string;0(lstr1)>
+<string;0(lstr1)>
+Veuillez communiquer le mot de passe<br>à vos partenaires de jeu.
+Veuillez communiquer le mot de passe<br>et l'adresse à vos partenaires de jeu.
+Voulez-vous créer cette île ?<br>Veuillez vérifier les paramètres ci-dessous !
+Nom de l'île
+Adresse
+Code magique
+<dgt2;0(lnum1)> <qty;0(jour restant,jours restants)>
+Dernier jour
+<string;0(lstr1)>
+Les objets que vous achetez ici seront envoyés sur votre PC.<br>Vous apprendrez les méthodes immédiatement.
+Recracher
+Recracher et faire pivoter vers la droite
+Recracher et faire pivoter vers la gauche
+Choix de la destination
+Voulez-vous vraiment choisir cette destination ?
+Membres du groupe
+Propriétaire
+Personnes invitées
+<$keyicon(6)><fcap><fqty(1)><$iname;0(lnum1)>
+Départ
+Remarques importantes sur le jeu en réseau
+Bien jouer en communauté
+Attention
+Confirmer
+Terminer
+Oui
+Non
+Consulter
+Annuler
+???
+Ressources
+Requis
+Dans le Sac
+Tout
+Favoris
+À l'exception des méthodes, ce que vous achetez<br>sur cette île ne peut pas être utilisé ailleurs.
+<dgt2;0(lnum1)> <qty;0(lot,lots)>
+
+La date définie n'est pas valide.<br>Ouvrez le menu HOME, choisissez une date comprise<br>entre le 01/01/2000 et le 31/12/2060, puis redémarrez le jeu.
+Autres
+
+Ce jeu effectue des sauvegardes automatiques.<br>L'icône <$icon(2645)> indique qu'une sauvegarde est en cours.<br><br>Veuillez ne pas quitter le jeu ou éteindre la console<br>pendant qu'une sauvegarde est en cours.
+Dans quelle langue souhaitez-vous jouer ?
+
+
+
+
+
+
+
+<string;0(lstr1)>
+Requis
+Total
+Marché conclu !
+Liste des capacités
+
+Qté réalisable
+Cherchez ce Pokémon !
+Réessayez demain !
+Allez chercher le Pokémon !
+Cherchez un Pokémon apte !
+/
+Ressources
+Pokémon
+<fcap><$spwname;0(lnum1)>
+Habitat vide
+Chez <dart;0()><$cdef(27)><$cname;0(lnum1)></color>
+Maison commune
+Chez <$cdef(27)><pname;0></color>
+Temps restant
+En marche
+Allumer
+
+Chez <$cdef(27)><$strpname;0(lstr1,lnum1)></color>
+
+
+Zone
+<$cdef(27)><pname;0></color>,
+Cuisiner
+Requête
+Date limite : <timeymd;0(lnum1,lnum2,lnum3)>
+Trouvez des Pokémon qui ont besoin de votre aide !
+<string;0(lstr1)>
+a.m.
+p.m.
+<timehm;0(lnum1,lnum2)>
+En solde
+Défi terminé !
+Quelqu'un d'autre a soumis un rapport de défi terminé !
+Vous avez soumis plusieurs rapports de défis terminés !
+Confort des Pokémon
+Le niveau a augmenté !
+Le niveau a baissé.
+
+
+
+<timeymdhm;0(lnum1,lnum2,lnum3,lnum4,lnum5)>
++
+-
+Terminé !
+
+<timeymd;0(lnum1,lnum2,lnum3)>
+
+
+Aucun Pokémon n'habite cette zone.
+Niveau <dgt2;0(lnum1)>
+---
+<$backupmemo;0(lstr1,lnum1)>
+<$strpname;0(lstr1,lnum1)>
+Diplôme
+<wowner;0>,
+Ce document certifie que vous avez<br>complété votre Pokédex.<br>Félicitations pour cet exploit<br>hors du commun !
+De la part de toute l'équipe.
+
+Recherche de caméras à proximité...
+Changement de caméra...
+Vous n'avez rien ajouté à vos <$cdef(27)>favoris</color>.
+Articles reçus
+Inventaire
+
+Villes pouvant être visitées
+Encore
+<dgt2;0(lnum1)>
+<string;0(lstr1)>
+Entamer la démolition !
+Lancer les préparatifs !
+Lancer la relocalisation !
+<$icon(11214)> Commun
+<$icon(11214)><$icon(11214)> Rare
+<$icon(11214)><$icon(11214)><$icon(11214)> Très rare
+Ce document certifie que vous avez<br>complété le Pokédex de l'Île-Nuage.<br>Félicitations pour cet exploit<br>hors du commun !
+Début de la rénovation !
+Lorsque vous jouez en mode sans fil local ou en ligne, les autres personnes<br>peuvent voir tout <$cdef(27)>contenu textuel</color> (comme le <$cdef(27)>nom de votre personnage<br></color>ou le <$cdef(27)>nom de votre île</color>) et <$cdef(27)>graphique </color>(comme <$cdef(27)>ce que vous construisez<br>à l'aide de blocs</color>). Faites attention à ce que vous partagez afin d'éviter<br>d'offenser les autres. Amusez-vous bien !
+Remarques importantes sur le jeu en réseau :<br><br>Tous les contenus créés par les utilisateurs et les utilisatrices,<br>de même que la conduite de ces derniers en jeu, sont soumis<br>au Contrat relatif au compte Nintendo et aux Règles<br>communautaires de Nintendo.<br><br>S'il est confirmé, à la suite d'un signalement, qu'un de vos<br>contenus ou que certaines de vos activités ne respectent pas<br>ces conditions d'utilisation, vos données sur le serveur pourraient<br>être bloquées et/ou votre accès au jeu en réseau pourrait être<br>restreint.<br><br>En outre, veuillez noter que la personne qui a créé une Île-Nuage<br>est responsable de tout contenu présent sur cette île.<br>Veuillez faire preuve de prudence lorsque vous partagez<br>le mot de passe d'une Île-Nuage.<br><br>Lorsque vous jouez en réseau, vous pouvez signaler les contenus<br>ou comportements déplacés en sélectionnant « Signaler »<br>dans le menu principal.<br><br>Merci de respecter le Contrat relatif au compte Nintendo<br>et les Règles communautaires de Nintendo, et de traiter autrui<br>avec considération.
+Envoyer
+Choses à découvrir
+Photo enregistrée
+Photo sélectionnée
+Numéro
+Ordre alphabétique
+Poids par ordre décroissant
+Poids par ordre croissant
+Taille par ordre décroissant
+Taille par ordre croissant
+Par catégorie
+Ordre d'apprentissage
+Prix par ordre croissant
+Prix par ordre décroissant
+Par statut
+Statut
+Position actuelle
+Spécialité
+Tout afficher
+Pokémon ami
+
+Pokémon détecté
+Pokémon inconnu
+<$keyicon(83)> Confirmer
+Trier
+Nombre de personnes
+Mode observation
+Adresse
+Mot de passe
+Code magique
+Nom de l'Île-Nuage
+Rendre l'Île-Nuage publique
+Configurer un mot de passe
+Date de la sauvegarde
+Notes
+Modifier
+Sauvegarder
+Restaurer
+4
+3
+2
+Activer
+Désactiver
+Oui
+Non
+Permet de choisir le nombre de personnes qui peuvent participer.
+En mode observation, vous ne pouvez pas utiliser certains objets ou certaines capacités.
+Permet de consulter l'adresse de l'Île-Nuage.
+Permet de consulter ou de modifier le mot de passe de l'Île-Nuage.
+Permet de consulter le code magique de l'Île-Nuage.
+Permet de consulter ou de modifier le nom de l'Île-Nuage.
+Permet d'autoriser ou non d'autres personnes à jouer sur votre Île-Nuage.
+Permet d'autoriser uniquement les personnes qui connaissent le mot de passe.
+Permet de créer une sauvegarde de secours avec les données actuelles.
+Permet de restaurer la sauvegarde de secours.
+Défilement du texte
+Langue
+Usage
+Commandes : courir et sauter
+Configuration des boutons
+Vibrations des manettes
+
+Caméra (axe vertical)
+Caméra (axe horizontal)
+Vitesse de la caméra
+Ajustement auto. de caméra
+Musique
+Effets sonores
+Cris des Pokémon
+Modifier
+Lent
+Normal
+Rapide
+Dans aucune zone
+Pokémon à découvrir
+Pokémon rencontrés à l'endroit suivant : <$strsname;0(lstr1,lnum1)>
+Pokémon rencontrés chez <$strpname;0(lstr1,lnum1)>
+Activer
+Désactiver
+Mode normal
+Mode inversé
+Activer
+Désactiver
+
+
+Permet de choisir entre trois vitesses de défilement du texte.
+Permet de choisir la langue du jeu.
+
+Courir avec <$keyicon(55)> et sauter avec <$keyicon(3)>.
+Permet de reconfigurer les commandes associées à chaque bouton.
+Permet d'activer ou de désactiver les vibrations des manettes.
+Courir avec <$keyicon(3)> et sauter avec <$keyicon(55)>.
+Permet de changer le sens de déplacement de la caméra sur l'axe vertical.
+Permet de changer le sens de déplacement de la caméra sur l'axe horizontal.
+Permet de régler la vitesse de mouvement de la caméra.
+Permet d'éviter ou non automatiquement les éléments qui obstruent la caméra.
+
+Permet de régler le volume de la musique.
+Permet de régler le volume des effets sonores.
+Permet de régler le volume des cris de Pokémon.
+Que souhaitez-vous signaler ?
+Sélectionnez la personne à signaler.
+Sélectionnez la raison du signalement.
+Voulez-vous envoyer le rapport avec ces informations ?
+Un monde (terrain, photos, etc.)
+Une personne (nom, comportement, etc.)
+Infos personnelles/Demande de rencontre
+Contenu violent
+Contenu déplacé/nuisible
+Harcèlement/Insultes
+Publicité
+Contenu obscène
+Modification du jeu/Triche
+Autre contenu déplacé
+Ce rapport sera envoyé à Nintendo et non à la personne faisant<br>l'objet du signalement. Il est possible que les informations<br>contenues dans votre rapport soient partagées avec des tiers.<br><br>Veuillez ne pas envoyer de rapports erronés de manière<br>intentionnelle.
+Veuillez fournir des explications détaillées.
+Signaler
+Confirmer
+Retour
+La communication va bientôt prendre fin. Veuillez terminer ce que<br>vous êtes en train de faire et fermer toute fenêtre ouverte.
+
+Activation du mode virtuel...
+Désactivation du mode virtuel...
+Corde à sauter
+Camoufilage
+Sautez lorsque la corde arrive<br>à vos pieds !
+Touchez le <$cdef(27)>PC</color> du <$cdef(27)>Centre Pokémon<br></color>sans vous faire repérer !
+Vous
+OK !
+C'est parti !
+1re place
+2e place
+3e place
+4e place
+Résultat
+<dgt5;0(lnum1)> <qty;0(saut,sauts)>
+Nouveau record !
+
+Vous vous êtes fait repérer
+
+
+
+<dgt4;0(lnum1)> fois.
+Jour du shopping
+Jour des défis
+<$cdef(27)><$strpname;0(lstr1,lnum1)></color> aimerait lancer une partie<br>de <$cdef(27)>corde à sauter</color>. Répondez au sondage !
+<$cdef(27)><$strpname;0(lstr1,lnum1)></color> aimerait lancer une partie de <$cdef(27)>corde à sauter</color>.
+Voulez-vous vous rendre à une destination que vous n'avez pas<br>encore découverte ? Faites-vous entendre !
+Jouer avec les personnes qui répondent « oui ».
+Chasse aux tampons
+Tampon du jour
+Tamponner
+Période de chasse
+Période d'échange
+Du <timemd;0(lnum1,lnum2)> au <timemd;1(lnum3,lnum4)>
+Ce texte contient un mot ou un caractère interdit.<br>Veuillez le modifier.
+Il n'y a aucun Pokémon à afficher.
+Il n'y a aucun habitat à afficher.
+<$cdef(27)>Filtre activé</color>
+Aucun filtre
+
+
+Sans lieu de vie
+Lieu de vie <frdedef;0()><$cdef(27)><$cname;0(lnum1)></color>
+La personne responsable va bientôt mettre fin à la communication.<br>Veuillez terminer ce que vous êtes en train de faire.
+La communication sera bientôt interrompue.
+Veuillez interrompre toute activité en cours.<br><$cdef(27)><$strpname;0(lstr1,lnum1)></color> va devenir responsable de la session.
+<$cdef(27)><$strpname;0(lstr1,lnum1)></color> souhaite se rendre sur une <$cdef(27)>Île Rêve</color>.<br>Veuillez répondre au sondage.
+<$cdef(27)><$strpname;0(lstr1,lnum1)></color> souhaite quitter l'<$cdef(27)>Île Rêve</color>.<br>Veuillez répondre au sondage.
+<$cdef(27)><$strpname;0(lstr1,lnum1)></color> souhaite jouer à <$cdef(27)>camoufilage</color>.<br>Veuillez répondre au sondage.
+Destination proposée : <$cdef(27)><$stgmyname;0(lnum1)></color>.<br>Veuillez répondre au sondage.
+OK
+Quantité requise
+Vous vous êtes fait repérer
+<dgt5;0(lnum1)>
+Distance de la caméra
+Proche
+Normale
+Éloignée
+Permet de régler la distance entre la caméra et le personnage.
+Peindre
+Peinture
+
+Appuyez sur le bouton à assigner.
+En attente d'une réponse des autres membres du groupe...
+<$strpname;1(lstr1,lnum2)> veut visiter <dart;0()><$cdef(27)><$stgmyname;0(lnum1)></color>.
+La personne responsable aimerait se rendre autre part.
+<$cdef(27)><$strpname;0(lstr1,lnum1)></color> est sur le point de se rendre sur une<$cdef(27)> Île Rêve</color>.
+<$cdef(27)><$strpname;0(lstr1,lnum1)></color> est sur le point de quitter l'<$cdef(27)>Île Rêve</color>.
+Les personnes qui répondent « non » ne partiront pas.
+Vous ne partirez pas si quelqu'un répond « non ».
+
+
+<oneline>Le sondage est terminé ! Vous allez rester à cet endroit :<br><$stgmyname;0(lnum1)>.
+
+
+<$cdef(27)><$strpname;0(lstr1,lnum1)></color> aimerait faire une partie de <$cdef(27)>camoufilage</color>.
+Oui <$icon(lnum1)>
+Non <$icon(lnum1)>
+Annuler
+Modifier la réponse
+Vous
+
+La connexion est instable.
+Veuillez vérifier l'état de la connexion.<br>Si le problème persiste, la communication sera interrompue.
+Utiliser/Parler, etc.
+Courir (maintenir appuyé)
+Ranger (appuyer brièvement)
+Ouvrir le Sac
+Ramasser (appuyer brièvement)
+Aspirer (maintenir appuyé)
+Inviter le Pokémon à venir<br>Renvoyer le Pokémon (maintenir)
+Réactions/Messages
+Changer de capacité (gauche)
+Changer de capacité (droite)
+Roue des capacités
+Sauter
+Verrouiller son orientation
+Utiliser une capacité
+Changer de cible
+
+Sortir l'appareil photo
+Surf
+Vol Plané
+
+
+Recracher plus vers le haut
+Recracher plus vers le bas
+Recracher/Tenir
+Mettre dans un coffre, etc.
+Échanger (appuyer brièvement)
+Réorganiser (maintenir appuyé)
+Déplacer la pile
+Déplacer la moitié
+Épingler/Cacher le Sac secondaire
+Informations
+Jeter
+<dgt3;0(lnum1)>
+/<dgt3;0(lnum1)>
+Menu principal
+Retour
+Changer de page
+
+Commandes Sac secondaire (droite)
+Commandes Sac secondaire (gauche)
+Caméra à suivi automatique
+Permet de choisir ou non si la caméra suit automatiquement Métamorph.
+Recherche...
+Défis collectifs
+Défis spéciaux
+Pokémon tous enregistrés
+Habitat enregistré
+Habitat détecté
+Habitat inconnu
+Qualité globale de l'environnement : niveau <dgt2;0(lnum1)>
+<$cdef(224)>Encore <dgt2;0(lnum2)> <qty;0(niveau,niveaux)>. </color>(Qualité globale de l'environnement actuelle : <dgt2;1(lnum1)>)
+
+Heure de fin prévue : <timehm;0(lnum1,lnum2)>
+
+Fin prévue pour demain.
+<dgt6;0(lnum1)>
+Supprimer l'Île-Nuage
+Autoriser le mode virtuel
+Supprimer
+Votre Île-Nuage sera supprimée. Après cela, vous ne pourrez plus y accéder.
+Permet d'autoriser ou non les visites d'autres personnes en mode virtuel.
+
+Distance de la caméra en intérieur
+Afficher l'étendue du lieu de vie
+Qualité de l'environnement : niveau <dgt2;0(lnum1)> ou plus
+Qualité de l'environnement actuelle : <dgt2;1(lnum1)>. <$cdef(27)>Il vous manque <dgt2;0(lnum2)> <qty;0(niveau,niveaux)>.</color>
+Motif du signalement
+・
+
+<dgt3;0(lnum1)>
+/<dgt3;0(lnum1)>
+<string;0(lstr1)>
+Voulez-vous modifier les paramètres de cette île ?
+Restaurer cette île en écrasant les données actuelles ?
+Voulez-vous supprimer cette île ?
+∞
+Déjà connue
+× <dgt2;0(lnum1)>
+Lot de <dgt2;1(lnum2)> <class><$inamewithnum;0(lnum1,lnum2)>
+Ver. <string;0(lstr1)>
+Nom inapproprié
+Conduite inappropriée
+Nom de zone inapproprié
+Topographie de zone inappropriée
+Aujourd'hui seulement !
+
+Voulez-vous restaurer la sauvegarde de secours ?
+Quel tampon voulez-vous remplacer ?
+Cadeaux Mystère
+Objets commandés
+Cadeaux offerts par les Pokémon
+Que souhaitez-vous récupérer ?
+Récupérer via Internet
+Récupérer via code ou mot de passe
+Voir vos Cadeaux Mystère
+Attention
+Si la connexion à Internet s'interrompt pendant que vous récupérez<br>un cadeau via un code ou mot de passe, il est possible que vous ne<br>puissiez pas récupérer ce cadeau à l'aide de ce même code ou<br>mot de passe. Avant tout, veuillez donc vérifier le niveau de charge<br>de votre console et vous assurer que votre connexion à Internet est stable.
+Le code ou mot de passe est erroné. Veuillez le vérifier.<br><br>Si vous saisissez un code ou mot de passe erroné dix fois, vous ne pourrez<br>plus en saisir pendant un certain temps. Veuillez faire attention lorsque<br>vous saisissez du texte.
+Vous ne pourrez plus rien saisir pendant un certain temps, car vous avez saisi<br>un code ou mot de passe erroné à plusieurs reprises.<br>Veuillez réessayer ultérieurement.
+J'ai compris.
+Cadeaux reçus
+<dgt2;1(lnum2)><$cdef(27)> <class><$ifullwithnum;0(lnum1,lnum2)></color>
+<moneyint;0(lnum1)> <qty;0(pièce,pièces)> Poké Vie
+Voilà tout ce que vous avez obtenu !
+Vous n'avez encore obtenu aucun cadeau.
+
+???
+Afficher le mot de passe
+Permet d'afficher ou non le mot de passe lorsque vous jouez avec autrui.
+Filtrer
+Enregistré
+Indice : « <$hatname;0(lnum1)> »
+Autoriser l'enregistrement<br>du mot de passe
+Permet qu'autrui enregistre automatiquement votre mot de passe ou non.
+N'importe quel objet de ce type convient.
+Souhaitez-vous jouer ?
+Souhaitez-vous y aller ?
+Il s'agit d'une zone que vous ne connaissez pas. Souhaitez-vous y aller ?
+Souhaitez-vous rentrer ?
+Bouton déjà assigné
+Activer le mode virtuel
+Les actions réalisées par autrui en mode virtuel ne sont pas sauvegardées.
+Dans cette zone
+Dans d'autres zones
+Total
+Dans cette zone
+Dans d'autres zones
+Courir/Marcher
+<$pkname;0(lnum1)> <$pkform;1(lnum1)>
+Réaction « <$emotename;0(lnum1)> »
+Méthode «<$cdef(27)> <fqty(1)><$cdef(27)><$ifull;0(lnum1)></color> </color>»
+<$cdef(27)><fcap><fqty(1)><$ifull;0(lnum1)></color>
+<$coordname;0(lnum1)>
+Coiffure « <$hairname;0(lnum1)> »
+Choisissez le cadeau que vous souhaitez recevoir.
+Ne pas inverser
+Inverser
+Fermeture de la roue<br>des capacités
+Appuyer sur <$keyicon(7)>
+Relâcher
+Le menu ne se fermera pas tant que vous n'aurez pas appuyé sur <$keyicon(7)>.
+Relâchez le bouton pour fermer le menu et valider votre choix.
+Fermeture de la roue<br>des réactions
+<timeymdhmtz;0(lnum1,lnum2,lnum3,lnum4,lnum5,lnum6)>
+
+Record établi lors du défi
+Chargement...
+Téléchargement...
+<pernum;0(lnum1)>
+<timerms;0(lnum1,lnum2)>
+<timerms;0(lnum1,lnum2)>
+
+<fcap><$attrtagtxt;0(lnum1)>
+Personnes connectées
+Ingrédients
+Rapport prêt !
+<fcap><$bname;0(lnum1)>
+<fcap><$bname;0(lnum1)>
+<fcap><$bname;0(lnum1)>
+<fcap><$coordname;0(lnum1)>
+<fcap><$hairname;0(lnum1)>
+<fcap><$bagname;0(lnum1)>
+<fcap><$hwearname;0(lnum1)>
+<fcap><$lbodyname;0(lnum1)>
+<fcap><$shoesname;0(lnum1)>
+<fcap><$ubodyname;0(lnum1)>
+Mode souris
+Permet d'utiliser les Joy-Con 2 comme une souris.
+La personne propriétaire est sur le point d'interrompre<br>la communication. Veuillez cesser toute activité en cours.
+
+
+
+
+
+Déplacement quand la roue<br>des capacités est ouverte
+Désactiver
+Activer
+Permet de sélectionner une capacité de la roue des capacités avec <$keyicon(194)> ou <$keyicon(195)>.
+Permet de sélectionner une capacité de la roue des capacités seulement avec <$keyicon(195)>.
+Marque au centre de l'écran
+Croix
+Aucune
+Permet d'afficher une marque au centre de l'écran pour pallier la cinétose.
+Partie <dgt1;0(lnum1)>
+Ouvrir le Nintendo eShop
+Voir la liste des objets
+Permet de voir le contenu téléchargeable sur le Nintendo eShop.
+Objets inclus dans le contenu téléchargeable.
+Partie <dgt1;0(lnum1)> du contenu téléchargeable
+<dgt2;1(lnum2)><$cdef(27)> <class><$ifullwithnum;0(lnum1,lnum2)></color>
+Réaction « <$emotename;0(lnum1)> »
+Méthode «<$cdef(27)> <fqty(1)><$ifull;0(lnum1)> </color>»
+<$cdef(27)><fcap><fqty(1)><$ifull;0(lnum1)></color>
+<$coordname;0(lnum1)>
+Coiffure « <$hairname;0(lnum1)> »
+Vous pouvez recevoir ce qui suit.
+Vous avez déjà reçu ce qui suit.
+<timeymdhmtz;0(lnum1,lnum2,lnum3,lnum4,lnum5,lnum6)>
+Contenu téléchargeable
+Point
+Message de confirmation à<br>l'annulation de Vol Magnétik
+Activer
+Désactiver
+Permet d'afficher ou non le message de confirmation à l'annulation de <$sklname(13)>.
+Affichage d'un cadre
+Désactiver
+Rectangle
+Parenthèses
+Permet d'afficher un cadre à l'écran pour pallier la cinétose.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,801 @@
+{"text_id":0,"forms":[""],"absolute_byte_offsets":[6472],"raw_metadata_u32":[0]}
+{"text_id":1,"forms":["<$kgfull;0(lnum1)>"],"absolute_byte_offsets":[6473],"raw_metadata_u32":[1]}
+{"text_id":2,"forms":["<$kgicon(lnum1)>"],"absolute_byte_offsets":[6492],"raw_metadata_u32":[1]}
+{"text_id":3,"forms":["<$kgtext;0(lnum1)>"],"absolute_byte_offsets":[6509],"raw_metadata_u32":[1]}
+{"text_id":4,"forms":["<$keyicon(lnum1)><$kgtext;0(lnum2)>"],"absolute_byte_offsets":[6528],"raw_metadata_u32":[1]}
+{"text_id":5,"forms":["<$etname;0(lnum1)>"],"absolute_byte_offsets":[6564],"raw_metadata_u32":[1]}
+{"text_id":6,"forms":["<$pkname;0(lnum1)>"],"absolute_byte_offsets":[6583],"raw_metadata_u32":[1]}
+{"text_id":7,"forms":["<$hatname;0(lnum1)>"],"absolute_byte_offsets":[6602],"raw_metadata_u32":[1]}
+{"text_id":8,"forms":["<$msname;0(lnum1)>"],"absolute_byte_offsets":[6622],"raw_metadata_u32":[1]}
+{"text_id":9,"forms":["<$msdscp;0(lnum1)>"],"absolute_byte_offsets":[6641],"raw_metadata_u32":[1]}
+{"text_id":10,"forms":["<$pkclass;0(lnum1)>"],"absolute_byte_offsets":[6660],"raw_metadata_u32":[1]}
+{"text_id":11,"forms":["<$pkheight;0(lnum1)>"],"absolute_byte_offsets":[6680],"raw_metadata_u32":[1]}
+{"text_id":12,"forms":["<$pkweight;0(lnum1)>"],"absolute_byte_offsets":[6701],"raw_metadata_u32":[1]}
+{"text_id":13,"forms":["<$pkdscp;0(lnum1)>"],"absolute_byte_offsets":[6722],"raw_metadata_u32":[1]}
+{"text_id":14,"forms":["<$iname;0(lnum1)>"],"absolute_byte_offsets":[6741],"raw_metadata_u32":[1]}
+{"text_id":15,"forms":["<$iname;0(lnum1)>"],"absolute_byte_offsets":[6759],"raw_metadata_u32":[1]}
+{"text_id":16,"forms":["<$stflevel;0(lnum1)>"],"absolute_byte_offsets":[6777],"raw_metadata_u32":[1]}
+{"text_id":17,"forms":["<$sklname;0(lnum1)>"],"absolute_byte_offsets":[6798],"raw_metadata_u32":[1]}
+{"text_id":18,"forms":["<$idscp;0(lnum1)>"],"absolute_byte_offsets":[6818],"raw_metadata_u32":[1]}
+{"text_id":19,"forms":["<$pkform;0(lnum1)>"],"absolute_byte_offsets":[6836],"raw_metadata_u32":[1]}
+{"text_id":20,"forms":["<$phfrname;0(lnum1)>"],"absolute_byte_offsets":[6855],"raw_metadata_u32":[1]}
+{"text_id":21,"forms":["<$phfilname;0(lnum1)>"],"absolute_byte_offsets":[6876],"raw_metadata_u32":[1]}
+{"text_id":22,"forms":["<$shchname;0(lnum1)>"],"absolute_byte_offsets":[6898],"raw_metadata_u32":[1]}
+{"text_id":23,"forms":["<$stgmyname;0(lnum1)>"],"absolute_byte_offsets":[6919],"raw_metadata_u32":[1]}
+{"text_id":24,"forms":["<$iname;0(lnum1)>"],"absolute_byte_offsets":[6941],"raw_metadata_u32":[1]}
+{"text_id":25,"forms":["<timerms;0(lnum1,lnum2)>"],"absolute_byte_offsets":[6959],"raw_metadata_u32":[1]}
+{"text_id":26,"forms":["<timemd;0(lnum1,lnum2)>"],"absolute_byte_offsets":[6984],"raw_metadata_u32":[1]}
+{"text_id":27,"forms":["<timehm;0(lnum1,lnum2)>"],"absolute_byte_offsets":[7008],"raw_metadata_u32":[1]}
+{"text_id":28,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[7032],"raw_metadata_u32":[1]}
+{"text_id":29,"forms":["<$cname;0(lnum1)>"],"absolute_byte_offsets":[7050],"raw_metadata_u32":[1]}
+{"text_id":30,"forms":["見つかる場所"],"absolute_byte_offsets":[7068],"raw_metadata_u32":[1]}
+{"text_id":31,"forms":[""],"absolute_byte_offsets":[7087],"raw_metadata_u32":[0]}
+{"text_id":32,"forms":[""],"absolute_byte_offsets":[7088],"raw_metadata_u32":[0]}
+{"text_id":33,"forms":[""],"absolute_byte_offsets":[7089],"raw_metadata_u32":[0]}
+{"text_id":34,"forms":[""],"absolute_byte_offsets":[7090],"raw_metadata_u32":[0]}
+{"text_id":35,"forms":[""],"absolute_byte_offsets":[7091],"raw_metadata_u32":[0]}
+{"text_id":36,"forms":["？？？"],"absolute_byte_offsets":[7092],"raw_metadata_u32":[1]}
+{"text_id":37,"forms":[""],"absolute_byte_offsets":[7102],"raw_metadata_u32":[0]}
+{"text_id":38,"forms":[""],"absolute_byte_offsets":[7103],"raw_metadata_u32":[0]}
+{"text_id":39,"forms":["なし"],"absolute_byte_offsets":[7104],"raw_metadata_u32":[1]}
+{"text_id":40,"forms":[""],"absolute_byte_offsets":[7111],"raw_metadata_u32":[0]}
+{"text_id":41,"forms":["計"],"absolute_byte_offsets":[7112],"raw_metadata_u32":[1]}
+{"text_id":42,"forms":["コ"],"absolute_byte_offsets":[7116],"raw_metadata_u32":[1]}
+{"text_id":43,"forms":[""],"absolute_byte_offsets":[7120],"raw_metadata_u32":[0]}
+{"text_id":44,"forms":["<$cdef(27)><$iname;0(lnum1)></color>のレシピ"],"absolute_byte_offsets":[7121],"raw_metadata_u32":[1]}
+{"text_id":45,"forms":[""],"absolute_byte_offsets":[7170],"raw_metadata_u32":[0]}
+{"text_id":46,"forms":["？？？"],"absolute_byte_offsets":[7171],"raw_metadata_u32":[1]}
+{"text_id":47,"forms":["<ratio;0(lnum1,lnum2)>"],"absolute_byte_offsets":[7181],"raw_metadata_u32":[1]}
+{"text_id":48,"forms":["ポケモンずかん"],"absolute_byte_offsets":[7204],"raw_metadata_u32":[1]}
+{"text_id":49,"forms":["登録した数"],"absolute_byte_offsets":[7226],"raw_metadata_u32":[1]}
+{"text_id":50,"forms":["<$strsname;0(lstr1,lnum1)>"],"absolute_byte_offsets":[7242],"raw_metadata_u32":[1]}
+{"text_id":51,"forms":["<pkdexnum;0(lnum1)>"],"absolute_byte_offsets":[7269],"raw_metadata_u32":[1]}
+{"text_id":52,"forms":["×"],"absolute_byte_offsets":[7289],"raw_metadata_u32":[1]}
+{"text_id":53,"forms":["生息地ずかん"],"absolute_byte_offsets":[7292],"raw_metadata_u32":[1]}
+{"text_id":54,"forms":[""],"absolute_byte_offsets":[7311],"raw_metadata_u32":[0]}
+{"text_id":55,"forms":["オンライン"],"absolute_byte_offsets":[7312],"raw_metadata_u32":[1]}
+{"text_id":56,"forms":["オフライン"],"absolute_byte_offsets":[7328],"raw_metadata_u32":[1]}
+{"text_id":57,"forms":[""],"absolute_byte_offsets":[7344],"raw_metadata_u32":[0]}
+{"text_id":58,"forms":[""],"absolute_byte_offsets":[7345],"raw_metadata_u32":[0]}
+{"text_id":59,"forms":["あと<dgt3;0(lnum1)>匹"],"absolute_byte_offsets":[7346],"raw_metadata_u32":[1]}
+{"text_id":60,"forms":["<dgt10;0(lnum1)>"],"absolute_byte_offsets":[7371],"raw_metadata_u32":[1]}
+{"text_id":61,"forms":["<$cdef(27)><$iname;0(lnum1)></color>×<dgt4;1(lnum2)>"],"absolute_byte_offsets":[7388],"raw_metadata_u32":[1]}
+{"text_id":62,"forms":[""],"absolute_byte_offsets":[7442],"raw_metadata_u32":[0]}
+{"text_id":63,"forms":[""],"absolute_byte_offsets":[7443],"raw_metadata_u32":[0]}
+{"text_id":64,"forms":["ちかくの生息地"],"absolute_byte_offsets":[7444],"raw_metadata_u32":[1]}
+{"text_id":65,"forms":[""],"absolute_byte_offsets":[7466],"raw_metadata_u32":[0]}
+{"text_id":66,"forms":[""],"absolute_byte_offsets":[7467],"raw_metadata_u32":[0]}
+{"text_id":67,"forms":[""],"absolute_byte_offsets":[7468],"raw_metadata_u32":[0]}
+{"text_id":68,"forms":[""],"absolute_byte_offsets":[7469],"raw_metadata_u32":[0]}
+{"text_id":69,"forms":[""],"absolute_byte_offsets":[7470],"raw_metadata_u32":[0]}
+{"text_id":70,"forms":["<ratio;0(lnum1,lnum2)>"],"absolute_byte_offsets":[7471],"raw_metadata_u32":[1]}
+{"text_id":71,"forms":[""],"absolute_byte_offsets":[7494],"raw_metadata_u32":[0]}
+{"text_id":72,"forms":[""],"absolute_byte_offsets":[7495],"raw_metadata_u32":[0]}
+{"text_id":73,"forms":[""],"absolute_byte_offsets":[7496],"raw_metadata_u32":[0]}
+{"text_id":74,"forms":[""],"absolute_byte_offsets":[7497],"raw_metadata_u32":[0]}
+{"text_id":75,"forms":[""],"absolute_byte_offsets":[7498],"raw_metadata_u32":[0]}
+{"text_id":76,"forms":[""],"absolute_byte_offsets":[7499],"raw_metadata_u32":[0]}
+{"text_id":77,"forms":[""],"absolute_byte_offsets":[7500],"raw_metadata_u32":[1]}
+{"text_id":78,"forms":["<$cdef(27)><$ifull;0(lnum1)></color>×<dgt4;1(lnum2)>"],"absolute_byte_offsets":[7501],"raw_metadata_u32":[1]}
+{"text_id":79,"forms":[""],"absolute_byte_offsets":[7555],"raw_metadata_u32":[1]}
+{"text_id":80,"forms":["<$stgmyname;0(lnum1)>"],"absolute_byte_offsets":[7556],"raw_metadata_u32":[1]}
+{"text_id":81,"forms":["<$cdef(27)><$sklfull;0(lnum1)></color>"],"absolute_byte_offsets":[7578],"raw_metadata_u32":[1]}
+{"text_id":82,"forms":["けんちくスタート！"],"absolute_byte_offsets":[7617],"raw_metadata_u32":[1]}
+{"text_id":83,"forms":["建て直しスタート！"],"absolute_byte_offsets":[7645],"raw_metadata_u32":[1]}
+{"text_id":84,"forms":[""],"absolute_byte_offsets":[7673],"raw_metadata_u32":[0]}
+{"text_id":85,"forms":["<moneyint;0(lnum1)>"],"absolute_byte_offsets":[7674],"raw_metadata_u32":[1]}
+{"text_id":86,"forms":["<$icon(lnum1)>？？？"],"absolute_byte_offsets":[7694],"raw_metadata_u32":[1]}
+{"text_id":87,"forms":["<$icon(lnum1)>お願いごとをクリアしよう！"],"absolute_byte_offsets":[7718],"raw_metadata_u32":[1]}
+{"text_id":88,"forms":["<$icon(lnum1)>お願いごとをクリアしよう！"],"absolute_byte_offsets":[7772],"raw_metadata_u32":[1]}
+{"text_id":89,"forms":["<$icon(lnum1)>わざを覚えよう！"],"absolute_byte_offsets":[7826],"raw_metadata_u32":[1]}
+{"text_id":90,"forms":["<$icon(lnum1)><$chopen;0(lnum2)>"],"absolute_byte_offsets":[7865],"raw_metadata_u32":[1]}
+{"text_id":91,"forms":["<$keyicon(153)><$inamewithnum;0(lnum1,lnum2)>"],"absolute_byte_offsets":[7898],"raw_metadata_u32":[1]}
+{"text_id":92,"forms":["<$keyicon(153)>？？？"],"absolute_byte_offsets":[7944],"raw_metadata_u32":[1]}
+{"text_id":93,"forms":[""],"absolute_byte_offsets":[7969],"raw_metadata_u32":[0]}
+{"text_id":94,"forms":["<$iname;0(lnum1)>のレシピ"],"absolute_byte_offsets":[7970],"raw_metadata_u32":[1]}
+{"text_id":95,"forms":[""],"absolute_byte_offsets":[8000],"raw_metadata_u32":[0]}
+{"text_id":96,"forms":[""],"absolute_byte_offsets":[8001],"raw_metadata_u32":[0]}
+{"text_id":97,"forms":[""],"absolute_byte_offsets":[8002],"raw_metadata_u32":[0]}
+{"text_id":98,"forms":[""],"absolute_byte_offsets":[8003],"raw_metadata_u32":[0]}
+{"text_id":99,"forms":[""],"absolute_byte_offsets":[8004],"raw_metadata_u32":[0]}
+{"text_id":100,"forms":[""],"absolute_byte_offsets":[8005],"raw_metadata_u32":[0]}
+{"text_id":101,"forms":[""],"absolute_byte_offsets":[8006],"raw_metadata_u32":[0]}
+{"text_id":102,"forms":[""],"absolute_byte_offsets":[8007],"raw_metadata_u32":[0]}
+{"text_id":103,"forms":["？？？のすみか"],"absolute_byte_offsets":[8008],"raw_metadata_u32":[1]}
+{"text_id":104,"forms":["<$cdef(27)><$cname;0(lnum1)></color>のすみか"],"absolute_byte_offsets":[8030],"raw_metadata_u32":[1]}
+{"text_id":105,"forms":[""],"absolute_byte_offsets":[8079],"raw_metadata_u32":[0]}
+{"text_id":106,"forms":[""],"absolute_byte_offsets":[8080],"raw_metadata_u32":[0]}
+{"text_id":107,"forms":[""],"absolute_byte_offsets":[8081],"raw_metadata_u32":[0]}
+{"text_id":108,"forms":["<$uqname;0(lnum1)>"],"absolute_byte_offsets":[8082],"raw_metadata_u32":[1]}
+{"text_id":109,"forms":["<$gqname;0(lnum1)>"],"absolute_byte_offsets":[8101],"raw_metadata_u32":[1]}
+{"text_id":110,"forms":["<$uqdscp;0(lnum1)>"],"absolute_byte_offsets":[8120],"raw_metadata_u32":[1]}
+{"text_id":111,"forms":["<$gqdscp;0(lnum1,lnum2)>"],"absolute_byte_offsets":[8139],"raw_metadata_u32":[1]}
+{"text_id":112,"forms":["やることメモ"],"absolute_byte_offsets":[8164],"raw_metadata_u32":[1]}
+{"text_id":113,"forms":[""],"absolute_byte_offsets":[8183],"raw_metadata_u32":[0]}
+{"text_id":114,"forms":["日がわりチャレンジ"],"absolute_byte_offsets":[8184],"raw_metadata_u32":[1]}
+{"text_id":115,"forms":["？"],"absolute_byte_offsets":[8212],"raw_metadata_u32":[1]}
+{"text_id":116,"forms":["高さ"],"absolute_byte_offsets":[8216],"raw_metadata_u32":[1]}
+{"text_id":117,"forms":["重さ"],"absolute_byte_offsets":[8223],"raw_metadata_u32":[1]}
+{"text_id":118,"forms":["タイプ"],"absolute_byte_offsets":[8230],"raw_metadata_u32":[1]}
+{"text_id":119,"forms":["<$typname;0(lnum1)>"],"absolute_byte_offsets":[8240],"raw_metadata_u32":[1]}
+{"text_id":120,"forms":["時間"],"absolute_byte_offsets":[8260],"raw_metadata_u32":[1]}
+{"text_id":121,"forms":["天気"],"absolute_byte_offsets":[8267],"raw_metadata_u32":[1]}
+{"text_id":122,"forms":["得意なこと"],"absolute_byte_offsets":[8274],"raw_metadata_u32":[1]}
+{"text_id":123,"forms":["好きな環境"],"absolute_byte_offsets":[8290],"raw_metadata_u32":[1]}
+{"text_id":124,"forms":["好きなもの"],"absolute_byte_offsets":[8306],"raw_metadata_u32":[1]}
+{"text_id":125,"forms":["とくちょう"],"absolute_byte_offsets":[8322],"raw_metadata_u32":[1]}
+{"text_id":126,"forms":["出会える場所"],"absolute_byte_offsets":[8338],"raw_metadata_u32":[1]}
+{"text_id":127,"forms":["特技と好み"],"absolute_byte_offsets":[8357],"raw_metadata_u32":[1]}
+{"text_id":128,"forms":["？？？"],"absolute_byte_offsets":[8373],"raw_metadata_u32":[1]}
+{"text_id":129,"forms":["次へ"],"absolute_byte_offsets":[8383],"raw_metadata_u32":[1]}
+{"text_id":130,"forms":["<$pkname;0(lnum2)>"],"absolute_byte_offsets":[8390],"raw_metadata_u32":[1]}
+{"text_id":131,"forms":["<$hatname;0(lnum2)>"],"absolute_byte_offsets":[8409],"raw_metadata_u32":[1]}
+{"text_id":132,"forms":[""],"absolute_byte_offsets":[8429],"raw_metadata_u32":[0]}
+{"text_id":133,"forms":["<$temptxt;0(lnum1)>"],"absolute_byte_offsets":[8430],"raw_metadata_u32":[1]}
+{"text_id":134,"forms":["<$illutxt;0(lnum1)>"],"absolute_byte_offsets":[8450],"raw_metadata_u32":[1]}
+{"text_id":135,"forms":["<$humitxt;0(lnum1)>"],"absolute_byte_offsets":[8470],"raw_metadata_u32":[1]}
+{"text_id":136,"forms":["まだ<見:み>たことのない<生息地:せいそくち>です"],"absolute_byte_offsets":[8490],"raw_metadata_u32":[1]}
+{"text_id":137,"forms":["<$icon(lnum1)><$cdef(27)><$spwname;0(lnum2)></color>"],"absolute_byte_offsets":[8557],"raw_metadata_u32":[1]}
+{"text_id":138,"forms":["<報告可能:ほうこくかのう>！"],"absolute_byte_offsets":[8610],"raw_metadata_u32":[1]}
+{"text_id":139,"forms":[""],"absolute_byte_offsets":[8650],"raw_metadata_u32":[0]}
+{"text_id":140,"forms":[""],"absolute_byte_offsets":[8651],"raw_metadata_u32":[0]}
+{"text_id":141,"forms":[""],"absolute_byte_offsets":[8652],"raw_metadata_u32":[0]}
+{"text_id":142,"forms":["-<moneyint;0(lnum1)>"],"absolute_byte_offsets":[8653],"raw_metadata_u32":[1]}
+{"text_id":143,"forms":["+<moneyint;0(lnum1)>"],"absolute_byte_offsets":[8674],"raw_metadata_u32":[1]}
+{"text_id":144,"forms":["<dgt2;0(lnum1)>コ"],"absolute_byte_offsets":[8695],"raw_metadata_u32":[1]}
+{"text_id":145,"forms":["品切れ"],"absolute_byte_offsets":[8714],"raw_metadata_u32":[1]}
+{"text_id":146,"forms":["<dgt2;0(lnum1)>"],"absolute_byte_offsets":[8724],"raw_metadata_u32":[1]}
+{"text_id":147,"forms":[""],"absolute_byte_offsets":[8740],"raw_metadata_u32":[0]}
+{"text_id":148,"forms":["こうにゅう"],"absolute_byte_offsets":[8741],"raw_metadata_u32":[1]}
+{"text_id":149,"forms":["ざいこ"],"absolute_byte_offsets":[8757],"raw_metadata_u32":[1]}
+{"text_id":150,"forms":[""],"absolute_byte_offsets":[8767],"raw_metadata_u32":[0]}
+{"text_id":151,"forms":["おとりよせ"],"absolute_byte_offsets":[8768],"raw_metadata_u32":[1]}
+{"text_id":152,"forms":["すみごこちレポート"],"absolute_byte_offsets":[8784],"raw_metadata_u32":[1]}
+{"text_id":153,"forms":[""],"absolute_byte_offsets":[8812],"raw_metadata_u32":[0]}
+{"text_id":154,"forms":["----"],"absolute_byte_offsets":[8813],"raw_metadata_u32":[10]}
+{"text_id":155,"forms":[""],"absolute_byte_offsets":[8818],"raw_metadata_u32":[0]}
+{"text_id":156,"forms":[""],"absolute_byte_offsets":[8819],"raw_metadata_u32":[0]}
+{"text_id":157,"forms":[""],"absolute_byte_offsets":[8820],"raw_metadata_u32":[0]}
+{"text_id":158,"forms":[""],"absolute_byte_offsets":[8821],"raw_metadata_u32":[0]}
+{"text_id":159,"forms":[""],"absolute_byte_offsets":[8822],"raw_metadata_u32":[0]}
+{"text_id":160,"forms":[""],"absolute_byte_offsets":[8823],"raw_metadata_u32":[0]}
+{"text_id":161,"forms":["<環境:かんきょう>レベル"],"absolute_byte_offsets":[8824],"raw_metadata_u32":[1]}
+{"text_id":162,"forms":["MAX"],"absolute_byte_offsets":[8858],"raw_metadata_u32":[1]}
+{"text_id":163,"forms":["この<姿:すがた>で　<始:はじ>めますか？"],"absolute_byte_offsets":[8862],"raw_metadata_u32":[1]}
+{"text_id":164,"forms":[""],"absolute_byte_offsets":[8917],"raw_metadata_u32":[0]}
+{"text_id":165,"forms":["あいことば"],"absolute_byte_offsets":[8918],"raw_metadata_u32":[1]}
+{"text_id":166,"forms":["じゅうしょ"],"absolute_byte_offsets":[8934],"raw_metadata_u32":[1]}
+{"text_id":167,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[8950],"raw_metadata_u32":[1]}
+{"text_id":168,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[8968],"raw_metadata_u32":[1]}
+{"text_id":169,"forms":["いっしょに遊ぶ相手に<br>あいことばを　教えてください"],"absolute_byte_offsets":[8986],"raw_metadata_u32":[1]}
+{"text_id":170,"forms":["いっしょに遊ぶ相手に<br>あいことばと　じゅうしょを<br>教えてください"],"absolute_byte_offsets":[9063],"raw_metadata_u32":[1]}
+{"text_id":171,"forms":["以下の内容で　島を作ります<br>よろしいですか？"],"absolute_byte_offsets":[9162],"raw_metadata_u32":[1]}
+{"text_id":172,"forms":["島の名前"],"absolute_byte_offsets":[9230],"raw_metadata_u32":[1]}
+{"text_id":173,"forms":["じゅうしょ"],"absolute_byte_offsets":[9243],"raw_metadata_u32":[1]}
+{"text_id":174,"forms":["おまじない"],"absolute_byte_offsets":[9259],"raw_metadata_u32":[1]}
+{"text_id":175,"forms":["あと<dgt2;0(lnum1)>日"],"absolute_byte_offsets":[9275],"raw_metadata_u32":[1]}
+{"text_id":176,"forms":["今日まで"],"absolute_byte_offsets":[9300],"raw_metadata_u32":[1]}
+{"text_id":177,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[9313],"raw_metadata_u32":[1]}
+{"text_id":178,"forms":["購入したアイテムは　<$cdef(27)><pname;0></color>のパソコンに　送られます<br>※レシピは　すぐに習得できます"],"absolute_byte_offsets":[9331],"raw_metadata_u32":[1]}
+{"text_id":179,"forms":["はきだす"],"absolute_byte_offsets":[9475],"raw_metadata_u32":[1]}
+{"text_id":180,"forms":["はきだす<向:む>き<調整:ちょうせい>　<右:みぎ>回り"],"absolute_byte_offsets":[9488],"raw_metadata_u32":[1]}
+{"text_id":181,"forms":["はきだす<向:む>き<調整:ちょうせい>　<左回:ひだりまわ>り"],"absolute_byte_offsets":[9558],"raw_metadata_u32":[1]}
+{"text_id":182,"forms":["行き先をえらぶ"],"absolute_byte_offsets":[9637],"raw_metadata_u32":[1]}
+{"text_id":183,"forms":["行き先は　ここでよろしいですか？"],"absolute_byte_offsets":[9659],"raw_metadata_u32":[1]}
+{"text_id":184,"forms":["プレイヤー"],"absolute_byte_offsets":[9708],"raw_metadata_u32":[1]}
+{"text_id":185,"forms":["かんりにん"],"absolute_byte_offsets":[9724],"raw_metadata_u32":[1]}
+{"text_id":186,"forms":["ゲスト"],"absolute_byte_offsets":[9740],"raw_metadata_u32":[1]}
+{"text_id":187,"forms":["<$keyicon(6)><$iname;0(lnum1)>"],"absolute_byte_offsets":[9750],"raw_metadata_u32":[1]}
+{"text_id":188,"forms":["ここに<行:い>く"],"absolute_byte_offsets":[9781],"raw_metadata_u32":[1]}
+{"text_id":189,"forms":["通信であそぶ時の注意事項"],"absolute_byte_offsets":[9803],"raw_metadata_u32":[1]}
+{"text_id":190,"forms":["みなさまに楽しくあそんでいただくために"],"absolute_byte_offsets":[9840],"raw_metadata_u32":[1]}
+{"text_id":191,"forms":["ちゅうい"],"absolute_byte_offsets":[9898],"raw_metadata_u32":[1]}
+{"text_id":192,"forms":["けってい"],"absolute_byte_offsets":[9911],"raw_metadata_u32":[1]}
+{"text_id":193,"forms":["かんりょう"],"absolute_byte_offsets":[9924],"raw_metadata_u32":[1]}
+{"text_id":194,"forms":["はい"],"absolute_byte_offsets":[9940],"raw_metadata_u32":[1]}
+{"text_id":195,"forms":["いいえ"],"absolute_byte_offsets":[9947],"raw_metadata_u32":[1]}
+{"text_id":196,"forms":["かくにん"],"absolute_byte_offsets":[9957],"raw_metadata_u32":[1]}
+{"text_id":197,"forms":["やめる"],"absolute_byte_offsets":[9970],"raw_metadata_u32":[1]}
+{"text_id":198,"forms":["？？？"],"absolute_byte_offsets":[9980],"raw_metadata_u32":[1]}
+{"text_id":199,"forms":["ざいりょう"],"absolute_byte_offsets":[9990],"raw_metadata_u32":[1]}
+{"text_id":200,"forms":["つかう<数:かず>"],"absolute_byte_offsets":[10006],"raw_metadata_u32":[1]}
+{"text_id":201,"forms":["<今:いま>ある<数:かず>"],"absolute_byte_offsets":[10028],"raw_metadata_u32":[1]}
+{"text_id":202,"forms":["すべて"],"absolute_byte_offsets":[10059],"raw_metadata_u32":[1]}
+{"text_id":203,"forms":["お<気:き>に<入:い>り"],"absolute_byte_offsets":[10069],"raw_metadata_u32":[1]}
+{"text_id":204,"forms":["あなたのコインを<使:つか>って　<商品:しょうひん>を<購入:こうにゅう>できます<br>レシピ<以外:いがい>の<商品:しょうひん>は　この<島:しま>でしか<使:つか>えません"],"absolute_byte_offsets":[10097],"raw_metadata_u32":[1]}
+{"text_id":205,"forms":["<dgt2;0(lnum1)>セット"],"absolute_byte_offsets":[10321],"raw_metadata_u32":[1]}
+{"text_id":206,"forms":[""],"absolute_byte_offsets":[10346],"raw_metadata_u32":[0]}
+{"text_id":207,"forms":["<対象外:たいしょうがい>の<日付:ひづけ>が　<設定:せってい>されています<br>HOMEメニューで　<日付:ひづけ>の<設定:せってい>を<br>2000<年:ねん>1<月1日:がつついたち>から<br>2060<年:ねん>12<月:がつ>31<日:にち>の<間:あいだ>に　<変更:へんこう>して<br>ゲームを<再起動:さいきどう>してください<br>"],"absolute_byte_offsets":[10347],"raw_metadata_u32":[1]}
+{"text_id":208,"forms":["そのた"],"absolute_byte_offsets":[10737],"raw_metadata_u32":[1]}
+{"text_id":209,"forms":[""],"absolute_byte_offsets":[10747],"raw_metadata_u32":[0]}
+{"text_id":210,"forms":["このゲームは　おまかせレポートといって<br><$icon(2645)>が　<表示:ひょうじ>されている<間:あいだ>に<br>オートセーブを　おこないます<br><br>レポート<中:ちゅう>は　ゲームを<終了:しゅうりょう>したり<br>でんげんを<切:き>ったりしないでください"],"absolute_byte_offsets":[10748],"raw_metadata_u32":[1]}
+{"text_id":211,"forms":["どの<言語:げんご>で　あそびますか"],"absolute_byte_offsets":[11079],"raw_metadata_u32":[1]}
+{"text_id":212,"forms":[""],"absolute_byte_offsets":[11128],"raw_metadata_u32":[9]}
+{"text_id":213,"forms":[""],"absolute_byte_offsets":[11129],"raw_metadata_u32":[9]}
+{"text_id":214,"forms":[""],"absolute_byte_offsets":[11130],"raw_metadata_u32":[9]}
+{"text_id":215,"forms":[""],"absolute_byte_offsets":[11131],"raw_metadata_u32":[9]}
+{"text_id":216,"forms":[""],"absolute_byte_offsets":[11132],"raw_metadata_u32":[0]}
+{"text_id":217,"forms":[""],"absolute_byte_offsets":[11133],"raw_metadata_u32":[0]}
+{"text_id":218,"forms":[""],"absolute_byte_offsets":[11134],"raw_metadata_u32":[0]}
+{"text_id":219,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[11135],"raw_metadata_u32":[1]}
+{"text_id":220,"forms":["ひつよう"],"absolute_byte_offsets":[11153],"raw_metadata_u32":[1]}
+{"text_id":221,"forms":["ごうけい"],"absolute_byte_offsets":[11166],"raw_metadata_u32":[1]}
+{"text_id":222,"forms":["こうかん！"],"absolute_byte_offsets":[11179],"raw_metadata_u32":[1]}
+{"text_id":223,"forms":["わざリスト"],"absolute_byte_offsets":[11195],"raw_metadata_u32":[1]}
+{"text_id":224,"forms":[""],"absolute_byte_offsets":[11211],"raw_metadata_u32":[0]}
+{"text_id":225,"forms":["できる<数:かず>"],"absolute_byte_offsets":[11212],"raw_metadata_u32":[1]}
+{"text_id":226,"forms":["？？？を　さがそう"],"absolute_byte_offsets":[11234],"raw_metadata_u32":[10]}
+{"text_id":227,"forms":["また明日　聞こう"],"absolute_byte_offsets":[11262],"raw_metadata_u32":[1]}
+{"text_id":228,"forms":["ここに　つれてこよう"],"absolute_byte_offsets":[11287],"raw_metadata_u32":[1]}
+{"text_id":229,"forms":["ポケモンを　さがそう"],"absolute_byte_offsets":[11318],"raw_metadata_u32":[1]}
+{"text_id":230,"forms":["/"],"absolute_byte_offsets":[11349],"raw_metadata_u32":[1]}
+{"text_id":231,"forms":["ざいりょう"],"absolute_byte_offsets":[11351],"raw_metadata_u32":[1]}
+{"text_id":232,"forms":["ポケモン"],"absolute_byte_offsets":[11367],"raw_metadata_u32":[1]}
+{"text_id":233,"forms":["<$spwname;0(lnum1)>"],"absolute_byte_offsets":[11380],"raw_metadata_u32":[1]}
+{"text_id":234,"forms":["あきや"],"absolute_byte_offsets":[11400],"raw_metadata_u32":[1]}
+{"text_id":235,"forms":["<$cdef(27)><$cname;0(lnum1)></color>の<家:いえ>"],"absolute_byte_offsets":[11410],"raw_metadata_u32":[1]}
+{"text_id":236,"forms":["みんなの<家:いえ>"],"absolute_byte_offsets":[11462],"raw_metadata_u32":[1]}
+{"text_id":237,"forms":["<$cdef(27)><pname;0></color>の<家:いえ>"],"absolute_byte_offsets":[11487],"raw_metadata_u32":[1]}
+{"text_id":238,"forms":["はつでん時間"],"absolute_byte_offsets":[11531],"raw_metadata_u32":[1]}
+{"text_id":239,"forms":["ねんしょう中"],"absolute_byte_offsets":[11550],"raw_metadata_u32":[1]}
+{"text_id":240,"forms":["もやす"],"absolute_byte_offsets":[11569],"raw_metadata_u32":[1]}
+{"text_id":241,"forms":[""],"absolute_byte_offsets":[11579],"raw_metadata_u32":[0]}
+{"text_id":242,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color>の<家:いえ>"],"absolute_byte_offsets":[11580],"raw_metadata_u32":[1]}
+{"text_id":243,"forms":[""],"absolute_byte_offsets":[11641],"raw_metadata_u32":[0]}
+{"text_id":244,"forms":[""],"absolute_byte_offsets":[11642],"raw_metadata_u32":[0]}
+{"text_id":245,"forms":["エリア"],"absolute_byte_offsets":[11643],"raw_metadata_u32":[1]}
+{"text_id":246,"forms":["プレイヤー　<$cdef(27)><pname;0></color>さま"],"absolute_byte_offsets":[11653],"raw_metadata_u32":[1]}
+{"text_id":247,"forms":["りょうり開始！"],"absolute_byte_offsets":[11706],"raw_metadata_u32":[1]}
+{"text_id":248,"forms":["<必要:ひつよう>なもの"],"absolute_byte_offsets":[11728],"raw_metadata_u32":[1]}
+{"text_id":249,"forms":["<timeymd;0(lnum1,lnum2,lnum3)>まで"],"absolute_byte_offsets":[11759],"raw_metadata_u32":[1]}
+{"text_id":250,"forms":["<困:こま>っているポケモンをさがしておねがいごとを<聞:き>いてみよう"],"absolute_byte_offsets":[11796],"raw_metadata_u32":[1]}
+{"text_id":251,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[11893],"raw_metadata_u32":[1]}
+{"text_id":252,"forms":["AM"],"absolute_byte_offsets":[11911],"raw_metadata_u32":[1]}
+{"text_id":253,"forms":["PM"],"absolute_byte_offsets":[11914],"raw_metadata_u32":[1]}
+{"text_id":254,"forms":["<timehm;0(lnum1,lnum2)>"],"absolute_byte_offsets":[11917],"raw_metadata_u32":[1]}
+{"text_id":255,"forms":["セール中"],"absolute_byte_offsets":[11941],"raw_metadata_u32":[1]}
+{"text_id":256,"forms":["チャレンジたっせい！"],"absolute_byte_offsets":[11954],"raw_metadata_u32":[1]}
+{"text_id":257,"forms":["<他:ほか>のプレイヤーが　<達成:たっせい>したチャレンジを　<報告:ほうこく>しました"],"absolute_byte_offsets":[11985],"raw_metadata_u32":[1]}
+{"text_id":258,"forms":["<達成:たっせい>したチャレンジを　まとめて<報告:ほうこく>しました"],"absolute_byte_offsets":[12103],"raw_metadata_u32":[1]}
+{"text_id":259,"forms":["ポケモンのすみごこち"],"absolute_byte_offsets":[12197],"raw_metadata_u32":[1]}
+{"text_id":260,"forms":["レベルアップ！"],"absolute_byte_offsets":[12228],"raw_metadata_u32":[1]}
+{"text_id":261,"forms":["レベルダウン･･･"],"absolute_byte_offsets":[12250],"raw_metadata_u32":[1]}
+{"text_id":262,"forms":[""],"absolute_byte_offsets":[12278],"raw_metadata_u32":[0]}
+{"text_id":263,"forms":[""],"absolute_byte_offsets":[12279],"raw_metadata_u32":[0]}
+{"text_id":264,"forms":[""],"absolute_byte_offsets":[12280],"raw_metadata_u32":[0]}
+{"text_id":265,"forms":["<timeymdhm;0(lnum1,lnum2,lnum3,lnum4,lnum5)>"],"absolute_byte_offsets":[12281],"raw_metadata_u32":[1]}
+{"text_id":266,"forms":["+"],"absolute_byte_offsets":[12326],"raw_metadata_u32":[1]}
+{"text_id":267,"forms":["-"],"absolute_byte_offsets":[12328],"raw_metadata_u32":[1]}
+{"text_id":268,"forms":["たっせい！"],"absolute_byte_offsets":[12330],"raw_metadata_u32":[1]}
+{"text_id":269,"forms":[""],"absolute_byte_offsets":[12346],"raw_metadata_u32":[0]}
+{"text_id":270,"forms":["<timeymd;0(lnum1,lnum2,lnum3)>"],"absolute_byte_offsets":[12347],"raw_metadata_u32":[1]}
+{"text_id":271,"forms":[""],"absolute_byte_offsets":[12378],"raw_metadata_u32":[0]}
+{"text_id":272,"forms":[""],"absolute_byte_offsets":[12379],"raw_metadata_u32":[0]}
+{"text_id":273,"forms":["このエリアに<住:す>んでいる　ポケモンはいません"],"absolute_byte_offsets":[12380],"raw_metadata_u32":[1]}
+{"text_id":274,"forms":["レベル <dgt2;0(lnum1)>"],"absolute_byte_offsets":[12450],"raw_metadata_u32":[1]}
+{"text_id":275,"forms":["---"],"absolute_byte_offsets":[12476],"raw_metadata_u32":[1]}
+{"text_id":276,"forms":["<$backupmemo;0(lstr1,lnum1)>"],"absolute_byte_offsets":[12480],"raw_metadata_u32":[1]}
+{"text_id":277,"forms":["<$strpname;0(lstr1,lnum1)>"],"absolute_byte_offsets":[12509],"raw_metadata_u32":[1]}
+{"text_id":278,"forms":["<賞状:しょうじょう>"],"absolute_byte_offsets":[12536],"raw_metadata_u32":[1]}
+{"text_id":279,"forms":["プレイヤー　<wowner;0>さま"],"absolute_byte_offsets":[12564],"raw_metadata_u32":[1]}
+{"text_id":280,"forms":["あなたは　ポケモン<図鑑:ずかん>を<br>みごと　<完成:かんせい>　させました！<br>その　<偉大:いだい>な　<功績:こうせき>を<br><証明:しょうめい>　します"],"absolute_byte_offsets":[12599],"raw_metadata_u32":[1]}
+{"text_id":281,"forms":["スタッフ<一同:いちどう>"],"absolute_byte_offsets":[12807],"raw_metadata_u32":[1]}
+{"text_id":282,"forms":[""],"absolute_byte_offsets":[12841],"raw_metadata_u32":[1]}
+{"text_id":283,"forms":["<近:ちか>くのカメラを　けんさく<中:ちゅう>･･･"],"absolute_byte_offsets":[12842],"raw_metadata_u32":[1]}
+{"text_id":284,"forms":["きりかえ<中:ちゅう>･･･"],"absolute_byte_offsets":[12912],"raw_metadata_u32":[1]}
+{"text_id":285,"forms":["<$cdef(27)>お<気:き>に<入:い>り</color>が　<登録:とうろく>されていません"],"absolute_byte_offsets":[12949],"raw_metadata_u32":[1]}
+{"text_id":286,"forms":["とどいたアイテム"],"absolute_byte_offsets":[13044],"raw_metadata_u32":[1]}
+{"text_id":287,"forms":["<自分:じぶん>の<持:も>ちもの"],"absolute_byte_offsets":[13069],"raw_metadata_u32":[1]}
+{"text_id":288,"forms":[""],"absolute_byte_offsets":[13109],"raw_metadata_u32":[0]}
+{"text_id":289,"forms":["今日遊びに行ける相手"],"absolute_byte_offsets":[13110],"raw_metadata_u32":[1]}
+{"text_id":290,"forms":["のこり"],"absolute_byte_offsets":[13141],"raw_metadata_u32":[1]}
+{"text_id":291,"forms":["<dgt2;0(lnum1)>人"],"absolute_byte_offsets":[13151],"raw_metadata_u32":[1]}
+{"text_id":292,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[13170],"raw_metadata_u32":[1]}
+{"text_id":293,"forms":["かいたいスタート！"],"absolute_byte_offsets":[13188],"raw_metadata_u32":[1]}
+{"text_id":294,"forms":["じゅんびスタート！"],"absolute_byte_offsets":[13216],"raw_metadata_u32":[1]}
+{"text_id":295,"forms":["ひっこしスタート！"],"absolute_byte_offsets":[13244],"raw_metadata_u32":[1]}
+{"text_id":296,"forms":["<$icon(11214)>ふつう"],"absolute_byte_offsets":[13272],"raw_metadata_u32":[1]}
+{"text_id":297,"forms":["<$icon(11214)><$icon(11214)>めずらしい"],"absolute_byte_offsets":[13296],"raw_metadata_u32":[1]}
+{"text_id":298,"forms":["<$icon(11214)><$icon(11214)><$icon(11214)>とてもめずらしい"],"absolute_byte_offsets":[13340],"raw_metadata_u32":[1]}
+{"text_id":299,"forms":["あなた<方:がた>は　クラウド<島:じま><図鑑:ずかん>を<br>みごと　<完成:かんせい>　させました！<br>その　<偉大:いだい>な　<功績:こうせき>を<br><証明:しょうめい>　します"],"absolute_byte_offsets":[13407],"raw_metadata_u32":[1]}
+{"text_id":300,"forms":["かいちくスタート！"],"absolute_byte_offsets":[13639],"raw_metadata_u32":[1]}
+{"text_id":301,"forms":["<通信:つうしん>プレイでは　<$cdef(27)>プレイヤーや<街:まち>　<島:しま>の<名前:なまえ><br></color>ブロックの<組:く>み<合:あ>わせで<作:つく>られた<br><$cdef(27)><文字:もじ>やグラフィック</color>などを<br><他:ほか>のプレイヤーも　<見:み>ることができます<br><他:ほか>のプレイヤーに　<不快:ふかい>な<思:おも>いをさせないように<br><気:き>を<付:つ>けて　<通信:つうしん>プレイを　お<楽:たの>しみください"],"absolute_byte_offsets":[13667],"raw_metadata_u32":[1]}
+{"text_id":302,"forms":["<通信:つうしん>であそぶ<時:とき>は、<br><次:つぎ>のような<内容:ないよう>を<含:ふく>むものを<公開:こうかい>しないでください。<br><br>・<違法:いほう>な<内容:ないよう><br>・<個人:こじん><情報:じょうほう><br>・<他人:たにん>の<権利:けんり>を<侵害:しんがい>する<内容:ないよう><br>・<不快:ふかい>な<思:おも>いをさせる<内容:ないよう><br>・<他:ほか>のプレイヤーに<不快:ふかい>な<思:おも>いをさせる<行為:こうい><br>・チート<行為:こうい><br><br><公開:こうかい>されたコンテンツやゲーム<中:ちゅう>の<行為:こうい>には<br>「ニンテンドーアカウント<利用:りよう><規約:きやく>」が<適用:てきよう>されます。<br><br><規約:きやく><違反:いはん>となるコンテンツや<行為:こうい>が<発見:はっけん>された<場合:ばあい>、<br>サーバー<上:じょう>のデータが<非表示化:ひひょうじか>されたり、<br><通信:つうしん>プレイへの<接続:せつぞく>が<制限:せいげん>されたりすることがあります。<br><br>また、「クラウド<島:じま>」で<違反:いはん>となるコンテンツが<br><発見:はっけん>された<場合:ばあい>は、その<島:しま>の<作成者:さくせいしゃ>に<責任:せきにん>が<課:か>されます。<br>クラウド<島:じま>の「あいことば」を<公開:こうかい>する<際:さい>は、<br><十分:じゅうぶん>に<注意:ちゅうい>して、プレイいただくようにお<願:ねが>いいたします。<br><br><不適切:ふてきせつ>なコンテンツや<行為:こうい>については、<通信:つうしん>プレイ<中:ちゅう>の<br>メニュー<画面:がめん>でボタンを<押:お>すと、<通報:つうほう>できます。<br><br>ニンテンドーアカウント<利用:りよう><規約:きやく>に<従:したが>って、<br><他:ほか>のプレイヤーの<方:かた>へ<br><思:おも>いやりのあるプレイをお<願:ねが>いいたします。"],"absolute_byte_offsets":[14206],"raw_metadata_u32":[1]}
+{"text_id":303,"forms":["投入！"],"absolute_byte_offsets":[16349],"raw_metadata_u32":[1]}
+{"text_id":304,"forms":["見つかるもの"],"absolute_byte_offsets":[16359],"raw_metadata_u32":[1]}
+{"text_id":305,"forms":["とうろくずみの写真"],"absolute_byte_offsets":[16378],"raw_metadata_u32":[1]}
+{"text_id":306,"forms":["せんたく中の写真"],"absolute_byte_offsets":[16406],"raw_metadata_u32":[1]}
+{"text_id":307,"forms":["ばんごう順"],"absolute_byte_offsets":[16431],"raw_metadata_u32":[1]}
+{"text_id":308,"forms":["ごじゅうおん順"],"absolute_byte_offsets":[16447],"raw_metadata_u32":[1]}
+{"text_id":309,"forms":["おもい順"],"absolute_byte_offsets":[16469],"raw_metadata_u32":[1]}
+{"text_id":310,"forms":["かるい順"],"absolute_byte_offsets":[16482],"raw_metadata_u32":[1]}
+{"text_id":311,"forms":["たかい順"],"absolute_byte_offsets":[16495],"raw_metadata_u32":[1]}
+{"text_id":312,"forms":["ひくい順"],"absolute_byte_offsets":[16508],"raw_metadata_u32":[1]}
+{"text_id":313,"forms":["しゅるい順"],"absolute_byte_offsets":[16521],"raw_metadata_u32":[1]}
+{"text_id":314,"forms":["おぼえた順"],"absolute_byte_offsets":[16537],"raw_metadata_u32":[1]}
+{"text_id":315,"forms":["やすい順"],"absolute_byte_offsets":[16553],"raw_metadata_u32":[1]}
+{"text_id":316,"forms":["たかい順"],"absolute_byte_offsets":[16566],"raw_metadata_u32":[1]}
+{"text_id":317,"forms":["ステータス順"],"absolute_byte_offsets":[16579],"raw_metadata_u32":[1]}
+{"text_id":318,"forms":["とうろく状態"],"absolute_byte_offsets":[16598],"raw_metadata_u32":[1]}
+{"text_id":319,"forms":["ばしょ"],"absolute_byte_offsets":[16617],"raw_metadata_u32":[1]}
+{"text_id":320,"forms":["得意なこと"],"absolute_byte_offsets":[16627],"raw_metadata_u32":[1]}
+{"text_id":321,"forms":["（ぜんぶ）"],"absolute_byte_offsets":[16643],"raw_metadata_u32":[1]}
+{"text_id":322,"forms":["友達になった"],"absolute_byte_offsets":[16659],"raw_metadata_u32":[1]}
+{"text_id":323,"forms":[""],"absolute_byte_offsets":[16678],"raw_metadata_u32":[0]}
+{"text_id":324,"forms":["情報だけ知っている"],"absolute_byte_offsets":[16679],"raw_metadata_u32":[1]}
+{"text_id":325,"forms":["情報がない"],"absolute_byte_offsets":[16707],"raw_metadata_u32":[1]}
+{"text_id":326,"forms":["<$keyicon(83)>けってい"],"absolute_byte_offsets":[16723],"raw_metadata_u32":[1]}
+{"text_id":327,"forms":["ならびかえ"],"absolute_byte_offsets":[16750],"raw_metadata_u32":[1]}
+{"text_id":328,"forms":["いっしょに遊ぶ人数"],"absolute_byte_offsets":[16766],"raw_metadata_u32":[1]}
+{"text_id":329,"forms":["<見学:けんがく>モード"],"absolute_byte_offsets":[16794],"raw_metadata_u32":[1]}
+{"text_id":330,"forms":["じゅうしょ"],"absolute_byte_offsets":[16825],"raw_metadata_u32":[1]}
+{"text_id":331,"forms":["あいことば"],"absolute_byte_offsets":[16841],"raw_metadata_u32":[1]}
+{"text_id":332,"forms":["おまじない"],"absolute_byte_offsets":[16857],"raw_metadata_u32":[1]}
+{"text_id":333,"forms":["クラウド島の名前"],"absolute_byte_offsets":[16873],"raw_metadata_u32":[1]}
+{"text_id":334,"forms":["みんなに公開"],"absolute_byte_offsets":[16898],"raw_metadata_u32":[1]}
+{"text_id":335,"forms":["あいことばの設定"],"absolute_byte_offsets":[16917],"raw_metadata_u32":[1]}
+{"text_id":336,"forms":["ほぞん日時"],"absolute_byte_offsets":[16942],"raw_metadata_u32":[1]}
+{"text_id":337,"forms":["メモ"],"absolute_byte_offsets":[16958],"raw_metadata_u32":[1]}
+{"text_id":338,"forms":["へんこうする"],"absolute_byte_offsets":[16965],"raw_metadata_u32":[1]}
+{"text_id":339,"forms":["ほぞんする"],"absolute_byte_offsets":[16984],"raw_metadata_u32":[1]}
+{"text_id":340,"forms":["ふくげんする"],"absolute_byte_offsets":[17000],"raw_metadata_u32":[1]}
+{"text_id":341,"forms":["４人"],"absolute_byte_offsets":[17019],"raw_metadata_u32":[1]}
+{"text_id":342,"forms":["３人"],"absolute_byte_offsets":[17026],"raw_metadata_u32":[1]}
+{"text_id":343,"forms":["２人"],"absolute_byte_offsets":[17033],"raw_metadata_u32":[1]}
+{"text_id":344,"forms":["オン"],"absolute_byte_offsets":[17040],"raw_metadata_u32":[1]}
+{"text_id":345,"forms":["オフ"],"absolute_byte_offsets":[17047],"raw_metadata_u32":[1]}
+{"text_id":346,"forms":["する"],"absolute_byte_offsets":[17054],"raw_metadata_u32":[1]}
+{"text_id":347,"forms":["しない"],"absolute_byte_offsets":[17061],"raw_metadata_u32":[1]}
+{"text_id":348,"forms":["ぜんぶで　<何人:なんにん>で<遊:あそ>ぶかを　<選:えら>べます"],"absolute_byte_offsets":[17071],"raw_metadata_u32":[1]}
+{"text_id":349,"forms":["<見学:けんがく>モードでは　わざやアイテムが<使:つか>えなくなります"],"absolute_byte_offsets":[17156],"raw_metadata_u32":[1]}
+{"text_id":350,"forms":["クラウド<島:じま>のじゅうしょを　<確認:かくにん>できます"],"absolute_byte_offsets":[17253],"raw_metadata_u32":[1]}
+{"text_id":351,"forms":["クラウド<島:じま>のあいことばの　<確認:かくにん>と<変更:へんこう>ができます"],"absolute_byte_offsets":[17335],"raw_metadata_u32":[1]}
+{"text_id":352,"forms":["クラウド<島:じま>のおまじないを　<確認:かくにん>できます"],"absolute_byte_offsets":[17444],"raw_metadata_u32":[1]}
+{"text_id":353,"forms":["クラウド<島:じま>の<名前:なまえ>の　<確認:かくにん>と<変更:へんこう>ができます"],"absolute_byte_offsets":[17526],"raw_metadata_u32":[1]}
+{"text_id":354,"forms":["<他:ほか>のプレイヤーが<島:しま>で　<自由:じゆう>に<遊:あそ>べるようにします"],"absolute_byte_offsets":[17638],"raw_metadata_u32":[1]}
+{"text_id":355,"forms":["あいことばを<知:し>っているプレイヤーのみ　<遊:あそ>べるようにするか<選:えら>べます"],"absolute_byte_offsets":[17747],"raw_metadata_u32":[1]}
+{"text_id":356,"forms":["げんざいの<状態:じょうたい>を　バックアップデータとして　<保存:ほぞん>できます"],"absolute_byte_offsets":[17868],"raw_metadata_u32":[1]}
+{"text_id":357,"forms":["バックアップデータを　ふくげんできます"],"absolute_byte_offsets":[17983],"raw_metadata_u32":[1]}
+{"text_id":358,"forms":["文字のはやさ"],"absolute_byte_offsets":[18041],"raw_metadata_u32":[1]}
+{"text_id":359,"forms":["言語"],"absolute_byte_offsets":[18060],"raw_metadata_u32":[1]}
+{"text_id":360,"forms":["つかいみち順"],"absolute_byte_offsets":[18067],"raw_metadata_u32":[1]}
+{"text_id":361,"forms":["走るとはねるの操作"],"absolute_byte_offsets":[18086],"raw_metadata_u32":[1]}
+{"text_id":362,"forms":["ボタンせってい"],"absolute_byte_offsets":[18114],"raw_metadata_u32":[1]}
+{"text_id":363,"forms":["コントローラーの振動"],"absolute_byte_offsets":[18136],"raw_metadata_u32":[1]}
+{"text_id":364,"forms":[""],"absolute_byte_offsets":[18167],"raw_metadata_u32":[0]}
+{"text_id":365,"forms":["カメラ上下"],"absolute_byte_offsets":[18168],"raw_metadata_u32":[1]}
+{"text_id":366,"forms":["カメラ左右"],"absolute_byte_offsets":[18184],"raw_metadata_u32":[1]}
+{"text_id":367,"forms":["カメラのはやさ"],"absolute_byte_offsets":[18200],"raw_metadata_u32":[1]}
+{"text_id":368,"forms":["カメラの自動調整"],"absolute_byte_offsets":[18222],"raw_metadata_u32":[1]}
+{"text_id":369,"forms":["BGM"],"absolute_byte_offsets":[18247],"raw_metadata_u32":[1]}
+{"text_id":370,"forms":["SE"],"absolute_byte_offsets":[18251],"raw_metadata_u32":[1]}
+{"text_id":371,"forms":["なきごえ"],"absolute_byte_offsets":[18254],"raw_metadata_u32":[1]}
+{"text_id":372,"forms":["へんこうする"],"absolute_byte_offsets":[18267],"raw_metadata_u32":[1]}
+{"text_id":373,"forms":["おそい"],"absolute_byte_offsets":[18286],"raw_metadata_u32":[1]}
+{"text_id":374,"forms":["ふつう"],"absolute_byte_offsets":[18296],"raw_metadata_u32":[1]}
+{"text_id":375,"forms":["はやい"],"absolute_byte_offsets":[18306],"raw_metadata_u32":[1]}
+{"text_id":376,"forms":["どのエリアにもいない"],"absolute_byte_offsets":[18316],"raw_metadata_u32":[1]}
+{"text_id":377,"forms":["未登録ポケモンあり"],"absolute_byte_offsets":[18347],"raw_metadata_u32":[1]}
+{"text_id":378,"forms":["<$strsname;0(lstr1,lnum1)>のポケモンとうろく状態"],"absolute_byte_offsets":[18375],"raw_metadata_u32":[1]}
+{"text_id":379,"forms":["<$strpname;0(lstr1,lnum1)>のポケモンとうろく状態"],"absolute_byte_offsets":[18435],"raw_metadata_u32":[1]}
+{"text_id":380,"forms":["オン"],"absolute_byte_offsets":[18495],"raw_metadata_u32":[1]}
+{"text_id":381,"forms":["オフ"],"absolute_byte_offsets":[18502],"raw_metadata_u32":[1]}
+{"text_id":382,"forms":["ノーマル"],"absolute_byte_offsets":[18509],"raw_metadata_u32":[1]}
+{"text_id":383,"forms":["リバース"],"absolute_byte_offsets":[18522],"raw_metadata_u32":[1]}
+{"text_id":384,"forms":["する"],"absolute_byte_offsets":[18535],"raw_metadata_u32":[1]}
+{"text_id":385,"forms":["しない"],"absolute_byte_offsets":[18542],"raw_metadata_u32":[1]}
+{"text_id":386,"forms":[""],"absolute_byte_offsets":[18552],"raw_metadata_u32":[0]}
+{"text_id":387,"forms":[""],"absolute_byte_offsets":[18553],"raw_metadata_u32":[0]}
+{"text_id":388,"forms":["<文字:もじ>を<表示:ひょうじ>する　<速:はや>さを　３<段階:だんかい>から　<選:えら>べます"],"absolute_byte_offsets":[18554],"raw_metadata_u32":[1]}
+{"text_id":389,"forms":["<表示:ひょうじ>する<言語:げんご>を　<選:えら>べます"],"absolute_byte_offsets":[18678],"raw_metadata_u32":[1]}
+{"text_id":390,"forms":[""],"absolute_byte_offsets":[18751],"raw_metadata_u32":[0]}
+{"text_id":391,"forms":["<$keyicon(55)>で<走:はし>る　<$keyicon(3)>ではねる　に<設定:せってい>します"],"absolute_byte_offsets":[18752],"raw_metadata_u32":[1]}
+{"text_id":392,"forms":["ボタンのわりあてを　<設定:せってい>できます"],"absolute_byte_offsets":[18849],"raw_metadata_u32":[1]}
+{"text_id":393,"forms":["コントローラーを<振動:しんどう>させるか　<選:えら>べます"],"absolute_byte_offsets":[18913],"raw_metadata_u32":[1]}
+{"text_id":394,"forms":["<$keyicon(3)>で<走:はし>る　<$keyicon(55)>ではねる　に<設定:せってい>します"],"absolute_byte_offsets":[18995],"raw_metadata_u32":[1]}
+{"text_id":395,"forms":["カメラの　<上下:じょうげ>の<操作:そうさ>を　どちらにするか　<選:えら>べます"],"absolute_byte_offsets":[19092],"raw_metadata_u32":[1]}
+{"text_id":396,"forms":["カメラの　<左右:さゆう>の<操作:そうさ>を　どちらにするか　<選:えら>べます"],"absolute_byte_offsets":[19201],"raw_metadata_u32":[1]}
+{"text_id":397,"forms":["カメラ<操作:そうさ>の<速度:そくど>を　<選:えら>べます"],"absolute_byte_offsets":[19307],"raw_metadata_u32":[1]}
+{"text_id":398,"forms":["カメラとメタモンの<間:あいだ>にモノがある<時:とき>　<自動:じどう>でよけるか　<選:えら>べます"],"absolute_byte_offsets":[19383],"raw_metadata_u32":[1]}
+{"text_id":399,"forms":[""],"absolute_byte_offsets":[19516],"raw_metadata_u32":[0]}
+{"text_id":400,"forms":["BGMの<音量:おんりょう>を　<調整:ちょうせい>できます"],"absolute_byte_offsets":[19517],"raw_metadata_u32":[1]}
+{"text_id":401,"forms":["SEの<音量:おんりょう>を　<調整:ちょうせい>できます"],"absolute_byte_offsets":[19590],"raw_metadata_u32":[1]}
+{"text_id":402,"forms":["ポケモンのなきごえの<音量:おんりょう>を　<調整:ちょうせい>できます"],"absolute_byte_offsets":[19662],"raw_metadata_u32":[1]}
+{"text_id":403,"forms":["どちらを通報しますか？"],"absolute_byte_offsets":[19759],"raw_metadata_u32":[1]}
+{"text_id":404,"forms":["通報するプレイヤーを　選んでください"],"absolute_byte_offsets":[19793],"raw_metadata_u32":[1]}
+{"text_id":405,"forms":["通報する内容を　選んでください"],"absolute_byte_offsets":[19848],"raw_metadata_u32":[1]}
+{"text_id":406,"forms":["この内容で　通報しますか？"],"absolute_byte_offsets":[19894],"raw_metadata_u32":[1]}
+{"text_id":407,"forms":["ステージ（地形・写真など）"],"absolute_byte_offsets":[19934],"raw_metadata_u32":[1]}
+{"text_id":408,"forms":["プレイヤー（名前・行動など）"],"absolute_byte_offsets":[19974],"raw_metadata_u32":[1]}
+{"text_id":409,"forms":["<個人:こじん><情報:じょうほう>・<出会:であ>い<目的:もくてき>"],"absolute_byte_offsets":[20017],"raw_metadata_u32":[1]}
+{"text_id":410,"forms":["<暴力的:ぼうりょくてき>な<内容:ないよう>"],"absolute_byte_offsets":[20102],"raw_metadata_u32":[1]}
+{"text_id":411,"forms":["<公序良俗:こうじょりょうぞく>に<反:はん>する<内容:ないよう>"],"absolute_byte_offsets":[20160],"raw_metadata_u32":[1]}
+{"text_id":412,"forms":["<他人:たにん>への<嫌:いや>がらせ・<悪口:わるぐち>"],"absolute_byte_offsets":[20245],"raw_metadata_u32":[1]}
+{"text_id":413,"forms":["<営利宣伝:えいりせんでん><目的:もくてき>"],"absolute_byte_offsets":[20315],"raw_metadata_u32":[1]}
+{"text_id":414,"forms":["わいせつな<内容:ないよう>"],"absolute_byte_offsets":[20373],"raw_metadata_u32":[1]}
+{"text_id":415,"forms":["<改造:かいぞう>やチート"],"absolute_byte_offsets":[20410],"raw_metadata_u32":[1]}
+{"text_id":416,"forms":["その<他:た>　<不適切:ふてきせつ>な<内容:ないよう>"],"absolute_byte_offsets":[20444],"raw_metadata_u32":[1]}
+{"text_id":417,"forms":["この<通報:つうほう>は、<通報:つうほう>する<相手:あいて>や<投稿:とうこう><者:しゃ><本人:ほんにん>ではなく<br><運営:うんえい><者:しゃ>である<任天堂:にんてんどう>に<送信:そうしん>されます。<br><通報:つうほう><内容:ないよう>は、<通報:つうほう><当事者:とうじしゃ><以外:いがい>の<br><第三者:だいさんしゃ>へ<開示:かいじ>される<可能:かのう><性:せい>があります。<br>あらかじめご<了承:りょうしょう>ください。<br><通報:つうほう>する<必要:ひつよう>がない<人:ひと>やコンテンツに<対:たい>して、<br>わざと<通報:つうほう>しないでください。"],"absolute_byte_offsets":[20514],"raw_metadata_u32":[1]}
+{"text_id":418,"forms":["くわしく説明してください"],"absolute_byte_offsets":[21250],"raw_metadata_u32":[1]}
+{"text_id":419,"forms":["通報する"],"absolute_byte_offsets":[21287],"raw_metadata_u32":[1]}
+{"text_id":420,"forms":["確定する"],"absolute_byte_offsets":[21300],"raw_metadata_u32":[1]}
+{"text_id":421,"forms":["もどる"],"absolute_byte_offsets":[21313],"raw_metadata_u32":[1]}
+{"text_id":422,"forms":["まもなく通信が終わります<br>そうさを　やめてください"],"absolute_byte_offsets":[21323],"raw_metadata_u32":[1]}
+{"text_id":423,"forms":[""],"absolute_byte_offsets":[21400],"raw_metadata_u32":[0]}
+{"text_id":424,"forms":["バーチャルモードを開始します･･･"],"absolute_byte_offsets":[21401],"raw_metadata_u32":[1]}
+{"text_id":425,"forms":["バーチャルモードを終了します･･･"],"absolute_byte_offsets":[21453],"raw_metadata_u32":[1]}
+{"text_id":426,"forms":["おおなわとび"],"absolute_byte_offsets":[21505],"raw_metadata_u32":[1]}
+{"text_id":427,"forms":["かくれおに"],"absolute_byte_offsets":[21524],"raw_metadata_u32":[1]}
+{"text_id":428,"forms":["なわが　足元に来た<br>タイミングで　はねよう"],"absolute_byte_offsets":[21540],"raw_metadata_u32":[1]}
+{"text_id":429,"forms":["おにに見つからずに<br><$cdef(27)>ポケセン</color>の<$cdef(27)>パソコン</color>にタッチ！"],"absolute_byte_offsets":[21605],"raw_metadata_u32":[1]}
+{"text_id":430,"forms":["あなた"],"absolute_byte_offsets":[21717],"raw_metadata_u32":[1]}
+{"text_id":431,"forms":["ＯＫ！"],"absolute_byte_offsets":[21727],"raw_metadata_u32":[1]}
+{"text_id":432,"forms":["スタート！"],"absolute_byte_offsets":[21737],"raw_metadata_u32":[1]}
+{"text_id":433,"forms":["１位"],"absolute_byte_offsets":[21753],"raw_metadata_u32":[1]}
+{"text_id":434,"forms":["２位"],"absolute_byte_offsets":[21760],"raw_metadata_u32":[1]}
+{"text_id":435,"forms":["３位"],"absolute_byte_offsets":[21767],"raw_metadata_u32":[1]}
+{"text_id":436,"forms":["４位"],"absolute_byte_offsets":[21774],"raw_metadata_u32":[1]}
+{"text_id":437,"forms":["きろく"],"absolute_byte_offsets":[21781],"raw_metadata_u32":[1]}
+{"text_id":438,"forms":["<dgt5;0(lnum1)>回"],"absolute_byte_offsets":[21791],"raw_metadata_u32":[1]}
+{"text_id":439,"forms":["しんきろく！"],"absolute_byte_offsets":[21810],"raw_metadata_u32":[1]}
+{"text_id":440,"forms":[""],"absolute_byte_offsets":[21829],"raw_metadata_u32":[0]}
+{"text_id":441,"forms":["みんなが見つかった"],"absolute_byte_offsets":[21830],"raw_metadata_u32":[1]}
+{"text_id":442,"forms":[""],"absolute_byte_offsets":[21858],"raw_metadata_u32":[0]}
+{"text_id":443,"forms":[""],"absolute_byte_offsets":[21859],"raw_metadata_u32":[0]}
+{"text_id":444,"forms":[""],"absolute_byte_offsets":[21860],"raw_metadata_u32":[0]}
+{"text_id":445,"forms":["<dgt4;0(lnum1)>回"],"absolute_byte_offsets":[21861],"raw_metadata_u32":[1]}
+{"text_id":446,"forms":["ショップデー"],"absolute_byte_offsets":[21880],"raw_metadata_u32":[1]}
+{"text_id":447,"forms":["チャレンジデー"],"absolute_byte_offsets":[21899],"raw_metadata_u32":[1]}
+{"text_id":448,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color>さんが　<$cdef(27)>おおなわとび</color>を始めようと<br>しています　アンケートに　回答してください"],"absolute_byte_offsets":[21921],"raw_metadata_u32":[1]}
+{"text_id":449,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color>さんが　<$cdef(27)>おおなわとび</color>で遊ぼうとしています"],"absolute_byte_offsets":[22101],"raw_metadata_u32":[1]}
+{"text_id":450,"forms":["？？？に<行:い>こうとしています<br>アンケートに　回答してください"],"absolute_byte_offsets":[22226],"raw_metadata_u32":[1]}
+{"text_id":451,"forms":["「はい」を<選:えら>んだ<人:ひと>のみで　<遊:あそ>びます"],"absolute_byte_offsets":[22321],"raw_metadata_u32":[1]}
+{"text_id":452,"forms":["スタンプあつめ"],"absolute_byte_offsets":[22400],"raw_metadata_u32":[1]}
+{"text_id":453,"forms":["<今日:きょう>のスタンプ"],"absolute_byte_offsets":[22422],"raw_metadata_u32":[1]}
+{"text_id":454,"forms":["スタンプをおす！"],"absolute_byte_offsets":[22456],"raw_metadata_u32":[1]}
+{"text_id":455,"forms":["おせる期間"],"absolute_byte_offsets":[22481],"raw_metadata_u32":[1]}
+{"text_id":456,"forms":["ひきかえ期間"],"absolute_byte_offsets":[22497],"raw_metadata_u32":[1]}
+{"text_id":457,"forms":["<timemd;0(lnum1,lnum2)>～<timemd;1(lnum3,lnum4)>"],"absolute_byte_offsets":[22516],"raw_metadata_u32":[1]}
+{"text_id":458,"forms":["使えない言葉がふくまれています。<br>内容を修正してください。"],"absolute_byte_offsets":[22566],"raw_metadata_u32":[1]}
+{"text_id":459,"forms":["<条件:じょうけん>に<当:あ>てはまるポケモンがいません"],"absolute_byte_offsets":[22655],"raw_metadata_u32":[1]}
+{"text_id":460,"forms":["<条件:じょうけん>に<当:あ>てはまる<生息地:せいそくち>がありません"],"absolute_byte_offsets":[22731],"raw_metadata_u32":[1]}
+{"text_id":461,"forms":["<$cdef(27)>しぼりこみ：<変更中:へんこうちゅう></color>"],"absolute_byte_offsets":[22825],"raw_metadata_u32":[1]}
+{"text_id":462,"forms":["しぼりこみ：デフォルト"],"absolute_byte_offsets":[22896],"raw_metadata_u32":[1]}
+{"text_id":463,"forms":[""],"absolute_byte_offsets":[22930],"raw_metadata_u32":[0]}
+{"text_id":464,"forms":[""],"absolute_byte_offsets":[22931],"raw_metadata_u32":[0]}
+{"text_id":465,"forms":["すみかなし"],"absolute_byte_offsets":[22932],"raw_metadata_u32":[1]}
+{"text_id":466,"forms":["<$cdef(27)><$cname;0(lnum1)></color>のすみか"],"absolute_byte_offsets":[22948],"raw_metadata_u32":[1]}
+{"text_id":467,"forms":["ホストが<通信:つうしん>を　<終:お>わろうとしています<br>そうさを　やめてください"],"absolute_byte_offsets":[22997],"raw_metadata_u32":[1]}
+{"text_id":468,"forms":["まもなく<通信:つうしん>が　<終:お>わります"],"absolute_byte_offsets":[23113],"raw_metadata_u32":[1]}
+{"text_id":469,"forms":["そうさを　<終了:しゅうりょう>してください<br><$cdef(27)><$strpname;0(lstr1,lnum1)></color>さんが　ホストになります"],"absolute_byte_offsets":[23174],"raw_metadata_u32":[1]}
+{"text_id":470,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color>さんが　<$cdef(27)>ゆめしま</color>に<行:い>こうとしています<br>アンケートに　<回答:かいとう>してください"],"absolute_byte_offsets":[23320],"raw_metadata_u32":[1]}
+{"text_id":471,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color>さんが　<$cdef(27)>ゆめしま</color>から<帰:かえ>ろうとしています<br>アンケートに　<回答:かいとう>してください"],"absolute_byte_offsets":[23509],"raw_metadata_u32":[1]}
+{"text_id":472,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color>さんが　<$cdef(27)>かくれおに</color>を<始:はじ>めようとしています<br>アンケートに　<回答:かいとう>してください"],"absolute_byte_offsets":[23704],"raw_metadata_u32":[1]}
+{"text_id":473,"forms":["<$cdef(27)><$stgmyname;0(lnum1)></color>に　<行:い>こうとしています<br>アンケートに　<回答:かいとう>してください"],"absolute_byte_offsets":[23902],"raw_metadata_u32":[1]}
+{"text_id":474,"forms":["ＯＫ"],"absolute_byte_offsets":[24046],"raw_metadata_u32":[1]}
+{"text_id":475,"forms":["ひつような<数:かず>"],"absolute_byte_offsets":[24053],"raw_metadata_u32":[1]}
+{"text_id":476,"forms":["見つかった"],"absolute_byte_offsets":[24081],"raw_metadata_u32":[1]}
+{"text_id":477,"forms":["<dgt5;0(lnum1)>"],"absolute_byte_offsets":[24097],"raw_metadata_u32":[1]}
+{"text_id":478,"forms":["カメラきょり"],"absolute_byte_offsets":[24113],"raw_metadata_u32":[1]}
+{"text_id":479,"forms":["ちかい"],"absolute_byte_offsets":[24132],"raw_metadata_u32":[1]}
+{"text_id":480,"forms":["ふつう"],"absolute_byte_offsets":[24142],"raw_metadata_u32":[1]}
+{"text_id":481,"forms":["とおい"],"absolute_byte_offsets":[24152],"raw_metadata_u32":[1]}
+{"text_id":482,"forms":["カメラと　<撮影:さつえい>するものの　<距離:きょり>を<調整:ちょうせい>できます"],"absolute_byte_offsets":[24162],"raw_metadata_u32":[1]}
+{"text_id":483,"forms":["お願いする"],"absolute_byte_offsets":[24274],"raw_metadata_u32":[1]}
+{"text_id":484,"forms":["えのぐ"],"absolute_byte_offsets":[24290],"raw_metadata_u32":[1]}
+{"text_id":485,"forms":[""],"absolute_byte_offsets":[24300],"raw_metadata_u32":[0]}
+{"text_id":486,"forms":["<設定:せってい>したいボタンを<押:お>してください"],"absolute_byte_offsets":[24301],"raw_metadata_u32":[1]}
+{"text_id":487,"forms":["他のプレイヤーの回答を　待っています･･･"],"absolute_byte_offsets":[24371],"raw_metadata_u32":[1]}
+{"text_id":488,"forms":["ホストが　<$cdef(27)><$stgmyname;0(lnum1)></color>に行こうとしています"],"absolute_byte_offsets":[24435],"raw_metadata_u32":[1]}
+{"text_id":489,"forms":["ホストが　？？？に行こうとしています"],"absolute_byte_offsets":[24521],"raw_metadata_u32":[1]}
+{"text_id":490,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color>さんが　<$cdef(27)>ゆめしま</color>に行こうとしています"],"absolute_byte_offsets":[24576],"raw_metadata_u32":[1]}
+{"text_id":491,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color>さんが　<$cdef(27)>ゆめしま</color>から帰ろうとしています"],"absolute_byte_offsets":[24695],"raw_metadata_u32":[1]}
+{"text_id":492,"forms":["「いいえ」を選んだ人は　移動しません"],"absolute_byte_offsets":[24817],"raw_metadata_u32":[1]}
+{"text_id":493,"forms":["「いいえ」を選んだ人がいる場合　移動しません"],"absolute_byte_offsets":[24872],"raw_metadata_u32":[1]}
+{"text_id":494,"forms":[""],"absolute_byte_offsets":[24939],"raw_metadata_u32":[0]}
+{"text_id":495,"forms":[""],"absolute_byte_offsets":[24940],"raw_metadata_u32":[0]}
+{"text_id":496,"forms":["アンケートしゅうりょう！<br><$stgmyname;0(lnum1)>に　残ります"],"absolute_byte_offsets":[24941],"raw_metadata_u32":[1]}
+{"text_id":497,"forms":[""],"absolute_byte_offsets":[25021],"raw_metadata_u32":[0]}
+{"text_id":498,"forms":[""],"absolute_byte_offsets":[25022],"raw_metadata_u32":[0]}
+{"text_id":499,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color>さんが　<$cdef(27)>かくれおに</color>で遊ぼうとしています"],"absolute_byte_offsets":[25023],"raw_metadata_u32":[1]}
+{"text_id":500,"forms":["<$icon(lnum1)>はい"],"absolute_byte_offsets":[25145],"raw_metadata_u32":[1]}
+{"text_id":501,"forms":["<$icon(lnum1)>いいえ"],"absolute_byte_offsets":[25166],"raw_metadata_u32":[1]}
+{"text_id":502,"forms":["やめる"],"absolute_byte_offsets":[25190],"raw_metadata_u32":[1]}
+{"text_id":503,"forms":["へんこうする"],"absolute_byte_offsets":[25200],"raw_metadata_u32":[1]}
+{"text_id":504,"forms":["あなた"],"absolute_byte_offsets":[25219],"raw_metadata_u32":[1]}
+{"text_id":505,"forms":[""],"absolute_byte_offsets":[25229],"raw_metadata_u32":[0]}
+{"text_id":506,"forms":["<通信:つうしん>が　<不安定:ふあんてい>です"],"absolute_byte_offsets":[25230],"raw_metadata_u32":[1]}
+{"text_id":507,"forms":["<通信:つうしん>が<不安定:ふあんてい>です　<接続:せつぞく>をご<確認:かくにん>ください<br>しばらくこの<状態:じょうたい>が<続:つづ>くと　<通信:つうしん>が<切断:せつだん>されます"],"absolute_byte_offsets":[25291],"raw_metadata_u32":[1]}
+{"text_id":508,"forms":["つかう・話す　など"],"absolute_byte_offsets":[25539],"raw_metadata_u32":[1]}
+{"text_id":509,"forms":["（長く押す）走る"],"absolute_byte_offsets":[25567],"raw_metadata_u32":[1]}
+{"text_id":510,"forms":["（短く押す）しまう"],"absolute_byte_offsets":[25592],"raw_metadata_u32":[1]}
+{"text_id":511,"forms":["バッグをひらく"],"absolute_byte_offsets":[25620],"raw_metadata_u32":[1]}
+{"text_id":512,"forms":["（短く押す）ひろう"],"absolute_byte_offsets":[25642],"raw_metadata_u32":[1]}
+{"text_id":513,"forms":["（長く押す）すいこむ"],"absolute_byte_offsets":[25670],"raw_metadata_u32":[1]}
+{"text_id":514,"forms":["連れ歩き<br>（長く押す）連れ歩き終了"],"absolute_byte_offsets":[25701],"raw_metadata_u32":[1]}
+{"text_id":515,"forms":["エモート・チャット"],"absolute_byte_offsets":[25754],"raw_metadata_u32":[1]}
+{"text_id":516,"forms":["わざ切り替え　左"],"absolute_byte_offsets":[25782],"raw_metadata_u32":[1]}
+{"text_id":517,"forms":["わざ切り替え　右"],"absolute_byte_offsets":[25807],"raw_metadata_u32":[1]}
+{"text_id":518,"forms":["わざ設定"],"absolute_byte_offsets":[25832],"raw_metadata_u32":[1]}
+{"text_id":519,"forms":["はねる"],"absolute_byte_offsets":[25845],"raw_metadata_u32":[1]}
+{"text_id":520,"forms":["へいこう<移動:いどう>"],"absolute_byte_offsets":[25855],"raw_metadata_u32":[1]}
+{"text_id":521,"forms":["わざを使う"],"absolute_byte_offsets":[25886],"raw_metadata_u32":[1]}
+{"text_id":522,"forms":["どうさ対象切り替え"],"absolute_byte_offsets":[25902],"raw_metadata_u32":[1]}
+{"text_id":523,"forms":[""],"absolute_byte_offsets":[25930],"raw_metadata_u32":[0]}
+{"text_id":524,"forms":["カメラを起動"],"absolute_byte_offsets":[25931],"raw_metadata_u32":[1]}
+{"text_id":525,"forms":["なみのり"],"absolute_byte_offsets":[25950],"raw_metadata_u32":[1]}
+{"text_id":526,"forms":["かっくう"],"absolute_byte_offsets":[25963],"raw_metadata_u32":[1]}
+{"text_id":527,"forms":[""],"absolute_byte_offsets":[25976],"raw_metadata_u32":[0]}
+{"text_id":528,"forms":[""],"absolute_byte_offsets":[25977],"raw_metadata_u32":[0]}
+{"text_id":529,"forms":["はきだす高さ調整　上"],"absolute_byte_offsets":[25978],"raw_metadata_u32":[1]}
+{"text_id":530,"forms":["はきだす高さ調整　下"],"absolute_byte_offsets":[26009],"raw_metadata_u32":[1]}
+{"text_id":531,"forms":["はきだす・手に持つ"],"absolute_byte_offsets":[26040],"raw_metadata_u32":[1]}
+{"text_id":532,"forms":["箱などに入れる"],"absolute_byte_offsets":[26068],"raw_metadata_u32":[1]}
+{"text_id":533,"forms":["（短く押す）いれかえ"],"absolute_byte_offsets":[26090],"raw_metadata_u32":[1]}
+{"text_id":534,"forms":["（長く押す）せいとん"],"absolute_byte_offsets":[26121],"raw_metadata_u32":[1]}
+{"text_id":535,"forms":["全部うつす"],"absolute_byte_offsets":[26152],"raw_metadata_u32":[1]}
+{"text_id":536,"forms":["半分うつす"],"absolute_byte_offsets":[26168],"raw_metadata_u32":[1]}
+{"text_id":537,"forms":["サブバッグの表示切り替え"],"absolute_byte_offsets":[26184],"raw_metadata_u32":[1]}
+{"text_id":538,"forms":["せつめい"],"absolute_byte_offsets":[26221],"raw_metadata_u32":[1]}
+{"text_id":539,"forms":["おとす"],"absolute_byte_offsets":[26234],"raw_metadata_u32":[1]}
+{"text_id":540,"forms":["<dgt3;0(lnum1)>"],"absolute_byte_offsets":[26244],"raw_metadata_u32":[1]}
+{"text_id":541,"forms":["/<dgt3;0(lnum1)>"],"absolute_byte_offsets":[26260],"raw_metadata_u32":[1]}
+{"text_id":542,"forms":["メインメニュー"],"absolute_byte_offsets":[26277],"raw_metadata_u32":[1]}
+{"text_id":543,"forms":["もどる"],"absolute_byte_offsets":[26299],"raw_metadata_u32":[1]}
+{"text_id":544,"forms":["見出し切り替え"],"absolute_byte_offsets":[26309],"raw_metadata_u32":[1]}
+{"text_id":545,"forms":[""],"absolute_byte_offsets":[26331],"raw_metadata_u32":[0]}
+{"text_id":546,"forms":["サブバッグのそうさ　右"],"absolute_byte_offsets":[26332],"raw_metadata_u32":[1]}
+{"text_id":547,"forms":["サブバッグのそうさ　左"],"absolute_byte_offsets":[26366],"raw_metadata_u32":[1]}
+{"text_id":548,"forms":["カメラの<自動:じどう><追:お>いかけ"],"absolute_byte_offsets":[26400],"raw_metadata_u32":[1]}
+{"text_id":549,"forms":["カメラが　メタモンを<自動:じどう>で<追:お>いかけるか　<選:えら>べます"],"absolute_byte_offsets":[26449],"raw_metadata_u32":[1]}
+{"text_id":550,"forms":["さがし<中:ちゅう>･･･"],"absolute_byte_offsets":[26549],"raw_metadata_u32":[1]}
+{"text_id":551,"forms":["みんなでチャレンジ"],"absolute_byte_offsets":[26583],"raw_metadata_u32":[1]}
+{"text_id":552,"forms":["スペシャルチャレンジ"],"absolute_byte_offsets":[26611],"raw_metadata_u32":[1]}
+{"text_id":553,"forms":["全ポケモン登録ずみ"],"absolute_byte_offsets":[26642],"raw_metadata_u32":[1]}
+{"text_id":554,"forms":["登録済み"],"absolute_byte_offsets":[26670],"raw_metadata_u32":[1]}
+{"text_id":555,"forms":["情報あり"],"absolute_byte_offsets":[26683],"raw_metadata_u32":[1]}
+{"text_id":556,"forms":["情報なし"],"absolute_byte_offsets":[26696],"raw_metadata_u32":[1]}
+{"text_id":557,"forms":["環境レベルの<合計:ごうけい><dgt2;0(lnum1)>以上で商品<追加:ついか>"],"absolute_byte_offsets":[26709],"raw_metadata_u32":[1]}
+{"text_id":558,"forms":["<$cdef(224)>あと<dgt2;0(lnum2)>レベル</color>（いまの環境レベルの合計　<dgt2;1(lnum1)>）"],"absolute_byte_offsets":[26797],"raw_metadata_u32":[1]}
+{"text_id":559,"forms":[""],"absolute_byte_offsets":[26905],"raw_metadata_u32":[0]}
+{"text_id":560,"forms":["<timehm;0(lnum1,lnum2)>に<完了:かんりょう><予定:よてい>です"],"absolute_byte_offsets":[26906],"raw_metadata_u32":[1]}
+{"text_id":561,"forms":[""],"absolute_byte_offsets":[26981],"raw_metadata_u32":[0]}
+{"text_id":562,"forms":["<明日:あした>　<完了:かんりょう><予定:よてい>です"],"absolute_byte_offsets":[26982],"raw_metadata_u32":[1]}
+{"text_id":563,"forms":["<dgt6;0(lnum1)>"],"absolute_byte_offsets":[27052],"raw_metadata_u32":[1]}
+{"text_id":564,"forms":["クラウド島の削除"],"absolute_byte_offsets":[27068],"raw_metadata_u32":[1]}
+{"text_id":565,"forms":["バーチャルモードで公開"],"absolute_byte_offsets":[27093],"raw_metadata_u32":[1]}
+{"text_id":566,"forms":["<削除:さくじょ>する"],"absolute_byte_offsets":[27127],"raw_metadata_u32":[1]}
+{"text_id":567,"forms":["クラウド<島:じま>を<削除:さくじょ>します　<削除:さくじょ>した<場合:ばあい>その<島:しま>ではもう<遊:あそ>べません"],"absolute_byte_offsets":[27155],"raw_metadata_u32":[1]}
+{"text_id":568,"forms":["<他:ほか>のプレイヤーがバーチャルモードで<訪問:ほうもん>できるようにするか<選:えら>べます"],"absolute_byte_offsets":[27315],"raw_metadata_u32":[1]}
+{"text_id":569,"forms":[""],"absolute_byte_offsets":[27445],"raw_metadata_u32":[0]}
+{"text_id":570,"forms":["建物内でのカメラきょり"],"absolute_byte_offsets":[27446],"raw_metadata_u32":[1]}
+{"text_id":571,"forms":["すみかの範囲をみる"],"absolute_byte_offsets":[27480],"raw_metadata_u32":[1]}
+{"text_id":572,"forms":["<環境:かんきょう>レベル<dgt2;0(lnum1)>以上で商品追加"],"absolute_byte_offsets":[27508],"raw_metadata_u32":[1]}
+{"text_id":573,"forms":["<$cdef(224)>あと<dgt2;0(lnum2)>レベル</color>（いまの<環境:かんきょう>レベル <dgt2;1(lnum1)>）"],"absolute_byte_offsets":[27578],"raw_metadata_u32":[1]}
+{"text_id":574,"forms":["<通報:つうほう>の<理由:りゆう>"],"absolute_byte_offsets":[27693],"raw_metadata_u32":[1]}
+{"text_id":575,"forms":["・"],"absolute_byte_offsets":[27736],"raw_metadata_u32":[1]}
+{"text_id":576,"forms":[""],"absolute_byte_offsets":[27740],"raw_metadata_u32":[0]}
+{"text_id":577,"forms":["<dgt3;0(lnum1)>"],"absolute_byte_offsets":[27741],"raw_metadata_u32":[1]}
+{"text_id":578,"forms":["/<dgt3;0(lnum1)>"],"absolute_byte_offsets":[27757],"raw_metadata_u32":[1]}
+{"text_id":579,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[27774],"raw_metadata_u32":[1]}
+{"text_id":580,"forms":["この<島:しま>の<設定:せってい>を　<変更:へんこう>しますか？"],"absolute_byte_offsets":[27792],"raw_metadata_u32":[1]}
+{"text_id":581,"forms":["この<島:しま>を<上書:うわが>きして　ふくげんしますか？"],"absolute_byte_offsets":[27877],"raw_metadata_u32":[1]}
+{"text_id":582,"forms":["この<島:しま>を　<削除:さくじょ>しますか？"],"absolute_byte_offsets":[27956],"raw_metadata_u32":[1]}
+{"text_id":583,"forms":["∞"],"absolute_byte_offsets":[28017],"raw_metadata_u32":[1]}
+{"text_id":584,"forms":["<習得:しゅうとく>ずみ"],"absolute_byte_offsets":[28021],"raw_metadata_u32":[1]}
+{"text_id":585,"forms":["×<dgt2;0(lnum1)>"],"absolute_byte_offsets":[28052],"raw_metadata_u32":[1]}
+{"text_id":586,"forms":["<$iname;0(lnum1)><dgt2;1(lnum2)>コセット"],"absolute_byte_offsets":[28070],"raw_metadata_u32":[1]}
+{"text_id":587,"forms":["ver.<string;0(lstr1)>"],"absolute_byte_offsets":[28115],"raw_metadata_u32":[1]}
+{"text_id":588,"forms":["プレイヤーの<名前:なまえ>"],"absolute_byte_offsets":[28137],"raw_metadata_u32":[1]}
+{"text_id":589,"forms":["プレイヤーの<行動:こうどう>"],"absolute_byte_offsets":[28174],"raw_metadata_u32":[1]}
+{"text_id":590,"forms":["エリアの<名前:なまえ>"],"absolute_byte_offsets":[28214],"raw_metadata_u32":[1]}
+{"text_id":591,"forms":["エリアの<地形:ちけい>など"],"absolute_byte_offsets":[28245],"raw_metadata_u32":[1]}
+{"text_id":592,"forms":["本日<限:かぎ>り！"],"absolute_byte_offsets":[28282],"raw_metadata_u32":[1]}
+{"text_id":593,"forms":[""],"absolute_byte_offsets":[28307],"raw_metadata_u32":[0]}
+{"text_id":594,"forms":["バックアップデータを　<復元:ふくげん>しますか？"],"absolute_byte_offsets":[28308],"raw_metadata_u32":[1]}
+{"text_id":595,"forms":["<押:お>し<直:なお>すスタンプを　<選:えら>んでください"],"absolute_byte_offsets":[28378],"raw_metadata_u32":[1]}
+{"text_id":596,"forms":["ふしぎなおくりもの"],"absolute_byte_offsets":[28454],"raw_metadata_u32":[1]}
+{"text_id":597,"forms":["おとりよせした商品"],"absolute_byte_offsets":[28482],"raw_metadata_u32":[1]}
+{"text_id":598,"forms":["遊んだポケモンからのプレゼント"],"absolute_byte_offsets":[28510],"raw_metadata_u32":[1]}
+{"text_id":599,"forms":["なにを受け取りますか"],"absolute_byte_offsets":[28556],"raw_metadata_u32":[1]}
+{"text_id":600,"forms":["インターネットで受け取る"],"absolute_byte_offsets":[28587],"raw_metadata_u32":[1]}
+{"text_id":601,"forms":["シリアルコード／あいことばで受け取る"],"absolute_byte_offsets":[28624],"raw_metadata_u32":[1]}
+{"text_id":602,"forms":["おくりものを　確認する"],"absolute_byte_offsets":[28679],"raw_metadata_u32":[1]}
+{"text_id":603,"forms":["<注意:ちゅうい>"],"absolute_byte_offsets":[28713],"raw_metadata_u32":[1]}
+{"text_id":604,"forms":["シリアルコード　または　あいことばで<br>おくりものを<受:う>け<取:と>っているとき<br><本体:ほんたい>の<電源:でんげん>が　<切:き>れたり<br><通信:つうしん>に　<失敗:しっぱい>したりすると<br>そのシリアルコードや　あいことばが<br><使用:しよう>できなくなることが　あります<br><本体:ほんたい>のバッテリーの<残:ざん><量:りょう>や　<通信:つうしん>に<問題:もんだい>がないか<br>ご<確認:かくにん>ください"],"absolute_byte_offsets":[28735],"raw_metadata_u32":[1]}
+{"text_id":605,"forms":["シリアルコード　または　あいことばが　<間違:まちが>っています<br>お<手持:ても>ちのシリアルコードを　ご<確認:かくにん>ください<br>10<回:かい><続:つづ>けて　<間違:まちが>えると<br>しばらく　<入力:にゅうりょく>できなくなります<br>ご<注意:ちゅうい>ください"],"absolute_byte_offsets":[29289],"raw_metadata_u32":[1]}
+{"text_id":606,"forms":["シリアルコード　または　あいことばを<br><続:つづ>けて　<間違:まちが>えたため<br>しばらく　<入力:にゅうりょく>できません<br><時間:じかん>をおいて　お<試:ため>しください"],"absolute_byte_offsets":[29647],"raw_metadata_u32":[1]}
+{"text_id":607,"forms":["わかりました"],"absolute_byte_offsets":[29885],"raw_metadata_u32":[1]}
+{"text_id":608,"forms":["受け取りりれき"],"absolute_byte_offsets":[29904],"raw_metadata_u32":[1]}
+{"text_id":609,"forms":["<$cdef(27)><$ifull;0(lnum1)></color>　<dgt2;1(lnum2)>コ"],"absolute_byte_offsets":[29926],"raw_metadata_u32":[1]}
+{"text_id":610,"forms":["<moneyint;0(lnum1)>ライフコイン"],"absolute_byte_offsets":[29984],"raw_metadata_u32":[1]}
+{"text_id":611,"forms":["を　受け取りました！"],"absolute_byte_offsets":[30022],"raw_metadata_u32":[1]}
+{"text_id":612,"forms":["<受:う>け<取:と>りりれきは　ありません"],"absolute_byte_offsets":[30053],"raw_metadata_u32":[1]}
+{"text_id":613,"forms":[""],"absolute_byte_offsets":[30108],"raw_metadata_u32":[0]}
+{"text_id":614,"forms":["<不明:ふめい>"],"absolute_byte_offsets":[30109],"raw_metadata_u32":[1]}
+{"text_id":615,"forms":["あいことばの表示"],"absolute_byte_offsets":[30128],"raw_metadata_u32":[1]}
+{"text_id":616,"forms":["<通信中:つうしんちゅう>に　あいことばを　<表示:ひょうじ>するか　<選:えら>べます"],"absolute_byte_offsets":[30153],"raw_metadata_u32":[1]}
+{"text_id":617,"forms":["しぼりこみ"],"absolute_byte_offsets":[30268],"raw_metadata_u32":[1]}
+{"text_id":618,"forms":["登録ずみ"],"absolute_byte_offsets":[30284],"raw_metadata_u32":[1]}
+{"text_id":619,"forms":["<$hatname;0(lnum1)>を作るヒント"],"absolute_byte_offsets":[30297],"raw_metadata_u32":[1]}
+{"text_id":620,"forms":["入力したあいことばの<br>保存許可"],"absolute_byte_offsets":[30335],"raw_metadata_u32":[1]}
+{"text_id":621,"forms":["あなたのあいことばを　<他:ほか>のプレイヤーが<自動:じどう>で<保存:ほぞん>するか　<選:えら>べます"],"absolute_byte_offsets":[30382],"raw_metadata_u32":[1]}
+{"text_id":622,"forms":["この<種類:しゅるい>のアイテムであれば<br>なんでも<大丈夫:だいじょうぶ>です"],"absolute_byte_offsets":[30521],"raw_metadata_u32":[1]}
+{"text_id":623,"forms":["いっしょに　<遊:あそ>びますか？"],"absolute_byte_offsets":[30628],"raw_metadata_u32":[1]}
+{"text_id":624,"forms":["いっしょに　<行:い>きますか？"],"absolute_byte_offsets":[30674],"raw_metadata_u32":[1]}
+{"text_id":625,"forms":["いっしょに　<行:い>きますか？　※<見:み>たことのないエリアです"],"absolute_byte_offsets":[30717],"raw_metadata_u32":[1]}
+{"text_id":626,"forms":["いっしょに　<帰:かえ>りますか？"],"absolute_byte_offsets":[30808],"raw_metadata_u32":[1]}
+{"text_id":627,"forms":["ボタンかぶりです"],"absolute_byte_offsets":[30854],"raw_metadata_u32":[1]}
+{"text_id":628,"forms":["バーチャルモードの<br><許可:きょか>"],"absolute_byte_offsets":[30879],"raw_metadata_u32":[1]}
+{"text_id":629,"forms":["<他:ほか>のプレイヤーがバーチャルモードで<遊:あそ>んだ内容は　<保存:ほぞん>されません"],"absolute_byte_offsets":[30929],"raw_metadata_u32":[1]}
+{"text_id":630,"forms":["このエリアにいる"],"absolute_byte_offsets":[31053],"raw_metadata_u32":[1]}
+{"text_id":631,"forms":["このエリアにいない"],"absolute_byte_offsets":[31078],"raw_metadata_u32":[1]}
+{"text_id":632,"forms":["ごうけい"],"absolute_byte_offsets":[31106],"raw_metadata_u32":[1]}
+{"text_id":633,"forms":["このエリアにある"],"absolute_byte_offsets":[31119],"raw_metadata_u32":[1]}
+{"text_id":634,"forms":["このエリアにない"],"absolute_byte_offsets":[31144],"raw_metadata_u32":[1]}
+{"text_id":635,"forms":["はしる（<切:き>り<替:か>え）"],"absolute_byte_offsets":[31169],"raw_metadata_u32":[1]}
+{"text_id":636,"forms":["<$pkname;0(lnum1)>　<$pkform;1(lnum1)>"],"absolute_byte_offsets":[31209],"raw_metadata_u32":[1]}
+{"text_id":637,"forms":["エモート「<$emotename;0(lnum1)>」"],"absolute_byte_offsets":[31249],"raw_metadata_u32":[1]}
+{"text_id":638,"forms":["<$cdef(27)><$ifull;0(lnum1)></color>のレシピ"],"absolute_byte_offsets":[31289],"raw_metadata_u32":[1]}
+{"text_id":639,"forms":["<$cdef(27)><$ifull;0(lnum1)></color>"],"absolute_byte_offsets":[31338],"raw_metadata_u32":[1]}
+{"text_id":640,"forms":["<$coordname;0(lnum1)>"],"absolute_byte_offsets":[31375],"raw_metadata_u32":[1]}
+{"text_id":641,"forms":["かみがた「<$hairname;0(lnum1)>」"],"absolute_byte_offsets":[31397],"raw_metadata_u32":[1]}
+{"text_id":642,"forms":["受け取る　おくりものを　選んでください"],"absolute_byte_offsets":[31436],"raw_metadata_u32":[1]}
+{"text_id":643,"forms":["そのまま"],"absolute_byte_offsets":[31494],"raw_metadata_u32":[1]}
+{"text_id":644,"forms":["いれかえ"],"absolute_byte_offsets":[31507],"raw_metadata_u32":[1]}
+{"text_id":645,"forms":["わざの<br>リングメニューの<操作:そうさ>"],"absolute_byte_offsets":[31520],"raw_metadata_u32":[1]}
+{"text_id":646,"forms":["<$keyicon(7)>で<決定:けってい>"],"absolute_byte_offsets":[31576],"raw_metadata_u32":[1]}
+{"text_id":647,"forms":["はなして<決定:けってい>"],"absolute_byte_offsets":[31614],"raw_metadata_u32":[1]}
+{"text_id":648,"forms":["ボタンをはなしても　<$keyicon(7)>で<決定:けってい>するまで　メニューがとじません"],"absolute_byte_offsets":[31648],"raw_metadata_u32":[1]}
+{"text_id":649,"forms":["ボタンをはなすと　メニューがとじ　<選択中:せんたくちゅう>のもので<決定:けってい>します"],"absolute_byte_offsets":[31761],"raw_metadata_u32":[1]}
+{"text_id":650,"forms":["コミュニケーションの<br>リングメニューの<操作:そうさ>"],"absolute_byte_offsets":[31888],"raw_metadata_u32":[1]}
+{"text_id":651,"forms":["<timeymdhmtz;0(lnum1,lnum2,lnum3,lnum4,lnum5,lnum6)>"],"absolute_byte_offsets":[31965],"raw_metadata_u32":[1]}
+{"text_id":652,"forms":[""],"absolute_byte_offsets":[32018],"raw_metadata_u32":[0]}
+{"text_id":653,"forms":["<大会:たいかい>ベスト"],"absolute_byte_offsets":[32019],"raw_metadata_u32":[9]}
+{"text_id":654,"forms":["アップロード<中:ちゅう>･･････"],"absolute_byte_offsets":[32050],"raw_metadata_u32":[1]}
+{"text_id":655,"forms":["ダウンロード<中:ちゅう>･･････"],"absolute_byte_offsets":[32102],"raw_metadata_u32":[1]}
+{"text_id":656,"forms":["<pernum;0(lnum1)>"],"absolute_byte_offsets":[32154],"raw_metadata_u32":[1]}
+{"text_id":657,"forms":["<timerms;0(lnum1,lnum2)>"],"absolute_byte_offsets":[32172],"raw_metadata_u32":[9]}
+{"text_id":658,"forms":["<timerms;0(lnum1,lnum2)>"],"absolute_byte_offsets":[32197],"raw_metadata_u32":[9]}
+{"text_id":659,"forms":[""],"absolute_byte_offsets":[32222],"raw_metadata_u32":[0]}
+{"text_id":660,"forms":["<$attrtagtxt;0(lnum1)>"],"absolute_byte_offsets":[32223],"raw_metadata_u32":[1]}
+{"text_id":661,"forms":["通信メンバー"],"absolute_byte_offsets":[32246],"raw_metadata_u32":[1]}
+{"text_id":662,"forms":["ざいりょう"],"absolute_byte_offsets":[32265],"raw_metadata_u32":[1]}
+{"text_id":663,"forms":["<報告可能:ほうこくかのう>！"],"absolute_byte_offsets":[32281],"raw_metadata_u32":[1]}
+{"text_id":664,"forms":["<$bname;0(lnum1)>"],"absolute_byte_offsets":[32321],"raw_metadata_u32":[1]}
+{"text_id":665,"forms":["<$bname;0(lnum1)>"],"absolute_byte_offsets":[32339],"raw_metadata_u32":[1]}
+{"text_id":666,"forms":["<$bname;0(lnum1)>"],"absolute_byte_offsets":[32357],"raw_metadata_u32":[1]}
+{"text_id":667,"forms":["<$coordname;0(lnum1)>"],"absolute_byte_offsets":[32375],"raw_metadata_u32":[1]}
+{"text_id":668,"forms":["<$hairname;0(lnum1)>"],"absolute_byte_offsets":[32397],"raw_metadata_u32":[1]}
+{"text_id":669,"forms":["<$bagname;0(lnum1)>"],"absolute_byte_offsets":[32418],"raw_metadata_u32":[1]}
+{"text_id":670,"forms":["<$hwearname;0(lnum1)>"],"absolute_byte_offsets":[32438],"raw_metadata_u32":[1]}
+{"text_id":671,"forms":["<$lbodyname;0(lnum1)>"],"absolute_byte_offsets":[32460],"raw_metadata_u32":[1]}
+{"text_id":672,"forms":["<$shoesname;0(lnum1)>"],"absolute_byte_offsets":[32482],"raw_metadata_u32":[1]}
+{"text_id":673,"forms":["<$ubodyname;0(lnum1)>"],"absolute_byte_offsets":[32504],"raw_metadata_u32":[1]}
+{"text_id":674,"forms":["マウス操作モード"],"absolute_byte_offsets":[32526],"raw_metadata_u32":[1]}
+{"text_id":675,"forms":["マウス<機能:きのう>を<有効:ゆうこう>にし　Joy-Con 2 をマウス<操作:そうさ>できるようにします"],"absolute_byte_offsets":[32551],"raw_metadata_u32":[1]}
+{"text_id":676,"forms":["かんりにんが通信を　終わろうとしています<br>そうさを　やめてください"],"absolute_byte_offsets":[32679],"raw_metadata_u32":[1]}
+{"text_id":677,"forms":[""],"absolute_byte_offsets":[32780],"raw_metadata_u32":[0]}
+{"text_id":678,"forms":[""],"absolute_byte_offsets":[32781],"raw_metadata_u32":[0]}
+{"text_id":679,"forms":[""],"absolute_byte_offsets":[32782],"raw_metadata_u32":[0]}
+{"text_id":680,"forms":[""],"absolute_byte_offsets":[32783],"raw_metadata_u32":[0]}
+{"text_id":681,"forms":[""],"absolute_byte_offsets":[32784],"raw_metadata_u32":[0]}
+{"text_id":682,"forms":["わざのリングメニュー<br><操作中:そうさちゅう>の<移動:いどう>"],"absolute_byte_offsets":[32785],"raw_metadata_u32":[10]}
+{"text_id":683,"forms":["できない"],"absolute_byte_offsets":[32871],"raw_metadata_u32":[10]}
+{"text_id":684,"forms":["できる"],"absolute_byte_offsets":[32884],"raw_metadata_u32":[10]}
+{"text_id":685,"forms":["わざのリングメニューの操作が　<$keyicon(194)>と<$keyicon(195)>でできます"],"absolute_byte_offsets":[32894],"raw_metadata_u32":[10]}
+{"text_id":686,"forms":["わざのリングメニューの操作を　<$keyicon(195)>のみにします"],"absolute_byte_offsets":[32988],"raw_metadata_u32":[10]}
+{"text_id":687,"forms":["センターマークの<表示:ひょうじ>"],"absolute_byte_offsets":[33067],"raw_metadata_u32":[10]}
+{"text_id":688,"forms":["<十字:じゅうじ>"],"absolute_byte_offsets":[33113],"raw_metadata_u32":[10]}
+{"text_id":689,"forms":["しない"],"absolute_byte_offsets":[33135],"raw_metadata_u32":[10]}
+{"text_id":690,"forms":["<酔:よ>い<対策:たいさく>で　<画面:がめん><中央:ちゅうおう>に<目印:めじるし>を<表示:ひょうじ>します"],"absolute_byte_offsets":[33145],"raw_metadata_u32":[10]}
+{"text_id":691,"forms":["<第:だい><dgt1;0(lnum1)><弾:だん>"],"absolute_byte_offsets":[33284],"raw_metadata_u32":[18]}
+{"text_id":692,"forms":["ニンテンドーeショップを<開:ひら>く"],"absolute_byte_offsets":[33324],"raw_metadata_u32":[18]}
+{"text_id":693,"forms":["アイテムを<確認:かくにん>する"],"absolute_byte_offsets":[33374],"raw_metadata_u32":[18]}
+{"text_id":694,"forms":["ニンテンドーeショップで　<追加:ついか>コンテンツを　<確認:かくにん>します"],"absolute_byte_offsets":[33417],"raw_metadata_u32":[18]}
+{"text_id":695,"forms":["<追加:ついか>コンテンツ<購入:こうにゅう>で　<受:う>け<取:と>れるアイテムを　<確認:かくにん>します"],"absolute_byte_offsets":[33524],"raw_metadata_u32":[18]}
+{"text_id":696,"forms":["<追加:ついか>コンテンツ　<第:だい><dgt1;0(lnum1)><弾:だん>です"],"absolute_byte_offsets":[33663],"raw_metadata_u32":[18]}
+{"text_id":697,"forms":["<$cdef(27)><$ifull;0(lnum1)></color>　<dgt2;1(lnum2)>コ"],"absolute_byte_offsets":[33745],"raw_metadata_u32":[18]}
+{"text_id":698,"forms":["エモート「<$emotename;0(lnum1)>」"],"absolute_byte_offsets":[33803],"raw_metadata_u32":[18]}
+{"text_id":699,"forms":["<$cdef(27)><$ifull;0(lnum1)></color>のレシピ"],"absolute_byte_offsets":[33843],"raw_metadata_u32":[18]}
+{"text_id":700,"forms":["<$cdef(27)><$ifull;0(lnum1)></color>"],"absolute_byte_offsets":[33892],"raw_metadata_u32":[18]}
+{"text_id":701,"forms":["<$coordname;0(lnum1)>"],"absolute_byte_offsets":[33929],"raw_metadata_u32":[18]}
+{"text_id":702,"forms":["かみがた「<$hairname;0(lnum1)>」"],"absolute_byte_offsets":[33951],"raw_metadata_u32":[18]}
+{"text_id":703,"forms":["<以下:いか>のアイテムを　<受:う>け<取:と>れます"],"absolute_byte_offsets":[33990],"raw_metadata_u32":[18]}
+{"text_id":704,"forms":["<以下:いか>のアイテムを　<受:う>け<取:と>り<済:ず>みです"],"absolute_byte_offsets":[34057],"raw_metadata_u32":[18]}
+{"text_id":705,"forms":["<timeymdhmtz;0(lnum1,lnum2,lnum3,lnum4,lnum5,lnum6)>"],"absolute_byte_offsets":[34136],"raw_metadata_u32":[18]}
+{"text_id":706,"forms":["<追加:ついか>コンテンツ"],"absolute_byte_offsets":[34189],"raw_metadata_u32":[10]}
+{"text_id":707,"forms":["ドット"],"absolute_byte_offsets":[34223],"raw_metadata_u32":[10]}
+{"text_id":708,"forms":["でんじふゆうを<br>やめるときの<確認:かくにん>"],"absolute_byte_offsets":[34233],"raw_metadata_u32":[10]}
+{"text_id":709,"forms":["する"],"absolute_byte_offsets":[34298],"raw_metadata_u32":[10]}
+{"text_id":710,"forms":["しない"],"absolute_byte_offsets":[34305],"raw_metadata_u32":[10]}
+{"text_id":711,"forms":["<$sklname(13)>のへんしんをやめる<時:とき>に　<確認:かくにん>するかを　<選:えら>べます"],"absolute_byte_offsets":[34315],"raw_metadata_u32":[10]}
+{"text_id":712,"forms":["<枠:わく><線:せん>の<表示:ひょうじ>"],"absolute_byte_offsets":[34432],"raw_metadata_u32":[10]}
+{"text_id":713,"forms":["しない"],"absolute_byte_offsets":[34481],"raw_metadata_u32":[10]}
+{"text_id":714,"forms":["しかく"],"absolute_byte_offsets":[34491],"raw_metadata_u32":[10]}
+{"text_id":715,"forms":["かっこ"],"absolute_byte_offsets":[34501],"raw_metadata_u32":[10]}
+{"text_id":716,"forms":["<酔:よ>い<対策:たいさく>で　<枠:わく><線:せん>を<表示:ひょうじ>します"],"absolute_byte_offsets":[34511],"raw_metadata_u32":[10]}
+{"text_id":717,"forms":[""],"absolute_byte_offsets":[34608],"raw_metadata_u32":[0]}
+{"text_id":718,"forms":[""],"absolute_byte_offsets":[34609],"raw_metadata_u32":[0]}
+{"text_id":719,"forms":[""],"absolute_byte_offsets":[34610],"raw_metadata_u32":[0]}
+{"text_id":720,"forms":[""],"absolute_byte_offsets":[34611],"raw_metadata_u32":[0]}
+{"text_id":721,"forms":[""],"absolute_byte_offsets":[34612],"raw_metadata_u32":[0]}
+{"text_id":722,"forms":[""],"absolute_byte_offsets":[34613],"raw_metadata_u32":[0]}
+{"text_id":723,"forms":[""],"absolute_byte_offsets":[34614],"raw_metadata_u32":[0]}
+{"text_id":724,"forms":[""],"absolute_byte_offsets":[34615],"raw_metadata_u32":[0]}
+{"text_id":725,"forms":[""],"absolute_byte_offsets":[34616],"raw_metadata_u32":[0]}
+{"text_id":726,"forms":[""],"absolute_byte_offsets":[34617],"raw_metadata_u32":[0]}
+{"text_id":727,"forms":[""],"absolute_byte_offsets":[34618],"raw_metadata_u32":[0]}
+{"text_id":728,"forms":[""],"absolute_byte_offsets":[34619],"raw_metadata_u32":[0]}
+{"text_id":729,"forms":[""],"absolute_byte_offsets":[34620],"raw_metadata_u32":[0]}
+{"text_id":730,"forms":[""],"absolute_byte_offsets":[34621],"raw_metadata_u32":[0]}
+{"text_id":731,"forms":[""],"absolute_byte_offsets":[34622],"raw_metadata_u32":[0]}
+{"text_id":732,"forms":[""],"absolute_byte_offsets":[34623],"raw_metadata_u32":[0]}
+{"text_id":733,"forms":[""],"absolute_byte_offsets":[34624],"raw_metadata_u32":[0]}
+{"text_id":734,"forms":[""],"absolute_byte_offsets":[34625],"raw_metadata_u32":[0]}
+{"text_id":735,"forms":[""],"absolute_byte_offsets":[34626],"raw_metadata_u32":[0]}
+{"text_id":736,"forms":[""],"absolute_byte_offsets":[34627],"raw_metadata_u32":[0]}
+{"text_id":737,"forms":[""],"absolute_byte_offsets":[34628],"raw_metadata_u32":[0]}
+{"text_id":738,"forms":[""],"absolute_byte_offsets":[34629],"raw_metadata_u32":[0]}
+{"text_id":739,"forms":[""],"absolute_byte_offsets":[34630],"raw_metadata_u32":[0]}
+{"text_id":740,"forms":[""],"absolute_byte_offsets":[34631],"raw_metadata_u32":[0]}
+{"text_id":741,"forms":[""],"absolute_byte_offsets":[34632],"raw_metadata_u32":[0]}
+{"text_id":742,"forms":[""],"absolute_byte_offsets":[34633],"raw_metadata_u32":[0]}
+{"text_id":743,"forms":[""],"absolute_byte_offsets":[34634],"raw_metadata_u32":[0]}
+{"text_id":744,"forms":[""],"absolute_byte_offsets":[34635],"raw_metadata_u32":[0]}
+{"text_id":745,"forms":[""],"absolute_byte_offsets":[34636],"raw_metadata_u32":[0]}
+{"text_id":746,"forms":[""],"absolute_byte_offsets":[34637],"raw_metadata_u32":[0]}
+{"text_id":747,"forms":[""],"absolute_byte_offsets":[34638],"raw_metadata_u32":[0]}
+{"text_id":748,"forms":[""],"absolute_byte_offsets":[34639],"raw_metadata_u32":[0]}
+{"text_id":749,"forms":[""],"absolute_byte_offsets":[34640],"raw_metadata_u32":[0]}
+{"text_id":750,"forms":[""],"absolute_byte_offsets":[34641],"raw_metadata_u32":[0]}
+{"text_id":751,"forms":[""],"absolute_byte_offsets":[34642],"raw_metadata_u32":[0]}
+{"text_id":752,"forms":[""],"absolute_byte_offsets":[34643],"raw_metadata_u32":[0]}
+{"text_id":753,"forms":[""],"absolute_byte_offsets":[34644],"raw_metadata_u32":[0]}
+{"text_id":754,"forms":[""],"absolute_byte_offsets":[34645],"raw_metadata_u32":[0]}
+{"text_id":755,"forms":[""],"absolute_byte_offsets":[34646],"raw_metadata_u32":[0]}
+{"text_id":756,"forms":[""],"absolute_byte_offsets":[34647],"raw_metadata_u32":[0]}
+{"text_id":757,"forms":[""],"absolute_byte_offsets":[34648],"raw_metadata_u32":[0]}
+{"text_id":758,"forms":[""],"absolute_byte_offsets":[34649],"raw_metadata_u32":[0]}
+{"text_id":759,"forms":[""],"absolute_byte_offsets":[34650],"raw_metadata_u32":[0]}
+{"text_id":760,"forms":[""],"absolute_byte_offsets":[34651],"raw_metadata_u32":[0]}
+{"text_id":761,"forms":[""],"absolute_byte_offsets":[34652],"raw_metadata_u32":[0]}
+{"text_id":762,"forms":[""],"absolute_byte_offsets":[34653],"raw_metadata_u32":[0]}
+{"text_id":763,"forms":[""],"absolute_byte_offsets":[34654],"raw_metadata_u32":[0]}
+{"text_id":764,"forms":[""],"absolute_byte_offsets":[34655],"raw_metadata_u32":[0]}
+{"text_id":765,"forms":[""],"absolute_byte_offsets":[34656],"raw_metadata_u32":[0]}
+{"text_id":766,"forms":[""],"absolute_byte_offsets":[34657],"raw_metadata_u32":[0]}
+{"text_id":767,"forms":[""],"absolute_byte_offsets":[34658],"raw_metadata_u32":[0]}
+{"text_id":768,"forms":[""],"absolute_byte_offsets":[34659],"raw_metadata_u32":[0]}
+{"text_id":769,"forms":[""],"absolute_byte_offsets":[34660],"raw_metadata_u32":[0]}
+{"text_id":770,"forms":[""],"absolute_byte_offsets":[34661],"raw_metadata_u32":[0]}
+{"text_id":771,"forms":[""],"absolute_byte_offsets":[34662],"raw_metadata_u32":[0]}
+{"text_id":772,"forms":[""],"absolute_byte_offsets":[34663],"raw_metadata_u32":[0]}
+{"text_id":773,"forms":[""],"absolute_byte_offsets":[34664],"raw_metadata_u32":[0]}
+{"text_id":774,"forms":[""],"absolute_byte_offsets":[34665],"raw_metadata_u32":[0]}
+{"text_id":775,"forms":[""],"absolute_byte_offsets":[34666],"raw_metadata_u32":[0]}
+{"text_id":776,"forms":[""],"absolute_byte_offsets":[34667],"raw_metadata_u32":[0]}
+{"text_id":777,"forms":[""],"absolute_byte_offsets":[34668],"raw_metadata_u32":[0]}
+{"text_id":778,"forms":[""],"absolute_byte_offsets":[34669],"raw_metadata_u32":[0]}
+{"text_id":779,"forms":[""],"absolute_byte_offsets":[34670],"raw_metadata_u32":[0]}
+{"text_id":780,"forms":[""],"absolute_byte_offsets":[34671],"raw_metadata_u32":[0]}
+{"text_id":781,"forms":[""],"absolute_byte_offsets":[34672],"raw_metadata_u32":[0]}
+{"text_id":782,"forms":[""],"absolute_byte_offsets":[34673],"raw_metadata_u32":[0]}
+{"text_id":783,"forms":[""],"absolute_byte_offsets":[34674],"raw_metadata_u32":[0]}
+{"text_id":784,"forms":[""],"absolute_byte_offsets":[34675],"raw_metadata_u32":[0]}
+{"text_id":785,"forms":[""],"absolute_byte_offsets":[34676],"raw_metadata_u32":[0]}
+{"text_id":786,"forms":[""],"absolute_byte_offsets":[34677],"raw_metadata_u32":[0]}
+{"text_id":787,"forms":[""],"absolute_byte_offsets":[34678],"raw_metadata_u32":[0]}
+{"text_id":788,"forms":[""],"absolute_byte_offsets":[34679],"raw_metadata_u32":[0]}
+{"text_id":789,"forms":[""],"absolute_byte_offsets":[34680],"raw_metadata_u32":[0]}
+{"text_id":790,"forms":[""],"absolute_byte_offsets":[34681],"raw_metadata_u32":[0]}
+{"text_id":791,"forms":[""],"absolute_byte_offsets":[34682],"raw_metadata_u32":[0]}
+{"text_id":792,"forms":[""],"absolute_byte_offsets":[34683],"raw_metadata_u32":[0]}
+{"text_id":793,"forms":[""],"absolute_byte_offsets":[34684],"raw_metadata_u32":[0]}
+{"text_id":794,"forms":[""],"absolute_byte_offsets":[34685],"raw_metadata_u32":[0]}
+{"text_id":795,"forms":[""],"absolute_byte_offsets":[34686],"raw_metadata_u32":[0]}
+{"text_id":796,"forms":[""],"absolute_byte_offsets":[34687],"raw_metadata_u32":[0]}
+{"text_id":797,"forms":[""],"absolute_byte_offsets":[34688],"raw_metadata_u32":[0]}
+{"text_id":798,"forms":[""],"absolute_byte_offsets":[34689],"raw_metadata_u32":[0]}
+{"text_id":799,"forms":[""],"absolute_byte_offsets":[34690],"raw_metadata_u32":[0]}
+{"text_id":800,"forms":[""],"absolute_byte_offsets":[34691],"raw_metadata_u32":[0]}

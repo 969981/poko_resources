@@ -1,0 +1,100 @@
+<$facial(4,9)><$voicel(4,1)>Sniff... Sigh...
+<$comeff(4,6)><$motion(4,803)><$voicel(4,5)>Uh...? E tu chi sei? Che ci fai qui?
+<$comeff(4,6)><$motion(4,803)><$voicel(4,5)>Uh...? E tu chi sei? Che ci fai qui?
+<$comeff(4,3)><$facial(4,2)><$voicel(4,8)>Ah, sei amic<gen;-2(o,a)> di <$cdef(27)><$cname(562)></color>?<clear><br><$comeff(4,14)><$facial(4,2)><$motion(4,666)><$voicel(4,3)>State cercando di <$cdef(27)>costruire<$spwicon(1)> </color>un edificio grande grande<br>tutti insieme?
+<$comeff(4,17)><$facial(4,9)><$motion(4,802)><$voicel(4,1)>Non ho tanta voglia di aiutarti adesso, scusa...
+
+
+
+
+
+
+<$comeff(4,7)><$facial(4,9)><$motion(4,806)><$voicel(4,3)>Ho perso un tesoro a cui tenevo tanto tanto!
+<$voicel(4,1)>Secondo me è caduto laggiù, forse... Però lì è tutto buio!<br><$voicel(4,4)>Ho provato a cercarlo, ma non si vede niente.
+<$comeff(4,5)><$voicel(4,8)>Davvero? <wait(1.0)><$emotion(4,39)><$voicel(4,10)>Che bello! ♪<clear><br><$emotion(4,160)><$voicel(4,3)>Ma guarda che lì è tanto tanto buio... Mi sa che trovarlo<br>sarà una faticaccia.
+<$comeff(4,5)><$voicel(4,8)>Davvero? <wait(1.0)><$emotion(4,39)><$voicel(4,10)>Che bello! ♪<clear><br><$emotion(4,160)><$voicel(4,3)>Ma guarda che lì è tanto tanto buio... Mi sa che trovarlo<br>sarà una faticaccia.
+Se è troppo buio, puoi rischiarare la zona posizionando<br>una <$cdef(27)><fqty(1)><$ifull(449)> </color>o altre fonti di luce.<clear><br>In questo modo sarà più facile trovare ciò che cerchi!
+<$emotion(4,55)><$voicel(4,5)>Mmmh... Forse tu sei il Pokémon giusto per <$emotion(4,39)><$voicel(4,8)>ritrovare<br>il mio tesoro.
+<$emotion(4,14)><$voicel(4,7)>Ah, il mio tesoro è un grazioso <$cdef(27)><fqty(1)><$ifull(541)></color>!<br><$motion(4,806)><$comeff(4,8)><$voicel(4,10)>È fatto con una conchiglia vera! ♪<slide><br><$emotion(4,77)><$voicel(4,4)>Se lo trovi fammi sapere!
+
+
+
+
+
+
+
+
+
+<oneline><$comeff(4,6)><$motion(4,803)><$voicel(4,5)>Ah, <$cdef(27)><pname;0></color>! Hai trovato il mio<br><$cdef(27)><fqty(1)><$ifull(541)></color>?
+<$voicel(4,7)>Non sarà facile trovarlo con tutto quel buio, ma se ci<br>riesci fammelo sapere!
+Se è troppo buio, puoi rischiarare la zona posizionando<br>una <$cdef(27)><fqty(1)><$ifull(449)> </color>o altre fonti di luce.<clear><br>In questo modo sarà più facile trovare ciò che cerchi!
+
+
+
+
+
+
+
+
+
+
+
+
+
+<$comeff(4,5)><$facial(4,4)><$motion(4,803)><$voicel(4,7)>Evviva! Hai trovato il mio <$cdef(27)><fqty(1)><$ifull(541)></color>! ♪
+<$comeff(4,8)><$facial(4,14)><$motion(4,807)><$voicel(4,10)><$pkcry;0(4,2)>! È la cosa più meravigliosa che c'è!<wait(1.3)><br><$comeff(4,21)><$facial(4,2)><$motion(4,801)><$voicel(4,8)>Senti com'è tutto morbidoso! Mi piace da matti! ♪
+<oneline><$comeff(4,9)><$motion(4,806)><$voicel(4,9)>Grazie, <$cdef(27)><pname;0></color>!<br>Cercherò di non perderlo mai, mai più! ♪
+
+
+
+
+
+<$comeff(4,7)><$facial(4,9)><$motion(4,806)><$voicel(4,3)>È che ho perso un tesoro a cui tenevo tanto tanto!
+<$voicel(4,1)>Secondo me è caduto laggiù, forse... Però lì è tutto buio!<br><$voicel(4,4)>Ho provato a cercarlo, ma non si vede niente.
+<$emotion(4,14)><$voicel(4,7)>Si tratta di un <$cdef(27)><fqty(1)><$ifull(541)></color>. <$emotion(4,31)><$voicel(4,1)>È il mio cuscino<br>preferito...
+<$emotion(4,27)><$voicel(4,9)>Ehi, ma quello... Sì, sì, sembra proprio lui! Il mio<br><$cdef(27)><fqty(1)><$ifull(541)></color>! <$emotion(4,64)><$voicel(4,4)>Me lo fai vedere meglio?
+<$emotion(4,27)><$voicel(4,9)>Ehi, ma quello... Sì, sì, sembra proprio lui! Il mio<br><$cdef(27)><fqty(1)><$ifull(541)></color>! <$emotion(4,64)><$voicel(4,4)>Me lo fai vedere meglio?
+<$emotion(4,1112)><$voicel(4,2)>Sììì! Non mi sbagliavo, l'hai trovato! <wait(1.3)><$emotion(4,39)><$voicel(4,7)>Senti com'è tutto<br>cuscinoso! Mi piace da matti! ♪
+<$emotion(4,15)><$voicel(4,7)>Davvero? Anche se l'hai ritrovato tu?! <wait(0.8)><$motion(0,40)><$facial(0,4)><wait(1.0)><$emotion(4,98)><$voicel(4,9)>Allora grazie!<br>Cercherò di non perderlo mai, mai più! ♪
+<$emotion(4,15)><$voicel(4,7)>Davvero? Anche se l'hai ritrovato tu?! <wait(0.8)><$motion(0,40)><$facial(0,4)><wait(1.0)><$emotion(4,98)><$voicel(4,9)>Allora grazie!<br>Cercherò di non perderlo mai, mai più! ♪
+
+
+
+
+
+
+
+
+<$comeff(4,17)><$facial(4,9)><$motion(4,663)><$voicel(4,3)>Uff... Ora che ho di nuovo il mio tesoro e mi sento più<br>tranquill<gen;-3(o,a)>, sono proprio stanc<gen;-3(o,a)>...
+<$emotion(4,55)><$voicel(4,5)>Ho proprio voglia di fare un pisolino in un posto sicuro,<br>tipo una casa...<clear><br><$facial(4,14)><$motion(4,807)><$comeff(4,7)><$voicel(4,3)>Però non ho ancora trovato quella giusta per me!
+<$comeff(4,5)><$facial(4,4)><$motion(4,803)><$voicel(4,9)>Eh? Sai anche costruire case? <wait(1.2)><$emotion(4,39)><$voicel(4,10)>Mitico! ♪<br><$emotion(4,64)><$voicel(4,6)>Beh, allora accetto! Fanne una per me!
+<$comeff(4,5)><$facial(4,4)><$motion(4,803)><$voicel(4,9)>Eh? Sai anche costruire case? <wait(1.2)><$emotion(4,39)><$voicel(4,10)>Mitico! ♪<br><$emotion(4,64)><$voicel(4,6)>Beh, allora accetto! Fanne una per me!
+<$emotion(4,95)><$voicel(4,3)>Sai, nella mia casa vorrei una <$cdef(27)><fqty(1)><$ifull(449)> </color>e<br>un <$cdef(27)><fqty(1)><$ifull(440)></color>...<clear><br><$emotion(4,952)><$voicel(4,7)>E ovviamente anche il mio <$cdef(27)><fqty(1)><$ifull(541)></color>!
+Ti è venuto in mente un progetto per creare<br>delle <$cdef(27)><fqty(2)><$ifull(449)></color>!
+<$emotion(4,197)><$voicel(4,5)>Intanto allora ti do il mio <$cdef(27)><fqty(1)><$ifull(541)></color>!<br><$emotion(4,39)><$voicel(4,9)>Non vedo l'ora di vedere la mia casa finita!
+
+
+
+
+<$emotion(4,39)><$voicel(4,7)>Non dimenticarti della mia casa! Mi piacerebbe vivere<br>in un posto così...
+
+
+
+
+
+<$comeff(4,9)><$facial(4,4)><$motion(4,801)><$voicel(4,9)>Evviva! La mia casetta è pronta! ♪<br>Grazie, <$cdef(27)><pname;1></color>!
+<$comeff(4,21)><$facial(4,4)><$motion(4,807)><$voicel(4,7)>I posti luminosi mi rilassano sempre! ♪<br><$comeff(4,3)><$facial(4,2)><$motion(4,803)><$voicel(4,6)>Chissà se pure per gli altri è lo stesso...
+<$comeff(4,6)><$facial(4,2)><$motion(4,666)><$voicel(4,7)>Ah! A proposito degli altri... Hai detto che <$cdef(27)><$cname(562)><br></color>mi stava cercando, giusto?
+<$comeff(4,10)><$motion(4,664)><$voicel(4,9)>Ora che mi hai fatto una casa, mi è tornata la voglia<br>di fare! Mi impegnerò un sacco, vedrai! ♪
+<$comeff(4,3)><$motion(4,803)><$voicel(4,8)>Quando è tutto pronto per iniziare i lavori<br>di <$cdef(27)><$spwfull(1)></color>, portami da <$cdef(27)><$cname(562)></color>!
+
+
+
+
+
+
+
+
+
+
+

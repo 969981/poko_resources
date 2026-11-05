@@ -1,0 +1,109 @@
+<$voicel(4,5)>Huh, you’re a new face. <$emotion(4,29)>What’s your deal?<clear><br><$voicel(4,3)><$comeff(4,14)><$motion(4,666)>Goin’ around buildin’ towns and hopin’ more Pokémon’ll<br>show up? Dang...
+<$voicel(4,7)><$comeff(4,3)><$motion(4,806)><$facial(4,4)>That’s super rad! <wait(1.5)>But, uh... You gonna be OK with those<br>floppy noodle arms? No offense.
+<$voicel(4,3)><$comeff(4,7)><$motion(4,807)>“Probably” doesn’t exactly inspire confidence, pal...<clear><br><$voicel(4,7)><$comeff(4,10)><$motion(4,816)>All right, lemme tell ya about a real good training spot I<br>know around here.
+<$voicel(4,7)><$comeff(4,10)><$motion(4,816)>Well, you lucked out—I know a great training spot around<br>here, and I’m feeling generous today.
+<$voicel(4,10)><$emotion(4,53)>I’ll take ya there now. Follow me!
+
+
+
+
+
+
+
+
+
+<$voicel(4,10)><$emotion(4,53)>Over here—follow me!
+
+
+
+
+
+<$voicel(4,5)><$comeff(4,14)><$motion(4,666)>As you can tell, this spot’s surrounded by super solid sand.<clear><br><$voicel(4,7)><$comeff(4,14)><$motion(4,814)><$comeff(4,5)>And lemme tell ya, punchin’ the stuff with all your might<br>is an equally solid workout!
+<$voicel(4,5)><$comeff(4,10)><$motion(4,806)>Of course, a single punch is all it takes for a powerhouse<br>like me to pulverize that sand into dust.<clear><br><$voicel(4,7)><$emotion(4,8)>Don’t worry—you’ll get there someday. Until then, you<br>oughta train here.
+<$voicel(4,5)><$emotion(4,14)>Oh, and be sure to clean up after yourself. No leavin’ a<br>sandy mess for others, got it? That’s just common decency.<clear><br><$voicel(4,3)><$comeff(4,14)><$motion(4,666)>It might take a few decades, but if ya manage to bring me<br><$cdef(27)>six <fqty(2)><class><$ifull(1010)></color> someday, <wait(1.0)><$voicel(4,8)><$emotion(4,38)>I’ll be impressed!
+<$voicel(4,5)>Sure, ya can’t use sand for anything... <wait(1.1)><$voicel(4,8)><$emotion(4,14)>But ya can’t throw it<br>away! That’s just common sense.
+Actually, you CAN use <$cdef(27)>sand</color>—by melting it down to<br>make <$cdef(27)><fqty(1)><$ifull(108)></color>.<clear><br>So try collecting <$cdef(27)>sand</color>! It’s sure to come in handy!
+
+
+
+
+<$voicel(4,7)><$emotion(4,38)>It might take ya a few decades, but if ya manage to bring<br>me <$cdef(27)>six <fqty(2)><class><$ifull(1010)></color>, I’ll be impressed!<clear><br><$voicel(4,3)>Pretty sure sand is useless... <$emotion(4,27)>But ya can’t just leave it layin’<br>around! Pickin’ up after yourself is common courtesy, pal.
+Actually, you CAN use <$cdef(27)>sand</color>—by melting it down to<br>make <$cdef(27)><fqty(1)><$ifull(108)></color>.<clear><br>So try collecting <$cdef(27)>sand</color>! It’s sure to come in handy!
+
+
+
+
+
+<$voicel(4,7)><$comeff(4,11)><$motion(4,803)>WHAT?! You already got <$cdef(27)>six</color> blocks of sand? For real?<clear><br><$voicel(4,5)><$comeff(4,14)><$motion(4,666)>I was sure it’d take ya at least a decade, but...<wait(1.0)>I guess<br>you’re more amazing than I gave ya credit for!
+<$voicel(4,5)><$comeff(4,21)><$motion(4,806)>And good on ya for pickin’ up after yourself! It’s too bad<br>sand’s totally useless, huh?
+Apologies for the repetition, but there actually IS a way to<br>use <$cdef(27)>sand</color>.<clear><br>You can light a fire in a <$cdef(27)><fqty(1)><$ifull(1446)></color>, then put<br><$cdef(27)>sand </color>in it to make <$cdef(27)><fqty(1)><$ifull(108)></color>!<clear><br><$cdef(27)><fcap><fqty(1)><$ifull(108)></color> can be a useful building material.
+<$voicel(4,9)><$emotion(4,40)>Oh, hey! Since you’re clearly a genius, maybe you could<br>help me out...
+<$voicel(4,6)><$comeff(4,6)><$motion(4,666)>Sorry to ask, but could ya come with me for a sec?
+
+
+
+
+
+<$voicel(4,7)><$emotion(4,8)>If you can climb up to the top here, there’s a dojo just a<br>short walk away.<clear><br><$voicel(4,5)><$emotion(4,14)>Oh, a dojo’s like, uh...y’know. A place where humans train<br>and stuff. <$voicel(4,4)><$comeff(4,14)><$motion(4,666)>I love spendin’ time there.
+<$voicel(4,5)><$comeff(4,7)><$motion(4,807)>Seems like there used to be an <$cdef(27)>elevator</color> runnin’ here, but<br>it’s totally busted now.
+<$voicel(4,5)>If you’re gonna build up this town so more Pokémon can<br>live here, <$voicel(4,4)><$emotion(4,1)>I’d love for them to come swing by the dojo!<clear><br><$voicel(4,5)><$motion(4,666)>So I was wonderin’... Could ya maybe fix up the <$cdef(27)>elevator</color><br><$comeff(4,6)>so folks can get to it?
+<$voicel(4,10)><$emotion(4,27)>For real? Thanks, pal!<clear><br><$voicel(4,5)><$comeff(4,10)><$motion(4,806)>All right then, listen up, ’cause I’m gonna teach ya how to<br>fix the <$cdef(27)>elevator</color>!
+<$voicel(4,9)><$emotion(4,27)>Don’t worry, I know how we can have the <$cdef(27)>elevator</color> fixed in<br>no time! <$voicel(4,8)><$comeff(4,10)><$motion(4,806)>Listen up and I’ll tell ya all about it!
+<$voicel(4,3)>See how chunks of that <$cdef(27)>ladder</color> are missing? Yeah, that’s<br>a problem.<clear><br><$voicel(4,5)>So to start, could ya fill in the missing spots and make sure<br>the <$cdef(27)>ladder</color>’s all connected?
+<$voicel(4,8)>Once that’s done, I’d like ya to climb the <$cdef(27)>ladder </color>and<br><$voicel(4,5)>check if there’s still an <$cdef(27)><fqty(1)><$ifull(1469)></color> up there.
+<$voicel(4,9)><$emotion(4,53)>To sum it up—the first step to fixin’ the <$cdef(27)>elevator </color>is <$voicel(4,8)><$emotion(4,49)><br>connectin’ the <$cdef(27)>ladder</color>, then climbin’ up top to see what<slide><br>the deal is!
+
+
+
+
+<$voicel(4,9)>The first thing ya gotta do to fix the <$cdef(27)>elevator</color> is make sure<br>the <$cdef(27)>ladder</color>’s connected all the way up to the top!<clear><br><$voicel(4,7)>Then ya can climb it and check whether there’s still an<br><$cdef(27)><fqty(1)><$ifull(1469)></color> up there.
+
+
+
+
+
+<$voicel(4,9)>Heyyy! Can you hear me? Looks like ya made it up safe!
+<$voicel(4,5)>Can ya see a machine hooked up to the <$cdef(27)>ladder</color>? Should be<br>a big silver thing!
+<$voicel(4,7)>Aw yeah, I knew it! That’s an <$cdef(27)><fqty(1)><$ifull(1469)></color>!<clear><br><$voicel(4,5)>Now all ya gotta do is put another one of those down here<br>and <$voicel(4,8)>BAM—it’s <$cdef(27)>elevator </color>time!
+<$voicel(4,7)>Aw yeah, I knew it! That’s an <$cdef(27)><fqty(1)><$ifull(1469)></color>!<clear><br><$voicel(4,5)>Now all ya gotta do is put another one of those down here<br>and <$voicel(4,8)>BAM—it’s <$cdef(27)>elevator </color>time!
+<$voicel(4,9)>Which brings us to step two of how to fix the <$cdef(27)>elevator</color>!<clear><br><$voicel(4,8)>Come back down here for a sec!
+
+
+
+
+<$voicel(4,7)><$comeff(4,10)><$motion(4,806)>All right, time for the next step of fixin’ the <$cdef(27)>elevator</color>!<clear><br><$voicel(4,9)><$emotion(4,53)>That’s right, you guessed it—<$voicel(4,5)><$emotion(4,50)>we gotta make another<br><$cdef(27)><fqty(1)><$ifull(1469)></color>!
+<$voicel(4,7)><$comeff(4,14)><$motion(4,666)>Uh... I thought ya might just come up with an idea on the<br>spot, but...<wait(1.3)><$voicel(4,4)><$comeff(4,4)><$motion(4,807)><$facial(4,14)>I guess that’d be TOO easy.
+<$voicel(4,7)><$comeff(4,14)><$motion(4,666)>Uh... I thought ya might just come up with an idea on the<br>spot, but...<wait(1.3)><$voicel(4,4)><$comeff(4,4)><$motion(4,807)>I guess that’d be TOO easy.
+<$voicel(4,5)><$comeff(4,7)><$motion(4,802)>And I’ve got no clue how to make somethin’ like that, so...<br>Now what?<clear><br><$voicel(4,5)><$emotion(4,40)>Oh, right! <$cdef(27)>Alakazam</color> knows all kinds of complicated stuff<br>like that. Maybe we ask them?
+<$voicel(4,7)><$comeff(4,3)><$motion(4,806)>OK, new plan—go find <$cdef(27)>Alakazam</color> and <$voicel(4,5)><$motion(4,801)>ask ’em how to make<br>an <$cdef(27)><fqty(1)><$ifull(1469)></color>!<clear><br><$voicel(4,5)><$comeff(4,9)><$motion(4,666)>I’m pretty sure they were livin’ in a spot like this the last<br>time I saw ’em.
+
+
+
+
+<$voicel(4,5)><$comeff(4,6)><$motion(4,666)>Whaddya think that <$cdef(27)><fqty(1)><$ifull(1816)></color> at <$cdef(27)>Alakazam</color>’s place is<br>made of? Maybe...<wait(1.6)><$voicel(4,5)><$cdef(27)><$emotion(4,14)><fqty(1)><$ifull(108)></color>?
+You came up with a <$cdef(27)>recipe </color>for a <$cdef(27)><fqty(1)><$ifull(1816)></color>!
+
+
+
+
+
+<$voicel(4,5)><$comeff(4,14)><$motion(4,666)>Y’know, the <$cdef(27)><fqty(2)><$ifull(1868)> </color>around here kinda<br>remind me of a <$cdef(27)><fqty(1)><$ifull(1816)></color>.<clear><br><$voicel(4,7)><$emotion(4,38)>Maybe ya could use ’em to craft one?
+
+
+
+
+
+<$voicel(4,9)><$emotion(4,53)>Step two of fixin’ the <$cdef(27)>elevator</color>—make an<br><$cdef(27)><fqty(1)><$ifull(1469)></color>!<clear><br><$voicel(4,8)><$comeff(4,4)><$motion(4,807)>Uh, after you learn how to make one from <$cdef(27)>Alakazam</color>!
+<$voicel(4,5)><$comeff(4,3)><$motion(4,666)>Pretty sure <$cdef(27)>Alakazam</color> used to live in a spot like this.
+
+
+
+
+
+<$voicel(4,7)><$comeff(4,21)><$motion(4,806)>The <$cdef(27)>elevator</color>’s finally finished! Thanks for helpin’ me out,<br><$cdef(27)><pname;0></color>!
+
+
+
+
+<$voicel(4,9)><$emotion(4,53)>Whoa, awesome! You got an <$cdef(27)><fqty(1)><$ifull(1469)></color>!
+<$voicel(4,7)><$emotion(4,49)>All right, now let’s put that thing over by the <$cdef(27)>ladder</color>.

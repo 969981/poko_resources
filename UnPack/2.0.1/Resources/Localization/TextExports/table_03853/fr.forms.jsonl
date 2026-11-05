@@ -1,0 +1,391 @@
+{"text_id":0,"forms":["<$voicel(1,9)><$emotion(1,49)>Hé, t'as déjà eu l'occasion de me voir nager ?<br>J'suis méga rapide !<clear><br><$voicel(1,7)><$comeff(1,9)><$motion(1,806)>Franchement, y a personne qui peut m'battre dans l'eau !"],"absolute_byte_offsets":[3192],"raw_metadata_u32":[1]}
+{"text_id":1,"forms":["<$voicel(2,5)><$emotion(2,14)>Ah ouais ?!<br>Eh ben, moi, je connais plein de nages différentes !<clear><br><$voicel(2,7)><$emotion(2,38)>À un bras, à deux bras, sans les bras... J'sais tout faire !"],"absolute_byte_offsets":[3408],"raw_metadata_u32":[1]}
+{"text_id":2,"forms":["<$voicel(1,7)><$emotion(1,14)>Hmpf... Ben, j'te ferai dire que moi, <$voicel(1,6)><$comeff(1,9)>je peux même nager<br>dans la mer déchaînée !"],"absolute_byte_offsets":[3610],"raw_metadata_u32":[1]}
+{"text_id":3,"forms":["<$voicel(2,7)><$comeff(2,5)><$motion(2,806)>T'as dit quoi, là ? Tu crois que t'es balèze, mais moi,<br>je sais me battre, OK ?!<wait(2.7)><$lookat(2,0,0)><$lookat(2,1,0)><$lookat(1,0,0)><$lookat(1,1,0)><waitactor(2)><waitactor(1)><clear><br><$voicel(2,7)><$emotion(2,29)>Hé, <$cdef(27)><pname;1></color> !<br>D'après toi, qui c'est qui gagne entre nous deux ?"],"absolute_byte_offsets":[3756],"raw_metadata_u32":[1]}
+{"text_id":4,"forms":["<$voicel(1,5)><$comeff(1,14)><$motion(1,805)><$pkcry;0(1,3)>...<br>Si c'est toi qui le dis, <$cdef(27)><pname;1></color>."],"absolute_byte_offsets":[4120],"raw_metadata_u32":[1]}
+{"text_id":5,"forms":["<$comcan(1)><$voicel(2,9)><$comeff(2,5)><$motion(2,663)>Pfff... !<br>J'ai pas dit que j'étais d'accord, moi !<wait(1.9)><$lookat(2,0,1)><$lookat(2,1,1)><$lookat(1,0,2)><$lookat(1,1,2)><waitactor(2)><waitactor(1)><slide><br><$voicel(2,8)><$emotion(2,48)>Et puis, c'est pas moi qui ai commencé à frimer, d'abord !"],"absolute_byte_offsets":[4242],"raw_metadata_u32":[1]}
+{"text_id":6,"forms":["<$voicel(1,7)><$comeff(1,5)><$motion(1,805)>J'ai quand même le droit de me vanter un peu, non ?<clear><br><$voicel(1,5)><$emotion(1,14)><$cdef(27)>Tartard</color>, ta façon de nager est tellement classe<br>que je voulais me sentir à ta hauteur, c'est tout !"],"absolute_byte_offsets":[4557],"raw_metadata_u32":[1]}
+{"text_id":7,"forms":["<$voicel(2,7)><$comeff(2,14)><$motion(2,805)>Ah... C'est vraiment c'que tu penses... ?<br>Ben...<slide><br><$voicel(2,5)><$emotion(2,49)>J'avoue que t'es super rapide, j'peux pas dire le contraire !"],"absolute_byte_offsets":[4818],"raw_metadata_u32":[1]}
+{"text_id":8,"forms":["<$voicel(1,6)><$comeff(1,21)><$motion(1,803)><$cdef(27)>Tartard</color>..."],"absolute_byte_offsets":[5017],"raw_metadata_u32":[1]}
+{"text_id":9,"forms":["<$voicel(2,4)><$comeff(2,21)><$motion(2,666)><$cdef(27)>Carabaffe</color>...<clear><br><$voicel(2,7)><$emotion(2,38)>Ça t'dirait d'aller nager ensemble, un de ces quatre ?<br>J'pourrai t'apprendre mes techniques !"],"absolute_byte_offsets":[5092],"raw_metadata_u32":[1]}
+{"text_id":10,"forms":["<$voicel(1,9)><$emotion(1,8)>Oui ! J'adorerais !"],"absolute_byte_offsets":[5307],"raw_metadata_u32":[1]}
+{"text_id":11,"forms":[""],"absolute_byte_offsets":[5356],"raw_metadata_u32":[0]}
+{"text_id":12,"forms":[""],"absolute_byte_offsets":[5357],"raw_metadata_u32":[0]}
+{"text_id":13,"forms":[""],"absolute_byte_offsets":[5358],"raw_metadata_u32":[0]}
+{"text_id":14,"forms":[""],"absolute_byte_offsets":[5359],"raw_metadata_u32":[0]}
+{"text_id":15,"forms":[""],"absolute_byte_offsets":[5360],"raw_metadata_u32":[0]}
+{"text_id":16,"forms":[""],"absolute_byte_offsets":[5361],"raw_metadata_u32":[0]}
+{"text_id":17,"forms":[""],"absolute_byte_offsets":[5362],"raw_metadata_u32":[0]}
+{"text_id":18,"forms":[""],"absolute_byte_offsets":[5363],"raw_metadata_u32":[0]}
+{"text_id":19,"forms":[""],"absolute_byte_offsets":[5364],"raw_metadata_u32":[0]}
+{"text_id":20,"forms":["<$voicel(2,6)><$comeff(2,5)><$motion(2,817)>Feu feuuu !"],"absolute_byte_offsets":[5365],"raw_metadata_u32":[1]}
+{"text_id":21,"forms":["<$voicel(1,7)><$emotion(1,39)>Ouaaah ! Comment il est trop beau, ton pelage !<br>Il est magnifique, honnêtement !"],"absolute_byte_offsets":[5421],"raw_metadata_u32":[1]}
+{"text_id":22,"forms":["<$voicel(2,8)><$comeff(2,3)><$motion(2,815)>Naaard..."],"absolute_byte_offsets":[5536],"raw_metadata_u32":[1]}
+{"text_id":23,"forms":["<$voicel(1,9)><$emotion(1,6)>T'es superbe sous tous les angles !<br>Merci pour le spectacle !"],"absolute_byte_offsets":[5590],"raw_metadata_u32":[1]}
+{"text_id":24,"forms":["<$voicel(2,5)><$emotion(2,49)>Hi hi... Tu sais vraiment comment t'y prendre<br>pour faire des compliments, <$cdef(27)>Carabaffe </color>!"],"absolute_byte_offsets":[5684],"raw_metadata_u32":[1]}
+{"text_id":25,"forms":["<$voicel(1,7)><$emotion(1,14)>Je t'en prie ! Et moi, j'te remercie de m'avoir <$voicel(1,10)><$emotion(1,8)>permis<br>d'admirer ton pelage, <$cdef(27)>Feunard </color>!"],"absolute_byte_offsets":[5822],"raw_metadata_u32":[1]}
+{"text_id":26,"forms":["<$voicel(2,7)><$emotion(2,14)><$facial(2,4)>Mais c'est tout naturel !<br>Après tout, moi aussi, <$voicel(2,6)>j'aime admirer les jolies choses !"],"absolute_byte_offsets":[5991],"raw_metadata_u32":[1]}
+{"text_id":27,"forms":["<$voicel(1,4)><$comeff(1,6)><$motion(1,666)>Hein ? Comme quoi, par exemple ?"],"absolute_byte_offsets":[6137],"raw_metadata_u32":[1]}
+{"text_id":28,"forms":["<$voicel(2,5)><$comeff(2,3)><$motion(2,806)>Depuis tout à l'heure, chaque fois que tu exprimes<br>ta joie, tes oreilles remuent.<clear><br><$voicel(2,8)><$emotion(2,8)>Elles ont l'air toutes douces, et sont très mignonnes !"],"absolute_byte_offsets":[6214],"raw_metadata_u32":[1]}
+{"text_id":29,"forms":["<$voicel(1,7)><$emotion(1,49)>Oh, <$cdef(27)>Feunard </color>! Merci beaucoup !<clear><br>J'vais prendre exemple sur toi, <$voicel(1,10)><$comeff(1,9)><$motion(1,806)>et prendre bien soin<br>de moi !"],"absolute_byte_offsets":[6440],"raw_metadata_u32":[1]}
+{"text_id":30,"forms":[""],"absolute_byte_offsets":[6640],"raw_metadata_u32":[0]}
+{"text_id":31,"forms":[""],"absolute_byte_offsets":[6641],"raw_metadata_u32":[0]}
+{"text_id":32,"forms":[""],"absolute_byte_offsets":[6642],"raw_metadata_u32":[0]}
+{"text_id":33,"forms":[""],"absolute_byte_offsets":[6643],"raw_metadata_u32":[0]}
+{"text_id":34,"forms":[""],"absolute_byte_offsets":[6644],"raw_metadata_u32":[0]}
+{"text_id":35,"forms":[""],"absolute_byte_offsets":[6645],"raw_metadata_u32":[0]}
+{"text_id":36,"forms":[""],"absolute_byte_offsets":[6646],"raw_metadata_u32":[0]}
+{"text_id":37,"forms":[""],"absolute_byte_offsets":[6647],"raw_metadata_u32":[0]}
+{"text_id":38,"forms":[""],"absolute_byte_offsets":[6648],"raw_metadata_u32":[0]}
+{"text_id":39,"forms":[""],"absolute_byte_offsets":[6649],"raw_metadata_u32":[0]}
+{"text_id":40,"forms":["<$voicel(1,9)><$facial(1,5)><$motion(1,801)><$comeff(1,10)>HA HA HA ! C'était un beau combat, <$cdef(27)>Amphinobi</color> !<br>T'as vraiment bien géré !"],"absolute_byte_offsets":[6650],"raw_metadata_u32":[1]}
+{"text_id":41,"forms":["<$voicel(2,5)><$emotion(2,1)>En effet. C'est un honneur d'avoir rencontré un adversaire<br>avec qui parfaire mes techniques.<clear><br><$voicel(2,7)><$facial(2,1)><$motion(2,805)><$comeff(2,9)>J'espère que d'autres occasions se représenteront."],"absolute_byte_offsets":[6807],"raw_metadata_u32":[1]}
+{"text_id":42,"forms":["<$voicel(1,7)><$emotion(1,1)>Bien sûr ! Quel plaisir de participer à ce duel de jet<br>d'eau avec toi !<clear><br>Aujourd'hui, la victoire est à moi, <$voicel(1,3)><$facial(1,4)><$motion(1,815)>mais je compte pas<br>me reposer sur mes lauriers !"],"absolute_byte_offsets":[7054],"raw_metadata_u32":[1]}
+{"text_id":43,"forms":["<$voicel(2,1)><$facial(2,7)><$motion(2,802)><$comeff(2,6)>... Pardon ? Vous vous méprenez.<br>C'est moi qui ai gagné, aujourd'hui."],"absolute_byte_offsets":[7303],"raw_metadata_u32":[1]}
+{"text_id":44,"forms":["<$voicel(1,1)><$emotion(1,10)><$comeff(1,22)>Hein ?! T'as des problèmes de vue ou quoi ?<clear><br><$voicel(1,7)><$motion(1,814)>C'est MOI qui ai tiré le plus loin !"],"absolute_byte_offsets":[7436],"raw_metadata_u32":[1]}
+{"text_id":45,"forms":["<$voicel(2,3)><$motion(2,802)><$facial(2,7)>Que nenni. J'ai tiré à une longueur de feuille de plus<br>que vous.<clear><br><$voicel(2,7)><$comeff(2,10)>Si je puis me permettre, c'est de vos yeux qu'il faudrait<br>vous soucier. Vous savez, à votre âge..."],"absolute_byte_offsets":[7604],"raw_metadata_u32":[1]}
+{"text_id":46,"forms":["<$voicel(1,5)><$motion(1,807)>... Ha ha ! Les jeunes d'aujourd'hui veulent pas voir<br>les choses autrement que comme ça leur chante !<clear><br><$voicel(1,3)><$emotion(1,9)>Il s'agirait de prendre du recul et de faire preuve<br>d'un peu d'objectivité !<clear><br><$voicel(1,9)><$motion(1,814)><$facial(1,7)><$comeff(1,5)>Mon Hydrocanon peut transpercer des plaques de métal !<br>Je perds jamais un duel de jet d'eau avec un tel arsenal !"],"absolute_byte_offsets":[7861],"raw_metadata_u32":[1]}
+{"text_id":47,"forms":["... <$voicel(2,3)><$motion(2,801)><$comeff(2,10)>Humpf, quel manque de finesse ! À quoi sert la force<br>brute dans un concours de tir à distance ?<clear><br><$voicel(2,9)><$emotion(2,10)>L'important, c'est la technique !"],"absolute_byte_offsets":[8303],"raw_metadata_u32":[1]}
+{"text_id":48,"forms":["<$voicel(1,4)><$motion(1,816)><$facial(1,7)><$comeff(1,22)><$motion(2,653)>GRRR... Cette arrogance ! La prochaine fois,<br>on règlera ça de Pokémon à Pokémon !"],"absolute_byte_offsets":[8527],"raw_metadata_u32":[1]}
+{"text_id":49,"forms":["<$voicel(2,1)><$motion(2,817)>J'ai hâte de vous ridiculiser !"],"absolute_byte_offsets":[8692],"raw_metadata_u32":[1]}
+{"text_id":50,"forms":[""],"absolute_byte_offsets":[8755],"raw_metadata_u32":[0]}
+{"text_id":51,"forms":[""],"absolute_byte_offsets":[8756],"raw_metadata_u32":[0]}
+{"text_id":52,"forms":[""],"absolute_byte_offsets":[8757],"raw_metadata_u32":[0]}
+{"text_id":53,"forms":[""],"absolute_byte_offsets":[8758],"raw_metadata_u32":[0]}
+{"text_id":54,"forms":[""],"absolute_byte_offsets":[8759],"raw_metadata_u32":[0]}
+{"text_id":55,"forms":[""],"absolute_byte_offsets":[8760],"raw_metadata_u32":[0]}
+{"text_id":56,"forms":[""],"absolute_byte_offsets":[8761],"raw_metadata_u32":[0]}
+{"text_id":57,"forms":[""],"absolute_byte_offsets":[8762],"raw_metadata_u32":[0]}
+{"text_id":58,"forms":[""],"absolute_byte_offsets":[8763],"raw_metadata_u32":[0]}
+{"text_id":59,"forms":[""],"absolute_byte_offsets":[8764],"raw_metadata_u32":[0]}
+{"text_id":60,"forms":["<$voicel(1,5)><$emotion(1,14)>Hé, <$cdef(27)>Lianaja</color>, t'attrapes les Baies avec tes lianes,<br>pas vrai ? <$voicel(1,8)><$comeff(1,21)><$motion(1,666)>J'trouve ça incroyable !"],"absolute_byte_offsets":[8765],"raw_metadata_u32":[9]}
+{"text_id":61,"forms":["<$voicel(2,4)><$comeff(2,6)><$motion(2,666)>Ah bon, tu trouves ça impressionnant ?<clear><br><$voicel(2,5)><$comeff(2,14)><$motion(2,815)>Je vise juste ce qui m'intéresse, puis j'utilise <$cdef(27)>Fouet Lianes</color>...<br>C'est tout, c'est rien de très compliqué."],"absolute_byte_offsets":[8951],"raw_metadata_u32":[9]}
+{"text_id":62,"forms":["<$comcan(2)><$voicel(1,5)><$comeff(1,7)><$motion(1,805)>J'pourrais essayer d'utiliser ma queue pour faire pareil,<br>mais elle s'étire pas comme tes lianes...<clear><br><$voicel(1,4)><$comeff(1,17)><$motion(1,663)>Moi aussi, j'aimerais pouvoir atteindre des Baies<br>super en hauteur ! T'en as de la chance !"],"absolute_byte_offsets":[9222],"raw_metadata_u32":[9]}
+{"text_id":63,"forms":["<$voicel(2,6)><$emotion(2,14)>T-tu crois... ?<clear><br><$voicel(2,3)><$comeff(2,10)><$motion(2,805)>Mais toi aussi, tu m'épates, <$cdef(27)>Abo</color>. Quand on joue à<br>cache-cache, j'arrive jamais à te trouver !"],"absolute_byte_offsets":[9532],"raw_metadata_u32":[9]}
+{"text_id":64,"forms":["<$voicel(1,9)><$emotion(1,6)>Hé hé hé... Rester immobile sans faire de bruit,<br>se déplacer discrètement... Ça, j'sais faire !<slide><br><$voicel(1,8)><$emotion(1,50)>À ce jeu, j'suis super fortiche, y a pas de doute !"],"absolute_byte_offsets":[9752],"raw_metadata_u32":[9]}
+{"text_id":65,"forms":["<$voicel(2,7)><$emotion(2,49)>C'est parce que tu sais bien utiliser ton corps longiligne.<clear><br><$voicel(2,5)><$comeff(2,14)><$motion(2,806)>Je devrais peut-être faire comme toi et me déplacer<br>en glissant sur le sol, moi aussi..."],"absolute_byte_offsets":[9979],"raw_metadata_u32":[9]}
+{"text_id":66,"forms":["<$comcan(2)><$voicel(1,9)><$comeff(1,4)><$motion(1,666)>Hein ? T'aimerais faire comme moi ?! Hé hé, c'est cool<br>si ça t'donne envie d'essayer !<clear><br><$voicel(1,5)><$emotion(1,39)>Mais j'te préviens tout de suite, j'suis imbattable<br>à cache-cache ! Et j'vais tout faire pour le rester !"],"absolute_byte_offsets":[10218],"raw_metadata_u32":[9]}
+{"text_id":67,"forms":["<$voicel(2,7)><$emotion(2,1)>Hi hi, c'est ce qu'on verra... ! Moi aussi, je vais<br>m'entraîner !"],"absolute_byte_offsets":[10518],"raw_metadata_u32":[9]}
+{"text_id":68,"forms":["<$voicel(1,7)><$emotion(1,40)>Mais attends, <$cdef(27)>Lianaja</color>, j'pense à un truc... !<br>Si on joue souvent à cache-cache ensemble...<slide><br><$voicel(1,5)><$comeff(1,6)><$motion(1,666)>ton corps pourra p'têt' s'étirer encore plus... ?!"],"absolute_byte_offsets":[10617],"raw_metadata_u32":[9]}
+{"text_id":69,"forms":["<$voicel(2,7)><$emotion(2,49)>Hé hé hé... ! Ce serait génial... !"],"absolute_byte_offsets":[10869],"raw_metadata_u32":[9]}
+{"text_id":70,"forms":[""],"absolute_byte_offsets":[10939],"raw_metadata_u32":[0]}
+{"text_id":71,"forms":[""],"absolute_byte_offsets":[10940],"raw_metadata_u32":[0]}
+{"text_id":72,"forms":[""],"absolute_byte_offsets":[10941],"raw_metadata_u32":[0]}
+{"text_id":73,"forms":[""],"absolute_byte_offsets":[10942],"raw_metadata_u32":[0]}
+{"text_id":74,"forms":[""],"absolute_byte_offsets":[10943],"raw_metadata_u32":[0]}
+{"text_id":75,"forms":[""],"absolute_byte_offsets":[10944],"raw_metadata_u32":[0]}
+{"text_id":76,"forms":[""],"absolute_byte_offsets":[10945],"raw_metadata_u32":[0]}
+{"text_id":77,"forms":[""],"absolute_byte_offsets":[10946],"raw_metadata_u32":[0]}
+{"text_id":78,"forms":[""],"absolute_byte_offsets":[10947],"raw_metadata_u32":[0]}
+{"text_id":79,"forms":[""],"absolute_byte_offsets":[10948],"raw_metadata_u32":[0]}
+{"text_id":80,"forms":["<$voicel(1,8)><$comeff(1,5)><$motionoff(1,804)><$textsize(2)>Bouh !!!</textsize>"],"absolute_byte_offsets":[10949],"raw_metadata_u32":[1]}
+{"text_id":81,"forms":["<$voicel(2,7)><$comeff(2,10)><$motion(2,806)>Oooh, <$cdef(27)>Arbok</color>. Coucou. ♪"],"absolute_byte_offsets":[11030],"raw_metadata_u32":[1]}
+{"text_id":82,"forms":["... <$voicel(1,5)><$comeff(1,14)><$motion(1,666)>Pourquoi t'es pas en train de trembler ?<br><$voicel(1,4)><$emotion(1,14)>J'te fais pas peur, c'est ça ?"],"absolute_byte_offsets":[11119],"raw_metadata_u32":[1]}
+{"text_id":83,"forms":["<$voicel(2,3)><$comeff(2,6)><$motion(2,805)>Hein ? Pourquoi j'aurais peur ?<clear><br><$cdef(27)>Arbok</color>... J'ai l'impression que tu cherches surtout<br>un Pokémon avec qui te lier d'amitié, je me trompe ?"],"absolute_byte_offsets":[11274],"raw_metadata_u32":[1]}
+{"text_id":84,"forms":["<$voicel(1,7)><$comeff(1,4)><$motion(1,807)>Hein ?! Mais qu'est-ce que tu racontes ?"],"absolute_byte_offsets":[11488],"raw_metadata_u32":[1]}
+{"text_id":85,"forms":["<$voicel(2,7)><$emotion(2,14)>J'ai pas raison ? Je me disais que tu faisais exprès de faire<br>peur aux autres <$voicel(2,6)><$comeff(2,14)><$motion(2,805)>pour pouvoir leur parler..."],"absolute_byte_offsets":[11573],"raw_metadata_u32":[1]}
+{"text_id":86,"forms":["<$comcan(2)><$voicel(1,4)><$emotion(1,14)>P-pas du tout... ! Tu dis n'importe quoi !"],"absolute_byte_offsets":[11758],"raw_metadata_u32":[1]}
+{"text_id":87,"forms":["<$voicel(2,7)><$comeff(2,18)><$motion(2,802)><$facial(2,9)>Ah, d'accord...<clear><br><$voicel(2,5)>C'est dommage, parce que moi aussi, j'aimerais bien avoir<br>des potes... Et quand tu as essayé de me faire peur,<slide><br><$voicel(2,7)><$comeff(2,17)><$motion(2,805)>ça m'a fait vraiment plaisir..."],"absolute_byte_offsets":[11843],"raw_metadata_u32":[1]}
+{"text_id":88,"forms":["<$emotion(1,27)>Oh... ! <$voicel(1,7)><$emotion(1,38)>B-bon, ben, vu que t'insistes... C'est d'accord !<br>À partir d'aujourd'hui, toi et moi, on est potes !"],"absolute_byte_offsets":[12145],"raw_metadata_u32":[1]}
+{"text_id":89,"forms":["<$voicel(2,9)><$emotion(2,8)>C'est vrai ? Youpi ! ♪<br>On va bien s'entendre, tu verras."],"absolute_byte_offsets":[12304],"raw_metadata_u32":[1]}
+{"text_id":90,"forms":[""],"absolute_byte_offsets":[12395],"raw_metadata_u32":[0]}
+{"text_id":91,"forms":[""],"absolute_byte_offsets":[12396],"raw_metadata_u32":[0]}
+{"text_id":92,"forms":[""],"absolute_byte_offsets":[12397],"raw_metadata_u32":[0]}
+{"text_id":93,"forms":[""],"absolute_byte_offsets":[12398],"raw_metadata_u32":[0]}
+{"text_id":94,"forms":[""],"absolute_byte_offsets":[12399],"raw_metadata_u32":[0]}
+{"text_id":95,"forms":[""],"absolute_byte_offsets":[12400],"raw_metadata_u32":[0]}
+{"text_id":96,"forms":[""],"absolute_byte_offsets":[12401],"raw_metadata_u32":[0]}
+{"text_id":97,"forms":[""],"absolute_byte_offsets":[12402],"raw_metadata_u32":[0]}
+{"text_id":98,"forms":[""],"absolute_byte_offsets":[12403],"raw_metadata_u32":[0]}
+{"text_id":99,"forms":[""],"absolute_byte_offsets":[12404],"raw_metadata_u32":[0]}
+{"text_id":100,"forms":["<$voicel(2,3)><$comeff(2,18)><$motion(2,802)>Ah... C'est affreux..."],"absolute_byte_offsets":[12405],"raw_metadata_u32":[1]}
+{"text_id":101,"forms":["<$comcan(2)><$voicel(1,6)><$emotion(1,29)><$cdef(27)>Kraknoix </color>! Qu'est-ce qui t'arrive, trésor ?"],"absolute_byte_offsets":[12473],"raw_metadata_u32":[1]}
+{"text_id":102,"forms":["<$voicel(2,6)><$emotion(2,14)><$cdef(27)>Raichu</color> ! Écoute un peu ça !<br><$voicel(2,3)><$comeff(2,4)><$motion(2,807)>Y a quelqu'un qui a complètement brûlé mon chez-moi !"],"absolute_byte_offsets":[12579],"raw_metadata_u32":[1]}
+{"text_id":103,"forms":["<$voicel(1,7)><$emotion(1,14)>Oh, sapristi ! C'est terrible !<clear><br><$voicel(1,5)><$comeff(1,5)><$motion(1,806)>Quand on retrouvera le Pokémon qui a fait ça,<br>je m'assurerai de lui passer un bon gros savon !"],"absolute_byte_offsets":[12762],"raw_metadata_u32":[1]}
+{"text_id":104,"forms":["<$voicel(2,7)><$comeff(2,4)><$motion(2,805)>C'est gentil, mais j'sais pas qui m'a fait le coup !<clear><br><$voicel(2,3)><$emotion(2,47)>Quand j'm'en suis rendu compte, y avait déjà plus<br>personne..."],"absolute_byte_offsets":[12978],"raw_metadata_u32":[1]}
+{"text_id":105,"forms":["<$voicel(1,6)><$emotion(1,15)>Bouh, quelle ignominie !<br><$voicel(1,3)><$comeff(1,6)><$motion(1,666)>Tu n'as rien remarqué d'autre, <$cdef(27)>Kraknoix</color> ?"],"absolute_byte_offsets":[13182],"raw_metadata_u32":[1]}
+{"text_id":106,"forms":["<$voicel(2,7)><$emotion(2,14)>Hmmm... Maintenant que j'y pense, j'ai entendu un gros<br>« crac » ! Un peu comme un bruit d'électricité.<clear><br><$voicel(2,5)><$comeff(2,14)><$motion(2,666)> J'me demande qui a fait ça... Ça craint..."],"absolute_byte_offsets":[13346],"raw_metadata_u32":[1]}
+{"text_id":107,"forms":["<$comcan(2)><$comeff(1,14)>... ...<clear><br><$voicel(1,1)><$motion(1,666)><$textsize(0)>Un bruit d'électricité... ?<br>Ce serait quand même pas ma décharge de tout à l'heure... ?</textsize>"],"absolute_byte_offsets":[13587],"raw_metadata_u32":[1]}
+{"text_id":108,"forms":["<$comcan(1)><$voicel(2,4)><$comeff(2,6)><$motion(2,806)>... T'as dit quelque chose ?<br><$voicel(2,7)><$emotion(2,49)>Oh, attends ! T'as trouvé qui c'était ?!"],"absolute_byte_offsets":[13783],"raw_metadata_u32":[1]}
+{"text_id":109,"forms":["<$voicel(1,8)><$comeff(1,4)><$motion(1,806)>E-euh... Oui, c'est ça...<clear><br><$voicel(1,5)><$comeff(1,14)><$motion(1,805)>Je lui dirai de ne plus faire de bêtises près des endroits<br>où vivent des Pokémon ! <$voicel(1,4)>Ça n'arrivera plus !"],"absolute_byte_offsets":[13944],"raw_metadata_u32":[1]}
+{"text_id":110,"forms":["<$comcan(1)><$voicel(2,7)><$emotion(2,8)>Merci, <$cdef(27)>Raichu </color>! Merci beaucoup !"],"absolute_byte_offsets":[14196],"raw_metadata_u32":[1]}
+{"text_id":111,"forms":["<$voicel(1,4)><$comeff(1,4)><$motion(1,805)>Ha ha ha... Ha..."],"absolute_byte_offsets":[14289],"raw_metadata_u32":[1]}
+{"text_id":112,"forms":[""],"absolute_byte_offsets":[14351],"raw_metadata_u32":[0]}
+{"text_id":113,"forms":[""],"absolute_byte_offsets":[14352],"raw_metadata_u32":[0]}
+{"text_id":114,"forms":[""],"absolute_byte_offsets":[14353],"raw_metadata_u32":[0]}
+{"text_id":115,"forms":[""],"absolute_byte_offsets":[14354],"raw_metadata_u32":[0]}
+{"text_id":116,"forms":[""],"absolute_byte_offsets":[14355],"raw_metadata_u32":[0]}
+{"text_id":117,"forms":[""],"absolute_byte_offsets":[14356],"raw_metadata_u32":[0]}
+{"text_id":118,"forms":[""],"absolute_byte_offsets":[14357],"raw_metadata_u32":[0]}
+{"text_id":119,"forms":[""],"absolute_byte_offsets":[14358],"raw_metadata_u32":[0]}
+{"text_id":120,"forms":["<$voicel(1,4)><$comeff(1,14)>*Observe*"],"absolute_byte_offsets":[14359],"raw_metadata_u32":[1]}
+{"text_id":121,"forms":["... <$voicel(2,8)><$motionoff(2,804)><$comeff(2,9)>Siaaan !"],"absolute_byte_offsets":[14398],"raw_metadata_u32":[1]}
+{"text_id":122,"forms":["<$emotion(1,27)>... !!!<br>... <$voicel(1,8)><$motionoff(1,804)>Goupiii !<clear><br><$voicel(1,3)><$comeff(1,7)><$motion(1,807)>Argh... J'aimerais tellement avoir un cri aussi élégant<br>que le tien, <$cdef(27)>Persian</color>..."],"absolute_byte_offsets":[14458],"raw_metadata_u32":[1]}
+{"text_id":123,"forms":["<$lookat(2,1,1)><waitactor(2)><$voicel(2,7)><$emotion(2,49)>Oh ? Essaierais-tu de m'imiter ?<br>Hi hi hi, tu es adorable !"],"absolute_byte_offsets":[14690],"raw_metadata_u32":[1]}
+{"text_id":124,"forms":["<$lookat(1,1,2)><waitactor(1)><$voicel(1,5)><$emotion(1,14)>J'admire tellement ta grâce et ton élégance...<clear><br><$voicel(1,3)><$comeff(1,17)><$motion(1,805)>Mais j'arrive pas à faire pareil... Enfin, pour l'instant...<br>J'ai hâte de devenir comme toi !"],"absolute_byte_offsets":[14813],"raw_metadata_u32":[1]}
+{"text_id":125,"forms":["<$voicel(2,5)><$emotion(2,14)>Oh, je vois... Mais il n'est nul besoin de penser ainsi !<clear><br><$voicel(2,7)><$emotion(2,38)>Toutes les qualités que tu admires et que tu convoites,<br><$voicel(2,6)><$motion(2,806)><$comeff(2,9)>elles sont déjà en toi."],"absolute_byte_offsets":[15077],"raw_metadata_u32":[1]}
+{"text_id":126,"forms":["<$voicel(1,8)><$comeff(1,6)><$motion(1,666)>Hein ?"],"absolute_byte_offsets":[15335],"raw_metadata_u32":[1]}
+{"text_id":127,"forms":["<$voicel(2,7)><$emotion(2,1)>Le désir de grandeur que tu as dans ton cœur...<br>Cultive-le, <$cdef(27)>Goupix</color>, et ne t'en défais jamais."],"absolute_byte_offsets":[15386],"raw_metadata_u32":[1]}
+{"text_id":128,"forms":["<$voicel(1,8)><$emotion(1,27)>D'accord !<clear><br><$voicel(1,5)>Je vais continuer de travailler dur pour <$voicel(1,10)><$emotion(1,8)>devenir<br>un Pokémon avec autant de prestance que toi, <$cdef(27)>Persian </color>!"],"absolute_byte_offsets":[15534],"raw_metadata_u32":[1]}
+{"text_id":129,"forms":[""],"absolute_byte_offsets":[15756],"raw_metadata_u32":[0]}
+{"text_id":130,"forms":[""],"absolute_byte_offsets":[15757],"raw_metadata_u32":[0]}
+{"text_id":131,"forms":[""],"absolute_byte_offsets":[15758],"raw_metadata_u32":[0]}
+{"text_id":132,"forms":[""],"absolute_byte_offsets":[15759],"raw_metadata_u32":[0]}
+{"text_id":133,"forms":[""],"absolute_byte_offsets":[15760],"raw_metadata_u32":[0]}
+{"text_id":134,"forms":[""],"absolute_byte_offsets":[15761],"raw_metadata_u32":[0]}
+{"text_id":135,"forms":[""],"absolute_byte_offsets":[15762],"raw_metadata_u32":[0]}
+{"text_id":136,"forms":[""],"absolute_byte_offsets":[15763],"raw_metadata_u32":[0]}
+{"text_id":137,"forms":[""],"absolute_byte_offsets":[15764],"raw_metadata_u32":[0]}
+{"text_id":138,"forms":[""],"absolute_byte_offsets":[15765],"raw_metadata_u32":[0]}
+{"text_id":139,"forms":[""],"absolute_byte_offsets":[15766],"raw_metadata_u32":[0]}
+{"text_id":140,"forms":["<$voicel(1,7)><$emotion(1,14)>Oh, <$cdef(27)>Libégon</color> ! C'est un plaisir de vous voir !<br>Comment allez-vous ?"],"absolute_byte_offsets":[15767],"raw_metadata_u32":[1]}
+{"text_id":141,"forms":["<$voicel(2,7)><$emotion(2,14)><$cdef(27)>Feunard</color> ! Quel merveilleux hasard !<br>Je vais bien, merci de vous en soucier !"],"absolute_byte_offsets":[15887],"raw_metadata_u32":[1]}
+{"text_id":142,"forms":["<$voicel(1,7)><$emotion(1,8)>Vous ai-je déjà dit combien j'aimais le son de vos ailes ?<br>Cela sonne comme une ritournelle, c'est magnifique !<slide><br><$voicel(1,2)><$comeff(1,14)><$cdef(9)>... En vrai, ça me casse un peu les oreilles.</color>"],"absolute_byte_offsets":[16016],"raw_metadata_u32":[1]}
+{"text_id":143,"forms":["<$comcan(1)><$voicel(2,6)><$emotion(2,1)>Vraiment ? Oh, vous me flattez.<clear><br><$voicel(2,7)><$motionoff(2,805)><$facial(2,4)>Mais que dire de vos queues ? Quelle élégance !<br>Elles sont si majestueuses...<slide><br><$voicel(2,2)><$comeff(2,14)><$cdef(9)>... et si encombrantes. Feunard n'étouffe pas, là-dessous ?</color>"],"absolute_byte_offsets":[16266],"raw_metadata_u32":[1]}
+{"text_id":144,"forms":["<$comcan(2)><$voicel(1,7)><$comeff(1,9)><$motionoff(1,806)>Vous avez remarqué ? Tous ces efforts quotidiens pour<br>en prendre soin n'auront pas été vains ! ♪<clear><br><$voicel(1,1)><$comeff(1,14)><$cdef(9)>On ne peut pas dire que Libégon se soucie autant de<br>son hygiène personnelle... Avec tout le sable qu'il y a<slide><br>dans le désert, j'envie son insouciance !</color>"],"absolute_byte_offsets":[16598],"raw_metadata_u32":[1]}
+{"text_id":145,"forms":["<$comcan(1)><$voicel(2,5)><$emotion(2,14)>Ce doit être beaucoup de travail !<br>Mes ailes ne requièrent pas autant d'attention.<clear><br><$motionoff(2,807)><$voicel(2,7)>Contrairement à leur apparence, elles sont robustes<br>et me permettent de voler où bon me semble ! ♪<clear><br><$voicel(2,1)><$comeff(2,14)><$cdef(9)>Au moins, moi, je n'ai pas à traîner un tas de poils<br>inutilement volumineux !</color>"],"absolute_byte_offsets":[16985],"raw_metadata_u32":[1]}
+{"text_id":146,"forms":["<$comcan(2)>... <wait(0.8)><$voicel(1,8)><$emotion(1,8)>Eh bien ! On dirait que nous avons beaucoup<br>de choses en commun ! ♪"],"absolute_byte_offsets":[17404],"raw_metadata_u32":[1]}
+{"text_id":147,"forms":["... <wait(0.8)><$voicel(2,8)><$emotion(2,8)>Vous avez raison !<br>Nous avons tout pour nous entendre ! ♪"],"absolute_byte_offsets":[17533],"raw_metadata_u32":[1]}
+{"text_id":148,"forms":[""],"absolute_byte_offsets":[17640],"raw_metadata_u32":[0]}
+{"text_id":149,"forms":[""],"absolute_byte_offsets":[17641],"raw_metadata_u32":[0]}
+{"text_id":150,"forms":[""],"absolute_byte_offsets":[17642],"raw_metadata_u32":[0]}
+{"text_id":151,"forms":[""],"absolute_byte_offsets":[17643],"raw_metadata_u32":[0]}
+{"text_id":152,"forms":[""],"absolute_byte_offsets":[17644],"raw_metadata_u32":[0]}
+{"text_id":153,"forms":[""],"absolute_byte_offsets":[17645],"raw_metadata_u32":[0]}
+{"text_id":154,"forms":[""],"absolute_byte_offsets":[17646],"raw_metadata_u32":[0]}
+{"text_id":155,"forms":[""],"absolute_byte_offsets":[17647],"raw_metadata_u32":[0]}
+{"text_id":156,"forms":[""],"absolute_byte_offsets":[17648],"raw_metadata_u32":[0]}
+{"text_id":157,"forms":[""],"absolute_byte_offsets":[17649],"raw_metadata_u32":[0]}
+{"text_id":158,"forms":[""],"absolute_byte_offsets":[17650],"raw_metadata_u32":[0]}
+{"text_id":159,"forms":[""],"absolute_byte_offsets":[17651],"raw_metadata_u32":[0]}
+{"text_id":160,"forms":["<$voicel(2,5)><$comeff(2,14)><$motion(2,666)>T'as de la chance d'avoir des pattes, <$cdef(27)>Ptitard</color>...<clear><br>Tu peux t'en servir pour marcher sur la terre ferme,<br>pas vrai ?"],"absolute_byte_offsets":[17652],"raw_metadata_u32":[1]}
+{"text_id":161,"forms":["<$comcan(2)><$voicel(1,7)><$emotion(1,14)>Hmmm... Oui !<br><$voicel(1,6)>Mais je marche assez lentement, par contre."],"absolute_byte_offsets":[17842],"raw_metadata_u32":[1]}
+{"text_id":162,"forms":["<$voicel(2,8)><$emotion(2,49)>Je t'envie, quand même.<clear><br><$voicel(2,5)><$comeff(2,21)><$motion(2,805)><$facial(2,4)>Moi aussi, j'aimerais bien avoir des pattes pour aller<br>me promener n'importe où."],"absolute_byte_offsets":[17959],"raw_metadata_u32":[1]}
+{"text_id":163,"forms":["<$voicel(1,6)><$emotion(1,14)>Je comprends.<clear><br><$voicel(1,7)><$comeff(1,9)><$motion(1,806)>Moi, c'est des mains que j'aimerais avoir !<br>Ce serait plus facile pour transporter des Baies."],"absolute_byte_offsets":[18168],"raw_metadata_u32":[1]}
+{"text_id":164,"forms":["<$voicel(2,6)><$emotion(2,27)>Oui, c'est pratique d'avoir des mains.<clear><br><$voicel(2,7)><$emotion(2,38)>Comme <$cdef(27)><pname;0></color>, on peut s'en servir<br>pour fabriquer tout un tas de trucs."],"absolute_byte_offsets":[18363],"raw_metadata_u32":[1]}
+{"text_id":165,"forms":["<$voicel(1,7)><$emotion(1,49)>Oui ! Ou pour utiliser des objets d'êtres humains !<br><$voicel(1,6)><$comeff(1,14)><$motion(1,666)>Ça aussi, j'aimerais bien pouvoir le faire..."],"absolute_byte_offsets":[18568],"raw_metadata_u32":[1]}
+{"text_id":166,"forms":["<$comcan(1)><$voicel(2,7)><$emotion(2,14)>J'espère qu'un jour, j'aurai des pattes et des mains...<br><$voicel(2,10)><$emotion(2,8)>Et ce serait bien que t'aies des mains, toi aussi."],"absolute_byte_offsets":[18746],"raw_metadata_u32":[1]}
+{"text_id":167,"forms":["<$voicel(1,7)><$emotion(1,8)>Oui ! Un jour, j'espère !"],"absolute_byte_offsets":[18929],"raw_metadata_u32":[1]}
+{"text_id":168,"forms":[""],"absolute_byte_offsets":[18985],"raw_metadata_u32":[0]}
+{"text_id":169,"forms":[""],"absolute_byte_offsets":[18986],"raw_metadata_u32":[0]}
+{"text_id":170,"forms":[""],"absolute_byte_offsets":[18987],"raw_metadata_u32":[0]}
+{"text_id":171,"forms":[""],"absolute_byte_offsets":[18988],"raw_metadata_u32":[0]}
+{"text_id":172,"forms":[""],"absolute_byte_offsets":[18989],"raw_metadata_u32":[0]}
+{"text_id":173,"forms":[""],"absolute_byte_offsets":[18990],"raw_metadata_u32":[0]}
+{"text_id":174,"forms":[""],"absolute_byte_offsets":[18991],"raw_metadata_u32":[0]}
+{"text_id":175,"forms":[""],"absolute_byte_offsets":[18992],"raw_metadata_u32":[0]}
+{"text_id":176,"forms":[""],"absolute_byte_offsets":[18993],"raw_metadata_u32":[0]}
+{"text_id":177,"forms":[""],"absolute_byte_offsets":[18994],"raw_metadata_u32":[0]}
+{"text_id":178,"forms":[""],"absolute_byte_offsets":[18995],"raw_metadata_u32":[0]}
+{"text_id":179,"forms":[""],"absolute_byte_offsets":[18996],"raw_metadata_u32":[0]}
+{"text_id":180,"forms":["<$comeff(2,14)>..."],"absolute_byte_offsets":[18997],"raw_metadata_u32":[1]}
+{"text_id":181,"forms":["<$comcan(2)><$voicel(1,4)><$emotion(1,29)>Euh... Tu dooors... ?"],"absolute_byte_offsets":[19016],"raw_metadata_u32":[1]}
+{"text_id":182,"forms":["<$voicel(2,5)><$emotion(2,14)>... Non."],"absolute_byte_offsets":[19080],"raw_metadata_u32":[1]}
+{"text_id":183,"forms":["<$voicel(1,8)><$emotion(1,8)>Oooh ! Tu dormais pas, alors...<clear><br><$voicel(1,5)><$emotion(1,49)>Comme t'as toujours l'air impassible, je sais jamais si<br>t'es en train de dormir ou non. Et j'ose jamais te parler..."],"absolute_byte_offsets":[19119],"raw_metadata_u32":[1]}
+{"text_id":184,"forms":["<$voicel(2,8)><$emotion(2,1)>Tu peux me parler quand tu veux. ♪<clear><br><$voicel(2,7)><$emotion(2,50)>J'aime bien le motif que tu as sur le ventre.<br>Ça me fait penser à un tourbillon..."],"absolute_byte_offsets":[19340],"raw_metadata_u32":[1]}
+{"text_id":185,"forms":["<$voicel(1,7)><$comeff(1,8)><$motion(1,806)><$facial(1,4)>C'est vraaai ?<br><$voicel(1,5)><$emotion(1,38)>Moi aussi, je l'aime trooop... !"],"absolute_byte_offsets":[19534],"raw_metadata_u32":[1]}
+{"text_id":186,"forms":["... <$voicel(2,3)><$comeff(2,14)>Ça tourne et tourne...<br>Et tooourne...<slide><br><$voicel(2,2)><$comeff(2,16)>Tiens, j'ai sommeil... Ça m'a donné envie de dormir..."],"absolute_byte_offsets":[19673],"raw_metadata_u32":[1]}
+{"text_id":187,"forms":["<$voicel(1,5)><$comeff(1,4)><$motion(1,807)>Ah, nooon... T'endors paaas...<br>Arrête de regarder mon veeentre..."],"absolute_byte_offsets":[19844],"raw_metadata_u32":[1]}
+{"text_id":188,"forms":["<$comeff(2,15)><$voicel(2,3)>Zzz..."],"absolute_byte_offsets":[19958],"raw_metadata_u32":[1]}
+{"text_id":189,"forms":["<$voicel(1,7)><$comeff(1,11)><$facial(1,9)><$motion(1,802)>Abraaa !"],"absolute_byte_offsets":[19994],"raw_metadata_u32":[1]}
+{"text_id":190,"forms":[""],"absolute_byte_offsets":[20062],"raw_metadata_u32":[0]}
+{"text_id":191,"forms":[""],"absolute_byte_offsets":[20063],"raw_metadata_u32":[0]}
+{"text_id":192,"forms":[""],"absolute_byte_offsets":[20064],"raw_metadata_u32":[0]}
+{"text_id":193,"forms":[""],"absolute_byte_offsets":[20065],"raw_metadata_u32":[0]}
+{"text_id":194,"forms":[""],"absolute_byte_offsets":[20066],"raw_metadata_u32":[0]}
+{"text_id":195,"forms":[""],"absolute_byte_offsets":[20067],"raw_metadata_u32":[0]}
+{"text_id":196,"forms":[""],"absolute_byte_offsets":[20068],"raw_metadata_u32":[0]}
+{"text_id":197,"forms":[""],"absolute_byte_offsets":[20069],"raw_metadata_u32":[0]}
+{"text_id":198,"forms":[""],"absolute_byte_offsets":[20070],"raw_metadata_u32":[0]}
+{"text_id":199,"forms":[""],"absolute_byte_offsets":[20071],"raw_metadata_u32":[0]}
+{"text_id":200,"forms":["<$voicel(2,4)><$comeff(2,17)><$facial(2,9)>*soupir* Je sais vraiment pas comment faire..."],"absolute_byte_offsets":[20072],"raw_metadata_u32":[9]}
+{"text_id":201,"forms":["<$voicel(1,5)><$emotion(1,29)>T'as pas l'air en forme... Qu'est-ce qui t'arrive ?"],"absolute_byte_offsets":[20162],"raw_metadata_u32":[9]}
+{"text_id":202,"forms":["<$voicel(2,6)><$emotion(2,14)>Comment dire... Je sens que, parfois, je déraille<br>complètement et me comporte de façon... douteuse.<clear><br><$voicel(2,5)><$comeff(2,14)>J'aimerais trouver un moyen d'éviter ça. T'as une idée<br>de ce que je pourrais faire ?"],"absolute_byte_offsets":[20244],"raw_metadata_u32":[9]}
+{"text_id":203,"forms":["<$comcan(2)><$voicel(1,7)><$emotion(1,1)>Hmmm... T'as déjà essayé de tordre une cuillère ? C'est<br>un exercice qui permet d'apprendre à maintenir<slide><br>sa concentration.<clear><br><$voicel(1,7)><$emotion(1,49)>Je pense que si t'en étais capable, t'arriverais à mieux<br>te maîtriser."],"absolute_byte_offsets":[20510],"raw_metadata_u32":[9]}
+{"text_id":204,"forms":["<$voicel(2,7)><$comeff(2,5)><$motion(2,661)>Oh, intéressant. Mais comment on fait ?"],"absolute_byte_offsets":[20807],"raw_metadata_u32":[9]}
+{"text_id":205,"forms":["<$voicel(1,7)><$emotion(1,1)>Regarde la cuillère et dirige toute ta force mentale<br>dessus.<clear><br><$voicel(1,5)><$facial(1,14)>Concentre-toi bien... Vide ton esprit de toute distraction<br>jusqu'à ne faire plus qu'un avec la cuillère...<slide><br><$voicel(1,8)><$emotion(1,50)>... et elle se pliera au gré de tes pensées."],"absolute_byte_offsets":[20892],"raw_metadata_u32":[9]}
+{"text_id":206,"forms":["<$voicel(2,5)><$emotion(2,27)>Compris ! Je vais essayer.<clear><br><$voicel(2,8)><$comeff(2,14)><$motionoff(2,804)>Gnnniii... !!! <wait(1.5)><$voicel(2,4)><$comeff(2,7)><$motion(2,663)>Oh là là... J'y arrive pas du tout.<br><$voicel(2,5)><$comeff(2,6)><$motion(2,661)>Tu pourrais me faire une démonstration ?"],"absolute_byte_offsets":[21224],"raw_metadata_u32":[9]}
+{"text_id":207,"forms":["<$voicel(1,5)><$comeff(1,14)>Si tu veux. Regarde bien comment je m'y prends.<br><$voicel(1,8)><$comeff(1,5)><$motion(1,816)>Gnnnnnn... Aaah !!!"],"absolute_byte_offsets":[21536],"raw_metadata_u32":[9]}
+{"text_id":208,"forms":["<$voicel(2,9)><$emotion(2,14)>Ouah ! Je sens une rafale d'ondes psychiques déferler<br>autour de nous ! C'est trop fort !<clear><br><$voicel(2,5)><$comeff(2,6)><$motion(2,827)>... Hein ?!<br>J-j-je crois que je commence à perdre les pédales...<slide><br><$voicel(2,7)><$comeff(2,4)>A-a-arrêtons ça juste une minuuuute..."],"absolute_byte_offsets":[21680],"raw_metadata_u32":[9]}
+{"text_id":209,"forms":["<$voicel(1,8)><$comeff(1,5)><$motion(1,816)>Gnnnnniiiiii... Aaah !!!"],"absolute_byte_offsets":[22006],"raw_metadata_u32":[9]}
+{"text_id":210,"forms":["<$voicel(2,3)><$comeff(2,10)>Boooup ! HÉ ! Tu... bip bip ! m'ÉcOUtEs... ? Boup boooup !"],"absolute_byte_offsets":[22075],"raw_metadata_u32":[9]}
+{"text_id":211,"forms":["<$voicel(1,4)><$comeff(1,17)><$motion(1,666)>Et voilà le travail ! À toi de jouer, maintenant !<wait(1.0)><br><$voicel(1,8)><$emotion(1,27)>Euh... Tout va bien ?<slide><br><$voicel(1,6)>T'es en train de perdre le contrôle, là, non ?<clear><br><$voicel(1,7)><$comeff(1,4)><$motion(1,806)>Il faut que tu te concentres... Essaie de plier cette cuillère."],"absolute_byte_offsets":[22165],"raw_metadata_u32":[9]}
+{"text_id":212,"forms":["<$voicel(2,3)><$comeff(2,7)><$motion(2,815)>Ah nOn ! C'EsT tA... bip bip ! cuiLLèRe qUi me mET...<br>Boup bip ! dANs cET étAT !!! Boooup !"],"absolute_byte_offsets":[22521],"raw_metadata_u32":[9]}
+{"text_id":213,"forms":[""],"absolute_byte_offsets":[22662],"raw_metadata_u32":[0]}
+{"text_id":214,"forms":[""],"absolute_byte_offsets":[22663],"raw_metadata_u32":[0]}
+{"text_id":215,"forms":[""],"absolute_byte_offsets":[22664],"raw_metadata_u32":[0]}
+{"text_id":216,"forms":[""],"absolute_byte_offsets":[22665],"raw_metadata_u32":[0]}
+{"text_id":217,"forms":[""],"absolute_byte_offsets":[22666],"raw_metadata_u32":[0]}
+{"text_id":218,"forms":[""],"absolute_byte_offsets":[22667],"raw_metadata_u32":[0]}
+{"text_id":219,"forms":[""],"absolute_byte_offsets":[22668],"raw_metadata_u32":[0]}
+{"text_id":220,"forms":["<$voicel(1,7)><$emotion(1,49)>Hé hé...<br>Tout se déroule exactement comme je l'avais prévu."],"absolute_byte_offsets":[22669],"raw_metadata_u32":[1]}
+{"text_id":221,"forms":["<$voicel(2,6)><$comeff(2,6)><$motion(2,666)><$cdef(27)>Alakazam </color>? De quoi parles-tu ?"],"absolute_byte_offsets":[22766],"raw_metadata_u32":[1]}
+{"text_id":222,"forms":["<$voicel(1,5)><$emotion(1,14)>Oh, rien de particulier. Je remarquais simplement que<br>mes prévisions météorologiques étaient toutes exactes.<clear><br><$voicel(1,8)><$comeff(1,9)><$motionoff(1,666)>Cela fait dix jours consécutifs que je n'ai pas failli."],"absolute_byte_offsets":[22860],"raw_metadata_u32":[1]}
+{"text_id":223,"forms":["<$voicel(2,7)><$emotion(2,27)>Tes prévisions météorologiques ?<br>Comment procèdes-tu, <$cdef(27)>Alakazam </color>?"],"absolute_byte_offsets":[23120],"raw_metadata_u32":[1]}
+{"text_id":224,"forms":["<$voicel(1,5)><$emotion(1,14)>Eh bien... Disons qu'à force de perfectionner mes pouvoirs<br>psychiques, j'ai développé la capacité de voir l'avenir.<clear><br><$voicel(1,7)><$emotion(1,49)>C'est non seulement pratique, mais aussi assez génial.<br>D'aucuns diraient que c'est même extraordinaire."],"absolute_byte_offsets":[23241],"raw_metadata_u32":[1]}
+{"text_id":225,"forms":["<$voicel(2,5)><$emotion(2,8)>Je comprends. Ce n'est pas ordinaire, en effet.<br>As-tu besoin d'assistance ?<clear><br><$voicel(2,7)><$comeff(2,10)><$motion(2,805)>En analysant les données existantes, je peux effectuer<br>des calculs complexes et obtenir des prévisions précises."],"absolute_byte_offsets":[23543],"raw_metadata_u32":[1]}
+{"text_id":226,"forms":["<$voicel(1,6)><$comeff(1,4)><$motionoff(1,805)>Tu... tu peux faire cela ?"],"absolute_byte_offsets":[23825],"raw_metadata_u32":[1]}
+{"text_id":227,"forms":["<$voicel(2,7)><$emotion(2,49)>La météorologie est une science statistique.<br>Et les statistiques, c'est ma spécialité.<clear><br><$voicel(2,4)><$comeff(2,6)><$motion(2,806)>Veux-tu que j'analyse les conditions météorologiques des<br>deux ou trois cents derniers jours pour commencer ?"],"absolute_byte_offsets":[23899],"raw_metadata_u32":[1]}
+{"text_id":228,"forms":["<$voicel(1,7)><$emotion(1,27)>... !<br>Quelle faculté remarquable... Mais...<slide><br>Je m'en passerai.<clear><br><$voicel(1,9)><$comeff(1,10)><$motionoff(1,804)>Vois-tu, la beauté du futur réside précisément dans<br>son imprévisibilité. Ne trouves-tu pas dommage de gâcher<slide><br>le plaisir de la découverte en usant de calculs savants ?"],"absolute_byte_offsets":[24191],"raw_metadata_u32":[1]}
+{"text_id":229,"forms":["<$voicel(2,2)><$comeff(2,7)><$motion(2,805)><$facial(2,9)>Ce que tu dis contredit ce que tu as dit précédemment."],"absolute_byte_offsets":[24543],"raw_metadata_u32":[1]}
+{"text_id":230,"forms":["<$voicel(1,7)><$comeff(1,4)><$motion(1,803)>Hé... Hé hé...<clear><br>Les gens changent d'avis tout le temps,<br>c'est pour ça que l'avenir est imprévisible.<clear><br><$voicel(1,6)><$emotion(1,49)>Et c'est justement ce qui fait tout son charme..."],"absolute_byte_offsets":[24658],"raw_metadata_u32":[1]}
+{"text_id":231,"forms":[""],"absolute_byte_offsets":[24910],"raw_metadata_u32":[0]}
+{"text_id":232,"forms":[""],"absolute_byte_offsets":[24911],"raw_metadata_u32":[0]}
+{"text_id":233,"forms":[""],"absolute_byte_offsets":[24912],"raw_metadata_u32":[0]}
+{"text_id":234,"forms":[""],"absolute_byte_offsets":[24913],"raw_metadata_u32":[0]}
+{"text_id":235,"forms":[""],"absolute_byte_offsets":[24914],"raw_metadata_u32":[0]}
+{"text_id":236,"forms":[""],"absolute_byte_offsets":[24915],"raw_metadata_u32":[0]}
+{"text_id":237,"forms":[""],"absolute_byte_offsets":[24916],"raw_metadata_u32":[0]}
+{"text_id":238,"forms":[""],"absolute_byte_offsets":[24917],"raw_metadata_u32":[0]}
+{"text_id":239,"forms":[""],"absolute_byte_offsets":[24918],"raw_metadata_u32":[0]}
+{"text_id":240,"forms":["<$voicel(2,5)><$comeff(2,6)><$motion(2,801)>Oh ? Mais que vois-je ?"],"absolute_byte_offsets":[24919],"raw_metadata_u32":[9]}
+{"text_id":241,"forms":["<$voicel(1,6)><$comeff(1,3)><$motion(1,815)>Oh, c'est rien. Attends, je te montre...<br><wait(1.0)><$voicel(1,8)>Voilà, c'est juste ça."],"absolute_byte_offsets":[24987],"raw_metadata_u32":[9]}
+{"text_id":242,"forms":["<$voicel(2,9)><$emotion(2,27)>Oh ! Alors, c'est toi qui as fait apparaître ce mur<br>invisible... ? <$voicel(2,4)><$comeff(2,14)>Très impressionnant..."],"absolute_byte_offsets":[25125],"raw_metadata_u32":[9]}
+{"text_id":243,"forms":["<$comcan(2)><$voicel(1,5)><$emotion(1,14)>Oh ben, ça n'a pas grand-chose d'exceptionnel !<clear><br><$voicel(1,7)><$comeff(1,5)>En plus, j'ai entendu dire que tu pouvais faire disparaître<br>des objets, <$cdef(27)>Miascarade</color> !<clear><br><$voicel(1,9)><$emotion(1,38)>Si c'est vrai, je trouve ça beaucoup plus stylé !"],"absolute_byte_offsets":[25279],"raw_metadata_u32":[9]}
+{"text_id":244,"forms":["<$voicel(2,7)><$comeff(2,3)><$motion(2,666)>Hi hi ! Tu veux voir si la rumeur dit vrai ?<clear><br><$voicel(2,5)>Regarde bien cette feuille. <$motion(2,806)><wait(1.0)>Attention... <wait(1.0)>Et hop<$comeff(2,5)> !"],"absolute_byte_offsets":[25608],"raw_metadata_u32":[9]}
+{"text_id":245,"forms":["<$voicel(1,9)><$comeff(1,11)><$motionoff(1,804)>Ouaaah ! Elle a disparu ?! Mais comment t'as fait ?!<br><$voicel(1,8)><$comeff(1,21)><$motion(1,801)>T'as un talent incroyable !!!"],"absolute_byte_offsets":[25823],"raw_metadata_u32":[9]}
+{"text_id":246,"forms":["<$voicel(2,7)><$emotion(2,49)>Tu sais y faire avec les compliments, à ce que je vois."],"absolute_byte_offsets":[26002],"raw_metadata_u32":[9]}
+{"text_id":247,"forms":["<$voicel(1,9)><$comeff(1,1)><$motionoff(1,804)><$facial(1,4)>D-d'où elle sort, cette Baie ?!<br>Elle était pas là y a une seconde... !<clear><br><$voicel(1,5)><$comeff(1,21)>Me dis pas que tu peux faire apparaître ou disparaître<br>ce qui te chante à volonté... ?"],"absolute_byte_offsets":[26089],"raw_metadata_u32":[9]}
+{"text_id":248,"forms":["<$voicel(2,5)><$comeff(2,14)><$motion(2,805)>Hi hi ! Qui sait ?"],"absolute_byte_offsets":[26360],"raw_metadata_u32":[9]}
+{"text_id":249,"forms":["<$comcan(2)><$voicel(1,7)><$emotion(1,6)>Ouah... C'est fabuleux... !<clear><br><$voicel(1,5)>... Mais si tu faisais apparaître une autre Baie, ça serait<br>encore plus extraordinaire, <$cdef(27)>Miascarade</color>.<slide><br><$voicel(1,4)><$comeff(1,6)><$motion(1,666)>Tu crois que tu pourrais faire ça ?"],"absolute_byte_offsets":[26424],"raw_metadata_u32":[9]}
+{"text_id":250,"forms":["<$voicel(2,8)><$emotion(2,1)>Hmmm, voyons voir..."],"absolute_byte_offsets":[26732],"raw_metadata_u32":[9]}
+{"text_id":251,"forms":["<$voicel(1,7)><$emotion(1,49)>Ouah ! T'en as vraiment fait apparaître une autre !<br>C'est fantastique ! Et si on mangeait ensemble pour<slide><br>fêter ça ? <$voicel(1,5)><$comeff(1,5)>Allez, j'me sers !"],"absolute_byte_offsets":[26782],"raw_metadata_u32":[9]}
+{"text_id":252,"forms":["<$voicel(2,5)><$comeff(2,9)><$facial(2,5)>Hi hi. C'est donc là que tu voulais en venir ! Toi aussi,<br>tu as plus d'un tour dans ton sac...<slide><br>Eh bien, bon appétit, alors ! ♪"],"absolute_byte_offsets":[26990],"raw_metadata_u32":[9]}
+{"text_id":253,"forms":["<$voicel(2,10)><$facial(1,5)>Pour te remercier... voici un petit cadeau."],"absolute_byte_offsets":[27176],"raw_metadata_u32":[9]}
+{"text_id":254,"forms":["<$voicel(2,10)>Que dis-tu de ça ?<br><$comeff(2,9)>Et voilà ! ♪"],"absolute_byte_offsets":[27249],"raw_metadata_u32":[9]}
+{"text_id":255,"forms":[""],"absolute_byte_offsets":[27317],"raw_metadata_u32":[0]}
+{"text_id":256,"forms":[""],"absolute_byte_offsets":[27318],"raw_metadata_u32":[0]}
+{"text_id":257,"forms":[""],"absolute_byte_offsets":[27319],"raw_metadata_u32":[0]}
+{"text_id":258,"forms":[""],"absolute_byte_offsets":[27320],"raw_metadata_u32":[0]}
+{"text_id":259,"forms":[""],"absolute_byte_offsets":[27321],"raw_metadata_u32":[0]}
+{"text_id":260,"forms":["<$voicel(1,10)><$comeff(1,22)><$motion(1,662)><$textsize(2)>Lévia torrr !</textsize><br><$voicel(1,10)><$comeff(1,5)><$textsize(2)>Je suis en colère !</textsize>"],"absolute_byte_offsets":[27322],"raw_metadata_u32":[1]}
+{"text_id":261,"forms":["<$voicel(1,7)><$comeff(1,14)><$motion(1,663)>Je suis à deux doigts d'utiliser <$cdef(27)>Ultralaser </color>pour me calmer<br>les nerfs !"],"absolute_byte_offsets":[27486],"raw_metadata_u32":[1]}
+{"text_id":262,"forms":["<$comcan(1)><$voicel(2,7)><$comeff(2,3)><$motion(2,805)>Mais enfin, <$cdef(27)>Léviator</color>...<br>Qu'est-ce qui te met dans cet état ?<clear><br><$voicel(2,6)><$emotion(2,29)>Essaie de prendre quelques profondes respirations,<br>veux-tu ?"],"absolute_byte_offsets":[27625],"raw_metadata_u32":[1]}
+{"text_id":263,"forms":["<$voicel(1,5)><$comeff(1,17)><$motion(1,805)>*Inspiiire* *Expiiire* *Inspiiire* *Expiiiire*<br>...<clear><br><$voicel(1,10)><$comeff(1,5)><$motion(1,807)><$textsize(2)>Ça marche pas, j'ai la rage !</textsize>"],"absolute_byte_offsets":[27870],"raw_metadata_u32":[1]}
+{"text_id":264,"forms":["<$voicel(2,7)><$emotion(2,49)>Oh, dans ce cas...<br>Veux-tu bien me dire ce qui te tracasse tant ?<slide><br><$voicel(2,5)><$comeff(2,9)><$motion(2,806)>Peut-être qu'en parler t'apaisera."],"absolute_byte_offsets":[28080],"raw_metadata_u32":[1]}
+{"text_id":265,"forms":["<$voicel(1,7)><$emotion(1,14)>Hmpf, d'accord ! Alors, écoute ça !<clear><br>Tu te souviens quand le vent a soufflé hyper fort,<br>y a pas longtemps ?"],"absolute_byte_offsets":[28269],"raw_metadata_u32":[1]}
+{"text_id":266,"forms":["<$voicel(2,8)><$comeff(2,3)><$motion(2,806)>En effet, je m'en souviens."],"absolute_byte_offsets":[28422],"raw_metadata_u32":[1]}
+{"text_id":267,"forms":["<$voicel(1,5)><$comeff(1,14)><$motion(1,666)>Bon, ben, ce jour-là, j'avais laissé des Baies<br>chez moi avant de partir en balade...<clear><br><$voicel(1,9)><$emotion(1,27)>Et à mon retour, elles avaient disparu !<br>Alors que je comptais les manger pour mon goûter !"],"absolute_byte_offsets":[28494],"raw_metadata_u32":[1]}
+{"text_id":268,"forms":["<$voicel(2,7)><$emotion(2,14)>Je comprends...<br>Hmmm... Attends un peu.<clear><br><$voicel(2,5)><$comeff(2,14)><$motion(2,666)>Ce jour-là, je me souviens avoir mangé des Baies<br>que le vent avait fait rouler jusqu'à moi...<clear><br><$voicel(2,4)>Je crois même qu'elles venaient de par chez toi,<br>maintenant que j'y repense."],"absolute_byte_offsets":[28766],"raw_metadata_u32":[1]}
+{"text_id":269,"forms":["<$comcan(2)><$voicel(1,9)><$comeff(1,5)><$motion(1,662)>Quoiii ?! C'était toi ?! C'est toi qui as mangé mes Baies ?"],"absolute_byte_offsets":[29099],"raw_metadata_u32":[1]}
+{"text_id":270,"forms":["<$voicel(2,5)><$comeff(2,8)><$motion(2,803)>Je... te présente mes excuses.<br>Tu veux bien me pardonner ?"],"absolute_byte_offsets":[29217],"raw_metadata_u32":[1]}
+{"text_id":271,"forms":["<$voicel(1,6)><$comeff(1,8)><$motion(1,806)>Tu... Je... !<clear><br><$voicel(1,7)><$emotion(1,38)>Ahem ! Bon, très bien.<br>Mais c'est la première et dernière fois que ça arrive, hein !"],"absolute_byte_offsets":[29324],"raw_metadata_u32":[1]}
+{"text_id":272,"forms":[""],"absolute_byte_offsets":[29514],"raw_metadata_u32":[0]}
+{"text_id":273,"forms":[""],"absolute_byte_offsets":[29515],"raw_metadata_u32":[0]}
+{"text_id":274,"forms":[""],"absolute_byte_offsets":[29516],"raw_metadata_u32":[0]}
+{"text_id":275,"forms":[""],"absolute_byte_offsets":[29517],"raw_metadata_u32":[0]}
+{"text_id":276,"forms":[""],"absolute_byte_offsets":[29518],"raw_metadata_u32":[0]}
+{"text_id":277,"forms":[""],"absolute_byte_offsets":[29519],"raw_metadata_u32":[0]}
+{"text_id":278,"forms":[""],"absolute_byte_offsets":[29520],"raw_metadata_u32":[0]}
+{"text_id":279,"forms":[""],"absolute_byte_offsets":[29521],"raw_metadata_u32":[0]}
+{"text_id":280,"forms":["<$voicel(1,7)><$emotion(1,49)>Aaah...<br>Les Baies de tout à l'heure étaient bien juteuses !<clear><br><$voicel(1,5)><$emotion(1,8)>J'ai carrément trop mangé, j'ai le ventre plein !"],"absolute_byte_offsets":[29522],"raw_metadata_u32":[1]}
+{"text_id":281,"forms":["<$voicel(2,5)><$comeff(2,10)><$motion(2,806)>Sérieux ? T'as plus faim ?<br>J'pensais que t'étais du genre à manger plus que ça !<clear><br><$voicel(2,7)><$emotion(2,27)>Mon gabarit est plus p'tit, mais j'en ai quand même<br>avalé plus que toi !"],"absolute_byte_offsets":[29708],"raw_metadata_u32":[1]}
+{"text_id":282,"forms":["<$voicel(1,7)><$comeff(1,3)><$motion(1,806)>Pardon ?! J'ai pas compté, mais c'est clairement moi<br>qui en ai mangé le plus !"],"absolute_byte_offsets":[29959],"raw_metadata_u32":[1]}
+{"text_id":283,"forms":["<$voicel(2,8)><$comeff(2,5)><$motion(2,803)>Jamais d'la vie ! C'est moi !<br><wait(1.1)><$lookat(2,0,0)><$lookat(2,1,0)><$lookat(1,0,0)><$lookat(1,1,0)><waitactor(2)><waitactor(1)><$voicel(2,6)>T'en dis quoi, <$cdef(27)><pname;1> </color>?"],"absolute_byte_offsets":[30087],"raw_metadata_u32":[1]}
+{"text_id":284,"forms":["<$voicel(1,10)><$emotion(1,38)>Bah ah ah ! Évidemment !<clear><br><$voicel(1,7)><$motion(1,805)><$cdef(27)><pname;1> </color>nous regardait pas<br>quand on était en train de manger !<clear><br><$voicel(1,6)><$comeff(1,17)>On peut pas lui demander de deviner !"],"absolute_byte_offsets":[30327],"raw_metadata_u32":[1]}
+{"text_id":285,"forms":["<$voicel(2,7)><$comeff(2,4)><$motion(2,666)>Pardon, <$cdef(27)><pname;0></color> !<br>J'voulais pas t'impliquer là-dedans !<wait(3.1)><$lookat(2,0,1)><$lookat(2,1,1)><$lookat(1,0,2)><$lookat(1,1,2)><waitactor(1)><waitactor(2)><clear><br><$voicel(2,5)><$emotion(2,14)>Bon, bah, on a qu'à dire que c'était un match nul !<br>Puis, on s'refait ça quand tu veux !"],"absolute_byte_offsets":[30589],"raw_metadata_u32":[1]}
+{"text_id":286,"forms":["<$voicel(1,7)><$emotion(1,27)>Avec plaisir ! Et crois-moi... <$voicel(1,10)><$emotion(1,38)>J'vais compter touuutes<br>les Baies que j'mange, à partir de maintenant !"],"absolute_byte_offsets":[30952],"raw_metadata_u32":[1]}
+{"text_id":287,"forms":[""],"absolute_byte_offsets":[31120],"raw_metadata_u32":[0]}
+{"text_id":288,"forms":[""],"absolute_byte_offsets":[31121],"raw_metadata_u32":[0]}
+{"text_id":289,"forms":[""],"absolute_byte_offsets":[31122],"raw_metadata_u32":[0]}
+{"text_id":290,"forms":[""],"absolute_byte_offsets":[31123],"raw_metadata_u32":[0]}
+{"text_id":291,"forms":[""],"absolute_byte_offsets":[31124],"raw_metadata_u32":[0]}
+{"text_id":292,"forms":[""],"absolute_byte_offsets":[31125],"raw_metadata_u32":[0]}
+{"text_id":293,"forms":[""],"absolute_byte_offsets":[31126],"raw_metadata_u32":[0]}
+{"text_id":294,"forms":[""],"absolute_byte_offsets":[31127],"raw_metadata_u32":[0]}
+{"text_id":295,"forms":[""],"absolute_byte_offsets":[31128],"raw_metadata_u32":[0]}
+{"text_id":296,"forms":[""],"absolute_byte_offsets":[31129],"raw_metadata_u32":[0]}
+{"text_id":297,"forms":[""],"absolute_byte_offsets":[31130],"raw_metadata_u32":[0]}
+{"text_id":298,"forms":[""],"absolute_byte_offsets":[31131],"raw_metadata_u32":[0]}
+{"text_id":299,"forms":[""],"absolute_byte_offsets":[31132],"raw_metadata_u32":[0]}
+{"text_id":300,"forms":["<$voicel(2,5)><$comeff(2,14)><$motion(2,666)>Hmmm... Ton âme sort de l'ordinaire."],"absolute_byte_offsets":[31133],"raw_metadata_u32":[9]}
+{"text_id":301,"forms":["<$comcan(2)><$voicel(1,3)><$emotion(1,29)>Ah oui ? Qu'entends-tu par là ?"],"absolute_byte_offsets":[31216],"raw_metadata_u32":[9]}
+{"text_id":302,"forms":["<$voicel(2,5)><$emotion(2,14)>Elle a une forme... polygonale."],"absolute_byte_offsets":[31291],"raw_metadata_u32":[9]}
+{"text_id":303,"forms":["<$voicel(1,5)><$comeff(1,6)><$motion(1,666)>Vraiment ? Celles des autres Pokémon seraient-elles<br>différentes ?"],"absolute_byte_offsets":[31353],"raw_metadata_u32":[9]}
+{"text_id":304,"forms":["<$voicel(2,5)><$comeff(2,14)><$motion(2,806)>Les âmes existent sous une myriade de formes, mais<br>une âme polygonale, c'est pour le moins inhabituel.<slide><br><$voicel(2,8)><$emotion(2,38)>C'est même la première fois que j'en vois une."],"absolute_byte_offsets":[31468],"raw_metadata_u32":[9]}
+{"text_id":305,"forms":["<$voicel(1,5)><$emotion(1,14)>Hmmm... Cela veut donc dire qu'elle ne rentre pas<br>dans le moule ? Devrais-je essayer d'arrondir les angles ?"],"absolute_byte_offsets":[31710],"raw_metadata_u32":[9]}
+{"text_id":306,"forms":["<$voicel(2,7)><$comeff(2,21)><$motion(2,661)>Je ne dirais pas cela. Tu dégages une aura chaleureuse,<br>similaire à celle des homo sapiens.<slide><br><$voicel(2,6)><$comeff(2,5)>Tu as une belle âme. Prends-en soin."],"absolute_byte_offsets":[31852],"raw_metadata_u32":[9]}
+{"text_id":307,"forms":["<$voicel(1,9)><$emotion(1,8)>Bip bip bip. ♪ Bien reçu. Je vais en prendre soin.<clear><br><$voicel(1,5)><$comeff(1,14)><$motion(1,666)>Je vais commencer par la mettre à l'abri, chez moi..."],"absolute_byte_offsets":[32070],"raw_metadata_u32":[9]}
+{"text_id":308,"forms":["<$comcan(1)><$voicel(2,9)><$comeff(2,4)><$motion(2,807)>Oh ! Nul besoin d'en faire autant !"],"absolute_byte_offsets":[32263],"raw_metadata_u32":[9]}
+{"text_id":309,"forms":[""],"absolute_byte_offsets":[32355],"raw_metadata_u32":[0]}
+{"text_id":310,"forms":[""],"absolute_byte_offsets":[32356],"raw_metadata_u32":[0]}
+{"text_id":311,"forms":[""],"absolute_byte_offsets":[32357],"raw_metadata_u32":[0]}
+{"text_id":312,"forms":[""],"absolute_byte_offsets":[32358],"raw_metadata_u32":[0]}
+{"text_id":313,"forms":[""],"absolute_byte_offsets":[32359],"raw_metadata_u32":[0]}
+{"text_id":314,"forms":[""],"absolute_byte_offsets":[32360],"raw_metadata_u32":[0]}
+{"text_id":315,"forms":[""],"absolute_byte_offsets":[32361],"raw_metadata_u32":[0]}
+{"text_id":316,"forms":[""],"absolute_byte_offsets":[32362],"raw_metadata_u32":[0]}
+{"text_id":317,"forms":[""],"absolute_byte_offsets":[32363],"raw_metadata_u32":[0]}
+{"text_id":318,"forms":[""],"absolute_byte_offsets":[32364],"raw_metadata_u32":[0]}
+{"text_id":319,"forms":[""],"absolute_byte_offsets":[32365],"raw_metadata_u32":[0]}
+{"text_id":320,"forms":["<$voicel(2,5)><$comeff(2,3)><$motion(2,666)>Tu sais, je te trouve sublime. Ton corps ondoyant dégage<br>tant de grâce, mais aussi de fraîcheur attendrissante..."],"absolute_byte_offsets":[32366],"raw_metadata_u32":[9]}
+{"text_id":321,"forms":["<$voicel(1,7)><$comeff(1,21)><$motion(1,803)>Oh, m-merci... ! Ben moi, je trouve que tu as beaucoup de<br>prestance.<clear><br><$voicel(1,5)><$emotion(1,6)>Et puis, tu sens toujours très bon..."],"absolute_byte_offsets":[32530],"raw_metadata_u32":[9]}
+{"text_id":322,"forms":["<$voicel(2,7)><$emotion(2,8)>Merci, hi hi. C'est sûrement grâce aux bains de soleil<br>que je prends fréquemment.<clear><br><$voicel(2,5)><$emotion(2,49)>Je m'installe souvent près d'un parterre de fleurs<br>au parfum délicieux."],"absolute_byte_offsets":[32725],"raw_metadata_u32":[9]}
+{"text_id":323,"forms":["<$voicel(1,5)><$comeff(1,21)><$motion(1,805)>Oh... Ça doit être agréable..."],"absolute_byte_offsets":[32959],"raw_metadata_u32":[9]}
+{"text_id":324,"forms":["<$voicel(2,7)><$comeff(2,3)><$motion(2,805)>Pour ma part, j'envie tes écailles si lisses et rayonnantes...<br>Elles te donnent un air radieux !"],"absolute_byte_offsets":[33038],"raw_metadata_u32":[9]}
+{"text_id":325,"forms":["<$voicel(1,5)><$emotion(1,8)>Merci... Je passe beaucoup de temps à nager,<br>c'est sûrement pour ça.<clear><br><$voicel(1,7)><$emotion(1,49)>Quand je plonge, puis regarde vers la surface, les rayons<br>du soleil ont un éclat magnifique. Alors, j'aime bien<slide><br>m'attarder sous l'eau pour admirer ce paysage."],"absolute_byte_offsets":[33183],"raw_metadata_u32":[9]}
+{"text_id":326,"forms":["<$voicel(2,5)><$comeff(2,14)><$motion(2,807)>Moi aussi, j'aime nager, mais je ne m'aventure jamais<br>dans les profondeurs...<slide><br><$voicel(2,8)><$emotion(2,6)>Ce doit être magnifique, là-dessous.<clear><br><$voicel(2,5)>... Hi hi. On a beau se ressembler, <$voicel(2,8)><$emotion(2,49)>on ne fréquente pas<br>du tout les mêmes endroits."],"absolute_byte_offsets":[33500],"raw_metadata_u32":[9]}
+{"text_id":327,"forms":["<$voicel(1,7)><$emotion(1,53)>Non, c'est vrai... C'est curieux, n'est-ce pas ?"],"absolute_byte_offsets":[33847],"raw_metadata_u32":[9]}
+{"text_id":328,"forms":[""],"absolute_byte_offsets":[33926],"raw_metadata_u32":[0]}
+{"text_id":329,"forms":[""],"absolute_byte_offsets":[33927],"raw_metadata_u32":[0]}
+{"text_id":330,"forms":[""],"absolute_byte_offsets":[33928],"raw_metadata_u32":[0]}
+{"text_id":331,"forms":[""],"absolute_byte_offsets":[33929],"raw_metadata_u32":[0]}
+{"text_id":332,"forms":[""],"absolute_byte_offsets":[33930],"raw_metadata_u32":[0]}
+{"text_id":333,"forms":[""],"absolute_byte_offsets":[33931],"raw_metadata_u32":[0]}
+{"text_id":334,"forms":[""],"absolute_byte_offsets":[33932],"raw_metadata_u32":[0]}
+{"text_id":335,"forms":[""],"absolute_byte_offsets":[33933],"raw_metadata_u32":[0]}
+{"text_id":336,"forms":[""],"absolute_byte_offsets":[33934],"raw_metadata_u32":[0]}
+{"text_id":337,"forms":[""],"absolute_byte_offsets":[33935],"raw_metadata_u32":[0]}
+{"text_id":338,"forms":[""],"absolute_byte_offsets":[33936],"raw_metadata_u32":[0]}
+{"text_id":339,"forms":[""],"absolute_byte_offsets":[33937],"raw_metadata_u32":[0]}
+{"text_id":340,"forms":["<$voicel(2,7)><$comeff(2,3)><$motion(2,806)><$cdef(27)>Dracolosse</color>. Je te défie en combat à la loyale."],"absolute_byte_offsets":[33938],"raw_metadata_u32":[1]}
+{"text_id":341,"forms":["<$voicel(1,3)><$comeff(1,6)><$motion(1,666)>Heiiin ? Ben, il t'arrive quoi, tout à coup ?"],"absolute_byte_offsets":[34050],"raw_metadata_u32":[1]}
+{"text_id":342,"forms":["<$voicel(2,7)><$emotion(2,14)>Hé hé. Je sais qui tu es vraiment.<clear><br>Derrière ton air dissipé... <$voicel(2,6)><$comeff(2,10)><$motion(2,806)>tu caches une formidable<br>puissance."],"absolute_byte_offsets":[34141],"raw_metadata_u32":[1]}
+{"text_id":343,"forms":["<$voicel(1,7)><$comeff(1,7)><$motion(1,807)>Ah bon... ?<br>En tout cas, j'ai pas du tout envie d'me battre, là..."],"absolute_byte_offsets":[34332],"raw_metadata_u32":[1]}
+{"text_id":344,"forms":["<$voicel(2,6)><$emotion(2,29)>Puis-je savoir pour quelle raison ?"],"absolute_byte_offsets":[34447],"raw_metadata_u32":[1]}
+{"text_id":345,"forms":["<$voicel(1,5)><$comeff(1,5)><$motion(1,806)>Quand je me bats, j'finis toujours par bousiller<br>des montagnes ou des forêts...<clear><br><$voicel(1,7)><$emotion(1,49)><$cdef(27)><pname;0> </color>fait d'son mieux pour rendre<br>le coin plus sympa, alors j'peux pas lui faire çaaa."],"absolute_byte_offsets":[34513],"raw_metadata_u32":[1]}
+{"text_id":346,"forms":["<$voicel(2,5)><$comeff(2,4)><$motion(2,666)>C-c'est vrai. Ce ne serait pas souhaitable, en effet.<clear><br><$voicel(2,7)><$emotion(2,49)>Ne nous battons pas. Vive la paix."],"absolute_byte_offsets":[34796],"raw_metadata_u32":[1]}
+{"text_id":347,"forms":["<$voicel(1,7)><$emotion(1,8)>Ben, ouais... C'est c'que je dis...<br>Vivons en harmoniiie !"],"absolute_byte_offsets":[34969],"raw_metadata_u32":[1]}
+{"text_id":348,"forms":[""],"absolute_byte_offsets":[35060],"raw_metadata_u32":[0]}
+{"text_id":349,"forms":[""],"absolute_byte_offsets":[35061],"raw_metadata_u32":[0]}
+{"text_id":350,"forms":[""],"absolute_byte_offsets":[35062],"raw_metadata_u32":[0]}
+{"text_id":351,"forms":[""],"absolute_byte_offsets":[35063],"raw_metadata_u32":[0]}
+{"text_id":352,"forms":[""],"absolute_byte_offsets":[35064],"raw_metadata_u32":[0]}
+{"text_id":353,"forms":[""],"absolute_byte_offsets":[35065],"raw_metadata_u32":[0]}
+{"text_id":354,"forms":[""],"absolute_byte_offsets":[35066],"raw_metadata_u32":[0]}
+{"text_id":355,"forms":[""],"absolute_byte_offsets":[35067],"raw_metadata_u32":[0]}
+{"text_id":356,"forms":[""],"absolute_byte_offsets":[35068],"raw_metadata_u32":[0]}
+{"text_id":357,"forms":[""],"absolute_byte_offsets":[35069],"raw_metadata_u32":[0]}
+{"text_id":358,"forms":[""],"absolute_byte_offsets":[35070],"raw_metadata_u32":[0]}
+{"text_id":359,"forms":[""],"absolute_byte_offsets":[35071],"raw_metadata_u32":[0]}
+{"text_id":360,"forms":[""],"absolute_byte_offsets":[35072],"raw_metadata_u32":[0]}
+{"text_id":361,"forms":[""],"absolute_byte_offsets":[35073],"raw_metadata_u32":[0]}
+{"text_id":362,"forms":[""],"absolute_byte_offsets":[35074],"raw_metadata_u32":[0]}
+{"text_id":363,"forms":[""],"absolute_byte_offsets":[35075],"raw_metadata_u32":[0]}
+{"text_id":364,"forms":[""],"absolute_byte_offsets":[35076],"raw_metadata_u32":[0]}
+{"text_id":365,"forms":[""],"absolute_byte_offsets":[35077],"raw_metadata_u32":[0]}
+{"text_id":366,"forms":[""],"absolute_byte_offsets":[35078],"raw_metadata_u32":[0]}
+{"text_id":367,"forms":[""],"absolute_byte_offsets":[35079],"raw_metadata_u32":[0]}
+{"text_id":368,"forms":[""],"absolute_byte_offsets":[35080],"raw_metadata_u32":[0]}
+{"text_id":369,"forms":[""],"absolute_byte_offsets":[35081],"raw_metadata_u32":[0]}
+{"text_id":370,"forms":[""],"absolute_byte_offsets":[35082],"raw_metadata_u32":[0]}
+{"text_id":371,"forms":[""],"absolute_byte_offsets":[35083],"raw_metadata_u32":[0]}
+{"text_id":372,"forms":[""],"absolute_byte_offsets":[35084],"raw_metadata_u32":[0]}
+{"text_id":373,"forms":[""],"absolute_byte_offsets":[35085],"raw_metadata_u32":[0]}
+{"text_id":374,"forms":[""],"absolute_byte_offsets":[35086],"raw_metadata_u32":[0]}
+{"text_id":375,"forms":[""],"absolute_byte_offsets":[35087],"raw_metadata_u32":[0]}
+{"text_id":376,"forms":[""],"absolute_byte_offsets":[35088],"raw_metadata_u32":[0]}
+{"text_id":377,"forms":[""],"absolute_byte_offsets":[35089],"raw_metadata_u32":[0]}
+{"text_id":378,"forms":[""],"absolute_byte_offsets":[35090],"raw_metadata_u32":[0]}
+{"text_id":379,"forms":[""],"absolute_byte_offsets":[35091],"raw_metadata_u32":[0]}
+{"text_id":380,"forms":["<$voicel(2,5)><$comeff(2,14)><$motion(2,805)>Il était une fois un Pokémon qui adorait les Baies.<br>Alors qu'il était à la recherche de fruits délicieux...<slide><br><$voicel(2,4)><$motion(2,806)>il pénétra dans une grotte lugubre."],"absolute_byte_offsets":[35092],"raw_metadata_u32":[1]}
+{"text_id":381,"forms":["<$comcan(2)><$voicel(1,7)><$emotion(1,14)>Ouaaah ! J'adore les histoires qui font peur !"],"absolute_byte_offsets":[35331],"raw_metadata_u32":[1]}
+{"text_id":382,"forms":["<$voicel(2,3)><$comeff(2,14)><$motion(2,661)>Le Pokémon finit par trouver des Baies, au fin fond de<br>la grotte. Puis, il se rendit compte d'une chose.<slide><br><$voicel(2,8)><$comeff(2,3)><$motion(2,666)>Il ne savait plus comment rentrer chez lui."],"absolute_byte_offsets":[35420],"raw_metadata_u32":[1]}
+{"text_id":383,"forms":["<$voicel(1,2)><$comeff(1,4)><$motion(1,807)>Gloups..."],"absolute_byte_offsets":[35672],"raw_metadata_u32":[1]}
+{"text_id":384,"forms":["<$voicel(2,7)><$emotion(2,27)>Le Pokémon égaré et confus sentit alors une main froide<br>dans son dos.<slide><br>Et lorsqu'il se retourna..."],"absolute_byte_offsets":[35726],"raw_metadata_u32":[1]}
+{"text_id":385,"forms":["<$voicel(1,8)><$comeff(1,5)><$motion(1,806)>Quoi ?!"],"absolute_byte_offsets":[35870],"raw_metadata_u32":[1]}
+{"text_id":386,"forms":["<$voicel(2,10)><$comeff(2,3)>Une voix retentit...<br>« Comment oses-tu prendre ces Baies ? »<$motion(2,807)><wait(0.6)>"],"absolute_byte_offsets":[35922],"raw_metadata_u32":[1]}
+{"text_id":387,"forms":["<$voicel(1,9)><$comeff(1,5)><$motion(1,817)>Aaah !!!"],"absolute_byte_offsets":[36044],"raw_metadata_u32":[1]}
+{"text_id":388,"forms":["<$voicel(2,10)><$comeff(2,11)><$motion(2,803)>Ah ?!"],"absolute_byte_offsets":[36097],"raw_metadata_u32":[1]}
+{"text_id":389,"forms":["<$voicel(1,5)><$emotion(1,46)>Pfiou... ça fait peur ! <$facial(1,1)>Et c'est quoi, la suite ?"],"absolute_byte_offsets":[36149],"raw_metadata_u32":[1]}
+{"text_id":390,"forms":["<$voicel(2,7)><$comeff(2,7)><$motion(2,803)>Hmmm... Euh, j'ai oublié."],"absolute_byte_offsets":[36244],"raw_metadata_u32":[1]}

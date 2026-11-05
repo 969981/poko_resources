@@ -1,0 +1,100 @@
+<$voicel(1,7)><$comeff(1,6)><$motion(1,824)>Que se passe-t-il ? Y a-t-il d'autres Pokémon ici,<br>à part toi ? Ou même des êtres humains ?<$motion(1,652)>
+<$voicel(4,7)><$emotion(4,14)>Hein ? Euh, ben j'sais pas trop, justement...<clear><br>Apparemment, <$voicel(4,6)>tout le monde a déménagé j'sais pas où<br>pendant que j'dormais !
+<$voicel(1,6)><$comeff(1,14)><$facial(1,9)>Oh, je vois...<clear><br><$voicel(1,3)><$comeff(1,6)><$motion(1,666)>Ainsi, l'ensemble des Pokémon et des êtres humains<br>auraient déménagé subitement, c'est bien cela ?<clear><br><$facial(1,1)><$voicel(1,8)><$comeff(1,3)><$motion(1,824)>Quant à toi, ne souffres-tu pas de la solitude ?<$motion(1,652)>
+<$voicel(4,10)><$emotion(4,38)>Par ici !
+<$voicel(4,2)><$comeff(4,4)><$motionoff(4,804)><$facial(4,13)>Gloub gloub gloub... Aaah !
+<$voicel(1,10)><$comeff(1,11)><$motion(1,803)><$facial(1,13)>... T-tout va bien ?!
+<$voicel(4,7)><$comeff(4,4)><$motion(4,807)><$facial(4,13)>Pouah... J'ai eu chaud ! J'ai failli m'noyer !
+<$voicel(4,7)><$emotion(4,14)>Quand j'ai ouvert les yeux, ma maison était<br>totalement inondée ! Je te dis pas le réveil...
+<$facial(4,9)><$voicel(4,3)><$comeff(4,7)><$motion(4,666)>J'avoue que j'ai pas trop envie de me noyer dans ma<br>propre maison ! Vous pouvez m'aider à enlever toute l'eau ?
+<$voicel(4,7)><$emotion(4,14)>Ah, <$cdef(27)><pname;0> </color>!<br>J'peux te parler ?<clear><br><$voicel(4,5)><$comeff(4,14)><$motion(4,827)>Grâce à toi, ma maison est bien plus lumineuse.<br><$voicel(4,4)>Et ça fait bien plaisir...
+<$voicel(4,7)><$comeff(4,7)><$motion(4,807)>Mais maintenant qu'on y voit plus clair, j'ai remarqué<br>un autre problème...
+<$voicel(4,8)>Regarde !<clear><br><$voicel(4,3)>Y a de la boue partout autour de ma maison !
+<$voicel(4,7)><$facial(4,9)><$comeff(4,7)>J'ai pas réussi à nettoyer avec mes griffes.<br>J'commençais à désespérer...
+<$voicel(4,5)><$emotion(4,14)>... et c'est là que mon génie a encore frappé !<br>J'ai pensé à un Pokémon que j'connais...<slide><br>Y a pas plus efficace pour faire partir la saleté tenace !
+<$voicel(4,4)><$comeff(4,7)><$motion(4,807)>J'ai bien une idée pour nettoyer la boue autour<br>de chez moi...
+<$voicel(4,7)><$emotion(4,14)>Mais il faut d'abord trouver ce Pokémon super doué<br>pour enlever la saleté tenace.
+<$voicel(4,5)><$comeff(4,14)><$motion(4,666)>Je m'demande bien où ce Pokémon est passé.<br>C'était le genre à vivre au bord de l'eau...
+<$voicel(4,5)><$comeff(4,6)><$motion(4,666)>Hmmm ? Tu as besoin de moi pour enlever de la boue ?<br>C'est ma spécialité !
+<$voicel(4,7)><$emotion(4,49)>Je vais t'aider, alors emmène-moi là où tu veux<br>que je nettoie !
+<$voicel(4,9)><$emotion(4,38)>Génial ! Ma maison est toute propre !<br><$voicel(4,8)><$emotion(4,50)>Merci, <$cdef(27)><pname;1> </color>!
+<$lookat(4,1,5)><waitactor(4)><$voicel(4,7)><$comeff(4,3)><$motion(4,806)>T'as bien aidé, <$cdef(27)>Tiplouf</color> ! Merci !
+<$voicel(4,7)><$emotion(5,8)>Je t'en prie ! C'était amusant de faire le ménage.<br>J'adore quand tout est bien propre !
+<$voicel(4,5)><$comeff(4,14)><$motion(4,806)>Si, un peu...<br>Mais j'ai toujours été du genre à vivre à ma façon.<clear><br><$voicel(4,7)><$emotion(4,38)>J'suis <$cdef(27)>Miaouss</color>, et j'ai besoin d'personne !<clear><br><$voicel(4,5)><$emotion(4,14)>Enfin... J'avoue que j'étais pas contre l'idée que<br>des « étrumains » me recueillent sous leur toit...<clear><br><$voicel(4,7)><$comeff(4,9)><$facial(4,4)><$motion(4,806)>Mais comme y a plus personne, j'ai décidé que<br>cette maison, là-bas, ça serait la mienne !
+<$voicel(4,7)><$comeff(4,7)><$facial(4,9)><$motion(4,802)>Ah, ben, tu fais bien de me poser la question !<br>C'était super cool dedans, jusqu'à ce que...<slide><br><$voicel(4,5)><$comeff(4,3)>Enfin, venez, j'vais vous montrer ! Ça sera plus simple !
+<$voicel(4,7)><$comeff(4,7)><$facial(4,9)><$motion(4,802)>Ben, en parlant de cette maison, justement...<br>Elle a un p'tit problème !<slide><br><$voicel(4,5)><$comeff(4,3)>Venez, j'vais vous montrer !
+
+<$voicel(4,7)><$comeff(4,10)><$motion(4,661)><$facial(4,9)>Je sais pas comment c'est arrivé, mais regardez !<br>Ma maison est complètement inondée !
+<$facial(4,9)><$voicel(4,3)><$comeff(4,7)><$motion(4,666)>Vous croyez qu'on peut enlever toute cette eau ?
+<$lookat(1,0,4)><$voicel(1,7)><$emotion(1,14)>En effet, c'est inondé... C'est bien regrettable !
+<$lookat(1,0,0)><$voicel(1,5)><$motion(1,661)>Si nous faisions en sorte que l'eau ne s'écoule plus par ici,<br>comme nous l'avons fait pour le <$cdef(27)>Centre Pokémon</color>,<slide><br><$voicel(1,4)><$comeff(1,6)>cela permettrait sans doute de régler le problème.
+<$voicel(4,7)><$emotion(4,14)>Je sais pas comment c'est arrivé, mais regardez !<br>Ma maison est complètement inondée !
+<$voicel(4,2)><$comeff(4,5)><$motion(4,665)><$facial(4,13)>Hein... ? Ah ben non, en fait...
+<$voicel(4,3)><$comeff(4,6)><$motion(4,805)>Euh... Mais y a plus d'eau du tout ?!!
+<$voicel(1,5)><$comeff(1,14)>Hmmm... Tu dis que cet endroit était inondé, c'est cela ?<clear><br><oneline><$voicel(1,7)><$motion(1,661)><$facial(1,4)><$comeff(1,3)>Eh bien, grâce à <$cdef(27)><pname;0></color>, qui a<br>tout fait<slide><br>pour<slide><br>empêcher<slide><br>l'eau<slide><br>de s'écouler<slide><br>par ici...<clear><br><$voicel(1,10)><$emotion(1,40)><$facial(1,4)>Tout est réglé, désormais !
+<$voicel(4,7)><$emotion(4,27)><$facial(4,13)>Hein ? Sérieux, le problème est déjà résolu ?
+<$voicel(4,7)><$emotion(4,38)>Donc c'est grâce à toi ! Eh ben, merci beaucoup !<br>T'es trop balèze !
+
+
+
+
+
+
+
+<$voicel(4,7)><$emotion(4,14)>Oh ! Tu as réussi à trouver <$cdef(27)>Tiplouf</color> !
+<$voicel(4,7)><$emotion(4,38)>Peut-être qu'à vous deux, vous arriverez à éliminer<br>toute la boue !
+<$voicel(1,5)><$comeff(1,14)><$motion(1,666)>Hmmm... C'est vrai que d'autres canaux semblaient<br>avoir débordés.<clear><br><$voicel(1,7)><$comeff(1,7)><$motion(1,806)><$facial(1,9)>Je constate également qu'il y a peu de hautes herbes.<br>Or, les Pokémon aiment particulièrement s'y installer...
+<$voicel(1,7)><$comeff(1,3)><$motion(1,824)>Nous devrions commencer par évacuer toute cette eau,<br><$cdef(27)><pname;0></color>.<clear><br><$voicel(1,5)>Ensuite, nous pourrions construire des lieux de vie<br>qui plairaient aux Pokémon.<clear><br><$voicel(1,7)><$comeff(1,10)><$facial(1,4)>Ce faisant, il est certain qu'ils reviendront petit à petit !<$motion(1,652)><clear><br><$voicel(1,7)><$comeff(1,5)><$motion(1,664)>Je compte sur toi !
+
+Accompagnez <$cdef(27)>Tiplouf </color>jusqu'à un endroit maculé de boue.
+<$cdef(27)>Tiplouf</color> enverra de l'écume dessus.<br>Vous pourrez alors éliminer la boue avec <$cdef(27)><$sklfull(3)> </color>!
+<$voicel(4,7)><$emotion(4,29)>Elle est où, la boue que tu veux enlever ?<br>Emmène-moi jusque là-bas, s'il te plaît !
+
+<$voicel(4,7)><$emotion(4,49)>C'est bon ! La boue est couverte d'écume !<br>Il reste plus qu'à rincer !
+<$voicel(4,5)><$emotion(4,38)>Youpi ! C'est tout propre !
+<$voicel(4,3)><$emotion(4,29)>Tu veux qu'on fasse pareil aux autres endroits<br>où y a de la boue ?
+<$voicel(4,7)><$comeff(4,14)><$motion(4,666)>N'empêche, y a d'la boue partout, dans le coin...
+<$comcan(4)><$voicel(5,5)><$comeff(5,3)><$motion(5,806)>Si jamais tu as besoin d'enlever de la boue,<br>hésite pas à me demander un coup de main !<clear><br><$voicel(5,8)><$emotion(5,50)>Cela me ferait plaisir de t'aider à tout nettoyer !
+<$voicel(4,8)><$emotion(4,27)><$facial(4,5)>Ça marche ! À vous deux, c'est sûr que vous allez<br>y arriver !
+<$voicel(4,7)><$emotion(4,38)>Et puis, si ça se trouve, y a p'têt' des trésors cachés<br>sous la boue ?!
+<$voicel(4,7)><$comeff(4,10)><$motion(4,803)>Hé ! Vous pouvez m'aider ?
+<$voicel(1,7)><$emotion(1,29)>Tu es... <$cdef(27)>Miaouss</color>, n'est-ce pas ?
+
+
+
+
+
+
+
+
+
+
+
+<$voicel(4,7)><$emotion(4,38)>Ouaaah ! Y a plus une goutte d'eau dans ma maison !<br>C'est grâce à toi, pas vrai ?<slide><br><$voicel(4,10)><$emotion(4,14)>Merci !
+<$voicel(4,5)><$comeff(4,14)><$motion(4,805)>J'pense qu'il reste encore des endroits inondés<br>dans la ville...<clear><br><$voicel(4,7)><$comeff(4,6)><$motion(4,666)>Depuis quand c'est comme ça ?<clear><br><$voicel(4,7)><$emotion(4,48)>Le coin serait vraiment plus facile à vivre<br>sans toute cette flotte !
+<$voicel(4,7)><$emotion(4,14)>Hé, <$cdef(27)><pname;0></color>. J'ai remarqué un truc...<clear><br><$voicel(4,7)><$comeff(4,6)><$motion(4,666)>Tu trouves pas qu'il fait tout le temps sombre dans cette<br>ville ? Même en pleine journée !
+<$voicel(4,7)><$emotion(4,49)>T'as vu ! Après, j'aime bien ce genre d'ambiance,<br>perso, mais quand c'est tout le temps comme ça...<slide><br><$voicel(4,7)><$comeff(4,7)><$motion(4,802)><$facial(4,9)>Je finis par déprimer !
+<$voicel(4,7)><$emotion(4,14)>Maintenant que j'y pense, les maisons des « étrumains »<br>étaient éclairées, même la nuit...<clear><br><$voicel(4,5)><$comeff(4,14)><$motion(4,827)>Pourquoi y a pas de lumière dans la mienne, alors ?<clear><br><$voicel(4,4)><$comeff(4,6)>Comment faut faire pour qu'il fasse moins sombre<br>chez moi ?
+<$voicel(4,10)><$emotion(4,27)>Oh, mais oui ! Super idée !<clear><br><$voicel(4,7)><$emotion(4,49)>Genre des <$cdef(27)><fqty(2)><$ifull(1367)> </color>! C'est trop classe, ça,<br>j'trouve !<$cdef(27)> </color><clear><br><$voicel(4,5)><$comeff(4,3)><$motion(4,806)>Dis, <$cdef(27)><pname;0></color>...<br>Si ça t'dérange pas, <$voicel(4,7)><$emotion(4,29)>tu veux bien me fabriquer quelques<slide><br><$cdef(27)><fqty(2)><$ifull(1367)> </color>et les mettre dans ma maison ?
+<$voicel(4,3)><$comeff(4,7)><$motion(4,802)><$facial(4,9)>Ben... C'est que cet endroit est jamais vraiment éclairé,<br>même en plein jour...<clear><br><$voicel(4,5)><$comeff(4,14)><$motion(4,666)>Comment ils faisaient, les « étrumains », pour que leurs<br>maisons soient lumineuses même la nuit ?<clear><br><$voicel(4,8)><$emotion(4,40)><$facial(4,4)>Ah ! Je sais !<clear><br><$voicel(4,5)><$emotion(4,49)>Ils devaient avoir des <$cdef(27)><fqty(2)><$ifull(1367)> </color>ou des<br>trucs dans le genre ! <$voicel(4,8)>Quelque chose qui éclaire, quoi !<clear><br><$facial(4,1)><$voicel(4,5)><$comeff(4,3)><$motion(4,806)>Dis, <$cdef(27)><pname;0></color>...<br>Si ça t'dérange pas, <$voicel(4,7)><$emotion(4,29)>tu veux bien me fabriquer quelques<slide><br><$cdef(27)><fqty(2)><$ifull(1367)> </color>et les mettre dans ma maison ?
+Pour confectionner une <$cdef(27)><fqty(1)><$ifull(1367)></color>,<br>utilisez des <$cdef(27)><fqty(1)><$ifull(819)></color> !<clear><br>Les <$cdef(27)><fqty(1)><$ifull(819)> </color>poussent dans les grottes !
+<$voicel(4,7)><$emotion(4,49)>Tu crois que tu pourrais mettre<br><$cdef(27)>2</color> <$cdef(27)><fqty(2)><$ifull(1367)> </color>dans ma maison ?<clear><br><$voicel(4,9)><$emotion(4,8)>Avec ça, elle serait aussi lumineuse que celles<br>des « étrumains » !
+<$voicel(4,7)><$emotion(4,49)>Tu crois que tu pourrais mettre<br><$cdef(27)>2</color> <$cdef(27)><fqty(2)><$ifull(1367)> </color>dans ma maison ?<clear><br><$voicel(4,9)><$emotion(4,8)>Avec ça, elle serait aussi lumineuse que celles<br>des « étrumains » !
+Pour confectionner une <$cdef(27)><fqty(1)><$ifull(1367)></color>,<br>utilisez des <$cdef(27)><fqty(1)><$ifull(819)></color> !<clear><br>Les <$cdef(27)><fqty(1)><$ifull(819)> </color>poussent dans les grottes !
+
+<$voicel(4,7)><$emotion(4,38)>Génial ! Grâce à ces <$cdef(27)><fqty(2)><$ifull(1367)></color>,<br>ma maison est super bien éclairée, maintenant !
+<$voicel(4,9)><$facial(4,5)><$comeff(4,21)><$motion(4,803)>Merci, <$cdef(27)><pname;0></color> !<br>Tu sais vraiment tout faire !
+<$voicel(1,7)><$emotion(1,49)>Ho ho ho !<br>Ce n'est pas mal du tout !<clear><br><$voicel(1,5)><$comeff(1,21)><$motion(1,806)>La lumière a quelque chose d'apaisant.
+<$voicel(1,7)><$comeff(1,10)><$motion(1,824)>Eh bien, chaque Pokémon a ses propres goûts<br>et particularités.<slide><br><$voicel(1,5)><$facial(1,14)>Certains Pokémon préfèrent l'obscurité, c'est vrai.<clear><br><$voicel(1,7)>Toutefois, cet endroit était si sombre que même <$cdef(27)>Miaouss<br></color>en a perdu le moral.<$motion(1,652)><clear><br><$voicel(1,5)><$comeff(1,3)><$facial(1,4)>Si tu augmentes la luminosité, comme tu l'as fait<br>dans cette maison,<slide><br><$voicel(1,10)><$comeff(1,9)><$motion(1,664)>cela plaira certainement aux autres Pokémon !<clear><br><$voicel(1,4)><$facial(1,14)><$comeff(1,14)>... Et aux êtres humains aussi.<clear><br><$voicel(1,7)><$facial(1,5)><$comeff(1,21)><$motion(1,668)>Lorsqu'ils étaient parmi nous, les villes étaient plus<br>lumineuses, même la nuit.
+<$voicel(1,5)><$comeff(1,3)>Oui, exactement. Lorsque les villes étaient encore<br>peuplées par les êtres humains,<slide><br><$voicel(1,10)><$comeff(1,10)><$motion(1,668)>elles étaient bien plus lumineuses !<clear><br><$voicel(1,5)><$comeff(1,14)><$motion(1,824)>Et puis, cet endroit était si sombre que même <$cdef(27)>Miaouss<br></color>en a perdu le moral.<$motion(1,652)><clear><br><$voicel(1,7)>Si tu augmentes la luminosité, comme tu l'as fait<br>dans cette maison,<slide><br><$voicel(1,10)><$facial(1,4)><$comeff(1,9)><$motion(1,664)>cela plaira certainement aux autres Pokémon !
+
+
+
+
+<$voicel(4,4)><$comeff(4,14)><$motion(4,666)>Le problème, c'est que j'sais pas comment retrouver<br>sa trace...<clear><br><$voicel(4,5)><$comeff(4,3)>C'était un Pokémon qui vivait dans un endroit<br>de ce genre...
+<$voicel(1,7)><$emotion(1,14)>L'herbe qui pousse par ici est différente de celle<br>que l'on trouve là où j'habitais.
+<$voicel(1,3)><$comeff(1,6)><$motion(1,666)>En y regardant de plus près, je constate que le sol n'a pas<br>la même couleur. Cela pourrait expliquer pourquoi<slide><br>l'herbe qui pousse ici est d'une variété différente.<clear><br><$voicel(1,7)><$emotion(1,38)>Même à mon âge vénérable, il y a encore tant de choses<br>que j'ignore... Le monde est si vaste !
+Comme l'a remarqué <dart;0()><$cdef(27)><$cname;0(44)></color>,<br>chaque type de sol produit une variété d'herbe différente.<clear><br>Prêtez attention à la couleur de l'herbe lorsque vous créez<br>un lieu de vie pour un Pokémon !
+<$voicel(4,5)><$comeff(4,14)><$motion(4,805)>J'pense qu'il reste encore des endroits inondés<br>dans la ville...<clear><br><$voicel(4,7)><$comeff(4,6)><$motion(4,666)>Depuis quand c'est comme ça ?<clear><br><$voicel(4,7)><$emotion(4,48)>Le coin serait vraiment plus facile à vivre<br>sans toute cette flotte !
+<$voicel(1,5)><$comeff(1,14)><$motion(1,666)>Hmmm... C'est vrai que d'autres canaux semblaient<br>avoir débordés.<clear><br><$voicel(1,7)><$comeff(1,7)><$motion(1,807)><$facial(1,9)>Je constate également qu'il y a peu de hautes herbes.<br>Or, les Pokémon aiment particulièrement s'y installer...
+<$voicel(1,7)><$comeff(1,3)><$motion(1,824)>Nous devrions commencer par évacuer toute cette eau,<br><$cdef(27)><pname;0></color>.<clear><br><$voicel(1,5)>Ensuite, nous pourrions construire des lieux de vie<br>qui plairaient aux Pokémon.<clear><br><$voicel(1,7)><$comeff(1,10)><$facial(1,4)>Ce faisant, il est certain qu'ils reviendront petit à petit !<$motion(1,652)><clear><br><$voicel(1,7)><$comeff(1,5)><$motion(1,664)>Je compte sur toi !

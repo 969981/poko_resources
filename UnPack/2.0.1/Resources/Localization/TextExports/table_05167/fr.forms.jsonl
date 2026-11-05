@@ -1,0 +1,501 @@
+{"text_id":0,"forms":[""],"absolute_byte_offsets":[4072],"raw_metadata_u32":[0]}
+{"text_id":1,"forms":["Appuyez sur <$keyicon(1)> pour utiliser les<br>capacités que vous avez apprises."],"absolute_byte_offsets":[4073],"raw_metadata_u32":[1]}
+{"text_id":2,"forms":["Appuyez sur <$keyicon(3)> pour sauter."],"absolute_byte_offsets":[4155],"raw_metadata_u32":[1]}
+{"text_id":3,"forms":["Ramassez les objets en appuyant sur <$keyicon(153)>.<br>Vous retrouverez ces objets dans votre<br>Sac."],"absolute_byte_offsets":[4194],"raw_metadata_u32":[1]}
+{"text_id":4,"forms":["Manger vous redonne des <$cdef(27)>PP</color>. Ouvrez<br>votre Sac en appuyant sur <$keyicon(159)> pour voir<br>la nourriture que vous avez sur vous !"],"absolute_byte_offsets":[4297],"raw_metadata_u32":[1]}
+{"text_id":5,"forms":["Pour offrir un cadeau à un Pokémon,<br>ouvrez votre Sac avec <$keyicon(159)>, choisissez<br>un objet à tenir et parlez au Pokémon."],"absolute_byte_offsets":[4448],"raw_metadata_u32":[1]}
+{"text_id":6,"forms":["Si vous vous liez d'amitié avec des<br>Pokémon, ces derniers vous offriront<br>parfois des cadeaux !"],"absolute_byte_offsets":[4583],"raw_metadata_u32":[1]}
+{"text_id":7,"forms":["Cette capacité vous permet de faire<br>pousser de l'herbe dans la terre<br>en face de vous."],"absolute_byte_offsets":[4686],"raw_metadata_u32":[1]}
+{"text_id":8,"forms":[""],"absolute_byte_offsets":[4779],"raw_metadata_u32":[0]}
+{"text_id":9,"forms":["Placez un <$cdef(27)><fqty(1)><$ifull(1440)></color><br>sur une maison pour en faire votre lieu<br>de vie !"],"absolute_byte_offsets":[4780],"raw_metadata_u32":[1]}
+{"text_id":10,"forms":["Vous pouvez construire une <$cdef(27)>maison<br>en blocs</color> avec quatre murs et une porte."],"absolute_byte_offsets":[4888],"raw_metadata_u32":[1]}
+{"text_id":11,"forms":["Vous pouvez fabriquer des meubles<br>ou d'autres objets si vous possédez<br>les <$cdef(27)>méthodes</color> et les <$cdef(27)>ressources requises</color>."],"absolute_byte_offsets":[4984],"raw_metadata_u32":[1]}
+{"text_id":12,"forms":[""],"absolute_byte_offsets":[5141],"raw_metadata_u32":[0]}
+{"text_id":13,"forms":[""],"absolute_byte_offsets":[5142],"raw_metadata_u32":[0]}
+{"text_id":14,"forms":["Cette capacité vous permet de détruire<br>des blocs de terre ou de roche et de faire<br>ainsi des trous dans les murs ou le sol."],"absolute_byte_offsets":[5143],"raw_metadata_u32":[1]}
+{"text_id":15,"forms":["Si vous immortalisez un moment spécial,<br>la photo sera ajoutée à vos meilleurs<br>moments."],"absolute_byte_offsets":[5274],"raw_metadata_u32":[1]}
+{"text_id":16,"forms":["Utilisez <$cdef(27)><$sklname(2)> </color>pour créer<br>des parcelles où planter des graines<br>de légumes."],"absolute_byte_offsets":[5370],"raw_metadata_u32":[1]}
+{"text_id":17,"forms":["Vous pouvez restaurer entièrement<br>vos <$cdef(27)>PP</color> grâce aux <$cdef(27)><fqty(2)><$iname(1444)><br></color>des <$cdef(27)>Centres Pokémon</color>."],"absolute_byte_offsets":[5481],"raw_metadata_u32":[1]}
+{"text_id":18,"forms":["Utilisez <$cdef(27)><$sklname(2)></color> sur certaines plantes,<br>comme l'herbe ou les fleurs, pour les<br>cueillir et les replanter ailleurs."],"absolute_byte_offsets":[5643],"raw_metadata_u32":[1]}
+{"text_id":19,"forms":[""],"absolute_byte_offsets":[5788],"raw_metadata_u32":[0]}
+{"text_id":20,"forms":["Pour atteindre des endroits en hauteur,<br>empilez des blocs de terre ou de sable<br>et gravissez-les comme des marches !"],"absolute_byte_offsets":[5789],"raw_metadata_u32":[1]}
+{"text_id":21,"forms":["Vous pouvez placer les objets que<br>vous avez avalés où vous le souhaitez<br>en appuyant sur <$keyicon(0)>."],"absolute_byte_offsets":[5911],"raw_metadata_u32":[1]}
+{"text_id":22,"forms":[""],"absolute_byte_offsets":[6022],"raw_metadata_u32":[0]}
+{"text_id":23,"forms":["Regardez vers le bas pour recracher<br>des blocs ou d'autres éléments sous<br>vos pieds."],"absolute_byte_offsets":[6023],"raw_metadata_u32":[1]}
+{"text_id":24,"forms":[""],"absolute_byte_offsets":[6114],"raw_metadata_u32":[0]}
+{"text_id":25,"forms":[""],"absolute_byte_offsets":[6115],"raw_metadata_u32":[0]}
+{"text_id":26,"forms":["Les Pokémon s'aventureront loin de<br>chez eux s'ils ont accès à des chemins<br>praticables."],"absolute_byte_offsets":[6116],"raw_metadata_u32":[1]}
+{"text_id":27,"forms":["Il s'agit de coffres pratiques dans lesquels<br>vous pouvez ranger de nombreux objets."],"absolute_byte_offsets":[6212],"raw_metadata_u32":[1]}
+{"text_id":28,"forms":[""],"absolute_byte_offsets":[6299],"raw_metadata_u32":[0]}
+{"text_id":29,"forms":["Cette capacité vous permet de trancher<br>des objets composés de matériaux peu<br>résistants, comme le bois, par exemple."],"absolute_byte_offsets":[6300],"raw_metadata_u32":[1]}
+{"text_id":30,"forms":[""],"absolute_byte_offsets":[6426],"raw_metadata_u32":[0]}
+{"text_id":31,"forms":["Vous pouvez rapetisser pour vous<br>faufiler dans les endroits étroits."],"absolute_byte_offsets":[6427],"raw_metadata_u32":[1]}
+{"text_id":32,"forms":["Inclinez <$keyicon(194)> pour marcher. Maintenez<br><$keyicon(55)> appuyé ou appuyez sur <$keyicon(54)> pour<br>courir."],"absolute_byte_offsets":[6500],"raw_metadata_u32":[1]}
+{"text_id":33,"forms":["Inclinez <$keyicon(195)> pour regarder autour<br>de vous."],"absolute_byte_offsets":[6621],"raw_metadata_u32":[1]}
+{"text_id":34,"forms":["Arrosez la végétation desséchée<br>pour lui redonner vie !"],"absolute_byte_offsets":[6679],"raw_metadata_u32":[1]}
+{"text_id":35,"forms":["Les objets que vous récupérez sont<br>placés dans votre Sac. Pour l'ouvrir,<br>appuyez sur <$keyicon(159)>."],"absolute_byte_offsets":[6742],"raw_metadata_u32":[1]}
+{"text_id":36,"forms":["Combinez de l'herbe, des arbres, des<br>rochers et des meubles pour créer<br>des <$cdef(27)>habitats </color>pour les Pokémon."],"absolute_byte_offsets":[6853],"raw_metadata_u32":[1]}
+{"text_id":37,"forms":["Changez de capacité avec <$keyicon(142)> et <$keyicon(143)>.<br>Maintenez <$keyicon(142)> ou <$keyicon(143)> appuyés pour<br>ouvrir la roue des capacités."],"absolute_byte_offsets":[6982],"raw_metadata_u32":[1]}
+{"text_id":38,"forms":[""],"absolute_byte_offsets":[7140],"raw_metadata_u32":[0]}
+{"text_id":39,"forms":["Inspectez les traces d'un Pokémon pour en<br>savoir plus sur son habitat. Appuyez sur <$keyicon(4)><br>pour voir ces données dans l'<$cdef(27)>Habitadex</color> !"],"absolute_byte_offsets":[7141],"raw_metadata_u32":[1]}
+{"text_id":40,"forms":["Dirigez-vous vers un bloc avec <$keyicon(194)> pour<br>grimper dessus."],"absolute_byte_offsets":[7306],"raw_metadata_u32":[1]}
+{"text_id":41,"forms":["Pour construire quelque chose, placez<br>un <$cdef(27)>kit de construction</color> et rassemblez les<br>ressources et les Pokémon nécessaires."],"absolute_byte_offsets":[7377],"raw_metadata_u32":[1]}
+{"text_id":42,"forms":[""],"absolute_byte_offsets":[7522],"raw_metadata_u32":[0]}
+{"text_id":43,"forms":[""],"absolute_byte_offsets":[7523],"raw_metadata_u32":[0]}
+{"text_id":44,"forms":["Placez trois meubles différents<br>dans une maison pour que vous ou<br>un autre Pokémon puissiez y habiter."],"absolute_byte_offsets":[7524],"raw_metadata_u32":[1]}
+{"text_id":45,"forms":["Appuyez sur <$keyicon(52)> pour prendre des<br>photos et immortaliser vos aventures<br>avec vos amis Pokémon."],"absolute_byte_offsets":[7634],"raw_metadata_u32":[1]}
+{"text_id":46,"forms":[""],"absolute_byte_offsets":[7745],"raw_metadata_u32":[0]}
+{"text_id":47,"forms":["Vous trouverez parfois des <$cdef(27)>objets perdus<br>enfouis</color> dans le sol. Montrez-les au<br><$cdef(27)>Professeur </color>pour qu'il les <$cdef(27)>expertise</color>."],"absolute_byte_offsets":[7746],"raw_metadata_u32":[1]}
+{"text_id":48,"forms":["Maintenez <$keyicon(153)> appuyé pour aspirer<br>tous les objets autour de vous et<br>les ranger dans votre Sac."],"absolute_byte_offsets":[7923],"raw_metadata_u32":[1]}
+{"text_id":49,"forms":["Transformez-vous en <$cdef(27)><$cname;0(18)></color><br>pour vous déplacer en flottant dans<br>les airs, poser des objets ou les briser."],"absolute_byte_offsets":[8037],"raw_metadata_u32":[1]}
+{"text_id":50,"forms":["Si vous êtes à court de <$cdef(27)>PP</color>, utiliser une<br>capacité vous fatiguera. Appuyez sur <$keyicon(159)><br>pour ouvrir le Sac et vous nourrir."],"absolute_byte_offsets":[8176],"raw_metadata_u32":[1]}
+{"text_id":51,"forms":["Placer des <$cdef(27)><fqty(2)><$ifull(1396)> </color>près de<br>certaines maisons permet de les éclairer et<br>de faire fonctionner leurs appareils."],"absolute_byte_offsets":[8334],"raw_metadata_u32":[1]}
+{"text_id":52,"forms":[""],"absolute_byte_offsets":[8486],"raw_metadata_u32":[0]}
+{"text_id":53,"forms":["Placez des éléments qui plaisent<br>aux Pokémon près de leur lieu de vie<br>pour augmenter leur <$cdef(27)>confort</color>."],"absolute_byte_offsets":[8487],"raw_metadata_u32":[1]}
+{"text_id":54,"forms":["Lorsque vous donnez aux Pokémon de la<br>nourriture ou des boissons qu'ils aiment,<br>vous augmentez leur <$cdef(27)>confort</color>."],"absolute_byte_offsets":[8615],"raw_metadata_u32":[1]}
+{"text_id":55,"forms":["Pour améliorer le <$cdef(27)>confort</color> d'un Pokémon,<br>placez dans son lieu de vie des objets<br>qui lui permettent de se reposer."],"absolute_byte_offsets":[8750],"raw_metadata_u32":[1]}
+{"text_id":56,"forms":["Pour améliorer le <$cdef(27)>confort</color> d'un Pokémon,<br>placez dans son lieu de vie des objets<br>qui lui permettent de se divertir."],"absolute_byte_offsets":[8890],"raw_metadata_u32":[1]}
+{"text_id":57,"forms":["Pour améliorer grandement le <$cdef(27)>confort<br></color>d'un Pokémon, placez dans son lieu<br>de vie des choses qu'il aime."],"absolute_byte_offsets":[9031],"raw_metadata_u32":[1]}
+{"text_id":58,"forms":["Ajuster la luminosité, la température<br>et l'humidité selon les préférences<br>d'un Pokémon améliore son <$cdef(27)>confort</color>."],"absolute_byte_offsets":[9160],"raw_metadata_u32":[1]}
+{"text_id":59,"forms":["Le <$cdef(27)>confort </color>d'un Pokémon augmente plus<br>facilement si celui-ci vit dans une maison<br>que vous avez <$cdef(27)>construite</color>."],"absolute_byte_offsets":[9301],"raw_metadata_u32":[1]}
+{"text_id":60,"forms":[""],"absolute_byte_offsets":[9453],"raw_metadata_u32":[0]}
+{"text_id":61,"forms":["La luminosité du lieu de vie d'un<br>Pokémon a un impact sur son <$cdef(27)>confort</color>."],"absolute_byte_offsets":[9454],"raw_metadata_u32":[1]}
+{"text_id":62,"forms":["Plantez des graines de légumes dans<br>des champs labourés et arrosez-les<br>pour faire pousser des légumes !"],"absolute_byte_offsets":[9549],"raw_metadata_u32":[1]}
+{"text_id":63,"forms":["Ouvrez le <$cdef(27)>Pokédex </color>en appuyant<br>sur <$keyicon(4)> pour consulter la spécialité<br>d'un Pokémon."],"absolute_byte_offsets":[9662],"raw_metadata_u32":[1]}
+{"text_id":64,"forms":["Un Pokémon spécialisé dans<br>la <$cdef(27)><$spwname(10)></color> peut mettre le feu<br>aux éléments inflammables."],"absolute_byte_offsets":[9782],"raw_metadata_u32":[1]}
+{"text_id":65,"forms":[""],"absolute_byte_offsets":[9903],"raw_metadata_u32":[0]}
+{"text_id":66,"forms":["Un Pokémon spécialisé dans<br>la <$cdef(27)><$spwname(1)></color> dirige les autres<br>Pokémon sur les chantiers."],"absolute_byte_offsets":[9904],"raw_metadata_u32":[1]}
+{"text_id":67,"forms":["Un Pokémon spécialisé en <$cdef(27)><$spwname(5)><br></color>peut accélérer la croissance des plantes."],"absolute_byte_offsets":[10022],"raw_metadata_u32":[1]}
+{"text_id":68,"forms":[""],"absolute_byte_offsets":[10130],"raw_metadata_u32":[0]}
+{"text_id":69,"forms":["Liez-vous d'amitié avec de nombreux<br>Pokémon et améliorez leur <$cdef(27)>confort</color> pour<br>débloquer des <$cdef(27)>défis</color> et des objets !"],"absolute_byte_offsets":[10131],"raw_metadata_u32":[1]}
+{"text_id":70,"forms":["Si vous placez des éléments qui<br>déplaisent aux Pokémon dans leur<br>lieu de vie, leur <$cdef(27)>confort </color>diminuera."],"absolute_byte_offsets":[10291],"raw_metadata_u32":[1]}
+{"text_id":71,"forms":["La température du lieu de vie d'un<br>Pokémon a un impact sur son <$cdef(27)>confort</color>."],"absolute_byte_offsets":[10422],"raw_metadata_u32":[1]}
+{"text_id":72,"forms":["L'<$cdef(27)>humidité</color> du lieu de vie d'un Pokémon<br>a un impact sur son <$cdef(27)>confort</color>."],"absolute_byte_offsets":[10518],"raw_metadata_u32":[1]}
+{"text_id":73,"forms":[""],"absolute_byte_offsets":[10629],"raw_metadata_u32":[0]}
+{"text_id":74,"forms":[""],"absolute_byte_offsets":[10630],"raw_metadata_u32":[0]}
+{"text_id":75,"forms":["Appuyez sur <$keyicon(32)> pour visualiser l'étendue<br>d'un lieu de vie. Placez-y des meubles<br>pour améliorer le <$cdef(27)>confort </color>des Pokémon."],"absolute_byte_offsets":[10631],"raw_metadata_u32":[1]}
+{"text_id":76,"forms":["Améliorer le <$cdef(27)>confort</color> d'un Pokémon<br>légendaire ou fabuleux augmente plus<br>facilement la <$cdef(27)>qualité de l'environnement</color>."],"absolute_byte_offsets":[10790],"raw_metadata_u32":[1]}
+{"text_id":77,"forms":[""],"absolute_byte_offsets":[10951],"raw_metadata_u32":[0]}
+{"text_id":78,"forms":["Un Pokémon spécialisé dans le <$cdef(27)><$spwname(6)></color><br>peut garder des objets pour vous."],"absolute_byte_offsets":[10952],"raw_metadata_u32":[1]}
+{"text_id":79,"forms":["Un Pokémon qui vous accompagne<br>peut vous aider dans de nombreuses<br>situations."],"absolute_byte_offsets":[11055],"raw_metadata_u32":[1]}
+{"text_id":80,"forms":[""],"absolute_byte_offsets":[11140],"raw_metadata_u32":[0]}
+{"text_id":81,"forms":["Arroser la terre aride permet d'augmenter<br>l'<$cdef(27)>humidité </color>des environs."],"absolute_byte_offsets":[11141],"raw_metadata_u32":[1]}
+{"text_id":82,"forms":["Faites pousser de l'herbe, des arbres<br>ou des fleurs pour augmenter l'<$cdef(27)>humidité<br></color>des environs."],"absolute_byte_offsets":[11231],"raw_metadata_u32":[1]}
+{"text_id":83,"forms":["Créer des points d'eau, comme des<br>étangs, permet d'augmenter l'<$cdef(27)>humidité<br></color>des environs."],"absolute_byte_offsets":[11349],"raw_metadata_u32":[1]}
+{"text_id":84,"forms":["Un Pokémon spécialisé dans la<br><$cdef(27)><$spwname(26)></color> vous donnera des<br>meubles spéciaux contre du <$cdef(27)><fqty(1)><$ifull(3994)></color>."],"absolute_byte_offsets":[11463],"raw_metadata_u32":[1]}
+{"text_id":85,"forms":["Confiez de <$cdef(27)><fqty(2)><class><$ifull(1482)></color> à un<br>Pokémon spécialisé dans la <$cdef(27)><$spwname(15)><br></color>pour qu'il les transforme en <$cdef(27)><fqty(1)><$ifull(407)></color>."],"absolute_byte_offsets":[11625],"raw_metadata_u32":[1]}
+{"text_id":86,"forms":["Si vous donnez des matériaux à un<br>Pokémon spécialisé dans le <$cdef(27)><$spwname(16)></color>,<br>il les transformera en d'autres objets."],"absolute_byte_offsets":[11834],"raw_metadata_u32":[1]}
+{"text_id":87,"forms":["Pour qu'un Pokémon vous accompagne,<br>parlez-lui et sélectionnez « <$cdef(27)>Viens avec<br>moi !</color> », ou appuyez sur <$keyicon(214)> près de lui."],"absolute_byte_offsets":[11981],"raw_metadata_u32":[1]}
+{"text_id":88,"forms":["Jusqu'à cinq Pokémon peuvent vous<br>accompagner. Parlez-leur ou invitez-les<br>individuellement en appuyant sur <$keyicon(214)>."],"absolute_byte_offsets":[12140],"raw_metadata_u32":[1]}
+{"text_id":89,"forms":["Demandez à un Pokémon de vous <$cdef(27)>parler</color><br><$cdef(27)>de son confort</color> pour savoir comment<br>améliorer ce dernier."],"absolute_byte_offsets":[12272],"raw_metadata_u32":[1]}
+{"text_id":90,"forms":["Placez des objets décoratifs dans le lieu<br>de vie d'un Pokémon pour améliorer<br>son <$cdef(27)>confort</color>."],"absolute_byte_offsets":[12413],"raw_metadata_u32":[1]}
+{"text_id":91,"forms":[""],"absolute_byte_offsets":[12531],"raw_metadata_u32":[0]}
+{"text_id":92,"forms":["Si la luminosité du lieu de vie d'un<br>Pokémon correspond à ses préférences,<br>il restera éveillé plus longtemps."],"absolute_byte_offsets":[12532],"raw_metadata_u32":[1]}
+{"text_id":93,"forms":["Si un habitat est déjà occupé, il n'attirera<br>pas de nouveau Pokémon. Tentez de créer<br>d'autres habitats avec de hautes herbes !"],"absolute_byte_offsets":[12655],"raw_metadata_u32":[1]}
+{"text_id":94,"forms":["Évitez de rester trop longtemps dans<br>les eaux profondes, ou vous perdrez<br>connaissance !"],"absolute_byte_offsets":[12793],"raw_metadata_u32":[1]}
+{"text_id":95,"forms":["Les Pokémon spécialisés en <$cdef(27)><$spwname(8)><br></color>peuvent se servir de l'eau des <$cdef(27)>bassines<br></color>pour arroser la végétation environnante."],"absolute_byte_offsets":[12888],"raw_metadata_u32":[1]}
+{"text_id":96,"forms":["Un Pokémon spécialisé en <$cdef(27)><$spwname(8)></color><br>peut augmenter l'<$cdef(27)>humidité</color> des environs<br>grâce à <$cdef(27)>Danse Pluie</color>."],"absolute_byte_offsets":[13059],"raw_metadata_u32":[1]}
+{"text_id":97,"forms":[""],"absolute_byte_offsets":[13227],"raw_metadata_u32":[0]}
+{"text_id":98,"forms":["Vous pouvez planter des graines de fleur<br>ou d'arbre où vous le souhaitez, sauf<br>dans une terre aride."],"absolute_byte_offsets":[13228],"raw_metadata_u32":[1]}
+{"text_id":99,"forms":[""],"absolute_byte_offsets":[13336],"raw_metadata_u32":[0]}
+{"text_id":100,"forms":["Ouvrez le Sac avec <$keyicon(159)> et sélectionnez<br>un objet à recracher. Choisissez un endroit<br>où le placer, puis recrachez-le avec <$keyicon(0)>."],"absolute_byte_offsets":[13337],"raw_metadata_u32":[1]}
+{"text_id":101,"forms":["Les graines mettent du temps à pousser.<br>Revenez le jour suivant pour observer<br>leur croissance !"],"absolute_byte_offsets":[13493],"raw_metadata_u32":[1]}
+{"text_id":102,"forms":["Maintenez <$keyicon(1)> pour utiliser Éclate-Roc en<br>continu. Regardez vers le haut ou vers le<br>bas pour changer la direction des coups."],"absolute_byte_offsets":[13596],"raw_metadata_u32":[1]}
+{"text_id":103,"forms":[""],"absolute_byte_offsets":[13738],"raw_metadata_u32":[0]}
+{"text_id":104,"forms":["Lorsqu'un Pokémon s'installe dans un<br>habitat, celui-ci devient son <$cdef(27)>lieu de vie</color>."],"absolute_byte_offsets":[13739],"raw_metadata_u32":[1]}
+{"text_id":105,"forms":[""],"absolute_byte_offsets":[13842],"raw_metadata_u32":[0]}
+{"text_id":106,"forms":[""],"absolute_byte_offsets":[13843],"raw_metadata_u32":[0]}
+{"text_id":107,"forms":[""],"absolute_byte_offsets":[13844],"raw_metadata_u32":[0]}
+{"text_id":108,"forms":["Si vous voyez un Pokémon avec une<br>bulle de dialogue au-dessus de la tête,<br>allez lui parler !"],"absolute_byte_offsets":[13845],"raw_metadata_u32":[1]}
+{"text_id":109,"forms":["<$cdef(27)><$cname(341)></color>, spécialiste<br>de l'<$cdef(27)><$spwname(25)></color>, peut identifier<br>des<$cdef(27)> objets perdus</color> pour vous."],"absolute_byte_offsets":[13946],"raw_metadata_u32":[1]}
+{"text_id":110,"forms":["Ce sont des îles mystérieuses où vous<br>pouvez obtenir des objets rares,<br>des fleurs ou des Baies."],"absolute_byte_offsets":[14103],"raw_metadata_u32":[1]}
+{"text_id":111,"forms":["Si vous ne savez pas quoi faire,<br>vous pouvez toujours demander<br>conseil au <$cdef(27)>Professeur Bouldeneu</color> !"],"absolute_byte_offsets":[14208],"raw_metadata_u32":[1]}
+{"text_id":112,"forms":[""],"absolute_byte_offsets":[14330],"raw_metadata_u32":[0]}
+{"text_id":113,"forms":["Appuyez sur <$keyicon(153)> pour ramasser<br>des objets."],"absolute_byte_offsets":[14331],"raw_metadata_u32":[1]}
+{"text_id":114,"forms":["Vous pouvez vous transformer en ce qui<br>se trouve devant vous, et vous déplacer<br>librement sous cette nouvelle forme."],"absolute_byte_offsets":[14388],"raw_metadata_u32":[1]}
+{"text_id":115,"forms":["Un Pokémon spécialisé dans<br>la <$cdef(27)><$spwname(11)></color> peut vous indiquer<br>où trouver des objets enfouis."],"absolute_byte_offsets":[14511],"raw_metadata_u32":[1]}
+{"text_id":116,"forms":["Un Pokémon spécialisé dans<br>le <$cdef(27)><$spwname(27)> </color>vous permet de<br>connaître le niveau d'<$cdef(27)>humidité</color> ambiant."],"absolute_byte_offsets":[14635],"raw_metadata_u32":[1]}
+{"text_id":117,"forms":[""],"absolute_byte_offsets":[14784],"raw_metadata_u32":[0]}
+{"text_id":118,"forms":["Lorsqu'il y a plusieurs choses ou Pokémon<br>avec lesquels interagir, sélectionnez<br>une cible en appuyant sur <$keyicon(249)>."],"absolute_byte_offsets":[14785],"raw_metadata_u32":[1]}
+{"text_id":119,"forms":["Vous pouvez désormais utiliser un<br>trépied ! Pour le déployer, appuyez<br>sur <$keyicon(49)> quand vous prenez une photo."],"absolute_byte_offsets":[14916],"raw_metadata_u32":[1]}
+{"text_id":120,"forms":["Confiez des métaux à un Pokémon<br>spécialisé dans la <$cdef(27)><$spwname(10)> </color>pour qu'il<br>les transforme à l'aide d'un <$cdef(27)><fqty(1)><$iname(1446)></color>."],"absolute_byte_offsets":[15043],"raw_metadata_u32":[1]}
+{"text_id":121,"forms":["Un Pokémon spécialisé dans l'<$cdef(27)><$spwname(8)><br></color>peut recouvrir la boue d'écume pour<br>vous permettre de la nettoyer ensuite."],"absolute_byte_offsets":[15224],"raw_metadata_u32":[1]}
+{"text_id":122,"forms":["Un Pokémon spécialisé dans<br>le <$cdef(27)><$spwname(13)> </color>place les objets<br>qu'il trouve dans la <$cdef(27)><fqty(1)><$ifull(1460)></color>."],"absolute_byte_offsets":[15371],"raw_metadata_u32":[1]}
+{"text_id":123,"forms":["Un Pokémon spécialisé dans les <$cdef(27)>Îles<br>Rêve<nbs2><$spwicon(19)> </color>peut vous emmener sur<br>ces dernières."],"absolute_byte_offsets":[15526],"raw_metadata_u32":[1]}
+{"text_id":124,"forms":["Un Pokémon <$cdef(27)>collectionneur</color> vous donnera<br>des objets en échange d'objets rares."],"absolute_byte_offsets":[15655],"raw_metadata_u32":[1]}
+{"text_id":125,"forms":["Un Pokémon spécialisé dans le <$cdef(27)><$spwname(17)><br></color>peut transformer les <$cdef(27)><fqty(1)><$iname(1738)><br></color>en <$cdef(27)><fqty(1)><$ifull(126)></color>."],"absolute_byte_offsets":[15756],"raw_metadata_u32":[1]}
+{"text_id":126,"forms":["Donnez à manger à <$cdef(27)><$cname(272)></color>,<br>spécialiste de la <$cdef(27)><$spwname(28)></color>, et quelque<br>chose de positif pourrait se produire !"],"absolute_byte_offsets":[15939],"raw_metadata_u32":[1]}
+{"text_id":127,"forms":[""],"absolute_byte_offsets":[16104],"raw_metadata_u32":[0]}
+{"text_id":128,"forms":["Vous pouvez propulser dans les airs un<br>Pokémon spécialisé en <$cdef(27)><$spwname(31)></color> avec un<br><$cdef(27)><fqty(1)><$ifull(1850)></color>. Il détruira tout là où il atterrit."],"absolute_byte_offsets":[16105],"raw_metadata_u32":[1]}
+{"text_id":129,"forms":["<$cdef(27)><$cname(274)></color>, dont la spécialité<br>est d'être <$cdef(27)><$spwname(29)></color>, peut lire des <$cdef(27)>CD<br></color>et ainsi mettre de la musique."],"absolute_byte_offsets":[16300],"raw_metadata_u32":[1]}
+{"text_id":130,"forms":[""],"absolute_byte_offsets":[16475],"raw_metadata_u32":[0]}
+{"text_id":131,"forms":["<$cdef(27)><$cname(216)></color>, spécialiste de la <$cdef(27)><$spwname(23)></color>,<br>peut cuisiner pour une fête."],"absolute_byte_offsets":[16476],"raw_metadata_u32":[1]}
+{"text_id":132,"forms":["Les Pokémon spécialisés en <$cdef(27)><$spwname(34)> </color>peuvent<br>vous emmener directement là où se<br>trouve le Pokémon que vous cherchez."],"absolute_byte_offsets":[16597],"raw_metadata_u32":[1]}
+{"text_id":133,"forms":["<$cdef(27)><$cname(215)></color>, spécialiste des <$cdef(27)><$spwfull(24)></color>,<br>dirige les autres sur les chantiers<br>de construction des grandes structures."],"absolute_byte_offsets":[16749],"raw_metadata_u32":[1]}
+{"text_id":134,"forms":["Un Pokémon spécialiste du <$cdef(27)><$spwname(32)><br></color>transforme les <$cdef(27)><fqty(2)><$ifull(92)><br></color>en <$cdef(27)><fqty(2)><class><$ifull(121)></color>."],"absolute_byte_offsets":[16917],"raw_metadata_u32":[1]}
+{"text_id":135,"forms":["Les Pokémon spécialisés en <$cdef(27)><$spwname(35)><br></color>peuvent vous emmener directement là où<br>se trouve le Pokémon que vous cherchez."],"absolute_byte_offsets":[17094],"raw_metadata_u32":[1]}
+{"text_id":136,"forms":["Un Pokémon spécialisé en <$cdef(27)><$spwname(33)><br></color>dirige les démolitions, les relocalisations,<br>ou les reconstructions de <$cdef(27)>Centres Pokémon</color>."],"absolute_byte_offsets":[17246],"raw_metadata_u32":[1]}
+{"text_id":137,"forms":["Les bâillements de <$cdef(27)>Ramoloss </color>permettent<br>de connaître le niveau d'<$cdef(27)>humidité</color> d'une<br>ville. Ce niveau peut fluctuer."],"absolute_byte_offsets":[17423],"raw_metadata_u32":[1]}
+{"text_id":138,"forms":[""],"absolute_byte_offsets":[17581],"raw_metadata_u32":[0]}
+{"text_id":139,"forms":["Vous pouvez <$cdef(27)>rénover </color>un bâtiment<br>existant à l'aide d'un <$cdef(27)>kit de construction</color><br>différent de celui d'origine."],"absolute_byte_offsets":[17582],"raw_metadata_u32":[1]}
+{"text_id":140,"forms":["Placez un <$cdef(27)>kit de démolition</color> devant<br>une maison pour la détruire."],"absolute_byte_offsets":[17735],"raw_metadata_u32":[1]}
+{"text_id":141,"forms":["Placez un <$cdef(27)>kit de relocalisation </color>devant<br>une maison pour la déplacer."],"absolute_byte_offsets":[17823],"raw_metadata_u32":[1]}
+{"text_id":142,"forms":["Vous pouvez vous téléporter chez vous<br>grâce à l'option « <$cdef(27)>Retourner chez soi</color> »<br>du menu principal."],"absolute_byte_offsets":[17914],"raw_metadata_u32":[1]}
+{"text_id":143,"forms":["Parfois, vous trouverez çà et là<br>des notes ou d'autres documents<br>rédigés par les êtres humains."],"absolute_byte_offsets":[18042],"raw_metadata_u32":[1]}
+{"text_id":144,"forms":["Vous pouvez demander à <$cdef(27)><$cname(274)><br></color>de jauger le niveau d'<$cdef(27)>ambiance</color> actuel."],"absolute_byte_offsets":[18150],"raw_metadata_u32":[1]}
+{"text_id":145,"forms":["Une fois que vous avez accompli<br>la <$cdef(27)>requête </color>d'un Pokémon, retournez<br>le voir afin de l'en informer."],"absolute_byte_offsets":[18268],"raw_metadata_u32":[1]}
+{"text_id":146,"forms":[""],"absolute_byte_offsets":[18393],"raw_metadata_u32":[0]}
+{"text_id":147,"forms":["Lorsque vous voulez vous rendre en lieu<br>sûr, ouvrez le menu principal avec <$keyicon(4)> et<br>utilisez l'option <$cdef(27)>Retourner chez soi</color><nbs2><$icon(2848)>."],"absolute_byte_offsets":[18394],"raw_metadata_u32":[1]}
+{"text_id":148,"forms":[""],"absolute_byte_offsets":[18569],"raw_metadata_u32":[0]}
+{"text_id":149,"forms":[""],"absolute_byte_offsets":[18570],"raw_metadata_u32":[0]}
+{"text_id":150,"forms":[""],"absolute_byte_offsets":[18571],"raw_metadata_u32":[0]}
+{"text_id":151,"forms":[""],"absolute_byte_offsets":[18572],"raw_metadata_u32":[0]}
+{"text_id":152,"forms":[""],"absolute_byte_offsets":[18573],"raw_metadata_u32":[0]}
+{"text_id":153,"forms":["Appuyez sur <$keyicon(28)> dans l'eau pour vous<br>transformer en <$cdef(27)>Lokhlass</color> et vous déplacer<br>sur les flots."],"absolute_byte_offsets":[18574],"raw_metadata_u32":[1]}
+{"text_id":154,"forms":["Un Pokémon spécialisé dans<br>l'<$cdef(27)><$spwname(9)></color> peut alimenter<br>les machines en électricité."],"absolute_byte_offsets":[18704],"raw_metadata_u32":[1]}
+{"text_id":155,"forms":[""],"absolute_byte_offsets":[18821],"raw_metadata_u32":[0]}
+{"text_id":156,"forms":[""],"absolute_byte_offsets":[18822],"raw_metadata_u32":[0]}
+{"text_id":157,"forms":["Un Pokémon spécialisé dans le <$cdef(27)><$spwname(12)></color><br>peut échanger des objets avec vous<br>à la <$cdef(27)><fqty(1)><$ifull(1325)></color>."],"absolute_byte_offsets":[18823],"raw_metadata_u32":[1]}
+{"text_id":158,"forms":[""],"absolute_byte_offsets":[18982],"raw_metadata_u32":[0]}
+{"text_id":159,"forms":["Ce générateur produit de l'électricité<br>grâce au vent."],"absolute_byte_offsets":[18983],"raw_metadata_u32":[1]}
+{"text_id":160,"forms":["<$cdef(27)><$cname(206)></color>, spécialiste de la<br><$cdef(27)><$spwname(21)></color>, peut modifier la couleur<br>de certains meubles et objets."],"absolute_byte_offsets":[19045],"raw_metadata_u32":[1]}
+{"text_id":161,"forms":["Servez-vous des ballons de peinture pour<br>changer la couleur des meubles et des<br>objets qui se trouvent devant vous."],"absolute_byte_offsets":[19195],"raw_metadata_u32":[1]}
+{"text_id":162,"forms":["<$cdef(27)><$cname(206)></color>, spécialiste de la<br><$cdef(27)><$spwname(21)></color>, peut modifier les motifs<br>de certains meubles et objets."],"absolute_byte_offsets":[19316],"raw_metadata_u32":[1]}
+{"text_id":163,"forms":["Vous pouvez <$cdef(27)>peindre </color>individuellement<br>les parties de certains meubles."],"absolute_byte_offsets":[19466],"raw_metadata_u32":[1]}
+{"text_id":164,"forms":["Vous pouvez changer le cours d'un<br>ruisseau en plaçant des obstacles<br>ou en retirant des obstacles."],"absolute_byte_offsets":[19558],"raw_metadata_u32":[1]}
+{"text_id":165,"forms":["Un Pokémon spécialisé dans le <$cdef(27)><$spwname(4)><br></color>laisse traîner des matériaux utiles<br>autour de son lieu de vie."],"absolute_byte_offsets":[19663],"raw_metadata_u32":[1]}
+{"text_id":166,"forms":["Un Pokémon spécialisé dans<br>le <$cdef(27)><$spwname(17)> </color>peut transformer des<br><$cdef(27)><fqty(1)><$ifull(1395)> </color>en <$cdef(27)><fqty(1)><$ifull(107)></color>."],"absolute_byte_offsets":[19800],"raw_metadata_u32":[1]}
+{"text_id":167,"forms":["Maintenez <$keyicon(153)> appuyé et appuyez sur<br><$keyicon(1)> pour <$cdef(27)>aspirer</color> de l'eau ou tout autre<br>liquide. Appuyez sur <$keyicon(0)> pour recracher."],"absolute_byte_offsets":[19983],"raw_metadata_u32":[1]}
+{"text_id":168,"forms":["Ce générateur produit de l'électricité<br>grâce au courant des cours d'eau."],"absolute_byte_offsets":[20158],"raw_metadata_u32":[1]}
+{"text_id":169,"forms":["Ce générateur produit de l'électricité en<br>incinérant des matériaux combustibles."],"absolute_byte_offsets":[20239],"raw_metadata_u32":[1]}
+{"text_id":170,"forms":[""],"absolute_byte_offsets":[20329],"raw_metadata_u32":[0]}
+{"text_id":171,"forms":[""],"absolute_byte_offsets":[20330],"raw_metadata_u32":[0]}
+{"text_id":172,"forms":[""],"absolute_byte_offsets":[20331],"raw_metadata_u32":[0]}
+{"text_id":173,"forms":["Placez des sources de lumière<br>pour éclairer les environs."],"absolute_byte_offsets":[20332],"raw_metadata_u32":[1]}
+{"text_id":174,"forms":[""],"absolute_byte_offsets":[20395],"raw_metadata_u32":[0]}
+{"text_id":175,"forms":["Placer des <$cdef(27)><fqty(2)><$iname(1396)> </color>permet<br>d'acheminer l'électricité vers d'autres<br>endroits."],"absolute_byte_offsets":[20396],"raw_metadata_u32":[1]}
+{"text_id":176,"forms":["<$cdef(27)><$cname(121)></color>, spécialiste de la <$cdef(27)><$spwname(22)></color>,<br>peut éclairer une zone entière."],"absolute_byte_offsets":[20515],"raw_metadata_u32":[1]}
+{"text_id":177,"forms":["Les jardinières vous permettent de faire<br>pousser des fleurs ou des légumes<br>où vous le souhaitez !"],"absolute_byte_offsets":[20640],"raw_metadata_u32":[1]}
+{"text_id":178,"forms":["L'électricité produite permet d'allumer<br>des appareils. Acheminez-la vers d'autres<br>endroits à l'aide de <$cdef(27)><fqty(2)><$iname(1396)></color>."],"absolute_byte_offsets":[20747],"raw_metadata_u32":[1]}
+{"text_id":179,"forms":["Vous pouvez modifier votre apparence<br>à l'aide d'une <$cdef(27)>coiffeuse</color> ou de tout autre<br>meuble doté d'un miroir."],"absolute_byte_offsets":[20903],"raw_metadata_u32":[1]}
+{"text_id":180,"forms":[""],"absolute_byte_offsets":[21034],"raw_metadata_u32":[0]}
+{"text_id":181,"forms":["Amenez <$cdef(27)><$cname;0(206)></color> jusqu'à un<br>élément ne pouvant pas être transporté,<br>comme une maison, pour qu'il le <$cdef(27)>peigne</color>."],"absolute_byte_offsets":[21035],"raw_metadata_u32":[1]}
+{"text_id":182,"forms":["Placez des sources de lumière alimentées<br>en électricité pour éclairer une ville."],"absolute_byte_offsets":[21198],"raw_metadata_u32":[1]}
+{"text_id":183,"forms":["Les flammes permettent d'éclairer<br>faiblement une ville et génèrent<br>de la chaleur."],"absolute_byte_offsets":[21287],"raw_metadata_u32":[1]}
+{"text_id":184,"forms":["Les fleurs qui ornent la tête de<br><$cdef(27)><$cname;0(272)></color> s'ouvrent à mesure<br>que la ville s'illumine."],"absolute_byte_offsets":[21378],"raw_metadata_u32":[1]}
+{"text_id":185,"forms":["Selon le type de boisson que vous<br>avez aspiré, vous pourrez <$cdef(27)>recracher<br></color>divers types de liquides."],"absolute_byte_offsets":[21498],"raw_metadata_u32":[1]}
+{"text_id":186,"forms":[""],"absolute_byte_offsets":[21620],"raw_metadata_u32":[0]}
+{"text_id":187,"forms":[""],"absolute_byte_offsets":[21621],"raw_metadata_u32":[0]}
+{"text_id":188,"forms":[""],"absolute_byte_offsets":[21622],"raw_metadata_u32":[0]}
+{"text_id":189,"forms":[""],"absolute_byte_offsets":[21623],"raw_metadata_u32":[0]}
+{"text_id":190,"forms":["Si certains Pokémon habitent près l'un<br>de l'autre, vous assisterez peut-être<br>à des conversations spéciales."],"absolute_byte_offsets":[21624],"raw_metadata_u32":[1]}
+{"text_id":191,"forms":["Parlez à un Pokémon arborant le symbole<br>« ... » pour vous lier d'amitié avec lui."],"absolute_byte_offsets":[21743],"raw_metadata_u32":[1]}
+{"text_id":192,"forms":[""],"absolute_byte_offsets":[21833],"raw_metadata_u32":[0]}
+{"text_id":193,"forms":[""],"absolute_byte_offsets":[21834],"raw_metadata_u32":[0]}
+{"text_id":194,"forms":[""],"absolute_byte_offsets":[21835],"raw_metadata_u32":[0]}
+{"text_id":195,"forms":[""],"absolute_byte_offsets":[21836],"raw_metadata_u32":[0]}
+{"text_id":196,"forms":[""],"absolute_byte_offsets":[21837],"raw_metadata_u32":[0]}
+{"text_id":197,"forms":[""],"absolute_byte_offsets":[21838],"raw_metadata_u32":[0]}
+{"text_id":198,"forms":[""],"absolute_byte_offsets":[21839],"raw_metadata_u32":[0]}
+{"text_id":199,"forms":[""],"absolute_byte_offsets":[21840],"raw_metadata_u32":[0]}
+{"text_id":200,"forms":[""],"absolute_byte_offsets":[21841],"raw_metadata_u32":[0]}
+{"text_id":201,"forms":["Si vous placez du <$cdef(27)><fqty(1)><$iname(3994)> </color>dans un lieu<br>de vie, le Pokémon qui y vit y reviendra,<br>attiré par l'odeur."],"absolute_byte_offsets":[21842],"raw_metadata_u32":[1]}
+{"text_id":202,"forms":["Si vous amenez un Pokémon à un habitat<br>inoccupé, vous pouvez lui proposer d'y<br>emménager."],"absolute_byte_offsets":[21986],"raw_metadata_u32":[1]}
+{"text_id":203,"forms":["Si vous apercevez des ondulations<br>brillantes sur l'eau, inspectez-les<br>pour récupérer des objets !"],"absolute_byte_offsets":[22085],"raw_metadata_u32":[1]}
+{"text_id":204,"forms":["Si l'eau brille et ondule plus que<br>d'habitude, cela signifie que vous<br>y trouverez des objets rares !"],"absolute_byte_offsets":[22191],"raw_metadata_u32":[1]}
+{"text_id":205,"forms":["Si la surface de l'eau ondule vivement,<br>appuyez plusieurs fois et rapidement sur<br><$keyicon(6)> pour récupérer l'objet immergé !"],"absolute_byte_offsets":[22298],"raw_metadata_u32":[1]}
+{"text_id":206,"forms":["Vous pouvez obtenir du <$cdef(27)><fqty(1)><$iname(3994)> </color>en<br>inspectant les fleurs qui brillent."],"absolute_byte_offsets":[22435],"raw_metadata_u32":[1]}
+{"text_id":207,"forms":["Si vous trouvez un objet sur le point<br>d'exploser, aspergez-le d'eau<br>immédiatement !"],"absolute_byte_offsets":[22543],"raw_metadata_u32":[1]}
+{"text_id":208,"forms":["Parlez à un Pokémon spécialisé dans<br>la <$cdef(27)><$spwfull(11)></color> alors que vous tenez<br>un<$cdef(27)> <fqty(1)><$iname(2793)></color>."],"absolute_byte_offsets":[22634],"raw_metadata_u32":[1]}
+{"text_id":209,"forms":["On dirait que vous pouvez insérer<br>les <$cdef(27)>tablettes mystérieuses </color>enfouies dans<br>le sol dans cet étrange renfoncement..."],"absolute_byte_offsets":[22785],"raw_metadata_u32":[1]}
+{"text_id":210,"forms":["Pour vous rendre sur une <$cdef(27)>Île Rêve</color>,<br>examinez une <$cdef(27)>peluche</color>. <$cdef(27)>Baudrive </color>vous<br>rejoindra aussitôt pour vous y emmener !"],"absolute_byte_offsets":[22928],"raw_metadata_u32":[1]}
+{"text_id":211,"forms":["Vous ne pouvez visiter qu'une seule <$cdef(27)>Île<br>Rêve</color> par jour. Pour en visiter une autre,<br>adressez-vous à <$cdef(27)>Baudrive</color> le jour suivant."],"absolute_byte_offsets":[23106],"raw_metadata_u32":[1]}
+{"text_id":212,"forms":["Terminez le plus de défis possible<br>chaque jour pour obtenir des <$cdef(27)>pièces<br>Poké Vie</color>."],"absolute_byte_offsets":[23277],"raw_metadata_u32":[1]}
+{"text_id":213,"forms":[""],"absolute_byte_offsets":[23386],"raw_metadata_u32":[0]}
+{"text_id":214,"forms":["Vous pouvez y acheter des <$cdef(27)>meubles</color>, des<br><$cdef(27)>méthodes</color>, des <$cdef(27)>graines </color>et bien plus en<br>dépensant des <$cdef(27)>pièces Poké Vie</color> via le <$cdef(27)>PC</color>."],"absolute_byte_offsets":[23387],"raw_metadata_u32":[1]}
+{"text_id":215,"forms":[""],"absolute_byte_offsets":[23610],"raw_metadata_u32":[0]}
+{"text_id":216,"forms":["Vous pouvez <$cdef(27)>commander </color>des objets<br>dans la <$cdef(27)>boutique </color>de la ville de quelqu'un<br>d'autre et les récupérer dans la vôtre."],"absolute_byte_offsets":[23611],"raw_metadata_u32":[1]}
+{"text_id":217,"forms":["Collectionnez des <$cdef(27)>tampons</color> via les <$cdef(27)>PC </color>des<br><$cdef(27)>Centres Pokémon</color> et échangez-les contre<br>des <$cdef(27)>pièces Poké Vie</color> tous les vendredis."],"absolute_byte_offsets":[23773],"raw_metadata_u32":[1]}
+{"text_id":218,"forms":["Si vous trouvez de nouveaux ingrédients,<br>cuisinez-les. Vous découvrirez peut-être<br>de nouveaux plats !"],"absolute_byte_offsets":[23979],"raw_metadata_u32":[1]}
+{"text_id":219,"forms":["Sélectionnez un Pokémon dans le<br><$cdef(27)>Pokédex</color> et appuyez sur <$keyicon(233)> pour que les<br>autres Pokémon vous disent où le trouver."],"absolute_byte_offsets":[24090],"raw_metadata_u32":[1]}
+{"text_id":220,"forms":["Placez-en une pour observer<br>à distance ce qui se passe<br>dans le champ de la caméra."],"absolute_byte_offsets":[24246],"raw_metadata_u32":[1]}
+{"text_id":221,"forms":["Placez une <$cdef(27)>peluche</color> et inspectez-la<br>pour que <$cdef(27)>Baudrive </color>vous rejoigne."],"absolute_byte_offsets":[24337],"raw_metadata_u32":[1]}
+{"text_id":222,"forms":[""],"absolute_byte_offsets":[24446],"raw_metadata_u32":[0]}
+{"text_id":223,"forms":[""],"absolute_byte_offsets":[24447],"raw_metadata_u32":[0]}
+{"text_id":224,"forms":["Parlez à <$cdef(27)>Bulbizarre </color>pour faire une partie<br>de <$cdef(27)>corde à sauter</color> !"],"absolute_byte_offsets":[24448],"raw_metadata_u32":[1]}
+{"text_id":225,"forms":["Parlez à <$cdef(27)>Zorua </color>pour faire une partie<br>de <$cdef(27)>camoufilage</color> !"],"absolute_byte_offsets":[24553],"raw_metadata_u32":[1]}
+{"text_id":226,"forms":["Il peut arriver que certains Pokémon vous<br>invitent à jouer à « Regarde par là ».<br>N'hésitez pas à accepter !"],"absolute_byte_offsets":[24649],"raw_metadata_u32":[1]}
+{"text_id":227,"forms":[""],"absolute_byte_offsets":[24771],"raw_metadata_u32":[0]}
+{"text_id":228,"forms":[""],"absolute_byte_offsets":[24772],"raw_metadata_u32":[0]}
+{"text_id":229,"forms":[""],"absolute_byte_offsets":[24773],"raw_metadata_u32":[0]}
+{"text_id":230,"forms":["Vous pouvez vous servir du curseur<br>de la souris pour choisir où recracher<br>un objet ou utiliser Éclate-Roc."],"absolute_byte_offsets":[24774],"raw_metadata_u32":[1]}
+{"text_id":231,"forms":[""],"absolute_byte_offsets":[24889],"raw_metadata_u32":[0]}
+{"text_id":232,"forms":[""],"absolute_byte_offsets":[24890],"raw_metadata_u32":[0]}
+{"text_id":233,"forms":[""],"absolute_byte_offsets":[24891],"raw_metadata_u32":[0]}
+{"text_id":234,"forms":[""],"absolute_byte_offsets":[24892],"raw_metadata_u32":[0]}
+{"text_id":235,"forms":[""],"absolute_byte_offsets":[24893],"raw_metadata_u32":[0]}
+{"text_id":236,"forms":[""],"absolute_byte_offsets":[24894],"raw_metadata_u32":[0]}
+{"text_id":237,"forms":[""],"absolute_byte_offsets":[24895],"raw_metadata_u32":[0]}
+{"text_id":238,"forms":[""],"absolute_byte_offsets":[24896],"raw_metadata_u32":[0]}
+{"text_id":239,"forms":[""],"absolute_byte_offsets":[24897],"raw_metadata_u32":[0]}
+{"text_id":240,"forms":[""],"absolute_byte_offsets":[24898],"raw_metadata_u32":[0]}
+{"text_id":241,"forms":[""],"absolute_byte_offsets":[24899],"raw_metadata_u32":[0]}
+{"text_id":242,"forms":[""],"absolute_byte_offsets":[24900],"raw_metadata_u32":[0]}
+{"text_id":243,"forms":[""],"absolute_byte_offsets":[24901],"raw_metadata_u32":[0]}
+{"text_id":244,"forms":[""],"absolute_byte_offsets":[24902],"raw_metadata_u32":[0]}
+{"text_id":245,"forms":[""],"absolute_byte_offsets":[24903],"raw_metadata_u32":[0]}
+{"text_id":246,"forms":[""],"absolute_byte_offsets":[24904],"raw_metadata_u32":[0]}
+{"text_id":247,"forms":[""],"absolute_byte_offsets":[24905],"raw_metadata_u32":[0]}
+{"text_id":248,"forms":[""],"absolute_byte_offsets":[24906],"raw_metadata_u32":[0]}
+{"text_id":249,"forms":["Vous pouvez vous déplacer sous l'eau<br>aisément et en toute sécurité."],"absolute_byte_offsets":[24907],"raw_metadata_u32":[10]}
+{"text_id":250,"forms":["La version améliorée de <$cdef(27)><$sklname(10)></color> vous permet<br>de vous transformer lorsque vous êtes en<br>eaux profondes en appuyant sur <$keyicon(28)>."],"absolute_byte_offsets":[24982],"raw_metadata_u32":[10]}
+{"text_id":251,"forms":["Maintenez <$keyicon(6)> appuyé pour utiliser<br><$cdef(27)>Force </color>et tirer ou pousser les éléments<br>que vous souhaitez déplacer."],"absolute_byte_offsets":[25149],"raw_metadata_u32":[1]}
+{"text_id":252,"forms":["Lorsque vous utilisez <$cdef(27)>Force</color>, inclinez <$keyicon(194)><br>pour faire pivoter l'élément que vous<br>déplacez vers la droite ou la gauche."],"absolute_byte_offsets":[25291],"raw_metadata_u32":[1]}
+{"text_id":253,"forms":["Préparez des plats à l'aide d'ustensiles,<br>comme une <$cdef(27)><fqty(1)><$ifull(1301)></color>.<br>Les Pokémon à proximité vous aideront !"],"absolute_byte_offsets":[25449],"raw_metadata_u32":[1]}
+{"text_id":254,"forms":["Si vous améliorez <$cdef(27)><$sklname(1)> </color>grâce à une<br><$cdef(27)>salade</color>, vous ferez pousser plus d'herbe en<br>maintenant <$keyicon(1)>, même sur les sols rocheux."],"absolute_byte_offsets":[25596],"raw_metadata_u32":[1]}
+{"text_id":255,"forms":["Améliorez <$cdef(27)><$sklname(5)></color> en mangeant du <$cdef(27)>pain</color>.<br>Vous pourrez ainsi détruire des grillages<br>ou des chaînes."],"absolute_byte_offsets":[25784],"raw_metadata_u32":[1]}
+{"text_id":256,"forms":["Améliorez <$cdef(27)><$sklname(3)></color> en mangeant de<br>la <$cdef(27)>soupe</color>. Vous pourrez arroser une zone<br>plus étendue en maintenant <$keyicon(1)> appuyé."],"absolute_byte_offsets":[25934],"raw_metadata_u32":[1]}
+{"text_id":257,"forms":["Améliorez <$cdef(27)><$sklname(4)> </color>en mangeant<br>un <$cdef(27)>steak haché </color>afin de détruire des<br>choses plus solides."],"absolute_byte_offsets":[26109],"raw_metadata_u32":[1]}
+{"text_id":258,"forms":["Les plats que vous cuisinez varieront<br>en fonction des ingrédients utilisés."],"absolute_byte_offsets":[26249],"raw_metadata_u32":[1]}
+{"text_id":259,"forms":["Les plats que vous cuisinez varieront<br>en fonction de la spécialité du Pokémon<br>qui vous aide."],"absolute_byte_offsets":[26330],"raw_metadata_u32":[1]}
+{"text_id":260,"forms":["Un Pokémon spécialisé en <$cdef(27)><$spwname(10)><br></color>peut vous aider à faire fondre<br>du <$cdef(27)><fqty(1)><$ifull(106)> </color>ou du<$cdef(27)> <fqty(1)><$ifull(107)></color>."],"absolute_byte_offsets":[26432],"raw_metadata_u32":[1]}
+{"text_id":261,"forms":[""],"absolute_byte_offsets":[26626],"raw_metadata_u32":[0]}
+{"text_id":262,"forms":["Un Pokémon spécialisé en <$cdef(27)><$spwname(14)><br></color>danse et améliore l'<$cdef(27)>ambiance</color> lorsqu'il<br>y a de la musique."],"absolute_byte_offsets":[26627],"raw_metadata_u32":[1]}
+{"text_id":263,"forms":["Placez des objets susceptibles d'améliorer<br>l'<$cdef(27)>ambiance</color> pour que votre fête batte son<br>plein !"],"absolute_byte_offsets":[26773],"raw_metadata_u32":[1]}
+{"text_id":264,"forms":["Placez de la nourriture dans des <$cdef(27)>assiettes<br>de fête</color> pour améliorer l'ambiance. Plus<br>il y en a, plus l'ambiance sera <$cdef(27)>festive</color>."],"absolute_byte_offsets":[26892],"raw_metadata_u32":[1]}
+{"text_id":265,"forms":["Pour organiser une <$spwname(23)>, il faut préparer<br>des plats spéciaux. Commencez par<br>placer une <$cdef(27)>marmite</color> !"],"absolute_byte_offsets":[27062],"raw_metadata_u32":[1]}
+{"text_id":266,"forms":[""],"absolute_byte_offsets":[27196],"raw_metadata_u32":[0]}
+{"text_id":267,"forms":["Les <$cdef(27)>artefacts anciens</color>, qui sont d'une<br>grande rareté, améliorent grandement<br>l'<$cdef(27)>ambiance</color>."],"absolute_byte_offsets":[27197],"raw_metadata_u32":[1]}
+{"text_id":268,"forms":[""],"absolute_byte_offsets":[27330],"raw_metadata_u32":[0]}
+{"text_id":269,"forms":[""],"absolute_byte_offsets":[27331],"raw_metadata_u32":[0]}
+{"text_id":270,"forms":["Sous la forme de <$cdef(27)>Gravalanch</color>, vous<br>pouvez vous déplacer en roulant et briser<br>des choses en maintenant <$keyicon(1)> appuyé."],"absolute_byte_offsets":[27332],"raw_metadata_u32":[1]}
+{"text_id":271,"forms":[""],"absolute_byte_offsets":[27482],"raw_metadata_u32":[0]}
+{"text_id":272,"forms":["Les <$cdef(27)><fqty(2)><$iname(1461)></color> peuvent rouler sur<br>des <$cdef(27)><fqty(2)><$iname(1463)></color>. Il est même possible d'en<br>atteler plus de deux !"],"absolute_byte_offsets":[27483],"raw_metadata_u32":[1]}
+{"text_id":273,"forms":["Améliorez <$cdef(27)><$sklname(5)></color> en mangeant du <$cdef(27)>pain</color>.<br>Maintenez <$keyicon(1)> appuyé pour trancher<br>des éléments plus éloignés."],"absolute_byte_offsets":[27653],"raw_metadata_u32":[1]}
+{"text_id":274,"forms":["Sans bonne <$cdef(27)>ambiance</color>, il n'y a pas de <$cdef(27)><$spwname(23)></color> !<br>Adressez-vous à <$cdef(27)><$cname;0(274)><br></color>pour connaître le niveau d'<$cdef(27)>ambiance</color> actuel."],"absolute_byte_offsets":[27821],"raw_metadata_u32":[1]}
+{"text_id":275,"forms":["Les Pokémon aussi aiment faire la <$cdef(27)><$spwname(23)></color>.<br>C'est l'occasion idéale de faire des<br>rencontres et de renforcer des amitiés."],"absolute_byte_offsets":[28035],"raw_metadata_u32":[1]}
+{"text_id":276,"forms":["Que se passera-t-il si vous placez<br>les <$cdef(27)>fossiles</color> que vous trouvez dans<br>le bon ordre sur des <$cdef(27)><fqty(2)><$ifull(1528)></color>... ?"],"absolute_byte_offsets":[28190],"raw_metadata_u32":[1]}
+{"text_id":277,"forms":["Reliez un <$cdef(27)><$hatname(21)></color> à un autre<br>avec des <$cdef(27)><fqty(1)><$iname(1463)></color>, et les Pokémon pourront<br>voyager à bord des <$cdef(27)><fqty(2)><$ifull(1461)></color>."],"absolute_byte_offsets":[28354],"raw_metadata_u32":[1]}
+{"text_id":278,"forms":[""],"absolute_byte_offsets":[28558],"raw_metadata_u32":[0]}
+{"text_id":279,"forms":[""],"absolute_byte_offsets":[28559],"raw_metadata_u32":[0]}
+{"text_id":280,"forms":[""],"absolute_byte_offsets":[28560],"raw_metadata_u32":[0]}
+{"text_id":281,"forms":["Pour savoir quel Pokémon peut vous<br>aider en matière de <$cdef(27)><$spwname(1)></color>,<br>demandez conseil à <$cdef(27)><$cname(562)></color>."],"absolute_byte_offsets":[28561],"raw_metadata_u32":[10]}
+{"text_id":282,"forms":["Utilisez <$cdef(27)><$sklname(2)></color> sur du <$cdef(27)>corail </color>pour<br>le récupérer ou le placer ailleurs."],"absolute_byte_offsets":[28712],"raw_metadata_u32":[10]}
+{"text_id":283,"forms":["Améliorez <$cdef(27)><$sklname(10)></color> en buvant un <$cdef(27)>smoothie</color><br>pour vous déplacer librement sous l'eau.<br>Plongez avec <$keyicon(61)> et remontez avec <$keyicon(60)>."],"absolute_byte_offsets":[28833],"raw_metadata_u32":[10]}
+{"text_id":284,"forms":["Améliorez <$cdef(27)><$sklname(10)></color> en buvant un <$cdef(27)>smoothie</color><br>pour pouvoir détruire des blocs de terre<br>ou de roche en appuyant sur <$keyicon(1)>."],"absolute_byte_offsets":[29028],"raw_metadata_u32":[10]}
+{"text_id":285,"forms":[""],"absolute_byte_offsets":[29205],"raw_metadata_u32":[0]}
+{"text_id":286,"forms":[""],"absolute_byte_offsets":[29206],"raw_metadata_u32":[0]}
+{"text_id":287,"forms":[""],"absolute_byte_offsets":[29207],"raw_metadata_u32":[0]}
+{"text_id":288,"forms":[""],"absolute_byte_offsets":[29208],"raw_metadata_u32":[0]}
+{"text_id":289,"forms":[""],"absolute_byte_offsets":[29209],"raw_metadata_u32":[0]}
+{"text_id":290,"forms":[""],"absolute_byte_offsets":[29210],"raw_metadata_u32":[0]}
+{"text_id":291,"forms":[""],"absolute_byte_offsets":[29211],"raw_metadata_u32":[0]}
+{"text_id":292,"forms":[""],"absolute_byte_offsets":[29212],"raw_metadata_u32":[0]}
+{"text_id":293,"forms":[""],"absolute_byte_offsets":[29213],"raw_metadata_u32":[0]}
+{"text_id":294,"forms":[""],"absolute_byte_offsets":[29214],"raw_metadata_u32":[0]}
+{"text_id":295,"forms":[""],"absolute_byte_offsets":[29215],"raw_metadata_u32":[0]}
+{"text_id":296,"forms":[""],"absolute_byte_offsets":[29216],"raw_metadata_u32":[0]}
+{"text_id":297,"forms":[""],"absolute_byte_offsets":[29217],"raw_metadata_u32":[0]}
+{"text_id":298,"forms":[""],"absolute_byte_offsets":[29218],"raw_metadata_u32":[0]}
+{"text_id":299,"forms":[""],"absolute_byte_offsets":[29219],"raw_metadata_u32":[0]}
+{"text_id":300,"forms":[""],"absolute_byte_offsets":[29220],"raw_metadata_u32":[0]}
+{"text_id":301,"forms":[""],"absolute_byte_offsets":[29221],"raw_metadata_u32":[0]}
+{"text_id":302,"forms":[""],"absolute_byte_offsets":[29222],"raw_metadata_u32":[0]}
+{"text_id":303,"forms":[""],"absolute_byte_offsets":[29223],"raw_metadata_u32":[0]}
+{"text_id":304,"forms":[""],"absolute_byte_offsets":[29224],"raw_metadata_u32":[0]}
+{"text_id":305,"forms":[""],"absolute_byte_offsets":[29225],"raw_metadata_u32":[0]}
+{"text_id":306,"forms":[""],"absolute_byte_offsets":[29226],"raw_metadata_u32":[0]}
+{"text_id":307,"forms":[""],"absolute_byte_offsets":[29227],"raw_metadata_u32":[0]}
+{"text_id":308,"forms":[""],"absolute_byte_offsets":[29228],"raw_metadata_u32":[0]}
+{"text_id":309,"forms":[""],"absolute_byte_offsets":[29229],"raw_metadata_u32":[0]}
+{"text_id":310,"forms":[""],"absolute_byte_offsets":[29230],"raw_metadata_u32":[0]}
+{"text_id":311,"forms":[""],"absolute_byte_offsets":[29231],"raw_metadata_u32":[0]}
+{"text_id":312,"forms":[""],"absolute_byte_offsets":[29232],"raw_metadata_u32":[0]}
+{"text_id":313,"forms":[""],"absolute_byte_offsets":[29233],"raw_metadata_u32":[0]}
+{"text_id":314,"forms":[""],"absolute_byte_offsets":[29234],"raw_metadata_u32":[0]}
+{"text_id":315,"forms":[""],"absolute_byte_offsets":[29235],"raw_metadata_u32":[0]}
+{"text_id":316,"forms":[""],"absolute_byte_offsets":[29236],"raw_metadata_u32":[0]}
+{"text_id":317,"forms":[""],"absolute_byte_offsets":[29237],"raw_metadata_u32":[0]}
+{"text_id":318,"forms":[""],"absolute_byte_offsets":[29238],"raw_metadata_u32":[0]}
+{"text_id":319,"forms":[""],"absolute_byte_offsets":[29239],"raw_metadata_u32":[0]}
+{"text_id":320,"forms":[""],"absolute_byte_offsets":[29240],"raw_metadata_u32":[0]}
+{"text_id":321,"forms":[""],"absolute_byte_offsets":[29241],"raw_metadata_u32":[0]}
+{"text_id":322,"forms":[""],"absolute_byte_offsets":[29242],"raw_metadata_u32":[0]}
+{"text_id":323,"forms":[""],"absolute_byte_offsets":[29243],"raw_metadata_u32":[0]}
+{"text_id":324,"forms":[""],"absolute_byte_offsets":[29244],"raw_metadata_u32":[0]}
+{"text_id":325,"forms":[""],"absolute_byte_offsets":[29245],"raw_metadata_u32":[0]}
+{"text_id":326,"forms":[""],"absolute_byte_offsets":[29246],"raw_metadata_u32":[0]}
+{"text_id":327,"forms":[""],"absolute_byte_offsets":[29247],"raw_metadata_u32":[0]}
+{"text_id":328,"forms":[""],"absolute_byte_offsets":[29248],"raw_metadata_u32":[0]}
+{"text_id":329,"forms":[""],"absolute_byte_offsets":[29249],"raw_metadata_u32":[0]}
+{"text_id":330,"forms":[""],"absolute_byte_offsets":[29250],"raw_metadata_u32":[0]}
+{"text_id":331,"forms":[""],"absolute_byte_offsets":[29251],"raw_metadata_u32":[0]}
+{"text_id":332,"forms":[""],"absolute_byte_offsets":[29252],"raw_metadata_u32":[0]}
+{"text_id":333,"forms":[""],"absolute_byte_offsets":[29253],"raw_metadata_u32":[0]}
+{"text_id":334,"forms":[""],"absolute_byte_offsets":[29254],"raw_metadata_u32":[0]}
+{"text_id":335,"forms":[""],"absolute_byte_offsets":[29255],"raw_metadata_u32":[0]}
+{"text_id":336,"forms":[""],"absolute_byte_offsets":[29256],"raw_metadata_u32":[0]}
+{"text_id":337,"forms":[""],"absolute_byte_offsets":[29257],"raw_metadata_u32":[0]}
+{"text_id":338,"forms":[""],"absolute_byte_offsets":[29258],"raw_metadata_u32":[0]}
+{"text_id":339,"forms":[""],"absolute_byte_offsets":[29259],"raw_metadata_u32":[0]}
+{"text_id":340,"forms":[""],"absolute_byte_offsets":[29260],"raw_metadata_u32":[0]}
+{"text_id":341,"forms":[""],"absolute_byte_offsets":[29261],"raw_metadata_u32":[0]}
+{"text_id":342,"forms":[""],"absolute_byte_offsets":[29262],"raw_metadata_u32":[0]}
+{"text_id":343,"forms":[""],"absolute_byte_offsets":[29263],"raw_metadata_u32":[0]}
+{"text_id":344,"forms":[""],"absolute_byte_offsets":[29264],"raw_metadata_u32":[0]}
+{"text_id":345,"forms":[""],"absolute_byte_offsets":[29265],"raw_metadata_u32":[0]}
+{"text_id":346,"forms":[""],"absolute_byte_offsets":[29266],"raw_metadata_u32":[0]}
+{"text_id":347,"forms":[""],"absolute_byte_offsets":[29267],"raw_metadata_u32":[0]}
+{"text_id":348,"forms":[""],"absolute_byte_offsets":[29268],"raw_metadata_u32":[0]}
+{"text_id":349,"forms":[""],"absolute_byte_offsets":[29269],"raw_metadata_u32":[0]}
+{"text_id":350,"forms":[""],"absolute_byte_offsets":[29270],"raw_metadata_u32":[0]}
+{"text_id":351,"forms":["Appuyez sur <$keyicon(29)> lorsque vous êtes dans<br>les airs pour utiliser <$cdef(27)><$sklname(11)> </color>et vous<br>déplacer sous la forme de <$cdef(27)><$cname;0(151)></color>."],"absolute_byte_offsets":[29271],"raw_metadata_u32":[1]}
+{"text_id":352,"forms":[""],"absolute_byte_offsets":[29456],"raw_metadata_u32":[0]}
+{"text_id":353,"forms":[""],"absolute_byte_offsets":[29457],"raw_metadata_u32":[0]}
+{"text_id":354,"forms":[""],"absolute_byte_offsets":[29458],"raw_metadata_u32":[0]}
+{"text_id":355,"forms":["Reliez deux <$cdef(27)><fqty(2)><$iname(1457)> </color>pour<br>emmener des Pokémon dans des endroits<br>inaccessibles par voie terrestre."],"absolute_byte_offsets":[29459],"raw_metadata_u32":[1]}
+{"text_id":356,"forms":[""],"absolute_byte_offsets":[29598],"raw_metadata_u32":[0]}
+{"text_id":357,"forms":["Si vous reliez deux <$cdef(27)><fqty(2)><$iname(1469)><br></color>avec une <$cdef(27)>échelle</color>, vous pourrez<br>vous déplacer de haut en bas."],"absolute_byte_offsets":[29599],"raw_metadata_u32":[1]}
+{"text_id":358,"forms":[""],"absolute_byte_offsets":[29750],"raw_metadata_u32":[0]}
+{"text_id":359,"forms":[""],"absolute_byte_offsets":[29751],"raw_metadata_u32":[0]}
+{"text_id":360,"forms":[""],"absolute_byte_offsets":[29752],"raw_metadata_u32":[0]}
+{"text_id":361,"forms":[""],"absolute_byte_offsets":[29753],"raw_metadata_u32":[0]}
+{"text_id":362,"forms":[""],"absolute_byte_offsets":[29754],"raw_metadata_u32":[0]}
+{"text_id":363,"forms":[""],"absolute_byte_offsets":[29755],"raw_metadata_u32":[0]}
+{"text_id":364,"forms":["Vous pouvez remonter rapidement<br>les cascades en appuyant sur <$keyicon(6)><br>pendant que vous utilisez <$cdef(27)><$sklfull(10)></color>."],"absolute_byte_offsets":[29756],"raw_metadata_u32":[1]}
+{"text_id":365,"forms":[""],"absolute_byte_offsets":[29898],"raw_metadata_u32":[0]}
+{"text_id":366,"forms":[""],"absolute_byte_offsets":[29899],"raw_metadata_u32":[0]}
+{"text_id":367,"forms":[""],"absolute_byte_offsets":[29900],"raw_metadata_u32":[0]}
+{"text_id":368,"forms":["Maintenez <$keyicon(141)> appuyé et appuyez<br>sur <$keyicon(258)> pour ajuster l'agencement de<br>certains objets lors de leur placement."],"absolute_byte_offsets":[29901],"raw_metadata_u32":[10]}
+{"text_id":369,"forms":["Vous pouvez faire pousser des plantes<br>sous l'eau en les recouvrant d'écume."],"absolute_byte_offsets":[30041],"raw_metadata_u32":[10]}
+{"text_id":370,"forms":[""],"absolute_byte_offsets":[30121],"raw_metadata_u32":[0]}
+{"text_id":371,"forms":[""],"absolute_byte_offsets":[30122],"raw_metadata_u32":[0]}
+{"text_id":372,"forms":[""],"absolute_byte_offsets":[30123],"raw_metadata_u32":[0]}
+{"text_id":373,"forms":[""],"absolute_byte_offsets":[30124],"raw_metadata_u32":[0]}
+{"text_id":374,"forms":[""],"absolute_byte_offsets":[30125],"raw_metadata_u32":[0]}
+{"text_id":375,"forms":[""],"absolute_byte_offsets":[30126],"raw_metadata_u32":[0]}
+{"text_id":376,"forms":[""],"absolute_byte_offsets":[30127],"raw_metadata_u32":[0]}
+{"text_id":377,"forms":[""],"absolute_byte_offsets":[30128],"raw_metadata_u32":[0]}
+{"text_id":378,"forms":[""],"absolute_byte_offsets":[30129],"raw_metadata_u32":[0]}
+{"text_id":379,"forms":[""],"absolute_byte_offsets":[30130],"raw_metadata_u32":[0]}
+{"text_id":380,"forms":[""],"absolute_byte_offsets":[30131],"raw_metadata_u32":[0]}
+{"text_id":381,"forms":[""],"absolute_byte_offsets":[30132],"raw_metadata_u32":[0]}
+{"text_id":382,"forms":[""],"absolute_byte_offsets":[30133],"raw_metadata_u32":[0]}
+{"text_id":383,"forms":[""],"absolute_byte_offsets":[30134],"raw_metadata_u32":[0]}
+{"text_id":384,"forms":[""],"absolute_byte_offsets":[30135],"raw_metadata_u32":[0]}
+{"text_id":385,"forms":[""],"absolute_byte_offsets":[30136],"raw_metadata_u32":[0]}
+{"text_id":386,"forms":[""],"absolute_byte_offsets":[30137],"raw_metadata_u32":[0]}
+{"text_id":387,"forms":[""],"absolute_byte_offsets":[30138],"raw_metadata_u32":[0]}
+{"text_id":388,"forms":[""],"absolute_byte_offsets":[30139],"raw_metadata_u32":[0]}
+{"text_id":389,"forms":[""],"absolute_byte_offsets":[30140],"raw_metadata_u32":[0]}
+{"text_id":390,"forms":[""],"absolute_byte_offsets":[30141],"raw_metadata_u32":[0]}
+{"text_id":391,"forms":[""],"absolute_byte_offsets":[30142],"raw_metadata_u32":[0]}
+{"text_id":392,"forms":[""],"absolute_byte_offsets":[30143],"raw_metadata_u32":[0]}
+{"text_id":393,"forms":[""],"absolute_byte_offsets":[30144],"raw_metadata_u32":[0]}
+{"text_id":394,"forms":[""],"absolute_byte_offsets":[30145],"raw_metadata_u32":[0]}
+{"text_id":395,"forms":[""],"absolute_byte_offsets":[30146],"raw_metadata_u32":[0]}
+{"text_id":396,"forms":[""],"absolute_byte_offsets":[30147],"raw_metadata_u32":[0]}
+{"text_id":397,"forms":[""],"absolute_byte_offsets":[30148],"raw_metadata_u32":[0]}
+{"text_id":398,"forms":[""],"absolute_byte_offsets":[30149],"raw_metadata_u32":[0]}
+{"text_id":399,"forms":[""],"absolute_byte_offsets":[30150],"raw_metadata_u32":[0]}
+{"text_id":400,"forms":[""],"absolute_byte_offsets":[30151],"raw_metadata_u32":[0]}
+{"text_id":401,"forms":[""],"absolute_byte_offsets":[30152],"raw_metadata_u32":[0]}
+{"text_id":402,"forms":[""],"absolute_byte_offsets":[30153],"raw_metadata_u32":[0]}
+{"text_id":403,"forms":[""],"absolute_byte_offsets":[30154],"raw_metadata_u32":[0]}
+{"text_id":404,"forms":[""],"absolute_byte_offsets":[30155],"raw_metadata_u32":[0]}
+{"text_id":405,"forms":[""],"absolute_byte_offsets":[30156],"raw_metadata_u32":[0]}
+{"text_id":406,"forms":[""],"absolute_byte_offsets":[30157],"raw_metadata_u32":[0]}
+{"text_id":407,"forms":[""],"absolute_byte_offsets":[30158],"raw_metadata_u32":[0]}
+{"text_id":408,"forms":[""],"absolute_byte_offsets":[30159],"raw_metadata_u32":[0]}
+{"text_id":409,"forms":[""],"absolute_byte_offsets":[30160],"raw_metadata_u32":[0]}
+{"text_id":410,"forms":[""],"absolute_byte_offsets":[30161],"raw_metadata_u32":[0]}
+{"text_id":411,"forms":[""],"absolute_byte_offsets":[30162],"raw_metadata_u32":[0]}
+{"text_id":412,"forms":[""],"absolute_byte_offsets":[30163],"raw_metadata_u32":[0]}
+{"text_id":413,"forms":[""],"absolute_byte_offsets":[30164],"raw_metadata_u32":[0]}
+{"text_id":414,"forms":[""],"absolute_byte_offsets":[30165],"raw_metadata_u32":[0]}
+{"text_id":415,"forms":[""],"absolute_byte_offsets":[30166],"raw_metadata_u32":[0]}
+{"text_id":416,"forms":[""],"absolute_byte_offsets":[30167],"raw_metadata_u32":[0]}
+{"text_id":417,"forms":[""],"absolute_byte_offsets":[30168],"raw_metadata_u32":[0]}
+{"text_id":418,"forms":[""],"absolute_byte_offsets":[30169],"raw_metadata_u32":[0]}
+{"text_id":419,"forms":[""],"absolute_byte_offsets":[30170],"raw_metadata_u32":[0]}
+{"text_id":420,"forms":[""],"absolute_byte_offsets":[30171],"raw_metadata_u32":[0]}
+{"text_id":421,"forms":[""],"absolute_byte_offsets":[30172],"raw_metadata_u32":[0]}
+{"text_id":422,"forms":[""],"absolute_byte_offsets":[30173],"raw_metadata_u32":[0]}
+{"text_id":423,"forms":[""],"absolute_byte_offsets":[30174],"raw_metadata_u32":[0]}
+{"text_id":424,"forms":[""],"absolute_byte_offsets":[30175],"raw_metadata_u32":[0]}
+{"text_id":425,"forms":[""],"absolute_byte_offsets":[30176],"raw_metadata_u32":[0]}
+{"text_id":426,"forms":[""],"absolute_byte_offsets":[30177],"raw_metadata_u32":[0]}
+{"text_id":427,"forms":[""],"absolute_byte_offsets":[30178],"raw_metadata_u32":[0]}
+{"text_id":428,"forms":[""],"absolute_byte_offsets":[30179],"raw_metadata_u32":[0]}
+{"text_id":429,"forms":[""],"absolute_byte_offsets":[30180],"raw_metadata_u32":[0]}
+{"text_id":430,"forms":[""],"absolute_byte_offsets":[30181],"raw_metadata_u32":[0]}
+{"text_id":431,"forms":[""],"absolute_byte_offsets":[30182],"raw_metadata_u32":[0]}
+{"text_id":432,"forms":[""],"absolute_byte_offsets":[30183],"raw_metadata_u32":[0]}
+{"text_id":433,"forms":[""],"absolute_byte_offsets":[30184],"raw_metadata_u32":[0]}
+{"text_id":434,"forms":[""],"absolute_byte_offsets":[30185],"raw_metadata_u32":[0]}
+{"text_id":435,"forms":[""],"absolute_byte_offsets":[30186],"raw_metadata_u32":[0]}
+{"text_id":436,"forms":[""],"absolute_byte_offsets":[30187],"raw_metadata_u32":[0]}
+{"text_id":437,"forms":[""],"absolute_byte_offsets":[30188],"raw_metadata_u32":[0]}
+{"text_id":438,"forms":[""],"absolute_byte_offsets":[30189],"raw_metadata_u32":[0]}
+{"text_id":439,"forms":[""],"absolute_byte_offsets":[30190],"raw_metadata_u32":[0]}
+{"text_id":440,"forms":[""],"absolute_byte_offsets":[30191],"raw_metadata_u32":[0]}
+{"text_id":441,"forms":["Ouvrez un cadeau de Pokémon dans<br>un habitat inoccupé, et un Pokémon<br>de la même espèce y apparaîtra !"],"absolute_byte_offsets":[30192],"raw_metadata_u32":[1]}
+{"text_id":442,"forms":["Invitez des Pokémon vivant chez d'autres<br>joueurs ou joueuses à venir chez vous,<br>et ils finiront par vous rendre visite !"],"absolute_byte_offsets":[30305],"raw_metadata_u32":[1]}
+{"text_id":443,"forms":["Appuyez sur <$keyicon(133)> pour envoyer des<br>messages ou utiliser des réactions."],"absolute_byte_offsets":[30434],"raw_metadata_u32":[1]}
+{"text_id":444,"forms":[""],"absolute_byte_offsets":[30519],"raw_metadata_u32":[0]}
+{"text_id":445,"forms":[""],"absolute_byte_offsets":[30520],"raw_metadata_u32":[0]}
+{"text_id":446,"forms":[""],"absolute_byte_offsets":[30521],"raw_metadata_u32":[0]}
+{"text_id":447,"forms":[""],"absolute_byte_offsets":[30522],"raw_metadata_u32":[0]}
+{"text_id":448,"forms":[""],"absolute_byte_offsets":[30523],"raw_metadata_u32":[0]}
+{"text_id":449,"forms":[""],"absolute_byte_offsets":[30524],"raw_metadata_u32":[0]}
+{"text_id":450,"forms":[""],"absolute_byte_offsets":[30525],"raw_metadata_u32":[0]}
+{"text_id":451,"forms":[""],"absolute_byte_offsets":[30526],"raw_metadata_u32":[0]}
+{"text_id":452,"forms":[""],"absolute_byte_offsets":[30527],"raw_metadata_u32":[0]}
+{"text_id":453,"forms":[""],"absolute_byte_offsets":[30528],"raw_metadata_u32":[0]}
+{"text_id":454,"forms":[""],"absolute_byte_offsets":[30529],"raw_metadata_u32":[0]}
+{"text_id":455,"forms":[""],"absolute_byte_offsets":[30530],"raw_metadata_u32":[0]}
+{"text_id":456,"forms":["Il semblerait qu'il existe un endroit<br>que vous pouvez aménager librement<br>à plusieurs..."],"absolute_byte_offsets":[30531],"raw_metadata_u32":[1]}
+{"text_id":457,"forms":[""],"absolute_byte_offsets":[30627],"raw_metadata_u32":[0]}
+{"text_id":458,"forms":[""],"absolute_byte_offsets":[30628],"raw_metadata_u32":[0]}
+{"text_id":459,"forms":[""],"absolute_byte_offsets":[30629],"raw_metadata_u32":[0]}
+{"text_id":460,"forms":["Si vous avez un doute sur ce que<br>vous devez faire, retournez parler<br>à un Pokémon afin d'en savoir plus."],"absolute_byte_offsets":[30630],"raw_metadata_u32":[1]}
+{"text_id":461,"forms":["Les sols secs et irréguliers sont<br>peu praticables. Arrosez-les avec<br><$cdef(27)><$sklfull(3)> </color>ou installez des marches."],"absolute_byte_offsets":[30742],"raw_metadata_u32":[1]}
+{"text_id":462,"forms":["Il est possible d'abriter un lieu de vie<br>du soleil en y installant un toit."],"absolute_byte_offsets":[30876],"raw_metadata_u32":[1]}
+{"text_id":463,"forms":["Pour mettre de la musique, insérez<br>des <$cdef(27)>CD<nbs2><$iicon(3751)> </color>dans un <$cdef(27)><fqty(1)><$ifull(1802)></color>."],"absolute_byte_offsets":[30955],"raw_metadata_u32":[1]}
+{"text_id":464,"forms":["Si vous remarquez des gouttes d'eau sur<br>un bloc, cela signifie que vous pouvez le<br>briser pour permettre à l'eau de s'écouler."],"absolute_byte_offsets":[31092],"raw_metadata_u32":[1]}
+{"text_id":465,"forms":[""],"absolute_byte_offsets":[31226],"raw_metadata_u32":[0]}
+{"text_id":466,"forms":[""],"absolute_byte_offsets":[31227],"raw_metadata_u32":[0]}
+{"text_id":467,"forms":[""],"absolute_byte_offsets":[31228],"raw_metadata_u32":[0]}
+{"text_id":468,"forms":["Un Pokémon spécialiste du <$cdef(27)><$spwname(37)><br></color>nettoie les <$cdef(27)><fqty(2)><$iname(436)></color>, qui deviennent<br>ainsi des <$cdef(27)><fqty(2)><$iname(435)></color>."],"absolute_byte_offsets":[31229],"raw_metadata_u32":[10]}
+{"text_id":469,"forms":["Si vous apercevez des tourbillons brillants<br>sous l'eau, inspectez-les pour récupérer<br>des objets !"],"absolute_byte_offsets":[31420],"raw_metadata_u32":[10]}
+{"text_id":470,"forms":["Sous l'eau, un Pokémon spécialisé dans<br>l'<$cdef(27)><$spwname(8)> </color>peut recouvrir les plantes<br>d'écume."],"absolute_byte_offsets":[31526],"raw_metadata_u32":[10]}
+{"text_id":471,"forms":["Un Pokémon spécialisé dans la <$cdef(27)>coupe<br>de bois </color>peut couper vos <$cdef(27)><fqty(2)><$iname(520)></color><br>et vous rendre des <$cdef(27)><fqty(2)><$iname(521)></color>."],"absolute_byte_offsets":[31646],"raw_metadata_u32":[10]}
+{"text_id":472,"forms":["Une fois que vous serez capable de faire<br>de la <$cdef(27)>plongée</color>, vous pourrez <$cdef(27)>construire</color><br>des bâtiments sous l'eau."],"absolute_byte_offsets":[31838],"raw_metadata_u32":[10]}
+{"text_id":473,"forms":["Les abysses sont plongés dans<br>l'obscurité. Vous aurez besoin d'une<br>source de lumière pour avancer."],"absolute_byte_offsets":[31990],"raw_metadata_u32":[10]}
+{"text_id":474,"forms":[""],"absolute_byte_offsets":[32098],"raw_metadata_u32":[0]}
+{"text_id":475,"forms":[""],"absolute_byte_offsets":[32099],"raw_metadata_u32":[0]}
+{"text_id":476,"forms":[""],"absolute_byte_offsets":[32100],"raw_metadata_u32":[0]}
+{"text_id":477,"forms":[""],"absolute_byte_offsets":[32101],"raw_metadata_u32":[0]}
+{"text_id":478,"forms":[""],"absolute_byte_offsets":[32102],"raw_metadata_u32":[0]}
+{"text_id":479,"forms":[""],"absolute_byte_offsets":[32103],"raw_metadata_u32":[0]}
+{"text_id":480,"forms":[""],"absolute_byte_offsets":[32104],"raw_metadata_u32":[0]}
+{"text_id":481,"forms":[""],"absolute_byte_offsets":[32105],"raw_metadata_u32":[0]}
+{"text_id":482,"forms":[""],"absolute_byte_offsets":[32106],"raw_metadata_u32":[0]}
+{"text_id":483,"forms":[""],"absolute_byte_offsets":[32107],"raw_metadata_u32":[0]}
+{"text_id":484,"forms":[""],"absolute_byte_offsets":[32108],"raw_metadata_u32":[0]}
+{"text_id":485,"forms":[""],"absolute_byte_offsets":[32109],"raw_metadata_u32":[0]}
+{"text_id":486,"forms":[""],"absolute_byte_offsets":[32110],"raw_metadata_u32":[0]}
+{"text_id":487,"forms":[""],"absolute_byte_offsets":[32111],"raw_metadata_u32":[0]}
+{"text_id":488,"forms":[""],"absolute_byte_offsets":[32112],"raw_metadata_u32":[0]}
+{"text_id":489,"forms":[""],"absolute_byte_offsets":[32113],"raw_metadata_u32":[0]}
+{"text_id":490,"forms":[""],"absolute_byte_offsets":[32114],"raw_metadata_u32":[0]}
+{"text_id":491,"forms":[""],"absolute_byte_offsets":[32115],"raw_metadata_u32":[0]}
+{"text_id":492,"forms":[""],"absolute_byte_offsets":[32116],"raw_metadata_u32":[0]}
+{"text_id":493,"forms":[""],"absolute_byte_offsets":[32117],"raw_metadata_u32":[0]}
+{"text_id":494,"forms":[""],"absolute_byte_offsets":[32118],"raw_metadata_u32":[0]}
+{"text_id":495,"forms":[""],"absolute_byte_offsets":[32119],"raw_metadata_u32":[0]}
+{"text_id":496,"forms":[""],"absolute_byte_offsets":[32120],"raw_metadata_u32":[0]}
+{"text_id":497,"forms":[""],"absolute_byte_offsets":[32121],"raw_metadata_u32":[0]}
+{"text_id":498,"forms":[""],"absolute_byte_offsets":[32122],"raw_metadata_u32":[0]}
+{"text_id":499,"forms":[""],"absolute_byte_offsets":[32123],"raw_metadata_u32":[0]}
+{"text_id":500,"forms":[""],"absolute_byte_offsets":[32124],"raw_metadata_u32":[0]}

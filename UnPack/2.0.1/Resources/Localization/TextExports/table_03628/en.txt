@@ -1,0 +1,129 @@
+<$voicel(4,2)>... ... ...<wait(2.0)><$lookat(4,0,0)><$lookat(4,1,0)><waitactor(4)><clear><br><$emotion(4,14)><$voicel(4,8)>Oh! Sorry, I didn’t see you there! <wait(1.5)><$emotion(4,55)><$voicel(4,4)>So I’m SUPER curious<br>about the depths of this cave, right?
+<$comcan(4)>And—<wait(0.5)><$comeff(4,6)><$facial(4,1)><$motion(4,806)><$voicel(4,6)>wait... Those soft, squishy facial features... <$emotion(4,14)><$voicel(4,4)>Are you<br>actually a <$cdef(27)>Ditto</color>?!<wait(0.8)><$motion(0,40)><wait(1.0)><clear><br><$comeff(4,9)><$motion(4,644)><$facial(4,4)><$voicel(4,5)>Hehehe, do you like exploring too? Let’s be friends!
+
+
+
+<$comeff(4,7)><$motion(4,663)><$facial(4,9)><$voicel(4,4)>Hmmm... Guess it’s a dead end.
+<$comeff(4,14)><$motion(4,805)><$facial(4,2)><$voicel(4,5)>I REALLY want to explore this cave, but there’s all this<br>STUFF in the way. <$comeff(4,4)><$motion(4,802)><$facial(4,10)><$voicel(4,4)><$kfacial(4)>I just can’t get through...
+<$comeff(4,21)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>Wait, you’ll break it for me?! That’d be a BIG help!<clear><br><$emotion(4,14)><$voicel(4,7)>Oh, hey! Since you’re here, we might as well explore the<br>place together!
+<$comeff(4,21)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>Wait, for real?! That’d be a BIG help!<clear><br><$emotion(4,14)><$voicel(4,7)>Oh, hey! Since you’re here, we might as well explore the<br>place together!
+
+
+
+
+
+
+<$comeff(4,9)><$motion(4,806)><$facial(4,1)><$voicel(4,10)>To the back of the cave we GO!
+<oneline><$comeff(4,6)><$motion(4,806)><$facial(4,1)><$voicel(4,5)>Oh. Is there something else you wanna do instead,<br><$cdef(27)><pname;0></color>?
+<$emotion(4,8)><$voicel(4,7)>If you’re up for it, I’d love it if you explored the cave<br>with me!
+<$emotion(4,8)><$voicel(4,7)>If you’re up for it, I’d love it if you explored the cave<br>with me!
+<$comeff(4,9)><$motion(4,644)><$facial(4,4)><$voicel(4,7)>Thanks for doing that for me, <$cdef(27)><pname;0></color>!
+<$comeff(4,21)><$motion(4,801)><$facial(4,4)><$voicel(4,9)>It was SWEET getting to explore together! This place is so<br>sparkly and charming! ♪
+
+
+
+<$emotion(4,27)><$voicel(4,5)>Huh? Wait, wait, wait. I... I feel something here!<clear><br><$comeff(4,10)><$motion(4,662)><$facial(4,1)><$voicel(4,7)>You feel it too, right, <$cdef(27)><pname;0></color>?!
+<$emotion(4,55)><$voicel(4,3)>Really? It’s like a feeling there’s treasure nearby.<clear><br><$emotion(4,14)><$voicel(4,5)>...Wait. THAT might be what’s here—<$comeff(4,8)><$motion(4,806)><$facial(4,4)><$voicel(4,8)>something I love!
+<$voicel(4,3)><$comeff(4,14)><$motion(4,666)>Hmm... Are you sure? It’s more like a feeling there’s<br>treasure nearby or something.<clear><br><$emotion(4,14)><$voicel(4,5)>...Wait. THAT might be what’s here—<$comeff(4,8)><$motion(4,806)><$facial(4,4)><$voicel(4,8)>something I love!
+<$emotion(4,50)><$voicel(4,6)>I’m talking about a doll! <$emotion(4,39)><$voicel(4,9)>The thing about me is, I LOVE<br>dolls that are filled with signs their owner cared for them.<clear><br><$comeff(4,3)><$motion(4,805)><$facial(4,1)><$voicel(4,7)>And right now, I can just tell there’s a precious doll nearby!
+<$emotion(4,50)><$voicel(4,6)>A doll! <$emotion(4,39)><$voicel(4,9)>The thing about me is, I LOVE dolls that are filled<br>with signs their owner cared for them.<clear><br><$comeff(4,3)><$motion(4,805)><$facial(4,1)><$voicel(4,7)>And right now, I can just tell there’s a precious doll nearby!
+Try to find a <$cdef(27)><fqty(1)><$ifull(540)></color> for <$cdef(27)>Frillish</color>!<clear><br>If you use the <$cdef(27)><fqty(1)><$ifull(2793)></color>, you and <$cdef(27)>Frillish</color> can<br>search for it together!
+
+
+
+
+
+
+
+
+
+
+If you don’t have a <$cdef(27)><fqty(1)><$ifull(2793)></color>, try going to<br><$cdef(27)><$stgname;0(1)></color>!<clear><br>You can find one if you search the top of the hill near<br>the Pokémon Center!
+
+
+
+<$emotion(4,55)><$voicel(4,4)>I know there’s a doll around here somewhere...
+<$comcan(4)><$cdef(27)>Frillish </color>is good at <$cdef(27)><$spwfull(11)>ing</color>—try looking for a<br><$cdef(27)><fqty(1)><$ifull(540)> </color>together!<clear><br>You might find it faster if you use a <$cdef(27)><fqty(1)><$ifull(2793)></color>!
+You dug up some treasure! Pick it up and see what it is!
+
+
+
+
+
+<$comeff(4,21)><$motion(4,801)><$facial(4,4)><$voicel(4,10)>WHOA! Such a pretty shine!<clear><br><$voicel(4,7)><$comeff(4,8)><$facial(4,4)><$motion(4,806)>Did humans use these as accessories? So fashionable!
+<$comeff(4,10)><$motion(4,807)><$facial(4,2)><$voicel(4,9)>All right! Let’s use these vibes to find that doll!
+
+
+
+
+
+
+
+<$comeff(4,6)><$motion(4,806)><$facial(4,1)><$voicel(4,3)>Uhhh... What IS this? It’s not a doll...<clear><br><$emotion(4,247)><$voicel(4,8)>Let’s try looking somewhere else!
+
+
+
+
+<$comeff(4,10)><$motion(4,807)><$facial(4,4)><$voicel(4,10)>All right! Next, let’s find a doll!
+
+<$emotion(4,27)><$voicel(4,7)>OH! A doll! Let me see, <$cdef(27)><pname;0></color>!<clear><br><$motion(4,666)><$facial(4,1)><$voicel(4,2)>... ... ...<clear><br><$emotion(4,47)><$voicel(4,3)>Hmmm... I don’t think this is the same doll I sensed earlier.<br><$comeff(4,6)><$motion(4,806)><$facial(4,1)><$voicel(4,6)>Are there any others around?
+
+
+
+
+
+<$emotion(4,27)><$voicel(4,7)>OH! A doll! Let me see, <$cdef(27)><pname;0></color>!
+<$comeff(4,21)><$motion(4,644)><$facial(4,1)><$voicel(4,7)>Wow... This doll looks really well cared for. I think it was<br>owned by a little girl.
+<$emotion(4,6)><$voicel(4,6)>She must’ve LOVED <$cdef(27)><$cname(566)></color>!
+<$comeff(4,13)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>Frill friiill! ♪ Oh, it makes me so happy too! ♪<clear><br><$comeff(4,21)><$motion(4,644)><$facial(4,1)><$voicel(4,7)>I’m totally satisfied. Here—you can have the doll back!
+This <$cdef(27)><fqty(1)><$ifull(540)></color> is like any other doll—if you show it<br>to <$cdef(27)><$cname(123)></color>, they’ll take you to a <$cdef(27)>Dream Island</color>!
+<$emotion(4,8)><$voicel(4,9)>Hehehe! ♪ Any day I see such a lovely doll is a lucky one!<br><$comeff(4,8)><$motion(4,644)><$facial(4,1)><$voicel(4,8)>Thanks for doing that for me, <$cdef(27)><pname;0></color>!<clear><br><$emotion(4,14)><$voicel(4,5)>Oh! Let me do something for YOU to repay the favor!<br><$emotion(4,55)><$voicel(4,4)>Hmmm... What could I do?
+<oneline><$comeff(4,6)><$motion(4,806)><$facial(4,1)><$voicel(4,6)>You’re putting up a building, <$cdef(27)><pname;0></color>?<br><wait(1.2)><$emotion(4,50)><$voicel(4,8)>That<slide><br>sounds<slide><br>like<slide><br>SO<slide><br>much fun!<clear><br><$comeff(4,10)><$motion(4,807)><$facial(4,1)><$voicel(4,6)>All right—I’ll help out with that!
+<$emotion(4,50)><$voicel(4,8)>Just give me a shout when you’re ready to <$cdef(27)><$spwfull(1)></color>!
+
+
+
+
+
+
+<$emotion(4,27)><$voicel(4,5)>Huh? Wait, wait, wait. I... I feel something here!<clear><br><$comeff(4,10)><$motion(4,662)><$facial(4,1)><$voicel(4,7)>You feel it too, right, <$cdef(27)><pname;0></color>?!
+<$emotion(4,55)><$voicel(4,3)>Really? It’s, like, a feeling there’s treasure nearby.<clear><br><$emotion(4,14)><$voicel(4,5)>...Wait. THAT might be what’s here—<$comeff(4,8)><$motion(4,806)><$facial(4,4)><$voicel(4,8)>something I love!
+<$voicel(4,3)><$comeff(4,14)><$motion(4,666)>Hmm... Are you sure? It’s more like a feeling there’s<br>treasure nearby or something.<clear><br><$emotion(4,14)><$voicel(4,5)>...Wait. THAT might be what’s here—<$comeff(4,8)><$motion(4,806)><$facial(4,4)><$voicel(4,8)>something I love!
+<$emotion(4,50)><$voicel(4,6)>I’m talking about a doll! <$emotion(4,39)><$voicel(4,9)>The thing about me is, I LOVE<br>dolls that are filled with signs their owner cared for them.<clear><br><$comeff(4,3)><$motion(4,805)><$facial(4,1)><$voicel(4,7)>And right now, I can just tell there’s a precious doll nearby!
+<$emotion(4,50)><$voicel(4,6)>A doll! <$emotion(4,39)><$voicel(4,9)>The thing about me is, I LOVE dolls that are filled<br>with signs their owner cared for them.<clear><br><$comeff(4,3)><$motion(4,805)><$facial(4,1)><$voicel(4,7)>And right now, I can just tell there’s a precious doll nearby!
+<$emotion(4,27)><$voicel(4,9)>Wait, that’s it! Let me see, <$cdef(27)><pname;0></color>!
+<$comeff(4,21)><$motion(4,644)><$facial(4,1)><$voicel(4,7)>Wow... This doll looks really well cared for. I think it was<br>owned by a little girl.
+<$emotion(4,6)><$voicel(4,6)>She must’ve LOVED <$cdef(27)><$cname(566)></color>!
+<$comeff(4,13)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>Frill friiill! ♪ Oh, it makes me so happy too! ♪<clear><br><$comeff(4,21)><$motion(4,644)><$facial(4,1)><$voicel(4,7)>I’m totally satisfied. Here—you can have the doll back!
+This <$cdef(27)><fqty(1)><$ifull(540)></color> is like any other doll—if you show it<br>to <$cdef(27)><$cname(123)></color>, they’ll take you to a <$cdef(27)>Dream Island</color>!
+<$emotion(4,8)><$voicel(4,9)>Hehehe! ♪ Any day I see such a lovely doll is a lucky one!<br><$comeff(4,8)><$motion(4,644)><$facial(4,1)><$voicel(4,8)>Thanks for doing that for me, <$cdef(27)><pname;0></color>!<clear><br><$emotion(4,14)><$voicel(4,5)>Oh! Let me do something for YOU to repay the favor!<br><$emotion(4,55)><$voicel(4,4)>Hmmm... What could I do?
+<oneline><$comeff(4,6)><$motion(4,806)><$facial(4,1)><$voicel(4,6)>You’re putting up a building, <$cdef(27)><pname;0></color>?<br><wait(1.2)><$emotion(4,50)><$voicel(4,8)>That<slide><br>sounds<slide><br>like<slide><br>SO<slide><br>much fun!<clear><br><$comeff(4,10)><$motion(4,807)><$facial(4,1)><$voicel(4,6)>All right—I’ll help out with that!
+<$emotion(4,50)><$voicel(4,8)>Just give me a shout when you’re ready to <$cdef(27)><$spwfull(1)></color>!
+
+
+
+
+
+
+
+<oneline><$emotion(4,55)><$voicel(4,3)>Hey, <$cdef(27)><pname;0></color>! So I heard this rumor,<br>right?<slide><br><$comeff(4,6)><$motion(4,644)><$facial(4,1)><$voicel(4,6)>Do<slide><br>you<slide><br>make<slide><br>homes<slide><br>for<slide><br>Pokémon?<wait(0.8)><$motion(0,40)><wait(1.0)>
+<$comeff(4,3)><$motion(4,806)><$facial(4,1)><$voicel(4,3)>If you’re up for it, could you make ME a home, too?
+<$emotion(4,8)><$voicel(4,7)>YAYYY! Could you do it like this, maybe?
+<$emotion(4,8)><$voicel(4,7)>YAYYY! Could you do it like this, maybe?
+<$comeff(4,3)><$motion(4,644)><$facial(4,2)><$voicel(4,6)>Let me know when my home’s done, OK?
+
+
+
+
+
+
+<$comeff(4,6)><$motion(4,666)><$facial(4,2)><$voicel(4,5)>I was wondering—could you do my home like this, maybe?
+
+
+
+<$emotion(4,6)><$voicel(4,7)>Thanks for doing that for me! My new home is SO cute—<br>I love it!
+
+
+
+<oneline><$comeff(4,21)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>The home you built me is literally the BEST,<br><$cdef(27)><pname;0></color>!
+<$emotion(4,6)><$voicel(4,8)>Thanks for the cutest home EVER!

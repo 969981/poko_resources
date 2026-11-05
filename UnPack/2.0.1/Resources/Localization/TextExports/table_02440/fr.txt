@@ -1,0 +1,225 @@
+<$voicev(4,1,30)>Hé...
+<$voicev(4,1,50)>Hé oh... Y a quelqu'un... ?
+Vous entendez une voix de l'autre côté des rochers.
+<$voicel(4,3)><$motion(4,803)><$comeff(4,3)><$facial(4,4)>Oh... Je m'attendais pas à voir quelqu'un ici !<br>Ça m'fait bien plaisir d'voir une binette amicale.<slide><br><$voicel(4,8)><$facial(4,1)><$comeff(4,6)><$motion(4,661)>Tu pourrais m'aider, s'te plaît ?
+<$voicel(4,10)><$emotion(4,53)>Tu m'sauves, merci !
+<$voicel(4,3)><$comeff(4,14)><$motion(4,666)>En fait, c'est un peu la honte, mais euh...<br>J'arrive pas à me décoincer, et... j'peux plus sortir d'ici.<clear><br><$voicel(4,1)><$facial(4,9)>Normalement, j'aurais aucun mal à creuser dans la roche<br>pour me tirer d'là, mais...<clear><br><$voicel(4,7)><$motion(4,806)><$comeff(4,7)>J'ai dû roupiller trop longtemps, j'crois.<br>J'sais pas si c'est la pierre qui est super dure<slide><br>ou si c'est mon corps qu'a pu d'force...<clear><br><$voicel(4,6)><$comeff(4,17)><$motion(4,663)>J'étais sur le point d'laisser tomber, honnêtement...
+<$voicel(4,7)><$emotion(4,49)>Mais si t'as réussi à venir jusqu'ici, c'est que t'es capable<br>de démolir les parois et le sol d'cette grotte, non ?
+<$voicel(4,9)><$emotion(4,1)>Tu pourrais <$cdef(27)>abattre cette paroi pour que j'puisse <$voicel(4,4)><$comeff(4,6)><$motion(4,805)>sortir<br>d'ici </color>?
+<$voicel(4,1)>Zzz...
+
+
+
+
+
+<$voicel(4,7)><$comeff(4,6)><$motion(4,661)>Je peux pas sortir d'ici... Tu pourrais <$cdef(27)>abattre cette paroi </color>?<br><$voicel(4,10)><$emotion(4,38)>Pas besoin d'faire dans la dentelle, donne tout ce que t'as !
+<$voicel(4,1)><$emotion(4,47)>J'y crois pas ! Même toi, t'y arrives pas...
+<$voicel(4,5)><$motion(4,661)><$comeff(4,14)>Normalement, quand on peut pas utiliser la force,<br>faut utiliser sa tête.<slide><br><$voicel(4,4)><$comeff(4,17)>Mais c'est pas vraiment mon point fort, on va dire...
+<$voicel(4,9)><$comeff(4,5)><$motion(4,661)>Je sais ! Tu connaîtrais pas un Pokémon super intelligent,<br>par hasard ?<clear><br><$voicel(4,5)><$emotion(4,14)>Parce que si c'est le cas, tu pourrais lui<$cdef(27)> demander<br>de t'aider à trouver un moyen </color><$voicel(4,8)><$comeff(4,6)><$cdef(27)>d'abattre cette paroi </color>?<clear><br><$voicel(4,9)><$emotion(4,49)>Moi, je t'attendrai patiemment ici ! J'compte sur toi, hein !
+<$voicel(4,7)><$emotion(4,49)>Ha ha ! Très drôle, ta blague ! Si un Coup d'Boule suffisait<br>pour percer le mur, j'serais déjà dehors !<clear><br><$voicel(4,9)><$emotion(4,14)>Je sais ! Tu connaîtrais pas un Pokémon super intelligent,<br>par hasard ?<clear><br><$voicel(4,5)>Parce que si c'est le cas, tu pourrais lui<$cdef(27)> demander<br>de t'aider à trouver un moyen </color><$voicel(4,6)><$comeff(4,6)><$cdef(27)>d'abattre cette paroi </color>?<clear><br><$voicel(4,7)><$emotion(4,49)>Moi, je t'attendrai patiemment ici ! J'compte sur toi, hein !
+<$voicel(4,7)><$emotion(4,49)>T'as trouvé un moyen d'abattre la paroi, alors ?<br>J'compte sur toi, hein !
+<$voicel(1,8)><$emotion(1,38)>Ah, <$cdef(27)><pname;0></color> ! Aurais-tu un instant ?
+<$voicel(1,5)>Qu'y a-t-il derrière ce mur en pierre ? Cela m'intrigue...
+<$voicel(1,3)>Il me semble que ce mur n'existait pas,<br>lorsque j'étais jeune.<clear><br><$voicel(1,5)>Mais cela remonte à si longtemps que je n'arrive pas<br>à me remémorer ce qu'il y a de l'autre côté.<clear><br><$voicel(1,7)>Quoi qu'il en soit, tu devrais être capable de le briser,<br>désormais. N'est-ce pas ?
+<$voicel(1,3)><$emotion(1,14)>Pourrais-tu <$cdef(27)>m'emmener de l'autre côté de ce mur </color>?
+<$voicel(1,4)><$comeff(1,6)><$motion(1,666)>À propos... Tu voulais me demander quelque chose,<br>n'est-ce pas ?<clear><br><$voicel(1,5)>Je te prie de m'excuser, mais j'ai tant envie de voir<br>ce qui se trouve de l'autre côté de ce mur...<slide><br><$voicel(1,7)><$comeff(1,4)><$motion(1,806)><$facial(1,10)>Je n'arrive pas à penser à autre chose !
+<$voicel(1,7)><$comeff(1,21)><$motion(1,807)><$facial(1,5)>Pourrais-tu <$cdef(27)>m'emmener de l'autre côté de ce mur </color>?<clear><br><$voicel(1,5)>Je suppose que tu avais quelque chose à me demander...<br>Je répondrai à ta question après, si cela ne t'ennuie pas.
+<$voicel(1,7)><$emotion(1,38)>Ho ho ho ! Regarde un peu !<br>Nous pouvons voir la mer de ce côté-ci !<clear><br><$voicel(1,5)>Il me semble avoir déjà vu cette mer dans mon enfance...<br>J'en ai un vague souvenir.
+<$comeff(1,5)>... !
+<$voicel(1,7)>Qu'est-ce donc que cela... ?<clear><br><$voicel(1,3)>Il est couvert de sable, mais cet édifice semble<br>avoir été fabriqué par des êtres humains !<clear><br><$voicel(1,1)>Étrange... Je ne me souviens pas l'avoir déjà vu...
+<$voicel(1,5)>Tiens ? Quelle est cette boîte étrange ?
+
+
+
+Bzzzt... Crac ! Bip !
+
+
+
+
+
+<$voicel(1,5)>Quelle est donc cette étrange boîte ?
+
+
+
+
+
+Bzzt... Un, deux. Test. Test.<clear><br>Bonjour, bonsoir ! J'espère que ça enregistre<br>correctement, au moins ?<clear><br>Bon, je continue ! On verra bien...
+<$voicel(1,9)><$comeff(1,5)><$motion(1,665)><$facial(1,13)>Oh ! Une boîte qui parle ! Serait-ce un autre PC ?
+Ahem, vous là-bas ! Bienvenue dans notre repaire !<br>Il faut du cran pour se pointer ici !<slide><br>On voit que vous êtes vraiment un gars sympa !<clear><br>Quoique... Il se peut aussi que la personne qui entende<br>ce message soit pas un gars, en fait... ?<clear><br>Oubliez ça, je recommence depuis le début !<clear><br>Vous là-bas ! Que votre regard est pur et innocent !<br>Vous êtes quelqu'un de bien, ça se voit tout de suite !
+Et autant vous dire qu'on s'y connaît, nous,<br>en pureté et en innocence !<clear><br>Nous sommes une entreprise qui se sert des Pokémon...<br>Euh, non, c'est pas ce que je voulais dire...<clear><br>Nous sommes une organisation au service des Pokémon !<br>Et nous cherchons à améliorer leur environnement ! <clear><br>Nos valeurs ? La liberté et la joie de vivre !
+Oh ! Je peux voir à votre expression que vous rêvez de<br>rejoindre nos rangs !<clear><br>Il ne fait aucun doute que vous seriez un excellent<br>atout pour notre équipe !<clear><br>Mais pour faire partie des nôtres, vous devrez réussir<br>une épreuve redoutable : le <$cdef(27)>défi d'initiation </color>!<clear><br>Préparez-vous, car la première partie de ce <$cdef(27)>défi<br></color>commence dès maintenant !
+Voici la première épreuve :<clear><br>vous allez devoir rassembler des <$cdef(27)><fqty(2)><$ifull(2340)></color>,<br>puis les déposer dans cette caisse.<clear><br>Bien sûr, ce n'est pas pour nous, hein !<br>On les donnera à manger aux Pokémon, c'est promis !
+En cas de réussite au <$cdef(27)>défi d'initiation</color>,<br>vous obtiendrez une fabuleuse récompense !<slide><br>Allez, bonne chance !
+<$voicel(1,4)><$comeff(1,17)><$facial(1,9)>Ça y est, il semblerait que la boîte a fini de parler...<clear><br><$voicel(1,5)><$comeff(1,14)><$motion(1,802)><$facial(1,1)>On aurait dit une voix d'être humain, mais pour<br>être honnête, je n'ai rien compris à ce qu'elle a dit.<clear><br><$voicel(1,8)><$comeff(1,7)>Toutefois, il m'a semblé percevoir de la contrariété<br>dans ses mots.<clear><br><$voicel(1,5)><$comeff(1,21)><$motion(1,806)>Je dois avouer que ce bâtiment m'intrigue beaucoup...<br>Sans parler du fait qu'il renferme peut-être un indice<slide><br>sur ce qui est arrivé aux êtres humains !
+<$voicel(1,5)><$emotion(1,14)>Enfin, rien ne sert de trop y réfléchir pour le moment.<clear><br><$voicel(1,7)><$comeff(1,6)><$motion(1,666)>Pourrais-tu repasser de temps en temps ici pour jeter<br>un œil à ce bâtiment, <$cdef(27)><pname;0> </color>?
+<$voicel(1,5)><$comeff(1,6)><$motion(1,801)>Au fait, <$cdef(27)><pname;0></color>. Il me semble<br>que tu avais quelque chose à me demander, non ?
+<$voicel(1,9)><$emotion(1,27)><$facial(1,13)>Comment ?! <$cdef(27)>Onix </color>est dans une grotte et ne peut pas<br>en sortir ? <$voicel(1,5)><$comeff(1,14)><$facial(1,9)><$motion(1,666)>Nous devons absolument l'aider !
+<$voicel(1,7)><$emotion(1,48)>Nous devrions commencer par rentrer afin d'en parler<br>avec les autres !
+
+
+
+
+
+<$voicel(1,5)><$comeff(1,14)><$motion(1,661)>J'ai appris qu'<$cdef(27)>Onix</color> se trouve dans une grotte<br>et ne parvient plus à en sortir.<clear><br><$voicel(1,3)><$comeff(1,7)><$motion(1,807)><$facial(1,9)>Malheureusement, il semblerait que les parois soient<br>d'une solidité à toute épreuve.<clear><br><$cdef(27)><pname;0> </color>n'a pas su les briser, c'est dire !<br><$voicel(1,2)><$comeff(1,6)><$motion(1,666)>Quelqu'un aurait-il une idée pour secourir <$cdef(27)>Onix</color> ?
+
+<$voicel(2,7)><$emotion(2,49)>Si le problème, c'est que les murs sont trop durs,<br>on devrait p'têt' essayer de les arroser ?<$voicel(2,4)><$comeff(2,6)><$motion(2,666)><clear><br>Ça devrait les rendre tout mous !
+<$voicel(1,3)><$motion(1,827)><$facial(1,9)>Hmmm... Si les parois sont si dures que même un Pokémon<br>comme <$cdef(27)>Onix </color>n'est pas capable de les briser,<slide><br><$voicel(1,1)><$comeff(1,17)>je doute qu'un peu d'eau suffise à les ramollir.<$motion(1,654)>
+<$voicel(3,7)><$comeff(3,3)><$motion(3,661)>Alors, on pourrait juste attendre qu'il pleuve, non ?
+<$voicel(1,4)><$facial(1,9)><$kfacial(1)>Hmmm... Ah oui, la pluie...
+<$voicel(1,5)><$motion(1,807)><$comeff(1,7)>Vous ne le savez certainement pas, mais... il ne pleut pas,<br>dans cette région.
+<$voicel(3,7)><$emotion(3,29)><$facial(3,13)><$facial(1,1)>QUOI ?! Vraiment ? Mais pourquoi ?
+<$voicel(1,7)><$comeff(1,14)><$motion(1,824)>Je n'en connais pas la raison exacte,<br>mais la dernière fois que j'ai vu pleuvoir, j'étais enfant.<clear><br><$voicel(1,6)>À l'époque, il y avait encore des êtres humains, ici...<$comcan(1)><br><$voicel(1,4)><$comeff(1,17)><$motion(1,652)><$facial(1,9)>Je n'ai plus revu une goutte de pluie, depuis.
+<$facial(1,1)><$voicel(4,7)><$emotion(4,49)>Sérieux ?! Bon après, j'aime pas la pluie, donc tant mieux !
+<$voicel(2,9)><$comeff(2,5)><$motion(2,807)><$facial(2,13)>Ne dis pas de sottises ! C'est important qu'il pleuve,<br>sinon c'est un problème !
+<$voicel(1,5)><$emotion(1,1)>Tout à fait. Non seulement la pluie pourra aider <$cdef(27)>Onix</color>,<br>mais elle devrait aussi ravir beaucoup d'autres Pokémon !
+<$facial(1,1)><$voicel(3,7)><$comeff(3,10)><$motion(3,803)><$facial(3,4)>OK ! Faisons tomber la pluie, alors !
+<$voicel(1,5)><$comeff(1,14)><$motion(1,666)>Facile à dire, mais... comment s'y prendre pour<br>que la pluie tombe à nouveau... ?
+<$facial(1,1)><$comcan(1)><$voicel(3,5)><$comeff(3,3)><$motion(3,806)>Quoi ?! Alors, même TOI, y a des trucs que tu sais pas,<br><$cdef(27)>Professeur</color> ?
+<$voicel(1,2)><$comeff(1,7)><$facial(1,9)>C'est-à-dire que... pour faire tomber la pluie...<br>Laissez-moi réfléchir...
+<$voicel(1,7)><$emotion(1,40)><$facial(1,4)>Oh, je sais ! Nous devons faire appel à <$cdef(27)>Ramoloss </color>!
+<$facial(1,1)><$voicel(4,4)><$comeff(4,6)><$motion(4,666)><$cdef(27)>Ramoloss</color> ?
+<$voicel(1,7)><$emotion(1,49)>Eh bien, <$cdef(27)>Ramoloss </color>est un Pokémon qui pourrait peut-être<br>nous aider à faire tomber la pluie.<clear><br><$voicel(1,5)><$comeff(1,6)><$facial(1,1)>Crois-tu que tu pourrais essayer de trouver <$cdef(27)>Ramoloss</color>,<br>et de l'amener ici ?<clear><br><$voicel(1,7)><$comeff(1,3)><$motion(1,839)>Si mes souvenirs sont exacts, c'est un Pokémon qui adore<br>dormir dans les <$cdef(27)>hautes herbes au bord de l'eau</color>.<$motion(1,656)>
+<$comeff(1,6)><$motion(1,666)><$voicel(1,5)>Te souviens-tu de ce bâtiment couvert de sable que<br>nous avions trouvé derrière le mur que tu avais détruit ?<clear><br><$emotion(1,38)><$voicel(1,7)>S'il y avait de hautes herbes là-bas, cela plairait<br>certainement beaucoup à <$cdef(27)>Ramoloss </color>!
+<$voicel(1,5)><$comeff(1,6)>Pourrais-tu <$cdef(27)>trouver Ramoloss </color>et l'<$cdef(27)>amener ici </color>?
+<$voicel(1,7)><$comeff(1,3)><$motion(1,664)>Si mes souvenirs sont exacts, c'est un Pokémon qui adore<br>dormir dans les <$cdef(27)>hautes herbes au bord de l'eau</color> !
+<$voicel(4,8)><$comeff(4,6)><$motion(4,801)>Bonjouuur... J'peux t'aider ?
+<$voicel(4,6)><$emotion(4,14)>Heeein... ? Pour aller où ?
+<$voicel(4,4)><$comeff(4,4)><$motion(4,807)>Eeeuh... Comment ça... ?
+... ...<br>... ...
+<$voicel(4,5)><$emotion(4,14)>Ah booon... Je peux faire tomber la pluie, moiii... ?
+<$comeff(4,14)><$motion(4,805)>... ...<br>... ...
+<$voicel(4,10)><$emotion(4,40)>Trop coooool... !
+<$voicel(4,5)><$comeff(4,14)><$motion(4,807)>Ah, mais... le sol est vraiment abîmé, par iciii...<br>C'est pas facile d'marcher dessuuus...<clear><br><$voicel(4,3)><$emotion(4,47)>J'risque de tomber de fatiiigue... avant même d'arriver<br>jusqu'au <$cdef(27)>Professeur</color>...
+... ...
+Vous avez mis au point une méthode pour confectionner<br>un <$cdef(27)><fqty(1)><$ifull(1405)> </color>!
+Si vous placez des escaliers là où il y a un dénivelé,<br>les Pokémon pourront se déplacer plus facilement.
+En outre, les Pokémon peuvent marcher sur des sentiers<br>humides plus longtemps qu'ils ne le feraient sur des sols<slide><br>desséchés.
+<$voicel(4,5)>J'aimerais bien aller voir le <$cdef(27)>Professeur</color>...<clear><br><$voicel(4,7)>Ce serait bien que tu rendes le chemin...<br>un peu plus praticaaable...
+<$voicel(4,5)><$motion(4,803)><$comeff(4,6)>Dis... Tu as remis le chemin en état... ?
+<$voicel(4,4)><$motion(4,803)><$comeff(4,6)>Yooo ! Alors, ce chemin... ? C'est plus facile d'accès,<br>maintenant ?
+<$voicel(4,10)><$motion(4,801)><$comeff(4,9)>Oh, merciii... Bon, ben... J'vais voir ça, alooors...
+<$voicel(4,5)><$motion(4,807)><$comeff(4,3)>D'accord... Bon, ben je vais rentrer chez moi,<br>en attendant... Dis-moi quand t'auras fini.
+<$voicel(4,9)><$motion(4,801)><$comeff(4,9)>Oh, merciii... Bon, ben... J'vais voir ça, alooors...
+<$voicel(4,5)><$motion(4,807)><$comeff(4,3)>D'accord... Dis-moi quand t'auras fini, heiiin... ?
+<$voicel(4,5)><$motion(4,807)><$comeff(4,3)>D'accord... Dis-moi quand t'auras fini, heiiin... ?
+
+
+<$voicel(4,1)><$comeff(4,4)><$motion(4,807)><$facial(4,14)>Han... Pfiou... J'en peux pluuus...
+Si vous placez des escaliers là où il y a un dénivelé,<br>les Pokémon pourront se déplacer plus facilement.
+En outre, les Pokémon peuvent marcher sur des sentiers<br>humides plus longtemps qu'ils ne le feraient sur des sols<slide><br>desséchés.
+<$voicel(4,5)><$motion(4,802)><$comeff(4,7)>Oh nooon... C'est bouché.<br>Je vais pas pouvoir passer...
+<$voicel(4,6)><$emotion(4,49)>Me voilààà...
+<$voicel(1,7)><$emotion(1,27)><$facial(1,4)>Oh, <$cdef(27)>Ramoloss </color>! Tu es là !<br>Merci d'avoir fait le déplacement !
+<$voicel(1,7)>Bien. Je vais maintenant vous expliquer la raison pour<br>laquelle j'ai demandé à <$cdef(27)>Ramoloss </color>de nous rejoindre.
+<$voicel(1,7)><$comeff(1,10)><$motion(1,824)>Une vieille légende humaine racontait que <$cdef(27)>le bâillement<br>d'un Ramoloss déclenche la pluie</color>...<clear><br><$voicel(1,6)>Si les êtres humains croyaient cela, peut-être<br>devrions-nous essayer ?<$motion(1,652)>
+<$voicel(5,10)><$emotion(5,53)>Sérieux ?! Alors, ça, je savais pas !
+<$voicel(4,4)><$emotion(4,29)>Moi non pluuus... !
+<$voicel(1,5)><$emotion(1,14)>Bien, ne perdons pas de temps.<br>Pourrais-tu bâiller pour nous, <$cdef(27)>Ramoloss </color>?
+<$comeff(4,14)>... ...
+<$comcan(4)><$comeff(1,14)>... ...
+<$comcan(1)><$voicel(4,4)>Ben... J'ai pas sommeil, lààà...
+<$voicel(1,8)><$emotion(1,14)><$facial(1,13)>Ah, je vois...<br><$voicel(1,5)><$comeff(1,4)><$motion(1,806)><$facial(1,9)>Enfin, crois-tu que tu pourrais tout de même essayer ?<clear><br><$voicel(1,6)>Cela nous rendrait un fier service...
+<$voicel(4,5)><$emotion(4,1)>Bon, d'accord... Je vais essayeeer...
+<$comeff(4,14)><$motion(4,805)>... ...
+<$comcan(4)><$se2d(979)><$motion(4,806)>*bâille*...<wait(0.5)>
+<$comeff(1,14)>... ...
+<$comcan(1)><$voicel(3,4)><$comeff(3,6)><$motion(3,806)>Euh... Il pleut pas, là.
+<$voicel(2,2)><$comeff(2,17)><$motion(2,807)>Ça a pas marché... J'imagine qu'il fallait s'y attendre.
+<$voicel(1,7)><$motion(1,803)><$comeff(1,5)>Non, non ! C'est parce que ce bâillement<br>valait à peine <$cdef(27)><akubi;0> <qty;0(point,points)> </color>!
+<$voicel(3,4)><$emotion(3,29)><$cdef(27)><akubi;0> <qty;0(point,points)> </color>? Comment ça ?
+<$voicel(1,9)><$emotion(1,48)>Ce bâillement n'était pas assez puissant !<br>Il valait à peine <$cdef(27)><akubi;0> <qty;0(point,points)> </color>!<clear><br><$voicel(1,7)><$motion(1,662)><$comeff(1,5)>Il ne pleuvra que si <$cdef(27)>Ramoloss</color> pousse un bâillement parfait<br>de <$cdef(27)>100 points </color>! Enfin, je crois... !
+<$voicel(4,6)><$emotion(4,14)>Aaah, d'accooord...
+<$voicel(5,4)><$comeff(5,6)><$motion(5,805)>C'est vrai, ça... ?
+<$voicel(2,7)><$emotion(2,14)>Et qu'est-ce qu'on peut faire pour que <$cdef(27)>Ramoloss </color>pousse<br>un bâillement égal à <$cdef(27)>100 points</color> ?
+<$voicel(4,5)><$comeff(4,14)><$motion(4,805)>Peut-être que s'il y avait plus d'<$cdef(27)>humidité </color>dans l'air...<br>ça me détendraiiit...<slide><br>Quand je me sens bien, ça me fait somnoooler...
+<$voicel(3,4)><$emotion(3,29)>Humidi... thé ? Tu veux boire, c'est ça ?
+<$voicel(4,5)><$comeff(4,14)><$motion(4,805)>S'hydrater, c'est importaaant ! Mais c'que je veux diiire,<br>c'est que l'air est trop seeec, dans l'coin...<slide><br><$voicel(4,4)><$comeff(4,7)><$motion(4,807)>Il faudrait qu'il soit plus <$cdef(27)>humide</color>...
+<$voicel(2,7)><$emotion(2,27)>Complètement d'accord !
+<$voicel(5,6)><$motion(5,803)><$comeff(5,3)><$facial(5,2)><$kfacial(5)>Si tu le dis...
+<$voicel(1,9)><$emotion(1,49)>Entendu ! Dans ce cas, unissons nos efforts<br>afin que le taux d'<$cdef(27)>humidité</color> des environs<slide><br><$voicel(1,8)>atteigne le niveau approprié !<clear><br><$voicel(1,10)><$comeff(1,5)><$motion(1,664)>Et ensuite, on pourra faire tomber la pluie !
+<$voicel(2,7)><$comeff(2,5)><$motionoff(2,804)>Ouiii !
+<$lookat(1,0,0)><$voicel(1,5)><$comeff(1,6)>Pourrais-tu commencer par arroser un peu les environs,<br><$cdef(27)><pname;0></color> ?<clear><br><$voicel(1,7)><$emotion(1,38)>Cela devrait aider <$cdef(27)>Ramoloss </color>à bâiller de plus en plus<br>fort.
+
+
+
+
+
+<$voicel(1,5)><$comeff(1,6)>Pourrais-tu commencer par arroser un peu plus<br>les environs ?<clear><br><$voicel(1,7)><$emotion(1,38)>Cela devrait aider <$cdef(27)>Ramoloss</color> à bâiller plus fort.
+
+
+
+
+
+<$voicel(1,7)><$emotion(1,38)>Oh ! Je vois que les environs ont été arrosés.<clear><br><$voicel(1,5)><$comeff(1,6)>Je me demande si <$cdef(27)>Ramoloss </color>va pousser un bâillement<br>digne de ce nom... ?
+
+
+
+
+
+<$voicel(1,3)><$emotion(1,8)>Le niveau d'humidité augmentera peut-être une fois<br>que tu auras mis en pratique les idées des Pokémon.<clear><br><$voicel(1,7)><$facial(1,4)><$motion(1,664)><$comeff(1,3)>Il faudra que tu demandes à <$cdef(27)><$cname(37)></color> de <$cdef(27)>bâiller<br></color>pour voir combien de points valent ses bâillements !
+
+*bâille*
+<$voicel(1,3)><$comeff(1,7)><$motion(1,666)><$facial(1,9)>Ce bâillement vaut seulement... <$cdef(27)><akubi;0> <qty;0(point,points)></color>.<br>Il semblerait que l'air ne soit pas encore assez humide.
+*bâââille*
+<$voicel(1,7)><$emotion(1,49)>Hum... Je dirais que ce bâillement vaut<br><$cdef(27)><akubi;0> points</color>.<clear><br>Je suppose qu'il fait encore un peu trop sec.
+*bââââââille*
+<$voicel(1,7)><$emotion(1,38)>Oh ! Ce bâillement vaut bien <$cdef(27)><akubi;0> points !</color><br>L'air ambiant commence a être vraiment plus humide !
+*BÂILLE*
+<$voicel(1,7)><$comeff(1,1)><$motion(1,659)><$facial(1,4)>Oooh ! Ce beau bâillement mérite <$cdef(27)><akubi;0> points </color>!<br>Nous y sommes presque !
+
+
+
+<$voicel(1,3)><$comeff(1,14)><$motion(1,666)><$facial(1,9)>Toutefois, si même <$cdef(27)>Onix</color> est incapable de briser<br>les parois de cette grotte, c'est qu'elles doivent être<slide><br>d'une solidité inouïe.
+
+
+
+
+
+<$voicel(1,7)><$comeff(1,10)><$motion(1,659)><$facial(1,2)>Écoutez-moi, tout le monde ! Par ici, s'il vous plaît.
+<$voicel(4,4)><$comeff(4,6)><$motion(4,666)>Qu'est-ce qui s'passe, <$cdef(27)>Professeur </color>?
+
+
+
+
+
+<$voicel(4,6)><$emotion(4,49)>Me voilààà...
+<$voicel(1,7)><$emotion(1,27)><$facial(1,4)>Oh, <$cdef(27)>Ramoloss </color>! Tu es là !<br>Merci d'avoir fait le déplacement !
+<$voicel(1,7)>Bien. Je vais maintenant vous expliquer la raison pour<br>laquelle j'ai demandé à <$cdef(27)>Ramoloss </color>de nous rejoindre.
+<$voicel(1,7)><$comeff(1,10)><$motion(1,824)>Une vieille légende humaine racontait que <$cdef(27)>le bâillement<br>d'un Ramoloss déclenche la pluie</color>...<clear><br><$voicel(1,6)>Si les êtres humains croyaient cela, peut-être<br>devrions-nous essayer ?<$motion(1,652)>
+<$voicel(5,10)><$emotion(5,53)>Sérieux ?! Alors, ça, je savais pas !
+<$voicel(4,4)><$emotion(4,29)>Moi non pluuus... !
+<$voicel(1,5)><$emotion(1,14)>Bien, ne perdons pas de temps.<br>Pourrais-tu bâiller pour nous, <$cdef(27)>Ramoloss </color>?
+<$comeff(4,14)>... ...
+<$comcan(4)><$comeff(1,14)>... ...
+<$comcan(1)><$voicel(4,4)>Ben... J'ai pas sommeil, lààà...
+<$voicel(1,8)><$emotion(1,14)><$facial(1,13)>Ah, je vois...<br><$voicel(1,5)><$comeff(1,4)><$motion(1,806)><$facial(1,9)>Enfin, crois-tu que tu pourrais tout de même essayer ?<clear><br><$voicel(1,6)>Cela nous rendrait un fier service...
+<$voicel(4,5)><$emotion(4,1)>Bon, d'accord... Je vais essayeeer...
+<$comeff(4,14)><$motion(4,805)>... ...
+<$comcan(4)><$se2d(981)><$motion(4,806)>*bâille*...<wait(0.5)>
+<$comeff(1,14)>... ...
+<$comcan(1)><$voicel(3,4)><$comeff(3,6)><$motion(3,806)>Euh... Il pleut pas, là.
+<$voicel(1,7)><$motion(1,807)><$comeff(1,5)><$facial(1,10)>Presque... Je dirais que ce bâillement vaut...<br><$cdef(27)><akubi;0> points </color>!
+<$voicel(3,4)><$emotion(3,29)><$cdef(27)><akubi;0> <qty;0(point,points)> </color>? Comment ça ?
+<$voicel(1,9)><$emotion(1,48)>Ce bâillement n'était pas assez puissant !<br>Il vaut à peine <$cdef(27)><akubi;0> <qty;0(point,points)> </color>!<clear><br><$voicel(1,7)><$motion(1,662)><$comeff(1,5)>Il ne pleuvra que si <$cdef(27)>Ramoloss</color> pousse un bâillement parfait<br>de <$cdef(27)>100 points </color>! Enfin, je crois... !
+<$voicel(4,6)><$emotion(4,14)>Aaah, d'accooord...
+<$voicel(5,4)><$comeff(5,6)><$motion(5,805)>C'est vrai, ça... ?
+<$voicel(2,7)><$emotion(2,14)>Et qu'est-ce qu'on peut faire pour que <$cdef(27)>Ramoloss </color>pousse<br>un bâillement égal à <$cdef(27)>100 points</color> ?
+<$voicel(4,5)><$comeff(4,14)><$motion(4,805)>Peut-être que s'il y avait plus d'<$cdef(27)>humidité </color>dans l'air...<br>ça me détendraiiit...<slide><br>Quand je me sens bien, ça me fait somnoooler...
+<$voicel(3,4)><$emotion(3,29)>Humidi... thé ? Tu veux boire, c'est ça ?
+<$voicel(4,5)><$emotion(4,14)>S'hydrater, c'est importaaant ! Mais c'que je veux diiire,<br>c'est que l'air est trop seeec, dans l'coin...<clear><br><$voicel(4,7)><$comeff(4,9)><$motion(4,801)>Il faudrait qu'il soit plus humide... pour que je me détende,<br>et que je puisse bien dormir...
+<$voicel(2,9)><$emotion(2,39)>C'est vrai ! Grâce à <$cdef(27)><pname;0></color>,<br>c'est devenu plus vert, par ici !<clear><br><$voicel(2,7)><$emotion(2,49)>C'est déjà beaucoup mieux qu'avant, mais on peut<br>sûrement améliorer encore les choses !
+<$voicel(5,5)><$comeff(5,14)><$motion(5,666)>Oh, d'accord...
+<$comcan(5)><$voicel(1,9)><$emotion(1,49)>Entendu ! Dans ce cas, unissons nos efforts<br>afin que le taux d'<$cdef(27)>humidité</color> des environs<slide><br><$voicel(1,8)>atteigne le niveau approprié !<clear><br><$voicel(1,10)><$comeff(1,5)><$motion(1,664)>Et ensuite, on pourra faire tomber la pluie !
+<$voicel(2,7)><$comeff(2,5)><$motionoff(2,804)>Ouiii !
+<$lookat(1,0,0)><$voicel(1,5)><$comeff(1,6)>Pourrais-tu commencer par arroser un peu les environs,<br><$cdef(27)><pname;0> </color>?<clear><br><$voicel(1,7)><$emotion(1,38)>Cela devrait aider <$cdef(27)>Ramoloss </color>à bâiller de plus en plus<br>fort.
+
+
+
+
+
+
+
+<$voicel(1,3)><$emotion(1,67)>Je crois bien que d'autres Pokémon ont réfléchi<br>à comment augmenter le taux d'humidité.<clear><br><$voicel(1,7)><$facial(1,4)><$motion(1,664)><$comeff(1,10)>Tu devrais peut-être aller les chercher et en parler<br>avec eux.
+Ouvrez la requête « <$cdef(27)>Un bâillement pour de la pluie</color> »<br>dans le menu des requêtes pour voir la liste des Pokémon<slide><br>qui ont des idées à partager avec vous.
+<$voicel(1,3)><$emotion(1,67)>Je crois bien que d'autres Pokémon ont réfléchi<br>à comment augmenter le taux d'humidité.<clear><br><$voicel(1,7)><$facial(1,4)><$motion(1,664)><$comeff(1,10)>Tu devrais peut-être aller les chercher et en parler<br>avec eux.
+Ouvrez la requête « <$cdef(27)>Un bâillement pour de la pluie</color> »<br>dans le menu des requêtes pour voir la liste des Pokémon<slide><br>qui ont des idées à partager avec vous.

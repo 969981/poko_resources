@@ -1,0 +1,1701 @@
+{"text_id":0,"forms":[""],"absolute_byte_offsets":[13672],"raw_metadata_u32":[0]}
+{"text_id":1,"forms":["<$keyicon(1)>로 기술을 사용합니다.<br>기술을 사용하면 <$cdef(27)>PP</color>가 줄어듭니다.<br>현재 <$cdef(27)>PP</color>는 오른쪽 아래의 게이지를 통해<br>확인할 수 있습니다."],"absolute_byte_offsets":[13673],"raw_metadata_u32":[1]}
+{"text_id":2,"forms":["기술에는 다양한 종류가 있습니다.<br>자유롭게 사용해서 지형을 바꿔 가며<br>포켓몬들의 보금자리를 만들어 봅시다."],"absolute_byte_offsets":[13891],"raw_metadata_u32":[1]}
+{"text_id":3,"forms":[""],"absolute_byte_offsets":[14047],"raw_metadata_u32":[0]}
+{"text_id":4,"forms":["<$keyicon(3)>로 <$cdef(27)>튀어오르기</color>를 사용할 수 있습니다.<br>평소보다 더 길게 점프해서<br>구멍 등을 뛰어넘을 수 있습니다."],"absolute_byte_offsets":[14048],"raw_metadata_u32":[1]}
+{"text_id":5,"forms":[""],"absolute_byte_offsets":[14219],"raw_metadata_u32":[0]}
+{"text_id":6,"forms":[""],"absolute_byte_offsets":[14220],"raw_metadata_u32":[0]}
+{"text_id":7,"forms":[""],"absolute_byte_offsets":[14221],"raw_metadata_u32":[0]}
+{"text_id":8,"forms":[""],"absolute_byte_offsets":[14222],"raw_metadata_u32":[0]}
+{"text_id":9,"forms":[""],"absolute_byte_offsets":[14223],"raw_metadata_u32":[0]}
+{"text_id":10,"forms":[""],"absolute_byte_offsets":[14224],"raw_metadata_u32":[0]}
+{"text_id":11,"forms":[""],"absolute_byte_offsets":[14225],"raw_metadata_u32":[0]}
+{"text_id":12,"forms":[""],"absolute_byte_offsets":[14226],"raw_metadata_u32":[0]}
+{"text_id":13,"forms":["가방에서 들고 싶은 물건을 선택해<br><$keyicon(66)>로 손에 들 수 있습니다.<br>손에 든 채로 포켓몬에게 말을 건 뒤,<br>\"<$cdef(27)>줄게</color>\"를 선택하면 손에 든 것을 선물할 수 있습니다."],"absolute_byte_offsets":[14227],"raw_metadata_u32":[1]}
+{"text_id":14,"forms":[""],"absolute_byte_offsets":[14470],"raw_metadata_u32":[0]}
+{"text_id":15,"forms":[""],"absolute_byte_offsets":[14471],"raw_metadata_u32":[0]}
+{"text_id":16,"forms":["포켓몬과 이야기하고, 선물을 주고,<br><$cdef(27)>부탁</color>을 들어주면<br>해당 포켓몬과 친해져서<br>답례를 받을 때도 있습니다.<br>좋아하는 포켓몬과 친해져 봅시다."],"absolute_byte_offsets":[14472],"raw_metadata_u32":[1]}
+{"text_id":17,"forms":[""],"absolute_byte_offsets":[14692],"raw_metadata_u32":[0]}
+{"text_id":18,"forms":[""],"absolute_byte_offsets":[14693],"raw_metadata_u32":[0]}
+{"text_id":19,"forms":["사용하면 풀을 자라나게 할 수 있습니다.<br>자라나지 않는 장소도 있습니다."],"absolute_byte_offsets":[14694],"raw_metadata_u32":[1]}
+{"text_id":20,"forms":["<$cdef(27)>샐러드</color>를 먹으면 <$cdef(27)><$sklfull(1)></color>이 강화됩니다.<br><$keyicon(1)>을 길게 누르면 더 넓은 범위에<br>풀을 자라나게 할 수 있습니다."],"absolute_byte_offsets":[14796],"raw_metadata_u32":[1]}
+{"text_id":21,"forms":["<$cdef(27)><$sklfull(1)></color>을 강화하면<br>바위나 벽 등에<br>이끼나 덩굴을 자라나게 할 수 있습니다."],"absolute_byte_offsets":[14994],"raw_metadata_u32":[1]}
+{"text_id":22,"forms":[""],"absolute_byte_offsets":[15125],"raw_metadata_u32":[0]}
+{"text_id":23,"forms":[""],"absolute_byte_offsets":[15126],"raw_metadata_u32":[0]}
+{"text_id":24,"forms":[""],"absolute_byte_offsets":[15127],"raw_metadata_u32":[0]}
+{"text_id":25,"forms":["집에 <$cdef(27)><fqty(1)><$ifull(1440)></color>을 세우면<br><$cdef(27)>메타몽</color>의 보금자리가 됩니다.<br>블록 집의 경우, 집 근처에 놓읍시다.<br>다른 포켓몬과 함께 살 수도 있습니다."],"absolute_byte_offsets":[15128],"raw_metadata_u32":[1]}
+{"text_id":26,"forms":["<$cdef(27)>메타몽</color>의 보금자리에<br>여러 종류의 가구를 놓으면<br>자신의 <$cdef(27)>주거 만족도</color>가 오릅니다."],"absolute_byte_offsets":[15361],"raw_metadata_u32":[1]}
+{"text_id":27,"forms":[""],"absolute_byte_offsets":[15515],"raw_metadata_u32":[0]}
+{"text_id":28,"forms":["벽으로 둘러싸고 문을 달면<br><$cdef(27)>블록 집</color>이 됩니다.<br><$cdef(27)><$bname(12)></color>처럼 안에 가구를 3종류 놓으면<br>포켓몬이 살 수 있습니다."],"absolute_byte_offsets":[15516],"raw_metadata_u32":[1]}
+{"text_id":29,"forms":["<$cdef(27)>블록 집</color>은 블록을 알맞게 배치하면<br><$cdef(27)>건축 키트</color>를 사용하지 않아도 만들 수 있습니다.<br>그 대신 <$cdef(27)>철거 키트</color>, <$cdef(27)>이사 키트</color>를 사용해서<br>철거하거나 이사할 수도 없습니다."],"absolute_byte_offsets":[15714],"raw_metadata_u32":[1]}
+{"text_id":30,"forms":[""],"absolute_byte_offsets":[16014],"raw_metadata_u32":[0]}
+{"text_id":31,"forms":["<$cdef(27)><fqty(1)><$ifull(764)></color>에서는<br>배운 <$cdef(27)>레시피</color>와 재료를 사용해 아이템을 만들 수 있습니다.<br><$cdef(27)>레시피</color>는 줍거나 떠올려서 모을 수 있습니다."],"absolute_byte_offsets":[16015],"raw_metadata_u32":[1]}
+{"text_id":32,"forms":[""],"absolute_byte_offsets":[16249],"raw_metadata_u32":[0]}
+{"text_id":33,"forms":[""],"absolute_byte_offsets":[16250],"raw_metadata_u32":[0]}
+{"text_id":34,"forms":[""],"absolute_byte_offsets":[16251],"raw_metadata_u32":[0]}
+{"text_id":35,"forms":[""],"absolute_byte_offsets":[16252],"raw_metadata_u32":[0]}
+{"text_id":36,"forms":[""],"absolute_byte_offsets":[16253],"raw_metadata_u32":[0]}
+{"text_id":37,"forms":["보금자리로부터 <$cdef(27)>포켓몬센터</color>까지의 길을 정비해서<br>포켓몬이 외출할 수 있게 만들면<br><$cdef(27)>주거 만족도</color>가 오릅니다.<br>길이 외출하기 힘든 상태라면<br>정비해 봅시다."],"absolute_byte_offsets":[16254],"raw_metadata_u32":[1]}
+{"text_id":38,"forms":[""],"absolute_byte_offsets":[16510],"raw_metadata_u32":[0]}
+{"text_id":39,"forms":[""],"absolute_byte_offsets":[16511],"raw_metadata_u32":[0]}
+{"text_id":40,"forms":["사용하면 흙이나 바위 등을<br>주먹으로 때려서 부술 수 있습니다.<br>벽에 구멍을 뚫거나 땅을 팔 수 있습니다."],"absolute_byte_offsets":[16512],"raw_metadata_u32":[1]}
+{"text_id":41,"forms":["<$cdef(27)><$sklfull(4)></color>는 <$keyicon(1)>을 길게 누르면 연발할 수 있습니다.<br>또, 위나 아래를 향하며 사용하면<br>부술 장소를 바꿀 수 있습니다."],"absolute_byte_offsets":[16659],"raw_metadata_u32":[1]}
+{"text_id":42,"forms":["<$cdef(27)>햄버그</color>를 먹으면<br><$cdef(27)><$sklfull(4)></color>가 강화됩니다.<br><$cdef(27)><$sklfull(4)></color>를 강화하면<br>더 단단한 것을 부술 수 있게 됩니다."],"absolute_byte_offsets":[16850],"raw_metadata_u32":[1]}
+{"text_id":43,"forms":["셔터 찬스가 발생했을 때<br>포켓몬을 성공적으로 촬영하면<br><$cdef(27)>베스트 샷</color> 사진이 됩니다."],"absolute_byte_offsets":[17053],"raw_metadata_u32":[1]}
+{"text_id":44,"forms":["베스트 샷을 촬영하면<br>멋진 프레임 등을 받을 수 있습니다.<br>셔터 찬스를 놓치지 말고<br>베스트 샷을 많이 촬영해 봅시다."],"absolute_byte_offsets":[17189],"raw_metadata_u32":[1]}
+{"text_id":45,"forms":[""],"absolute_byte_offsets":[17356],"raw_metadata_u32":[0]}
+{"text_id":46,"forms":["사용하면 흙이나 잔디가 밭이 됩니다.<br>밭에는 채소 등의 씨앗을 심을 수 있습니다.<br>바싹 마른 흙은 일구어낼 수 없으므로<br><$cdef(27)><$sklfull(3)></color> 등으로 물을 줍시다."],"absolute_byte_offsets":[17357],"raw_metadata_u32":[1]}
+{"text_id":47,"forms":["풀이나 꽃에 <$cdef(27)><$sklfull(2)></color>를 사용하면<br>들어 올려서 옮겨 심을 수 있습니다.<br>들어 올린 식물은 그대로 포켓몬에게 선물하거나<br>가방에 넣을 수 있습니다."],"absolute_byte_offsets":[17588],"raw_metadata_u32":[1]}
+{"text_id":48,"forms":[""],"absolute_byte_offsets":[17813],"raw_metadata_u32":[0]}
+{"text_id":49,"forms":["<$cdef(27)>포켓몬센터</color> 안의 <$cdef(27)><fqty(1)><$ifull(1444)></color>을 사용하면<br><$cdef(27)>PP</color>를 모두 회복할 수 있습니다.<br>하루에 1번만 사용할 수 있습니다."],"absolute_byte_offsets":[17814],"raw_metadata_u32":[1]}
+{"text_id":50,"forms":["<$cdef(27)>포켓몬센터</color>에서는 <$icon(11001)><$cdef(27)>거래</color>가 특기인 포켓몬이<br><$cdef(27)><fqty(1)><$ifull(1325)></color>를 이용해서<br>아이템을 물물 교환해 주기도 합니다."],"absolute_byte_offsets":[18027],"raw_metadata_u32":[1]}
+{"text_id":51,"forms":[""],"absolute_byte_offsets":[18253],"raw_metadata_u32":[0]}
+{"text_id":52,"forms":[""],"absolute_byte_offsets":[18254],"raw_metadata_u32":[0]}
+{"text_id":53,"forms":[""],"absolute_byte_offsets":[18255],"raw_metadata_u32":[0]}
+{"text_id":54,"forms":[""],"absolute_byte_offsets":[18256],"raw_metadata_u32":[0]}
+{"text_id":55,"forms":[""],"absolute_byte_offsets":[18257],"raw_metadata_u32":[0]}
+{"text_id":56,"forms":[""],"absolute_byte_offsets":[18258],"raw_metadata_u32":[0]}
+{"text_id":57,"forms":[""],"absolute_byte_offsets":[18259],"raw_metadata_u32":[0]}
+{"text_id":58,"forms":["튀어 올라도 닿지 않는 높은 장소에는<br>흙이나 모래 등을 놓아서 한 칸씩 올라가 봅시다."],"absolute_byte_offsets":[18260],"raw_metadata_u32":[1]}
+{"text_id":59,"forms":[""],"absolute_byte_offsets":[18380],"raw_metadata_u32":[0]}
+{"text_id":60,"forms":[""],"absolute_byte_offsets":[18381],"raw_metadata_u32":[0]}
+{"text_id":61,"forms":["가구 등, 손에 들 수 없는 큰 아이템은<br><$cdef(27)>비축하기</color>로 꿀꺽 삼켜서 가방에 넣을 수 있습니다."],"absolute_byte_offsets":[18382],"raw_metadata_u32":[1]}
+{"text_id":62,"forms":["가방에 비축한 아이템은<br><$cdef(27)>토해내기</color>로 놓을 수 있습니다.<br>놓고 싶은 장소 앞에서 <$keyicon(0)>로 토해 내 봅시다."],"absolute_byte_offsets":[18523],"raw_metadata_u32":[1]}
+{"text_id":63,"forms":["카메라의 방향을 바꿔서<br>놓을 위치의 높이를 조정할 수 있습니다.<br>높은 위치에 벽걸이 가구를 놓거나<br>발밑의 구멍을 메울 수도 있습니다."],"absolute_byte_offsets":[18692],"raw_metadata_u32":[1]}
+{"text_id":64,"forms":[""],"absolute_byte_offsets":[18884],"raw_metadata_u32":[0]}
+{"text_id":65,"forms":[""],"absolute_byte_offsets":[18885],"raw_metadata_u32":[0]}
+{"text_id":66,"forms":[""],"absolute_byte_offsets":[18886],"raw_metadata_u32":[0]}
+{"text_id":67,"forms":["물건을 놓을 때 카메라 방향을 바꿔서<br>놓을 장소나 높이를 조정할 수 있습니다.<br>방향을 바로 아래로 향하게 하면<br>자신의 발밑에 놓을 수 있고<br>이를 반복해서 한 칸씩 올라갈 수도 있습니다."],"absolute_byte_offsets":[18887],"raw_metadata_u32":[1]}
+{"text_id":68,"forms":[""],"absolute_byte_offsets":[19149],"raw_metadata_u32":[0]}
+{"text_id":69,"forms":[""],"absolute_byte_offsets":[19150],"raw_metadata_u32":[0]}
+{"text_id":70,"forms":[""],"absolute_byte_offsets":[19151],"raw_metadata_u32":[0]}
+{"text_id":71,"forms":[""],"absolute_byte_offsets":[19152],"raw_metadata_u32":[0]}
+{"text_id":72,"forms":[""],"absolute_byte_offsets":[19153],"raw_metadata_u32":[0]}
+{"text_id":73,"forms":[""],"absolute_byte_offsets":[19154],"raw_metadata_u32":[0]}
+{"text_id":74,"forms":[""],"absolute_byte_offsets":[19155],"raw_metadata_u32":[0]}
+{"text_id":75,"forms":[""],"absolute_byte_offsets":[19156],"raw_metadata_u32":[0]}
+{"text_id":76,"forms":["갈라진 땅을 깔끔하게 정비하거나<br>높낮이 차가 있는 곳에 계단을 설치하는 등,<br>포켓몬이 편하게 걸을 수 있는 길을 만들면<br>보금자리에서 조금 떨어진 장소까지 외출하기도 합니다."],"absolute_byte_offsets":[19157],"raw_metadata_u32":[1]}
+{"text_id":77,"forms":["포켓몬은 <$cdef(27)>포켓몬센터</color> 등의 건물이나<br>다른 포켓몬의 보금자리로 외출합니다."],"absolute_byte_offsets":[19405],"raw_metadata_u32":[1]}
+{"text_id":78,"forms":[""],"absolute_byte_offsets":[19529],"raw_metadata_u32":[0]}
+{"text_id":79,"forms":["지닌 물건을 보관해 둘 수 있습니다.<br>가방이 가득 차면<br><$cdef(27)><fqty(1)><$ifull(2045)></color>에 넣어 둡시다."],"absolute_byte_offsets":[19530],"raw_metadata_u32":[1]}
+{"text_id":80,"forms":["<$keyicon(196)>을 누르며 <$keyicon(67)>로 <$cdef(27)>절반 이동</color> 등<br>편리한 조작이 가능합니다."],"absolute_byte_offsets":[19673],"raw_metadata_u32":[1]}
+{"text_id":81,"forms":["<$cdef(27)><fqty(1)><$ifull(764)></color> 옆에<br><$cdef(27)><fqty(1)><$ifull(2045)></color>를 놓으면<br>아이템을 만들 때 박스의 내용물을<br>그대로 사용할 수 있습니다."],"absolute_byte_offsets":[19797],"raw_metadata_u32":[1]}
+{"text_id":82,"forms":[""],"absolute_byte_offsets":[19996],"raw_metadata_u32":[0]}
+{"text_id":83,"forms":[""],"absolute_byte_offsets":[19997],"raw_metadata_u32":[0]}
+{"text_id":84,"forms":[""],"absolute_byte_offsets":[19998],"raw_metadata_u32":[0]}
+{"text_id":85,"forms":["사용하면 날카로운 칼날로<br>눈앞의 물건을 베어 가릅니다.<br>나무로 된 물건이나 나무를 부술 수 있습니다."],"absolute_byte_offsets":[19999],"raw_metadata_u32":[1]}
+{"text_id":86,"forms":["<$cdef(27)>빵</color>을 먹으면 <$cdef(27)><$sklfull(5)></color>가 강화됩니다.<br><$keyicon(1)>을 길게 누르면<br>더 멀리까지 베어 가를 수 있습니다."],"absolute_byte_offsets":[20144],"raw_metadata_u32":[1]}
+{"text_id":87,"forms":["<$cdef(27)><$sklfull(5)></color>를 강화하면<br>더 단단한 것을 부술 수 있게 됩니다."],"absolute_byte_offsets":[20322],"raw_metadata_u32":[1]}
+{"text_id":88,"forms":[""],"absolute_byte_offsets":[20424],"raw_metadata_u32":[0]}
+{"text_id":89,"forms":[""],"absolute_byte_offsets":[20425],"raw_metadata_u32":[0]}
+{"text_id":90,"forms":[""],"absolute_byte_offsets":[20426],"raw_metadata_u32":[0]}
+{"text_id":91,"forms":["좁은 곳을 지나갈 때는 <$cdef(27)>메타몽</color>이 작아집니다.<br>개방된 장소에 나가면 원래의 모습으로 돌아갑니다."],"absolute_byte_offsets":[20427],"raw_metadata_u32":[1]}
+{"text_id":92,"forms":[""],"absolute_byte_offsets":[20580],"raw_metadata_u32":[0]}
+{"text_id":93,"forms":[""],"absolute_byte_offsets":[20581],"raw_metadata_u32":[0]}
+{"text_id":94,"forms":["<$keyicon(194)>을 조금 기울이면 해당 방향으로 걸어갑니다.<br>더 기울이면 달립니다.<br><$keyicon(55)>를 길게 누르거나 <$keyicon(54)>을 누르면<br>더 빠르게 달릴 수 있습니다."],"absolute_byte_offsets":[20582],"raw_metadata_u32":[1]}
+{"text_id":95,"forms":[""],"absolute_byte_offsets":[20803],"raw_metadata_u32":[0]}
+{"text_id":96,"forms":[""],"absolute_byte_offsets":[20804],"raw_metadata_u32":[0]}
+{"text_id":97,"forms":["<$keyicon(195)>을 기울이면<br>카메라가 해당 방향을 향합니다."],"absolute_byte_offsets":[20805],"raw_metadata_u32":[1]}
+{"text_id":98,"forms":[""],"absolute_byte_offsets":[20884],"raw_metadata_u32":[0]}
+{"text_id":99,"forms":[""],"absolute_byte_offsets":[20885],"raw_metadata_u32":[0]}
+{"text_id":100,"forms":["사용하면 바싹 마른 흙이나<br>마른 풀, 나무, 꽃 등에<br>물을 뿌려서 생기를 되찾게 할 수 있습니다."],"absolute_byte_offsets":[20886],"raw_metadata_u32":[1]}
+{"text_id":101,"forms":["<$cdef(27)>수프</color>를 먹으면 <$cdef(27)><$sklfull(3)></color>가 강화됩니다.<br><$keyicon(1)>을 길게 누르면<br>더 넓은 범위에 물을 뿌릴 수 있습니다."],"absolute_byte_offsets":[21019],"raw_metadata_u32":[1]}
+{"text_id":102,"forms":[""],"absolute_byte_offsets":[21204],"raw_metadata_u32":[0]}
+{"text_id":103,"forms":["획득한 아이템은 가방에 들어갑니다.<br><$keyicon(159)>로 가방 속을 확인하거나<br>아이템을 사용할 수 있습니다."],"absolute_byte_offsets":[21205],"raw_metadata_u32":[1]}
+{"text_id":104,"forms":["가방에 들어가는 아이템의 개수에는 제한이 있습니다.<br><$cdef(27)>숍</color>에서 <$cdef(27)>가방 정리 노하우</color>를 구입하면<br>개수 제한을 늘릴 수 있습니다."],"absolute_byte_offsets":[21351],"raw_metadata_u32":[1]}
+{"text_id":105,"forms":[""],"absolute_byte_offsets":[21560],"raw_metadata_u32":[0]}
+{"text_id":106,"forms":["풀, 나무, 바위, 가구 등을 붙여서 놓으면<br>그곳이 포켓몬의 서식지가 되기도 합니다.<br>똑같은 것을 놓아도<br>물가나 고지대 등, 장소를 바꾸면<br>다른 서식지가 완성되기도 합니다."],"absolute_byte_offsets":[21561],"raw_metadata_u32":[1]}
+{"text_id":107,"forms":["새로운 서식지에는<br><$cdef(27)>포켓몬 도감</color>에 등록되지 않은 포켓몬이<br>나타나기도 합니다.<br>다양한 서식지를 만들어서<br>친구를 늘려 가 봅시다."],"absolute_byte_offsets":[21804],"raw_metadata_u32":[1]}
+{"text_id":108,"forms":[""],"absolute_byte_offsets":[22009],"raw_metadata_u32":[0]}
+{"text_id":109,"forms":["여러 기술을 배운 경우,<br><$keyicon(142)><$keyicon(143)>으로 전환하여 사용할 수 있습니다.<br><$keyicon(142)> 또는 <$keyicon(143)>을 길게 누르거나<br><$keyicon(246)>을 누르면<br>기술을 설정할 수 있습니다."],"absolute_byte_offsets":[22010],"raw_metadata_u32":[1]}
+{"text_id":110,"forms":[""],"absolute_byte_offsets":[22261],"raw_metadata_u32":[0]}
+{"text_id":111,"forms":[""],"absolute_byte_offsets":[22262],"raw_metadata_u32":[0]}
+{"text_id":112,"forms":[""],"absolute_byte_offsets":[22263],"raw_metadata_u32":[0]}
+{"text_id":113,"forms":[""],"absolute_byte_offsets":[22264],"raw_metadata_u32":[0]}
+{"text_id":114,"forms":[""],"absolute_byte_offsets":[22265],"raw_metadata_u32":[0]}
+{"text_id":115,"forms":["가끔 땅이 빛날 때가 있습니다.<br>이 빛을 조사하면<br>포켓몬의 기척을 발견할 수 있습니다.<br>기척을 조사하면 포켓몬의 서식지나 좋아하는 환경 등의<br>정보를 획득할 수 있으며 도감에 등록됩니다."],"absolute_byte_offsets":[22266],"raw_metadata_u32":[1]}
+{"text_id":116,"forms":["기척에서는 <$cdef(27)>포켓몬이나 서식지의 정보</color>를<br>획득할 수 있습니다.<br>획득한 정보는 <$cdef(27)>도감</color>에서 확인할 수 있습니다."],"absolute_byte_offsets":[22532],"raw_metadata_u32":[1]}
+{"text_id":117,"forms":[""],"absolute_byte_offsets":[22720],"raw_metadata_u32":[0]}
+{"text_id":118,"forms":["높낮이 차가 있는 곳을 향해 걸어 가면<br>사뿐히 오를 수 있습니다.<br>단, 두 칸 이상의 높이는 오를 수 없습니다."],"absolute_byte_offsets":[22721],"raw_metadata_u32":[1]}
+{"text_id":119,"forms":[""],"absolute_byte_offsets":[22872],"raw_metadata_u32":[0]}
+{"text_id":120,"forms":[""],"absolute_byte_offsets":[22873],"raw_metadata_u32":[0]}
+{"text_id":121,"forms":["집은 다음 순서를 통해 <$cdef(27)><$spwfull(1)></color>할 수 있습니다.<br>①<$cdef(27)>건축 키트</color>를 건축하고 싶은 장소에 놓는다.<br>②키트에 쓰여 있는 재료를 모은다.<br>③키트의 조건에 맞는 포켓몬을 모은다.<br>완성까지는 시간이 소요됩니다."],"absolute_byte_offsets":[22874],"raw_metadata_u32":[1]}
+{"text_id":122,"forms":["<$cdef(27)>건축 키트</color>의 조건에 맞는 포켓몬에게 말을 걸어서<br>설치한 키트까지 데려간 뒤 부탁하면<br><$cdef(27)><$spwfull(1)></color>을 도와줍니다."],"absolute_byte_offsets":[23196],"raw_metadata_u32":[1]}
+{"text_id":123,"forms":["집이나 <$cdef(27)>포켓몬센터</color>는 다른 <$cdef(27)>건축 키트</color>를 통해<br>건물 안의 가구를 그대로 둔 채,<br>다른 건물로 <$cdef(27)>개조</color>할 수 있습니다.<br>단, 큰 집을 작은 집으로 <$cdef(27)>개조</color>할 수는 없습니다."],"absolute_byte_offsets":[23391],"raw_metadata_u32":[1]}
+{"text_id":124,"forms":[""],"absolute_byte_offsets":[23688],"raw_metadata_u32":[0]}
+{"text_id":125,"forms":[""],"absolute_byte_offsets":[23689],"raw_metadata_u32":[0]}
+{"text_id":126,"forms":[""],"absolute_byte_offsets":[23690],"raw_metadata_u32":[0]}
+{"text_id":127,"forms":[""],"absolute_byte_offsets":[23691],"raw_metadata_u32":[0]}
+{"text_id":128,"forms":[""],"absolute_byte_offsets":[23692],"raw_metadata_u32":[0]}
+{"text_id":129,"forms":[""],"absolute_byte_offsets":[23693],"raw_metadata_u32":[0]}
+{"text_id":130,"forms":["건축이 완료된 직후의 집은<br>가구가 없어서 살 수 없습니다.<br>집 안에 가구를 3종류 놓으면<br>포켓몬이 살 수 있습니다."],"absolute_byte_offsets":[23694],"raw_metadata_u32":[1]}
+{"text_id":131,"forms":["포켓몬을 데리고 집 근처에서 말을 걸면<br>해당 집에 살도록 제안할 수 있습니다.<br>집은 포켓몬에게 있어서 <$cdef(27)>주거 만족도가 높은 장소</color>이므로<br>살도록 제안해 봅시다."],"absolute_byte_offsets":[23856],"raw_metadata_u32":[1]}
+{"text_id":132,"forms":["일부 집은 전기가 흐르면 조명이 켜지며<br>안에 있는 기계도 작동합니다.<br><$cdef(27)><fqty(1)><$ifull(1396)></color>를 놓아서 전기를 흘려 보내 봅시다."],"absolute_byte_offsets":[24097],"raw_metadata_u32":[1]}
+{"text_id":133,"forms":["근처의 포켓몬 등을 카메라로 촬영할 수 있습니다.<br><$keyicon(52)>를 누르거나 <$keyicon(4)>메뉴의 '<$cdef(27)>카메라</color>'를 누르면<br>촬영 모드가 시작되며 <$keyicon(155)>로 사진을 찍습니다."],"absolute_byte_offsets":[24289],"raw_metadata_u32":[1]}
+{"text_id":134,"forms":["촬영 중에는 <$keyicon(49)>로<br>카메라를 드는 방식을 전환할 수 있습니다."],"absolute_byte_offsets":[24534],"raw_metadata_u32":[1]}
+{"text_id":135,"forms":["<$cdef(27)><fqty(1)><$ifull(4000)></color>를 획득하면<br>카메라를 삼각대로 고정한 채로<br>자유롭게 움직이며 촬영할 수 있습니다.<br>셀카 촬영 중에 <$keyicon(49)>를 눌러<br>카메라를 고정할 수 있습니다."],"absolute_byte_offsets":[24630],"raw_metadata_u32":[1]}
+{"text_id":136,"forms":[""],"absolute_byte_offsets":[24885],"raw_metadata_u32":[0]}
+{"text_id":137,"forms":[""],"absolute_byte_offsets":[24886],"raw_metadata_u32":[0]}
+{"text_id":138,"forms":[""],"absolute_byte_offsets":[24887],"raw_metadata_u32":[0]}
+{"text_id":139,"forms":["누군가의 <$cdef(27)>유실물</color>이<br>땅속에 묻혀 있는 경우가 있습니다.<br><$cdef(27)><$spwfull(25)></color>이 특기인 포켓몬에게<br>봐 달라고 부탁해 봅시다."],"absolute_byte_offsets":[24888],"raw_metadata_u32":[1]}
+{"text_id":140,"forms":["땅속에 묻혀 있는 것 중에는<br>금방 폭발해 버리는 것도 있습니다.<br>발견하면 서둘러 물을 뿌립시다."],"absolute_byte_offsets":[25088],"raw_metadata_u32":[1]}
+{"text_id":141,"forms":[""],"absolute_byte_offsets":[25224],"raw_metadata_u32":[0]}
+{"text_id":142,"forms":["<$keyicon(153)>를 길게 눌러서 근처에 떨어져 있는 것을<br>한 번에 빨아들일 수 있습니다.<br><$cdef(27)>박치기</color>로 나무열매를 떨어뜨렸을 때나<br><$cdef(27)><$sklfull(4)></color>로 흙과 바위 등을<br>잔뜩 부쉈을 때 활용해 봅시다."],"absolute_byte_offsets":[25225],"raw_metadata_u32":[1]}
+{"text_id":143,"forms":[""],"absolute_byte_offsets":[25519],"raw_metadata_u32":[0]}
+{"text_id":144,"forms":[""],"absolute_byte_offsets":[25520],"raw_metadata_u32":[0]}
+{"text_id":145,"forms":["공중에 뜬 채로 움직일 수 있습니다.<br><$cdef(27)><$sklfull(13)></color> 도중에 <$keyicon(59)><$keyicon(58)>을 눌러서<br>위로 떠오르거나 아래로 가라앉을 수도 있습니다."],"absolute_byte_offsets":[25521],"raw_metadata_u32":[1]}
+{"text_id":146,"forms":["가방에서 아이템을 선택하고 <$keyicon(0)>로 토해 낼 수 있습니다.<br>일부는 <$keyicon(30)>로 개수를 바꿔서 한 번에 토해 낼 수 있습니다.<br>개수를 바꾼 상태에서 <$keyicon(31)>로 방향도 바꿀 수 있습니다.<br><$keyicon(253)>을 누르면 <$cdef(27)>교체 모드</color>가 되어<br>토해 낼 물건과 놓여 있는 물건을 교체할 수 있습니다."],"absolute_byte_offsets":[25729],"raw_metadata_u32":[1]}
+{"text_id":147,"forms":["<$keyicon(153)>를 누르면 눈앞의 물건을 부술 수도 있습니다.<br>부순 물건은 가방에 들어갑니다.<br>길게 눌러서 부수면 부순 물건을 비축해서<br>그대로 토해 낼 수 있습니다."],"absolute_byte_offsets":[26142],"raw_metadata_u32":[1]}
+{"text_id":148,"forms":["<$cdef(27)>PP</color>가 없어지면 기술을 사용할 때 지쳐 버립니다.<br>현재 <$cdef(27)>PP</color>는 오른쪽 아래의 게이지를 통해<br>확인할 수 있습니다."],"absolute_byte_offsets":[26368],"raw_metadata_u32":[1]}
+{"text_id":149,"forms":["<$cdef(27)>PP</color>는 <$cdef(27)>나무열매나 채소 등</color>을 먹으면 회복됩니다.<br><$keyicon(159)>로 가방을 열고 먹고 싶은 것을 고른 뒤,<br><$keyicon(0)>로 먹을 수 있습니다."],"absolute_byte_offsets":[26557],"raw_metadata_u32":[1]}
+{"text_id":150,"forms":[""],"absolute_byte_offsets":[26775],"raw_metadata_u32":[0]}
+{"text_id":151,"forms":[""],"absolute_byte_offsets":[26776],"raw_metadata_u32":[0]}
+{"text_id":152,"forms":[""],"absolute_byte_offsets":[26777],"raw_metadata_u32":[0]}
+{"text_id":153,"forms":[""],"absolute_byte_offsets":[26778],"raw_metadata_u32":[0]}
+{"text_id":154,"forms":[""],"absolute_byte_offsets":[26779],"raw_metadata_u32":[0]}
+{"text_id":155,"forms":[""],"absolute_byte_offsets":[26780],"raw_metadata_u32":[0]}
+{"text_id":156,"forms":[""],"absolute_byte_offsets":[26781],"raw_metadata_u32":[0]}
+{"text_id":157,"forms":["포켓몬들이 자신의 보금자리에 만족하는 정도를<br><$cdef(27)>주거 만족도</color>라고 부릅니다.<br>보금자리 근처에<br>포켓몬들이 좋아하는 다양한 물건을 놓아서<br><$cdef(27)>주거 만족도</color>를 올려 봅시다."],"absolute_byte_offsets":[26782],"raw_metadata_u32":[1]}
+{"text_id":158,"forms":["<$cdef(27)>주거 만족도</color>를 올리기 위해서는<br>포켓몬에게 \"<$cdef(27)>주거 만족도는 어때?</color>\"라고 물어봅시다.<br>원하는 것이나 해 줬으면 하는 것을 알 수 있습니다.<br>원하는 것을 발견할 수 없을 때는<br><$cdef(27)>숍</color>에서 구입하거나 <$cdef(27)>레시피</color>를 찾아봅시다."],"absolute_byte_offsets":[27054],"raw_metadata_u32":[1]}
+{"text_id":159,"forms":[""],"absolute_byte_offsets":[27425],"raw_metadata_u32":[0]}
+{"text_id":160,"forms":["포켓몬이 배부르거나<br>좋아하는 음식을 먹으면<br><$cdef(27)>주거 만족도</color>가 오릅니다."],"absolute_byte_offsets":[27426],"raw_metadata_u32":[1]}
+{"text_id":161,"forms":["음식을 직접 주는 방법 외에도<br>보금자리 근처에 <$cdef(27)>접시</color> 등을 놓고<br>음식을 올려 두거나<br><$cdef(27)>열매가 열리는 나무</color>를 심으면<br>배가 고플 때 먹습니다."],"absolute_byte_offsets":[27547],"raw_metadata_u32":[1]}
+{"text_id":162,"forms":[""],"absolute_byte_offsets":[27781],"raw_metadata_u32":[0]}
+{"text_id":163,"forms":["<$cdef(27)>침대</color>나 <$cdef(27)>의자</color> 등,<br>포켓몬이 휴식할 수 있는 물건을<br>보금자리 근처에 놓으면<br><$cdef(27)>주거 만족도</color>가 오릅니다."],"absolute_byte_offsets":[27782],"raw_metadata_u32":[1]}
+{"text_id":164,"forms":["포켓몬의 크기보다<br>작은 <$cdef(27)>침대</color>나 <$cdef(27)>의자</color>는 사용할 수 없으므로<br>큰 포켓몬에게는 큰 물건을 마련해 줍시다."],"absolute_byte_offsets":[27981],"raw_metadata_u32":[1]}
+{"text_id":165,"forms":[""],"absolute_byte_offsets":[28163],"raw_metadata_u32":[0]}
+{"text_id":166,"forms":["<$cdef(27)><fqty(1)><$ifull(1274)></color>나 <$cdef(27)><fqty(1)><$ifull(1271)></color>처럼<br>포켓몬이 가지고 놀 수 있는 물건을<br>보금자리 근처에 놓으면<br><$cdef(27)>주거 만족도</color>가 오릅니다."],"absolute_byte_offsets":[28164],"raw_metadata_u32":[1]}
+{"text_id":167,"forms":[""],"absolute_byte_offsets":[28402],"raw_metadata_u32":[0]}
+{"text_id":168,"forms":[""],"absolute_byte_offsets":[28403],"raw_metadata_u32":[0]}
+{"text_id":169,"forms":["포켓몬에게는 다양한 취향이 있습니다.<br>좋아하는 물건을 보금자리 근처에 놓으면<br><$cdef(27)>주거 만족도</color>가 크게 오릅니다."],"absolute_byte_offsets":[28404],"raw_metadata_u32":[1]}
+{"text_id":170,"forms":["좋아하는 맛의 음식을 먹은 포켓몬도<br><$cdef(27)>주거 만족도</color>가 크게 오릅니다."],"absolute_byte_offsets":[28579],"raw_metadata_u32":[1]}
+{"text_id":171,"forms":["취향은 <$cdef(27)>포켓몬 도감</color>에서 확인할 수 있습니다."],"absolute_byte_offsets":[28692],"raw_metadata_u32":[1]}
+{"text_id":172,"forms":["포켓몬마다 좋아하는<br><$cdef(27)>밝기</color>, <$cdef(27)>온도</color>, <$cdef(27)>습도</color>가 다릅니다.<br>보금자리의 <$cdef(27)>밝기</color>, <$cdef(27)>온도</color>, <$cdef(27)>습도</color>가<br>포켓몬이 지내기 좋은 정도라면<br><$cdef(27)>주거 만족도</color>가 오릅니다."],"absolute_byte_offsets":[28772],"raw_metadata_u32":[1]}
+{"text_id":173,"forms":["포켓몬마다 <$cdef(27)>밝기</color>, <$cdef(27)>온도</color>, <$cdef(27)>습도</color> 중<br>무엇을 신경 쓰는지에 대한 정보는<br><$cdef(27)>포켓몬 도감</color>에서 확인할 수 있습니다."],"absolute_byte_offsets":[29105],"raw_metadata_u32":[1]}
+{"text_id":174,"forms":[""],"absolute_byte_offsets":[29328],"raw_metadata_u32":[0]}
+{"text_id":175,"forms":["<$cdef(27)><$spwfull(1)></color>한 집에 살면<br><$cdef(27)>주거 만족도</color>가 오르기 쉽습니다.<br>집을 지었다면<br>포켓몬을 이사시켜 봅시다."],"absolute_byte_offsets":[29329],"raw_metadata_u32":[1]}
+{"text_id":176,"forms":["살고 있는 집이 클수록<br><$cdef(27)>주거 만족도</color>는 더욱 오릅니다."],"absolute_byte_offsets":[29508],"raw_metadata_u32":[1]}
+{"text_id":177,"forms":["집에 살고 있는 포켓몬의 주거 만족도는<br>집 밖의 밝기, 온도, 습도를 개선해도<br>바뀌지 않습니다.<br><$cdef(27)>집 안</color>을 정비해야 합니다."],"absolute_byte_offsets":[29602],"raw_metadata_u32":[1]}
+{"text_id":178,"forms":[""],"absolute_byte_offsets":[29793],"raw_metadata_u32":[0]}
+{"text_id":179,"forms":[""],"absolute_byte_offsets":[29794],"raw_metadata_u32":[0]}
+{"text_id":180,"forms":[""],"absolute_byte_offsets":[29795],"raw_metadata_u32":[0]}
+{"text_id":181,"forms":["지붕이나 빛나는 물건이 보금자리에 있으면<br><$cdef(27)>밝기</color>가 변화합니다.<br>밝게 만들고 싶으면 가로등이나 램프 등을 놓고<br>어둡게 만들고 싶으면 보금자리 위에 지붕 등을 놓아서<br>빛을 차단해 줍시다."],"absolute_byte_offsets":[29796],"raw_metadata_u32":[1]}
+{"text_id":182,"forms":[""],"absolute_byte_offsets":[30079],"raw_metadata_u32":[0]}
+{"text_id":183,"forms":[""],"absolute_byte_offsets":[30080],"raw_metadata_u32":[0]}
+{"text_id":184,"forms":["<$cdef(27)><$sklfull(2)></color>로 만든 밭에는<br>채소 등의 작물의 씨앗을 심을 수 있습니다.<br>심은 작물은 <$cdef(27)><$sklfull(3)></color> 등으로<br>물을 주면 자라납니다.<br>자주 물을 줍시다."],"absolute_byte_offsets":[30081],"raw_metadata_u32":[1]}
+{"text_id":185,"forms":["키운 채소는 <$keyicon(153)>로 수확할 수 있습니다.<br>수확한 뒤에도 <$cdef(27)><$sklfull(3)></color> 등으로<br>물을 주면 또 채소가 자라납니다."],"absolute_byte_offsets":[30321],"raw_metadata_u32":[1]}
+{"text_id":186,"forms":[""],"absolute_byte_offsets":[30499],"raw_metadata_u32":[0]}
+{"text_id":187,"forms":["포켓몬들은 저마다 <$cdef(27)>특기</color>를 갖고 있습니다.<br>무엇이 특기인지는<br><$keyicon(4)>메뉴의 <$cdef(27)>포켓몬 도감</color>에서 확인할 수 있습니다."],"absolute_byte_offsets":[30500],"raw_metadata_u32":[1]}
+{"text_id":188,"forms":[""],"absolute_byte_offsets":[30701],"raw_metadata_u32":[0]}
+{"text_id":189,"forms":[""],"absolute_byte_offsets":[30702],"raw_metadata_u32":[0]}
+{"text_id":190,"forms":["<$cdef(27)><$spwfull(10)></color>가 특기인 포켓몬은<br>근처에 태울 수 있는 물건이 있으면<br>여유가 있을 때 불을 붙여 줍니다.<br>함께 걷고 있을 때는 태우고 싶은 물건 앞에<br>멈춰 있으면 불을 붙여 줍니다."],"absolute_byte_offsets":[30703],"raw_metadata_u32":[1]}
+{"text_id":191,"forms":["그 외에도 <$cdef(27)><fqty(1)><$ifull(1446)></color>로 데려가면<br>금속이나 모래 등을 녹여서 가공해 줍니다."],"absolute_byte_offsets":[30970],"raw_metadata_u32":[1]}
+{"text_id":192,"forms":[""],"absolute_byte_offsets":[31104],"raw_metadata_u32":[0]}
+{"text_id":193,"forms":[""],"absolute_byte_offsets":[31105],"raw_metadata_u32":[0]}
+{"text_id":194,"forms":[""],"absolute_byte_offsets":[31106],"raw_metadata_u32":[0]}
+{"text_id":195,"forms":[""],"absolute_byte_offsets":[31107],"raw_metadata_u32":[0]}
+{"text_id":196,"forms":["<$cdef(27)><$spwfull(1)></color>이 특기인 포켓몬은<br>건물을 건축하거나 재건할 때<br><$cdef(27)>리더</color>로서 다른 포켓몬에게 지시를 내려 줍니다.<br>리더가 없으면 <$cdef(27)><$spwfull(1)></color>은 할 수 없습니다."],"absolute_byte_offsets":[31108],"raw_metadata_u32":[1]}
+{"text_id":197,"forms":[""],"absolute_byte_offsets":[31377],"raw_metadata_u32":[0]}
+{"text_id":198,"forms":[""],"absolute_byte_offsets":[31378],"raw_metadata_u32":[0]}
+{"text_id":199,"forms":["<$cdef(27)><$spwfull(5)></color>가 특기인 포켓몬은<br>근처에 식물이 있으면<br>여유가 있을 때 성장을 촉진시켜 줍니다.<br>함께 걷고 있을 때는<br>식물 앞에 멈춰 있으면 <$cdef(27)><$spwfull(5)></color>해 줍니다."],"absolute_byte_offsets":[31379],"raw_metadata_u32":[1]}
+{"text_id":200,"forms":["<$cdef(27)><fqty(1)><$ifull(8)></color> 등의 작물은<br>사전에 물을 주지 않으면<br><$cdef(27)><$spwfull(5)></color>해 주어도 자라지 않습니다.<br><$cdef(27)><$sklfull(3)> </color>등으로 물을 주고 나서 부탁해 봅시다."],"absolute_byte_offsets":[31641],"raw_metadata_u32":[1]}
+{"text_id":201,"forms":[""],"absolute_byte_offsets":[31896],"raw_metadata_u32":[0]}
+{"text_id":202,"forms":[""],"absolute_byte_offsets":[31897],"raw_metadata_u32":[0]}
+{"text_id":203,"forms":[""],"absolute_byte_offsets":[31898],"raw_metadata_u32":[0]}
+{"text_id":204,"forms":[""],"absolute_byte_offsets":[31899],"raw_metadata_u32":[0]}
+{"text_id":205,"forms":["친구가 된 포켓몬이 늘어나고<br>모두의 <$cdef(27)>주거 만족도</color>가 오르면 <$cdef(27)>레벨</color>이 오릅니다.<br><$cdef(27)>레벨</color>이 오르면<br><$cdef(27)>챌린지</color>나 <$cdef(27)>숍</color>의 상품이 늘어납니다."],"absolute_byte_offsets":[31900],"raw_metadata_u32":[1]}
+{"text_id":206,"forms":[""],"absolute_byte_offsets":[32175],"raw_metadata_u32":[0]}
+{"text_id":207,"forms":[""],"absolute_byte_offsets":[32176],"raw_metadata_u32":[0]}
+{"text_id":208,"forms":["취향과 마찬가지로<br>포켓몬에게는 저마다 싫어하는 것도 있습니다.<br>싫어하는 것을 보금자리 근처에 놓으면<br><$cdef(27)>주거 만족도</color>가 내려갑니다."],"absolute_byte_offsets":[32177],"raw_metadata_u32":[1]}
+{"text_id":209,"forms":[""],"absolute_byte_offsets":[32384],"raw_metadata_u32":[0]}
+{"text_id":210,"forms":[""],"absolute_byte_offsets":[32385],"raw_metadata_u32":[0]}
+{"text_id":211,"forms":["<$cdef(27)><fqty(1)><$ifull(1280)></color>이나 <$cdef(27)><fqty(1)><$ifull(1096)></color> 등,<br>따뜻하거나 시원하게 만드는 물건이<br>보금자리에 있으면 <$cdef(27)>온도</color>가 변화합니다."],"absolute_byte_offsets":[32386],"raw_metadata_u32":[1]}
+{"text_id":212,"forms":[""],"absolute_byte_offsets":[32610],"raw_metadata_u32":[0]}
+{"text_id":213,"forms":[""],"absolute_byte_offsets":[32611],"raw_metadata_u32":[0]}
+{"text_id":214,"forms":["물, 나무, 풀, 그와 관련된 물건이 있으면<br>보금자리의 <$cdef(27)>습도</color>가 오릅니다.<br>건조하게 만들고 싶으면 물, 나무, 풀 등을<br>보금자리에서 제거해 봅시다."],"absolute_byte_offsets":[32612],"raw_metadata_u32":[1]}
+{"text_id":215,"forms":[""],"absolute_byte_offsets":[32832],"raw_metadata_u32":[0]}
+{"text_id":216,"forms":[""],"absolute_byte_offsets":[32833],"raw_metadata_u32":[0]}
+{"text_id":217,"forms":[""],"absolute_byte_offsets":[32834],"raw_metadata_u32":[0]}
+{"text_id":218,"forms":[""],"absolute_byte_offsets":[32835],"raw_metadata_u32":[0]}
+{"text_id":219,"forms":[""],"absolute_byte_offsets":[32836],"raw_metadata_u32":[0]}
+{"text_id":220,"forms":[""],"absolute_byte_offsets":[32837],"raw_metadata_u32":[0]}
+{"text_id":221,"forms":[""],"absolute_byte_offsets":[32838],"raw_metadata_u32":[0]}
+{"text_id":222,"forms":[""],"absolute_byte_offsets":[32839],"raw_metadata_u32":[0]}
+{"text_id":223,"forms":["포켓몬에게 무언가 놓아 줄 때는<br>보금자리 근처에 놓아 줍시다.<br>떨어진 곳에 놓으면<br><$cdef(27)>주거 만족도</color>는 오르지 않습니다."],"absolute_byte_offsets":[32840],"raw_metadata_u32":[1]}
+{"text_id":224,"forms":["보금자리 근처에서 <$keyicon(32)>을 누르면<br>보금자리의 범위가 표시됩니다.<br>다시 <$keyicon(32)>을 누르거나<br>보금자리에서 멀어지면 표시가 사라집니다."],"absolute_byte_offsets":[33024],"raw_metadata_u32":[1]}
+{"text_id":225,"forms":[""],"absolute_byte_offsets":[33227],"raw_metadata_u32":[0]}
+{"text_id":226,"forms":["전설의 포켓몬과 환상의 포켓몬은<br>다른 포켓몬보다 <$cdef(27)>환경 레벨</color>에 미치는 영향이 크고<br><$cdef(27)>레벨</color>이 오르기 쉬워집니다."],"absolute_byte_offsets":[33228],"raw_metadata_u32":[1]}
+{"text_id":227,"forms":[""],"absolute_byte_offsets":[33422],"raw_metadata_u32":[0]}
+{"text_id":228,"forms":[""],"absolute_byte_offsets":[33423],"raw_metadata_u32":[0]}
+{"text_id":229,"forms":[""],"absolute_byte_offsets":[33424],"raw_metadata_u32":[0]}
+{"text_id":230,"forms":[""],"absolute_byte_offsets":[33425],"raw_metadata_u32":[0]}
+{"text_id":231,"forms":[""],"absolute_byte_offsets":[33426],"raw_metadata_u32":[0]}
+{"text_id":232,"forms":["<$cdef(27)><$spwfull(6)></color>이 특기인 포켓몬은<br>아이템을 맡아 줍니다.<br>말을 걸고 \"<$cdef(27)>물건을 맡기거나 찾고 싶어</color>\"를 선택하면<br>언제든지 맡기거나 찾을 수 있습니다."],"absolute_byte_offsets":[33427],"raw_metadata_u32":[1]}
+{"text_id":233,"forms":["아이템을 맡긴 포켓몬과 동행하고 있을 때<br><$cdef(27)><fqty(1)><$ifull(764)></color>를 사용하면<br>맡긴 물건을 그대로 재료로 사용할 수 있습니다."],"absolute_byte_offsets":[33665],"raw_metadata_u32":[1]}
+{"text_id":234,"forms":[""],"absolute_byte_offsets":[33851],"raw_metadata_u32":[0]}
+{"text_id":235,"forms":["포켓몬과 함께 걸으면<br>다양한 일을 도와주기도 합니다.<br>도와줬으면 하는 것 앞에 멈춰 있으면<br>특기에 따라 도와줍니다."],"absolute_byte_offsets":[33852],"raw_metadata_u32":[1]}
+{"text_id":236,"forms":[""],"absolute_byte_offsets":[34020],"raw_metadata_u32":[0]}
+{"text_id":237,"forms":[""],"absolute_byte_offsets":[34021],"raw_metadata_u32":[0]}
+{"text_id":238,"forms":[""],"absolute_byte_offsets":[34022],"raw_metadata_u32":[0]}
+{"text_id":239,"forms":[""],"absolute_byte_offsets":[34023],"raw_metadata_u32":[0]}
+{"text_id":240,"forms":[""],"absolute_byte_offsets":[34024],"raw_metadata_u32":[0]}
+{"text_id":241,"forms":[""],"absolute_byte_offsets":[34025],"raw_metadata_u32":[0]}
+{"text_id":242,"forms":[""],"absolute_byte_offsets":[34026],"raw_metadata_u32":[0]}
+{"text_id":243,"forms":[""],"absolute_byte_offsets":[34027],"raw_metadata_u32":[0]}
+{"text_id":244,"forms":[""],"absolute_byte_offsets":[34028],"raw_metadata_u32":[0]}
+{"text_id":245,"forms":[""],"absolute_byte_offsets":[34029],"raw_metadata_u32":[0]}
+{"text_id":246,"forms":[""],"absolute_byte_offsets":[34030],"raw_metadata_u32":[0]}
+{"text_id":247,"forms":[""],"absolute_byte_offsets":[34031],"raw_metadata_u32":[0]}
+{"text_id":248,"forms":[""],"absolute_byte_offsets":[34032],"raw_metadata_u32":[0]}
+{"text_id":249,"forms":[""],"absolute_byte_offsets":[34033],"raw_metadata_u32":[0]}
+{"text_id":250,"forms":["<$cdef(27)><$spwfull(26)></color>가 특기인 포켓몬에게<br><$cdef(27)><fqty(1)><$ifull(3994)></color>을 주면<br>특별한 무늬의 가구와 교환해 줍니다."],"absolute_byte_offsets":[34034],"raw_metadata_u32":[1]}
+{"text_id":251,"forms":[""],"absolute_byte_offsets":[34207],"raw_metadata_u32":[0]}
+{"text_id":252,"forms":[""],"absolute_byte_offsets":[34208],"raw_metadata_u32":[0]}
+{"text_id":253,"forms":["<$cdef(27)><$spwfull(15)></color>이 특기인 포켓몬에게<br><$cdef(27)><fqty(1)><$ifull(1482)></color>를 건네면<br><$cdef(27)><fqty(1)><$ifull(407)></color>로 가공해 줍니다."],"absolute_byte_offsets":[34209],"raw_metadata_u32":[1]}
+{"text_id":254,"forms":[""],"absolute_byte_offsets":[34400],"raw_metadata_u32":[0]}
+{"text_id":255,"forms":[""],"absolute_byte_offsets":[34401],"raw_metadata_u32":[0]}
+{"text_id":256,"forms":["<$cdef(27)><$spwfull(16)></color>가 특기인 포켓몬에게<br>재료가 되는 아이템을 건네면<br>가공해서 다른 아이템으로 만들어 줍니다."],"absolute_byte_offsets":[34402],"raw_metadata_u32":[1]}
+{"text_id":257,"forms":[""],"absolute_byte_offsets":[34568],"raw_metadata_u32":[0]}
+{"text_id":258,"forms":[""],"absolute_byte_offsets":[34569],"raw_metadata_u32":[0]}
+{"text_id":259,"forms":["포켓몬에게 말을 걸고<br>\"<$cdef(27)>같이 가자</color>\"를 선택하면<br>포켓몬과 동행할 수 있습니다."],"absolute_byte_offsets":[34570],"raw_metadata_u32":[1]}
+{"text_id":260,"forms":["<$keyicon(214)>를 누르면 <$cdef(27)>메타몽 </color>앞의 포켓몬에게<br>동행을 권유합니다.<br>최대 5마리까지 동행할 수 있습니다."],"absolute_byte_offsets":[34698],"raw_metadata_u32":[1]}
+{"text_id":261,"forms":["포켓몬은 배가 고프면<br>동행을 거절하거나<br>도중에 멈춰 섭니다.<br>그럴 때는 음식을 줍시다."],"absolute_byte_offsets":[34861],"raw_metadata_u32":[1]}
+{"text_id":262,"forms":[""],"absolute_byte_offsets":[34989],"raw_metadata_u32":[0]}
+{"text_id":263,"forms":[""],"absolute_byte_offsets":[34990],"raw_metadata_u32":[0]}
+{"text_id":264,"forms":[""],"absolute_byte_offsets":[34991],"raw_metadata_u32":[0]}
+{"text_id":265,"forms":["포켓몬에게 말을 걸고<br>\"<$cdef(27)>주거 만족도는 어때?</color>\"라고 물으면<br>현재의 <$cdef(27)>주거 만족도</color>를 알려 줍니다.<br>또, 어떻게 하면 <$cdef(27)>주거 만족도</color>가 오를지도<br>확인할 수 있습니다."],"absolute_byte_offsets":[34992],"raw_metadata_u32":[1]}
+{"text_id":266,"forms":["해당 포켓몬이 원하는 것과<br>해 줬으면 하는 것을 매일 1개 알 수 있습니다.<br>해결해 줘서 <$cdef(27)>주거 만족도</color>를 올려 봅시다."],"absolute_byte_offsets":[35268],"raw_metadata_u32":[1]}
+{"text_id":267,"forms":["\"<$cdef(27)>주거 만족도는 어때?</color>\"로 들은 내용 외에도<br>포켓몬이 원하는 것과 해 줬으면 하는 것을 해결해 주면<br><$cdef(27)>주거 만족도</color>가 오릅니다.<br>시간이 있다면 여러모로 시도해 봅시다."],"absolute_byte_offsets":[35447],"raw_metadata_u32":[1]}
+{"text_id":268,"forms":["<$cdef(27)><fqty(1)><$ifull(1367)></color>나 <$cdef(27)><fqty(1)><$ifull(1542)> </color>등,<br>보금자리에 장식을 놓아 주면<br><$cdef(27)>주거 만족도</color>가 오릅니다."],"absolute_byte_offsets":[35714],"raw_metadata_u32":[1]}
+{"text_id":269,"forms":[""],"absolute_byte_offsets":[35907],"raw_metadata_u32":[0]}
+{"text_id":270,"forms":[""],"absolute_byte_offsets":[35908],"raw_metadata_u32":[0]}
+{"text_id":271,"forms":[""],"absolute_byte_offsets":[35909],"raw_metadata_u32":[0]}
+{"text_id":272,"forms":[""],"absolute_byte_offsets":[35910],"raw_metadata_u32":[0]}
+{"text_id":273,"forms":[""],"absolute_byte_offsets":[35911],"raw_metadata_u32":[0]}
+{"text_id":274,"forms":["포켓몬의 보금자리 <$cdef(27)>밝기</color>가<br>해당 포켓몬의 취향이나 활동 시간과 맞으면<br>깨어 있는 시간이 길어집니다."],"absolute_byte_offsets":[35912],"raw_metadata_u32":[1]}
+{"text_id":275,"forms":[""],"absolute_byte_offsets":[36074],"raw_metadata_u32":[0]}
+{"text_id":276,"forms":[""],"absolute_byte_offsets":[36075],"raw_metadata_u32":[0]}
+{"text_id":277,"forms":[""],"absolute_byte_offsets":[36076],"raw_metadata_u32":[0]}
+{"text_id":278,"forms":[""],"absolute_byte_offsets":[36077],"raw_metadata_u32":[0]}
+{"text_id":279,"forms":[""],"absolute_byte_offsets":[36078],"raw_metadata_u32":[0]}
+{"text_id":280,"forms":[""],"absolute_byte_offsets":[36079],"raw_metadata_u32":[0]}
+{"text_id":281,"forms":[""],"absolute_byte_offsets":[36080],"raw_metadata_u32":[0]}
+{"text_id":282,"forms":[""],"absolute_byte_offsets":[36081],"raw_metadata_u32":[0]}
+{"text_id":283,"forms":["<$cdef(27)><$spwfull(8)></color>가 특기인 포켓몬은<br><$cdef(27)>메타몽</color>이 물을 채운 <$cdef(27)><fqty(1)><$ifull(1261)></color>이 근처에 있으면<br>주위 식물에 물을 줍니다."],"absolute_byte_offsets":[36082],"raw_metadata_u32":[1]}
+{"text_id":284,"forms":[""],"absolute_byte_offsets":[36294],"raw_metadata_u32":[0]}
+{"text_id":285,"forms":[""],"absolute_byte_offsets":[36295],"raw_metadata_u32":[0]}
+{"text_id":286,"forms":["<$cdef(27)><$hatname(152)></color>에 음식을 놓고<br><$cdef(27)><$spwfull(8)></color>가 특기인 포켓몬을 데려가면<br><$cdef(27)>비바라기</color>로 주위의 <$cdef(27)>습도</color>를 올려 줍니다."],"absolute_byte_offsets":[36296],"raw_metadata_u32":[1]}
+{"text_id":287,"forms":[""],"absolute_byte_offsets":[36521],"raw_metadata_u32":[0]}
+{"text_id":288,"forms":[""],"absolute_byte_offsets":[36522],"raw_metadata_u32":[0]}
+{"text_id":289,"forms":[""],"absolute_byte_offsets":[36523],"raw_metadata_u32":[0]}
+{"text_id":290,"forms":[""],"absolute_byte_offsets":[36524],"raw_metadata_u32":[0]}
+{"text_id":291,"forms":[""],"absolute_byte_offsets":[36525],"raw_metadata_u32":[0]}
+{"text_id":292,"forms":["꽃과 나무 씨앗은 땅에 심을 수 있습니다.<br>가방을 열고 손에 든 뒤에 <$keyicon(0)>로 심을 수 있습니다.<br>바싹 마른 흙에는 심을 수 없으므로<br><$cdef(27)><$sklfull(3)></color> 등으로 물을 준 뒤에 심어 봅시다."],"absolute_byte_offsets":[36526],"raw_metadata_u32":[1]}
+{"text_id":293,"forms":["심은 씨앗이 자라는 데에는 시간이 소요됩니다.<br>다음 날까지 기다려 봅시다."],"absolute_byte_offsets":[36795],"raw_metadata_u32":[1]}
+{"text_id":294,"forms":[""],"absolute_byte_offsets":[36900],"raw_metadata_u32":[0]}
+{"text_id":295,"forms":[""],"absolute_byte_offsets":[36901],"raw_metadata_u32":[0]}
+{"text_id":296,"forms":[""],"absolute_byte_offsets":[36902],"raw_metadata_u32":[0]}
+{"text_id":297,"forms":[""],"absolute_byte_offsets":[36903],"raw_metadata_u32":[0]}
+{"text_id":298,"forms":[""],"absolute_byte_offsets":[36904],"raw_metadata_u32":[0]}
+{"text_id":299,"forms":[""],"absolute_byte_offsets":[36905],"raw_metadata_u32":[0]}
+{"text_id":300,"forms":[""],"absolute_byte_offsets":[36906],"raw_metadata_u32":[0]}
+{"text_id":301,"forms":[""],"absolute_byte_offsets":[36907],"raw_metadata_u32":[0]}
+{"text_id":302,"forms":[""],"absolute_byte_offsets":[36908],"raw_metadata_u32":[0]}
+{"text_id":303,"forms":[""],"absolute_byte_offsets":[36909],"raw_metadata_u32":[0]}
+{"text_id":304,"forms":[""],"absolute_byte_offsets":[36910],"raw_metadata_u32":[0]}
+{"text_id":305,"forms":[""],"absolute_byte_offsets":[36911],"raw_metadata_u32":[0]}
+{"text_id":306,"forms":[""],"absolute_byte_offsets":[36912],"raw_metadata_u32":[0]}
+{"text_id":307,"forms":[""],"absolute_byte_offsets":[36913],"raw_metadata_u32":[0]}
+{"text_id":308,"forms":[""],"absolute_byte_offsets":[36914],"raw_metadata_u32":[0]}
+{"text_id":309,"forms":[""],"absolute_byte_offsets":[36915],"raw_metadata_u32":[0]}
+{"text_id":310,"forms":["서식지에 포켓몬이 살면 <$cdef(27)>보금자리</color>가 됩니다.<br>보금자리가 된 서식지에는<br>새로운 포켓몬이 나타나지 않습니다.<br>다른 서식지를 만들어 봅시다."],"absolute_byte_offsets":[36916],"raw_metadata_u32":[1]}
+{"text_id":311,"forms":[""],"absolute_byte_offsets":[37131],"raw_metadata_u32":[0]}
+{"text_id":312,"forms":[""],"absolute_byte_offsets":[37132],"raw_metadata_u32":[0]}
+{"text_id":313,"forms":["<$cdef(27)>이상해씨</color>에게 말을 걸면<br><$cdef(27)>긴줄넘기</color>를 할 수 있습니다.<br>타이밍에 맞춰 <$keyicon(3)>로 튀어 올라서<br>줄을 뛰어넘어 봅시다.<br>줄에 걸리면 종료됩니다."],"absolute_byte_offsets":[37133],"raw_metadata_u32":[1]}
+{"text_id":314,"forms":["다른 플레이어와 함께 플레이할 수도 있습니다.<br>다 함께 플레이할 때는<br>줄에 걸리면 날아가 버리게 됩니다.<br>마지막까지 남은 플레이어가 승리합니다.<br>순위는 줄을 뛰어넘은 횟수에 따라 정해집니다."],"absolute_byte_offsets":[37373],"raw_metadata_u32":[1]}
+{"text_id":315,"forms":["먼저 줄에 걸린 플레이어는 줄의 속도를 조절해서<br>뛰고 있는 플레이어를 방해할 수 있습니다.<br>줄의 속도는 <$keyicon(7)>로 빨라지고 <$keyicon(8)>로 느려집니다.<br>다 함께 버튼을 누른 횟수만큼 속도가 변화하므로<br>힘을 합쳐 버튼을 많이 눌러 봅시다."],"absolute_byte_offsets":[37648],"raw_metadata_u32":[1]}
+{"text_id":316,"forms":["<$cdef(27)>조로아</color>에게 말을 걸면<br><$cdef(27)>터치숨바꼭질</color>을 할 수 있습니다.<br>술래인 포켓몬에게 들키지 않고<br><$cdef(27)>포켓몬센터</color>의 <$cdef(27)>PC</color>를 터치하면 승리합니다.<br>들키면 시작한 위치로 돌아갑니다."],"absolute_byte_offsets":[37982],"raw_metadata_u32":[1]}
+{"text_id":317,"forms":["<$cdef(27)><$sklfull(6)></color>를 하면<br>술래에게 잘 들키지 않게 됩니다.<br>아이템을 놓거나 감정 표현을 사용해서<br>상대의 주의를 끌 수도 있습니다.<br>술래가 방심한 틈을 노려서 이동해 봅시다."],"absolute_byte_offsets":[38289],"raw_metadata_u32":[1]}
+{"text_id":318,"forms":["다른 플레이어와 함께 플레이하면 팀전이 됩니다.<br>누군가 한 명이라도 <$cdef(27)>PC</color>를 터치하면 승리합니다.<br>술래에게 들킨 플레이어는 시작 지점으로 돌아갑니다.<br>다 함께 힘을 합쳐 <$cdef(27)>PC</color> 터치를 노려봅시다."],"absolute_byte_offsets":[38545],"raw_metadata_u32":[1]}
+{"text_id":319,"forms":[""],"absolute_byte_offsets":[38850],"raw_metadata_u32":[0]}
+{"text_id":320,"forms":[""],"absolute_byte_offsets":[38851],"raw_metadata_u32":[0]}
+{"text_id":321,"forms":[""],"absolute_byte_offsets":[38852],"raw_metadata_u32":[0]}
+{"text_id":322,"forms":["난처해하는 포켓몬에게 말을 걸면<br><$cdef(27)>부탁</color>을 받게 되는 경우가 있습니다.<br>받은 <$cdef(27)>부탁</color>은 메인 메뉴에서<br>언제든지 확인할 수 있습니다."],"absolute_byte_offsets":[38853],"raw_metadata_u32":[1]}
+{"text_id":323,"forms":[""],"absolute_byte_offsets":[39072],"raw_metadata_u32":[0]}
+{"text_id":324,"forms":[""],"absolute_byte_offsets":[39073],"raw_metadata_u32":[0]}
+{"text_id":325,"forms":["<$cdef(27)><$spwfull(25)></color>이 특기인 <$cdef(27)><$cname(341)></color>에게<br><$cdef(27)>유실물</color>을 보여 주면<br>어떤 아이템인지 감정해 줍니다."],"absolute_byte_offsets":[39074],"raw_metadata_u32":[1]}
+{"text_id":326,"forms":[""],"absolute_byte_offsets":[39256],"raw_metadata_u32":[0]}
+{"text_id":327,"forms":[""],"absolute_byte_offsets":[39257],"raw_metadata_u32":[0]}
+{"text_id":328,"forms":["<$cdef(27)>흔들풍손</color>은 <$cdef(27)>꿈섬</color>이라는<br>신비한 섬에 데려가 줍니다.<br><$cdef(27)>꿈섬</color>에서만 획득할 수 있는 물건도 있으므로<br>찬찬히 탐험해 봅시다.<br>돌아갈 때는 <$cdef(27)>꿈섬</color>에서 <$cdef(27)>흔들풍손</color>에게 말을 걸어 봅시다."],"absolute_byte_offsets":[39258],"raw_metadata_u32":[1]}
+{"text_id":329,"forms":[""],"absolute_byte_offsets":[39600],"raw_metadata_u32":[0]}
+{"text_id":330,"forms":["<$cdef(27)>꿈섬</color>에는 <$cdef(27)>몇 번이고</color> 갈 수 있지만<br>하루에 <$cdef(27)>한 곳</color>에만 데려가 줍니다.<br>다른 <$cdef(27)>꿈섬</color>에 가고 싶을 때는<br>다음 날 <$cdef(27)>흔들풍손</color>에게 부탁해 봅시다."],"absolute_byte_offsets":[39601],"raw_metadata_u32":[1]}
+{"text_id":331,"forms":[""],"absolute_byte_offsets":[39884],"raw_metadata_u32":[0]}
+{"text_id":332,"forms":[""],"absolute_byte_offsets":[39885],"raw_metadata_u32":[0]}
+{"text_id":333,"forms":[""],"absolute_byte_offsets":[39886],"raw_metadata_u32":[0]}
+{"text_id":334,"forms":["포켓몬과 이야기하거나 다양한 물건을 만들고<br>하고 싶은 일을 하며 유유자적하게 지내봅시다."],"absolute_byte_offsets":[39887],"raw_metadata_u32":[1]}
+{"text_id":335,"forms":["새로운 포켓몬을 찾아보는 것도,<br>포켓몬의 <$cdef(27)>부탁</color>을 들어주는 것도,<br>꿈에 그린 마을을 만드는 것도,<br>무엇을 하든 자유입니다!"],"absolute_byte_offsets":[40016],"raw_metadata_u32":[1]}
+{"text_id":336,"forms":[""],"absolute_byte_offsets":[40208],"raw_metadata_u32":[0]}
+{"text_id":337,"forms":["떨어져 있는 물건은 <$keyicon(153)>로 주울 수 있습니다.<br>주운 물건은 가방에 들어갑니다."],"absolute_byte_offsets":[40209],"raw_metadata_u32":[1]}
+{"text_id":338,"forms":[""],"absolute_byte_offsets":[40327],"raw_metadata_u32":[0]}
+{"text_id":339,"forms":[""],"absolute_byte_offsets":[40328],"raw_metadata_u32":[0]}
+{"text_id":340,"forms":["눈앞에 있는 것과 똑같은 모습으로<br><$cdef(27)><$spwfull(36)></color>합니다.<br>그대로 움직일 수도 있습니다."],"absolute_byte_offsets":[40329],"raw_metadata_u32":[1]}
+{"text_id":341,"forms":[""],"absolute_byte_offsets":[40467],"raw_metadata_u32":[0]}
+{"text_id":342,"forms":[""],"absolute_byte_offsets":[40468],"raw_metadata_u32":[0]}
+{"text_id":343,"forms":["<$cdef(27)><$spwfull(11)></color>이 특기인 포켓몬과 함께 걸을 때<br><$cdef(27)><fqty(1)><$ifull(2793)></color>을 손에 들고 <$keyicon(0)>를 누르면<br>묻혀 있는 물건을 찾기 시작합니다."],"absolute_byte_offsets":[40469],"raw_metadata_u32":[1]}
+{"text_id":344,"forms":[""],"absolute_byte_offsets":[40688],"raw_metadata_u32":[0]}
+{"text_id":345,"forms":[""],"absolute_byte_offsets":[40689],"raw_metadata_u32":[0]}
+{"text_id":346,"forms":["<$cdef(27)><$spwfull(27)></color>이 특기인 포켓몬에게 말을 걸면<br>현재 <$cdef(27)>습도</color>가 어느 정도인지를 알 수 있습니다."],"absolute_byte_offsets":[40690],"raw_metadata_u32":[1]}
+{"text_id":347,"forms":[""],"absolute_byte_offsets":[40851],"raw_metadata_u32":[0]}
+{"text_id":348,"forms":[""],"absolute_byte_offsets":[40852],"raw_metadata_u32":[0]}
+{"text_id":349,"forms":["가방을 열고 <$keyicon(247)>을 누르면<br>보조 가방을 표시한 채로 둘 수 있습니다.<br>보조 가방에 넣은 아이템은 <$keyicon(161)><$keyicon(162)>으로<br>가방을 열지 않고도 언제든지 사용할 수 있습니다."],"absolute_byte_offsets":[40853],"raw_metadata_u32":[1]}
+{"text_id":350,"forms":[""],"absolute_byte_offsets":[41106],"raw_metadata_u32":[0]}
+{"text_id":351,"forms":[""],"absolute_byte_offsets":[41107],"raw_metadata_u32":[0]}
+{"text_id":352,"forms":["<$cdef(27)>줍기</color>, <$cdef(27)>조사하기</color>, <$cdef(27)>대화하기</color> 등의 대상이<br>근처에 많을 때는 <$keyicon(249)>으로<br>주울 물건이나 대화할 상대를 고를 수 있습니다.<br>의도치 않은 대상을 고르게 될 때 활용해 봅시다."],"absolute_byte_offsets":[41108],"raw_metadata_u32":[1]}
+{"text_id":353,"forms":[""],"absolute_byte_offsets":[41403],"raw_metadata_u32":[0]}
+{"text_id":354,"forms":[""],"absolute_byte_offsets":[41404],"raw_metadata_u32":[0]}
+{"text_id":355,"forms":[""],"absolute_byte_offsets":[41405],"raw_metadata_u32":[0]}
+{"text_id":356,"forms":[""],"absolute_byte_offsets":[41406],"raw_metadata_u32":[0]}
+{"text_id":357,"forms":[""],"absolute_byte_offsets":[41407],"raw_metadata_u32":[0]}
+{"text_id":358,"forms":["<$cdef(27)><$spwfull(10)></color>가 특기인 포켓몬은<br><$cdef(27)><fqty(1)><$ifull(1446)></color>에서 <$cdef(27)><fqty(1)><$ifull(107)></color>이나 <$cdef(27)><fqty(1)><$ifull(106)></color> 등을 녹여서<br>가공해 줍니다."],"absolute_byte_offsets":[41408],"raw_metadata_u32":[1]}
+{"text_id":359,"forms":[""],"absolute_byte_offsets":[41651],"raw_metadata_u32":[0]}
+{"text_id":360,"forms":[""],"absolute_byte_offsets":[41652],"raw_metadata_u32":[0]}
+{"text_id":361,"forms":["<$cdef(27)><$spwfull(8)></color>가 특기인 포켓몬과 함께 걸을 때<br>진흙 앞에 멈춰 있으면 거품을 뿌려 줍니다.<br>그곳에 물을 뿌리면 진흙을 씻어 없앨 수 있습니다."],"absolute_byte_offsets":[41653],"raw_metadata_u32":[1]}
+{"text_id":362,"forms":[""],"absolute_byte_offsets":[41864],"raw_metadata_u32":[0]}
+{"text_id":363,"forms":[""],"absolute_byte_offsets":[41865],"raw_metadata_u32":[0]}
+{"text_id":364,"forms":["<$icon(10993)><$cdef(27)><$spwname(13)></color>가 특기인 포켓몬은<br>떨어져 있는 재료 등을 주워서<br><$cdef(27)><fqty(1)><$ifull(1460)></color>에 넣어 줍니다."],"absolute_byte_offsets":[41866],"raw_metadata_u32":[1]}
+{"text_id":365,"forms":["또한 <$cdef(27)><fqty(1)><$ifull(1460)></color>에 들어 있는 재료를<br><$cdef(27)><fqty(1)><$ifull(1446)></color> 등, 가공할 수 있는 곳으로<br>가져가서 안에 넣어 줍니다."],"absolute_byte_offsets":[42051],"raw_metadata_u32":[1]}
+{"text_id":366,"forms":[""],"absolute_byte_offsets":[42251],"raw_metadata_u32":[0]}
+{"text_id":367,"forms":["어떤 포켓몬에게 <$cdef(27)>인형</color>을 보여 주면<br><$cdef(27)>꿈섬</color>에 데려가 줍니다.<br>한 번 <$cdef(27)>꿈섬</color>에 간 뒤에는<br><$cdef(27)>인형</color>에게 말을 걸면 그 포켓몬이 찾아와 줍니다."],"absolute_byte_offsets":[42252],"raw_metadata_u32":[1]}
+{"text_id":368,"forms":[""],"absolute_byte_offsets":[42512],"raw_metadata_u32":[0]}
+{"text_id":369,"forms":[""],"absolute_byte_offsets":[42513],"raw_metadata_u32":[0]}
+{"text_id":370,"forms":["<$icon(11222)><$cdef(27)><$spwname(30)></color>가 특기인 포켓몬은<br><$cdef(27)>유실물</color>이나 <$cdef(27)>희귀한 깃털</color>을<br>다른 아이템과 교환해 줍니다."],"absolute_byte_offsets":[42514],"raw_metadata_u32":[1]}
+{"text_id":371,"forms":[""],"absolute_byte_offsets":[42709],"raw_metadata_u32":[0]}
+{"text_id":372,"forms":[""],"absolute_byte_offsets":[42710],"raw_metadata_u32":[0]}
+{"text_id":373,"forms":["<$cdef(27)><$spwfull(17)></color>이 특기인 포켓몬에게<br><$cdef(27)><fqty(1)><$ifull(1801)></color>를 건네면<br><$cdef(27)><fqty(1)><$ifull(126)></color>로 가공해 줍니다."],"absolute_byte_offsets":[42711],"raw_metadata_u32":[1]}
+{"text_id":374,"forms":[""],"absolute_byte_offsets":[42902],"raw_metadata_u32":[0]}
+{"text_id":375,"forms":[""],"absolute_byte_offsets":[42903],"raw_metadata_u32":[0]}
+{"text_id":376,"forms":["<$icon(11219)><$cdef(27)><$spwname(28)></color>가 특기인 <$cdef(27)><$cname(272)></color>는<br>음식을 원합니다.<br><$cdef(27)><fqty(1)><$ifull(1811)></color>에 놓아 주면 맛이나 귀한 정도에 따라<br>무언가 좋은 일이 일어날지도...?"],"absolute_byte_offsets":[42904],"raw_metadata_u32":[1]}
+{"text_id":377,"forms":[""],"absolute_byte_offsets":[43172],"raw_metadata_u32":[0]}
+{"text_id":378,"forms":[""],"absolute_byte_offsets":[43173],"raw_metadata_u32":[0]}
+{"text_id":379,"forms":["<$icon(11008)><$cdef(27)><$spwname(21)></color>이 특기인 <$cdef(27)><$cname(206)></color>은<br><$cdef(27)>물감</color>을 사용해서 가구 등<br>다양한 물건의 색을 바꿔 줍니다.<br>색을 바꿀 수 없는 물건도 있습니다."],"absolute_byte_offsets":[43174],"raw_metadata_u32":[1]}
+{"text_id":380,"forms":["또한, 아이템에 무늬를<br><$icon(11008)><$cdef(27)><$spwname(21)></color>할 수도 있습니다.<br>무늬가 찍혀 있는 <$cdef(27)>인간의 기록</color>이나<br>무늬가 있는 물건을 발견하면<br><$cdef(27)><$cname(206)></color>에게 보여 줍시다."],"absolute_byte_offsets":[43427],"raw_metadata_u32":[1]}
+{"text_id":381,"forms":["개중에는 부위별로 다른 색이나 무늬로<br>바꿀 수 있는 물건도 있습니다."],"absolute_byte_offsets":[43705],"raw_metadata_u32":[1]}
+{"text_id":382,"forms":["<$icon(11221)><$cdef(27)><$spwname(31)></color>이 특기인 포켓몬을<br><$cdef(27)><fqty(1)><$ifull(1850)></color> 쪽으로 데려가면 안으로 들어가며<br>그 상태로 불을 붙이면 날아갑니다.<br>포켓몬은 날아간 곳에서 폭발하고<br>그 주위의 물건도 부서집니다."],"absolute_byte_offsets":[43803],"raw_metadata_u32":[1]}
+{"text_id":383,"forms":[""],"absolute_byte_offsets":[44113],"raw_metadata_u32":[0]}
+{"text_id":384,"forms":[""],"absolute_byte_offsets":[44114],"raw_metadata_u32":[0]}
+{"text_id":385,"forms":["<$cdef(27)><$spwfull(29)></color>가 특기인 <$cdef(27)><$cname(274)></color>에게 <$cdef(27)>CD</color>를 건네면<br>그 자리에서 재생해 음악을 틀어 줍니다.<br><$cdef(27)>CD</color>를 여러 개 건네면 연속으로 재생해 줍니다."],"absolute_byte_offsets":[44115],"raw_metadata_u32":[1]}
+{"text_id":386,"forms":["그 외에도 말을 걸면<br>현재 <$cdef(27)>분위기</color>가 어느 정도 달아올라 있는지<br>알려 줍니다."],"absolute_byte_offsets":[44377],"raw_metadata_u32":[1]}
+{"text_id":387,"forms":[""],"absolute_byte_offsets":[44505],"raw_metadata_u32":[0]}
+{"text_id":388,"forms":[""],"absolute_byte_offsets":[44506],"raw_metadata_u32":[0]}
+{"text_id":389,"forms":[""],"absolute_byte_offsets":[44507],"raw_metadata_u32":[0]}
+{"text_id":390,"forms":[""],"absolute_byte_offsets":[44508],"raw_metadata_u32":[0]}
+{"text_id":391,"forms":["<$cdef(27)><$spwfull(23)></color>가 특기인 <$cdef(27)><$cname(216)></color>는<br>파티 요리를 만들 때 <$cdef(27)>리더</color>로서<br>다른 포켓몬에게 지시를 내려 줍니다.<br>리더가 없으면 <$cdef(27)>파티</color>는 할 수 없습니다."],"absolute_byte_offsets":[44509],"raw_metadata_u32":[1]}
+{"text_id":392,"forms":["또, 요리를 잘하므로<br><$cdef(27)><fqty(1)><$ifull(1301)></color> 등의 조리 도구로<br>함께 요리하면<br>평소보다 많이 완성되기도 합니다."],"absolute_byte_offsets":[44783],"raw_metadata_u32":[1]}
+{"text_id":393,"forms":[""],"absolute_byte_offsets":[44954],"raw_metadata_u32":[0]}
+{"text_id":394,"forms":["포켓몬을 찾고 있을 때 <$icon(11225)><$cdef(27)><$spwname(34)></color>가 특기인 포켓몬에게<br>말을 걸면 그 포켓몬이 있는 곳으로 데려가 줍니다.<br>포켓몬 도감에서 찾고 싶은 포켓몬을 선택해<br><$keyicon(233)>를 누르면 해당 포켓몬을 '찾는 중'인 상태가 됩니다."],"absolute_byte_offsets":[44955],"raw_metadata_u32":[1]}
+{"text_id":395,"forms":[""],"absolute_byte_offsets":[45287],"raw_metadata_u32":[0]}
+{"text_id":396,"forms":[""],"absolute_byte_offsets":[45288],"raw_metadata_u32":[0]}
+{"text_id":397,"forms":["<$icon(11010)><$cdef(27)><$spwname(24)></color>이 특기인 <$cdef(27)><$cname(215)></color>은<br>거대한 건물을 <$cdef(27)><$spwfull(1)></color>하거나 재건할 때<br>리더로서 다른 포켓몬을 이끌어 줍니다.<br>평범한 <$cdef(27)><$spwfull(1)></color>을 할 때 리더로 설정하면<br>평소보다 빠르게 건물이 완성됩니다."],"absolute_byte_offsets":[45289],"raw_metadata_u32":[1]}
+{"text_id":398,"forms":["그 외에도 <$cdef(27)><fqty(1)><$ifull(115)></color>를 건네면<br><$cdef(27)><fqty(1)><$ifull(119)></color>로 가공해 줍니다."],"absolute_byte_offsets":[45655],"raw_metadata_u32":[1]}
+{"text_id":399,"forms":[""],"absolute_byte_offsets":[45793],"raw_metadata_u32":[0]}
+{"text_id":400,"forms":["<$cdef(27)><$spwfull(32)></color>이 특기인 포켓몬에게<br><$cdef(27)><fqty(1)><$ifull(92)></color>을 건네면<br><$cdef(27)><fqty(1)><$ifull(121)></color>로 바꿔 줍니다."],"absolute_byte_offsets":[45794],"raw_metadata_u32":[1]}
+{"text_id":401,"forms":[""],"absolute_byte_offsets":[45980],"raw_metadata_u32":[0]}
+{"text_id":402,"forms":[""],"absolute_byte_offsets":[45981],"raw_metadata_u32":[0]}
+{"text_id":403,"forms":["포켓몬을 찾고 있을 때 <$icon(11226)><$cdef(27)><$spwname(35)></color>이 특기인 포켓몬에게<br>말을 걸면 그 포켓몬이 있는 곳으로 데려가 줍니다.<br>포켓몬 도감에서 찾고 싶은 포켓몬을 선택해<br><$keyicon(233)>를 누르면 해당 포켓몬을 '찾는 중'인 상태가 됩니다."],"absolute_byte_offsets":[45982],"raw_metadata_u32":[1]}
+{"text_id":404,"forms":[""],"absolute_byte_offsets":[46314],"raw_metadata_u32":[0]}
+{"text_id":405,"forms":[""],"absolute_byte_offsets":[46315],"raw_metadata_u32":[0]}
+{"text_id":406,"forms":["<$icon(11224)><$cdef(27)><$spwname(33)></color>가 특기인 포켓몬은<br><$cdef(27)>포켓몬센터</color> 재건을 위해 <$cdef(27)>철거</color>할 때<br>리더로서 다른 포켓몬을 이끌어 줍니다.<br>건물을 철거하거나 이사 준비를 할 때도<br>리더로 설정해야 합니다."],"absolute_byte_offsets":[46316],"raw_metadata_u32":[1]}
+{"text_id":407,"forms":[""],"absolute_byte_offsets":[46629],"raw_metadata_u32":[0]}
+{"text_id":408,"forms":[""],"absolute_byte_offsets":[46630],"raw_metadata_u32":[0]}
+{"text_id":409,"forms":["풀, 나무, 물의 넓이와 수에 따라<br>마을 전체의 <$cdef(27)>습도</color>가 변화합니다.<br>현재 습도는 <$cdef(27)>야돈의 하품</color>으로<br>확인할 수 있습니다."],"absolute_byte_offsets":[46631],"raw_metadata_u32":[1]}
+{"text_id":410,"forms":["<$cdef(27)>습도</color>를 올리는 방법<br>다음 3가지 방법으로 <$cdef(27)>습도</color>를 올릴 수 있습니다.<br>・바싹 마른 땅에 물을 줘서 잔디로 만든다.<br>・마른 풀이나 나무 등에 물을 줘서 싱싱하게 만든다.<br>・연못 등, 물이 있는 장소를 만든다."],"absolute_byte_offsets":[46834],"raw_metadata_u32":[1]}
+{"text_id":411,"forms":[""],"absolute_byte_offsets":[47155],"raw_metadata_u32":[0]}
+{"text_id":412,"forms":[""],"absolute_byte_offsets":[47156],"raw_metadata_u32":[0]}
+{"text_id":413,"forms":[""],"absolute_byte_offsets":[47157],"raw_metadata_u32":[0]}
+{"text_id":414,"forms":[""],"absolute_byte_offsets":[47158],"raw_metadata_u32":[0]}
+{"text_id":415,"forms":["집을 허물고 싶을 땐<br><$cdef(27)>철거 키트</color>를 집 앞에 놓고<br>포켓몬을 모으면 <$cdef(27)>철거</color>할 수 있습니다."],"absolute_byte_offsets":[47159],"raw_metadata_u32":[1]}
+{"text_id":416,"forms":["집을 다른 장소로 옮기고 싶을 땐<br><$cdef(27)>이사 키트</color>를 집 앞에 놓고<br>포켓몬을 모으면 <$cdef(27)>이사 준비</color>를 할 수 있습니다.<br>준비가 다 되면 키트를 다른 장소에 놓고<br>또 포켓몬을 모으면 <$cdef(27)>이사</color>할 수 있습니다."],"absolute_byte_offsets":[47317],"raw_metadata_u32":[1]}
+{"text_id":417,"forms":[""],"absolute_byte_offsets":[47638],"raw_metadata_u32":[0]}
+{"text_id":418,"forms":[""],"absolute_byte_offsets":[47639],"raw_metadata_u32":[0]}
+{"text_id":419,"forms":[""],"absolute_byte_offsets":[47640],"raw_metadata_u32":[0]}
+{"text_id":420,"forms":[""],"absolute_byte_offsets":[47641],"raw_metadata_u32":[0]}
+{"text_id":421,"forms":[""],"absolute_byte_offsets":[47642],"raw_metadata_u32":[0]}
+{"text_id":422,"forms":[""],"absolute_byte_offsets":[47643],"raw_metadata_u32":[0]}
+{"text_id":423,"forms":[""],"absolute_byte_offsets":[47644],"raw_metadata_u32":[0]}
+{"text_id":424,"forms":["메뉴의 <$cdef(27)>홈 내비</color>를 사용하면<br>안전한 장소로 한 번에 이동할 수 있습니다.<br>움직일 수 없게 되어 난처할 때 사용하면 편리합니다."],"absolute_byte_offsets":[47645],"raw_metadata_u32":[1]}
+{"text_id":425,"forms":["집이 있을 때는 <$cdef(27)>홈 내비</color>를 사용해서<br>자신의 집으로 한 번에 이동할 수 있습니다.<br>집이 없으면 다른 안전한 장소로 이동합니다."],"absolute_byte_offsets":[47838],"raw_metadata_u32":[1]}
+{"text_id":426,"forms":[""],"absolute_byte_offsets":[48031],"raw_metadata_u32":[0]}
+{"text_id":427,"forms":["인간이 쓴 편지나 메모 등,<br>기록이 떨어져 있는 경우가 있습니다.<br>조사하면 읽을 수 있습니다."],"absolute_byte_offsets":[48032],"raw_metadata_u32":[1]}
+{"text_id":428,"forms":[""],"absolute_byte_offsets":[48163],"raw_metadata_u32":[0]}
+{"text_id":429,"forms":[""],"absolute_byte_offsets":[48164],"raw_metadata_u32":[0]}
+{"text_id":430,"forms":[""],"absolute_byte_offsets":[48165],"raw_metadata_u32":[0]}
+{"text_id":431,"forms":[""],"absolute_byte_offsets":[48166],"raw_metadata_u32":[0]}
+{"text_id":432,"forms":[""],"absolute_byte_offsets":[48167],"raw_metadata_u32":[0]}
+{"text_id":433,"forms":[""],"absolute_byte_offsets":[48168],"raw_metadata_u32":[0]}
+{"text_id":434,"forms":[""],"absolute_byte_offsets":[48169],"raw_metadata_u32":[0]}
+{"text_id":435,"forms":[""],"absolute_byte_offsets":[48170],"raw_metadata_u32":[0]}
+{"text_id":436,"forms":[""],"absolute_byte_offsets":[48171],"raw_metadata_u32":[0]}
+{"text_id":437,"forms":[""],"absolute_byte_offsets":[48172],"raw_metadata_u32":[0]}
+{"text_id":438,"forms":[""],"absolute_byte_offsets":[48173],"raw_metadata_u32":[0]}
+{"text_id":439,"forms":[""],"absolute_byte_offsets":[48174],"raw_metadata_u32":[0]}
+{"text_id":440,"forms":[""],"absolute_byte_offsets":[48175],"raw_metadata_u32":[0]}
+{"text_id":441,"forms":[""],"absolute_byte_offsets":[48176],"raw_metadata_u32":[0]}
+{"text_id":442,"forms":[""],"absolute_byte_offsets":[48177],"raw_metadata_u32":[0]}
+{"text_id":443,"forms":[""],"absolute_byte_offsets":[48178],"raw_metadata_u32":[0]}
+{"text_id":444,"forms":[""],"absolute_byte_offsets":[48179],"raw_metadata_u32":[0]}
+{"text_id":445,"forms":[""],"absolute_byte_offsets":[48180],"raw_metadata_u32":[0]}
+{"text_id":446,"forms":[""],"absolute_byte_offsets":[48181],"raw_metadata_u32":[0]}
+{"text_id":447,"forms":[""],"absolute_byte_offsets":[48182],"raw_metadata_u32":[0]}
+{"text_id":448,"forms":[""],"absolute_byte_offsets":[48183],"raw_metadata_u32":[0]}
+{"text_id":449,"forms":[""],"absolute_byte_offsets":[48184],"raw_metadata_u32":[0]}
+{"text_id":450,"forms":[""],"absolute_byte_offsets":[48185],"raw_metadata_u32":[0]}
+{"text_id":451,"forms":[""],"absolute_byte_offsets":[48186],"raw_metadata_u32":[0]}
+{"text_id":452,"forms":[""],"absolute_byte_offsets":[48187],"raw_metadata_u32":[0]}
+{"text_id":453,"forms":[""],"absolute_byte_offsets":[48188],"raw_metadata_u32":[0]}
+{"text_id":454,"forms":[""],"absolute_byte_offsets":[48189],"raw_metadata_u32":[0]}
+{"text_id":455,"forms":[""],"absolute_byte_offsets":[48190],"raw_metadata_u32":[0]}
+{"text_id":456,"forms":[""],"absolute_byte_offsets":[48191],"raw_metadata_u32":[0]}
+{"text_id":457,"forms":["물속에서 <$keyicon(28)>를 누르면 <$cdef(27)>라프라스</color>로 변신해서<br>물 위를 자유롭게 이동할 수 있게 됩니다."],"absolute_byte_offsets":[48192],"raw_metadata_u32":[1]}
+{"text_id":458,"forms":["변신 중에는 <$cdef(27)>PP</color>가 조금씩 줄어듭니다.<br><$cdef(27)>PP</color>가 없어져도 <$keyicon(26)>를 눌러<br>원래 모습으로 돌아갈 때까지<br><$cdef(27)><$sklfull(10)> </color>상태를 유지할 수 있습니다.<br><$cdef(27)>PP</color>가 없는 상태에서는 <$cdef(27)><$sklfull(10)></color>를 사용할 수 없습니다."],"absolute_byte_offsets":[48340],"raw_metadata_u32":[1]}
+{"text_id":459,"forms":["<$cdef(27)>스무디</color>를 먹으면 <$cdef(27)><$sklfull(10)></color>가 강화됩니다.<br>물속 깊은 곳에서도 <$keyicon(28)>를 누르면<br><$cdef(27)><$cname(36)></color>로 변신할 수 있습니다."],"absolute_byte_offsets":[48709],"raw_metadata_u32":[10]}
+{"text_id":460,"forms":["<$cdef(27)><$spwfull(9)></color>이 특기인 포켓몬은<br>근처에 기계 등이 있으면<br>여유가 있을 때 전기를 흘려 보내 줍니다.<br>함께 걷고 있을 때는<br>기계 앞에 멈춰 있으면 <$cdef(27)><$spwfull(9)></color>해 줍니다."],"absolute_byte_offsets":[48929],"raw_metadata_u32":[1]}
+{"text_id":461,"forms":[""],"absolute_byte_offsets":[49196],"raw_metadata_u32":[0]}
+{"text_id":462,"forms":[""],"absolute_byte_offsets":[49197],"raw_metadata_u32":[0]}
+{"text_id":463,"forms":[""],"absolute_byte_offsets":[49198],"raw_metadata_u32":[0]}
+{"text_id":464,"forms":[""],"absolute_byte_offsets":[49199],"raw_metadata_u32":[0]}
+{"text_id":465,"forms":[""],"absolute_byte_offsets":[49200],"raw_metadata_u32":[0]}
+{"text_id":466,"forms":[""],"absolute_byte_offsets":[49201],"raw_metadata_u32":[0]}
+{"text_id":467,"forms":[""],"absolute_byte_offsets":[49202],"raw_metadata_u32":[0]}
+{"text_id":468,"forms":[""],"absolute_byte_offsets":[49203],"raw_metadata_u32":[0]}
+{"text_id":469,"forms":["<$cdef(27)><$spwfull(12)></color>가 특기인 포켓몬은<br>거래할 수 있는 장소가 있으면<br>물물 교환을 시작할 수 있습니다.<br>테이블 위에 <$cdef(27)><fqty(1)><$ifull(1325)></color>를 놓고<br>전기를 흘려 보내면 준비가 완료됩니다."],"absolute_byte_offsets":[49204],"raw_metadata_u32":[1]}
+{"text_id":470,"forms":["원하는 물건과 자신이 지닌 물건을 교환할 수 있습니다.<br>자신이 지닌 물건을 5종류까지 고른 뒤,<br>상대가 승낙하면 거래가 성립됩니다.<br>상대의 취향에 맞는 물건을 고르면 거래하기 쉬워집니다."],"absolute_byte_offsets":[49486],"raw_metadata_u32":[1]}
+{"text_id":471,"forms":[""],"absolute_byte_offsets":[49750],"raw_metadata_u32":[0]}
+{"text_id":472,"forms":[""],"absolute_byte_offsets":[49751],"raw_metadata_u32":[0]}
+{"text_id":473,"forms":[""],"absolute_byte_offsets":[49752],"raw_metadata_u32":[0]}
+{"text_id":474,"forms":[""],"absolute_byte_offsets":[49753],"raw_metadata_u32":[0]}
+{"text_id":475,"forms":[""],"absolute_byte_offsets":[49754],"raw_metadata_u32":[0]}
+{"text_id":476,"forms":[""],"absolute_byte_offsets":[49755],"raw_metadata_u32":[0]}
+{"text_id":477,"forms":[""],"absolute_byte_offsets":[49756],"raw_metadata_u32":[0]}
+{"text_id":478,"forms":["<$icon(11008)><$cdef(27)><$spwname(21)></color>이 특기인 <$cdef(27)><$cname(206)></color>은<br><$cdef(27)>물감</color>을 사용해서 가구 등<br>다양한 물건의 색을 바꿔 줍니다.<br>색을 바꿀 수 없는 물건도 있습니다."],"absolute_byte_offsets":[49757],"raw_metadata_u32":[1]}
+{"text_id":479,"forms":["집처럼 가지고 다닐 수 없는 것도<br><$cdef(27)><$cname;0(206)></color><ko(2)> 데려가면<br><$cdef(27)><$spwfull(21)></color>으로 색을 바꿀 수 있습니다."],"absolute_byte_offsets":[50010],"raw_metadata_u32":[1]}
+{"text_id":480,"forms":["<$iicon(230)><$cdef(27)>색풍선</color>을 사용하면<br>눈앞에 있는 물건 1개를 해당 색으로<br><$cdef(27)><$spwfull(21)></color>합니다.<br><$iicon(230)><$cdef(27)>색풍선</color>은 <$cdef(27)>물감</color>으로 제작할 수 있습니다."],"absolute_byte_offsets":[50188],"raw_metadata_u32":[1]}
+{"text_id":481,"forms":["또한, 아이템에 무늬를 넣을 수도 있습니다.<br>무늬가 찍혀 있는 <$cdef(27)>인간의 기록</color>이나<br>무늬가 있는 물건을 발견하면<br><$cdef(27)><$cname(206)></color>에게 보여 줍시다."],"absolute_byte_offsets":[50453],"raw_metadata_u32":[1]}
+{"text_id":482,"forms":["일부 가구는 부위별로 다른 색이나 무늬로<br>바꿀 수 있습니다."],"absolute_byte_offsets":[50684],"raw_metadata_u32":[1]}
+{"text_id":483,"forms":[""],"absolute_byte_offsets":[50769],"raw_metadata_u32":[0]}
+{"text_id":484,"forms":[""],"absolute_byte_offsets":[50770],"raw_metadata_u32":[0]}
+{"text_id":485,"forms":[""],"absolute_byte_offsets":[50771],"raw_metadata_u32":[0]}
+{"text_id":486,"forms":[""],"absolute_byte_offsets":[50772],"raw_metadata_u32":[0]}
+{"text_id":487,"forms":[""],"absolute_byte_offsets":[50773],"raw_metadata_u32":[0]}
+{"text_id":488,"forms":[""],"absolute_byte_offsets":[50774],"raw_metadata_u32":[0]}
+{"text_id":489,"forms":[""],"absolute_byte_offsets":[50775],"raw_metadata_u32":[0]}
+{"text_id":490,"forms":[""],"absolute_byte_offsets":[50776],"raw_metadata_u32":[0]}
+{"text_id":491,"forms":[""],"absolute_byte_offsets":[50777],"raw_metadata_u32":[0]}
+{"text_id":492,"forms":[""],"absolute_byte_offsets":[50778],"raw_metadata_u32":[0]}
+{"text_id":493,"forms":["<$cdef(27)><$spwfull(4)></color>가 특기인 포켓몬은<br>자기 보금자리 근처에<br>아이템을 떨어뜨리기도 합니다."],"absolute_byte_offsets":[50779],"raw_metadata_u32":[1]}
+{"text_id":494,"forms":["포켓몬마다 떨어뜨리는 아이템은 정해져 있습니다."],"absolute_byte_offsets":[50917],"raw_metadata_u32":[1]}
+{"text_id":495,"forms":["<$cdef(27)>메타몽</color>이 바라보고 있으면<br>포켓몬은 아이템을 떨어뜨리지 않습니다.<br>한동안 내버려둔 다음에 확인하러 가 봅시다."],"absolute_byte_offsets":[50986],"raw_metadata_u32":[1]}
+{"text_id":496,"forms":["<$cdef(27)><$spwfull(17)></color>이 특기인 포켓몬에게<br><$cdef(27)><fqty(1)><$ifull(1395)></color>를 건네면<br><$cdef(27)><fqty(1)><$ifull(107)></color>로 가공해 줍니다."],"absolute_byte_offsets":[51164],"raw_metadata_u32":[1]}
+{"text_id":497,"forms":[""],"absolute_byte_offsets":[51355],"raw_metadata_u32":[0]}
+{"text_id":498,"forms":[""],"absolute_byte_offsets":[51356],"raw_metadata_u32":[0]}
+{"text_id":499,"forms":["<$keyicon(153)>를 길게 눌러서 빨아들이고 있는 도중에<br><$keyicon(206)>을 누르면 눈앞에 있는 물 등의 액체를<br>입에 머금을 수 있습니다."],"absolute_byte_offsets":[51357],"raw_metadata_u32":[1]}
+{"text_id":500,"forms":["빨아들인 액체는 원하는 장소에<br><$keyicon(0)>로 토해 낼 수 있습니다.<br>토해 낸 액체는 주위에 퍼집니다."],"absolute_byte_offsets":[51534],"raw_metadata_u32":[1]}
+{"text_id":501,"forms":["액체를 입에 머금은 상태에서<br><$keyicon(209)>과 함께 <$keyicon(222)>이나 <$keyicon(223)>을 누르면<br>토해 내는 수위를 조절할 수 있습니다."],"absolute_byte_offsets":[51674],"raw_metadata_u32":[1]}
+{"text_id":502,"forms":[""],"absolute_byte_offsets":[51849],"raw_metadata_u32":[0]}
+{"text_id":503,"forms":[""],"absolute_byte_offsets":[51850],"raw_metadata_u32":[0]}
+{"text_id":504,"forms":[""],"absolute_byte_offsets":[51851],"raw_metadata_u32":[0]}
+{"text_id":505,"forms":[""],"absolute_byte_offsets":[51852],"raw_metadata_u32":[0]}
+{"text_id":506,"forms":[""],"absolute_byte_offsets":[51853],"raw_metadata_u32":[0]}
+{"text_id":507,"forms":[""],"absolute_byte_offsets":[51854],"raw_metadata_u32":[0]}
+{"text_id":508,"forms":[""],"absolute_byte_offsets":[51855],"raw_metadata_u32":[0]}
+{"text_id":509,"forms":[""],"absolute_byte_offsets":[51856],"raw_metadata_u32":[0]}
+{"text_id":510,"forms":[""],"absolute_byte_offsets":[51857],"raw_metadata_u32":[0]}
+{"text_id":511,"forms":[""],"absolute_byte_offsets":[51858],"raw_metadata_u32":[0]}
+{"text_id":512,"forms":[""],"absolute_byte_offsets":[51859],"raw_metadata_u32":[0]}
+{"text_id":513,"forms":[""],"absolute_byte_offsets":[51860],"raw_metadata_u32":[0]}
+{"text_id":514,"forms":[""],"absolute_byte_offsets":[51861],"raw_metadata_u32":[0]}
+{"text_id":515,"forms":[""],"absolute_byte_offsets":[51862],"raw_metadata_u32":[0]}
+{"text_id":516,"forms":[""],"absolute_byte_offsets":[51863],"raw_metadata_u32":[0]}
+{"text_id":517,"forms":["조명이 될 만한 물건을 놓으면<br>어두운 마을을 밝게 만들 수 있습니다.<br>마을 전체를 밝게 만들기 위해<br>이곳저곳에 조명을 놓아 봅시다."],"absolute_byte_offsets":[51864],"raw_metadata_u32":[1]}
+{"text_id":518,"forms":["일부 기계는 전기를 흘려 보내면 밝게 빛납니다.<br>전기 조명은 다른 물건보다<br>마을을 밝게 만들어 줍니다."],"absolute_byte_offsets":[52051],"raw_metadata_u32":[1]}
+{"text_id":519,"forms":["불꽃 조명을 설치하면<br>마을의 밝기는 조금밖에 밝아지지 않지만<br>따뜻하기 때문에<br>그런 환경을 좋아하는 포켓몬의<br><$cdef(27)>주거 만족도</color>는 오릅니다."],"absolute_byte_offsets":[52197],"raw_metadata_u32":[1]}
+{"text_id":520,"forms":[""],"absolute_byte_offsets":[52414],"raw_metadata_u32":[0]}
+{"text_id":521,"forms":[""],"absolute_byte_offsets":[52415],"raw_metadata_u32":[0]}
+{"text_id":522,"forms":[""],"absolute_byte_offsets":[52416],"raw_metadata_u32":[0]}
+{"text_id":523,"forms":[""],"absolute_byte_offsets":[52417],"raw_metadata_u32":[0]}
+{"text_id":524,"forms":[""],"absolute_byte_offsets":[52418],"raw_metadata_u32":[0]}
+{"text_id":525,"forms":[""],"absolute_byte_offsets":[52419],"raw_metadata_u32":[0]}
+{"text_id":526,"forms":["<$cdef(27)><$spwfull(22)></color>이 특기인 <$cdef(27)><$cname(121)></color>는<br>빛을 발하여 마을 전체를 밝게 비춥니다.<br><$cdef(27)><$spwfull(22)></color>하려면 전기가 충분히 흐르고 있는<br><$cdef(27)><indirect><$bname(32)></color>에서 충전을 해야 합니다."],"absolute_byte_offsets":[52420],"raw_metadata_u32":[1]}
+{"text_id":527,"forms":["<$cdef(27)><$spwfull(22)></color> 중에는<br>밤에도 포켓몬들이 활발히 활동합니다."],"absolute_byte_offsets":[52723],"raw_metadata_u32":[1]}
+{"text_id":528,"forms":[""],"absolute_byte_offsets":[52823],"raw_metadata_u32":[0]}
+{"text_id":529,"forms":[""],"absolute_byte_offsets":[52824],"raw_metadata_u32":[0]}
+{"text_id":530,"forms":[""],"absolute_byte_offsets":[52825],"raw_metadata_u32":[0]}
+{"text_id":531,"forms":[""],"absolute_byte_offsets":[52826],"raw_metadata_u32":[0]}
+{"text_id":532,"forms":["전기를 만들 수 있는 기계입니다.<br>종류에 따라 발전 방법이나<br>만들 수 있는 전기의 양이 다릅니다."],"absolute_byte_offsets":[52827],"raw_metadata_u32":[1]}
+{"text_id":533,"forms":["<$cdef(27)>발전 머신</color> 근처에 <$cdef(27)><fqty(1)><$ifull(1396)></color>를 놓으면<br>먼 곳까지 전기를 보낼 수 있습니다."],"absolute_byte_offsets":[52964],"raw_metadata_u32":[1]}
+{"text_id":534,"forms":["<$cdef(27)><fqty(1)><$ifull(1379)></color>은 바람의 힘으로 전기를 만듭니다.<br>어디에 놓든 문제없이 작동하지만<br>높은 장소에 놓으면 전기를 더 많이 만듭니다."],"absolute_byte_offsets":[53115],"raw_metadata_u32":[1]}
+{"text_id":535,"forms":["<$cdef(27)>화장대 </color>등, 거울 앞에서 <$keyicon(6)>를 누르면<br><$cdef(27)>메타몽</color>은 다시 <$cdef(27)>변신</color>해서<br>자신의 모습을 바꿀 수 있습니다."],"absolute_byte_offsets":[53319],"raw_metadata_u32":[1]}
+{"text_id":536,"forms":["지금까지 배운 코디를 사용하여<br>원하는 모습으로 다시 <$cdef(27)>변신</color>할 수 있습니다."],"absolute_byte_offsets":[53519],"raw_metadata_u32":[1]}
+{"text_id":537,"forms":["얼굴색으로 <$cdef(27)>메타몽색</color>을 고르면<br>전신이 같은 색상이 됩니다.<br>머리나 옷 등의 색은 고를 수 없습니다."],"absolute_byte_offsets":[53642],"raw_metadata_u32":[1]}
+{"text_id":538,"forms":[""],"absolute_byte_offsets":[53800],"raw_metadata_u32":[0]}
+{"text_id":539,"forms":[""],"absolute_byte_offsets":[53801],"raw_metadata_u32":[0]}
+{"text_id":540,"forms":[""],"absolute_byte_offsets":[53802],"raw_metadata_u32":[0]}
+{"text_id":541,"forms":[""],"absolute_byte_offsets":[53803],"raw_metadata_u32":[0]}
+{"text_id":542,"forms":[""],"absolute_byte_offsets":[53804],"raw_metadata_u32":[0]}
+{"text_id":543,"forms":[""],"absolute_byte_offsets":[53805],"raw_metadata_u32":[0]}
+{"text_id":544,"forms":["마을이 밝아지면<br><$cdef(27)><$cname;0(272)> </color>머리의 꽃이 점점 피어납니다.<br>마을 곳곳에 조명을 놓으면<br>밝게 만들기가 더 쉬워집니다."],"absolute_byte_offsets":[53806],"raw_metadata_u32":[1]}
+{"text_id":545,"forms":[""],"absolute_byte_offsets":[53992],"raw_metadata_u32":[0]}
+{"text_id":546,"forms":[""],"absolute_byte_offsets":[53993],"raw_metadata_u32":[0]}
+{"text_id":547,"forms":[""],"absolute_byte_offsets":[53994],"raw_metadata_u32":[0]}
+{"text_id":548,"forms":[""],"absolute_byte_offsets":[53995],"raw_metadata_u32":[0]}
+{"text_id":549,"forms":[""],"absolute_byte_offsets":[53996],"raw_metadata_u32":[0]}
+{"text_id":550,"forms":[""],"absolute_byte_offsets":[53997],"raw_metadata_u32":[0]}
+{"text_id":551,"forms":[""],"absolute_byte_offsets":[53998],"raw_metadata_u32":[0]}
+{"text_id":552,"forms":[""],"absolute_byte_offsets":[53999],"raw_metadata_u32":[0]}
+{"text_id":553,"forms":["손에 든 음료는<br><$keyicon(0)>로 입에 머금을 수 있습니다.<br>음료의 종류에 따라<br>다른 액체를 토해 낼 수 있게 됩니다."],"absolute_byte_offsets":[54000],"raw_metadata_u32":[1]}
+{"text_id":554,"forms":[""],"absolute_byte_offsets":[54159],"raw_metadata_u32":[0]}
+{"text_id":555,"forms":[""],"absolute_byte_offsets":[54160],"raw_metadata_u32":[0]}
+{"text_id":556,"forms":["<$cdef(27)>포켓몬센터</color>에 있는 <$cdef(27)><fqty(1)><$ifull(1443)></color>로<br>사진에 찍힌 물건을 복사할 수 있습니다.<br>복사하려면 <$cdef(27)><fqty(1)><$ifull(120)></color>이 필요합니다."],"absolute_byte_offsets":[54161],"raw_metadata_u32":[1]}
+{"text_id":557,"forms":["복사에 필요한 사진은 오브젝트 모드로<br>촬영할 수 있습니다.<br><$keyicon(52)>로 카메라를 기동하고<br><$keyicon(50)>로 모드를 전환하여 촬영해 봅시다."],"absolute_byte_offsets":[54391],"raw_metadata_u32":[1]}
+{"text_id":558,"forms":["클라우드섬이나 다른 플레이어의 마을에서<br>촬영한 사진에 찍힌 물건도 복사할 수 있습니다."],"absolute_byte_offsets":[54587],"raw_metadata_u32":[1]}
+{"text_id":559,"forms":[""],"absolute_byte_offsets":[54713],"raw_metadata_u32":[1]}
+{"text_id":560,"forms":[""],"absolute_byte_offsets":[54714],"raw_metadata_u32":[0]}
+{"text_id":561,"forms":[""],"absolute_byte_offsets":[54715],"raw_metadata_u32":[0]}
+{"text_id":562,"forms":[""],"absolute_byte_offsets":[54716],"raw_metadata_u32":[0]}
+{"text_id":563,"forms":[""],"absolute_byte_offsets":[54717],"raw_metadata_u32":[0]}
+{"text_id":564,"forms":[""],"absolute_byte_offsets":[54718],"raw_metadata_u32":[0]}
+{"text_id":565,"forms":[""],"absolute_byte_offsets":[54719],"raw_metadata_u32":[0]}
+{"text_id":566,"forms":[""],"absolute_byte_offsets":[54720],"raw_metadata_u32":[0]}
+{"text_id":567,"forms":[""],"absolute_byte_offsets":[54721],"raw_metadata_u32":[0]}
+{"text_id":568,"forms":[""],"absolute_byte_offsets":[54722],"raw_metadata_u32":[0]}
+{"text_id":569,"forms":[""],"absolute_byte_offsets":[54723],"raw_metadata_u32":[0]}
+{"text_id":570,"forms":[""],"absolute_byte_offsets":[54724],"raw_metadata_u32":[0]}
+{"text_id":571,"forms":[""],"absolute_byte_offsets":[54725],"raw_metadata_u32":[0]}
+{"text_id":572,"forms":[""],"absolute_byte_offsets":[54726],"raw_metadata_u32":[0]}
+{"text_id":573,"forms":[""],"absolute_byte_offsets":[54727],"raw_metadata_u32":[0]}
+{"text_id":574,"forms":[""],"absolute_byte_offsets":[54728],"raw_metadata_u32":[0]}
+{"text_id":575,"forms":[""],"absolute_byte_offsets":[54729],"raw_metadata_u32":[0]}
+{"text_id":576,"forms":[""],"absolute_byte_offsets":[54730],"raw_metadata_u32":[0]}
+{"text_id":577,"forms":[""],"absolute_byte_offsets":[54731],"raw_metadata_u32":[0]}
+{"text_id":578,"forms":[""],"absolute_byte_offsets":[54732],"raw_metadata_u32":[0]}
+{"text_id":579,"forms":[""],"absolute_byte_offsets":[54733],"raw_metadata_u32":[0]}
+{"text_id":580,"forms":[""],"absolute_byte_offsets":[54734],"raw_metadata_u32":[0]}
+{"text_id":581,"forms":[""],"absolute_byte_offsets":[54735],"raw_metadata_u32":[0]}
+{"text_id":582,"forms":[""],"absolute_byte_offsets":[54736],"raw_metadata_u32":[0]}
+{"text_id":583,"forms":[""],"absolute_byte_offsets":[54737],"raw_metadata_u32":[0]}
+{"text_id":584,"forms":[""],"absolute_byte_offsets":[54738],"raw_metadata_u32":[0]}
+{"text_id":585,"forms":[""],"absolute_byte_offsets":[54739],"raw_metadata_u32":[0]}
+{"text_id":586,"forms":[""],"absolute_byte_offsets":[54740],"raw_metadata_u32":[0]}
+{"text_id":587,"forms":[""],"absolute_byte_offsets":[54741],"raw_metadata_u32":[0]}
+{"text_id":588,"forms":[""],"absolute_byte_offsets":[54742],"raw_metadata_u32":[0]}
+{"text_id":589,"forms":[""],"absolute_byte_offsets":[54743],"raw_metadata_u32":[0]}
+{"text_id":590,"forms":[""],"absolute_byte_offsets":[54744],"raw_metadata_u32":[0]}
+{"text_id":591,"forms":[""],"absolute_byte_offsets":[54745],"raw_metadata_u32":[0]}
+{"text_id":592,"forms":[""],"absolute_byte_offsets":[54746],"raw_metadata_u32":[0]}
+{"text_id":593,"forms":[""],"absolute_byte_offsets":[54747],"raw_metadata_u32":[0]}
+{"text_id":594,"forms":[""],"absolute_byte_offsets":[54748],"raw_metadata_u32":[0]}
+{"text_id":595,"forms":[""],"absolute_byte_offsets":[54749],"raw_metadata_u32":[0]}
+{"text_id":596,"forms":[""],"absolute_byte_offsets":[54750],"raw_metadata_u32":[0]}
+{"text_id":597,"forms":[""],"absolute_byte_offsets":[54751],"raw_metadata_u32":[0]}
+{"text_id":598,"forms":[""],"absolute_byte_offsets":[54752],"raw_metadata_u32":[0]}
+{"text_id":599,"forms":[""],"absolute_byte_offsets":[54753],"raw_metadata_u32":[0]}
+{"text_id":600,"forms":[""],"absolute_byte_offsets":[54754],"raw_metadata_u32":[0]}
+{"text_id":601,"forms":["찾고 있는 포켓몬이 보금자리 근처에 없을 때<br>보금자리 앞에서 <$cdef(27)><fqty(1)><$ifull(3994)></color>을 사용하면<br>살고 있는 포켓몬이 달콤한 향기에 이끌려<br>돌아와 줍니다."],"absolute_byte_offsets":[54755],"raw_metadata_u32":[1]}
+{"text_id":602,"forms":[""],"absolute_byte_offsets":[54985],"raw_metadata_u32":[0]}
+{"text_id":603,"forms":[""],"absolute_byte_offsets":[54986],"raw_metadata_u32":[0]}
+{"text_id":604,"forms":["포켓몬을 다른 보금자리에 이사시키고 싶을 때는<br>다른 서식지에 데려간 뒤<br>말을 걸면 이사를 부탁할 수 있습니다.<br>다른 마을로도 이사시킬 수 있습니다."],"absolute_byte_offsets":[54987],"raw_metadata_u32":[1]}
+{"text_id":605,"forms":["단, 해당 포켓몬이<br>싫어하는 것이 있는 서식지에는<br>이사할 수 없습니다."],"absolute_byte_offsets":[55199],"raw_metadata_u32":[1]}
+{"text_id":606,"forms":[""],"absolute_byte_offsets":[55301],"raw_metadata_u32":[0]}
+{"text_id":607,"forms":["수면이 흔들리며<br>반짝반짝 빛날 때가 있습니다.<br>조사하면 아이템을 획득할 수 있습니다."],"absolute_byte_offsets":[55302],"raw_metadata_u32":[1]}
+{"text_id":608,"forms":[""],"absolute_byte_offsets":[55426],"raw_metadata_u32":[0]}
+{"text_id":609,"forms":[""],"absolute_byte_offsets":[55427],"raw_metadata_u32":[0]}
+{"text_id":610,"forms":[""],"absolute_byte_offsets":[55428],"raw_metadata_u32":[0]}
+{"text_id":611,"forms":[""],"absolute_byte_offsets":[55429],"raw_metadata_u32":[0]}
+{"text_id":612,"forms":[""],"absolute_byte_offsets":[55430],"raw_metadata_u32":[0]}
+{"text_id":613,"forms":[""],"absolute_byte_offsets":[55431],"raw_metadata_u32":[0]}
+{"text_id":614,"forms":[""],"absolute_byte_offsets":[55432],"raw_metadata_u32":[0]}
+{"text_id":615,"forms":[""],"absolute_byte_offsets":[55433],"raw_metadata_u32":[0]}
+{"text_id":616,"forms":["꽃이 반짝반짝 빛날 때가 있습니다.<br>조사하면 <$cdef(27)><fqty(1)><$ifull(3994)></color>을 획득할 수 있습니다."],"absolute_byte_offsets":[55434],"raw_metadata_u32":[1]}
+{"text_id":617,"forms":[""],"absolute_byte_offsets":[55572],"raw_metadata_u32":[0]}
+{"text_id":618,"forms":[""],"absolute_byte_offsets":[55573],"raw_metadata_u32":[0]}
+{"text_id":619,"forms":[""],"absolute_byte_offsets":[55574],"raw_metadata_u32":[0]}
+{"text_id":620,"forms":[""],"absolute_byte_offsets":[55575],"raw_metadata_u32":[0]}
+{"text_id":621,"forms":[""],"absolute_byte_offsets":[55576],"raw_metadata_u32":[0]}
+{"text_id":622,"forms":["<$cdef(27)><fqty(1)><$ifull(2793)></color>을 손에 들고<br><$cdef(27)><$spwfull(11)></color>이 특기인 포켓몬에게 말을 걸면<br><$cdef(27)>다우징</color>을 시작할 수 있습니다.<br>힘을 합쳐서 땅 아래에 묻혀 있는 물건을 발견해 봅시다."],"absolute_byte_offsets":[55577],"raw_metadata_u32":[1]}
+{"text_id":623,"forms":["<$keyicon(0)>를 누르면<br>포켓몬이 묻혀 있는 물건의 방향을<br>알려 줍니다."],"absolute_byte_offsets":[55859],"raw_metadata_u32":[1]}
+{"text_id":624,"forms":[""],"absolute_byte_offsets":[55957],"raw_metadata_u32":[0]}
+{"text_id":625,"forms":["홈에 <$cdef(27)>수수께끼의 석판</color>을<br>끼워 넣을 수 있습니다."],"absolute_byte_offsets":[55958],"raw_metadata_u32":[1]}
+{"text_id":626,"forms":["<$cdef(27)>수수께끼의 석판</color>은 땅속에 묻혀 있기도 합니다.<br><$cdef(27)>다우징</color>으로 찾아봅시다.<br>모든 <$cdef(27)>석판</color>을 알맞게 끼워 넣으면<br>어떤 일이 일어날지도 모릅니다."],"absolute_byte_offsets":[56045],"raw_metadata_u32":[1]}
+{"text_id":627,"forms":[""],"absolute_byte_offsets":[56296],"raw_metadata_u32":[0]}
+{"text_id":628,"forms":[""],"absolute_byte_offsets":[56297],"raw_metadata_u32":[0]}
+{"text_id":629,"forms":[""],"absolute_byte_offsets":[56298],"raw_metadata_u32":[0]}
+{"text_id":630,"forms":[""],"absolute_byte_offsets":[56299],"raw_metadata_u32":[0]}
+{"text_id":631,"forms":["<$cdef(27)>꿈섬</color>에는 <$cdef(27)>몇 번이고</color> 갈 수 있지만<br>하루에 <$cdef(27)>한 곳</color>에만 데려가 줍니다.<br>다른 <$cdef(27)>꿈섬</color>에 가고 싶을 때는<br>다음 날 <$cdef(27)>흔들풍손</color>에게 부탁해 봅시다."],"absolute_byte_offsets":[56300],"raw_metadata_u32":[1]}
+{"text_id":632,"forms":["<$cdef(27)>흔들풍손</color>은 날짜가 바뀌면 전에 갔던<br><$cdef(27)>꿈섬</color>이 어디에 있는지 잊어버립니다.<br>그 대신 새로운 섬을 찾아 주므로<br>원하는 재료가 많을 경우에는<br>매일 데려가 달라고 부탁하는 것을 추천합니다."],"absolute_byte_offsets":[56583],"raw_metadata_u32":[1]}
+{"text_id":633,"forms":[""],"absolute_byte_offsets":[56882],"raw_metadata_u32":[0]}
+{"text_id":634,"forms":["포켓몬들의 <$cdef(27)>주거 만족도</color>를 향상시켜서<br><$cdef(27)>환경 레벨</color>을 올리기 위한 작은 목표입니다.<br>달성하면 <$cdef(27)>라이프 코인</color>을 획득할 수 있습니다."],"absolute_byte_offsets":[56883],"raw_metadata_u32":[1]}
+{"text_id":635,"forms":["일주일에 한 번 <$cdef(27)>챌린지 데이</color>가 있으며<br><$cdef(27)>일일 챌린지</color>에서 받는<br><$cdef(27)>라이프 코인</color>이 증가합니다."],"absolute_byte_offsets":[57117],"raw_metadata_u32":[1]}
+{"text_id":636,"forms":[""],"absolute_byte_offsets":[57298],"raw_metadata_u32":[0]}
+{"text_id":637,"forms":[""],"absolute_byte_offsets":[57299],"raw_metadata_u32":[0]}
+{"text_id":638,"forms":[""],"absolute_byte_offsets":[57300],"raw_metadata_u32":[0]}
+{"text_id":639,"forms":[""],"absolute_byte_offsets":[57301],"raw_metadata_u32":[0]}
+{"text_id":640,"forms":["<$cdef(27)>PC</color>의 <$cdef(27)>숍</color>에서는<br><$cdef(27)>챌린지</color> 등으로 모은 <$cdef(27)>라이프 코인</color>을 사용해서<br><$cdef(27)>아이템</color>이나 <$cdef(27)>레시피</color> 등을 구입할 수 있습니다."],"absolute_byte_offsets":[57302],"raw_metadata_u32":[1]}
+{"text_id":641,"forms":["유용한 기능을 이용할 수 있게 되는 상품도 있습니다.<br><$cdef(27)>챌린지</color>를 많이 달성해서<br><$cdef(27)>라이프 코인</color>을 모아 봅시다."],"absolute_byte_offsets":[57562],"raw_metadata_u32":[1]}
+{"text_id":642,"forms":["매주 특정 요일이 <$cdef(27)>숍 데이</color>가 되며<br><$cdef(27)>오늘 한정 상품</color>이 평소보다<br>조금 특별한 물건으로 바뀝니다."],"absolute_byte_offsets":[57749],"raw_metadata_u32":[1]}
+{"text_id":643,"forms":[""],"absolute_byte_offsets":[57919],"raw_metadata_u32":[0]}
+{"text_id":644,"forms":[""],"absolute_byte_offsets":[57920],"raw_metadata_u32":[0]}
+{"text_id":645,"forms":[""],"absolute_byte_offsets":[57921],"raw_metadata_u32":[0]}
+{"text_id":646,"forms":["다른 플레이어의 마을에 있는 <$cdef(27)>숍</color>에서도<br>상품을 <$cdef(27)>발주</color>해서 구입할 수 있습니다.<br><$cdef(27)>발주</color>한 상품은 자신의 마을로 돌아간 뒤에<br><$cdef(27)>PC</color>에서 받을 수 있습니다."],"absolute_byte_offsets":[57922],"raw_metadata_u32":[1]}
+{"text_id":647,"forms":[""],"absolute_byte_offsets":[58202],"raw_metadata_u32":[0]}
+{"text_id":648,"forms":[""],"absolute_byte_offsets":[58203],"raw_metadata_u32":[0]}
+{"text_id":649,"forms":["<$cdef(27)>포켓몬센터</color>의 <$cdef(27)>PC</color>에서 카드를 받으면<br><$cdef(27)>스탬프 모으기</color>를 할 수 있게 됩니다.<br>하루에 1번 <$cdef(27)>PC</color>에서 스탬프를 찍을 수 있습니다."],"absolute_byte_offsets":[58204],"raw_metadata_u32":[1]}
+{"text_id":650,"forms":["매주 금요일에 모은 스탬프를<br><$cdef(27)>라이프 코인</color>과 교환할 수 있습니다.<br>희귀한 스탬프를 찍으면<br><$cdef(27)>코인</color>을 조금 더 많이 받을 수 있습니다."],"absolute_byte_offsets":[58445],"raw_metadata_u32":[1]}
+{"text_id":651,"forms":["스탬프는 다른 플레이어의 마을이나<br><$cdef(27)>클라우드섬</color>에 있는 <$cdef(27)>포켓몬센터</color>의 <$cdef(27)>PC</color>에서<br>찍을 수 있습니다.<br>금요일까지 되도록 많은 스탬프를<br>모아 봅시다."],"absolute_byte_offsets":[58666],"raw_metadata_u32":[1]}
+{"text_id":652,"forms":[""],"absolute_byte_offsets":[58927],"raw_metadata_u32":[0]}
+{"text_id":653,"forms":[""],"absolute_byte_offsets":[58928],"raw_metadata_u32":[0]}
+{"text_id":654,"forms":[""],"absolute_byte_offsets":[58929],"raw_metadata_u32":[0]}
+{"text_id":655,"forms":["<$cdef(27)>포켓몬 도감</color>에서 찾고 싶은 포켓몬을 선택해<br><$keyicon(233)>를 누르면<br>해당 포켓몬을 '<$cdef(27)>찾는 중</color>'인 상태가 됩니다.<br>그 상태로 다른 포켓몬에게 말을 걸면<br>'<$cdef(27)>찾는 중</color>'인 포켓몬이 있는 장소를 알려 줍니다."],"absolute_byte_offsets":[58930],"raw_metadata_u32":[1]}
+{"text_id":656,"forms":[""],"absolute_byte_offsets":[59260],"raw_metadata_u32":[0]}
+{"text_id":657,"forms":[""],"absolute_byte_offsets":[59261],"raw_metadata_u32":[0]}
+{"text_id":658,"forms":["원하는 장소에 놓아두면 그 주변의 상황을<br>떨어진 장소에서 확인할 수 있는 카메라입니다.<br>메뉴의 '<$cdef(27)>카메라</color>'에서 관찰 카메라를 선택하면<br>설치한 <$cdef(27)><fqty(1)><$ifull(1471)></color>의 영상을 확인할 수 있습니다.<br>카메라는 한 마을에 8개까지 유효합니다."],"absolute_byte_offsets":[59262],"raw_metadata_u32":[1]}
+{"text_id":659,"forms":[""],"absolute_byte_offsets":[59624],"raw_metadata_u32":[0]}
+{"text_id":660,"forms":[""],"absolute_byte_offsets":[59625],"raw_metadata_u32":[0]}
+{"text_id":661,"forms":["놓여 있는 <$cdef(27)>인형</color>에게 말을 걸면<br><$cdef(27)>흔들풍손</color>이 날아와 줍니다.<br><$cdef(27)>꿈섬</color>에 가고 싶을 때는<br><$cdef(27)>인형</color>으로 <$cdef(27)>흔들풍손</color>을 불러냅시다."],"absolute_byte_offsets":[59626],"raw_metadata_u32":[1]}
+{"text_id":662,"forms":["<$cdef(27)>인형</color>의 종류에 따라<br><$cdef(27)>흔들풍손</color>이 데려가 주는<br><$cdef(27)>꿈섬</color>의 종류도 달라집니다.<br>새로운 <$cdef(27)>인형</color>을 발견해서<br>가 본 적 없는 <$cdef(27)>꿈섬</color>에도 가 봅시다."],"absolute_byte_offsets":[59885],"raw_metadata_u32":[1]}
+{"text_id":663,"forms":[""],"absolute_byte_offsets":[60169],"raw_metadata_u32":[0]}
+{"text_id":664,"forms":[""],"absolute_byte_offsets":[60170],"raw_metadata_u32":[0]}
+{"text_id":665,"forms":[""],"absolute_byte_offsets":[60171],"raw_metadata_u32":[0]}
+{"text_id":666,"forms":[""],"absolute_byte_offsets":[60172],"raw_metadata_u32":[0]}
+{"text_id":667,"forms":[""],"absolute_byte_offsets":[60173],"raw_metadata_u32":[0]}
+{"text_id":668,"forms":[""],"absolute_byte_offsets":[60174],"raw_metadata_u32":[0]}
+{"text_id":669,"forms":[""],"absolute_byte_offsets":[60175],"raw_metadata_u32":[0]}
+{"text_id":670,"forms":[""],"absolute_byte_offsets":[60176],"raw_metadata_u32":[0]}
+{"text_id":671,"forms":[""],"absolute_byte_offsets":[60177],"raw_metadata_u32":[0]}
+{"text_id":672,"forms":[""],"absolute_byte_offsets":[60178],"raw_metadata_u32":[0]}
+{"text_id":673,"forms":[""],"absolute_byte_offsets":[60179],"raw_metadata_u32":[0]}
+{"text_id":674,"forms":[""],"absolute_byte_offsets":[60180],"raw_metadata_u32":[0]}
+{"text_id":675,"forms":[""],"absolute_byte_offsets":[60181],"raw_metadata_u32":[0]}
+{"text_id":676,"forms":[""],"absolute_byte_offsets":[60182],"raw_metadata_u32":[0]}
+{"text_id":677,"forms":[""],"absolute_byte_offsets":[60183],"raw_metadata_u32":[0]}
+{"text_id":678,"forms":[""],"absolute_byte_offsets":[60184],"raw_metadata_u32":[0]}
+{"text_id":679,"forms":[""],"absolute_byte_offsets":[60185],"raw_metadata_u32":[0]}
+{"text_id":680,"forms":[""],"absolute_byte_offsets":[60186],"raw_metadata_u32":[0]}
+{"text_id":681,"forms":[""],"absolute_byte_offsets":[60187],"raw_metadata_u32":[0]}
+{"text_id":682,"forms":[""],"absolute_byte_offsets":[60188],"raw_metadata_u32":[0]}
+{"text_id":683,"forms":[""],"absolute_byte_offsets":[60189],"raw_metadata_u32":[0]}
+{"text_id":684,"forms":[""],"absolute_byte_offsets":[60190],"raw_metadata_u32":[0]}
+{"text_id":685,"forms":[""],"absolute_byte_offsets":[60191],"raw_metadata_u32":[0]}
+{"text_id":686,"forms":[""],"absolute_byte_offsets":[60192],"raw_metadata_u32":[0]}
+{"text_id":687,"forms":[""],"absolute_byte_offsets":[60193],"raw_metadata_u32":[0]}
+{"text_id":688,"forms":["Joy-Con 2의 측면이 아래를 향하게 해서<br>책상 위 등에 놓으면 자동으로 <$cdef(27)>마우스 조작 모드</color>가 됩니다.<br>마우스 조작 모드에서는 포인터를 맞춘 장소에<br>아이템을 토해 낼 수 있습니다."],"absolute_byte_offsets":[60194],"raw_metadata_u32":[1]}
+{"text_id":689,"forms":["마우스 조작 모드 중에 바위깨기를 사용하면<br>포인터를 맞춘 블록만 노려서 부술 수 있습니다."],"absolute_byte_offsets":[60456],"raw_metadata_u32":[1]}
+{"text_id":690,"forms":["마우스 조작은 Joy-Con 2 (R), Joy-Con 2 (L)<br>어느 쪽에서든 동일하게 이용할 수 있습니다."],"absolute_byte_offsets":[60584],"raw_metadata_u32":[1]}
+{"text_id":691,"forms":[""],"absolute_byte_offsets":[60697],"raw_metadata_u32":[0]}
+{"text_id":692,"forms":[""],"absolute_byte_offsets":[60698],"raw_metadata_u32":[0]}
+{"text_id":693,"forms":[""],"absolute_byte_offsets":[60699],"raw_metadata_u32":[0]}
+{"text_id":694,"forms":[""],"absolute_byte_offsets":[60700],"raw_metadata_u32":[0]}
+{"text_id":695,"forms":[""],"absolute_byte_offsets":[60701],"raw_metadata_u32":[0]}
+{"text_id":696,"forms":[""],"absolute_byte_offsets":[60702],"raw_metadata_u32":[0]}
+{"text_id":697,"forms":[""],"absolute_byte_offsets":[60703],"raw_metadata_u32":[0]}
+{"text_id":698,"forms":[""],"absolute_byte_offsets":[60704],"raw_metadata_u32":[0]}
+{"text_id":699,"forms":[""],"absolute_byte_offsets":[60705],"raw_metadata_u32":[0]}
+{"text_id":700,"forms":[""],"absolute_byte_offsets":[60706],"raw_metadata_u32":[0]}
+{"text_id":701,"forms":[""],"absolute_byte_offsets":[60707],"raw_metadata_u32":[0]}
+{"text_id":702,"forms":[""],"absolute_byte_offsets":[60708],"raw_metadata_u32":[0]}
+{"text_id":703,"forms":[""],"absolute_byte_offsets":[60709],"raw_metadata_u32":[0]}
+{"text_id":704,"forms":[""],"absolute_byte_offsets":[60710],"raw_metadata_u32":[0]}
+{"text_id":705,"forms":[""],"absolute_byte_offsets":[60711],"raw_metadata_u32":[0]}
+{"text_id":706,"forms":[""],"absolute_byte_offsets":[60712],"raw_metadata_u32":[0]}
+{"text_id":707,"forms":[""],"absolute_byte_offsets":[60713],"raw_metadata_u32":[0]}
+{"text_id":708,"forms":[""],"absolute_byte_offsets":[60714],"raw_metadata_u32":[0]}
+{"text_id":709,"forms":[""],"absolute_byte_offsets":[60715],"raw_metadata_u32":[0]}
+{"text_id":710,"forms":[""],"absolute_byte_offsets":[60716],"raw_metadata_u32":[0]}
+{"text_id":711,"forms":[""],"absolute_byte_offsets":[60717],"raw_metadata_u32":[0]}
+{"text_id":712,"forms":[""],"absolute_byte_offsets":[60718],"raw_metadata_u32":[0]}
+{"text_id":713,"forms":[""],"absolute_byte_offsets":[60719],"raw_metadata_u32":[0]}
+{"text_id":714,"forms":[""],"absolute_byte_offsets":[60720],"raw_metadata_u32":[0]}
+{"text_id":715,"forms":[""],"absolute_byte_offsets":[60721],"raw_metadata_u32":[0]}
+{"text_id":716,"forms":[""],"absolute_byte_offsets":[60722],"raw_metadata_u32":[0]}
+{"text_id":717,"forms":[""],"absolute_byte_offsets":[60723],"raw_metadata_u32":[0]}
+{"text_id":718,"forms":[""],"absolute_byte_offsets":[60724],"raw_metadata_u32":[0]}
+{"text_id":719,"forms":[""],"absolute_byte_offsets":[60725],"raw_metadata_u32":[0]}
+{"text_id":720,"forms":[""],"absolute_byte_offsets":[60726],"raw_metadata_u32":[0]}
+{"text_id":721,"forms":[""],"absolute_byte_offsets":[60727],"raw_metadata_u32":[0]}
+{"text_id":722,"forms":[""],"absolute_byte_offsets":[60728],"raw_metadata_u32":[0]}
+{"text_id":723,"forms":[""],"absolute_byte_offsets":[60729],"raw_metadata_u32":[0]}
+{"text_id":724,"forms":[""],"absolute_byte_offsets":[60730],"raw_metadata_u32":[0]}
+{"text_id":725,"forms":[""],"absolute_byte_offsets":[60731],"raw_metadata_u32":[0]}
+{"text_id":726,"forms":[""],"absolute_byte_offsets":[60732],"raw_metadata_u32":[0]}
+{"text_id":727,"forms":[""],"absolute_byte_offsets":[60733],"raw_metadata_u32":[0]}
+{"text_id":728,"forms":[""],"absolute_byte_offsets":[60734],"raw_metadata_u32":[0]}
+{"text_id":729,"forms":[""],"absolute_byte_offsets":[60735],"raw_metadata_u32":[0]}
+{"text_id":730,"forms":[""],"absolute_byte_offsets":[60736],"raw_metadata_u32":[0]}
+{"text_id":731,"forms":[""],"absolute_byte_offsets":[60737],"raw_metadata_u32":[0]}
+{"text_id":732,"forms":[""],"absolute_byte_offsets":[60738],"raw_metadata_u32":[0]}
+{"text_id":733,"forms":[""],"absolute_byte_offsets":[60739],"raw_metadata_u32":[0]}
+{"text_id":734,"forms":[""],"absolute_byte_offsets":[60740],"raw_metadata_u32":[0]}
+{"text_id":735,"forms":[""],"absolute_byte_offsets":[60741],"raw_metadata_u32":[0]}
+{"text_id":736,"forms":[""],"absolute_byte_offsets":[60742],"raw_metadata_u32":[0]}
+{"text_id":737,"forms":[""],"absolute_byte_offsets":[60743],"raw_metadata_u32":[0]}
+{"text_id":738,"forms":[""],"absolute_byte_offsets":[60744],"raw_metadata_u32":[0]}
+{"text_id":739,"forms":[""],"absolute_byte_offsets":[60745],"raw_metadata_u32":[0]}
+{"text_id":740,"forms":[""],"absolute_byte_offsets":[60746],"raw_metadata_u32":[0]}
+{"text_id":741,"forms":[""],"absolute_byte_offsets":[60747],"raw_metadata_u32":[0]}
+{"text_id":742,"forms":[""],"absolute_byte_offsets":[60748],"raw_metadata_u32":[0]}
+{"text_id":743,"forms":[""],"absolute_byte_offsets":[60749],"raw_metadata_u32":[0]}
+{"text_id":744,"forms":[""],"absolute_byte_offsets":[60750],"raw_metadata_u32":[0]}
+{"text_id":745,"forms":["물속에서 기절하지 않고 자유롭게 이동할 수 있습니다.<br>※오랫동안 물속에 있거나<br>　더 깊은 장소로 들어가도 기절하지 않습니다."],"absolute_byte_offsets":[60751],"raw_metadata_u32":[10]}
+{"text_id":746,"forms":["물속에서 <$keyicon(55)>를 누르며 이동하면<br>헤엄칠 수 있습니다.<br><$keyicon(55)>를 누르며 <$keyicon(77)>을 누르면 아래쪽으로 잠수하고<br><$keyicon(76)>을 누르면 위쪽으로 떠오릅니다."],"absolute_byte_offsets":[60931],"raw_metadata_u32":[10]}
+{"text_id":747,"forms":["물속에서 <$keyicon(141)>을 누르고 있는 동안에는<br>가라앉지 않고 떠 있을 수 있으므로<br>아이템을 그 자리에 놓을 때 편리합니다.<br><br><$keyicon(194)>을 돌리면 밑바닥까지 빠르게 가라앉을 수 있습니다."],"absolute_byte_offsets":[61165],"raw_metadata_u32":[10]}
+{"text_id":748,"forms":[""],"absolute_byte_offsets":[61429],"raw_metadata_u32":[0]}
+{"text_id":749,"forms":[""],"absolute_byte_offsets":[61430],"raw_metadata_u32":[0]}
+{"text_id":750,"forms":[""],"absolute_byte_offsets":[61431],"raw_metadata_u32":[0]}
+{"text_id":751,"forms":["<$keyicon(6)>를 길게 눌러서 <$cdef(27)>괴력</color>을 발휘합니다.<br><$cdef(27)>괴력</color>을 발휘하는 도중에는<br>물건을 밀거나 당길 수 있습니다."],"absolute_byte_offsets":[61432],"raw_metadata_u32":[1]}
+{"text_id":752,"forms":["<$cdef(27)>괴력</color>을 발휘하는 중에 <$keyicon(194)>을 좌우로 기울이면<br>해당 방향으로 눈앞의 물건을 회전시킬 수 있습니다."],"absolute_byte_offsets":[61618],"raw_metadata_u32":[1]}
+{"text_id":753,"forms":[""],"absolute_byte_offsets":[61783],"raw_metadata_u32":[0]}
+{"text_id":754,"forms":[""],"absolute_byte_offsets":[61784],"raw_metadata_u32":[0]}
+{"text_id":755,"forms":[""],"absolute_byte_offsets":[61785],"raw_metadata_u32":[0]}
+{"text_id":756,"forms":[""],"absolute_byte_offsets":[61786],"raw_metadata_u32":[0]}
+{"text_id":757,"forms":["<$cdef(27)><fqty(1)><$ifull(1301)></color> 등의 조리 도구를 사용하면<br>재료를 이용해 요리를 만들 수 있습니다.<br>완성된 요리를 먹으면<br><$cdef(27)>메타몽</color>의 기술이 강화됩니다."],"absolute_byte_offsets":[61787],"raw_metadata_u32":[1]}
+{"text_id":758,"forms":["근처에 포켓몬이 있으면<br>요리를 도와주기도 합니다.<br>해당 포켓몬의 특기나 사용한 재료에 따라<br>평소와는 다른 요리가 완성될 때도 있습니다.<br>다양한 요리를 만들어 봅시다."],"absolute_byte_offsets":[62020],"raw_metadata_u32":[1]}
+{"text_id":759,"forms":[""],"absolute_byte_offsets":[62261],"raw_metadata_u32":[0]}
+{"text_id":760,"forms":[""],"absolute_byte_offsets":[62262],"raw_metadata_u32":[0]}
+{"text_id":761,"forms":[""],"absolute_byte_offsets":[62263],"raw_metadata_u32":[0]}
+{"text_id":762,"forms":[""],"absolute_byte_offsets":[62264],"raw_metadata_u32":[0]}
+{"text_id":763,"forms":[""],"absolute_byte_offsets":[62265],"raw_metadata_u32":[0]}
+{"text_id":764,"forms":[""],"absolute_byte_offsets":[62266],"raw_metadata_u32":[0]}
+{"text_id":765,"forms":[""],"absolute_byte_offsets":[62267],"raw_metadata_u32":[0]}
+{"text_id":766,"forms":[""],"absolute_byte_offsets":[62268],"raw_metadata_u32":[0]}
+{"text_id":767,"forms":[""],"absolute_byte_offsets":[62269],"raw_metadata_u32":[0]}
+{"text_id":768,"forms":[""],"absolute_byte_offsets":[62270],"raw_metadata_u32":[0]}
+{"text_id":769,"forms":[""],"absolute_byte_offsets":[62271],"raw_metadata_u32":[0]}
+{"text_id":770,"forms":[""],"absolute_byte_offsets":[62272],"raw_metadata_u32":[0]}
+{"text_id":771,"forms":[""],"absolute_byte_offsets":[62273],"raw_metadata_u32":[0]}
+{"text_id":772,"forms":[""],"absolute_byte_offsets":[62274],"raw_metadata_u32":[0]}
+{"text_id":773,"forms":[""],"absolute_byte_offsets":[62275],"raw_metadata_u32":[0]}
+{"text_id":774,"forms":[""],"absolute_byte_offsets":[62276],"raw_metadata_u32":[0]}
+{"text_id":775,"forms":[""],"absolute_byte_offsets":[62277],"raw_metadata_u32":[0]}
+{"text_id":776,"forms":[""],"absolute_byte_offsets":[62278],"raw_metadata_u32":[0]}
+{"text_id":777,"forms":[""],"absolute_byte_offsets":[62279],"raw_metadata_u32":[0]}
+{"text_id":778,"forms":["<$cdef(27)><fqty(1)><$ifull(106)></color>나 <$cdef(27)><fqty(1)><$ifull(107)></color> 등을 녹여서<br><$cdef(27)>주괴</color>를 만들 수 있습니다.<br>재료를 넣고<br><$cdef(27)><$spwfull(10)></color>가 특기인 포켓몬의 도움을 받으면<br><$cdef(27)>주괴</color>를 획득할 수 있습니다."],"absolute_byte_offsets":[62280],"raw_metadata_u32":[1]}
+{"text_id":779,"forms":[""],"absolute_byte_offsets":[62604],"raw_metadata_u32":[0]}
+{"text_id":780,"forms":[""],"absolute_byte_offsets":[62605],"raw_metadata_u32":[0]}
+{"text_id":781,"forms":[""],"absolute_byte_offsets":[62606],"raw_metadata_u32":[0]}
+{"text_id":782,"forms":[""],"absolute_byte_offsets":[62607],"raw_metadata_u32":[0]}
+{"text_id":783,"forms":[""],"absolute_byte_offsets":[62608],"raw_metadata_u32":[0]}
+{"text_id":784,"forms":["<$icon(11004)><$cdef(27)><$spwname(14)></color>이 특기인 포켓몬은<br>근처에 음악이 흐르고 있으면<br>춤을 춰서 <$cdef(27)>분위기</color>를 띄워 줍니다."],"absolute_byte_offsets":[62609],"raw_metadata_u32":[1]}
+{"text_id":785,"forms":[""],"absolute_byte_offsets":[62793],"raw_metadata_u32":[0]}
+{"text_id":786,"forms":[""],"absolute_byte_offsets":[62794],"raw_metadata_u32":[0]}
+{"text_id":787,"forms":[""],"absolute_byte_offsets":[62795],"raw_metadata_u32":[0]}
+{"text_id":788,"forms":[""],"absolute_byte_offsets":[62796],"raw_metadata_u32":[0]}
+{"text_id":789,"forms":[""],"absolute_byte_offsets":[62797],"raw_metadata_u32":[0]}
+{"text_id":790,"forms":[""],"absolute_byte_offsets":[62798],"raw_metadata_u32":[0]}
+{"text_id":791,"forms":[""],"absolute_byte_offsets":[62799],"raw_metadata_u32":[0]}
+{"text_id":792,"forms":[""],"absolute_byte_offsets":[62800],"raw_metadata_u32":[0]}
+{"text_id":793,"forms":[""],"absolute_byte_offsets":[62801],"raw_metadata_u32":[0]}
+{"text_id":794,"forms":[""],"absolute_byte_offsets":[62802],"raw_metadata_u32":[0]}
+{"text_id":795,"forms":[""],"absolute_byte_offsets":[62803],"raw_metadata_u32":[0]}
+{"text_id":796,"forms":[""],"absolute_byte_offsets":[62804],"raw_metadata_u32":[0]}
+{"text_id":797,"forms":[""],"absolute_byte_offsets":[62805],"raw_metadata_u32":[0]}
+{"text_id":798,"forms":[""],"absolute_byte_offsets":[62806],"raw_metadata_u32":[0]}
+{"text_id":799,"forms":[""],"absolute_byte_offsets":[62807],"raw_metadata_u32":[0]}
+{"text_id":800,"forms":[""],"absolute_byte_offsets":[62808],"raw_metadata_u32":[0]}
+{"text_id":801,"forms":[""],"absolute_byte_offsets":[62809],"raw_metadata_u32":[0]}
+{"text_id":802,"forms":[""],"absolute_byte_offsets":[62810],"raw_metadata_u32":[0]}
+{"text_id":803,"forms":[""],"absolute_byte_offsets":[62811],"raw_metadata_u32":[0]}
+{"text_id":804,"forms":[""],"absolute_byte_offsets":[62812],"raw_metadata_u32":[0]}
+{"text_id":805,"forms":[""],"absolute_byte_offsets":[62813],"raw_metadata_u32":[0]}
+{"text_id":806,"forms":[""],"absolute_byte_offsets":[62814],"raw_metadata_u32":[0]}
+{"text_id":807,"forms":[""],"absolute_byte_offsets":[62815],"raw_metadata_u32":[0]}
+{"text_id":808,"forms":["<$cdef(27)>데구리</color>의 모습으로 변신합니다.<br><$keyicon(194)>을 크게 기울이면<br>굴러서 빠르게 이동할 수 있습니다.<br><$keyicon(55)>를 길게 누르거나 <$keyicon(54)>을 누르면<br>구르는 속도가 빨라집니다."],"absolute_byte_offsets":[62816],"raw_metadata_u32":[1]}
+{"text_id":809,"forms":["<$keyicon(1)>을 누르는 동안에는<br>부딪친 것을 부술 수 있습니다.<br>단, <$cdef(27)><$sklfull(4)></color>로 부술 수 없는 강도의 물건은<br><$cdef(27)><$sklfull(12)></color>로도 부수지 못하고 멈추게 됩니다."],"absolute_byte_offsets":[63080],"raw_metadata_u32":[1]}
+{"text_id":810,"forms":["변신 중에는 <$cdef(27)>PP</color>가 조금씩 줄어듭니다.<br><$cdef(27)>PP</color>가 없어지면 구를 수 없게 됩니다."],"absolute_byte_offsets":[63331],"raw_metadata_u32":[1]}
+{"text_id":811,"forms":[""],"absolute_byte_offsets":[63470],"raw_metadata_u32":[0]}
+{"text_id":812,"forms":[""],"absolute_byte_offsets":[63471],"raw_metadata_u32":[0]}
+{"text_id":813,"forms":[""],"absolute_byte_offsets":[63472],"raw_metadata_u32":[0]}
+{"text_id":814,"forms":["<$cdef(27)><fqty(1)><$ifull(1463)></color>를 연결하고 그 위에 <$cdef(27)><fqty(1)><$ifull(1461)></color>를 놓으면<br>타고 이동할 수 있습니다.<br><$cdef(27)><fqty(1)><$ifull(1461)></color>를 연결하면 작은 포켓몬을 데리고<br>함께 탈 수도 있습니다."],"absolute_byte_offsets":[63473],"raw_metadata_u32":[1]}
+{"text_id":815,"forms":["연결한 <$cdef(27)><fqty(1)><$ifull(1463)></color> 옆에 <$cdef(27)><fqty(1)><$ifull(1466)></color>를 놓으면<br><$cdef(27)><fqty(1)><$ifull(1461)></color>가 일시 정지하는 <$cdef(27)><$hatname(21)></color>이 됩니다.<br><$cdef(27)><$hatname(21)></color>과 <$cdef(27)><$hatname(21)></color> 사이를 <$cdef(27)><fqty(1)><$ifull(1463)></color>로 연결하면<br>포켓몬이 마음대로 <$cdef(27)><fqty(1)><$ifull(1461)></color>에 타기도 합니다."],"absolute_byte_offsets":[63764],"raw_metadata_u32":[1]}
+{"text_id":816,"forms":[""],"absolute_byte_offsets":[64236],"raw_metadata_u32":[0]}
+{"text_id":817,"forms":[""],"absolute_byte_offsets":[64237],"raw_metadata_u32":[0]}
+{"text_id":818,"forms":[""],"absolute_byte_offsets":[64238],"raw_metadata_u32":[0]}
+{"text_id":819,"forms":[""],"absolute_byte_offsets":[64239],"raw_metadata_u32":[0]}
+{"text_id":820,"forms":["우선 <$cdef(27)><fqty(1)><$ifull(1729)></color>를 놓아 봅시다.<br><$cdef(27)><fqty(1)><$ifull(1729)></color> 주변의 <$cdef(27)>분위기</color>가 달아오르면<br><$cdef(27)><$spwfull(23)></color>를 열 수 있게 됩니다.<br><$cdef(27)>분위기</color>가 어느 정도로 달아올라 있는지는<br><$cdef(27)><$cname;0(274)></color>에게 물어봅시다."],"absolute_byte_offsets":[64240],"raw_metadata_u32":[1]}
+{"text_id":821,"forms":["<$cdef(27)>분위기</color>는 다양한 방법으로 띄울 수 있습니다.<br>・<$cdef(27)><fqty(1)><$ifull(3997)></color>을 놓는다.<br>・<$cdef(27)>장식</color> 등을 놓는다.<br>・<$cdef(27)><fqty(1)><$ifull(400)></color>에 요리를 넣는다.<br>・<$cdef(27)><$spwfull(14)></color>이 특기인 포켓몬에게 춤을 부탁한다."],"absolute_byte_offsets":[64620],"raw_metadata_u32":[1]}
+{"text_id":822,"forms":["<$cdef(27)>분위기</color>가 최고점인 <$cdef(27)>100점</color>에 도달하면<br><$cdef(27)><$cname;0(216)></color>에게 파티 요리를<br>만들어 달라고 부탁해 봅시다."],"absolute_byte_offsets":[64975],"raw_metadata_u32":[1]}
+{"text_id":823,"forms":[""],"absolute_byte_offsets":[65167],"raw_metadata_u32":[0]}
+{"text_id":824,"forms":[""],"absolute_byte_offsets":[65168],"raw_metadata_u32":[0]}
+{"text_id":825,"forms":[""],"absolute_byte_offsets":[65169],"raw_metadata_u32":[0]}
+{"text_id":826,"forms":["땅 밑에서 <$cdef(27)>포켓몬의 화석</color>이 발굴될 때가 있습니다.<br>여러 개로 나누어진 화석도 있습니다.<br>발견하면 <$cdef(27)><fqty(1)><$ifull(1528)></color>에 알맞게 놓아 봅시다."],"absolute_byte_offsets":[65170],"raw_metadata_u32":[1]}
+{"text_id":827,"forms":[""],"absolute_byte_offsets":[65401],"raw_metadata_u32":[0]}
+{"text_id":828,"forms":[""],"absolute_byte_offsets":[65402],"raw_metadata_u32":[0]}
+{"text_id":829,"forms":[""],"absolute_byte_offsets":[65403],"raw_metadata_u32":[0]}
+{"text_id":830,"forms":[""],"absolute_byte_offsets":[65404],"raw_metadata_u32":[0]}
+{"text_id":831,"forms":[""],"absolute_byte_offsets":[65405],"raw_metadata_u32":[0]}
+{"text_id":832,"forms":[""],"absolute_byte_offsets":[65406],"raw_metadata_u32":[0]}
+{"text_id":833,"forms":[""],"absolute_byte_offsets":[65407],"raw_metadata_u32":[0]}
+{"text_id":834,"forms":[""],"absolute_byte_offsets":[65408],"raw_metadata_u32":[0]}
+{"text_id":835,"forms":[""],"absolute_byte_offsets":[65409],"raw_metadata_u32":[0]}
+{"text_id":836,"forms":[""],"absolute_byte_offsets":[65410],"raw_metadata_u32":[0]}
+{"text_id":837,"forms":[""],"absolute_byte_offsets":[65411],"raw_metadata_u32":[0]}
+{"text_id":838,"forms":[""],"absolute_byte_offsets":[65412],"raw_metadata_u32":[0]}
+{"text_id":839,"forms":[""],"absolute_byte_offsets":[65413],"raw_metadata_u32":[0]}
+{"text_id":840,"forms":[""],"absolute_byte_offsets":[65414],"raw_metadata_u32":[0]}
+{"text_id":841,"forms":[""],"absolute_byte_offsets":[65415],"raw_metadata_u32":[0]}
+{"text_id":842,"forms":[""],"absolute_byte_offsets":[65416],"raw_metadata_u32":[0]}
+{"text_id":843,"forms":[""],"absolute_byte_offsets":[65417],"raw_metadata_u32":[0]}
+{"text_id":844,"forms":[""],"absolute_byte_offsets":[65418],"raw_metadata_u32":[0]}
+{"text_id":845,"forms":[""],"absolute_byte_offsets":[65419],"raw_metadata_u32":[0]}
+{"text_id":846,"forms":[""],"absolute_byte_offsets":[65420],"raw_metadata_u32":[0]}
+{"text_id":847,"forms":[""],"absolute_byte_offsets":[65421],"raw_metadata_u32":[0]}
+{"text_id":848,"forms":[""],"absolute_byte_offsets":[65422],"raw_metadata_u32":[0]}
+{"text_id":849,"forms":[""],"absolute_byte_offsets":[65423],"raw_metadata_u32":[0]}
+{"text_id":850,"forms":[""],"absolute_byte_offsets":[65424],"raw_metadata_u32":[0]}
+{"text_id":851,"forms":[""],"absolute_byte_offsets":[65425],"raw_metadata_u32":[0]}
+{"text_id":852,"forms":[""],"absolute_byte_offsets":[65426],"raw_metadata_u32":[0]}
+{"text_id":853,"forms":[""],"absolute_byte_offsets":[65427],"raw_metadata_u32":[0]}
+{"text_id":854,"forms":[""],"absolute_byte_offsets":[65428],"raw_metadata_u32":[0]}
+{"text_id":855,"forms":[""],"absolute_byte_offsets":[65429],"raw_metadata_u32":[0]}
+{"text_id":856,"forms":[""],"absolute_byte_offsets":[65430],"raw_metadata_u32":[0]}
+{"text_id":857,"forms":[""],"absolute_byte_offsets":[65431],"raw_metadata_u32":[0]}
+{"text_id":858,"forms":[""],"absolute_byte_offsets":[65432],"raw_metadata_u32":[0]}
+{"text_id":859,"forms":[""],"absolute_byte_offsets":[65433],"raw_metadata_u32":[0]}
+{"text_id":860,"forms":[""],"absolute_byte_offsets":[65434],"raw_metadata_u32":[0]}
+{"text_id":861,"forms":[""],"absolute_byte_offsets":[65435],"raw_metadata_u32":[0]}
+{"text_id":862,"forms":[""],"absolute_byte_offsets":[65436],"raw_metadata_u32":[0]}
+{"text_id":863,"forms":[""],"absolute_byte_offsets":[65437],"raw_metadata_u32":[0]}
+{"text_id":864,"forms":[""],"absolute_byte_offsets":[65438],"raw_metadata_u32":[0]}
+{"text_id":865,"forms":[""],"absolute_byte_offsets":[65439],"raw_metadata_u32":[0]}
+{"text_id":866,"forms":[""],"absolute_byte_offsets":[65440],"raw_metadata_u32":[0]}
+{"text_id":867,"forms":[""],"absolute_byte_offsets":[65441],"raw_metadata_u32":[0]}
+{"text_id":868,"forms":[""],"absolute_byte_offsets":[65442],"raw_metadata_u32":[0]}
+{"text_id":869,"forms":[""],"absolute_byte_offsets":[65443],"raw_metadata_u32":[0]}
+{"text_id":870,"forms":[""],"absolute_byte_offsets":[65444],"raw_metadata_u32":[0]}
+{"text_id":871,"forms":[""],"absolute_byte_offsets":[65445],"raw_metadata_u32":[0]}
+{"text_id":872,"forms":[""],"absolute_byte_offsets":[65446],"raw_metadata_u32":[0]}
+{"text_id":873,"forms":[""],"absolute_byte_offsets":[65447],"raw_metadata_u32":[0]}
+{"text_id":874,"forms":[""],"absolute_byte_offsets":[65448],"raw_metadata_u32":[0]}
+{"text_id":875,"forms":[""],"absolute_byte_offsets":[65449],"raw_metadata_u32":[0]}
+{"text_id":876,"forms":[""],"absolute_byte_offsets":[65450],"raw_metadata_u32":[0]}
+{"text_id":877,"forms":[""],"absolute_byte_offsets":[65451],"raw_metadata_u32":[0]}
+{"text_id":878,"forms":[""],"absolute_byte_offsets":[65452],"raw_metadata_u32":[0]}
+{"text_id":879,"forms":[""],"absolute_byte_offsets":[65453],"raw_metadata_u32":[0]}
+{"text_id":880,"forms":[""],"absolute_byte_offsets":[65454],"raw_metadata_u32":[0]}
+{"text_id":881,"forms":[""],"absolute_byte_offsets":[65455],"raw_metadata_u32":[0]}
+{"text_id":882,"forms":[""],"absolute_byte_offsets":[65456],"raw_metadata_u32":[0]}
+{"text_id":883,"forms":[""],"absolute_byte_offsets":[65457],"raw_metadata_u32":[0]}
+{"text_id":884,"forms":[""],"absolute_byte_offsets":[65458],"raw_metadata_u32":[0]}
+{"text_id":885,"forms":[""],"absolute_byte_offsets":[65459],"raw_metadata_u32":[0]}
+{"text_id":886,"forms":[""],"absolute_byte_offsets":[65460],"raw_metadata_u32":[0]}
+{"text_id":887,"forms":[""],"absolute_byte_offsets":[65461],"raw_metadata_u32":[0]}
+{"text_id":888,"forms":[""],"absolute_byte_offsets":[65462],"raw_metadata_u32":[0]}
+{"text_id":889,"forms":[""],"absolute_byte_offsets":[65463],"raw_metadata_u32":[0]}
+{"text_id":890,"forms":[""],"absolute_byte_offsets":[65464],"raw_metadata_u32":[0]}
+{"text_id":891,"forms":[""],"absolute_byte_offsets":[65465],"raw_metadata_u32":[0]}
+{"text_id":892,"forms":[""],"absolute_byte_offsets":[65466],"raw_metadata_u32":[0]}
+{"text_id":893,"forms":[""],"absolute_byte_offsets":[65467],"raw_metadata_u32":[0]}
+{"text_id":894,"forms":[""],"absolute_byte_offsets":[65468],"raw_metadata_u32":[0]}
+{"text_id":895,"forms":[""],"absolute_byte_offsets":[65469],"raw_metadata_u32":[0]}
+{"text_id":896,"forms":[""],"absolute_byte_offsets":[65470],"raw_metadata_u32":[0]}
+{"text_id":897,"forms":[""],"absolute_byte_offsets":[65471],"raw_metadata_u32":[0]}
+{"text_id":898,"forms":[""],"absolute_byte_offsets":[65472],"raw_metadata_u32":[0]}
+{"text_id":899,"forms":[""],"absolute_byte_offsets":[65473],"raw_metadata_u32":[0]}
+{"text_id":900,"forms":[""],"absolute_byte_offsets":[65474],"raw_metadata_u32":[0]}
+{"text_id":901,"forms":[""],"absolute_byte_offsets":[65475],"raw_metadata_u32":[0]}
+{"text_id":902,"forms":[""],"absolute_byte_offsets":[65476],"raw_metadata_u32":[0]}
+{"text_id":903,"forms":[""],"absolute_byte_offsets":[65477],"raw_metadata_u32":[0]}
+{"text_id":904,"forms":[""],"absolute_byte_offsets":[65478],"raw_metadata_u32":[0]}
+{"text_id":905,"forms":[""],"absolute_byte_offsets":[65479],"raw_metadata_u32":[0]}
+{"text_id":906,"forms":[""],"absolute_byte_offsets":[65480],"raw_metadata_u32":[0]}
+{"text_id":907,"forms":[""],"absolute_byte_offsets":[65481],"raw_metadata_u32":[0]}
+{"text_id":908,"forms":[""],"absolute_byte_offsets":[65482],"raw_metadata_u32":[0]}
+{"text_id":909,"forms":[""],"absolute_byte_offsets":[65483],"raw_metadata_u32":[0]}
+{"text_id":910,"forms":[""],"absolute_byte_offsets":[65484],"raw_metadata_u32":[0]}
+{"text_id":911,"forms":[""],"absolute_byte_offsets":[65485],"raw_metadata_u32":[0]}
+{"text_id":912,"forms":[""],"absolute_byte_offsets":[65486],"raw_metadata_u32":[0]}
+{"text_id":913,"forms":[""],"absolute_byte_offsets":[65487],"raw_metadata_u32":[0]}
+{"text_id":914,"forms":[""],"absolute_byte_offsets":[65488],"raw_metadata_u32":[0]}
+{"text_id":915,"forms":[""],"absolute_byte_offsets":[65489],"raw_metadata_u32":[0]}
+{"text_id":916,"forms":[""],"absolute_byte_offsets":[65490],"raw_metadata_u32":[0]}
+{"text_id":917,"forms":[""],"absolute_byte_offsets":[65491],"raw_metadata_u32":[0]}
+{"text_id":918,"forms":[""],"absolute_byte_offsets":[65492],"raw_metadata_u32":[0]}
+{"text_id":919,"forms":[""],"absolute_byte_offsets":[65493],"raw_metadata_u32":[0]}
+{"text_id":920,"forms":[""],"absolute_byte_offsets":[65494],"raw_metadata_u32":[0]}
+{"text_id":921,"forms":[""],"absolute_byte_offsets":[65495],"raw_metadata_u32":[0]}
+{"text_id":922,"forms":[""],"absolute_byte_offsets":[65496],"raw_metadata_u32":[0]}
+{"text_id":923,"forms":[""],"absolute_byte_offsets":[65497],"raw_metadata_u32":[0]}
+{"text_id":924,"forms":[""],"absolute_byte_offsets":[65498],"raw_metadata_u32":[0]}
+{"text_id":925,"forms":[""],"absolute_byte_offsets":[65499],"raw_metadata_u32":[0]}
+{"text_id":926,"forms":[""],"absolute_byte_offsets":[65500],"raw_metadata_u32":[0]}
+{"text_id":927,"forms":[""],"absolute_byte_offsets":[65501],"raw_metadata_u32":[0]}
+{"text_id":928,"forms":[""],"absolute_byte_offsets":[65502],"raw_metadata_u32":[0]}
+{"text_id":929,"forms":[""],"absolute_byte_offsets":[65503],"raw_metadata_u32":[0]}
+{"text_id":930,"forms":[""],"absolute_byte_offsets":[65504],"raw_metadata_u32":[0]}
+{"text_id":931,"forms":[""],"absolute_byte_offsets":[65505],"raw_metadata_u32":[0]}
+{"text_id":932,"forms":[""],"absolute_byte_offsets":[65506],"raw_metadata_u32":[0]}
+{"text_id":933,"forms":[""],"absolute_byte_offsets":[65507],"raw_metadata_u32":[0]}
+{"text_id":934,"forms":[""],"absolute_byte_offsets":[65508],"raw_metadata_u32":[0]}
+{"text_id":935,"forms":[""],"absolute_byte_offsets":[65509],"raw_metadata_u32":[0]}
+{"text_id":936,"forms":[""],"absolute_byte_offsets":[65510],"raw_metadata_u32":[0]}
+{"text_id":937,"forms":[""],"absolute_byte_offsets":[65511],"raw_metadata_u32":[0]}
+{"text_id":938,"forms":[""],"absolute_byte_offsets":[65512],"raw_metadata_u32":[0]}
+{"text_id":939,"forms":[""],"absolute_byte_offsets":[65513],"raw_metadata_u32":[0]}
+{"text_id":940,"forms":[""],"absolute_byte_offsets":[65514],"raw_metadata_u32":[0]}
+{"text_id":941,"forms":[""],"absolute_byte_offsets":[65515],"raw_metadata_u32":[0]}
+{"text_id":942,"forms":[""],"absolute_byte_offsets":[65516],"raw_metadata_u32":[0]}
+{"text_id":943,"forms":[""],"absolute_byte_offsets":[65517],"raw_metadata_u32":[0]}
+{"text_id":944,"forms":[""],"absolute_byte_offsets":[65518],"raw_metadata_u32":[0]}
+{"text_id":945,"forms":[""],"absolute_byte_offsets":[65519],"raw_metadata_u32":[0]}
+{"text_id":946,"forms":[""],"absolute_byte_offsets":[65520],"raw_metadata_u32":[0]}
+{"text_id":947,"forms":[""],"absolute_byte_offsets":[65521],"raw_metadata_u32":[0]}
+{"text_id":948,"forms":[""],"absolute_byte_offsets":[65522],"raw_metadata_u32":[0]}
+{"text_id":949,"forms":[""],"absolute_byte_offsets":[65523],"raw_metadata_u32":[0]}
+{"text_id":950,"forms":[""],"absolute_byte_offsets":[65524],"raw_metadata_u32":[0]}
+{"text_id":951,"forms":[""],"absolute_byte_offsets":[65525],"raw_metadata_u32":[0]}
+{"text_id":952,"forms":[""],"absolute_byte_offsets":[65526],"raw_metadata_u32":[0]}
+{"text_id":953,"forms":[""],"absolute_byte_offsets":[65527],"raw_metadata_u32":[0]}
+{"text_id":954,"forms":[""],"absolute_byte_offsets":[65528],"raw_metadata_u32":[0]}
+{"text_id":955,"forms":[""],"absolute_byte_offsets":[65529],"raw_metadata_u32":[0]}
+{"text_id":956,"forms":[""],"absolute_byte_offsets":[65530],"raw_metadata_u32":[0]}
+{"text_id":957,"forms":[""],"absolute_byte_offsets":[65531],"raw_metadata_u32":[0]}
+{"text_id":958,"forms":[""],"absolute_byte_offsets":[65532],"raw_metadata_u32":[0]}
+{"text_id":959,"forms":[""],"absolute_byte_offsets":[65533],"raw_metadata_u32":[0]}
+{"text_id":960,"forms":[""],"absolute_byte_offsets":[65534],"raw_metadata_u32":[0]}
+{"text_id":961,"forms":[""],"absolute_byte_offsets":[65535],"raw_metadata_u32":[0]}
+{"text_id":962,"forms":[""],"absolute_byte_offsets":[65536],"raw_metadata_u32":[0]}
+{"text_id":963,"forms":[""],"absolute_byte_offsets":[65537],"raw_metadata_u32":[0]}
+{"text_id":964,"forms":[""],"absolute_byte_offsets":[65538],"raw_metadata_u32":[0]}
+{"text_id":965,"forms":[""],"absolute_byte_offsets":[65539],"raw_metadata_u32":[0]}
+{"text_id":966,"forms":[""],"absolute_byte_offsets":[65540],"raw_metadata_u32":[0]}
+{"text_id":967,"forms":[""],"absolute_byte_offsets":[65541],"raw_metadata_u32":[0]}
+{"text_id":968,"forms":[""],"absolute_byte_offsets":[65542],"raw_metadata_u32":[0]}
+{"text_id":969,"forms":[""],"absolute_byte_offsets":[65543],"raw_metadata_u32":[0]}
+{"text_id":970,"forms":[""],"absolute_byte_offsets":[65544],"raw_metadata_u32":[0]}
+{"text_id":971,"forms":[""],"absolute_byte_offsets":[65545],"raw_metadata_u32":[0]}
+{"text_id":972,"forms":[""],"absolute_byte_offsets":[65546],"raw_metadata_u32":[0]}
+{"text_id":973,"forms":[""],"absolute_byte_offsets":[65547],"raw_metadata_u32":[0]}
+{"text_id":974,"forms":[""],"absolute_byte_offsets":[65548],"raw_metadata_u32":[0]}
+{"text_id":975,"forms":[""],"absolute_byte_offsets":[65549],"raw_metadata_u32":[0]}
+{"text_id":976,"forms":[""],"absolute_byte_offsets":[65550],"raw_metadata_u32":[0]}
+{"text_id":977,"forms":[""],"absolute_byte_offsets":[65551],"raw_metadata_u32":[0]}
+{"text_id":978,"forms":[""],"absolute_byte_offsets":[65552],"raw_metadata_u32":[0]}
+{"text_id":979,"forms":[""],"absolute_byte_offsets":[65553],"raw_metadata_u32":[0]}
+{"text_id":980,"forms":[""],"absolute_byte_offsets":[65554],"raw_metadata_u32":[0]}
+{"text_id":981,"forms":[""],"absolute_byte_offsets":[65555],"raw_metadata_u32":[0]}
+{"text_id":982,"forms":[""],"absolute_byte_offsets":[65556],"raw_metadata_u32":[0]}
+{"text_id":983,"forms":[""],"absolute_byte_offsets":[65557],"raw_metadata_u32":[0]}
+{"text_id":984,"forms":[""],"absolute_byte_offsets":[65558],"raw_metadata_u32":[0]}
+{"text_id":985,"forms":[""],"absolute_byte_offsets":[65559],"raw_metadata_u32":[0]}
+{"text_id":986,"forms":[""],"absolute_byte_offsets":[65560],"raw_metadata_u32":[0]}
+{"text_id":987,"forms":[""],"absolute_byte_offsets":[65561],"raw_metadata_u32":[0]}
+{"text_id":988,"forms":[""],"absolute_byte_offsets":[65562],"raw_metadata_u32":[0]}
+{"text_id":989,"forms":[""],"absolute_byte_offsets":[65563],"raw_metadata_u32":[0]}
+{"text_id":990,"forms":[""],"absolute_byte_offsets":[65564],"raw_metadata_u32":[0]}
+{"text_id":991,"forms":[""],"absolute_byte_offsets":[65565],"raw_metadata_u32":[0]}
+{"text_id":992,"forms":[""],"absolute_byte_offsets":[65566],"raw_metadata_u32":[0]}
+{"text_id":993,"forms":[""],"absolute_byte_offsets":[65567],"raw_metadata_u32":[0]}
+{"text_id":994,"forms":[""],"absolute_byte_offsets":[65568],"raw_metadata_u32":[0]}
+{"text_id":995,"forms":[""],"absolute_byte_offsets":[65569],"raw_metadata_u32":[0]}
+{"text_id":996,"forms":[""],"absolute_byte_offsets":[65570],"raw_metadata_u32":[0]}
+{"text_id":997,"forms":[""],"absolute_byte_offsets":[65571],"raw_metadata_u32":[0]}
+{"text_id":998,"forms":[""],"absolute_byte_offsets":[65572],"raw_metadata_u32":[0]}
+{"text_id":999,"forms":[""],"absolute_byte_offsets":[65573],"raw_metadata_u32":[0]}
+{"text_id":1000,"forms":["포켓몬이 참참참을 하자고 할 때가 있습니다.<br>\"참 참\"이라고 말했을 때<br>포켓몬이 왼쪽과 오른쪽 중<br>어디를 볼 지 예상해서 <$keyicon(222)><$keyicon(223)>을 누릅니다.<br>맞히면 성공, 틀리면 실패입니다."],"absolute_byte_offsets":[65574],"raw_metadata_u32":[1]}
+{"text_id":1001,"forms":["3번 승부 해서 성공이 실패보다 많으면<br>당신의 승리입니다.<br>승리하면 포켓몬과 매우 친해지고<br>져도 조금 친해집니다."],"absolute_byte_offsets":[65847],"raw_metadata_u32":[1]}
+{"text_id":1002,"forms":[""],"absolute_byte_offsets":[66012],"raw_metadata_u32":[0]}
+{"text_id":1003,"forms":[""],"absolute_byte_offsets":[66013],"raw_metadata_u32":[0]}
+{"text_id":1004,"forms":[""],"absolute_byte_offsets":[66014],"raw_metadata_u32":[0]}
+{"text_id":1005,"forms":[""],"absolute_byte_offsets":[66015],"raw_metadata_u32":[0]}
+{"text_id":1006,"forms":[""],"absolute_byte_offsets":[66016],"raw_metadata_u32":[0]}
+{"text_id":1007,"forms":[""],"absolute_byte_offsets":[66017],"raw_metadata_u32":[0]}
+{"text_id":1008,"forms":[""],"absolute_byte_offsets":[66018],"raw_metadata_u32":[0]}
+{"text_id":1009,"forms":[""],"absolute_byte_offsets":[66019],"raw_metadata_u32":[0]}
+{"text_id":1010,"forms":[""],"absolute_byte_offsets":[66020],"raw_metadata_u32":[0]}
+{"text_id":1011,"forms":[""],"absolute_byte_offsets":[66021],"raw_metadata_u32":[0]}
+{"text_id":1012,"forms":[""],"absolute_byte_offsets":[66022],"raw_metadata_u32":[0]}
+{"text_id":1013,"forms":[""],"absolute_byte_offsets":[66023],"raw_metadata_u32":[0]}
+{"text_id":1014,"forms":[""],"absolute_byte_offsets":[66024],"raw_metadata_u32":[0]}
+{"text_id":1015,"forms":[""],"absolute_byte_offsets":[66025],"raw_metadata_u32":[0]}
+{"text_id":1016,"forms":[""],"absolute_byte_offsets":[66026],"raw_metadata_u32":[0]}
+{"text_id":1017,"forms":[""],"absolute_byte_offsets":[66027],"raw_metadata_u32":[0]}
+{"text_id":1018,"forms":[""],"absolute_byte_offsets":[66028],"raw_metadata_u32":[0]}
+{"text_id":1019,"forms":[""],"absolute_byte_offsets":[66029],"raw_metadata_u32":[0]}
+{"text_id":1020,"forms":[""],"absolute_byte_offsets":[66030],"raw_metadata_u32":[0]}
+{"text_id":1021,"forms":[""],"absolute_byte_offsets":[66031],"raw_metadata_u32":[0]}
+{"text_id":1022,"forms":[""],"absolute_byte_offsets":[66032],"raw_metadata_u32":[0]}
+{"text_id":1023,"forms":[""],"absolute_byte_offsets":[66033],"raw_metadata_u32":[0]}
+{"text_id":1024,"forms":[""],"absolute_byte_offsets":[66034],"raw_metadata_u32":[0]}
+{"text_id":1025,"forms":[""],"absolute_byte_offsets":[66035],"raw_metadata_u32":[0]}
+{"text_id":1026,"forms":[""],"absolute_byte_offsets":[66036],"raw_metadata_u32":[0]}
+{"text_id":1027,"forms":[""],"absolute_byte_offsets":[66037],"raw_metadata_u32":[0]}
+{"text_id":1028,"forms":[""],"absolute_byte_offsets":[66038],"raw_metadata_u32":[0]}
+{"text_id":1029,"forms":[""],"absolute_byte_offsets":[66039],"raw_metadata_u32":[0]}
+{"text_id":1030,"forms":[""],"absolute_byte_offsets":[66040],"raw_metadata_u32":[0]}
+{"text_id":1031,"forms":[""],"absolute_byte_offsets":[66041],"raw_metadata_u32":[0]}
+{"text_id":1032,"forms":[""],"absolute_byte_offsets":[66042],"raw_metadata_u32":[0]}
+{"text_id":1033,"forms":[""],"absolute_byte_offsets":[66043],"raw_metadata_u32":[0]}
+{"text_id":1034,"forms":[""],"absolute_byte_offsets":[66044],"raw_metadata_u32":[0]}
+{"text_id":1035,"forms":[""],"absolute_byte_offsets":[66045],"raw_metadata_u32":[0]}
+{"text_id":1036,"forms":[""],"absolute_byte_offsets":[66046],"raw_metadata_u32":[0]}
+{"text_id":1037,"forms":[""],"absolute_byte_offsets":[66047],"raw_metadata_u32":[0]}
+{"text_id":1038,"forms":[""],"absolute_byte_offsets":[66048],"raw_metadata_u32":[0]}
+{"text_id":1039,"forms":[""],"absolute_byte_offsets":[66049],"raw_metadata_u32":[0]}
+{"text_id":1040,"forms":[""],"absolute_byte_offsets":[66050],"raw_metadata_u32":[0]}
+{"text_id":1041,"forms":[""],"absolute_byte_offsets":[66051],"raw_metadata_u32":[0]}
+{"text_id":1042,"forms":[""],"absolute_byte_offsets":[66052],"raw_metadata_u32":[0]}
+{"text_id":1043,"forms":[""],"absolute_byte_offsets":[66053],"raw_metadata_u32":[0]}
+{"text_id":1044,"forms":[""],"absolute_byte_offsets":[66054],"raw_metadata_u32":[0]}
+{"text_id":1045,"forms":[""],"absolute_byte_offsets":[66055],"raw_metadata_u32":[0]}
+{"text_id":1046,"forms":[""],"absolute_byte_offsets":[66056],"raw_metadata_u32":[0]}
+{"text_id":1047,"forms":[""],"absolute_byte_offsets":[66057],"raw_metadata_u32":[0]}
+{"text_id":1048,"forms":[""],"absolute_byte_offsets":[66058],"raw_metadata_u32":[0]}
+{"text_id":1049,"forms":[""],"absolute_byte_offsets":[66059],"raw_metadata_u32":[0]}
+{"text_id":1050,"forms":[""],"absolute_byte_offsets":[66060],"raw_metadata_u32":[0]}
+{"text_id":1051,"forms":["공중에서 <$keyicon(29)>을 누르면 <$cdef(27)>망나뇽</color>으로 변신해서<br><$cdef(27)><$sklfull(11)></color>으로 하늘을 날 수 있게 됩니다.<br>처음에 난 높이보다 높이 날 수는 없습니다."],"absolute_byte_offsets":[66061],"raw_metadata_u32":[1]}
+{"text_id":1052,"forms":["변신 중에는 <$cdef(27)>PP</color>가 조금씩 줄어듭니다.<br>땅에 내려오면 원래 모습으로 돌아옵니다."],"absolute_byte_offsets":[66291],"raw_metadata_u32":[1]}
+{"text_id":1053,"forms":[""],"absolute_byte_offsets":[66420],"raw_metadata_u32":[0]}
+{"text_id":1054,"forms":[""],"absolute_byte_offsets":[66421],"raw_metadata_u32":[0]}
+{"text_id":1055,"forms":[""],"absolute_byte_offsets":[66422],"raw_metadata_u32":[0]}
+{"text_id":1056,"forms":[""],"absolute_byte_offsets":[66423],"raw_metadata_u32":[0]}
+{"text_id":1057,"forms":[""],"absolute_byte_offsets":[66424],"raw_metadata_u32":[0]}
+{"text_id":1058,"forms":[""],"absolute_byte_offsets":[66425],"raw_metadata_u32":[0]}
+{"text_id":1059,"forms":[""],"absolute_byte_offsets":[66426],"raw_metadata_u32":[0]}
+{"text_id":1060,"forms":[""],"absolute_byte_offsets":[66427],"raw_metadata_u32":[0]}
+{"text_id":1061,"forms":[""],"absolute_byte_offsets":[66428],"raw_metadata_u32":[0]}
+{"text_id":1062,"forms":[""],"absolute_byte_offsets":[66429],"raw_metadata_u32":[0]}
+{"text_id":1063,"forms":["<$cdef(27)><fqty(1)><$ifull(1457)></color> 2개를 떨어져 있는 장소에<br>서로 마주 보게 놓으면 <$cdef(27)>리프트</color>가 완성됩니다.<br><$cdef(27)>리프트</color>를 사용하면 길이 없는 장소로도 이동할 수 있으며<br>포켓몬을 데려갈 수도 있습니다."],"absolute_byte_offsets":[66430],"raw_metadata_u32":[1]}
+{"text_id":1064,"forms":["<$cdef(27)><fqty(1)><$ifull(1457)></color>의 간격이 너무 넓거나<br>연결 각도가 가파르거나<br>사이에 방해물이 있으면<br><$cdef(27)>리프트</color>는 완성되지 않습니다."],"absolute_byte_offsets":[66737],"raw_metadata_u32":[1]}
+{"text_id":1065,"forms":[""],"absolute_byte_offsets":[66944],"raw_metadata_u32":[0]}
+{"text_id":1066,"forms":[""],"absolute_byte_offsets":[66945],"raw_metadata_u32":[0]}
+{"text_id":1067,"forms":[""],"absolute_byte_offsets":[66946],"raw_metadata_u32":[0]}
+{"text_id":1068,"forms":[""],"absolute_byte_offsets":[66947],"raw_metadata_u32":[0]}
+{"text_id":1069,"forms":["연결해 둔 <$iicon(1523)><$cdef(27)>사다리</color> 등의 앞에<br><$cdef(27)><fqty(1)><$ifull(1469)></color>을 여러 개 놓으면<br>위아래로 이동하는 <$cdef(27)>엘리베이터</color>가 완성됩니다."],"absolute_byte_offsets":[66948],"raw_metadata_u32":[1]}
+{"text_id":1070,"forms":["<$cdef(27)>엘리베이터</color>는 탑승장에서 버튼을 눌러 부를 수 있습니다.<br>부른 뒤에는 <$cdef(27)>엘리베이터</color>가 도착하기까지<br>잠시 기다려야 합니다.<br>탑승 중에는 위 또는 아래 버튼을 눌러<br>원하는 층으로 이동할 수 있습니다."],"absolute_byte_offsets":[67173],"raw_metadata_u32":[1]}
+{"text_id":1071,"forms":[""],"absolute_byte_offsets":[67486],"raw_metadata_u32":[0]}
+{"text_id":1072,"forms":[""],"absolute_byte_offsets":[67487],"raw_metadata_u32":[0]}
+{"text_id":1073,"forms":[""],"absolute_byte_offsets":[67488],"raw_metadata_u32":[0]}
+{"text_id":1074,"forms":[""],"absolute_byte_offsets":[67489],"raw_metadata_u32":[0]}
+{"text_id":1075,"forms":[""],"absolute_byte_offsets":[67490],"raw_metadata_u32":[0]}
+{"text_id":1076,"forms":[""],"absolute_byte_offsets":[67491],"raw_metadata_u32":[0]}
+{"text_id":1077,"forms":[""],"absolute_byte_offsets":[67492],"raw_metadata_u32":[0]}
+{"text_id":1078,"forms":[""],"absolute_byte_offsets":[67493],"raw_metadata_u32":[0]}
+{"text_id":1079,"forms":[""],"absolute_byte_offsets":[67494],"raw_metadata_u32":[0]}
+{"text_id":1080,"forms":[""],"absolute_byte_offsets":[67495],"raw_metadata_u32":[0]}
+{"text_id":1081,"forms":[""],"absolute_byte_offsets":[67496],"raw_metadata_u32":[0]}
+{"text_id":1082,"forms":[""],"absolute_byte_offsets":[67497],"raw_metadata_u32":[0]}
+{"text_id":1083,"forms":[""],"absolute_byte_offsets":[67498],"raw_metadata_u32":[0]}
+{"text_id":1084,"forms":[""],"absolute_byte_offsets":[67499],"raw_metadata_u32":[0]}
+{"text_id":1085,"forms":[""],"absolute_byte_offsets":[67500],"raw_metadata_u32":[0]}
+{"text_id":1086,"forms":[""],"absolute_byte_offsets":[67501],"raw_metadata_u32":[0]}
+{"text_id":1087,"forms":[""],"absolute_byte_offsets":[67502],"raw_metadata_u32":[0]}
+{"text_id":1088,"forms":[""],"absolute_byte_offsets":[67503],"raw_metadata_u32":[0]}
+{"text_id":1089,"forms":[""],"absolute_byte_offsets":[67504],"raw_metadata_u32":[0]}
+{"text_id":1090,"forms":["<$cdef(27)><$sklfull(10)></color> 도중에<br>폭포 앞에서 <$keyicon(7)>를 누르면<br>폭포를 빠르게 오를 수 있습니다."],"absolute_byte_offsets":[67505],"raw_metadata_u32":[1]}
+{"text_id":1091,"forms":[""],"absolute_byte_offsets":[67644],"raw_metadata_u32":[0]}
+{"text_id":1092,"forms":[""],"absolute_byte_offsets":[67645],"raw_metadata_u32":[0]}
+{"text_id":1093,"forms":["패스워드를 설정할 수 있는 수납 박스입니다.<br>열린 상태에서 <$keyicon(242)>을 눌러<br>패스워드를 설정해 봅시다."],"absolute_byte_offsets":[67646],"raw_metadata_u32":[10]}
+{"text_id":1094,"forms":["패스워드가 걸려 있을 경우에는<br>설치한 플레이어가 아니라면<br>올바른 패스워드를 입력해야만 열 수 있습니다.<br>단, 자신의 마을이나 자신이 관리인인 클라우드섬에서는<br>다른 플레이어가 설치한 박스를 정리할 수 있습니다."],"absolute_byte_offsets":[67796],"raw_metadata_u32":[10]}
+{"text_id":1095,"forms":[""],"absolute_byte_offsets":[68101],"raw_metadata_u32":[0]}
+{"text_id":1096,"forms":["안에 들어 있는 물건을 공유해서<br>어떤 장치에서든 꺼낼 수 있습니다.<br>※서로 다른 마을에 설치해도 공유되지만<br>　클라우드섬에 설치한 장치는<br>　그 클라우드섬 안에서만 공유됩니다."],"absolute_byte_offsets":[68102],"raw_metadata_u32":[10]}
+{"text_id":1097,"forms":[""],"absolute_byte_offsets":[68357],"raw_metadata_u32":[0]}
+{"text_id":1098,"forms":[""],"absolute_byte_offsets":[68358],"raw_metadata_u32":[0]}
+{"text_id":1099,"forms":["<$cdef(27)><fqty(1)><$ifull(1373)></color>이나 <$cdef(27)><fqty(1)><$ifull(626)> </color>안에<br>물건을 넣으면 다음 날에 없어집니다.<br>필요 없는 물건이 있다면 넣어 둡시다."],"absolute_byte_offsets":[68359],"raw_metadata_u32":[10]}
+{"text_id":1100,"forms":[""],"absolute_byte_offsets":[68566],"raw_metadata_u32":[0]}
+{"text_id":1101,"forms":[""],"absolute_byte_offsets":[68567],"raw_metadata_u32":[0]}
+{"text_id":1102,"forms":[""],"absolute_byte_offsets":[68568],"raw_metadata_u32":[0]}
+{"text_id":1103,"forms":[""],"absolute_byte_offsets":[68569],"raw_metadata_u32":[0]}
+{"text_id":1104,"forms":[""],"absolute_byte_offsets":[68570],"raw_metadata_u32":[0]}
+{"text_id":1105,"forms":["일반적으로 식물은 물속에서 성장하지 않지만<br>포켓몬이 거품을 뿌려 주면 성장합니다.<br>또한 <$cdef(27)><fqty(1)><$ifull(517)></color> 등을 이용해서<br>거품을 뿌릴 수도 있습니다."],"absolute_byte_offsets":[68571],"raw_metadata_u32":[10]}
+{"text_id":1106,"forms":[""],"absolute_byte_offsets":[68803],"raw_metadata_u32":[0]}
+{"text_id":1107,"forms":[""],"absolute_byte_offsets":[68804],"raw_metadata_u32":[0]}
+{"text_id":1108,"forms":[""],"absolute_byte_offsets":[68805],"raw_metadata_u32":[0]}
+{"text_id":1109,"forms":[""],"absolute_byte_offsets":[68806],"raw_metadata_u32":[0]}
+{"text_id":1110,"forms":[""],"absolute_byte_offsets":[68807],"raw_metadata_u32":[0]}
+{"text_id":1111,"forms":[""],"absolute_byte_offsets":[68808],"raw_metadata_u32":[0]}
+{"text_id":1112,"forms":[""],"absolute_byte_offsets":[68809],"raw_metadata_u32":[0]}
+{"text_id":1113,"forms":[""],"absolute_byte_offsets":[68810],"raw_metadata_u32":[0]}
+{"text_id":1114,"forms":[""],"absolute_byte_offsets":[68811],"raw_metadata_u32":[0]}
+{"text_id":1115,"forms":[""],"absolute_byte_offsets":[68812],"raw_metadata_u32":[0]}
+{"text_id":1116,"forms":[""],"absolute_byte_offsets":[68813],"raw_metadata_u32":[0]}
+{"text_id":1117,"forms":[""],"absolute_byte_offsets":[68814],"raw_metadata_u32":[0]}
+{"text_id":1118,"forms":[""],"absolute_byte_offsets":[68815],"raw_metadata_u32":[0]}
+{"text_id":1119,"forms":[""],"absolute_byte_offsets":[68816],"raw_metadata_u32":[0]}
+{"text_id":1120,"forms":[""],"absolute_byte_offsets":[68817],"raw_metadata_u32":[0]}
+{"text_id":1121,"forms":[""],"absolute_byte_offsets":[68818],"raw_metadata_u32":[0]}
+{"text_id":1122,"forms":[""],"absolute_byte_offsets":[68819],"raw_metadata_u32":[0]}
+{"text_id":1123,"forms":[""],"absolute_byte_offsets":[68820],"raw_metadata_u32":[0]}
+{"text_id":1124,"forms":[""],"absolute_byte_offsets":[68821],"raw_metadata_u32":[0]}
+{"text_id":1125,"forms":[""],"absolute_byte_offsets":[68822],"raw_metadata_u32":[0]}
+{"text_id":1126,"forms":[""],"absolute_byte_offsets":[68823],"raw_metadata_u32":[0]}
+{"text_id":1127,"forms":[""],"absolute_byte_offsets":[68824],"raw_metadata_u32":[0]}
+{"text_id":1128,"forms":[""],"absolute_byte_offsets":[68825],"raw_metadata_u32":[0]}
+{"text_id":1129,"forms":[""],"absolute_byte_offsets":[68826],"raw_metadata_u32":[0]}
+{"text_id":1130,"forms":[""],"absolute_byte_offsets":[68827],"raw_metadata_u32":[0]}
+{"text_id":1131,"forms":[""],"absolute_byte_offsets":[68828],"raw_metadata_u32":[0]}
+{"text_id":1132,"forms":[""],"absolute_byte_offsets":[68829],"raw_metadata_u32":[0]}
+{"text_id":1133,"forms":[""],"absolute_byte_offsets":[68830],"raw_metadata_u32":[0]}
+{"text_id":1134,"forms":[""],"absolute_byte_offsets":[68831],"raw_metadata_u32":[0]}
+{"text_id":1135,"forms":[""],"absolute_byte_offsets":[68832],"raw_metadata_u32":[0]}
+{"text_id":1136,"forms":[""],"absolute_byte_offsets":[68833],"raw_metadata_u32":[0]}
+{"text_id":1137,"forms":[""],"absolute_byte_offsets":[68834],"raw_metadata_u32":[0]}
+{"text_id":1138,"forms":[""],"absolute_byte_offsets":[68835],"raw_metadata_u32":[0]}
+{"text_id":1139,"forms":[""],"absolute_byte_offsets":[68836],"raw_metadata_u32":[0]}
+{"text_id":1140,"forms":[""],"absolute_byte_offsets":[68837],"raw_metadata_u32":[0]}
+{"text_id":1141,"forms":[""],"absolute_byte_offsets":[68838],"raw_metadata_u32":[0]}
+{"text_id":1142,"forms":[""],"absolute_byte_offsets":[68839],"raw_metadata_u32":[0]}
+{"text_id":1143,"forms":[""],"absolute_byte_offsets":[68840],"raw_metadata_u32":[0]}
+{"text_id":1144,"forms":[""],"absolute_byte_offsets":[68841],"raw_metadata_u32":[0]}
+{"text_id":1145,"forms":[""],"absolute_byte_offsets":[68842],"raw_metadata_u32":[0]}
+{"text_id":1146,"forms":[""],"absolute_byte_offsets":[68843],"raw_metadata_u32":[0]}
+{"text_id":1147,"forms":[""],"absolute_byte_offsets":[68844],"raw_metadata_u32":[0]}
+{"text_id":1148,"forms":[""],"absolute_byte_offsets":[68845],"raw_metadata_u32":[0]}
+{"text_id":1149,"forms":[""],"absolute_byte_offsets":[68846],"raw_metadata_u32":[0]}
+{"text_id":1150,"forms":[""],"absolute_byte_offsets":[68847],"raw_metadata_u32":[0]}
+{"text_id":1151,"forms":[""],"absolute_byte_offsets":[68848],"raw_metadata_u32":[0]}
+{"text_id":1152,"forms":[""],"absolute_byte_offsets":[68849],"raw_metadata_u32":[0]}
+{"text_id":1153,"forms":[""],"absolute_byte_offsets":[68850],"raw_metadata_u32":[0]}
+{"text_id":1154,"forms":[""],"absolute_byte_offsets":[68851],"raw_metadata_u32":[0]}
+{"text_id":1155,"forms":[""],"absolute_byte_offsets":[68852],"raw_metadata_u32":[0]}
+{"text_id":1156,"forms":[""],"absolute_byte_offsets":[68853],"raw_metadata_u32":[0]}
+{"text_id":1157,"forms":[""],"absolute_byte_offsets":[68854],"raw_metadata_u32":[0]}
+{"text_id":1158,"forms":[""],"absolute_byte_offsets":[68855],"raw_metadata_u32":[0]}
+{"text_id":1159,"forms":[""],"absolute_byte_offsets":[68856],"raw_metadata_u32":[0]}
+{"text_id":1160,"forms":[""],"absolute_byte_offsets":[68857],"raw_metadata_u32":[0]}
+{"text_id":1161,"forms":[""],"absolute_byte_offsets":[68858],"raw_metadata_u32":[0]}
+{"text_id":1162,"forms":[""],"absolute_byte_offsets":[68859],"raw_metadata_u32":[0]}
+{"text_id":1163,"forms":[""],"absolute_byte_offsets":[68860],"raw_metadata_u32":[0]}
+{"text_id":1164,"forms":[""],"absolute_byte_offsets":[68861],"raw_metadata_u32":[0]}
+{"text_id":1165,"forms":[""],"absolute_byte_offsets":[68862],"raw_metadata_u32":[0]}
+{"text_id":1166,"forms":[""],"absolute_byte_offsets":[68863],"raw_metadata_u32":[0]}
+{"text_id":1167,"forms":[""],"absolute_byte_offsets":[68864],"raw_metadata_u32":[0]}
+{"text_id":1168,"forms":[""],"absolute_byte_offsets":[68865],"raw_metadata_u32":[0]}
+{"text_id":1169,"forms":[""],"absolute_byte_offsets":[68866],"raw_metadata_u32":[0]}
+{"text_id":1170,"forms":[""],"absolute_byte_offsets":[68867],"raw_metadata_u32":[0]}
+{"text_id":1171,"forms":[""],"absolute_byte_offsets":[68868],"raw_metadata_u32":[0]}
+{"text_id":1172,"forms":[""],"absolute_byte_offsets":[68869],"raw_metadata_u32":[0]}
+{"text_id":1173,"forms":[""],"absolute_byte_offsets":[68870],"raw_metadata_u32":[0]}
+{"text_id":1174,"forms":[""],"absolute_byte_offsets":[68871],"raw_metadata_u32":[0]}
+{"text_id":1175,"forms":[""],"absolute_byte_offsets":[68872],"raw_metadata_u32":[0]}
+{"text_id":1176,"forms":[""],"absolute_byte_offsets":[68873],"raw_metadata_u32":[0]}
+{"text_id":1177,"forms":[""],"absolute_byte_offsets":[68874],"raw_metadata_u32":[0]}
+{"text_id":1178,"forms":[""],"absolute_byte_offsets":[68875],"raw_metadata_u32":[0]}
+{"text_id":1179,"forms":[""],"absolute_byte_offsets":[68876],"raw_metadata_u32":[0]}
+{"text_id":1180,"forms":[""],"absolute_byte_offsets":[68877],"raw_metadata_u32":[0]}
+{"text_id":1181,"forms":[""],"absolute_byte_offsets":[68878],"raw_metadata_u32":[0]}
+{"text_id":1182,"forms":[""],"absolute_byte_offsets":[68879],"raw_metadata_u32":[0]}
+{"text_id":1183,"forms":[""],"absolute_byte_offsets":[68880],"raw_metadata_u32":[0]}
+{"text_id":1184,"forms":[""],"absolute_byte_offsets":[68881],"raw_metadata_u32":[0]}
+{"text_id":1185,"forms":[""],"absolute_byte_offsets":[68882],"raw_metadata_u32":[0]}
+{"text_id":1186,"forms":[""],"absolute_byte_offsets":[68883],"raw_metadata_u32":[0]}
+{"text_id":1187,"forms":[""],"absolute_byte_offsets":[68884],"raw_metadata_u32":[0]}
+{"text_id":1188,"forms":[""],"absolute_byte_offsets":[68885],"raw_metadata_u32":[0]}
+{"text_id":1189,"forms":[""],"absolute_byte_offsets":[68886],"raw_metadata_u32":[0]}
+{"text_id":1190,"forms":[""],"absolute_byte_offsets":[68887],"raw_metadata_u32":[0]}
+{"text_id":1191,"forms":[""],"absolute_byte_offsets":[68888],"raw_metadata_u32":[0]}
+{"text_id":1192,"forms":[""],"absolute_byte_offsets":[68889],"raw_metadata_u32":[0]}
+{"text_id":1193,"forms":[""],"absolute_byte_offsets":[68890],"raw_metadata_u32":[0]}
+{"text_id":1194,"forms":[""],"absolute_byte_offsets":[68891],"raw_metadata_u32":[0]}
+{"text_id":1195,"forms":[""],"absolute_byte_offsets":[68892],"raw_metadata_u32":[0]}
+{"text_id":1196,"forms":[""],"absolute_byte_offsets":[68893],"raw_metadata_u32":[0]}
+{"text_id":1197,"forms":[""],"absolute_byte_offsets":[68894],"raw_metadata_u32":[0]}
+{"text_id":1198,"forms":["<$cdef(27)>긴줄넘기 대회</color>에서는<br>대회에서 기록한 횟수에 따라<br>멋진 상품을 받을 수 있습니다.<br><$cdef(27)>긴줄넘기</color>를 많이 뛰어넘고<br>상품도 많이 획득해 봅시다."],"absolute_byte_offsets":[68895],"raw_metadata_u32":[1]}
+{"text_id":1199,"forms":["다른 플레이어와 통신으로<br><$cdef(27)>긴줄넘기 대회</color>를 플레이할 수도 있습니다.<br>다 함께 힘을 합쳐 최고 횟수를 노려봅시다."],"absolute_byte_offsets":[69130],"raw_metadata_u32":[1]}
+{"text_id":1200,"forms":[""],"absolute_byte_offsets":[69307],"raw_metadata_u32":[0]}
+{"text_id":1201,"forms":["<$cdef(27)><$cname(195)></color>에게 말을 걸어서 대회에 참가하면<br>대회에서 기록한 <$cdef(27)>터치숨바꼭질</color>의 클리어 시간에 따라<br>멋진 상품을 받을 수 있습니다.<br>소요 시간이 짧을수록 상품도 호화로워지므로<br>많이 플레이하고 상품도 많이 획득해 봅시다."],"absolute_byte_offsets":[69308],"raw_metadata_u32":[9]}
+{"text_id":1202,"forms":["다른 플레이어와 통신으로<br><$cdef(27)>터치숨바꼭질 대회</color>를 플레이할 수도 있습니다.<br>다 함께 힘을 합쳐 신기록에 도전해 봅시다."],"absolute_byte_offsets":[69655],"raw_metadata_u32":[9]}
+{"text_id":1203,"forms":[""],"absolute_byte_offsets":[69838],"raw_metadata_u32":[0]}
+{"text_id":1204,"forms":[""],"absolute_byte_offsets":[69839],"raw_metadata_u32":[0]}
+{"text_id":1205,"forms":[""],"absolute_byte_offsets":[69840],"raw_metadata_u32":[0]}
+{"text_id":1206,"forms":[""],"absolute_byte_offsets":[69841],"raw_metadata_u32":[0]}
+{"text_id":1207,"forms":[""],"absolute_byte_offsets":[69842],"raw_metadata_u32":[0]}
+{"text_id":1208,"forms":[""],"absolute_byte_offsets":[69843],"raw_metadata_u32":[0]}
+{"text_id":1209,"forms":[""],"absolute_byte_offsets":[69844],"raw_metadata_u32":[0]}
+{"text_id":1210,"forms":[""],"absolute_byte_offsets":[69845],"raw_metadata_u32":[0]}
+{"text_id":1211,"forms":[""],"absolute_byte_offsets":[69846],"raw_metadata_u32":[0]}
+{"text_id":1212,"forms":[""],"absolute_byte_offsets":[69847],"raw_metadata_u32":[0]}
+{"text_id":1213,"forms":[""],"absolute_byte_offsets":[69848],"raw_metadata_u32":[0]}
+{"text_id":1214,"forms":[""],"absolute_byte_offsets":[69849],"raw_metadata_u32":[0]}
+{"text_id":1215,"forms":[""],"absolute_byte_offsets":[69850],"raw_metadata_u32":[0]}
+{"text_id":1216,"forms":[""],"absolute_byte_offsets":[69851],"raw_metadata_u32":[0]}
+{"text_id":1217,"forms":[""],"absolute_byte_offsets":[69852],"raw_metadata_u32":[0]}
+{"text_id":1218,"forms":[""],"absolute_byte_offsets":[69853],"raw_metadata_u32":[0]}
+{"text_id":1219,"forms":[""],"absolute_byte_offsets":[69854],"raw_metadata_u32":[0]}
+{"text_id":1220,"forms":[""],"absolute_byte_offsets":[69855],"raw_metadata_u32":[0]}
+{"text_id":1221,"forms":[""],"absolute_byte_offsets":[69856],"raw_metadata_u32":[0]}
+{"text_id":1222,"forms":[""],"absolute_byte_offsets":[69857],"raw_metadata_u32":[0]}
+{"text_id":1223,"forms":[""],"absolute_byte_offsets":[69858],"raw_metadata_u32":[0]}
+{"text_id":1224,"forms":[""],"absolute_byte_offsets":[69859],"raw_metadata_u32":[0]}
+{"text_id":1225,"forms":[""],"absolute_byte_offsets":[69860],"raw_metadata_u32":[0]}
+{"text_id":1226,"forms":[""],"absolute_byte_offsets":[69861],"raw_metadata_u32":[0]}
+{"text_id":1227,"forms":[""],"absolute_byte_offsets":[69862],"raw_metadata_u32":[0]}
+{"text_id":1228,"forms":[""],"absolute_byte_offsets":[69863],"raw_metadata_u32":[0]}
+{"text_id":1229,"forms":[""],"absolute_byte_offsets":[69864],"raw_metadata_u32":[0]}
+{"text_id":1230,"forms":[""],"absolute_byte_offsets":[69865],"raw_metadata_u32":[0]}
+{"text_id":1231,"forms":[""],"absolute_byte_offsets":[69866],"raw_metadata_u32":[0]}
+{"text_id":1232,"forms":[""],"absolute_byte_offsets":[69867],"raw_metadata_u32":[0]}
+{"text_id":1233,"forms":[""],"absolute_byte_offsets":[69868],"raw_metadata_u32":[0]}
+{"text_id":1234,"forms":[""],"absolute_byte_offsets":[69869],"raw_metadata_u32":[0]}
+{"text_id":1235,"forms":[""],"absolute_byte_offsets":[69870],"raw_metadata_u32":[0]}
+{"text_id":1236,"forms":[""],"absolute_byte_offsets":[69871],"raw_metadata_u32":[0]}
+{"text_id":1237,"forms":[""],"absolute_byte_offsets":[69872],"raw_metadata_u32":[0]}
+{"text_id":1238,"forms":[""],"absolute_byte_offsets":[69873],"raw_metadata_u32":[0]}
+{"text_id":1239,"forms":[""],"absolute_byte_offsets":[69874],"raw_metadata_u32":[0]}
+{"text_id":1240,"forms":[""],"absolute_byte_offsets":[69875],"raw_metadata_u32":[0]}
+{"text_id":1241,"forms":[""],"absolute_byte_offsets":[69876],"raw_metadata_u32":[0]}
+{"text_id":1242,"forms":[""],"absolute_byte_offsets":[69877],"raw_metadata_u32":[0]}
+{"text_id":1243,"forms":[""],"absolute_byte_offsets":[69878],"raw_metadata_u32":[0]}
+{"text_id":1244,"forms":[""],"absolute_byte_offsets":[69879],"raw_metadata_u32":[0]}
+{"text_id":1245,"forms":[""],"absolute_byte_offsets":[69880],"raw_metadata_u32":[0]}
+{"text_id":1246,"forms":[""],"absolute_byte_offsets":[69881],"raw_metadata_u32":[0]}
+{"text_id":1247,"forms":[""],"absolute_byte_offsets":[69882],"raw_metadata_u32":[0]}
+{"text_id":1248,"forms":[""],"absolute_byte_offsets":[69883],"raw_metadata_u32":[0]}
+{"text_id":1249,"forms":[""],"absolute_byte_offsets":[69884],"raw_metadata_u32":[0]}
+{"text_id":1250,"forms":[""],"absolute_byte_offsets":[69885],"raw_metadata_u32":[0]}
+{"text_id":1251,"forms":[""],"absolute_byte_offsets":[69886],"raw_metadata_u32":[0]}
+{"text_id":1252,"forms":[""],"absolute_byte_offsets":[69887],"raw_metadata_u32":[0]}
+{"text_id":1253,"forms":[""],"absolute_byte_offsets":[69888],"raw_metadata_u32":[0]}
+{"text_id":1254,"forms":[""],"absolute_byte_offsets":[69889],"raw_metadata_u32":[0]}
+{"text_id":1255,"forms":[""],"absolute_byte_offsets":[69890],"raw_metadata_u32":[0]}
+{"text_id":1256,"forms":[""],"absolute_byte_offsets":[69891],"raw_metadata_u32":[0]}
+{"text_id":1257,"forms":[""],"absolute_byte_offsets":[69892],"raw_metadata_u32":[0]}
+{"text_id":1258,"forms":[""],"absolute_byte_offsets":[69893],"raw_metadata_u32":[0]}
+{"text_id":1259,"forms":[""],"absolute_byte_offsets":[69894],"raw_metadata_u32":[0]}
+{"text_id":1260,"forms":[""],"absolute_byte_offsets":[69895],"raw_metadata_u32":[0]}
+{"text_id":1261,"forms":[""],"absolute_byte_offsets":[69896],"raw_metadata_u32":[0]}
+{"text_id":1262,"forms":[""],"absolute_byte_offsets":[69897],"raw_metadata_u32":[0]}
+{"text_id":1263,"forms":[""],"absolute_byte_offsets":[69898],"raw_metadata_u32":[0]}
+{"text_id":1264,"forms":[""],"absolute_byte_offsets":[69899],"raw_metadata_u32":[0]}
+{"text_id":1265,"forms":[""],"absolute_byte_offsets":[69900],"raw_metadata_u32":[0]}
+{"text_id":1266,"forms":[""],"absolute_byte_offsets":[69901],"raw_metadata_u32":[0]}
+{"text_id":1267,"forms":[""],"absolute_byte_offsets":[69902],"raw_metadata_u32":[0]}
+{"text_id":1268,"forms":[""],"absolute_byte_offsets":[69903],"raw_metadata_u32":[0]}
+{"text_id":1269,"forms":[""],"absolute_byte_offsets":[69904],"raw_metadata_u32":[0]}
+{"text_id":1270,"forms":[""],"absolute_byte_offsets":[69905],"raw_metadata_u32":[0]}
+{"text_id":1271,"forms":[""],"absolute_byte_offsets":[69906],"raw_metadata_u32":[0]}
+{"text_id":1272,"forms":[""],"absolute_byte_offsets":[69907],"raw_metadata_u32":[0]}
+{"text_id":1273,"forms":[""],"absolute_byte_offsets":[69908],"raw_metadata_u32":[0]}
+{"text_id":1274,"forms":[""],"absolute_byte_offsets":[69909],"raw_metadata_u32":[0]}
+{"text_id":1275,"forms":[""],"absolute_byte_offsets":[69910],"raw_metadata_u32":[0]}
+{"text_id":1276,"forms":[""],"absolute_byte_offsets":[69911],"raw_metadata_u32":[0]}
+{"text_id":1277,"forms":[""],"absolute_byte_offsets":[69912],"raw_metadata_u32":[0]}
+{"text_id":1278,"forms":[""],"absolute_byte_offsets":[69913],"raw_metadata_u32":[0]}
+{"text_id":1279,"forms":[""],"absolute_byte_offsets":[69914],"raw_metadata_u32":[0]}
+{"text_id":1280,"forms":[""],"absolute_byte_offsets":[69915],"raw_metadata_u32":[0]}
+{"text_id":1281,"forms":[""],"absolute_byte_offsets":[69916],"raw_metadata_u32":[0]}
+{"text_id":1282,"forms":[""],"absolute_byte_offsets":[69917],"raw_metadata_u32":[0]}
+{"text_id":1283,"forms":[""],"absolute_byte_offsets":[69918],"raw_metadata_u32":[0]}
+{"text_id":1284,"forms":[""],"absolute_byte_offsets":[69919],"raw_metadata_u32":[0]}
+{"text_id":1285,"forms":[""],"absolute_byte_offsets":[69920],"raw_metadata_u32":[0]}
+{"text_id":1286,"forms":[""],"absolute_byte_offsets":[69921],"raw_metadata_u32":[0]}
+{"text_id":1287,"forms":[""],"absolute_byte_offsets":[69922],"raw_metadata_u32":[0]}
+{"text_id":1288,"forms":[""],"absolute_byte_offsets":[69923],"raw_metadata_u32":[0]}
+{"text_id":1289,"forms":[""],"absolute_byte_offsets":[69924],"raw_metadata_u32":[0]}
+{"text_id":1290,"forms":[""],"absolute_byte_offsets":[69925],"raw_metadata_u32":[0]}
+{"text_id":1291,"forms":[""],"absolute_byte_offsets":[69926],"raw_metadata_u32":[0]}
+{"text_id":1292,"forms":[""],"absolute_byte_offsets":[69927],"raw_metadata_u32":[0]}
+{"text_id":1293,"forms":[""],"absolute_byte_offsets":[69928],"raw_metadata_u32":[0]}
+{"text_id":1294,"forms":[""],"absolute_byte_offsets":[69929],"raw_metadata_u32":[0]}
+{"text_id":1295,"forms":[""],"absolute_byte_offsets":[69930],"raw_metadata_u32":[0]}
+{"text_id":1296,"forms":[""],"absolute_byte_offsets":[69931],"raw_metadata_u32":[0]}
+{"text_id":1297,"forms":[""],"absolute_byte_offsets":[69932],"raw_metadata_u32":[0]}
+{"text_id":1298,"forms":[""],"absolute_byte_offsets":[69933],"raw_metadata_u32":[0]}
+{"text_id":1299,"forms":[""],"absolute_byte_offsets":[69934],"raw_metadata_u32":[0]}
+{"text_id":1300,"forms":[""],"absolute_byte_offsets":[69935],"raw_metadata_u32":[0]}
+{"text_id":1301,"forms":[""],"absolute_byte_offsets":[69936],"raw_metadata_u32":[0]}
+{"text_id":1302,"forms":[""],"absolute_byte_offsets":[69937],"raw_metadata_u32":[0]}
+{"text_id":1303,"forms":[""],"absolute_byte_offsets":[69938],"raw_metadata_u32":[0]}
+{"text_id":1304,"forms":[""],"absolute_byte_offsets":[69939],"raw_metadata_u32":[0]}
+{"text_id":1305,"forms":[""],"absolute_byte_offsets":[69940],"raw_metadata_u32":[0]}
+{"text_id":1306,"forms":[""],"absolute_byte_offsets":[69941],"raw_metadata_u32":[0]}
+{"text_id":1307,"forms":[""],"absolute_byte_offsets":[69942],"raw_metadata_u32":[0]}
+{"text_id":1308,"forms":[""],"absolute_byte_offsets":[69943],"raw_metadata_u32":[0]}
+{"text_id":1309,"forms":[""],"absolute_byte_offsets":[69944],"raw_metadata_u32":[0]}
+{"text_id":1310,"forms":[""],"absolute_byte_offsets":[69945],"raw_metadata_u32":[0]}
+{"text_id":1311,"forms":[""],"absolute_byte_offsets":[69946],"raw_metadata_u32":[0]}
+{"text_id":1312,"forms":[""],"absolute_byte_offsets":[69947],"raw_metadata_u32":[0]}
+{"text_id":1313,"forms":[""],"absolute_byte_offsets":[69948],"raw_metadata_u32":[0]}
+{"text_id":1314,"forms":[""],"absolute_byte_offsets":[69949],"raw_metadata_u32":[0]}
+{"text_id":1315,"forms":[""],"absolute_byte_offsets":[69950],"raw_metadata_u32":[0]}
+{"text_id":1316,"forms":[""],"absolute_byte_offsets":[69951],"raw_metadata_u32":[0]}
+{"text_id":1317,"forms":[""],"absolute_byte_offsets":[69952],"raw_metadata_u32":[0]}
+{"text_id":1318,"forms":["다른 플레이어의 마을에서 놀러 온 포켓몬에게<br><$cdef(27)><fqty(1)><$ifull(92)></color>을 건네면<br>해당 포켓몬의 <$cdef(27)>기념품</color>을 받을 수 있습니다.<br>※일부 포켓몬에게는 줄 수 없습니다."],"absolute_byte_offsets":[69953],"raw_metadata_u32":[1]}
+{"text_id":1319,"forms":["포켓몬이 살고 있지 않은 서식지에서 <$cdef(27)>기념품</color>을 열면<br><$cdef(27)>기념품</color>을 준 포켓몬과<br>같은 종류의 포켓몬이 나타납니다."],"absolute_byte_offsets":[70207],"raw_metadata_u32":[1]}
+{"text_id":1320,"forms":[""],"absolute_byte_offsets":[70398],"raw_metadata_u32":[0]}
+{"text_id":1321,"forms":["포켓몬이 살고 있지 않은 서식지에서 열면<br><$cdef(27)>기념품</color>을 준 포켓몬과<br>같은 종류의 포켓몬이 나타납니다."],"absolute_byte_offsets":[70399],"raw_metadata_u32":[1]}
+{"text_id":1322,"forms":[""],"absolute_byte_offsets":[70558],"raw_metadata_u32":[0]}
+{"text_id":1323,"forms":[""],"absolute_byte_offsets":[70559],"raw_metadata_u32":[0]}
+{"text_id":1324,"forms":["통신 플레이에서 만난 플레이어의 포켓몬은<br>나중에 자신의 마을에 놀러 오기도 합니다.<br>처음 만났을 때, 그 장소에서 말을 걸어서<br>초대할 수도 있습니다."],"absolute_byte_offsets":[70560],"raw_metadata_u32":[1]}
+{"text_id":1325,"forms":["놀러 온 포켓몬은 선물을 주므로<br>적극적으로 초대해 봅시다."],"absolute_byte_offsets":[70773],"raw_metadata_u32":[1]}
+{"text_id":1326,"forms":[""],"absolute_byte_offsets":[70857],"raw_metadata_u32":[0]}
+{"text_id":1327,"forms":["<$keyicon(133)>로 메시지나 감정 표현을 사용할 수 있습니다.<br>어떤 메시지나 감정 표현을 사용할지도 설정할 수 있습니다.<br>메시지나 감정 표현을 사용해서 모두와 소통해 봅시다."],"absolute_byte_offsets":[70858],"raw_metadata_u32":[1]}
+{"text_id":1328,"forms":[""],"absolute_byte_offsets":[71096],"raw_metadata_u32":[0]}
+{"text_id":1329,"forms":[""],"absolute_byte_offsets":[71097],"raw_metadata_u32":[0]}
+{"text_id":1330,"forms":[""],"absolute_byte_offsets":[71098],"raw_metadata_u32":[0]}
+{"text_id":1331,"forms":[""],"absolute_byte_offsets":[71099],"raw_metadata_u32":[0]}
+{"text_id":1332,"forms":[""],"absolute_byte_offsets":[71100],"raw_metadata_u32":[0]}
+{"text_id":1333,"forms":[""],"absolute_byte_offsets":[71101],"raw_metadata_u32":[0]}
+{"text_id":1334,"forms":[""],"absolute_byte_offsets":[71102],"raw_metadata_u32":[0]}
+{"text_id":1335,"forms":[""],"absolute_byte_offsets":[71103],"raw_metadata_u32":[0]}
+{"text_id":1336,"forms":[""],"absolute_byte_offsets":[71104],"raw_metadata_u32":[0]}
+{"text_id":1337,"forms":[""],"absolute_byte_offsets":[71105],"raw_metadata_u32":[0]}
+{"text_id":1338,"forms":[""],"absolute_byte_offsets":[71106],"raw_metadata_u32":[0]}
+{"text_id":1339,"forms":[""],"absolute_byte_offsets":[71107],"raw_metadata_u32":[0]}
+{"text_id":1340,"forms":[""],"absolute_byte_offsets":[71108],"raw_metadata_u32":[0]}
+{"text_id":1341,"forms":[""],"absolute_byte_offsets":[71109],"raw_metadata_u32":[0]}
+{"text_id":1342,"forms":[""],"absolute_byte_offsets":[71110],"raw_metadata_u32":[0]}
+{"text_id":1343,"forms":[""],"absolute_byte_offsets":[71111],"raw_metadata_u32":[0]}
+{"text_id":1344,"forms":[""],"absolute_byte_offsets":[71112],"raw_metadata_u32":[0]}
+{"text_id":1345,"forms":[""],"absolute_byte_offsets":[71113],"raw_metadata_u32":[0]}
+{"text_id":1346,"forms":[""],"absolute_byte_offsets":[71114],"raw_metadata_u32":[0]}
+{"text_id":1347,"forms":[""],"absolute_byte_offsets":[71115],"raw_metadata_u32":[0]}
+{"text_id":1348,"forms":[""],"absolute_byte_offsets":[71116],"raw_metadata_u32":[0]}
+{"text_id":1349,"forms":[""],"absolute_byte_offsets":[71117],"raw_metadata_u32":[0]}
+{"text_id":1350,"forms":[""],"absolute_byte_offsets":[71118],"raw_metadata_u32":[0]}
+{"text_id":1351,"forms":["<$cdef(27)>포켓몬센터</color>의 <$cdef(27)>PC</color>에서<br>'<$cdef(27)>통신 플레이</color>'를 선택하면<br>다른 플레이어와 함께 플레이할 수 있습니다."],"absolute_byte_offsets":[71119],"raw_metadata_u32":[1]}
+{"text_id":1352,"forms":["자신의 마을에 다른 플레이어를 초대하거나<br>다른 플레이어의 마을에 놀러 가거나<br>클라우드섬을 만들어서 다 함께 플레이할 수 있습니다.<br>의사소통할 때는<br>메시지나 감정 표현을 사용하는 것을 추천합니다."],"absolute_byte_offsets":[71306],"raw_metadata_u32":[1]}
+{"text_id":1353,"forms":["모두와 의사소통하며<br>통신으로 즐겁게 플레이해 봅시다."],"absolute_byte_offsets":[71591],"raw_metadata_u32":[1]}
+{"text_id":1354,"forms":["다른 플레이어와 모여서 플레이할 때는<br><$cdef(27)>로컬 통신</color>을,<br>멀리 떨어진 플레이어와 플레이할 때는<br><$cdef(27)>인터넷 통신</color>을 선택해 봅시다."],"absolute_byte_offsets":[71670],"raw_metadata_u32":[1]}
+{"text_id":1355,"forms":["통신 플레이 시에는 <$cdef(27)>암호</color>가 필요합니다.<br>다른 플레이어에게 직접 듣거나<br>스스로 정해서 알려 줍시다.<br><br>※모르는 사람에게는 알려 주지 맙시다."],"absolute_byte_offsets":[71882],"raw_metadata_u32":[1]}
+{"text_id":1356,"forms":[""],"absolute_byte_offsets":[72103],"raw_metadata_u32":[0]}
+{"text_id":1357,"forms":["다른 마을 같은 스토리는 없지만, 넓고 아무것도 없어서<br>자유롭게 마을을 꾸밀 수 있습니다.<br>통신으로 다른 플레이어를 불러서<br>힘을 합쳐 마을을 꾸미거나<br>함께 <$cdef(27)>꿈섬</color>에 갈 수도 있습니다."],"absolute_byte_offsets":[72104],"raw_metadata_u32":[1]}
+{"text_id":1358,"forms":["<$stgname;0(13)>에도<br>다른 마을에서 포켓몬을 데려올 수 있습니다.<br>또한 이곳에서만 만날 수 있는 포켓몬도 있습니다.<br>다른 플레이어나 포켓몬과 힘을 합쳐서<br>활기찬 섬을 만들어 봅시다."],"absolute_byte_offsets":[72383],"raw_metadata_u32":[1]}
+{"text_id":1359,"forms":["다른 플레이어가 만든 클라우드섬을<br>버추얼 공간에서 견학할 수 있는 모드입니다.<br><br>무엇을 하든 상대의 클라우드섬에는 영향을 주지 않으므로<br>자유롭게 플레이해 봅시다."],"absolute_byte_offsets":[72638],"raw_metadata_u32":[1]}
+{"text_id":1360,"forms":["소프트웨어를 나눔하여 둘이서 플레이할 수 있습니다.<br>로컬 통신으로 플레이할 경우에는 '가까운 사람과',<br>인터넷 통신으로 플레이할 경우에는<br>'게임챗으로'를 선택해 봅시다."],"absolute_byte_offsets":[72877],"raw_metadata_u32":[1]}
+{"text_id":1361,"forms":["나눔 통신 중에는<br>'백지 마을'에서 플레이할 수 있습니다.<br>※견학 모드로 플레이하거나<br>　다른 에리어로 이동할 수는 없습니다.<br>　기타 일부 기능이 제한됩니다."],"absolute_byte_offsets":[73119],"raw_metadata_u32":[1]}
+{"text_id":1362,"forms":["나눔 통신은 <$cdef(27)>포켓몬센터</color>의 <$cdef(27)>PC</color> 또는<br><$keyicon(4)>메뉴의 <$keyicon(227)>로 종료할 수 있습니다.<br>나눔 받은 플레이어가 지닌 물건은<br>통신 종료 후에 <$cdef(27)><fqty(1)><$ifull(1442)></color>에 들어갑니다."],"absolute_byte_offsets":[73345],"raw_metadata_u32":[1]}
+{"text_id":1363,"forms":["다른 플레이어가 만든 <$cdef(27)>클라우드섬</color>을<br>버추얼 공간에서 견학할 수 있는 모드입니다.<br><br>무엇을 하든 상대의 클라우드섬에는 <$cdef(27)>영향을 주지 않으므로</color><br>자유롭게 플레이해 봅시다."],"absolute_byte_offsets":[73639],"raw_metadata_u32":[1]}
+{"text_id":1364,"forms":["버추얼 모드로 전 세계의 다른 플레이어가<br>어떻게 섬을 꾸몄는지 구경하며 참고해 봅시다.<br><br>또한 이 모드에서는<br>포켓몬을 데리고 갈 수 없습니다."],"absolute_byte_offsets":[73916],"raw_metadata_u32":[1]}
+{"text_id":1365,"forms":[""],"absolute_byte_offsets":[74122],"raw_metadata_u32":[0]}
+{"text_id":1366,"forms":[""],"absolute_byte_offsets":[74123],"raw_metadata_u32":[0]}
+{"text_id":1367,"forms":[""],"absolute_byte_offsets":[74124],"raw_metadata_u32":[0]}
+{"text_id":1368,"forms":[""],"absolute_byte_offsets":[74125],"raw_metadata_u32":[0]}
+{"text_id":1369,"forms":["다른 플레이어를 당신의 마을에 초대해서<br>자랑스러운 마을이나 포켓몬들을 보여 주거나<br>힘을 합쳐 마을을 꾸며 봅시다."],"absolute_byte_offsets":[74126],"raw_metadata_u32":[1]}
+{"text_id":1370,"forms":[""],"absolute_byte_offsets":[74292],"raw_metadata_u32":[0]}
+{"text_id":1371,"forms":[""],"absolute_byte_offsets":[74293],"raw_metadata_u32":[0]}
+{"text_id":1372,"forms":["다른 플레이어의 마을에 놀러 갈 수 있습니다.<br>다양한 장소를 보고 마을을 정비할 때 참고해 봅시다.<br><br>백지 마을에서는 마을 정비를 도울 수도 있습니다."],"absolute_byte_offsets":[74294],"raw_metadata_u32":[1]}
+{"text_id":1373,"forms":[""],"absolute_byte_offsets":[74506],"raw_metadata_u32":[0]}
+{"text_id":1374,"forms":[""],"absolute_byte_offsets":[74507],"raw_metadata_u32":[0]}
+{"text_id":1375,"forms":["클라우드섬은 평소와는 다른 세계에 있는 섬입니다.<br>당신의 클라우드섬의 <$cdef(27)>주소</color>와 <$cdef(27)>암호</color>를<br>아는 플레이어는 당신이 없을 때도<br>자유롭게 섬에 방문해서 플레이할 수 있습니다.<br>다 함께 힘을 합쳐 우리들만의 섬을 만들어 봅시다."],"absolute_byte_offsets":[74508],"raw_metadata_u32":[1]}
+{"text_id":1376,"forms":["새로 클라우드섬을 만들 때는<br>'<$cdef(27)>새로운 클라우드섬을 만들기</color>'를 선택해 봅시다."],"absolute_byte_offsets":[74857],"raw_metadata_u32":[1]}
+{"text_id":1377,"forms":[""],"absolute_byte_offsets":[74984],"raw_metadata_u32":[0]}
+{"text_id":1378,"forms":[""],"absolute_byte_offsets":[74985],"raw_metadata_u32":[0]}
+{"text_id":1379,"forms":[""],"absolute_byte_offsets":[74986],"raw_metadata_u32":[0]}
+{"text_id":1380,"forms":[""],"absolute_byte_offsets":[74987],"raw_metadata_u32":[0]}
+{"text_id":1381,"forms":[""],"absolute_byte_offsets":[74988],"raw_metadata_u32":[0]}
+{"text_id":1382,"forms":[""],"absolute_byte_offsets":[74989],"raw_metadata_u32":[0]}
+{"text_id":1383,"forms":[""],"absolute_byte_offsets":[74990],"raw_metadata_u32":[0]}
+{"text_id":1384,"forms":[""],"absolute_byte_offsets":[74991],"raw_metadata_u32":[0]}
+{"text_id":1385,"forms":[""],"absolute_byte_offsets":[74992],"raw_metadata_u32":[0]}
+{"text_id":1386,"forms":[""],"absolute_byte_offsets":[74993],"raw_metadata_u32":[0]}
+{"text_id":1387,"forms":[""],"absolute_byte_offsets":[74994],"raw_metadata_u32":[0]}
+{"text_id":1388,"forms":[""],"absolute_byte_offsets":[74995],"raw_metadata_u32":[0]}
+{"text_id":1389,"forms":[""],"absolute_byte_offsets":[74996],"raw_metadata_u32":[0]}
+{"text_id":1390,"forms":[""],"absolute_byte_offsets":[74997],"raw_metadata_u32":[0]}
+{"text_id":1391,"forms":[""],"absolute_byte_offsets":[74998],"raw_metadata_u32":[0]}
+{"text_id":1392,"forms":[""],"absolute_byte_offsets":[74999],"raw_metadata_u32":[0]}
+{"text_id":1393,"forms":["클라우드섬의 <$cdef(27)>PC</color>를 통해서도 물건을 구입할 수 있지만<br>구입한 물건은 자신의 마을로 가져갈 수 없습니다.<br>다만 <$cdef(27)>레시피</color>를 구입하면 메타몽이 만드는 방법을 배우므로<br>자신의 마을로 돌아가도 만들 수 있습니다."],"absolute_byte_offsets":[75000],"raw_metadata_u32":[1]}
+{"text_id":1394,"forms":[""],"absolute_byte_offsets":[75324],"raw_metadata_u32":[0]}
+{"text_id":1395,"forms":[""],"absolute_byte_offsets":[75325],"raw_metadata_u32":[0]}
+{"text_id":1396,"forms":["당신이 관리인인 클라우드섬에<br>추가 콘텐츠를 반영합니다."],"absolute_byte_offsets":[75326],"raw_metadata_u32":[10]}
+{"text_id":1397,"forms":["추가 콘텐츠는 클라우드섬에 갈 때 반영됩니다.<br>플레이 중인 플레이어가 있을 경우에는 해산됩니다."],"absolute_byte_offsets":[75408],"raw_metadata_u32":[10]}
+{"text_id":1398,"forms":["또한 추가 콘텐츠의 데이터를 삭제하면<br>당신이 관리인인 클라우드섬에서도<br>추가 콘텐츠를 즐길 수 없게 됩니다.<br>※추가 콘텐츠를 통해 획득한 아이템 등은 남습니다."],"absolute_byte_offsets":[75545],"raw_metadata_u32":[10]}
+{"text_id":1399,"forms":[""],"absolute_byte_offsets":[75775],"raw_metadata_u32":[0]}
+{"text_id":1400,"forms":[""],"absolute_byte_offsets":[75776],"raw_metadata_u32":[0]}
+{"text_id":1401,"forms":[""],"absolute_byte_offsets":[75777],"raw_metadata_u32":[0]}
+{"text_id":1402,"forms":["<$cdef(27)><$spwfull(37)></color>가 특기인 포켓몬에게<br><$cdef(27)><fqty(1)><$ifull(436)></color>를 건네면<br><$cdef(27)><fqty(1)><$ifull(435)></color>로 가공해 줍니다."],"absolute_byte_offsets":[75778],"raw_metadata_u32":[10]}
+{"text_id":1403,"forms":["또한 근처에 다른 포켓몬이 있으면<br>여유가 있을 때 깨끗하게 만들어 줍니다.<br>함께 걷고 있을 때는<br>포켓몬 앞에 멈춰 있으면 깨끗하게 만들어서<br>플레이어와의 사이를 돈독하게 해 줍니다."],"absolute_byte_offsets":[75968],"raw_metadata_u32":[10]}
+{"text_id":1404,"forms":[""],"absolute_byte_offsets":[76227],"raw_metadata_u32":[0]}
+{"text_id":1405,"forms":["물속에 회전하며 빛나는 소용돌이가<br>생겨날 때가 있습니다.<br>조사하면 아이템을 획득할 수 있습니다."],"absolute_byte_offsets":[76228],"raw_metadata_u32":[10]}
+{"text_id":1406,"forms":[""],"absolute_byte_offsets":[76368],"raw_metadata_u32":[0]}
+{"text_id":1407,"forms":[""],"absolute_byte_offsets":[76369],"raw_metadata_u32":[0]}
+{"text_id":1408,"forms":["<$cdef(27)><$spwfull(8)></color>가 특기인 포켓몬은<br>가까운 물속의 식물이 있으면<br>여유가 있을 때 거품을 뿌려 줍니다.<br>함께 걷고 있을 때는<br>식물 앞에 멈춰 있으면 거품을 뿌려 줍니다."],"absolute_byte_offsets":[76370],"raw_metadata_u32":[10]}
+{"text_id":1409,"forms":[""],"absolute_byte_offsets":[76617],"raw_metadata_u32":[0]}
+{"text_id":1410,"forms":[""],"absolute_byte_offsets":[76618],"raw_metadata_u32":[0]}
+{"text_id":1411,"forms":["<$cdef(27)><$spwfull(15)></color>이 특기인 포켓몬에게<br><$cdef(27)><fqty(1)><$ifull(520)></color>을 건네면<br>잘라서 <$cdef(27)><fqty(1)><$ifull(521)></color>을 만들어 줍니다."],"absolute_byte_offsets":[76619],"raw_metadata_u32":[10]}
+{"text_id":1412,"forms":[""],"absolute_byte_offsets":[76819],"raw_metadata_u32":[0]}
+{"text_id":1413,"forms":[""],"absolute_byte_offsets":[76820],"raw_metadata_u32":[0]}
+{"text_id":1414,"forms":["다이빙 중에 <$cdef(27)>건축 키트</color>를 사용하면<br>물속이나 물 위에 건물을 띄워서 <$cdef(27)><$spwfull(1)></color>할 수 있습니다.<br>※물속에 <$cdef(27)><$spwfull(1)></color>할 수 없는 건물도 있습니다."],"absolute_byte_offsets":[76821],"raw_metadata_u32":[10]}
+{"text_id":1415,"forms":[""],"absolute_byte_offsets":[77075],"raw_metadata_u32":[0]}
+{"text_id":1416,"forms":[""],"absolute_byte_offsets":[77076],"raw_metadata_u32":[0]}
+{"text_id":1417,"forms":[""],"absolute_byte_offsets":[77077],"raw_metadata_u32":[0]}
+{"text_id":1418,"forms":[""],"absolute_byte_offsets":[77078],"raw_metadata_u32":[0]}
+{"text_id":1419,"forms":[""],"absolute_byte_offsets":[77079],"raw_metadata_u32":[0]}
+{"text_id":1420,"forms":[""],"absolute_byte_offsets":[77080],"raw_metadata_u32":[0]}
+{"text_id":1421,"forms":[""],"absolute_byte_offsets":[77081],"raw_metadata_u32":[0]}
+{"text_id":1422,"forms":[""],"absolute_byte_offsets":[77082],"raw_metadata_u32":[0]}
+{"text_id":1423,"forms":[""],"absolute_byte_offsets":[77083],"raw_metadata_u32":[0]}
+{"text_id":1424,"forms":[""],"absolute_byte_offsets":[77084],"raw_metadata_u32":[0]}
+{"text_id":1425,"forms":[""],"absolute_byte_offsets":[77085],"raw_metadata_u32":[0]}
+{"text_id":1426,"forms":[""],"absolute_byte_offsets":[77086],"raw_metadata_u32":[0]}
+{"text_id":1427,"forms":[""],"absolute_byte_offsets":[77087],"raw_metadata_u32":[0]}
+{"text_id":1428,"forms":[""],"absolute_byte_offsets":[77088],"raw_metadata_u32":[0]}
+{"text_id":1429,"forms":[""],"absolute_byte_offsets":[77089],"raw_metadata_u32":[0]}
+{"text_id":1430,"forms":[""],"absolute_byte_offsets":[77090],"raw_metadata_u32":[0]}
+{"text_id":1431,"forms":[""],"absolute_byte_offsets":[77091],"raw_metadata_u32":[0]}
+{"text_id":1432,"forms":[""],"absolute_byte_offsets":[77092],"raw_metadata_u32":[0]}
+{"text_id":1433,"forms":[""],"absolute_byte_offsets":[77093],"raw_metadata_u32":[0]}
+{"text_id":1434,"forms":[""],"absolute_byte_offsets":[77094],"raw_metadata_u32":[0]}
+{"text_id":1435,"forms":[""],"absolute_byte_offsets":[77095],"raw_metadata_u32":[0]}
+{"text_id":1436,"forms":[""],"absolute_byte_offsets":[77096],"raw_metadata_u32":[0]}
+{"text_id":1437,"forms":[""],"absolute_byte_offsets":[77097],"raw_metadata_u32":[0]}
+{"text_id":1438,"forms":[""],"absolute_byte_offsets":[77098],"raw_metadata_u32":[0]}
+{"text_id":1439,"forms":[""],"absolute_byte_offsets":[77099],"raw_metadata_u32":[0]}
+{"text_id":1440,"forms":[""],"absolute_byte_offsets":[77100],"raw_metadata_u32":[0]}
+{"text_id":1441,"forms":[""],"absolute_byte_offsets":[77101],"raw_metadata_u32":[0]}
+{"text_id":1442,"forms":[""],"absolute_byte_offsets":[77102],"raw_metadata_u32":[0]}
+{"text_id":1443,"forms":[""],"absolute_byte_offsets":[77103],"raw_metadata_u32":[0]}
+{"text_id":1444,"forms":[""],"absolute_byte_offsets":[77104],"raw_metadata_u32":[0]}
+{"text_id":1445,"forms":[""],"absolute_byte_offsets":[77105],"raw_metadata_u32":[0]}
+{"text_id":1446,"forms":[""],"absolute_byte_offsets":[77106],"raw_metadata_u32":[0]}
+{"text_id":1447,"forms":[""],"absolute_byte_offsets":[77107],"raw_metadata_u32":[0]}
+{"text_id":1448,"forms":[""],"absolute_byte_offsets":[77108],"raw_metadata_u32":[0]}
+{"text_id":1449,"forms":[""],"absolute_byte_offsets":[77109],"raw_metadata_u32":[0]}
+{"text_id":1450,"forms":[""],"absolute_byte_offsets":[77110],"raw_metadata_u32":[0]}
+{"text_id":1451,"forms":[""],"absolute_byte_offsets":[77111],"raw_metadata_u32":[0]}
+{"text_id":1452,"forms":[""],"absolute_byte_offsets":[77112],"raw_metadata_u32":[0]}
+{"text_id":1453,"forms":[""],"absolute_byte_offsets":[77113],"raw_metadata_u32":[0]}
+{"text_id":1454,"forms":[""],"absolute_byte_offsets":[77114],"raw_metadata_u32":[0]}
+{"text_id":1455,"forms":[""],"absolute_byte_offsets":[77115],"raw_metadata_u32":[0]}
+{"text_id":1456,"forms":[""],"absolute_byte_offsets":[77116],"raw_metadata_u32":[0]}
+{"text_id":1457,"forms":[""],"absolute_byte_offsets":[77117],"raw_metadata_u32":[0]}
+{"text_id":1458,"forms":[""],"absolute_byte_offsets":[77118],"raw_metadata_u32":[0]}
+{"text_id":1459,"forms":[""],"absolute_byte_offsets":[77119],"raw_metadata_u32":[0]}
+{"text_id":1460,"forms":[""],"absolute_byte_offsets":[77120],"raw_metadata_u32":[0]}
+{"text_id":1461,"forms":[""],"absolute_byte_offsets":[77121],"raw_metadata_u32":[0]}
+{"text_id":1462,"forms":[""],"absolute_byte_offsets":[77122],"raw_metadata_u32":[0]}
+{"text_id":1463,"forms":[""],"absolute_byte_offsets":[77123],"raw_metadata_u32":[0]}
+{"text_id":1464,"forms":[""],"absolute_byte_offsets":[77124],"raw_metadata_u32":[0]}
+{"text_id":1465,"forms":[""],"absolute_byte_offsets":[77125],"raw_metadata_u32":[0]}
+{"text_id":1466,"forms":[""],"absolute_byte_offsets":[77126],"raw_metadata_u32":[0]}
+{"text_id":1467,"forms":[""],"absolute_byte_offsets":[77127],"raw_metadata_u32":[0]}
+{"text_id":1468,"forms":[""],"absolute_byte_offsets":[77128],"raw_metadata_u32":[0]}
+{"text_id":1469,"forms":[""],"absolute_byte_offsets":[77129],"raw_metadata_u32":[0]}
+{"text_id":1470,"forms":[""],"absolute_byte_offsets":[77130],"raw_metadata_u32":[0]}
+{"text_id":1471,"forms":[""],"absolute_byte_offsets":[77131],"raw_metadata_u32":[0]}
+{"text_id":1472,"forms":[""],"absolute_byte_offsets":[77132],"raw_metadata_u32":[0]}
+{"text_id":1473,"forms":[""],"absolute_byte_offsets":[77133],"raw_metadata_u32":[0]}
+{"text_id":1474,"forms":[""],"absolute_byte_offsets":[77134],"raw_metadata_u32":[0]}
+{"text_id":1475,"forms":[""],"absolute_byte_offsets":[77135],"raw_metadata_u32":[0]}
+{"text_id":1476,"forms":[""],"absolute_byte_offsets":[77136],"raw_metadata_u32":[0]}
+{"text_id":1477,"forms":[""],"absolute_byte_offsets":[77137],"raw_metadata_u32":[0]}
+{"text_id":1478,"forms":[""],"absolute_byte_offsets":[77138],"raw_metadata_u32":[0]}
+{"text_id":1479,"forms":[""],"absolute_byte_offsets":[77139],"raw_metadata_u32":[0]}
+{"text_id":1480,"forms":[""],"absolute_byte_offsets":[77140],"raw_metadata_u32":[0]}
+{"text_id":1481,"forms":[""],"absolute_byte_offsets":[77141],"raw_metadata_u32":[0]}
+{"text_id":1482,"forms":[""],"absolute_byte_offsets":[77142],"raw_metadata_u32":[0]}
+{"text_id":1483,"forms":[""],"absolute_byte_offsets":[77143],"raw_metadata_u32":[0]}
+{"text_id":1484,"forms":[""],"absolute_byte_offsets":[77144],"raw_metadata_u32":[0]}
+{"text_id":1485,"forms":[""],"absolute_byte_offsets":[77145],"raw_metadata_u32":[0]}
+{"text_id":1486,"forms":[""],"absolute_byte_offsets":[77146],"raw_metadata_u32":[0]}
+{"text_id":1487,"forms":[""],"absolute_byte_offsets":[77147],"raw_metadata_u32":[0]}
+{"text_id":1488,"forms":[""],"absolute_byte_offsets":[77148],"raw_metadata_u32":[0]}
+{"text_id":1489,"forms":[""],"absolute_byte_offsets":[77149],"raw_metadata_u32":[0]}
+{"text_id":1490,"forms":[""],"absolute_byte_offsets":[77150],"raw_metadata_u32":[0]}
+{"text_id":1491,"forms":[""],"absolute_byte_offsets":[77151],"raw_metadata_u32":[0]}
+{"text_id":1492,"forms":[""],"absolute_byte_offsets":[77152],"raw_metadata_u32":[0]}
+{"text_id":1493,"forms":[""],"absolute_byte_offsets":[77153],"raw_metadata_u32":[0]}
+{"text_id":1494,"forms":[""],"absolute_byte_offsets":[77154],"raw_metadata_u32":[0]}
+{"text_id":1495,"forms":[""],"absolute_byte_offsets":[77155],"raw_metadata_u32":[0]}
+{"text_id":1496,"forms":[""],"absolute_byte_offsets":[77156],"raw_metadata_u32":[0]}
+{"text_id":1497,"forms":[""],"absolute_byte_offsets":[77157],"raw_metadata_u32":[0]}
+{"text_id":1498,"forms":[""],"absolute_byte_offsets":[77158],"raw_metadata_u32":[0]}
+{"text_id":1499,"forms":[""],"absolute_byte_offsets":[77159],"raw_metadata_u32":[0]}
+{"text_id":1500,"forms":[""],"absolute_byte_offsets":[77160],"raw_metadata_u32":[0]}
+{"text_id":1501,"forms":["<$cdef(27)><$spwfull(23)></color>가 시작되면<br>포켓몬과 만나기 쉬워지거나<br>평소보다 쉽게 친해지게 됩니다.<br><$cdef(27)><$spwfull(23)></color>는 하루 만에 끝나지만<br>다시 준비하면 언제든지 열 수 있습니다."],"absolute_byte_offsets":[77161],"raw_metadata_u32":[1]}
+{"text_id":1502,"forms":["<$cdef(27)><fqty(1)><$ifull(1378)></color>은 물의 힘으로 전기를 만듭니다.<br>설치한 후, 물레방아 부분에<br>물 등을 흘려 보내면 작동합니다."],"absolute_byte_offsets":[77425],"raw_metadata_u32":[1]}
+{"text_id":1503,"forms":["<$cdef(27)><fqty(1)><$ifull(1377)></color>은 불의 힘으로 전기를 만듭니다.<br><$cdef(27)><fqty(1)><$ifull(1482)></color>나 <$cdef(27)><fqty(1)><$ifull(565)></color>처럼<br>연료로 사용할 수 있는 물건을 넣으면 작동합니다.<br>전기는 많이 만들어지지만 연료가 없어지면<br>발전이 멈춰 버립니다."],"absolute_byte_offsets":[77601],"raw_metadata_u32":[1]}
+{"text_id":1504,"forms":["Joy-Con 2 (R)을 마우스로 사용할 경우<br><$keyicon(84)>로 토해내기, <$keyicon(85)>로 바위깨기를 사용합니다.<br>Joy-Con 2 (L)을 마우스로 사용할 경우<br><$keyicon(86)>로 토해내기, <$keyicon(87)>로 바위깨기를 사용합니다.<br>※기존에 설정되어 있던 버튼은 교체됩니다."],"absolute_byte_offsets":[77952],"raw_metadata_u32":[1]}
+{"text_id":1505,"forms":["물속에서는 <$keyicon(61)>을 눌러서 아래쪽으로 잠수하고<br><$keyicon(60)>을 눌러서 위쪽으로 떠오를 수 있습니다."],"absolute_byte_offsets":[78284],"raw_metadata_u32":[10]}
+{"text_id":1506,"forms":["강화된 <$cdef(27)><$sklfull(10)></color> 중에는<br><$keyicon(1)>로 바다회오리를 일으켜<br>흙이나 바위 등을 부술 수 있습니다.<br>※<$cdef(27)><$sklfull(4)></color>가 강화된 상태라면<br>　더 단단한 것도 부술 수 있습니다."],"absolute_byte_offsets":[78429],"raw_metadata_u32":[10]}
+{"text_id":1507,"forms":[""],"absolute_byte_offsets":[78701],"raw_metadata_u32":[0]}
+{"text_id":1508,"forms":[""],"absolute_byte_offsets":[78702],"raw_metadata_u32":[0]}
+{"text_id":1509,"forms":[""],"absolute_byte_offsets":[78703],"raw_metadata_u32":[0]}
+{"text_id":1510,"forms":[""],"absolute_byte_offsets":[78704],"raw_metadata_u32":[0]}
+{"text_id":1511,"forms":[""],"absolute_byte_offsets":[78705],"raw_metadata_u32":[0]}
+{"text_id":1512,"forms":[""],"absolute_byte_offsets":[78706],"raw_metadata_u32":[0]}
+{"text_id":1513,"forms":[""],"absolute_byte_offsets":[78707],"raw_metadata_u32":[0]}
+{"text_id":1514,"forms":[""],"absolute_byte_offsets":[78708],"raw_metadata_u32":[0]}
+{"text_id":1515,"forms":[""],"absolute_byte_offsets":[78709],"raw_metadata_u32":[0]}
+{"text_id":1516,"forms":[""],"absolute_byte_offsets":[78710],"raw_metadata_u32":[0]}
+{"text_id":1517,"forms":[""],"absolute_byte_offsets":[78711],"raw_metadata_u32":[0]}
+{"text_id":1518,"forms":[""],"absolute_byte_offsets":[78712],"raw_metadata_u32":[0]}
+{"text_id":1519,"forms":[""],"absolute_byte_offsets":[78713],"raw_metadata_u32":[0]}
+{"text_id":1520,"forms":[""],"absolute_byte_offsets":[78714],"raw_metadata_u32":[0]}
+{"text_id":1521,"forms":[""],"absolute_byte_offsets":[78715],"raw_metadata_u32":[0]}
+{"text_id":1522,"forms":[""],"absolute_byte_offsets":[78716],"raw_metadata_u32":[0]}
+{"text_id":1523,"forms":[""],"absolute_byte_offsets":[78717],"raw_metadata_u32":[0]}
+{"text_id":1524,"forms":[""],"absolute_byte_offsets":[78718],"raw_metadata_u32":[0]}
+{"text_id":1525,"forms":[""],"absolute_byte_offsets":[78719],"raw_metadata_u32":[0]}
+{"text_id":1526,"forms":[""],"absolute_byte_offsets":[78720],"raw_metadata_u32":[0]}
+{"text_id":1527,"forms":[""],"absolute_byte_offsets":[78721],"raw_metadata_u32":[0]}
+{"text_id":1528,"forms":[""],"absolute_byte_offsets":[78722],"raw_metadata_u32":[0]}
+{"text_id":1529,"forms":[""],"absolute_byte_offsets":[78723],"raw_metadata_u32":[0]}
+{"text_id":1530,"forms":[""],"absolute_byte_offsets":[78724],"raw_metadata_u32":[0]}
+{"text_id":1531,"forms":[""],"absolute_byte_offsets":[78725],"raw_metadata_u32":[0]}
+{"text_id":1532,"forms":[""],"absolute_byte_offsets":[78726],"raw_metadata_u32":[0]}
+{"text_id":1533,"forms":[""],"absolute_byte_offsets":[78727],"raw_metadata_u32":[0]}
+{"text_id":1534,"forms":[""],"absolute_byte_offsets":[78728],"raw_metadata_u32":[0]}
+{"text_id":1535,"forms":[""],"absolute_byte_offsets":[78729],"raw_metadata_u32":[0]}
+{"text_id":1536,"forms":[""],"absolute_byte_offsets":[78730],"raw_metadata_u32":[0]}
+{"text_id":1537,"forms":[""],"absolute_byte_offsets":[78731],"raw_metadata_u32":[0]}
+{"text_id":1538,"forms":[""],"absolute_byte_offsets":[78732],"raw_metadata_u32":[0]}
+{"text_id":1539,"forms":[""],"absolute_byte_offsets":[78733],"raw_metadata_u32":[0]}
+{"text_id":1540,"forms":[""],"absolute_byte_offsets":[78734],"raw_metadata_u32":[0]}
+{"text_id":1541,"forms":[""],"absolute_byte_offsets":[78735],"raw_metadata_u32":[0]}
+{"text_id":1542,"forms":[""],"absolute_byte_offsets":[78736],"raw_metadata_u32":[0]}
+{"text_id":1543,"forms":[""],"absolute_byte_offsets":[78737],"raw_metadata_u32":[0]}
+{"text_id":1544,"forms":[""],"absolute_byte_offsets":[78738],"raw_metadata_u32":[0]}
+{"text_id":1545,"forms":[""],"absolute_byte_offsets":[78739],"raw_metadata_u32":[0]}
+{"text_id":1546,"forms":[""],"absolute_byte_offsets":[78740],"raw_metadata_u32":[0]}
+{"text_id":1547,"forms":[""],"absolute_byte_offsets":[78741],"raw_metadata_u32":[0]}
+{"text_id":1548,"forms":[""],"absolute_byte_offsets":[78742],"raw_metadata_u32":[0]}
+{"text_id":1549,"forms":[""],"absolute_byte_offsets":[78743],"raw_metadata_u32":[0]}
+{"text_id":1550,"forms":[""],"absolute_byte_offsets":[78744],"raw_metadata_u32":[0]}
+{"text_id":1551,"forms":[""],"absolute_byte_offsets":[78745],"raw_metadata_u32":[0]}
+{"text_id":1552,"forms":[""],"absolute_byte_offsets":[78746],"raw_metadata_u32":[0]}
+{"text_id":1553,"forms":[""],"absolute_byte_offsets":[78747],"raw_metadata_u32":[0]}
+{"text_id":1554,"forms":[""],"absolute_byte_offsets":[78748],"raw_metadata_u32":[0]}
+{"text_id":1555,"forms":[""],"absolute_byte_offsets":[78749],"raw_metadata_u32":[0]}
+{"text_id":1556,"forms":[""],"absolute_byte_offsets":[78750],"raw_metadata_u32":[0]}
+{"text_id":1557,"forms":[""],"absolute_byte_offsets":[78751],"raw_metadata_u32":[0]}
+{"text_id":1558,"forms":[""],"absolute_byte_offsets":[78752],"raw_metadata_u32":[0]}
+{"text_id":1559,"forms":[""],"absolute_byte_offsets":[78753],"raw_metadata_u32":[0]}
+{"text_id":1560,"forms":[""],"absolute_byte_offsets":[78754],"raw_metadata_u32":[0]}
+{"text_id":1561,"forms":[""],"absolute_byte_offsets":[78755],"raw_metadata_u32":[0]}
+{"text_id":1562,"forms":[""],"absolute_byte_offsets":[78756],"raw_metadata_u32":[0]}
+{"text_id":1563,"forms":[""],"absolute_byte_offsets":[78757],"raw_metadata_u32":[0]}
+{"text_id":1564,"forms":[""],"absolute_byte_offsets":[78758],"raw_metadata_u32":[0]}
+{"text_id":1565,"forms":[""],"absolute_byte_offsets":[78759],"raw_metadata_u32":[0]}
+{"text_id":1566,"forms":[""],"absolute_byte_offsets":[78760],"raw_metadata_u32":[0]}
+{"text_id":1567,"forms":[""],"absolute_byte_offsets":[78761],"raw_metadata_u32":[0]}
+{"text_id":1568,"forms":[""],"absolute_byte_offsets":[78762],"raw_metadata_u32":[0]}
+{"text_id":1569,"forms":[""],"absolute_byte_offsets":[78763],"raw_metadata_u32":[0]}
+{"text_id":1570,"forms":[""],"absolute_byte_offsets":[78764],"raw_metadata_u32":[0]}
+{"text_id":1571,"forms":[""],"absolute_byte_offsets":[78765],"raw_metadata_u32":[0]}
+{"text_id":1572,"forms":[""],"absolute_byte_offsets":[78766],"raw_metadata_u32":[0]}
+{"text_id":1573,"forms":[""],"absolute_byte_offsets":[78767],"raw_metadata_u32":[0]}
+{"text_id":1574,"forms":[""],"absolute_byte_offsets":[78768],"raw_metadata_u32":[0]}
+{"text_id":1575,"forms":[""],"absolute_byte_offsets":[78769],"raw_metadata_u32":[0]}
+{"text_id":1576,"forms":[""],"absolute_byte_offsets":[78770],"raw_metadata_u32":[0]}
+{"text_id":1577,"forms":[""],"absolute_byte_offsets":[78771],"raw_metadata_u32":[0]}
+{"text_id":1578,"forms":[""],"absolute_byte_offsets":[78772],"raw_metadata_u32":[0]}
+{"text_id":1579,"forms":[""],"absolute_byte_offsets":[78773],"raw_metadata_u32":[0]}
+{"text_id":1580,"forms":[""],"absolute_byte_offsets":[78774],"raw_metadata_u32":[0]}
+{"text_id":1581,"forms":[""],"absolute_byte_offsets":[78775],"raw_metadata_u32":[0]}
+{"text_id":1582,"forms":[""],"absolute_byte_offsets":[78776],"raw_metadata_u32":[0]}
+{"text_id":1583,"forms":[""],"absolute_byte_offsets":[78777],"raw_metadata_u32":[0]}
+{"text_id":1584,"forms":[""],"absolute_byte_offsets":[78778],"raw_metadata_u32":[0]}
+{"text_id":1585,"forms":[""],"absolute_byte_offsets":[78779],"raw_metadata_u32":[0]}
+{"text_id":1586,"forms":[""],"absolute_byte_offsets":[78780],"raw_metadata_u32":[0]}
+{"text_id":1587,"forms":[""],"absolute_byte_offsets":[78781],"raw_metadata_u32":[0]}
+{"text_id":1588,"forms":[""],"absolute_byte_offsets":[78782],"raw_metadata_u32":[0]}
+{"text_id":1589,"forms":[""],"absolute_byte_offsets":[78783],"raw_metadata_u32":[0]}
+{"text_id":1590,"forms":[""],"absolute_byte_offsets":[78784],"raw_metadata_u32":[0]}
+{"text_id":1591,"forms":[""],"absolute_byte_offsets":[78785],"raw_metadata_u32":[0]}
+{"text_id":1592,"forms":[""],"absolute_byte_offsets":[78786],"raw_metadata_u32":[0]}
+{"text_id":1593,"forms":[""],"absolute_byte_offsets":[78787],"raw_metadata_u32":[0]}
+{"text_id":1594,"forms":[""],"absolute_byte_offsets":[78788],"raw_metadata_u32":[0]}
+{"text_id":1595,"forms":[""],"absolute_byte_offsets":[78789],"raw_metadata_u32":[0]}
+{"text_id":1596,"forms":[""],"absolute_byte_offsets":[78790],"raw_metadata_u32":[0]}
+{"text_id":1597,"forms":[""],"absolute_byte_offsets":[78791],"raw_metadata_u32":[0]}
+{"text_id":1598,"forms":[""],"absolute_byte_offsets":[78792],"raw_metadata_u32":[0]}
+{"text_id":1599,"forms":[""],"absolute_byte_offsets":[78793],"raw_metadata_u32":[0]}
+{"text_id":1600,"forms":[""],"absolute_byte_offsets":[78794],"raw_metadata_u32":[0]}
+{"text_id":1601,"forms":[""],"absolute_byte_offsets":[78795],"raw_metadata_u32":[0]}
+{"text_id":1602,"forms":[""],"absolute_byte_offsets":[78796],"raw_metadata_u32":[0]}
+{"text_id":1603,"forms":[""],"absolute_byte_offsets":[78797],"raw_metadata_u32":[0]}
+{"text_id":1604,"forms":[""],"absolute_byte_offsets":[78798],"raw_metadata_u32":[0]}
+{"text_id":1605,"forms":[""],"absolute_byte_offsets":[78799],"raw_metadata_u32":[0]}
+{"text_id":1606,"forms":[""],"absolute_byte_offsets":[78800],"raw_metadata_u32":[0]}
+{"text_id":1607,"forms":[""],"absolute_byte_offsets":[78801],"raw_metadata_u32":[0]}
+{"text_id":1608,"forms":[""],"absolute_byte_offsets":[78802],"raw_metadata_u32":[0]}
+{"text_id":1609,"forms":[""],"absolute_byte_offsets":[78803],"raw_metadata_u32":[0]}
+{"text_id":1610,"forms":[""],"absolute_byte_offsets":[78804],"raw_metadata_u32":[0]}
+{"text_id":1611,"forms":[""],"absolute_byte_offsets":[78805],"raw_metadata_u32":[0]}
+{"text_id":1612,"forms":[""],"absolute_byte_offsets":[78806],"raw_metadata_u32":[0]}
+{"text_id":1613,"forms":[""],"absolute_byte_offsets":[78807],"raw_metadata_u32":[0]}
+{"text_id":1614,"forms":[""],"absolute_byte_offsets":[78808],"raw_metadata_u32":[0]}
+{"text_id":1615,"forms":[""],"absolute_byte_offsets":[78809],"raw_metadata_u32":[0]}
+{"text_id":1616,"forms":[""],"absolute_byte_offsets":[78810],"raw_metadata_u32":[0]}
+{"text_id":1617,"forms":[""],"absolute_byte_offsets":[78811],"raw_metadata_u32":[0]}
+{"text_id":1618,"forms":[""],"absolute_byte_offsets":[78812],"raw_metadata_u32":[0]}
+{"text_id":1619,"forms":[""],"absolute_byte_offsets":[78813],"raw_metadata_u32":[0]}
+{"text_id":1620,"forms":[""],"absolute_byte_offsets":[78814],"raw_metadata_u32":[0]}
+{"text_id":1621,"forms":[""],"absolute_byte_offsets":[78815],"raw_metadata_u32":[0]}
+{"text_id":1622,"forms":[""],"absolute_byte_offsets":[78816],"raw_metadata_u32":[0]}
+{"text_id":1623,"forms":[""],"absolute_byte_offsets":[78817],"raw_metadata_u32":[0]}
+{"text_id":1624,"forms":[""],"absolute_byte_offsets":[78818],"raw_metadata_u32":[0]}
+{"text_id":1625,"forms":[""],"absolute_byte_offsets":[78819],"raw_metadata_u32":[0]}
+{"text_id":1626,"forms":[""],"absolute_byte_offsets":[78820],"raw_metadata_u32":[0]}
+{"text_id":1627,"forms":[""],"absolute_byte_offsets":[78821],"raw_metadata_u32":[0]}
+{"text_id":1628,"forms":[""],"absolute_byte_offsets":[78822],"raw_metadata_u32":[0]}
+{"text_id":1629,"forms":[""],"absolute_byte_offsets":[78823],"raw_metadata_u32":[0]}
+{"text_id":1630,"forms":[""],"absolute_byte_offsets":[78824],"raw_metadata_u32":[0]}
+{"text_id":1631,"forms":[""],"absolute_byte_offsets":[78825],"raw_metadata_u32":[0]}
+{"text_id":1632,"forms":[""],"absolute_byte_offsets":[78826],"raw_metadata_u32":[0]}
+{"text_id":1633,"forms":[""],"absolute_byte_offsets":[78827],"raw_metadata_u32":[0]}
+{"text_id":1634,"forms":[""],"absolute_byte_offsets":[78828],"raw_metadata_u32":[0]}
+{"text_id":1635,"forms":[""],"absolute_byte_offsets":[78829],"raw_metadata_u32":[0]}
+{"text_id":1636,"forms":[""],"absolute_byte_offsets":[78830],"raw_metadata_u32":[0]}
+{"text_id":1637,"forms":[""],"absolute_byte_offsets":[78831],"raw_metadata_u32":[0]}
+{"text_id":1638,"forms":[""],"absolute_byte_offsets":[78832],"raw_metadata_u32":[0]}
+{"text_id":1639,"forms":[""],"absolute_byte_offsets":[78833],"raw_metadata_u32":[0]}
+{"text_id":1640,"forms":[""],"absolute_byte_offsets":[78834],"raw_metadata_u32":[0]}
+{"text_id":1641,"forms":[""],"absolute_byte_offsets":[78835],"raw_metadata_u32":[0]}
+{"text_id":1642,"forms":[""],"absolute_byte_offsets":[78836],"raw_metadata_u32":[0]}
+{"text_id":1643,"forms":[""],"absolute_byte_offsets":[78837],"raw_metadata_u32":[0]}
+{"text_id":1644,"forms":[""],"absolute_byte_offsets":[78838],"raw_metadata_u32":[0]}
+{"text_id":1645,"forms":[""],"absolute_byte_offsets":[78839],"raw_metadata_u32":[0]}
+{"text_id":1646,"forms":[""],"absolute_byte_offsets":[78840],"raw_metadata_u32":[0]}
+{"text_id":1647,"forms":[""],"absolute_byte_offsets":[78841],"raw_metadata_u32":[0]}
+{"text_id":1648,"forms":[""],"absolute_byte_offsets":[78842],"raw_metadata_u32":[0]}
+{"text_id":1649,"forms":[""],"absolute_byte_offsets":[78843],"raw_metadata_u32":[0]}
+{"text_id":1650,"forms":[""],"absolute_byte_offsets":[78844],"raw_metadata_u32":[0]}
+{"text_id":1651,"forms":[""],"absolute_byte_offsets":[78845],"raw_metadata_u32":[0]}
+{"text_id":1652,"forms":[""],"absolute_byte_offsets":[78846],"raw_metadata_u32":[0]}
+{"text_id":1653,"forms":[""],"absolute_byte_offsets":[78847],"raw_metadata_u32":[0]}
+{"text_id":1654,"forms":[""],"absolute_byte_offsets":[78848],"raw_metadata_u32":[0]}
+{"text_id":1655,"forms":[""],"absolute_byte_offsets":[78849],"raw_metadata_u32":[0]}
+{"text_id":1656,"forms":[""],"absolute_byte_offsets":[78850],"raw_metadata_u32":[0]}
+{"text_id":1657,"forms":[""],"absolute_byte_offsets":[78851],"raw_metadata_u32":[0]}
+{"text_id":1658,"forms":[""],"absolute_byte_offsets":[78852],"raw_metadata_u32":[0]}
+{"text_id":1659,"forms":[""],"absolute_byte_offsets":[78853],"raw_metadata_u32":[0]}
+{"text_id":1660,"forms":[""],"absolute_byte_offsets":[78854],"raw_metadata_u32":[0]}
+{"text_id":1661,"forms":[""],"absolute_byte_offsets":[78855],"raw_metadata_u32":[0]}
+{"text_id":1662,"forms":[""],"absolute_byte_offsets":[78856],"raw_metadata_u32":[0]}
+{"text_id":1663,"forms":[""],"absolute_byte_offsets":[78857],"raw_metadata_u32":[0]}
+{"text_id":1664,"forms":[""],"absolute_byte_offsets":[78858],"raw_metadata_u32":[0]}
+{"text_id":1665,"forms":[""],"absolute_byte_offsets":[78859],"raw_metadata_u32":[0]}
+{"text_id":1666,"forms":[""],"absolute_byte_offsets":[78860],"raw_metadata_u32":[0]}
+{"text_id":1667,"forms":[""],"absolute_byte_offsets":[78861],"raw_metadata_u32":[0]}
+{"text_id":1668,"forms":[""],"absolute_byte_offsets":[78862],"raw_metadata_u32":[0]}
+{"text_id":1669,"forms":[""],"absolute_byte_offsets":[78863],"raw_metadata_u32":[0]}
+{"text_id":1670,"forms":[""],"absolute_byte_offsets":[78864],"raw_metadata_u32":[0]}
+{"text_id":1671,"forms":[""],"absolute_byte_offsets":[78865],"raw_metadata_u32":[0]}
+{"text_id":1672,"forms":[""],"absolute_byte_offsets":[78866],"raw_metadata_u32":[0]}
+{"text_id":1673,"forms":[""],"absolute_byte_offsets":[78867],"raw_metadata_u32":[0]}
+{"text_id":1674,"forms":[""],"absolute_byte_offsets":[78868],"raw_metadata_u32":[0]}
+{"text_id":1675,"forms":[""],"absolute_byte_offsets":[78869],"raw_metadata_u32":[0]}
+{"text_id":1676,"forms":[""],"absolute_byte_offsets":[78870],"raw_metadata_u32":[0]}
+{"text_id":1677,"forms":[""],"absolute_byte_offsets":[78871],"raw_metadata_u32":[0]}
+{"text_id":1678,"forms":[""],"absolute_byte_offsets":[78872],"raw_metadata_u32":[0]}
+{"text_id":1679,"forms":[""],"absolute_byte_offsets":[78873],"raw_metadata_u32":[0]}
+{"text_id":1680,"forms":[""],"absolute_byte_offsets":[78874],"raw_metadata_u32":[0]}
+{"text_id":1681,"forms":[""],"absolute_byte_offsets":[78875],"raw_metadata_u32":[0]}
+{"text_id":1682,"forms":[""],"absolute_byte_offsets":[78876],"raw_metadata_u32":[0]}
+{"text_id":1683,"forms":[""],"absolute_byte_offsets":[78877],"raw_metadata_u32":[0]}
+{"text_id":1684,"forms":[""],"absolute_byte_offsets":[78878],"raw_metadata_u32":[0]}
+{"text_id":1685,"forms":[""],"absolute_byte_offsets":[78879],"raw_metadata_u32":[0]}
+{"text_id":1686,"forms":[""],"absolute_byte_offsets":[78880],"raw_metadata_u32":[0]}
+{"text_id":1687,"forms":[""],"absolute_byte_offsets":[78881],"raw_metadata_u32":[0]}
+{"text_id":1688,"forms":[""],"absolute_byte_offsets":[78882],"raw_metadata_u32":[0]}
+{"text_id":1689,"forms":[""],"absolute_byte_offsets":[78883],"raw_metadata_u32":[0]}
+{"text_id":1690,"forms":[""],"absolute_byte_offsets":[78884],"raw_metadata_u32":[0]}
+{"text_id":1691,"forms":[""],"absolute_byte_offsets":[78885],"raw_metadata_u32":[0]}
+{"text_id":1692,"forms":[""],"absolute_byte_offsets":[78886],"raw_metadata_u32":[0]}
+{"text_id":1693,"forms":[""],"absolute_byte_offsets":[78887],"raw_metadata_u32":[0]}
+{"text_id":1694,"forms":[""],"absolute_byte_offsets":[78888],"raw_metadata_u32":[0]}
+{"text_id":1695,"forms":[""],"absolute_byte_offsets":[78889],"raw_metadata_u32":[0]}
+{"text_id":1696,"forms":[""],"absolute_byte_offsets":[78890],"raw_metadata_u32":[0]}
+{"text_id":1697,"forms":[""],"absolute_byte_offsets":[78891],"raw_metadata_u32":[0]}
+{"text_id":1698,"forms":[""],"absolute_byte_offsets":[78892],"raw_metadata_u32":[0]}
+{"text_id":1699,"forms":[""],"absolute_byte_offsets":[78893],"raw_metadata_u32":[0]}
+{"text_id":1700,"forms":[""],"absolute_byte_offsets":[78894],"raw_metadata_u32":[0]}

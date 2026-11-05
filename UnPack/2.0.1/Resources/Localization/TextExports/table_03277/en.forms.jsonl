@@ -1,0 +1,90 @@
+{"text_id":0,"forms":["Welcome to the <$cdef(27)>Pokémon Center</color>.<clear><br>Would you like to rest your tired Pokémon?"],"absolute_byte_offsets":[784],"raw_metadata_u32":[1]}
+{"text_id":1,"forms":["We hope to see you again!"],"absolute_byte_offsets":[889],"raw_metadata_u32":[1]}
+{"text_id":2,"forms":["Welcome to the <$cdef(27)>Pokémon Center</color>.<clear><br>Our free care service is no longer available for the day."],"absolute_byte_offsets":[915],"raw_metadata_u32":[1]}
+{"text_id":3,"forms":["If you would like to continue using the service, please<br>register as a member on the following screen..."],"absolute_byte_offsets":[1034],"raw_metadata_u32":[1]}
+{"text_id":4,"forms":["... ... ...<br>Looks like you can’t use that service right now!<slide><br>Try again tomorrow!"],"absolute_byte_offsets":[1141],"raw_metadata_u32":[1]}
+{"text_id":5,"forms":["You found all three special Pokémon! Please accept this<br>reward for your efforts."],"absolute_byte_offsets":[1237],"raw_metadata_u32":[1]}
+{"text_id":6,"forms":[""],"absolute_byte_offsets":[1322],"raw_metadata_u32":[0]}
+{"text_id":7,"forms":[""],"absolute_byte_offsets":[1323],"raw_metadata_u32":[0]}
+{"text_id":8,"forms":[""],"absolute_byte_offsets":[1324],"raw_metadata_u32":[0]}
+{"text_id":9,"forms":["*beep beep beep*<br>Boot-up complete."],"absolute_byte_offsets":[1325],"raw_metadata_u32":[1]}
+{"text_id":10,"forms":["Obtaining information about this town..."],"absolute_byte_offsets":[1363],"raw_metadata_u32":[1]}
+{"text_id":11,"forms":["This is <$stgname;0(13)>!<clear><br>This land belongs to no one but you. You can freely alter<br>the landscape, build houses, and otherwise customize it<slide><br>as you see fit."],"absolute_byte_offsets":[1404],"raw_metadata_u32":[1]}
+{"text_id":12,"forms":["Please choose a name for the town."],"absolute_byte_offsets":[1583],"raw_metadata_u32":[1]}
+{"text_id":13,"forms":["Is “<$cdef(27)><$stgmyname;0(12)></color>” OK?"],"absolute_byte_offsets":[1618],"raw_metadata_u32":[1]}
+{"text_id":14,"forms":["Name registered!"],"absolute_byte_offsets":[1669],"raw_metadata_u32":[1]}
+{"text_id":15,"forms":["*beep beep*<br><$cdef(27)>Special challenges</color> prepared."],"absolute_byte_offsets":[1686],"raw_metadata_u32":[1]}
+{"text_id":16,"forms":["These <$cdef(27)>special challenges</color> have been prepared to help you<br>develop your town!<clear><br>There are generous prizes for those who complete them,<br>so please give them your best effort."],"absolute_byte_offsets":[1749],"raw_metadata_u32":[1]}
+{"text_id":17,"forms":["Keep on living your best <$cdef(27)>Poké Life</color>!"],"absolute_byte_offsets":[1952],"raw_metadata_u32":[1]}
+{"text_id":18,"forms":[""],"absolute_byte_offsets":[2008],"raw_metadata_u32":[0]}
+{"text_id":19,"forms":[""],"absolute_byte_offsets":[2009],"raw_metadata_u32":[0]}
+{"text_id":20,"forms":[""],"absolute_byte_offsets":[2010],"raw_metadata_u32":[0]}
+{"text_id":21,"forms":[""],"absolute_byte_offsets":[2011],"raw_metadata_u32":[0]}
+{"text_id":22,"forms":[""],"absolute_byte_offsets":[2012],"raw_metadata_u32":[0]}
+{"text_id":23,"forms":["You can put items from your inventory into this<br><$cdef(27)><fqty(1)><$ifull(2045)></color>."],"absolute_byte_offsets":[2013],"raw_metadata_u32":[1]}
+{"text_id":24,"forms":["Place it wherever you like and use it to store things when<br>you have too much to carry!"],"absolute_byte_offsets":[2108],"raw_metadata_u32":[1]}
+{"text_id":25,"forms":[""],"absolute_byte_offsets":[2198],"raw_metadata_u32":[0]}
+{"text_id":26,"forms":[""],"absolute_byte_offsets":[2199],"raw_metadata_u32":[0]}
+{"text_id":27,"forms":[""],"absolute_byte_offsets":[2200],"raw_metadata_u32":[0]}
+{"text_id":28,"forms":[""],"absolute_byte_offsets":[2201],"raw_metadata_u32":[0]}
+{"text_id":29,"forms":[""],"absolute_byte_offsets":[2202],"raw_metadata_u32":[0]}
+{"text_id":30,"forms":["There’s already a <$cdef(27)>CD </color>in the <$cdef(27)><fqty(1)><$ifull(1802)></color>. Would you like<br>to swap it out for another <$cdef(27)>CD </color>you have?"],"absolute_byte_offsets":[2203],"raw_metadata_u32":[1]}
+{"text_id":31,"forms":["There’s no <$cdef(27)>CD </color>in the <$cdef(27)><fqty(1)><$ifull(1802)></color>. Go ahead and put<br>one in."],"absolute_byte_offsets":[2373],"raw_metadata_u32":[1]}
+{"text_id":32,"forms":["There’s a <$cdef(27)>CD </color>in the <$cdef(27)><fqty(1)><$ifull(1802)></color>."],"absolute_byte_offsets":[2487],"raw_metadata_u32":[1]}
+{"text_id":33,"forms":[""],"absolute_byte_offsets":[2572],"raw_metadata_u32":[0]}
+{"text_id":34,"forms":[""],"absolute_byte_offsets":[2573],"raw_metadata_u32":[0]}
+{"text_id":35,"forms":[""],"absolute_byte_offsets":[2574],"raw_metadata_u32":[0]}
+{"text_id":36,"forms":[""],"absolute_byte_offsets":[2575],"raw_metadata_u32":[0]}
+{"text_id":37,"forms":[""],"absolute_byte_offsets":[2576],"raw_metadata_u32":[0]}
+{"text_id":38,"forms":["You retrieved items from the <$cdef(27)>PC</color>!"],"absolute_byte_offsets":[2577],"raw_metadata_u32":[1]}
+{"text_id":39,"forms":["<oneline><wowner;0> retrieved items from the <$cdef(27)>PC</color>."],"absolute_byte_offsets":[2629],"raw_metadata_u32":[1]}
+{"text_id":40,"forms":[""],"absolute_byte_offsets":[2697],"raw_metadata_u32":[0]}
+{"text_id":41,"forms":[""],"absolute_byte_offsets":[2698],"raw_metadata_u32":[0]}
+{"text_id":42,"forms":[""],"absolute_byte_offsets":[2699],"raw_metadata_u32":[0]}
+{"text_id":43,"forms":[""],"absolute_byte_offsets":[2700],"raw_metadata_u32":[0]}
+{"text_id":44,"forms":[""],"absolute_byte_offsets":[2701],"raw_metadata_u32":[0]}
+{"text_id":45,"forms":["This <$cdef(27)><fqty(1)><$ifull(1471)></color> allows you to check up on<br>Pokémon who are far away."],"absolute_byte_offsets":[2702],"raw_metadata_u32":[1]}
+{"text_id":46,"forms":["Place it wherever you like, then open the main menu and<br>select Camera → <$cdef(27)>Security Cameras </color>in order to watch the<slide><br><$cdef(27)><fqty(1)><$ifull(1471)></color> feed."],"absolute_byte_offsets":[2806],"raw_metadata_u32":[1]}
+{"text_id":47,"forms":["It’s useful to see how certain Pokémon are doing or to<br>check if a new Pokémon has appeared in a habitat."],"absolute_byte_offsets":[3000],"raw_metadata_u32":[1]}
+{"text_id":48,"forms":[""],"absolute_byte_offsets":[3112],"raw_metadata_u32":[0]}
+{"text_id":49,"forms":[""],"absolute_byte_offsets":[3113],"raw_metadata_u32":[0]}
+{"text_id":50,"forms":[""],"absolute_byte_offsets":[3114],"raw_metadata_u32":[0]}
+{"text_id":51,"forms":[""],"absolute_byte_offsets":[3115],"raw_metadata_u32":[0]}
+{"text_id":52,"forms":[""],"absolute_byte_offsets":[3116],"raw_metadata_u32":[0]}
+{"text_id":53,"forms":["You have a vague memory of <$cdef(27)>Professor Tangrowth</color><br>suggesting that you use the <$cdef(27)><fqty(1)><$ifull(1898)></color> in<slide><br>the <$cdef(27)><$stgname;0(4)></color>..."],"absolute_byte_offsets":[3117],"raw_metadata_u32":[1]}
+{"text_id":54,"forms":[""],"absolute_byte_offsets":[3312],"raw_metadata_u32":[0]}
+{"text_id":55,"forms":[""],"absolute_byte_offsets":[3313],"raw_metadata_u32":[0]}
+{"text_id":56,"forms":[""],"absolute_byte_offsets":[3314],"raw_metadata_u32":[0]}
+{"text_id":57,"forms":[""],"absolute_byte_offsets":[3315],"raw_metadata_u32":[0]}
+{"text_id":58,"forms":[""],"absolute_byte_offsets":[3316],"raw_metadata_u32":[0]}
+{"text_id":59,"forms":["Please place your Pokédex over the gate panel."],"absolute_byte_offsets":[3317],"raw_metadata_u32":[1]}
+{"text_id":60,"forms":["Checking Pokédex...<clear><br>Data for all Pokémon confirmed!<clear><br>Congratulations! You will receive an award for your great<br>achievement. Please wait while it prints..."],"absolute_byte_offsets":[3365],"raw_metadata_u32":[1]}
+{"text_id":61,"forms":["*beep* *whirrr*"],"absolute_byte_offsets":[3544],"raw_metadata_u32":[1]}
+{"text_id":62,"forms":["Please accept your award."],"absolute_byte_offsets":[3560],"raw_metadata_u32":[1]}
+{"text_id":63,"forms":[""],"absolute_byte_offsets":[3586],"raw_metadata_u32":[0]}
+{"text_id":64,"forms":[""],"absolute_byte_offsets":[3587],"raw_metadata_u32":[0]}
+{"text_id":65,"forms":[""],"absolute_byte_offsets":[3588],"raw_metadata_u32":[0]}
+{"text_id":66,"forms":[""],"absolute_byte_offsets":[3589],"raw_metadata_u32":[0]}
+{"text_id":67,"forms":[""],"absolute_byte_offsets":[3590],"raw_metadata_u32":[0]}
+{"text_id":68,"forms":["<oneline>Try asking nearby Pokémon where to<br>find <$cdef(27)><pksrchtar;0></color>."],"absolute_byte_offsets":[3591],"raw_metadata_u32":[1]}
+{"text_id":69,"forms":["<oneline>It seems like <$cdef(27)><pksrchtar;0></color> is in<br><$cdef(27)><srchtarhmst;1></color>."],"absolute_byte_offsets":[3678],"raw_metadata_u32":[10]}
+{"text_id":70,"forms":["They don’t seem to be around here."],"absolute_byte_offsets":[3779],"raw_metadata_u32":[10]}
+{"text_id":71,"forms":["Would you like use <$cdef(27)>Return Home</color> to go there?"],"absolute_byte_offsets":[3816],"raw_metadata_u32":[10]}
+{"text_id":72,"forms":[""],"absolute_byte_offsets":[3879],"raw_metadata_u32":[0]}
+{"text_id":73,"forms":[""],"absolute_byte_offsets":[3880],"raw_metadata_u32":[0]}
+{"text_id":74,"forms":["It seems like there’s something else you need to do.<br>Try talking to <$cdef(27)><storychspk;0></color>."],"absolute_byte_offsets":[3881],"raw_metadata_u32":[1]}
+{"text_id":75,"forms":["It seems like there’s something else you need to do.<br>Try talking to the Pokémon following you."],"absolute_byte_offsets":[3989],"raw_metadata_u32":[1]}
+{"text_id":76,"forms":[""],"absolute_byte_offsets":[4090],"raw_metadata_u32":[0]}
+{"text_id":77,"forms":[""],"absolute_byte_offsets":[4091],"raw_metadata_u32":[0]}
+{"text_id":78,"forms":[""],"absolute_byte_offsets":[4092],"raw_metadata_u32":[0]}
+{"text_id":79,"forms":[""],"absolute_byte_offsets":[4093],"raw_metadata_u32":[0]}
+{"text_id":80,"forms":[""],"absolute_byte_offsets":[4094],"raw_metadata_u32":[0]}
+{"text_id":81,"forms":["Actually, there’s <$cdef(27)>another gate</color> in <$cdef(27)><$stgname;0(1)></color> that<br><$cdef(27)>leads to a different town</color>!<clear><br>You might be able to go through it!"],"absolute_byte_offsets":[4095],"raw_metadata_u32":[1]}
+{"text_id":82,"forms":[""],"absolute_byte_offsets":[4285],"raw_metadata_u32":[0]}
+{"text_id":83,"forms":[""],"absolute_byte_offsets":[4286],"raw_metadata_u32":[0]}
+{"text_id":84,"forms":[""],"absolute_byte_offsets":[4287],"raw_metadata_u32":[0]}
+{"text_id":85,"forms":["This is a rare metal called <$cdef(27)><fqty(1)><$ifull(120)></color>."],"absolute_byte_offsets":[4288],"raw_metadata_u32":[1]}
+{"text_id":86,"forms":["It can be used as a material to make a variety of items.<br>If you come across it in the <$cdef(27)>shop</color> or anywhere else, you<slide><br>should get it while you have the chance!"],"absolute_byte_offsets":[4359],"raw_metadata_u32":[1]}
+{"text_id":87,"forms":["It looks like...a treasure map somebody drew!"],"absolute_byte_offsets":[4545],"raw_metadata_u32":[10]}
+{"text_id":88,"forms":["Try heading to the place marked on the map, then search<br>for treasure with the <$cdef(27)><fqty(1)><$ifull(2793)></color>!"],"absolute_byte_offsets":[4591],"raw_metadata_u32":[10]}
+{"text_id":89,"forms":["You can look at your treasure map at any time in the<br><$cdef(27)>Human Records</color> section of the <$cdef(27)>Collection (Basin)</color> menu."],"absolute_byte_offsets":[4716],"raw_metadata_u32":[10]}

@@ -1,0 +1,156 @@
+{
+  "table_start": 2719,
+  "table_end": 2727,
+  "record_count": 121,
+  "forms_per_record": 1,
+  "locale_order": [
+    "jp",
+    "en",
+    "fr",
+    "it",
+    "de",
+    "es",
+    "zht",
+    "ko",
+    "zhs"
+  ],
+  "category": "UNKNOWN",
+  "evidence_grade": "STRUCTURE_AND_SCRIPT_WITNESS",
+  "text_id_semantics": "ZERO_BASED_NATIVE_TABLE_RECORD_ORDINAL",
+  "sources": {
+    "jp": {
+      "entry": 2719,
+      "decoded_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02719.bin",
+      "sha256": "45028edd6a8eadd46db29e9140be1dfde359bea4281992693351bbf804a7825a",
+      "native_record_width": 8
+    },
+    "en": {
+      "entry": 2720,
+      "decoded_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02720.bin",
+      "sha256": "77e7cfbd202a0ee9fcc6716e90ce93db8119bdd433ff3528f92cc32b1f40addc",
+      "native_record_width": 8
+    },
+    "fr": {
+      "entry": 2721,
+      "decoded_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02721.bin",
+      "sha256": "a192d0c3664bbfdc5eff627738829867bdd4e60a75218f11036e16c630e19c89",
+      "native_record_width": 8
+    },
+    "it": {
+      "entry": 2722,
+      "decoded_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02722.bin",
+      "sha256": "11dd507e5cc8c466aef2c06b79960014288741fa0728a2f3332e55612887164c",
+      "native_record_width": 8
+    },
+    "de": {
+      "entry": 2723,
+      "decoded_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02723.bin",
+      "sha256": "8ad2ae21d55001c27e3871f898595a5022ee34371466902f7bdc321a1cbb253d",
+      "native_record_width": 8
+    },
+    "es": {
+      "entry": 2724,
+      "decoded_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02724.bin",
+      "sha256": "831b2b4fd8246aaf8f4bdcb6feed8397c5e478d52dd0c1aa2abd86e042e190d3",
+      "native_record_width": 8
+    },
+    "zht": {
+      "entry": 2725,
+      "decoded_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02725.bin",
+      "sha256": "ed9ffb01b1e4b2a486a4d276adb63a70b37aec9cf4aaadecde581d5eb3cb6d0b",
+      "native_record_width": 8
+    },
+    "ko": {
+      "entry": 2726,
+      "decoded_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02726.bin",
+      "sha256": "1e3c0b8a2dd190f1281c18b44e7c99b97c8b7071536652929cc15766239b599b",
+      "native_record_width": 8
+    },
+    "zhs": {
+      "entry": 2727,
+      "decoded_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02727.bin",
+      "sha256": "1c7fafc358d4738a65d7b15b8bf4c0ed8d17d32503fa15456718a8d3dbcaf8fe",
+      "native_record_width": 8
+    }
+  },
+  "outputs": {
+    "jp": {
+      "txt": "jp.txt",
+      "txt_sha256": "e1684fe7654b19ae05f060a1b0d723b19b65b4fefc4eb1a9c678d85b9269d8bc",
+      "all_forms_jsonl": "jp.forms.jsonl",
+      "all_forms_jsonl_sha256": "bf58fd6893c7a6b51d60c0d600633519fd718af35f915c5392959d8793cea4bd",
+      "lines": 121,
+      "nonempty_first_form": 43
+    },
+    "en": {
+      "txt": "en.txt",
+      "txt_sha256": "6319d2341d88142720be6f9de7bfbb8d888ee01ad6c4c920cd6a50b8c113211c",
+      "all_forms_jsonl": "en.forms.jsonl",
+      "all_forms_jsonl_sha256": "fb9e28a7d1ba1164d321b323cb92a7f4803757cf7bb831541233e884d076a4a1",
+      "lines": 121,
+      "nonempty_first_form": 43
+    },
+    "fr": {
+      "txt": "fr.txt",
+      "txt_sha256": "511e46f9fc8cef0ab66a3abe99021183d28fe2c144f5761c12df012f5e459e86",
+      "all_forms_jsonl": "fr.forms.jsonl",
+      "all_forms_jsonl_sha256": "9bd5285d3fd74f6dc45fe5dc3dc92f5305efa4d65b3f857e04ffb7151feef6a3",
+      "lines": 121,
+      "nonempty_first_form": 43
+    },
+    "it": {
+      "txt": "it.txt",
+      "txt_sha256": "6cc7181e5675ccab513eef1b11c381bbaceaa81c7a0348ecbf1f10d0f63f9439",
+      "all_forms_jsonl": "it.forms.jsonl",
+      "all_forms_jsonl_sha256": "9c3e83d724bb231501563ce0e45a87fa5306069a0476ccc029bcbd0f029e6447",
+      "lines": 121,
+      "nonempty_first_form": 43
+    },
+    "de": {
+      "txt": "de.txt",
+      "txt_sha256": "58359fcdc4aab4fe11d126a770df05295742e7647cc9992ceec089753c9e73f7",
+      "all_forms_jsonl": "de.forms.jsonl",
+      "all_forms_jsonl_sha256": "59ab7867fc24648dcc6afec740b313158497a30d6c6d13d81ad1f3aff81e3eb9",
+      "lines": 121,
+      "nonempty_first_form": 43
+    },
+    "es": {
+      "txt": "es.txt",
+      "txt_sha256": "ce8f9eeaef94fdfb6d52070b87acf22488b22ff05ef44dac109e06aa6f219340",
+      "all_forms_jsonl": "es.forms.jsonl",
+      "all_forms_jsonl_sha256": "748ec82838ec964e935e2d606fd8623b41351276743cb37bce378c34624699d1",
+      "lines": 121,
+      "nonempty_first_form": 43
+    },
+    "zht": {
+      "txt": "zht.txt",
+      "txt_sha256": "dec84141bfef297f62cd9371a4490962ed09fd09b22c1e071bc96ff9e9a373eb",
+      "all_forms_jsonl": "zht.forms.jsonl",
+      "all_forms_jsonl_sha256": "e33993613e68766953f2778094ce0c04888fbb6bd29403c0d31ea195a01b8a69",
+      "lines": 121,
+      "nonempty_first_form": 43
+    },
+    "ko": {
+      "txt": "ko.txt",
+      "txt_sha256": "fcc6f3ff1cc4ad53a1680a870bcc4710baad30bd940e976f0c936b3f3f054f31",
+      "all_forms_jsonl": "ko.forms.jsonl",
+      "all_forms_jsonl_sha256": "e8fe72e5fcad3fcfb01fc20099513abc95e61ec547a974fb68dac88911940f86",
+      "lines": 121,
+      "nonempty_first_form": 43
+    },
+    "zhs": {
+      "txt": "zhs.txt",
+      "txt_sha256": "f06bb448e97f71aeb8f5416c8a10eec3070a2d04fe2af1b72e947f7e9a61395f",
+      "all_forms_jsonl": "zhs.forms.jsonl",
+      "all_forms_jsonl_sha256": "9e37fc97e79bee73a2db62fa369af71a3507892e914211cd1e0f9568eeb083f4",
+      "lines": 121,
+      "nonempty_first_form": 43
+    }
+  },
+  "notes": [
+    "TXT: one physical line per text ID, form 0 only; empty records stay empty.",
+    "TXT escapes backslash, actual newline, CR, and tab. Game tags are preserved.",
+    "All original forms and byte offsets are losslessly retained in *.forms.jsonl.",
+    "M7 structural alignment does not prove a scene/quest/UI caller relationship."
+  ]
+}

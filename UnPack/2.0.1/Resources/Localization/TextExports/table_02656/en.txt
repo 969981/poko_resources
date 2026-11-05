@@ -1,0 +1,148 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<$comeff(1,10)><$facial(1,1)><$motion(1,805)><$voicel(1,6)>This town has really gotten brighter thanks to you and<br>your friends, <$cdef(27)><pname;0></color>!
+<$comeff(1,7)><$facial(1,9)><$motion(1,663)><$voicel(1,3)>But we’re still not seeing a fully bloomed flower field on<br><$cdef(27)>Snorlax</color>’s head.<clear><br><$comeff(1,6)><$facial(1,1)><$motion(1,666)><$voicel(1,5)>It seems like we’re almost there, but... What else can we<br>possibly do?
+<$comeff(1,14)><$facial(1,1)><$motion(1,807)><$voicel(1,4)>Hmmm... I’m not certain we could make it much brighter<br>if we tried.
+<$comeff(1,7)><$facial(1,9)><$motion(1,807)><$voicel(1,2)>Urk! That seems a little harsh...
+<$comeff(2,3)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>Pardon me, if I may?
+<$comeff(2,14)><$facial(2,1)><$motion(2,805)><$voicel(2,8)>While I was out and about in town, I stumbled upon quite<br>an intriguing device.
+<$comeff(2,3)><$facial(2,1)><$motion(2,666)><$voicel(2,5)>Now, if this device does what I THINK it does...<clear><br><$comeff(2,21)><$facial(2,4)><$motion(2,661)><$voicel(2,7)>It may be just what we need to finally wake <$cdef(27)>Snorlax</color>!
+<$comeff(1,5)><$facial(1,1)><$motion(1,805)><$voicel(1,7)>Oho! Now that IS intriguing! Where is this device?
+<$comeff(2,3)><$facial(2,1)><$motion(2,805)><$voicel(2,7)>It’s right this way. Please, follow me!
+
+
+
+
+
+
+
+
+<$comeff(2,3)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>Yes, this device may be just what we need...
+<$comeff(2,5)><$facial(2,1)><$motion(2,664)><$voicel(2,8)>It’s this way. Please, follow me!
+
+
+
+
+
+<$comeff(1,5)><$facial(1,1)><$motion(1,805)><$voicel(1,8)>Follow <$cdef(27)>Peakychu</color>!
+
+
+
+
+
+
+<$comeff(2,3)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>And here we are—the device in question!
+<$facial(1,1)><$voicel(1,6)>Fascinating... How exactly does one use it?
+<$facial(2,1)><$voicel(2,6)>If my theory is correct, we must first connect this machine<br>to <$voicel(2,8)>an electrical current.
+<$voicel(2,7)>Look here—this shape indicates it should be able<br>to store electricity.
+<$voicel(1,5)><$comeff(1,3)><$facial(1,4)>I see. So first we run electricity into this device, correct?<clear><br><$voicel(1,8)><$facial(1,1)><$lookat(1,0,0)><$lookat(2,0,0)>Do you know how to do that, <$cdef(27)><pname;0></color>?
+<$lookat(2,0,0)><$comeff(2,21)><$facial(2,4)><$motion(2,661)><$voicel(2,6)>Exactly right! This machine requires a large amount of<br>electricity, you see.<clear><br><$comeff(2,14)><$facial(2,1)><$motion(2,807)><$voicel(2,3)>Instead of relying on a Pokémon for just a temporary<br>charge, <wait(0.8)><$comeff(2,3)><$facial(2,1)><$motion(2,664)><$voicel(2,7)>I would like you to use <$cdef(27)><fqty(2)><$ifull(1396)> </color>to<slide><br>connect this to a <$cdef(27)>generator</color>.
+<$lookat(2,0,0)><$comeff(2,3)><$facial(2,9)><$motion(2,663)><$voicel(2,6)>Errr, not quite. This device requires a great deal of<br>electricity, you see.<clear><br><$comeff(2,14)><$facial(2,1)><$motion(2,807)><$voicel(2,3)>Instead of relying on a Pokémon for just a temporary<br>charge, <$comeff(2,21)><$facial(2,1)><$motion(2,664)><$voicel(2,7)>I would like you to use <$cdef(27)><fqty(2)><$ifull(1396)> </color>to<slide><br>connect this to <$cdef(27)>generators</color>.
+<$lookat(1,0,0)><$comeff(1,10)><$facial(1,4)><$motion(1,666)><$voicel(1,9)>Understood. Thanks for explaining so clearly!
+<oneline><$comeff(1,3)><$facial(1,1)><$motion(1,806)><$voicel(1,6)>Right then, <$cdef(27)><pname;0></color>. It sounds like<br><$cdef(27)>Peakychu</color>’s<slide><br>got<slide><br>a<slide><br>plan<slide><br>of sorts.<clear><br><$comeff(1,3)><$motion(1,661)><$voicel(1,8)>So, do you think you could set up some <$cdef(27)><fqty(2)><$ifull(1396)></color> <$comeff(1,6)><$motion(1,664)><$voicel(1,9)>to<br>carry a lot of electricity from the <$cdef(27)>generators </color>to this device?
+<$lookat(2,0,0)><$comeff(2,3)><$facial(2,1)><$motion(2,661)><$voicel(2,8)>I’m sorry to trouble you so, but we’re relying on your<br>help, <$cdef(27)><pname;0></color>!
+
+
+
+
+
+
+
+
+
+<$comeff(2,5)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>I would like you to send lots of electricity from the<br><$cdef(27)>generators </color>to this device!
+<$comeff(2,3)><$facial(2,1)><$motion(2,666)><$voicel(2,8)>In order to do that, you’ll need to use <$cdef(27)><fqty(2)><$ifull(1396)> </color>to<br>connect this device to the <$cdef(27)>generators</color>.
+
+
+
+
+
+
+<$comeff(1,10)><$facial(1,4)><$motion(1,803)><$voicel(1,8)>Oho! It lit up! What do you think, <$cdef(27)>Peakychu</color>? <$lookat(1,0,2)><$comeff(1,6)><$facial(1,1)><$motion(1,666)><$voicel(1,6)>Think this<br>device is usable now?
+<$comeff(2,5)><$facial(2,1)><$motion(2,664)><$voicel(2,8)>Let us test it out right away!
+
+
+
+
+
+
+<$comeff(2,14)><$facial(2,9)><$voicel(2,3)>... ... ...
+<$comeff(1,6)><$facial(1,1)><$motion(1,666)><$voicel(1,5)>Well? Is it working?
+<$comeff(2,7)><$facial(2,9)><$motion(2,667)><$voicel(2,1)>My apologies. It appears we still need more electricity...
+<$comeff(1,14)><$facial(1,1)><$motion(1,807)><$voicel(1,4)>Is that so...
+<$comcan(1)><$comeff(2,3)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>It appears we’ll need to increase the volume of<br>electricity by using more <$cdef(27)>generators</color>...
+<oneline><$lookat(2,0,0)><$comeff(2,4)><$facial(2,1)><$motion(2,807)><$voicel(2,4)>I am so sorry to ask for your help again and again,<br><$cdef(27)><pname;0></color>...<clear><br><$comeff(2,6)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>But could I ask you to connect even more <$cdef(27)>generators </color>to<br>this device?
+There are a few different <$cdef(27)>generators </color>in this town.<clear><br>If one doesn’t produce enough electricity, try to find a<br>second <$cdef(27)>generator</color>—or even a third—and connect their<slide><br>electrical currents to this machine.
+You can also buy <$cdef(27)>building kits</color> at the <$cdef(27)>PC </color>and use them to<br>build <$cdef(27)>generators </color>anywhere you please!
+
+
+
+
+
+
+
+
+<$comeff(1,5)><$facial(1,1)><$motion(1,665)><$voicel(1,8)>Wh-what was that?! I just heard a zap—was that you?
+<oneline><$comeff(2,17)><$facial(2,1)><$motion(2,807)><$voicel(2,6)>Phew!<clear><br><$comeff(2,3)><$facial(2,4)><$motion(2,661)><$voicel(2,8)>Thanks to <$cdef(27)><pname;0></color>, it seems this device<br>was<slide><br>already<slide><br><$comeff(2,9)><$motion(2,806)><$voicel(2,9)>linked<slide><br>to<slide><br>a<slide><br>sufficient<slide><br>electrical<slide><br>current!<clear><br><$comeff(2,10)><$facial(2,1)><$motion(2,664)><$voicel(2,7)>And as a result, I was able to charge my cheeks with plenty<br>of electricity!
+<$comeff(1,3)><$facial(1,1)><$motion(1,666)><$voicel(1,8)>Oho! Are you saying you can use electricity again?!
+<$comeff(2,4)><$facial(2,1)><$motion(2,807)><$voicel(2,4)>Well, as I had guessed, I still cannot GENERATE<br>electricity...<clear><br><$comeff(2,3)><$motion(2,803)><$voicel(2,6)>But this device has allowed me to ABSORB plenty of it!<clear><br><$lookat(2,0,0)><$comeff(2,9)><$facial(2,4)><$motion(2,806)><$voicel(2,7)>And now I have a very special move in mind—one I’ve<br>been waiting a very long time to use!
+<$comeff(1,6)><$facial(1,1)><$motion(1,666)><$voicel(1,3)>What in the world are you planning?
+<$lookat(2,0,0)><$comeff(2,3)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>This particular move ought to light up the town even<br>brighter than it already is! <$comeff(2,14)><$facial(2,7)><$motion(2,666)><$voicel(2,3)>Well, without further ado...
+<$comeff(2,5)><$facial(2,7)><$voicel(2,9)><$textsize(2)>PIIIKAAA...CHUUUUUU!!!</textsize>
+
+
+
+
+
+<$comeff(2,5)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>I would like you to send lots of electricity from the<br><$cdef(27)>generators </color>to this device!
+<$comeff(2,14)><$facial(2,1)><$motion(2,666)><$voicel(2,4)>In order to do that, you’ll need to use <$cdef(27)><fqty(2)><$ifull(1396)> </color>to<br>connect this device to the <$cdef(27)>generators</color>.
+
+
+
+
+
+
+<$comeff(2,5)><$facial(2,1)><$motion(2,805)><$voicel(2,8)>I can sense it... This time we have plenty of electricity<br>stored up!
+<$comeff(2,3)><$facial(2,1)><$motion(2,803)><$voicel(2,7)>Well, I had better try it out posthaste. I’m so nervous my<br>cheeks are tingling!
+
+
+
+
+
+<$comeff(2,14)><$facial(2,1)><$motion(2,666)><$voicel(2,3)>I hope this works...
+
+
+
+
+
+<$comeff(1,5)><$facial(1,1)><$motion(1,665)><$voicel(1,8)>Wh-what was that?! I just heard a zap—was that you?
+<oneline><$comeff(2,17)><$facial(2,1)><$motion(2,807)><$voicel(2,6)>Phew!<clear><br><$comeff(2,3)><$facial(2,4)><$motion(2,661)><$voicel(2,8)><$cdef(27)><pname;0></color> sent all the energy we needed<br>to<slide><br>this device!<clear><br><$comeff(2,10)><$facial(2,1)><$motion(2,664)><$voicel(2,7)>As a result, I was able to charge my cheeks with plenty<br>of electricity!
+<$comeff(1,3)><$facial(1,1)><$motion(1,666)><$voicel(1,8)>Oho! Are you saying you can use electricity again?!
+<$comeff(2,4)><$facial(2,1)><$motion(2,807)><$voicel(2,4)>Well, as I had guessed, I still cannot GENERATE<br>electricity...<clear><br><$comeff(2,3)><$motion(2,803)><$voicel(2,6)>But this device has allowed me to ABSORB plenty of it!<clear><br><$lookat(2,0,0)><$comeff(2,9)><$facial(2,4)><$motion(2,806)><$voicel(2,7)>And now I have a very special move in mind—one I’ve<br>been waiting a very long time to use!
+<$comeff(1,6)><$facial(1,1)><$motion(1,666)><$voicel(1,3)>What in the world are you planning?
+<$lookat(2,0,0)><$comeff(2,3)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>This particular move ought to light up the town even<br>brighter than it already is! <$comeff(2,14)><$facial(2,7)><$motion(2,666)><$voicel(2,3)>Well, without further ado...
+<$comeff(2,5)><$facial(2,7)><$voicel(2,9)><$textsize(2)>PIIIKAAA...CHUUUUUU!!!</textsize>
+
+<$comeff(1,5)><$facial(1,1)><$motion(1,665)><$voicel(1,10)>Oho! Would you look at that! So incredibly bright!
+<$lookat(2,0,0)><$comeff(2,3)><$facial(2,4)><$motion(2,661)><$voicel(2,9)>Phew! That went well, I think. Was I of any help at all?
+<$lookat(1,0,2)><$comeff(1,9)><$facial(1,4)><$motion(1,801)><$voicel(1,9)>Most certainly! I had no idea you could use a move<br>like that!
+<$lookat(4,0,2)><$comeff(5,10)><$facial(5,4)><$motion(5,801)><$voicel(5,7)>You’re AMAZING, <$cdef(27)>Peakychu</color>!
+<$lookat(5,0,2)><$comeff(4,21)><$facial(4,4)><$motion(4,801)><$voicel(4,9)>My coin’s all shiny too!
+<$lookat(6,0,2)><$comeff(6,9)><$facial(6,4)><$motion(6,803)><$voicel(6,8)>Yooo! It’s BEAUTIFUL, <$cdef(27)>Peakychu</color>! And so bright!
+<$lookat(2,0,0)><$comeff(2,10)><$facial(2,4)><$motion(2,664)><$voicel(2,8)>Tee-hee! Thank you all for your kind words. I’m just glad I<br>was able to be of use...
+<$comeff(2,3)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>Well then, shall we go check in on <$cdef(27)>Snorlax </color>and see how<br>they’re doing?
+
+

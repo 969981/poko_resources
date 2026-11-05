@@ -1,0 +1,129 @@
+<$voicel(4,2)>...<wait(2.0)><$lookat(4,0,0)><$lookat(4,1,0)><waitactor(4)><clear><br><$emotion(4,14)><$voicel(4,8)>OH, upsi! Hab dich gar nicht bemerkt.<br><wait(1.5)><$emotion(4,55)><$voicel(4,4)>Ich war total von dieser spannenden Höhle abgelenkt...
+<$comcan(4)>Aber... <wait(0.5)><$comeff(4,6)><$facial(4,1)><$motion(4,806)><$voicel(4,6)>Hey, MOMENT!<br>Du hast so ein wabbeliges Gesicht...<slide><br><$emotion(4,14)><$voicel(4,4)>Bist du ein <$cdef(27)>Ditto</color>?!<wait(0.8)><$motion(0,40)><wait(1.0)><clear><br><$comeff(4,9)><$motion(4,644)><$facial(4,4)><$voicel(4,5)>Hihihi! Gehst du auch so gern auf Erkundungstour wie ich?<br>Dann sind wir ab jetzt Freunde!
+
+
+
+<$comeff(4,7)><$motion(4,663)><$facial(4,9)><$voicel(4,4)>Hier kommt man gar nicht durch, wie blöd.
+<$comeff(4,14)><$motion(4,805)><$facial(4,2)><$voicel(4,5)>Ich will unbedingt diese Höhle erkunden, aber leider<br>wird der Weg von dem Zeug da versperrt!<slide><br><$comeff(4,4)><$motion(4,802)><$facial(4,10)><$voicel(4,4)><$kfacial(4)>So komm ich nicht weiter...
+<$comeff(4,21)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>Echt? Wow, DANKE!<clear><br><$emotion(4,14)><$voicel(4,7)>Hey, wo du schon mal hier bist, können wir dann auch<br>gleich zusammen losziehen!
+<$comeff(4,21)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>Echt? Wow, DANKE!<clear><br><$emotion(4,14)><$voicel(4,7)>Hey, wo du schon mal hier bist, können wir dann auch<br>gleich zusammen losziehen!
+
+
+
+
+
+
+<$comeff(4,9)><$motion(4,806)><$facial(4,1)><$voicel(4,10)>Hopp, hopp, lass uns zusammen die Höhle erkunden!
+<oneline><$comeff(4,6)><$motion(4,806)><$facial(4,1)><$voicel(4,5)>Was ist los, <$cdef(27)><pname;0></color>? Hast du noch was<br>anderes<slide><br>zu tun?
+<$emotion(4,8)><$voicel(4,7)>Komm, lass uns doch zusammen die Höhle erkunden,<br>das wird SUPER!
+<$emotion(4,8)><$voicel(4,7)>Komm, lass uns doch zusammen die Höhle erkunden,<br>das wird SUPER!
+<$comeff(4,9)><$motion(4,644)><$facial(4,4)><$voicel(4,7)>Vielen Dank für deine Hilfe, <$cdef(27)><pname;0></color>!
+<$comeff(4,21)><$motion(4,801)><$facial(4,4)><$voicel(4,9)>Die Erkundungstour war ein VOLLER Erfolg!<br>Hier glitzert und funkelt alles so toll, wow...!
+
+
+
+<$emotion(4,27)><$voicel(4,5)>HÄ? Moment mal... Da ist doch...<br>Ich spür da was!<clear><br><$comeff(4,10)><$motion(4,662)><$facial(4,1)><$voicel(4,7)>Du musst das doch auch spüren!!
+<$emotion(4,55)><$voicel(4,3)>ECHT NICHT?! Also mein Gefühl sagt mir, dass hier<br>ein Schatz in der Nähe ist.<clear><br><$emotion(4,14)><$voicel(4,5)>Oh, vielleicht ist DAS ja der Ort, an dem ich eins finde!<br><$comeff(4,8)><$motion(4,806)><$facial(4,4)><$voicel(4,8)>Du weißt schon, so ein Dingsda, das ich so gern mag!
+<$voicel(4,3)><$comeff(4,14)><$motion(4,666)>Das mein ich aber nicht, du Scherzkeks!<br>Mein Gefühl sagt mir, dass hier ein Schatz in der Nähe ist.<clear><br><$emotion(4,14)><$voicel(4,5)>Oh, vielleicht ist DAS ja der Ort, an dem ich eins finde!<br><$comeff(4,8)><$motion(4,806)><$facial(4,4)><$voicel(4,8)>Du weißt schon, so ein Dingsda, das ich so gern mag!
+<$emotion(4,50)><$voicel(4,6)>Na, ich rede natürlich von PLÜSCHIS, was sonst!<clear><br><$emotion(4,39)><$voicel(4,9)>Plüschis, die mit ihren Vorbesitzern ganz viel erlebt haben,<br>mag ich am allermeisten!<clear><br><$comeff(4,3)><$motion(4,805)><$facial(4,1)><$voicel(4,7)>Und ich SPÜRE einfach, dass irgendwo hier ein<br>seltenes Plüschi zu finden ist, jawohl!
+<$emotion(4,50)><$voicel(4,6)>PLÜSCHIS!<clear><br><$emotion(4,39)><$voicel(4,9)>Und Plüschis, die mit ihren Vorbesitzern ganz viel erlebt<br>haben, mag ich am allermeisten!<clear><br><$comeff(4,3)><$motion(4,805)><$facial(4,1)><$voicel(4,7)>Und ich SPÜRE einfach, dass irgendwo hier ein<br>seltenes Plüschi zu finden ist, jawohl!
+Suche nach einem <$cdef(27)><fqty(1)><$ifull(540)></color> für <$cdef(27)>Quabbel</color>!<clear><br>Wenn du das <$cdef(27)><fqty(1)><$ifull(2793)></color> einsetzt, kann <$cdef(27)>Quabbel</color><br>dir auch bei der Suche helfen!
+
+
+
+
+
+
+
+
+
+
+Wenn du noch kein <$cdef(27)><fqty(1)><$ifull(2793)></color> hast, mach einen<br>Abstecher nach <$cdef(27)><$stgname;0(1)></color>!<clear><br>Auf einer Anhöhe in der Nähe des Pokémon-Centers<br>kannst du eins finden.
+
+
+
+<$emotion(4,55)><$voicel(4,4)>Hier MUSS irgendwo ein Plüschi sein, ich hab das<br>im Gefühl!
+<$cdef(27)>Quabbel</color> kann dir mit seinem Talent <$cdef(27)><$comcan(4)><$spwfull(11)></color><br>bei der Suche nach einem <$cdef(27)><fqty(1)><$ifull(540)></color> helfen!<clear><br>Wenn du das <$cdef(27)><fqty(1)><$ifull(2793)></color> einsetzt, findest du das Plüschi<br>sicher im Handumdrehen!
+Du hast einen Schatz ausgegraben!<br>Heb ihn auf und sieh dir an, was du gefunden hast!
+
+
+
+
+
+<$comeff(4,21)><$motion(4,801)><$facial(4,4)><$voicel(4,10)>WOW, wie das im Licht funkelt!<clear><br><$voicel(4,7)><$comeff(4,8)><$facial(4,4)><$motion(4,806)>War das mal Schmuck, den die Menschen getragen haben?<br>Sieht total schick aus!
+<$comeff(4,10)><$motion(4,807)><$facial(4,2)><$voicel(4,9)>Okay, wenn wir weiter so fleißig suchen, finden wir<br>das Plüschi sicher bald!
+
+
+
+
+
+
+
+<$comeff(4,6)><$motion(4,806)><$facial(4,1)><$voicel(4,3)>Äh... Was ist DAS denn? Also ein Plüschi ist das<br>jedenfalls nicht.<clear><br><$emotion(4,247)><$voicel(4,8)>Komm, wir suchen woanders weiter!
+
+
+
+
+<$comeff(4,10)><$motion(4,807)><$facial(4,4)><$voicel(4,10)>Weiter geht’s! Als Nächstes finden wir ein Plüschi!
+
+<$cdef(27)><$emotion(4,27)></color><$voicel(4,7)>OH, ein PLÜSCHI! Zeig her!!<clear><br><$motion(4,666)><$facial(4,1)><$voicel(4,2)>Hmmm...<clear><br><$emotion(4,47)><$voicel(4,3)>Das ist leider nicht das Plüschi, das ich vorhin gespürt hab.<br><$comeff(4,6)><$motion(4,806)><$facial(4,1)><$voicel(4,6)>Gibt’s hier irgendwo noch ein anderes?
+
+
+
+
+
+<$cdef(27)><$emotion(4,27)></color><$voicel(4,7)>EIN PLÜSCHI! Zeig her!!
+<$comeff(4,21)><$motion(4,644)><$facial(4,1)><$voicel(4,7)>Woah! Dieses Plüschi muss jemandem sehr viel bedeutet<br>haben. Ich glaube, sein Vorbesitzer war... ein Mädchen.
+<$emotion(4,6)><$voicel(4,6)>Es hat <$cdef(27)><$cname(566)></color> bestimmt TOTAL LIEB gehabt!
+<$comeff(4,13)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>Quabb! Quaaabb! ♪<br>Das macht mich SO glücklich!<clear><br><$comeff(4,21)><$motion(4,644)><$facial(4,1)><$voicel(4,7)>Hach, die positive Energie tat wirklich gut.<br>Hier, das Plüschi kannst du wiederhaben!
+Dieses <$cdef(27)><fqty(1)><$ifull(540)></color> funktioniert ebenso wie andere<br>Plüschis. Wenn man es untersucht, fliegt <$cdef(27)><$cname(123)> </color>herbei<slide><br>und kann einen zu einer <$cdef(27)>Wunderinsel</color> bringen.
+<oneline><$emotion(4,8)><$voicel(4,9)>Hihihi! Wir haben ein fantastisches Plüschi gefunden,<br>was ein toller Tag! <$comeff(4,8)><$motion(4,644)><$facial(4,1)><$voicel(4,8)>Vielen Dank für deine Hilfe,<slide><br><$cdef(27)><pname;0></color>!<clear><br><$emotion(4,14)><$voicel(4,5)>Als Dankeschön will ich auch dir irgendwie helfen!<br><$emotion(4,55)><$voicel(4,4)>Ich weiß nur nicht, wie...
+<$cdef(27)><$comeff(4,6)></color><$motion(4,806)><$facial(4,1)><$voicel(4,6)>Oh, du willst also ein Gebäude bauen?<br><$cdef(27)><wait(1.2)></color><$emotion(4,50)><$voicel(4,8)>Wow, das macht bestimmt TOTAL viel Spaß!<clear><br><$comeff(4,10)><$motion(4,807)><$facial(4,1)><$voicel(4,6)>Okay, ich helfe dir dabei!
+<$emotion(4,50)><$voicel(4,8)>Sag mir einfach Bescheid, wenn es mit dem <$cdef(27)><$spwfull(1)></color><br>losgeht!
+
+
+
+
+
+
+<$emotion(4,27)><$voicel(4,5)>HÄ? Moment mal... Da ist doch...<br>Ich spür da was!<clear><br><$comeff(4,10)><$motion(4,662)><$facial(4,1)><$voicel(4,7)>Du musst das doch auch spüren!!
+<$emotion(4,55)><$voicel(4,3)>ECHT NICHT?! Also mein Gefühl sagt mir, dass hier<br>ein Schatz in der Nähe ist.<clear><br><$emotion(4,14)><$voicel(4,5)>Oh, vielleicht ist DAS ja der Ort, an dem ich eins finde!<br><$comeff(4,8)><$motion(4,806)><$facial(4,4)><$voicel(4,8)>Du weißt schon, so ein Dingsda, das ich so gern mag!
+<$voicel(4,3)><$comeff(4,14)><$motion(4,666)>Das mein ich aber nicht, du Scherzkeks!<br>Mein Gefühl sagt mir, dass hier ein Schatz in der Nähe ist.<clear><br><$emotion(4,14)><$voicel(4,5)>Oh, vielleicht ist DAS ja der Ort, an dem ich eins finde!<br><$comeff(4,8)><$motion(4,806)><$facial(4,4)><$voicel(4,8)>Du weißt schon, so ein Dingsda, das ich so gern mag!
+<$emotion(4,50)><$voicel(4,6)>Na, ich rede natürlich von PLÜSCHIS, was sonst!<clear><br><$emotion(4,39)><$voicel(4,9)>Plüschis, die mit ihren Vorbesitzern ganz viel erlebt haben,<br>mag ich am allermeisten!<clear><br><$comeff(4,3)><$motion(4,805)><$facial(4,1)><$voicel(4,7)>Und ich SPÜRE einfach, dass irgendwo hier ein<br>seltenes Plüschi zu finden ist, jawohl!
+<$emotion(4,50)><$voicel(4,6)>PLÜSCHIS!<clear><br><$emotion(4,39)><$voicel(4,9)>Und Plüschis, die mit ihren Vorbesitzern ganz viel erlebt<br>haben, mag ich am allermeisten!<clear><br><$comeff(4,3)><$motion(4,805)><$facial(4,1)><$voicel(4,7)>Und ich SPÜRE einfach, dass irgendwo hier ein<br>seltenes Plüschi zu finden ist, jawohl!
+<$cdef(27)><$emotion(4,27)></color><$voicel(4,9)>Wie, du hast es schon?! Zeig her!
+<$comeff(4,21)><$motion(4,644)><$facial(4,1)><$voicel(4,7)>Woah! Dieses Plüschi muss jemandem sehr viel bedeutet<br>haben. Ich glaube, sein Vorbesitzer war... ein Mädchen.
+<$emotion(4,6)><$voicel(4,6)>Es hat <$cdef(27)><$cname(566)></color> bestimmt TOTAL LIEB gehabt!
+<$comeff(4,13)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>Quabb! Quaaabb! ♪<br>Das macht mich SO glücklich!<clear><br><$comeff(4,21)><$motion(4,644)><$facial(4,1)><$voicel(4,7)>Hach, die positive Energie tat wirklich gut.<br>Hier, das Plüschi kannst du wiederhaben!
+Dieses <$cdef(27)><fqty(1)><$ifull(540)></color> funktioniert ebenso wie andere<br>Plüschis. Wenn man es untersucht, fliegt <$cdef(27)><$cname(123)> </color>herbei<slide><br>und kann einen zu einer <$cdef(27)>Wunderinsel</color> bringen.
+<oneline><$emotion(4,8)><$voicel(4,9)>Hihihi! Wir haben ein fantastisches Plüschi gefunden,<br>was ein toller Tag! <$comeff(4,8)><$motion(4,644)><$facial(4,1)><$voicel(4,8)>Vielen Dank für deine Hilfe,<slide><br><$cdef(27)><pname;0></color>!<clear><br><$emotion(4,14)><$voicel(4,5)>Als Dankeschön will ich auch dir irgendwie helfen!<br><$emotion(4,55)><$voicel(4,4)>Ich weiß nur nicht, wie...
+<$cdef(27)><$comeff(4,6)></color><$motion(4,806)><$facial(4,1)><$voicel(4,6)>Oh, du willst also ein Gebäude bauen?<br><$cdef(27)><wait(1.2)></color><$emotion(4,50)><$voicel(4,8)>Wow, das macht bestimmt TOTAL viel Spaß!<clear><br><$comeff(4,10)><$motion(4,807)><$facial(4,1)><$voicel(4,6)>Okay, ich helfe dir dabei!
+<$emotion(4,50)><$voicel(4,8)>Sag mir einfach Bescheid, wenn es mit dem <$cdef(27)><$spwfull(1)></color><br>losgeht!
+
+
+
+
+
+
+
+<oneline><$emotion(4,55)><$voicel(4,3)>HALLO, <$cdef(27)><pname;0></color>! Ich hab da so ein<br>Gerücht<slide><br>gehört!<slide><br><$comeff(4,6)><$motion(4,644)><$facial(4,1)><$voicel(4,6)>Und zwar, dass du<slide><br>Bleiben<slide><br>für<slide><br>Pokémon<slide><br>baust.<slide><br>Stimmt das?!<wait(0.8)><$motion(0,40)><wait(1.0)>
+<$comeff(4,3)><$motion(4,806)><$facial(4,1)><$voicel(4,3)>Ich will auch eine Bleibe von dir gebaut bekommen!<br>Biiiitte, bitte bau mir eine!
+<$emotion(4,8)><$voicel(4,7)>HURRAAA! Okay, ich will, dass meine Bleibe SO aussieht.
+<$emotion(4,8)><$voicel(4,7)>HURRAAA! Okay, ich will, dass meine Bleibe SO aussieht.
+<$comeff(4,3)><$motion(4,644)><$facial(4,2)><$voicel(4,6)>Sag Bescheid, wenn meine Bleibe fertig ist!
+
+
+
+
+
+
+<$comeff(4,6)><$motion(4,666)><$facial(4,2)><$voicel(4,5)>Meine Bleibe soll SO aussehen!
+
+
+
+<$emotion(4,6)><$voicel(4,7)>DANKE SCHÖN! Die Bleibe ist total süß geworden,<br>ich bin BEGEISTERT!
+
+
+
+<$cdef(27)><$comeff(4,21)><$motion(4,806)><$facial(4,4)><$voicel(4,9)></color>Die Bleibe, die du mir gebaut hast, ist SPITZE!
+<$emotion(4,6)><$voicel(4,8)>Danke für die süßeste Bleibe, die man sich wünschen kann!

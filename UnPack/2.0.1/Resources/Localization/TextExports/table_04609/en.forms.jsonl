@@ -1,0 +1,801 @@
+{"text_id":0,"forms":[""],"absolute_byte_offsets":[6472],"raw_metadata_u32":[0]}
+{"text_id":1,"forms":["<$kgfull;0(lnum1)>"],"absolute_byte_offsets":[6473],"raw_metadata_u32":[1]}
+{"text_id":2,"forms":["<$kgicon(lnum1)>"],"absolute_byte_offsets":[6492],"raw_metadata_u32":[1]}
+{"text_id":3,"forms":["<$kgtext;0(lnum1)>"],"absolute_byte_offsets":[6509],"raw_metadata_u32":[1]}
+{"text_id":4,"forms":["<$keyicon(lnum1)><$kgtext;0(lnum2)>"],"absolute_byte_offsets":[6528],"raw_metadata_u32":[1]}
+{"text_id":5,"forms":["<$etname;0(lnum1)>"],"absolute_byte_offsets":[6564],"raw_metadata_u32":[1]}
+{"text_id":6,"forms":["<$pkname;0(lnum1)>"],"absolute_byte_offsets":[6583],"raw_metadata_u32":[1]}
+{"text_id":7,"forms":["<fcap><$hatname;0(lnum1)>"],"absolute_byte_offsets":[6602],"raw_metadata_u32":[1]}
+{"text_id":8,"forms":["<$msname;0(lnum1)>"],"absolute_byte_offsets":[6628],"raw_metadata_u32":[1]}
+{"text_id":9,"forms":["<$msdscp;0(lnum1)>"],"absolute_byte_offsets":[6647],"raw_metadata_u32":[1]}
+{"text_id":10,"forms":["<$pkclass;0(lnum1)>"],"absolute_byte_offsets":[6666],"raw_metadata_u32":[1]}
+{"text_id":11,"forms":["<$pkheight;0(lnum1)>"],"absolute_byte_offsets":[6686],"raw_metadata_u32":[1]}
+{"text_id":12,"forms":["<$pkweight;0(lnum1)>"],"absolute_byte_offsets":[6707],"raw_metadata_u32":[1]}
+{"text_id":13,"forms":["<$pkdscp;0(lnum1)>"],"absolute_byte_offsets":[6728],"raw_metadata_u32":[1]}
+{"text_id":14,"forms":["<fqty(1)><$iname;0(lnum1)>"],"absolute_byte_offsets":[6747],"raw_metadata_u32":[1]}
+{"text_id":15,"forms":["<fqty(1)><fcap><$iname;0(lnum1)>"],"absolute_byte_offsets":[6774],"raw_metadata_u32":[1]}
+{"text_id":16,"forms":["<$stflevel;0(lnum1)>"],"absolute_byte_offsets":[6807],"raw_metadata_u32":[1]}
+{"text_id":17,"forms":["<$sklname;0(lnum1)>"],"absolute_byte_offsets":[6828],"raw_metadata_u32":[1]}
+{"text_id":18,"forms":["<$idscp;0(lnum1)>"],"absolute_byte_offsets":[6848],"raw_metadata_u32":[1]}
+{"text_id":19,"forms":["<$pkform;0(lnum1)>"],"absolute_byte_offsets":[6866],"raw_metadata_u32":[1]}
+{"text_id":20,"forms":["<$phfrname;0(lnum1)>"],"absolute_byte_offsets":[6885],"raw_metadata_u32":[1]}
+{"text_id":21,"forms":["<$phfilname;0(lnum1)>"],"absolute_byte_offsets":[6906],"raw_metadata_u32":[1]}
+{"text_id":22,"forms":["<$shchname;0(lnum1)>"],"absolute_byte_offsets":[6928],"raw_metadata_u32":[1]}
+{"text_id":23,"forms":["<$stgmyname;0(lnum1)>"],"absolute_byte_offsets":[6949],"raw_metadata_u32":[1]}
+{"text_id":24,"forms":["<fcap><fqty(1)><$iname;0(lnum1)>"],"absolute_byte_offsets":[6971],"raw_metadata_u32":[1]}
+{"text_id":25,"forms":["<timerms;0(lnum1,lnum2)>"],"absolute_byte_offsets":[7004],"raw_metadata_u32":[1]}
+{"text_id":26,"forms":["<timemd;0(lnum1,lnum2)>"],"absolute_byte_offsets":[7029],"raw_metadata_u32":[1]}
+{"text_id":27,"forms":["<timehm;0(lnum1,lnum2)>"],"absolute_byte_offsets":[7053],"raw_metadata_u32":[1]}
+{"text_id":28,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[7077],"raw_metadata_u32":[1]}
+{"text_id":29,"forms":["<$cname;0(lnum1)>"],"absolute_byte_offsets":[7095],"raw_metadata_u32":[1]}
+{"text_id":30,"forms":["Location"],"absolute_byte_offsets":[7113],"raw_metadata_u32":[1]}
+{"text_id":31,"forms":[""],"absolute_byte_offsets":[7122],"raw_metadata_u32":[0]}
+{"text_id":32,"forms":[""],"absolute_byte_offsets":[7123],"raw_metadata_u32":[0]}
+{"text_id":33,"forms":[""],"absolute_byte_offsets":[7124],"raw_metadata_u32":[0]}
+{"text_id":34,"forms":[""],"absolute_byte_offsets":[7125],"raw_metadata_u32":[0]}
+{"text_id":35,"forms":[""],"absolute_byte_offsets":[7126],"raw_metadata_u32":[0]}
+{"text_id":36,"forms":["???"],"absolute_byte_offsets":[7127],"raw_metadata_u32":[1]}
+{"text_id":37,"forms":[""],"absolute_byte_offsets":[7131],"raw_metadata_u32":[0]}
+{"text_id":38,"forms":[""],"absolute_byte_offsets":[7132],"raw_metadata_u32":[0]}
+{"text_id":39,"forms":["None"],"absolute_byte_offsets":[7133],"raw_metadata_u32":[1]}
+{"text_id":40,"forms":[""],"absolute_byte_offsets":[7138],"raw_metadata_u32":[0]}
+{"text_id":41,"forms":["Total"],"absolute_byte_offsets":[7139],"raw_metadata_u32":[1]}
+{"text_id":42,"forms":["コ"],"absolute_byte_offsets":[7145],"raw_metadata_u32":[1]}
+{"text_id":43,"forms":[""],"absolute_byte_offsets":[7149],"raw_metadata_u32":[0]}
+{"text_id":44,"forms":["<$icon(11199)><$cdef(27)><fcap><fqty(1)><$iname;0(lnum1)></color> recipe"],"absolute_byte_offsets":[7150],"raw_metadata_u32":[1]}
+{"text_id":45,"forms":[""],"absolute_byte_offsets":[7223],"raw_metadata_u32":[0]}
+{"text_id":46,"forms":["???"],"absolute_byte_offsets":[7224],"raw_metadata_u32":[1]}
+{"text_id":47,"forms":["<ratio;0(lnum1,lnum2)>"],"absolute_byte_offsets":[7228],"raw_metadata_u32":[1]}
+{"text_id":48,"forms":["Pokédex"],"absolute_byte_offsets":[7251],"raw_metadata_u32":[1]}
+{"text_id":49,"forms":["No. Registered:"],"absolute_byte_offsets":[7260],"raw_metadata_u32":[1]}
+{"text_id":50,"forms":["<$strsname;0(lstr1,lnum1)>"],"absolute_byte_offsets":[7276],"raw_metadata_u32":[1]}
+{"text_id":51,"forms":["<pkdexnum;0(lnum1)>"],"absolute_byte_offsets":[7303],"raw_metadata_u32":[1]}
+{"text_id":52,"forms":["×"],"absolute_byte_offsets":[7323],"raw_metadata_u32":[1]}
+{"text_id":53,"forms":["Habitat Dex"],"absolute_byte_offsets":[7326],"raw_metadata_u32":[1]}
+{"text_id":54,"forms":[""],"absolute_byte_offsets":[7338],"raw_metadata_u32":[0]}
+{"text_id":55,"forms":["Online"],"absolute_byte_offsets":[7339],"raw_metadata_u32":[1]}
+{"text_id":56,"forms":["Offline"],"absolute_byte_offsets":[7346],"raw_metadata_u32":[1]}
+{"text_id":57,"forms":[""],"absolute_byte_offsets":[7354],"raw_metadata_u32":[0]}
+{"text_id":58,"forms":[""],"absolute_byte_offsets":[7355],"raw_metadata_u32":[0]}
+{"text_id":59,"forms":["<dgt3;0(lnum1)> more for:"],"absolute_byte_offsets":[7356],"raw_metadata_u32":[1]}
+{"text_id":60,"forms":["<dgt10;0(lnum1)>"],"absolute_byte_offsets":[7382],"raw_metadata_u32":[1]}
+{"text_id":61,"forms":["<$cdef(27)><fcap><fqty(1)><$iname;0(lnum1)> </color>×<dgt4;1(lnum2)>"],"absolute_byte_offsets":[7399],"raw_metadata_u32":[1]}
+{"text_id":62,"forms":[""],"absolute_byte_offsets":[7469],"raw_metadata_u32":[0]}
+{"text_id":63,"forms":[""],"absolute_byte_offsets":[7470],"raw_metadata_u32":[0]}
+{"text_id":64,"forms":["Nearby Habitats"],"absolute_byte_offsets":[7471],"raw_metadata_u32":[1]}
+{"text_id":65,"forms":[""],"absolute_byte_offsets":[7487],"raw_metadata_u32":[0]}
+{"text_id":66,"forms":[""],"absolute_byte_offsets":[7488],"raw_metadata_u32":[0]}
+{"text_id":67,"forms":[""],"absolute_byte_offsets":[7489],"raw_metadata_u32":[0]}
+{"text_id":68,"forms":[""],"absolute_byte_offsets":[7490],"raw_metadata_u32":[0]}
+{"text_id":69,"forms":[""],"absolute_byte_offsets":[7491],"raw_metadata_u32":[0]}
+{"text_id":70,"forms":["<ratio;0(lnum1,lnum2)>"],"absolute_byte_offsets":[7492],"raw_metadata_u32":[1]}
+{"text_id":71,"forms":[""],"absolute_byte_offsets":[7515],"raw_metadata_u32":[0]}
+{"text_id":72,"forms":[""],"absolute_byte_offsets":[7516],"raw_metadata_u32":[0]}
+{"text_id":73,"forms":[""],"absolute_byte_offsets":[7517],"raw_metadata_u32":[0]}
+{"text_id":74,"forms":[""],"absolute_byte_offsets":[7518],"raw_metadata_u32":[0]}
+{"text_id":75,"forms":[""],"absolute_byte_offsets":[7519],"raw_metadata_u32":[0]}
+{"text_id":76,"forms":[""],"absolute_byte_offsets":[7520],"raw_metadata_u32":[0]}
+{"text_id":77,"forms":[""],"absolute_byte_offsets":[7521],"raw_metadata_u32":[1]}
+{"text_id":78,"forms":["<$cdef(27)><fcap><fqty(1)><$ifull;0(lnum1)> </color>×<dgt4;1(lnum2)>"],"absolute_byte_offsets":[7522],"raw_metadata_u32":[1]}
+{"text_id":79,"forms":[""],"absolute_byte_offsets":[7592],"raw_metadata_u32":[1]}
+{"text_id":80,"forms":["<$stgmyname;0(lnum1)>"],"absolute_byte_offsets":[7593],"raw_metadata_u32":[1]}
+{"text_id":81,"forms":["<$cdef(27)><fcap><$sklfull;0(lnum1)></color>"],"absolute_byte_offsets":[7615],"raw_metadata_u32":[1]}
+{"text_id":82,"forms":["Start building!"],"absolute_byte_offsets":[7660],"raw_metadata_u32":[1]}
+{"text_id":83,"forms":["Start rebuilding!"],"absolute_byte_offsets":[7676],"raw_metadata_u32":[1]}
+{"text_id":84,"forms":[""],"absolute_byte_offsets":[7694],"raw_metadata_u32":[0]}
+{"text_id":85,"forms":["<moneyint;0(lnum1)>"],"absolute_byte_offsets":[7695],"raw_metadata_u32":[1]}
+{"text_id":86,"forms":["<$icon(lnum1)>???"],"absolute_byte_offsets":[7715],"raw_metadata_u32":[1]}
+{"text_id":87,"forms":["<$icon(lnum1)>Complete requests!"],"absolute_byte_offsets":[7733],"raw_metadata_u32":[1]}
+{"text_id":88,"forms":["<$icon(lnum1)>Complete requests!"],"absolute_byte_offsets":[7766],"raw_metadata_u32":[1]}
+{"text_id":89,"forms":["<$icon(lnum1)>Learn moves!"],"absolute_byte_offsets":[7799],"raw_metadata_u32":[1]}
+{"text_id":90,"forms":["<$icon(lnum1)><$chopen;0(lnum2)>"],"absolute_byte_offsets":[7826],"raw_metadata_u32":[1]}
+{"text_id":91,"forms":["<$keyicon(153)><fcap><$inamewithnum;0(lnum1,lnum2)>"],"absolute_byte_offsets":[7859],"raw_metadata_u32":[1]}
+{"text_id":92,"forms":["<$keyicon(153)>???"],"absolute_byte_offsets":[7911],"raw_metadata_u32":[1]}
+{"text_id":93,"forms":[""],"absolute_byte_offsets":[7930],"raw_metadata_u32":[0]}
+{"text_id":94,"forms":["<$icon(11199)><fcap><fqty(1)><$iname;0(lnum1)> recipe"],"absolute_byte_offsets":[7931],"raw_metadata_u32":[1]}
+{"text_id":95,"forms":[""],"absolute_byte_offsets":[7985],"raw_metadata_u32":[0]}
+{"text_id":96,"forms":[""],"absolute_byte_offsets":[7986],"raw_metadata_u32":[0]}
+{"text_id":97,"forms":[""],"absolute_byte_offsets":[7987],"raw_metadata_u32":[0]}
+{"text_id":98,"forms":[""],"absolute_byte_offsets":[7988],"raw_metadata_u32":[0]}
+{"text_id":99,"forms":[""],"absolute_byte_offsets":[7989],"raw_metadata_u32":[0]}
+{"text_id":100,"forms":[""],"absolute_byte_offsets":[7990],"raw_metadata_u32":[0]}
+{"text_id":101,"forms":[""],"absolute_byte_offsets":[7991],"raw_metadata_u32":[0]}
+{"text_id":102,"forms":[""],"absolute_byte_offsets":[7992],"raw_metadata_u32":[0]}
+{"text_id":103,"forms":["???’s home"],"absolute_byte_offsets":[7993],"raw_metadata_u32":[1]}
+{"text_id":104,"forms":["<$cdef(27)><$cname;0(lnum1)></color>’s home"],"absolute_byte_offsets":[8006],"raw_metadata_u32":[1]}
+{"text_id":105,"forms":[""],"absolute_byte_offsets":[8052],"raw_metadata_u32":[0]}
+{"text_id":106,"forms":[""],"absolute_byte_offsets":[8053],"raw_metadata_u32":[0]}
+{"text_id":107,"forms":[""],"absolute_byte_offsets":[8054],"raw_metadata_u32":[0]}
+{"text_id":108,"forms":["<$uqname;0(lnum1)>"],"absolute_byte_offsets":[8055],"raw_metadata_u32":[1]}
+{"text_id":109,"forms":["<$gqname;0(lnum1)>"],"absolute_byte_offsets":[8074],"raw_metadata_u32":[1]}
+{"text_id":110,"forms":["<$uqdscp;0(lnum1)>"],"absolute_byte_offsets":[8093],"raw_metadata_u32":[1]}
+{"text_id":111,"forms":["<$gqdscp;0(lnum1,lnum2)>"],"absolute_byte_offsets":[8112],"raw_metadata_u32":[1]}
+{"text_id":112,"forms":["Things to Do"],"absolute_byte_offsets":[8137],"raw_metadata_u32":[1]}
+{"text_id":113,"forms":[""],"absolute_byte_offsets":[8150],"raw_metadata_u32":[0]}
+{"text_id":114,"forms":["Daily Challenges"],"absolute_byte_offsets":[8151],"raw_metadata_u32":[1]}
+{"text_id":115,"forms":["???"],"absolute_byte_offsets":[8168],"raw_metadata_u32":[1]}
+{"text_id":116,"forms":["Height"],"absolute_byte_offsets":[8172],"raw_metadata_u32":[1]}
+{"text_id":117,"forms":["Weight"],"absolute_byte_offsets":[8179],"raw_metadata_u32":[1]}
+{"text_id":118,"forms":["Type"],"absolute_byte_offsets":[8186],"raw_metadata_u32":[1]}
+{"text_id":119,"forms":["<$typname;0(lnum1)>"],"absolute_byte_offsets":[8191],"raw_metadata_u32":[1]}
+{"text_id":120,"forms":["Time"],"absolute_byte_offsets":[8211],"raw_metadata_u32":[1]}
+{"text_id":121,"forms":["Weather"],"absolute_byte_offsets":[8216],"raw_metadata_u32":[1]}
+{"text_id":122,"forms":["Specialties"],"absolute_byte_offsets":[8224],"raw_metadata_u32":[1]}
+{"text_id":123,"forms":["Ideal Habitat"],"absolute_byte_offsets":[8236],"raw_metadata_u32":[1]}
+{"text_id":124,"forms":["Favorites"],"absolute_byte_offsets":[8250],"raw_metadata_u32":[1]}
+{"text_id":125,"forms":["Details"],"absolute_byte_offsets":[8260],"raw_metadata_u32":[1]}
+{"text_id":126,"forms":["Where to Find"],"absolute_byte_offsets":[8268],"raw_metadata_u32":[1]}
+{"text_id":127,"forms":["Specialties & Likes"],"absolute_byte_offsets":[8282],"raw_metadata_u32":[1]}
+{"text_id":128,"forms":["???"],"absolute_byte_offsets":[8302],"raw_metadata_u32":[1]}
+{"text_id":129,"forms":["Next"],"absolute_byte_offsets":[8306],"raw_metadata_u32":[1]}
+{"text_id":130,"forms":["<$pkname;0(lnum2)>"],"absolute_byte_offsets":[8311],"raw_metadata_u32":[1]}
+{"text_id":131,"forms":["<fcap><$hatname;0(lnum2)>"],"absolute_byte_offsets":[8330],"raw_metadata_u32":[1]}
+{"text_id":132,"forms":[""],"absolute_byte_offsets":[8356],"raw_metadata_u32":[0]}
+{"text_id":133,"forms":["<$temptxt;0(lnum1)>"],"absolute_byte_offsets":[8357],"raw_metadata_u32":[1]}
+{"text_id":134,"forms":["<$illutxt;0(lnum1)>"],"absolute_byte_offsets":[8377],"raw_metadata_u32":[1]}
+{"text_id":135,"forms":["<$humitxt;0(lnum1)>"],"absolute_byte_offsets":[8397],"raw_metadata_u32":[1]}
+{"text_id":136,"forms":["You haven’t discovered this habitat yet."],"absolute_byte_offsets":[8417],"raw_metadata_u32":[1]}
+{"text_id":137,"forms":["<$icon(lnum1)><$cdef(27)><fcap><$spwname;0(lnum2)></color>"],"absolute_byte_offsets":[8460],"raw_metadata_u32":[1]}
+{"text_id":138,"forms":["Complete!"],"absolute_byte_offsets":[8519],"raw_metadata_u32":[1]}
+{"text_id":139,"forms":[""],"absolute_byte_offsets":[8529],"raw_metadata_u32":[0]}
+{"text_id":140,"forms":[""],"absolute_byte_offsets":[8530],"raw_metadata_u32":[0]}
+{"text_id":141,"forms":[""],"absolute_byte_offsets":[8531],"raw_metadata_u32":[0]}
+{"text_id":142,"forms":["- <moneyint;0(lnum1)>"],"absolute_byte_offsets":[8532],"raw_metadata_u32":[1]}
+{"text_id":143,"forms":["+ <moneyint;0(lnum1)>"],"absolute_byte_offsets":[8554],"raw_metadata_u32":[1]}
+{"text_id":144,"forms":["<dgt2;0(lnum1)>"],"absolute_byte_offsets":[8576],"raw_metadata_u32":[1]}
+{"text_id":145,"forms":["Out of stock"],"absolute_byte_offsets":[8592],"raw_metadata_u32":[1]}
+{"text_id":146,"forms":["<dgt2;0(lnum1)>"],"absolute_byte_offsets":[8605],"raw_metadata_u32":[1]}
+{"text_id":147,"forms":[""],"absolute_byte_offsets":[8621],"raw_metadata_u32":[0]}
+{"text_id":148,"forms":["Purchase"],"absolute_byte_offsets":[8622],"raw_metadata_u32":[1]}
+{"text_id":149,"forms":["In stock"],"absolute_byte_offsets":[8631],"raw_metadata_u32":[1]}
+{"text_id":150,"forms":[""],"absolute_byte_offsets":[8640],"raw_metadata_u32":[0]}
+{"text_id":151,"forms":["Order"],"absolute_byte_offsets":[8641],"raw_metadata_u32":[1]}
+{"text_id":152,"forms":["Comfort Report"],"absolute_byte_offsets":[8647],"raw_metadata_u32":[1]}
+{"text_id":153,"forms":[""],"absolute_byte_offsets":[8662],"raw_metadata_u32":[0]}
+{"text_id":154,"forms":["----"],"absolute_byte_offsets":[8663],"raw_metadata_u32":[10]}
+{"text_id":155,"forms":[""],"absolute_byte_offsets":[8668],"raw_metadata_u32":[0]}
+{"text_id":156,"forms":[""],"absolute_byte_offsets":[8669],"raw_metadata_u32":[0]}
+{"text_id":157,"forms":[""],"absolute_byte_offsets":[8670],"raw_metadata_u32":[0]}
+{"text_id":158,"forms":[""],"absolute_byte_offsets":[8671],"raw_metadata_u32":[0]}
+{"text_id":159,"forms":[""],"absolute_byte_offsets":[8672],"raw_metadata_u32":[0]}
+{"text_id":160,"forms":[""],"absolute_byte_offsets":[8673],"raw_metadata_u32":[0]}
+{"text_id":161,"forms":["Environment Level"],"absolute_byte_offsets":[8674],"raw_metadata_u32":[1]}
+{"text_id":162,"forms":["MAX"],"absolute_byte_offsets":[8692],"raw_metadata_u32":[1]}
+{"text_id":163,"forms":["Ready to start with this look?"],"absolute_byte_offsets":[8696],"raw_metadata_u32":[1]}
+{"text_id":164,"forms":[""],"absolute_byte_offsets":[8727],"raw_metadata_u32":[0]}
+{"text_id":165,"forms":["Link Code"],"absolute_byte_offsets":[8728],"raw_metadata_u32":[1]}
+{"text_id":166,"forms":["Address"],"absolute_byte_offsets":[8738],"raw_metadata_u32":[1]}
+{"text_id":167,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[8746],"raw_metadata_u32":[1]}
+{"text_id":168,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[8764],"raw_metadata_u32":[1]}
+{"text_id":169,"forms":["Share your Link Code with friends you<br>want to play with!"],"absolute_byte_offsets":[8782],"raw_metadata_u32":[1]}
+{"text_id":170,"forms":["Share the address and Link Code with<br>friends you want to play with!"],"absolute_byte_offsets":[8842],"raw_metadata_u32":[1]}
+{"text_id":171,"forms":["Do you want to go ahead and make this island?<br>Double check the details below!"],"absolute_byte_offsets":[8913],"raw_metadata_u32":[1]}
+{"text_id":172,"forms":["Island Name"],"absolute_byte_offsets":[8994],"raw_metadata_u32":[1]}
+{"text_id":173,"forms":["Address"],"absolute_byte_offsets":[9006],"raw_metadata_u32":[1]}
+{"text_id":174,"forms":["Magic Number"],"absolute_byte_offsets":[9014],"raw_metadata_u32":[1]}
+{"text_id":175,"forms":["<dgt2;0(lnum1)> <qty;0(day,days)> left"],"absolute_byte_offsets":[9027],"raw_metadata_u32":[1]}
+{"text_id":176,"forms":["Due today"],"absolute_byte_offsets":[9066],"raw_metadata_u32":[1]}
+{"text_id":177,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[9076],"raw_metadata_u32":[1]}
+{"text_id":178,"forms":["Purchased items will be sent to your <$cdef(27)>PC</color>.<br>(Recipes are learned immediately.)"],"absolute_byte_offsets":[9094],"raw_metadata_u32":[1]}
+{"text_id":179,"forms":["Spit Out"],"absolute_byte_offsets":[9192],"raw_metadata_u32":[1]}
+{"text_id":180,"forms":["Spit Out: Rotate Clockwise"],"absolute_byte_offsets":[9201],"raw_metadata_u32":[1]}
+{"text_id":181,"forms":["Spit Out: Rotate Counterclockwise"],"absolute_byte_offsets":[9228],"raw_metadata_u32":[1]}
+{"text_id":182,"forms":["Choose a Destination"],"absolute_byte_offsets":[9262],"raw_metadata_u32":[1]}
+{"text_id":183,"forms":["Do you want to head to this destination?"],"absolute_byte_offsets":[9283],"raw_metadata_u32":[1]}
+{"text_id":184,"forms":["Visitors"],"absolute_byte_offsets":[9324],"raw_metadata_u32":[1]}
+{"text_id":185,"forms":["Owner"],"absolute_byte_offsets":[9333],"raw_metadata_u32":[1]}
+{"text_id":186,"forms":["Guests"],"absolute_byte_offsets":[9339],"raw_metadata_u32":[1]}
+{"text_id":187,"forms":["<$keyicon(6)><fqty(1)><$iname;0(lnum1)>"],"absolute_byte_offsets":[9346],"raw_metadata_u32":[1]}
+{"text_id":188,"forms":["Go Here"],"absolute_byte_offsets":[9386],"raw_metadata_u32":[1]}
+{"text_id":189,"forms":["Important Notes When Playing via Link Play"],"absolute_byte_offsets":[9394],"raw_metadata_u32":[1]}
+{"text_id":190,"forms":["Enjoying the Game with Other Players"],"absolute_byte_offsets":[9437],"raw_metadata_u32":[1]}
+{"text_id":191,"forms":["Caution"],"absolute_byte_offsets":[9474],"raw_metadata_u32":[1]}
+{"text_id":192,"forms":["Confirm"],"absolute_byte_offsets":[9482],"raw_metadata_u32":[1]}
+{"text_id":193,"forms":["Finish"],"absolute_byte_offsets":[9490],"raw_metadata_u32":[1]}
+{"text_id":194,"forms":["Yes"],"absolute_byte_offsets":[9497],"raw_metadata_u32":[1]}
+{"text_id":195,"forms":["No"],"absolute_byte_offsets":[9501],"raw_metadata_u32":[1]}
+{"text_id":196,"forms":["Check"],"absolute_byte_offsets":[9504],"raw_metadata_u32":[1]}
+{"text_id":197,"forms":["Cancel"],"absolute_byte_offsets":[9510],"raw_metadata_u32":[1]}
+{"text_id":198,"forms":["???"],"absolute_byte_offsets":[9517],"raw_metadata_u32":[1]}
+{"text_id":199,"forms":["Materials"],"absolute_byte_offsets":[9521],"raw_metadata_u32":[1]}
+{"text_id":200,"forms":["Needed"],"absolute_byte_offsets":[9531],"raw_metadata_u32":[1]}
+{"text_id":201,"forms":["Owned"],"absolute_byte_offsets":[9538],"raw_metadata_u32":[1]}
+{"text_id":202,"forms":["All"],"absolute_byte_offsets":[9544],"raw_metadata_u32":[1]}
+{"text_id":203,"forms":["Favorites"],"absolute_byte_offsets":[9548],"raw_metadata_u32":[1]}
+{"text_id":204,"forms":["You can use your coins to buy items and recipes. All products other than<br>recipes can only be used on this island."],"absolute_byte_offsets":[9558],"raw_metadata_u32":[1]}
+{"text_id":205,"forms":["<dgt2;0(lnum1)> <qty;0(set,sets)>"],"absolute_byte_offsets":[9675],"raw_metadata_u32":[1]}
+{"text_id":206,"forms":[""],"absolute_byte_offsets":[9709],"raw_metadata_u32":[0]}
+{"text_id":207,"forms":["Your console is set to an invalid date.<br>Please open the HOME menu, set your console to a date<br>between 1/1/2000 and 12/31/2060, then restart the game."],"absolute_byte_offsets":[9710],"raw_metadata_u32":[1]}
+{"text_id":208,"forms":["Other"],"absolute_byte_offsets":[9866],"raw_metadata_u32":[1]}
+{"text_id":209,"forms":[""],"absolute_byte_offsets":[9872],"raw_metadata_u32":[0]}
+{"text_id":210,"forms":["Whenever you see <$icon(2645)> on the screen, your progress is being<br>automatically saved.<br><br>Please do not exit the game or turn off the power while the game<br>is saving."],"absolute_byte_offsets":[9873],"raw_metadata_u32":[1]}
+{"text_id":211,"forms":["Which language will you play in?"],"absolute_byte_offsets":[10052],"raw_metadata_u32":[1]}
+{"text_id":212,"forms":[""],"absolute_byte_offsets":[10085],"raw_metadata_u32":[9]}
+{"text_id":213,"forms":[""],"absolute_byte_offsets":[10086],"raw_metadata_u32":[9]}
+{"text_id":214,"forms":[""],"absolute_byte_offsets":[10087],"raw_metadata_u32":[9]}
+{"text_id":215,"forms":[""],"absolute_byte_offsets":[10088],"raw_metadata_u32":[9]}
+{"text_id":216,"forms":[""],"absolute_byte_offsets":[10089],"raw_metadata_u32":[0]}
+{"text_id":217,"forms":[""],"absolute_byte_offsets":[10090],"raw_metadata_u32":[0]}
+{"text_id":218,"forms":[""],"absolute_byte_offsets":[10091],"raw_metadata_u32":[0]}
+{"text_id":219,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[10092],"raw_metadata_u32":[1]}
+{"text_id":220,"forms":["Needed"],"absolute_byte_offsets":[10110],"raw_metadata_u32":[1]}
+{"text_id":221,"forms":["Total"],"absolute_byte_offsets":[10117],"raw_metadata_u32":[1]}
+{"text_id":222,"forms":["Trade!"],"absolute_byte_offsets":[10123],"raw_metadata_u32":[1]}
+{"text_id":223,"forms":["Move List"],"absolute_byte_offsets":[10130],"raw_metadata_u32":[1]}
+{"text_id":224,"forms":[""],"absolute_byte_offsets":[10140],"raw_metadata_u32":[0]}
+{"text_id":225,"forms":["Amt. craftable"],"absolute_byte_offsets":[10141],"raw_metadata_u32":[1]}
+{"text_id":226,"forms":["Look for ???"],"absolute_byte_offsets":[10156],"raw_metadata_u32":[10]}
+{"text_id":227,"forms":["Try asking again tomorrow."],"absolute_byte_offsets":[10169],"raw_metadata_u32":[1]}
+{"text_id":228,"forms":["Bring Pokémon here!"],"absolute_byte_offsets":[10196],"raw_metadata_u32":[1]}
+{"text_id":229,"forms":["Look for Pokémon!"],"absolute_byte_offsets":[10217],"raw_metadata_u32":[1]}
+{"text_id":230,"forms":["/"],"absolute_byte_offsets":[10236],"raw_metadata_u32":[1]}
+{"text_id":231,"forms":["Materials"],"absolute_byte_offsets":[10238],"raw_metadata_u32":[1]}
+{"text_id":232,"forms":["Pokémon"],"absolute_byte_offsets":[10248],"raw_metadata_u32":[1]}
+{"text_id":233,"forms":["<fcap><$spwname;0(lnum1)>"],"absolute_byte_offsets":[10257],"raw_metadata_u32":[1]}
+{"text_id":234,"forms":["Empty house"],"absolute_byte_offsets":[10283],"raw_metadata_u32":[1]}
+{"text_id":235,"forms":["<$cdef(27)><$cname;0(lnum1)></color>’s house"],"absolute_byte_offsets":[10295],"raw_metadata_u32":[1]}
+{"text_id":236,"forms":["Shared house"],"absolute_byte_offsets":[10342],"raw_metadata_u32":[1]}
+{"text_id":237,"forms":["<$cdef(27)><pname;0></color>’s house"],"absolute_byte_offsets":[10355],"raw_metadata_u32":[1]}
+{"text_id":238,"forms":["Time Powered"],"absolute_byte_offsets":[10394],"raw_metadata_u32":[1]}
+{"text_id":239,"forms":["Burning fuel..."],"absolute_byte_offsets":[10407],"raw_metadata_u32":[1]}
+{"text_id":240,"forms":["Burn"],"absolute_byte_offsets":[10423],"raw_metadata_u32":[1]}
+{"text_id":241,"forms":[""],"absolute_byte_offsets":[10428],"raw_metadata_u32":[0]}
+{"text_id":242,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color>’s house"],"absolute_byte_offsets":[10429],"raw_metadata_u32":[1]}
+{"text_id":243,"forms":[""],"absolute_byte_offsets":[10485],"raw_metadata_u32":[0]}
+{"text_id":244,"forms":[""],"absolute_byte_offsets":[10486],"raw_metadata_u32":[0]}
+{"text_id":245,"forms":["Area"],"absolute_byte_offsets":[10487],"raw_metadata_u32":[1]}
+{"text_id":246,"forms":["Player <$cdef(27)><pname;0></color>"],"absolute_byte_offsets":[10492],"raw_metadata_u32":[1]}
+{"text_id":247,"forms":["Start cooking!"],"absolute_byte_offsets":[10528],"raw_metadata_u32":[1]}
+{"text_id":248,"forms":["Request"],"absolute_byte_offsets":[10543],"raw_metadata_u32":[1]}
+{"text_id":249,"forms":["Until <timeymd;0(lnum1,lnum2,lnum3)>"],"absolute_byte_offsets":[10551],"raw_metadata_u32":[1]}
+{"text_id":250,"forms":["Search for Pokémon in need of help and grant their requests!"],"absolute_byte_offsets":[10588],"raw_metadata_u32":[1]}
+{"text_id":251,"forms":["<fcap><class><string;0(lstr1)>"],"absolute_byte_offsets":[10650],"raw_metadata_u32":[1]}
+{"text_id":252,"forms":["a.m."],"absolute_byte_offsets":[10681],"raw_metadata_u32":[1]}
+{"text_id":253,"forms":["p.m."],"absolute_byte_offsets":[10686],"raw_metadata_u32":[1]}
+{"text_id":254,"forms":["<timehm;0(lnum1,lnum2)>"],"absolute_byte_offsets":[10691],"raw_metadata_u32":[1]}
+{"text_id":255,"forms":["On sale!"],"absolute_byte_offsets":[10715],"raw_metadata_u32":[1]}
+{"text_id":256,"forms":["Challenges Complete!"],"absolute_byte_offsets":[10724],"raw_metadata_u32":[1]}
+{"text_id":257,"forms":["Another player has reported a completed challenge."],"absolute_byte_offsets":[10745],"raw_metadata_u32":[1]}
+{"text_id":258,"forms":["You have reported all completed challenges."],"absolute_byte_offsets":[10796],"raw_metadata_u32":[1]}
+{"text_id":259,"forms":["Pokémon’s Comfort Levels"],"absolute_byte_offsets":[10840],"raw_metadata_u32":[1]}
+{"text_id":260,"forms":["Level up!"],"absolute_byte_offsets":[10868],"raw_metadata_u32":[1]}
+{"text_id":261,"forms":["Level down..."],"absolute_byte_offsets":[10878],"raw_metadata_u32":[1]}
+{"text_id":262,"forms":[""],"absolute_byte_offsets":[10892],"raw_metadata_u32":[0]}
+{"text_id":263,"forms":[""],"absolute_byte_offsets":[10893],"raw_metadata_u32":[0]}
+{"text_id":264,"forms":[""],"absolute_byte_offsets":[10894],"raw_metadata_u32":[0]}
+{"text_id":265,"forms":["<timeymdhm;0(lnum1,lnum2,lnum3,lnum4,lnum5)>"],"absolute_byte_offsets":[10895],"raw_metadata_u32":[1]}
+{"text_id":266,"forms":["+"],"absolute_byte_offsets":[10940],"raw_metadata_u32":[1]}
+{"text_id":267,"forms":["-"],"absolute_byte_offsets":[10942],"raw_metadata_u32":[1]}
+{"text_id":268,"forms":["Complete!"],"absolute_byte_offsets":[10944],"raw_metadata_u32":[1]}
+{"text_id":269,"forms":[""],"absolute_byte_offsets":[10954],"raw_metadata_u32":[0]}
+{"text_id":270,"forms":["<timeymd;0(lnum1,lnum2,lnum3)>"],"absolute_byte_offsets":[10955],"raw_metadata_u32":[1]}
+{"text_id":271,"forms":[""],"absolute_byte_offsets":[10986],"raw_metadata_u32":[0]}
+{"text_id":272,"forms":[""],"absolute_byte_offsets":[10987],"raw_metadata_u32":[0]}
+{"text_id":273,"forms":["There are no Pokémon living in this area."],"absolute_byte_offsets":[10988],"raw_metadata_u32":[1]}
+{"text_id":274,"forms":["Lv. <dgt2;0(lnum1)>"],"absolute_byte_offsets":[11031],"raw_metadata_u32":[1]}
+{"text_id":275,"forms":["—"],"absolute_byte_offsets":[11051],"raw_metadata_u32":[1]}
+{"text_id":276,"forms":["<$backupmemo;0(lstr1,lnum1)>"],"absolute_byte_offsets":[11055],"raw_metadata_u32":[1]}
+{"text_id":277,"forms":["<$strpname;0(lstr1,lnum1)>"],"absolute_byte_offsets":[11084],"raw_metadata_u32":[1]}
+{"text_id":278,"forms":["Certificate"],"absolute_byte_offsets":[11111],"raw_metadata_u32":[1]}
+{"text_id":279,"forms":["Player <wowner;0>"],"absolute_byte_offsets":[11123],"raw_metadata_u32":[1]}
+{"text_id":280,"forms":["We hereby certify your achievement of<br>completing the Pokédex. May this great<br>feat be celebrated by all!"],"absolute_byte_offsets":[11141],"raw_metadata_u32":[1]}
+{"text_id":281,"forms":["Staff"],"absolute_byte_offsets":[11252],"raw_metadata_u32":[1]}
+{"text_id":282,"forms":[""],"absolute_byte_offsets":[11258],"raw_metadata_u32":[1]}
+{"text_id":283,"forms":["Searching for nearby cameras..."],"absolute_byte_offsets":[11259],"raw_metadata_u32":[1]}
+{"text_id":284,"forms":["Switching cameras..."],"absolute_byte_offsets":[11291],"raw_metadata_u32":[1]}
+{"text_id":285,"forms":["No <$cdef(27)>favorites</color> have been registered."],"absolute_byte_offsets":[11312],"raw_metadata_u32":[1]}
+{"text_id":286,"forms":["Items delivered"],"absolute_byte_offsets":[11366],"raw_metadata_u32":[1]}
+{"text_id":287,"forms":["My inventory"],"absolute_byte_offsets":[11382],"raw_metadata_u32":[1]}
+{"text_id":288,"forms":[""],"absolute_byte_offsets":[11395],"raw_metadata_u32":[0]}
+{"text_id":289,"forms":["Players you can visit today"],"absolute_byte_offsets":[11396],"raw_metadata_u32":[1]}
+{"text_id":290,"forms":["のこり"],"absolute_byte_offsets":[11424],"raw_metadata_u32":[1]}
+{"text_id":291,"forms":["<dgt2;0(lnum1)> left"],"absolute_byte_offsets":[11434],"raw_metadata_u32":[1]}
+{"text_id":292,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[11455],"raw_metadata_u32":[1]}
+{"text_id":293,"forms":["Start demolishing!"],"absolute_byte_offsets":[11473],"raw_metadata_u32":[1]}
+{"text_id":294,"forms":["Start preparing!"],"absolute_byte_offsets":[11492],"raw_metadata_u32":[1]}
+{"text_id":295,"forms":["Start moving!"],"absolute_byte_offsets":[11509],"raw_metadata_u32":[1]}
+{"text_id":296,"forms":["<$icon(11214)>Common"],"absolute_byte_offsets":[11523],"raw_metadata_u32":[1]}
+{"text_id":297,"forms":["<$icon(11214)><$icon(11214)>Rare"],"absolute_byte_offsets":[11544],"raw_metadata_u32":[1]}
+{"text_id":298,"forms":["<$icon(11214)><$icon(11214)><$icon(11214)>Very Rare"],"absolute_byte_offsets":[11577],"raw_metadata_u32":[1]}
+{"text_id":299,"forms":["We hereby certify your achievement of<br>completing this Cloud Island Pokédex.<br>May this great feat be celebrated by all!"],"absolute_byte_offsets":[11629],"raw_metadata_u32":[1]}
+{"text_id":300,"forms":["Start remodeling!"],"absolute_byte_offsets":[11754],"raw_metadata_u32":[1]}
+{"text_id":301,"forms":["During local or online multiplayer, other players can see your<br><$cdef(27)>player name</color>,<$cdef(27)> world/island name</color>, and any <$cdef(27)>words or images </color>you<br>create with blocks. Please be mindful of what you share to avoid<br>upsetting others—and have fun playing together!"],"absolute_byte_offsets":[11772],"raw_metadata_u32":[1]}
+{"text_id":302,"forms":["Important information regarding Link Play:<br><br>The Nintendo Account Agreement and the Nintendo Community<br>Guidelines apply to all user-generated content and player<br>conduct.<br><br>If content or activities that violate these terms are reported and<br>confirmed, it may result in server data being blocked and/or<br>access to Link Play being restricted.<br><br>Additionally, please note that the creator of a Cloud Island is<br>responsible for any content on their Cloud Island. Please exercise<br>caution when sharing your Link Code for a Cloud Island.<br><br>You can report inappropriate content or behavior by selecting<br>“Send a report” on the menu screen during Link Play.<br><br>Please follow the Nintendo Account Agreement and the Nintendo<br>Community Guidelines and be respectful of other players while<br>you are playing."],"absolute_byte_offsets":[12076],"raw_metadata_u32":[1]}
+{"text_id":303,"forms":["Submit"],"absolute_byte_offsets":[12919],"raw_metadata_u32":[1]}
+{"text_id":304,"forms":["Things to Find"],"absolute_byte_offsets":[12926],"raw_metadata_u32":[1]}
+{"text_id":305,"forms":["Current Photo"],"absolute_byte_offsets":[12941],"raw_metadata_u32":[1]}
+{"text_id":306,"forms":["Selected Photo"],"absolute_byte_offsets":[12955],"raw_metadata_u32":[1]}
+{"text_id":307,"forms":["Numerical order"],"absolute_byte_offsets":[12970],"raw_metadata_u32":[1]}
+{"text_id":308,"forms":["A→Z"],"absolute_byte_offsets":[12986],"raw_metadata_u32":[1]}
+{"text_id":309,"forms":["Heaviest→Lightest"],"absolute_byte_offsets":[12992],"raw_metadata_u32":[1]}
+{"text_id":310,"forms":["Lightest→Heaviest"],"absolute_byte_offsets":[13012],"raw_metadata_u32":[1]}
+{"text_id":311,"forms":["Tallest→Shortest"],"absolute_byte_offsets":[13032],"raw_metadata_u32":[1]}
+{"text_id":312,"forms":["Shortest→Tallest"],"absolute_byte_offsets":[13051],"raw_metadata_u32":[1]}
+{"text_id":313,"forms":["By type"],"absolute_byte_offsets":[13070],"raw_metadata_u32":[1]}
+{"text_id":314,"forms":["Order learned"],"absolute_byte_offsets":[13078],"raw_metadata_u32":[1]}
+{"text_id":315,"forms":["Price (Low→High)"],"absolute_byte_offsets":[13092],"raw_metadata_u32":[1]}
+{"text_id":316,"forms":["Price (High→Low)"],"absolute_byte_offsets":[13111],"raw_metadata_u32":[1]}
+{"text_id":317,"forms":["By status"],"absolute_byte_offsets":[13130],"raw_metadata_u32":[1]}
+{"text_id":318,"forms":["Registration Status"],"absolute_byte_offsets":[13140],"raw_metadata_u32":[1]}
+{"text_id":319,"forms":["Location"],"absolute_byte_offsets":[13160],"raw_metadata_u32":[1]}
+{"text_id":320,"forms":["Specialties"],"absolute_byte_offsets":[13169],"raw_metadata_u32":[1]}
+{"text_id":321,"forms":["All"],"absolute_byte_offsets":[13181],"raw_metadata_u32":[1]}
+{"text_id":322,"forms":["Befriended"],"absolute_byte_offsets":[13185],"raw_metadata_u32":[1]}
+{"text_id":323,"forms":[""],"absolute_byte_offsets":[13196],"raw_metadata_u32":[0]}
+{"text_id":324,"forms":["Sensed"],"absolute_byte_offsets":[13197],"raw_metadata_u32":[1]}
+{"text_id":325,"forms":["Unknown"],"absolute_byte_offsets":[13204],"raw_metadata_u32":[1]}
+{"text_id":326,"forms":["<$keyicon(83)>Confirm"],"absolute_byte_offsets":[13212],"raw_metadata_u32":[1]}
+{"text_id":327,"forms":["Sort"],"absolute_byte_offsets":[13234],"raw_metadata_u32":[1]}
+{"text_id":328,"forms":["Number of Players"],"absolute_byte_offsets":[13239],"raw_metadata_u32":[1]}
+{"text_id":329,"forms":["Spectator Mode"],"absolute_byte_offsets":[13257],"raw_metadata_u32":[1]}
+{"text_id":330,"forms":["Address"],"absolute_byte_offsets":[13272],"raw_metadata_u32":[1]}
+{"text_id":331,"forms":["Change Link Code"],"absolute_byte_offsets":[13280],"raw_metadata_u32":[1]}
+{"text_id":332,"forms":["Magic Number"],"absolute_byte_offsets":[13297],"raw_metadata_u32":[1]}
+{"text_id":333,"forms":["Cloud Island Name"],"absolute_byte_offsets":[13310],"raw_metadata_u32":[1]}
+{"text_id":334,"forms":["Share with Others"],"absolute_byte_offsets":[13328],"raw_metadata_u32":[1]}
+{"text_id":335,"forms":["Set Link Code"],"absolute_byte_offsets":[13346],"raw_metadata_u32":[1]}
+{"text_id":336,"forms":["Save Date/Time"],"absolute_byte_offsets":[13360],"raw_metadata_u32":[1]}
+{"text_id":337,"forms":["Notes"],"absolute_byte_offsets":[13375],"raw_metadata_u32":[1]}
+{"text_id":338,"forms":["Change"],"absolute_byte_offsets":[13381],"raw_metadata_u32":[1]}
+{"text_id":339,"forms":["Save"],"absolute_byte_offsets":[13388],"raw_metadata_u32":[1]}
+{"text_id":340,"forms":["Restore"],"absolute_byte_offsets":[13393],"raw_metadata_u32":[1]}
+{"text_id":341,"forms":["Four"],"absolute_byte_offsets":[13401],"raw_metadata_u32":[1]}
+{"text_id":342,"forms":["Three"],"absolute_byte_offsets":[13406],"raw_metadata_u32":[1]}
+{"text_id":343,"forms":["Two"],"absolute_byte_offsets":[13412],"raw_metadata_u32":[1]}
+{"text_id":344,"forms":["On"],"absolute_byte_offsets":[13416],"raw_metadata_u32":[1]}
+{"text_id":345,"forms":["Off"],"absolute_byte_offsets":[13419],"raw_metadata_u32":[1]}
+{"text_id":346,"forms":["Yes"],"absolute_byte_offsets":[13423],"raw_metadata_u32":[1]}
+{"text_id":347,"forms":["No"],"absolute_byte_offsets":[13427],"raw_metadata_u32":[1]}
+{"text_id":348,"forms":["Choose how many people can play together."],"absolute_byte_offsets":[13430],"raw_metadata_u32":[1]}
+{"text_id":349,"forms":["Use spectator mode to disable the use of certain moves and items."],"absolute_byte_offsets":[13472],"raw_metadata_u32":[1]}
+{"text_id":350,"forms":["Check the Cloud Island’s address."],"absolute_byte_offsets":[13538],"raw_metadata_u32":[1]}
+{"text_id":351,"forms":["Check and change the Cloud Island’s Link Code."],"absolute_byte_offsets":[13574],"raw_metadata_u32":[1]}
+{"text_id":352,"forms":["Check the Cloud Island’s magic number."],"absolute_byte_offsets":[13623],"raw_metadata_u32":[1]}
+{"text_id":353,"forms":["Check or change the Cloud Island’s name."],"absolute_byte_offsets":[13664],"raw_metadata_u32":[1]}
+{"text_id":354,"forms":["Allow other players to play freely on the island."],"absolute_byte_offsets":[13707],"raw_metadata_u32":[1]}
+{"text_id":355,"forms":["Choose whether or not players must enter a Link Code to join."],"absolute_byte_offsets":[13757],"raw_metadata_u32":[1]}
+{"text_id":356,"forms":["Save the current status as a backup."],"absolute_byte_offsets":[13819],"raw_metadata_u32":[1]}
+{"text_id":357,"forms":["Restore existing backup data."],"absolute_byte_offsets":[13856],"raw_metadata_u32":[1]}
+{"text_id":358,"forms":["Text Speed"],"absolute_byte_offsets":[13886],"raw_metadata_u32":[1]}
+{"text_id":359,"forms":["Language"],"absolute_byte_offsets":[13897],"raw_metadata_u32":[1]}
+{"text_id":360,"forms":["By usage"],"absolute_byte_offsets":[13906],"raw_metadata_u32":[1]}
+{"text_id":361,"forms":["Run/Jump Controls"],"absolute_byte_offsets":[13915],"raw_metadata_u32":[1]}
+{"text_id":362,"forms":["Button Assignments"],"absolute_byte_offsets":[13933],"raw_metadata_u32":[1]}
+{"text_id":363,"forms":["Controller Rumble"],"absolute_byte_offsets":[13952],"raw_metadata_u32":[1]}
+{"text_id":364,"forms":[""],"absolute_byte_offsets":[13970],"raw_metadata_u32":[0]}
+{"text_id":365,"forms":["Camera: Vertical"],"absolute_byte_offsets":[13971],"raw_metadata_u32":[1]}
+{"text_id":366,"forms":["Camera: Horizontal"],"absolute_byte_offsets":[13988],"raw_metadata_u32":[1]}
+{"text_id":367,"forms":["Camera Speed"],"absolute_byte_offsets":[14007],"raw_metadata_u32":[1]}
+{"text_id":368,"forms":["Camera Auto-Adjust"],"absolute_byte_offsets":[14020],"raw_metadata_u32":[1]}
+{"text_id":369,"forms":["Background Music"],"absolute_byte_offsets":[14039],"raw_metadata_u32":[1]}
+{"text_id":370,"forms":["Sound Effects"],"absolute_byte_offsets":[14056],"raw_metadata_u32":[1]}
+{"text_id":371,"forms":["Pokémon Cries"],"absolute_byte_offsets":[14070],"raw_metadata_u32":[1]}
+{"text_id":372,"forms":["Change"],"absolute_byte_offsets":[14085],"raw_metadata_u32":[1]}
+{"text_id":373,"forms":["Slow"],"absolute_byte_offsets":[14092],"raw_metadata_u32":[1]}
+{"text_id":374,"forms":["Normal"],"absolute_byte_offsets":[14097],"raw_metadata_u32":[1]}
+{"text_id":375,"forms":["Fast"],"absolute_byte_offsets":[14104],"raw_metadata_u32":[1]}
+{"text_id":376,"forms":["Not in any area"],"absolute_byte_offsets":[14109],"raw_metadata_u32":[1]}
+{"text_id":377,"forms":["Not all Pokémon registered"],"absolute_byte_offsets":[14125],"raw_metadata_u32":[1]}
+{"text_id":378,"forms":["Pokémon registration status for <$strsname;0(lstr1,lnum1)>"],"absolute_byte_offsets":[14153],"raw_metadata_u32":[1]}
+{"text_id":379,"forms":["Pokémon registration status for <$strpname;0(lstr1,lnum1)>"],"absolute_byte_offsets":[14213],"raw_metadata_u32":[1]}
+{"text_id":380,"forms":["On"],"absolute_byte_offsets":[14273],"raw_metadata_u32":[1]}
+{"text_id":381,"forms":["Off"],"absolute_byte_offsets":[14276],"raw_metadata_u32":[1]}
+{"text_id":382,"forms":["Regular"],"absolute_byte_offsets":[14280],"raw_metadata_u32":[1]}
+{"text_id":383,"forms":["Inverted"],"absolute_byte_offsets":[14288],"raw_metadata_u32":[1]}
+{"text_id":384,"forms":["On"],"absolute_byte_offsets":[14297],"raw_metadata_u32":[1]}
+{"text_id":385,"forms":["Off"],"absolute_byte_offsets":[14300],"raw_metadata_u32":[1]}
+{"text_id":386,"forms":[""],"absolute_byte_offsets":[14304],"raw_metadata_u32":[0]}
+{"text_id":387,"forms":[""],"absolute_byte_offsets":[14305],"raw_metadata_u32":[0]}
+{"text_id":388,"forms":["You can select one of three text-display speeds."],"absolute_byte_offsets":[14306],"raw_metadata_u32":[1]}
+{"text_id":389,"forms":["Select the display language."],"absolute_byte_offsets":[14355],"raw_metadata_u32":[1]}
+{"text_id":390,"forms":[""],"absolute_byte_offsets":[14384],"raw_metadata_u32":[0]}
+{"text_id":391,"forms":["Use <$keyicon(55)> to run and <$keyicon(3)> to jump."],"absolute_byte_offsets":[14385],"raw_metadata_u32":[1]}
+{"text_id":392,"forms":["Set button assignments."],"absolute_byte_offsets":[14438],"raw_metadata_u32":[1]}
+{"text_id":393,"forms":["Turn the controller rumble function on and off."],"absolute_byte_offsets":[14462],"raw_metadata_u32":[1]}
+{"text_id":394,"forms":["Use <$keyicon(3)> to run and <$keyicon(55)> to jump."],"absolute_byte_offsets":[14510],"raw_metadata_u32":[1]}
+{"text_id":395,"forms":["Choose whether to invert the controls for moving the camera vertically."],"absolute_byte_offsets":[14563],"raw_metadata_u32":[1]}
+{"text_id":396,"forms":["Choose whether to invert the controls for moving the camera horizontally."],"absolute_byte_offsets":[14635],"raw_metadata_u32":[1]}
+{"text_id":397,"forms":["Select the camera movement speed."],"absolute_byte_offsets":[14709],"raw_metadata_u32":[1]}
+{"text_id":398,"forms":["Allow the camera to avoid objects between itself and Ditto."],"absolute_byte_offsets":[14743],"raw_metadata_u32":[1]}
+{"text_id":399,"forms":[""],"absolute_byte_offsets":[14803],"raw_metadata_u32":[0]}
+{"text_id":400,"forms":["Adjust the volume of the background music."],"absolute_byte_offsets":[14804],"raw_metadata_u32":[1]}
+{"text_id":401,"forms":["Adjust the volume of sound effects."],"absolute_byte_offsets":[14847],"raw_metadata_u32":[1]}
+{"text_id":402,"forms":["Adjust the volume of Pokémon cries."],"absolute_byte_offsets":[14883],"raw_metadata_u32":[1]}
+{"text_id":403,"forms":["What would you like to report?"],"absolute_byte_offsets":[14920],"raw_metadata_u32":[1]}
+{"text_id":404,"forms":["Select a player to report."],"absolute_byte_offsets":[14951],"raw_metadata_u32":[1]}
+{"text_id":405,"forms":["Select a reason for the report."],"absolute_byte_offsets":[14978],"raw_metadata_u32":[1]}
+{"text_id":406,"forms":["Send your report with these details?"],"absolute_byte_offsets":[15010],"raw_metadata_u32":[1]}
+{"text_id":407,"forms":["Game World (terrain, pictures, etc.)"],"absolute_byte_offsets":[15047],"raw_metadata_u32":[1]}
+{"text_id":408,"forms":["Player (name, actions, etc.)"],"absolute_byte_offsets":[15084],"raw_metadata_u32":[1]}
+{"text_id":409,"forms":["Personal Information / Asking to Meet"],"absolute_byte_offsets":[15113],"raw_metadata_u32":[1]}
+{"text_id":410,"forms":["Violent Content"],"absolute_byte_offsets":[15151],"raw_metadata_u32":[1]}
+{"text_id":411,"forms":["Inappropriate/Harmful"],"absolute_byte_offsets":[15167],"raw_metadata_u32":[1]}
+{"text_id":412,"forms":["Harassment/Insults"],"absolute_byte_offsets":[15189],"raw_metadata_u32":[1]}
+{"text_id":413,"forms":["Advertising"],"absolute_byte_offsets":[15208],"raw_metadata_u32":[1]}
+{"text_id":414,"forms":["Obscene Content"],"absolute_byte_offsets":[15220],"raw_metadata_u32":[1]}
+{"text_id":415,"forms":["Modding/Cheating"],"absolute_byte_offsets":[15236],"raw_metadata_u32":[1]}
+{"text_id":416,"forms":["Other Inappropriate Content"],"absolute_byte_offsets":[15253],"raw_metadata_u32":[1]}
+{"text_id":417,"forms":["This report will be sent to Nintendo and not to the player being<br>reported. The details of your report may be shared with third<br>parties. Please do not intentionally submit false reports."],"absolute_byte_offsets":[15281],"raw_metadata_u32":[1]}
+{"text_id":418,"forms":["Please provide a detailed explanation."],"absolute_byte_offsets":[15473],"raw_metadata_u32":[1]}
+{"text_id":419,"forms":["Report"],"absolute_byte_offsets":[15512],"raw_metadata_u32":[1]}
+{"text_id":420,"forms":["Confirm"],"absolute_byte_offsets":[15519],"raw_metadata_u32":[1]}
+{"text_id":421,"forms":["Back"],"absolute_byte_offsets":[15527],"raw_metadata_u32":[1]}
+{"text_id":422,"forms":["Connection closing soon. Please finish what you are doing and<br>close any open windows."],"absolute_byte_offsets":[15532],"raw_metadata_u32":[1]}
+{"text_id":423,"forms":[""],"absolute_byte_offsets":[15621],"raw_metadata_u32":[0]}
+{"text_id":424,"forms":["Starting virtual mode..."],"absolute_byte_offsets":[15622],"raw_metadata_u32":[1]}
+{"text_id":425,"forms":["Quitting virtual mode..."],"absolute_byte_offsets":[15647],"raw_metadata_u32":[1]}
+{"text_id":426,"forms":["Jump Rope"],"absolute_byte_offsets":[15672],"raw_metadata_u32":[1]}
+{"text_id":427,"forms":["Hide-and-Sneak"],"absolute_byte_offsets":[15682],"raw_metadata_u32":[1]}
+{"text_id":428,"forms":["Jump when the rope comes close to<br>your feet!"],"absolute_byte_offsets":[15697],"raw_metadata_u32":[1]}
+{"text_id":429,"forms":["Make it to the <$cdef(27)>Pokémon Center</color> and<br>touch the<$cdef(27)> PC </color>without being spotted!"],"absolute_byte_offsets":[15745],"raw_metadata_u32":[1]}
+{"text_id":430,"forms":["You"],"absolute_byte_offsets":[15857],"raw_metadata_u32":[1]}
+{"text_id":431,"forms":["OK!"],"absolute_byte_offsets":[15861],"raw_metadata_u32":[1]}
+{"text_id":432,"forms":["Start!"],"absolute_byte_offsets":[15865],"raw_metadata_u32":[1]}
+{"text_id":433,"forms":["First"],"absolute_byte_offsets":[15872],"raw_metadata_u32":[1]}
+{"text_id":434,"forms":["Second"],"absolute_byte_offsets":[15878],"raw_metadata_u32":[1]}
+{"text_id":435,"forms":["Third"],"absolute_byte_offsets":[15885],"raw_metadata_u32":[1]}
+{"text_id":436,"forms":["Fourth"],"absolute_byte_offsets":[15891],"raw_metadata_u32":[1]}
+{"text_id":437,"forms":["Results"],"absolute_byte_offsets":[15898],"raw_metadata_u32":[1]}
+{"text_id":438,"forms":["<dgt5;0(lnum1)> <qty;0(jump,jumps)>"],"absolute_byte_offsets":[15906],"raw_metadata_u32":[1]}
+{"text_id":439,"forms":["New Record!"],"absolute_byte_offsets":[15942],"raw_metadata_u32":[1]}
+{"text_id":440,"forms":[""],"absolute_byte_offsets":[15954],"raw_metadata_u32":[0]}
+{"text_id":441,"forms":["Times Found (All Players)"],"absolute_byte_offsets":[15955],"raw_metadata_u32":[1]}
+{"text_id":442,"forms":[""],"absolute_byte_offsets":[15981],"raw_metadata_u32":[0]}
+{"text_id":443,"forms":[""],"absolute_byte_offsets":[15982],"raw_metadata_u32":[0]}
+{"text_id":444,"forms":[""],"absolute_byte_offsets":[15983],"raw_metadata_u32":[0]}
+{"text_id":445,"forms":["<dgt4;0(lnum1)> <qty;0(time,times)>"],"absolute_byte_offsets":[15984],"raw_metadata_u32":[1]}
+{"text_id":446,"forms":["Shop Day"],"absolute_byte_offsets":[16020],"raw_metadata_u32":[1]}
+{"text_id":447,"forms":["Challenge Day"],"absolute_byte_offsets":[16029],"raw_metadata_u32":[1]}
+{"text_id":448,"forms":["<oneline><$cdef(27)><$strpname;0(lstr1,lnum1)> </color>wants to play <$cdef(27)>jump rope</color>! Please<br>respond<slide><br>to<slide><br>the poll."],"absolute_byte_offsets":[16043],"raw_metadata_u32":[1]}
+{"text_id":449,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)> </color>is going to play <$cdef(27)>jump rope</color>!"],"absolute_byte_offsets":[16193],"raw_metadata_u32":[1]}
+{"text_id":450,"forms":["You’re about to go to an area you haven’t discovered yet.<br>Please respond to the poll."],"absolute_byte_offsets":[16286],"raw_metadata_u32":[1]}
+{"text_id":451,"forms":["Only players who select “yes” will play together."],"absolute_byte_offsets":[16379],"raw_metadata_u32":[1]}
+{"text_id":452,"forms":["Stamp Rally"],"absolute_byte_offsets":[16433],"raw_metadata_u32":[1]}
+{"text_id":453,"forms":["Today’s Stamp"],"absolute_byte_offsets":[16445],"raw_metadata_u32":[1]}
+{"text_id":454,"forms":["Add Stamp!"],"absolute_byte_offsets":[16461],"raw_metadata_u32":[1]}
+{"text_id":455,"forms":["Stamp period:"],"absolute_byte_offsets":[16472],"raw_metadata_u32":[1]}
+{"text_id":456,"forms":["Exchange period:"],"absolute_byte_offsets":[16486],"raw_metadata_u32":[1]}
+{"text_id":457,"forms":["<timemd;0(lnum1,lnum2)>–<timemd;1(lnum3,lnum4)>"],"absolute_byte_offsets":[16503],"raw_metadata_u32":[1]}
+{"text_id":458,"forms":["That name contains a word or character that isn’t<br>allowed. Please enter a different name."],"absolute_byte_offsets":[16553],"raw_metadata_u32":[1]}
+{"text_id":459,"forms":["There are no Pokémon who fit these conditions."],"absolute_byte_offsets":[16648],"raw_metadata_u32":[1]}
+{"text_id":460,"forms":["There are no habitats that fit these conditions."],"absolute_byte_offsets":[16696],"raw_metadata_u32":[1]}
+{"text_id":461,"forms":["<$cdef(27)>Active Filter</color>"],"absolute_byte_offsets":[16745],"raw_metadata_u32":[1]}
+{"text_id":462,"forms":["No Filter"],"absolute_byte_offsets":[16778],"raw_metadata_u32":[1]}
+{"text_id":463,"forms":[""],"absolute_byte_offsets":[16788],"raw_metadata_u32":[0]}
+{"text_id":464,"forms":[""],"absolute_byte_offsets":[16789],"raw_metadata_u32":[0]}
+{"text_id":465,"forms":["No home"],"absolute_byte_offsets":[16790],"raw_metadata_u32":[1]}
+{"text_id":466,"forms":["<$cdef(27)><$cname;0(lnum1)></color>’s home"],"absolute_byte_offsets":[16798],"raw_metadata_u32":[1]}
+{"text_id":467,"forms":["The host is about to close the connection. Please finish whatever<br>you might be doing!"],"absolute_byte_offsets":[16844],"raw_metadata_u32":[1]}
+{"text_id":468,"forms":["The connection will be closed shortly!"],"absolute_byte_offsets":[16933],"raw_metadata_u32":[1]}
+{"text_id":469,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)> </color>will become the new host.<br>Please stop what you are doing so the host can change."],"absolute_byte_offsets":[16972],"raw_metadata_u32":[1]}
+{"text_id":470,"forms":["<oneline><$cdef(27)><$strpname;0(lstr1,lnum1)> </color>wants to go to a <$cdef(27)>Dream Island</color>! Please<br>respond<slide><br>to<slide><br>the poll."],"absolute_byte_offsets":[17102],"raw_metadata_u32":[1]}
+{"text_id":471,"forms":["<oneline><$cdef(27)><$strpname;0(lstr1,lnum1)></color><$cdef(27)> </color>wants to leave the <$cdef(27)>Dream Island</color>!<br>Please<slide><br>respond<slide><br>to<slide><br>the poll."],"absolute_byte_offsets":[17258],"raw_metadata_u32":[1]}
+{"text_id":472,"forms":["<oneline><$cdef(27)><$strpname;0(lstr1,lnum1)></color><$cdef(27)> </color>wants to play <$cdef(27)>hide-and-sneak</color>! Please<br>respond<slide><br>to<slide><br>the poll."],"absolute_byte_offsets":[17445],"raw_metadata_u32":[1]}
+{"text_id":473,"forms":["<oneline>Headed to <dart;0()><$cdef(27)><$stgmyname;0(lnum1)></color>.<br>Please<slide><br>respond<slide><br>to<slide><br>the poll."],"absolute_byte_offsets":[17619],"raw_metadata_u32":[1]}
+{"text_id":474,"forms":["OK"],"absolute_byte_offsets":[17751],"raw_metadata_u32":[1]}
+{"text_id":475,"forms":["Number Needed"],"absolute_byte_offsets":[17754],"raw_metadata_u32":[1]}
+{"text_id":476,"forms":["Times Found"],"absolute_byte_offsets":[17768],"raw_metadata_u32":[1]}
+{"text_id":477,"forms":["<dgt5;0(lnum1)>"],"absolute_byte_offsets":[17780],"raw_metadata_u32":[1]}
+{"text_id":478,"forms":["Camera Distance"],"absolute_byte_offsets":[17796],"raw_metadata_u32":[1]}
+{"text_id":479,"forms":["Close"],"absolute_byte_offsets":[17812],"raw_metadata_u32":[1]}
+{"text_id":480,"forms":["Normal"],"absolute_byte_offsets":[17818],"raw_metadata_u32":[1]}
+{"text_id":481,"forms":["Far"],"absolute_byte_offsets":[17825],"raw_metadata_u32":[1]}
+{"text_id":482,"forms":["Adjust the distance between the camera and Ditto."],"absolute_byte_offsets":[17829],"raw_metadata_u32":[1]}
+{"text_id":483,"forms":["Make Request"],"absolute_byte_offsets":[17879],"raw_metadata_u32":[1]}
+{"text_id":484,"forms":["Paint"],"absolute_byte_offsets":[17892],"raw_metadata_u32":[1]}
+{"text_id":485,"forms":[""],"absolute_byte_offsets":[17898],"raw_metadata_u32":[0]}
+{"text_id":486,"forms":["Press the button you want to use."],"absolute_byte_offsets":[17899],"raw_metadata_u32":[1]}
+{"text_id":487,"forms":["Waiting for other players to respond..."],"absolute_byte_offsets":[17933],"raw_metadata_u32":[1]}
+{"text_id":488,"forms":["The host is going to <dart;0()><$cdef(27)><$stgmyname;0(lnum1)></color>."],"absolute_byte_offsets":[17973],"raw_metadata_u32":[1]}
+{"text_id":489,"forms":["The host is going to an area you haven’t discovered yet."],"absolute_byte_offsets":[18046],"raw_metadata_u32":[1]}
+{"text_id":490,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)> </color>is going to a <$cdef(27)>Dream Island</color>!"],"absolute_byte_offsets":[18105],"raw_metadata_u32":[1]}
+{"text_id":491,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)> </color>is leaving the <$cdef(27)>Dream Island</color>!"],"absolute_byte_offsets":[18198],"raw_metadata_u32":[1]}
+{"text_id":492,"forms":["Players who select “No” will not go."],"absolute_byte_offsets":[18292],"raw_metadata_u32":[1]}
+{"text_id":493,"forms":["Location will not change if any player selects “No.”"],"absolute_byte_offsets":[18333],"raw_metadata_u32":[1]}
+{"text_id":494,"forms":[""],"absolute_byte_offsets":[18390],"raw_metadata_u32":[0]}
+{"text_id":495,"forms":[""],"absolute_byte_offsets":[18391],"raw_metadata_u32":[0]}
+{"text_id":496,"forms":["Poll closed!<br>Staying in <dart;0()><$stgmyname;0(lnum1)>."],"absolute_byte_offsets":[18392],"raw_metadata_u32":[1]}
+{"text_id":497,"forms":[""],"absolute_byte_offsets":[18452],"raw_metadata_u32":[0]}
+{"text_id":498,"forms":[""],"absolute_byte_offsets":[18453],"raw_metadata_u32":[0]}
+{"text_id":499,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color><$cdef(27)> </color>is going to play <$cdef(27)>hide-and-sneak</color>!"],"absolute_byte_offsets":[18454],"raw_metadata_u32":[1]}
+{"text_id":500,"forms":["<$icon(lnum1)>Yes"],"absolute_byte_offsets":[18571],"raw_metadata_u32":[1]}
+{"text_id":501,"forms":["<$icon(lnum1)>No"],"absolute_byte_offsets":[18589],"raw_metadata_u32":[1]}
+{"text_id":502,"forms":["Cancel"],"absolute_byte_offsets":[18606],"raw_metadata_u32":[1]}
+{"text_id":503,"forms":["Change"],"absolute_byte_offsets":[18613],"raw_metadata_u32":[1]}
+{"text_id":504,"forms":["You"],"absolute_byte_offsets":[18620],"raw_metadata_u32":[1]}
+{"text_id":505,"forms":[""],"absolute_byte_offsets":[18624],"raw_metadata_u32":[0]}
+{"text_id":506,"forms":["The connection is unstable."],"absolute_byte_offsets":[18625],"raw_metadata_u32":[1]}
+{"text_id":507,"forms":["The connection is unstable. Please check your internet settings.<br>If the connection remains unstable, you may be disconnected."],"absolute_byte_offsets":[18653],"raw_metadata_u32":[1]}
+{"text_id":508,"forms":["Use, Talk, etc."],"absolute_byte_offsets":[18782],"raw_metadata_u32":[1]}
+{"text_id":509,"forms":["(Hold) Run"],"absolute_byte_offsets":[18798],"raw_metadata_u32":[1]}
+{"text_id":510,"forms":["(Tap) Put Away"],"absolute_byte_offsets":[18809],"raw_metadata_u32":[1]}
+{"text_id":511,"forms":["Open Bag"],"absolute_byte_offsets":[18824],"raw_metadata_u32":[1]}
+{"text_id":512,"forms":["(Tap) Pick Up"],"absolute_byte_offsets":[18833],"raw_metadata_u32":[1]}
+{"text_id":513,"forms":["(Hold) Inhale"],"absolute_byte_offsets":[18847],"raw_metadata_u32":[1]}
+{"text_id":514,"forms":["Have Pokémon Follow You<br>(Hold) Part Ways"],"absolute_byte_offsets":[18861],"raw_metadata_u32":[1]}
+{"text_id":515,"forms":["Emotes/Messages"],"absolute_byte_offsets":[18906],"raw_metadata_u32":[1]}
+{"text_id":516,"forms":["Change Moves: Left"],"absolute_byte_offsets":[18922],"raw_metadata_u32":[1]}
+{"text_id":517,"forms":["Change Moves: Right"],"absolute_byte_offsets":[18941],"raw_metadata_u32":[1]}
+{"text_id":518,"forms":["Set Move"],"absolute_byte_offsets":[18961],"raw_metadata_u32":[1]}
+{"text_id":519,"forms":["Jump"],"absolute_byte_offsets":[18970],"raw_metadata_u32":[1]}
+{"text_id":520,"forms":["(Hold) Focus"],"absolute_byte_offsets":[18975],"raw_metadata_u32":[1]}
+{"text_id":521,"forms":["Use Move"],"absolute_byte_offsets":[18988],"raw_metadata_u32":[1]}
+{"text_id":522,"forms":["Change Target of Action"],"absolute_byte_offsets":[18997],"raw_metadata_u32":[1]}
+{"text_id":523,"forms":[""],"absolute_byte_offsets":[19021],"raw_metadata_u32":[0]}
+{"text_id":524,"forms":["Use Camera"],"absolute_byte_offsets":[19022],"raw_metadata_u32":[1]}
+{"text_id":525,"forms":["Surf"],"absolute_byte_offsets":[19033],"raw_metadata_u32":[1]}
+{"text_id":526,"forms":["Glide"],"absolute_byte_offsets":[19038],"raw_metadata_u32":[1]}
+{"text_id":527,"forms":[""],"absolute_byte_offsets":[19044],"raw_metadata_u32":[0]}
+{"text_id":528,"forms":[""],"absolute_byte_offsets":[19045],"raw_metadata_u32":[0]}
+{"text_id":529,"forms":["Spit Out: Adjust Height Up"],"absolute_byte_offsets":[19046],"raw_metadata_u32":[1]}
+{"text_id":530,"forms":["Spit Out: Adjust Height Down"],"absolute_byte_offsets":[19073],"raw_metadata_u32":[1]}
+{"text_id":531,"forms":["Spit Out / Take Out"],"absolute_byte_offsets":[19102],"raw_metadata_u32":[1]}
+{"text_id":532,"forms":["Put in Container"],"absolute_byte_offsets":[19122],"raw_metadata_u32":[1]}
+{"text_id":533,"forms":["(Tap) Swap Out"],"absolute_byte_offsets":[19139],"raw_metadata_u32":[1]}
+{"text_id":534,"forms":["(Hold) Sort"],"absolute_byte_offsets":[19154],"raw_metadata_u32":[1]}
+{"text_id":535,"forms":["Transfer All"],"absolute_byte_offsets":[19166],"raw_metadata_u32":[1]}
+{"text_id":536,"forms":["Transfer Half"],"absolute_byte_offsets":[19179],"raw_metadata_u32":[1]}
+{"text_id":537,"forms":["Show/Hide Handy Bag"],"absolute_byte_offsets":[19193],"raw_metadata_u32":[1]}
+{"text_id":538,"forms":["Info"],"absolute_byte_offsets":[19213],"raw_metadata_u32":[1]}
+{"text_id":539,"forms":["Drop"],"absolute_byte_offsets":[19218],"raw_metadata_u32":[1]}
+{"text_id":540,"forms":["<dgt3;0(lnum1)>"],"absolute_byte_offsets":[19223],"raw_metadata_u32":[1]}
+{"text_id":541,"forms":["/<dgt3;0(lnum1)>"],"absolute_byte_offsets":[19239],"raw_metadata_u32":[1]}
+{"text_id":542,"forms":["Main Menu"],"absolute_byte_offsets":[19256],"raw_metadata_u32":[1]}
+{"text_id":543,"forms":["Back"],"absolute_byte_offsets":[19266],"raw_metadata_u32":[1]}
+{"text_id":544,"forms":["Show/Hide Headers"],"absolute_byte_offsets":[19271],"raw_metadata_u32":[1]}
+{"text_id":545,"forms":[""],"absolute_byte_offsets":[19289],"raw_metadata_u32":[0]}
+{"text_id":546,"forms":["Handy Bag Controls: Right"],"absolute_byte_offsets":[19290],"raw_metadata_u32":[1]}
+{"text_id":547,"forms":["Handy Bag Controls: Left"],"absolute_byte_offsets":[19316],"raw_metadata_u32":[1]}
+{"text_id":548,"forms":["Camera Auto-Follow"],"absolute_byte_offsets":[19341],"raw_metadata_u32":[1]}
+{"text_id":549,"forms":["Choose whether the camera automatically follows Ditto."],"absolute_byte_offsets":[19360],"raw_metadata_u32":[1]}
+{"text_id":550,"forms":["Searching..."],"absolute_byte_offsets":[19415],"raw_metadata_u32":[1]}
+{"text_id":551,"forms":["Group Challenge"],"absolute_byte_offsets":[19428],"raw_metadata_u32":[1]}
+{"text_id":552,"forms":["Special Challenge"],"absolute_byte_offsets":[19444],"raw_metadata_u32":[1]}
+{"text_id":553,"forms":["All Pokémon Registered"],"absolute_byte_offsets":[19462],"raw_metadata_u32":[1]}
+{"text_id":554,"forms":["Registered"],"absolute_byte_offsets":[19486],"raw_metadata_u32":[1]}
+{"text_id":555,"forms":["Known"],"absolute_byte_offsets":[19497],"raw_metadata_u32":[1]}
+{"text_id":556,"forms":["Unknown"],"absolute_byte_offsets":[19503],"raw_metadata_u32":[1]}
+{"text_id":557,"forms":["Available at total environment level <dgt2;0(lnum1)>"],"absolute_byte_offsets":[19511],"raw_metadata_u32":[1]}
+{"text_id":558,"forms":["<$cdef(224)><dgt2;0(lnum2)> <qty;0(level,levels)> to go</color> (Current total environment level: <dgt2;1(lnum1)>)"],"absolute_byte_offsets":[19564],"raw_metadata_u32":[1]}
+{"text_id":559,"forms":[""],"absolute_byte_offsets":[19679],"raw_metadata_u32":[0]}
+{"text_id":560,"forms":["It’ll be done at <timehm;0(lnum1,lnum2)>."],"absolute_byte_offsets":[19680],"raw_metadata_u32":[1]}
+{"text_id":561,"forms":[""],"absolute_byte_offsets":[19724],"raw_metadata_u32":[0]}
+{"text_id":562,"forms":["It’ll be done tomorrow."],"absolute_byte_offsets":[19725],"raw_metadata_u32":[1]}
+{"text_id":563,"forms":["<dgt6;0(lnum1)>"],"absolute_byte_offsets":[19751],"raw_metadata_u32":[1]}
+{"text_id":564,"forms":["Delete Cloud Island"],"absolute_byte_offsets":[19767],"raw_metadata_u32":[1]}
+{"text_id":565,"forms":["Upload to Virtual Mode"],"absolute_byte_offsets":[19787],"raw_metadata_u32":[1]}
+{"text_id":566,"forms":["Delete"],"absolute_byte_offsets":[19810],"raw_metadata_u32":[1]}
+{"text_id":567,"forms":["Delete a Cloud Island. Once an island is deleted, you can’t play on it anymore."],"absolute_byte_offsets":[19817],"raw_metadata_u32":[1]}
+{"text_id":568,"forms":["Choose whether or not other players can visit in Virtual Mode."],"absolute_byte_offsets":[19899],"raw_metadata_u32":[1]}
+{"text_id":569,"forms":[""],"absolute_byte_offsets":[19962],"raw_metadata_u32":[0]}
+{"text_id":570,"forms":["Camera Distance (in Buildings)"],"absolute_byte_offsets":[19963],"raw_metadata_u32":[1]}
+{"text_id":571,"forms":["View Home Area"],"absolute_byte_offsets":[19994],"raw_metadata_u32":[1]}
+{"text_id":572,"forms":["Available at environment level <dgt2;0(lnum1)>"],"absolute_byte_offsets":[20009],"raw_metadata_u32":[1]}
+{"text_id":573,"forms":["<$cdef(224)><dgt2;0(lnum2)> <qty;0(level,levels)> to go</color> (Current environment level: <dgt2;1(lnum1)>)"],"absolute_byte_offsets":[20056],"raw_metadata_u32":[1]}
+{"text_id":574,"forms":["Reason for Reporting"],"absolute_byte_offsets":[20165],"raw_metadata_u32":[1]}
+{"text_id":575,"forms":["・"],"absolute_byte_offsets":[20186],"raw_metadata_u32":[1]}
+{"text_id":576,"forms":[""],"absolute_byte_offsets":[20190],"raw_metadata_u32":[0]}
+{"text_id":577,"forms":["<dgt3;0(lnum1)>"],"absolute_byte_offsets":[20191],"raw_metadata_u32":[1]}
+{"text_id":578,"forms":["/<dgt3;0(lnum1)>"],"absolute_byte_offsets":[20207],"raw_metadata_u32":[1]}
+{"text_id":579,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[20224],"raw_metadata_u32":[1]}
+{"text_id":580,"forms":["Change your settings for this island?"],"absolute_byte_offsets":[20242],"raw_metadata_u32":[1]}
+{"text_id":581,"forms":["Overwrite this island and restore existing data?"],"absolute_byte_offsets":[20280],"raw_metadata_u32":[1]}
+{"text_id":582,"forms":["Delete this island?"],"absolute_byte_offsets":[20329],"raw_metadata_u32":[1]}
+{"text_id":583,"forms":["∞"],"absolute_byte_offsets":[20349],"raw_metadata_u32":[1]}
+{"text_id":584,"forms":["Learned"],"absolute_byte_offsets":[20353],"raw_metadata_u32":[1]}
+{"text_id":585,"forms":["×<dgt2;0(lnum1)>"],"absolute_byte_offsets":[20361],"raw_metadata_u32":[1]}
+{"text_id":586,"forms":["Set of <dgt2;1(lnum2)> <class><$inamewithnum;0(lnum1,lnum2)>"],"absolute_byte_offsets":[20379],"raw_metadata_u32":[1]}
+{"text_id":587,"forms":["Ver. <string;0(lstr1)>"],"absolute_byte_offsets":[20440],"raw_metadata_u32":[1]}
+{"text_id":588,"forms":["Player name"],"absolute_byte_offsets":[20463],"raw_metadata_u32":[1]}
+{"text_id":589,"forms":["Player behavior"],"absolute_byte_offsets":[20475],"raw_metadata_u32":[1]}
+{"text_id":590,"forms":["Area name"],"absolute_byte_offsets":[20491],"raw_metadata_u32":[1]}
+{"text_id":591,"forms":["Area terrain shape, etc."],"absolute_byte_offsets":[20501],"raw_metadata_u32":[1]}
+{"text_id":592,"forms":["Today Only!"],"absolute_byte_offsets":[20526],"raw_metadata_u32":[1]}
+{"text_id":593,"forms":[""],"absolute_byte_offsets":[20538],"raw_metadata_u32":[0]}
+{"text_id":594,"forms":["Restore existing backup data?"],"absolute_byte_offsets":[20539],"raw_metadata_u32":[1]}
+{"text_id":595,"forms":["Choose a stamp to replace your current stamp."],"absolute_byte_offsets":[20569],"raw_metadata_u32":[1]}
+{"text_id":596,"forms":["Mystery Gifts"],"absolute_byte_offsets":[20615],"raw_metadata_u32":[1]}
+{"text_id":597,"forms":["Ordered Items"],"absolute_byte_offsets":[20629],"raw_metadata_u32":[1]}
+{"text_id":598,"forms":["Gifts from Pokémon You Played With"],"absolute_byte_offsets":[20643],"raw_metadata_u32":[1]}
+{"text_id":599,"forms":["What would you like to get?"],"absolute_byte_offsets":[20679],"raw_metadata_u32":[1]}
+{"text_id":600,"forms":["Get via Internet"],"absolute_byte_offsets":[20707],"raw_metadata_u32":[1]}
+{"text_id":601,"forms":["Get with Code/Password"],"absolute_byte_offsets":[20724],"raw_metadata_u32":[1]}
+{"text_id":602,"forms":["Check Mystery Gifts"],"absolute_byte_offsets":[20747],"raw_metadata_u32":[1]}
+{"text_id":603,"forms":["Important"],"absolute_byte_offsets":[20767],"raw_metadata_u32":[1]}
+{"text_id":604,"forms":["If you are disconnected from the internet while receiving a gift<br>with a code or password, you may not be able to receive that gift<br>using the same code or password. Before proceeding, please<br>check your system’s battery and make sure you have a stable<br>internet connection."],"absolute_byte_offsets":[20777],"raw_metadata_u32":[1]}
+{"text_id":605,"forms":["The code or password is incorrect.<br>Please check your code or password.<br><br>If you enter an incorrect code or password 10 times, you will be<br>unable to enter codes again until some time has passed. Please<br>take care when entering text!"],"absolute_byte_offsets":[21062],"raw_metadata_u32":[1]}
+{"text_id":606,"forms":["You failed to enter the correct code or password multiple times,<br>so you can’t try re-entering the code for a while.<br>Please try again later."],"absolute_byte_offsets":[21307],"raw_metadata_u32":[1]}
+{"text_id":607,"forms":["I understand"],"absolute_byte_offsets":[21455],"raw_metadata_u32":[1]}
+{"text_id":608,"forms":["Past Gifts"],"absolute_byte_offsets":[21468],"raw_metadata_u32":[1]}
+{"text_id":609,"forms":["<$cdef(27)><fcap><fqty(1)><$ifull;0(lnum1)></color> x<dgt2;1(lnum2)>"],"absolute_byte_offsets":[21479],"raw_metadata_u32":[1]}
+{"text_id":610,"forms":["<moneyint;0(lnum1)> <qty;0(Life Coin,Life Coins)>"],"absolute_byte_offsets":[21548],"raw_metadata_u32":[1]}
+{"text_id":611,"forms":["Claimed!"],"absolute_byte_offsets":[21598],"raw_metadata_u32":[1]}
+{"text_id":612,"forms":["No records of past gifts were found."],"absolute_byte_offsets":[21607],"raw_metadata_u32":[1]}
+{"text_id":613,"forms":[""],"absolute_byte_offsets":[21644],"raw_metadata_u32":[0]}
+{"text_id":614,"forms":["???"],"absolute_byte_offsets":[21645],"raw_metadata_u32":[1]}
+{"text_id":615,"forms":["Display Link Code"],"absolute_byte_offsets":[21649],"raw_metadata_u32":[1]}
+{"text_id":616,"forms":["Choose whether or not the Link Code is displayed while playing with others."],"absolute_byte_offsets":[21667],"raw_metadata_u32":[1]}
+{"text_id":617,"forms":["Filter"],"absolute_byte_offsets":[21743],"raw_metadata_u32":[1]}
+{"text_id":618,"forms":["Registered"],"absolute_byte_offsets":[21750],"raw_metadata_u32":[1]}
+{"text_id":619,"forms":["“<fcap><$hatname;0(lnum1)>” habitat hint"],"absolute_byte_offsets":[21761],"raw_metadata_u32":[1]}
+{"text_id":620,"forms":["Allow Link Code Saving"],"absolute_byte_offsets":[21806],"raw_metadata_u32":[1]}
+{"text_id":621,"forms":["Choose whether players can automatically save your Link Code."],"absolute_byte_offsets":[21829],"raw_metadata_u32":[1]}
+{"text_id":622,"forms":["Any item of this type is OK."],"absolute_byte_offsets":[21891],"raw_metadata_u32":[1]}
+{"text_id":623,"forms":["Would you like to play together?"],"absolute_byte_offsets":[21920],"raw_metadata_u32":[1]}
+{"text_id":624,"forms":["Would you like to go together?"],"absolute_byte_offsets":[21953],"raw_metadata_u32":[1]}
+{"text_id":625,"forms":["Would you like to go together? (You haven’t seen this area before.)"],"absolute_byte_offsets":[21984],"raw_metadata_u32":[1]}
+{"text_id":626,"forms":["Would you like to return home together?"],"absolute_byte_offsets":[22054],"raw_metadata_u32":[1]}
+{"text_id":627,"forms":["Button overlap"],"absolute_byte_offsets":[22094],"raw_metadata_u32":[1]}
+{"text_id":628,"forms":["Enable Virtual Mode"],"absolute_byte_offsets":[22109],"raw_metadata_u32":[1]}
+{"text_id":629,"forms":["Choose virtual mode if you don’t want other players’ actions to be saved."],"absolute_byte_offsets":[22129],"raw_metadata_u32":[1]}
+{"text_id":630,"forms":["In this area"],"absolute_byte_offsets":[22207],"raw_metadata_u32":[1]}
+{"text_id":631,"forms":["Not in this area"],"absolute_byte_offsets":[22220],"raw_metadata_u32":[1]}
+{"text_id":632,"forms":["Total"],"absolute_byte_offsets":[22237],"raw_metadata_u32":[1]}
+{"text_id":633,"forms":["In this area"],"absolute_byte_offsets":[22243],"raw_metadata_u32":[1]}
+{"text_id":634,"forms":["Not in this area"],"absolute_byte_offsets":[22256],"raw_metadata_u32":[1]}
+{"text_id":635,"forms":["Run (Toggle)"],"absolute_byte_offsets":[22273],"raw_metadata_u32":[1]}
+{"text_id":636,"forms":["<$pkname;0(lnum1)> (<$pkform;1(lnum1)>)"],"absolute_byte_offsets":[22286],"raw_metadata_u32":[1]}
+{"text_id":637,"forms":["The <$emotename;0(lnum1)> emote"],"absolute_byte_offsets":[22326],"raw_metadata_u32":[1]}
+{"text_id":638,"forms":["<$cdef(27)><fcap><fqty(1)><$ifull;0(lnum1)></color> recipe"],"absolute_byte_offsets":[22358],"raw_metadata_u32":[1]}
+{"text_id":639,"forms":["<$cdef(27)><fcap><fqty(1)><$ifull;0(lnum1)></color>"],"absolute_byte_offsets":[22417],"raw_metadata_u32":[1]}
+{"text_id":640,"forms":["<$coordname;0(lnum1)>"],"absolute_byte_offsets":[22469],"raw_metadata_u32":[1]}
+{"text_id":641,"forms":["The <$hairname;0(lnum1)> hairstyle"],"absolute_byte_offsets":[22491],"raw_metadata_u32":[1]}
+{"text_id":642,"forms":["Please choose the gift you want to receive."],"absolute_byte_offsets":[22526],"raw_metadata_u32":[1]}
+{"text_id":643,"forms":["Default"],"absolute_byte_offsets":[22570],"raw_metadata_u32":[1]}
+{"text_id":644,"forms":["Swap"],"absolute_byte_offsets":[22578],"raw_metadata_u32":[1]}
+{"text_id":645,"forms":["Move Wheel<br>Controls"],"absolute_byte_offsets":[22583],"raw_metadata_u32":[1]}
+{"text_id":646,"forms":["Press <$keyicon(7)>"],"absolute_byte_offsets":[22606],"raw_metadata_u32":[1]}
+{"text_id":647,"forms":["Release button"],"absolute_byte_offsets":[22626],"raw_metadata_u32":[1]}
+{"text_id":648,"forms":["When you release the button, the menu will stay open until you press <$keyicon(7)>."],"absolute_byte_offsets":[22641],"raw_metadata_u32":[1]}
+{"text_id":649,"forms":["When you release the button, the menu will close and save your current selection."],"absolute_byte_offsets":[22725],"raw_metadata_u32":[1]}
+{"text_id":650,"forms":["Communication Wheel<br>Controls"],"absolute_byte_offsets":[22807],"raw_metadata_u32":[1]}
+{"text_id":651,"forms":["<timeymdhmtz;0(lnum1,lnum2,lnum3,lnum4,lnum5,lnum6)>"],"absolute_byte_offsets":[22839],"raw_metadata_u32":[1]}
+{"text_id":652,"forms":[""],"absolute_byte_offsets":[22892],"raw_metadata_u32":[0]}
+{"text_id":653,"forms":["Contest Record"],"absolute_byte_offsets":[22893],"raw_metadata_u32":[9]}
+{"text_id":654,"forms":["Uploading..."],"absolute_byte_offsets":[22908],"raw_metadata_u32":[1]}
+{"text_id":655,"forms":["Downloading..."],"absolute_byte_offsets":[22921],"raw_metadata_u32":[1]}
+{"text_id":656,"forms":["<pernum;0(lnum1)>"],"absolute_byte_offsets":[22936],"raw_metadata_u32":[1]}
+{"text_id":657,"forms":["<timerms;0(lnum1,lnum2)>"],"absolute_byte_offsets":[22954],"raw_metadata_u32":[9]}
+{"text_id":658,"forms":["<timerms;0(lnum1,lnum2)>"],"absolute_byte_offsets":[22979],"raw_metadata_u32":[9]}
+{"text_id":659,"forms":[""],"absolute_byte_offsets":[23004],"raw_metadata_u32":[0]}
+{"text_id":660,"forms":["<$attrtagtxt;0(lnum1)>"],"absolute_byte_offsets":[23005],"raw_metadata_u32":[1]}
+{"text_id":661,"forms":["Connected Players"],"absolute_byte_offsets":[23028],"raw_metadata_u32":[1]}
+{"text_id":662,"forms":["Ingredients"],"absolute_byte_offsets":[23046],"raw_metadata_u32":[1]}
+{"text_id":663,"forms":["Complete!"],"absolute_byte_offsets":[23058],"raw_metadata_u32":[1]}
+{"text_id":664,"forms":["<fcap><$bname;0(lnum1)>"],"absolute_byte_offsets":[23068],"raw_metadata_u32":[1]}
+{"text_id":665,"forms":["<fcap><$bname;0(lnum1)>"],"absolute_byte_offsets":[23092],"raw_metadata_u32":[1]}
+{"text_id":666,"forms":["<fcap><$bname;0(lnum1)>"],"absolute_byte_offsets":[23116],"raw_metadata_u32":[1]}
+{"text_id":667,"forms":["<fcap><$coordname;0(lnum1)>"],"absolute_byte_offsets":[23140],"raw_metadata_u32":[1]}
+{"text_id":668,"forms":["<fcap><$hairname;0(lnum1)>"],"absolute_byte_offsets":[23168],"raw_metadata_u32":[1]}
+{"text_id":669,"forms":["<fcap><$bagname;0(lnum1)>"],"absolute_byte_offsets":[23195],"raw_metadata_u32":[1]}
+{"text_id":670,"forms":["<fcap><$hwearname;0(lnum1)>"],"absolute_byte_offsets":[23221],"raw_metadata_u32":[1]}
+{"text_id":671,"forms":["<fcap><$lbodyname;0(lnum1)>"],"absolute_byte_offsets":[23249],"raw_metadata_u32":[1]}
+{"text_id":672,"forms":["<fcap><$shoesname;0(lnum1)>"],"absolute_byte_offsets":[23277],"raw_metadata_u32":[1]}
+{"text_id":673,"forms":["<fcap><$ubodyname;0(lnum1)>"],"absolute_byte_offsets":[23305],"raw_metadata_u32":[1]}
+{"text_id":674,"forms":["Mouse Mode"],"absolute_byte_offsets":[23333],"raw_metadata_u32":[1]}
+{"text_id":675,"forms":["Enable mouse controls to use Joy-Con 2 controllers as a mouse."],"absolute_byte_offsets":[23344],"raw_metadata_u32":[1]}
+{"text_id":676,"forms":["The owner is about to close the connection. Please finish<br>whatever you might be doing!"],"absolute_byte_offsets":[23407],"raw_metadata_u32":[1]}
+{"text_id":677,"forms":[""],"absolute_byte_offsets":[23497],"raw_metadata_u32":[0]}
+{"text_id":678,"forms":[""],"absolute_byte_offsets":[23498],"raw_metadata_u32":[0]}
+{"text_id":679,"forms":[""],"absolute_byte_offsets":[23499],"raw_metadata_u32":[0]}
+{"text_id":680,"forms":[""],"absolute_byte_offsets":[23500],"raw_metadata_u32":[0]}
+{"text_id":681,"forms":[""],"absolute_byte_offsets":[23501],"raw_metadata_u32":[0]}
+{"text_id":682,"forms":["Movement When the<br>Move Wheel Is Open"],"absolute_byte_offsets":[23502],"raw_metadata_u32":[10]}
+{"text_id":683,"forms":["Don’t Allow"],"absolute_byte_offsets":[23542],"raw_metadata_u32":[10]}
+{"text_id":684,"forms":["Allow"],"absolute_byte_offsets":[23556],"raw_metadata_u32":[10]}
+{"text_id":685,"forms":["You can control the move wheel with <$keyicon(194)> or <$keyicon(195)>."],"absolute_byte_offsets":[23562],"raw_metadata_u32":[10]}
+{"text_id":686,"forms":["You can control the move wheel with <$keyicon(195)> only."],"absolute_byte_offsets":[23634],"raw_metadata_u32":[10]}
+{"text_id":687,"forms":["Display Center Marker"],"absolute_byte_offsets":[23692],"raw_metadata_u32":[10]}
+{"text_id":688,"forms":["Plus"],"absolute_byte_offsets":[23714],"raw_metadata_u32":[10]}
+{"text_id":689,"forms":["Off"],"absolute_byte_offsets":[23719],"raw_metadata_u32":[10]}
+{"text_id":690,"forms":["Display an icon in the center of the screen to reduce motion sickness."],"absolute_byte_offsets":[23723],"raw_metadata_u32":[10]}
+{"text_id":691,"forms":["Part <dgt1;0(lnum1)>"],"absolute_byte_offsets":[23794],"raw_metadata_u32":[18]}
+{"text_id":692,"forms":["Open Nintendo eShop"],"absolute_byte_offsets":[23815],"raw_metadata_u32":[18]}
+{"text_id":693,"forms":["Check Items"],"absolute_byte_offsets":[23835],"raw_metadata_u32":[18]}
+{"text_id":694,"forms":["You can view downloadable content in Nintendo eShop."],"absolute_byte_offsets":[23847],"raw_metadata_u32":[18]}
+{"text_id":695,"forms":["Items included in the downloadable content."],"absolute_byte_offsets":[23900],"raw_metadata_u32":[18]}
+{"text_id":696,"forms":["Downloadable content part <dgt1;0(lnum1)>"],"absolute_byte_offsets":[23944],"raw_metadata_u32":[18]}
+{"text_id":697,"forms":["<$cdef(27)><fcap><fqty(1)><$ifull;0(lnum1)> </color>×<dgt2;1(lnum2)>"],"absolute_byte_offsets":[23986],"raw_metadata_u32":[18]}
+{"text_id":698,"forms":["The <$emotename;0(lnum1)> emote"],"absolute_byte_offsets":[24056],"raw_metadata_u32":[18]}
+{"text_id":699,"forms":["<$cdef(27)><fcap><fqty(1)><$ifull;0(lnum1)> </color>recipe"],"absolute_byte_offsets":[24088],"raw_metadata_u32":[18]}
+{"text_id":700,"forms":["<$cdef(27)><fcap><fqty(1)><$ifull;0(lnum1)></color>"],"absolute_byte_offsets":[24147],"raw_metadata_u32":[18]}
+{"text_id":701,"forms":["<$coordname;0(lnum1)>"],"absolute_byte_offsets":[24199],"raw_metadata_u32":[18]}
+{"text_id":702,"forms":["The <$hairname;0(lnum1)> hairstyle"],"absolute_byte_offsets":[24221],"raw_metadata_u32":[18]}
+{"text_id":703,"forms":["The following is available to be received."],"absolute_byte_offsets":[24256],"raw_metadata_u32":[18]}
+{"text_id":704,"forms":["The following has already been received."],"absolute_byte_offsets":[24299],"raw_metadata_u32":[18]}
+{"text_id":705,"forms":["<timeymdhmtz;0(lnum1,lnum2,lnum3,lnum4,lnum5,lnum6)>"],"absolute_byte_offsets":[24340],"raw_metadata_u32":[18]}
+{"text_id":706,"forms":["Downloadable Content"],"absolute_byte_offsets":[24393],"raw_metadata_u32":[10]}
+{"text_id":707,"forms":["Dot"],"absolute_byte_offsets":[24414],"raw_metadata_u32":[10]}
+{"text_id":708,"forms":["Confirmation When Undoing<br>Magnet Rise Transformation"],"absolute_byte_offsets":[24418],"raw_metadata_u32":[10]}
+{"text_id":709,"forms":["On"],"absolute_byte_offsets":[24474],"raw_metadata_u32":[10]}
+{"text_id":710,"forms":["Off"],"absolute_byte_offsets":[24477],"raw_metadata_u32":[10]}
+{"text_id":711,"forms":["Choose whether or not to confirm before undoing the <$sklname(13)> transformation."],"absolute_byte_offsets":[24481],"raw_metadata_u32":[10]}
+{"text_id":712,"forms":["Display Frame"],"absolute_byte_offsets":[24564],"raw_metadata_u32":[10]}
+{"text_id":713,"forms":["Don’t Display"],"absolute_byte_offsets":[24578],"raw_metadata_u32":[10]}
+{"text_id":714,"forms":["Square"],"absolute_byte_offsets":[24594],"raw_metadata_u32":[10]}
+{"text_id":715,"forms":["Round Brackets"],"absolute_byte_offsets":[24601],"raw_metadata_u32":[10]}
+{"text_id":716,"forms":["Display a frame to reduce motion sickness."],"absolute_byte_offsets":[24616],"raw_metadata_u32":[10]}
+{"text_id":717,"forms":[""],"absolute_byte_offsets":[24659],"raw_metadata_u32":[0]}
+{"text_id":718,"forms":[""],"absolute_byte_offsets":[24660],"raw_metadata_u32":[0]}
+{"text_id":719,"forms":[""],"absolute_byte_offsets":[24661],"raw_metadata_u32":[0]}
+{"text_id":720,"forms":[""],"absolute_byte_offsets":[24662],"raw_metadata_u32":[0]}
+{"text_id":721,"forms":[""],"absolute_byte_offsets":[24663],"raw_metadata_u32":[0]}
+{"text_id":722,"forms":[""],"absolute_byte_offsets":[24664],"raw_metadata_u32":[0]}
+{"text_id":723,"forms":[""],"absolute_byte_offsets":[24665],"raw_metadata_u32":[0]}
+{"text_id":724,"forms":[""],"absolute_byte_offsets":[24666],"raw_metadata_u32":[0]}
+{"text_id":725,"forms":[""],"absolute_byte_offsets":[24667],"raw_metadata_u32":[0]}
+{"text_id":726,"forms":[""],"absolute_byte_offsets":[24668],"raw_metadata_u32":[0]}
+{"text_id":727,"forms":[""],"absolute_byte_offsets":[24669],"raw_metadata_u32":[0]}
+{"text_id":728,"forms":[""],"absolute_byte_offsets":[24670],"raw_metadata_u32":[0]}
+{"text_id":729,"forms":[""],"absolute_byte_offsets":[24671],"raw_metadata_u32":[0]}
+{"text_id":730,"forms":[""],"absolute_byte_offsets":[24672],"raw_metadata_u32":[0]}
+{"text_id":731,"forms":[""],"absolute_byte_offsets":[24673],"raw_metadata_u32":[0]}
+{"text_id":732,"forms":[""],"absolute_byte_offsets":[24674],"raw_metadata_u32":[0]}
+{"text_id":733,"forms":[""],"absolute_byte_offsets":[24675],"raw_metadata_u32":[0]}
+{"text_id":734,"forms":[""],"absolute_byte_offsets":[24676],"raw_metadata_u32":[0]}
+{"text_id":735,"forms":[""],"absolute_byte_offsets":[24677],"raw_metadata_u32":[0]}
+{"text_id":736,"forms":[""],"absolute_byte_offsets":[24678],"raw_metadata_u32":[0]}
+{"text_id":737,"forms":[""],"absolute_byte_offsets":[24679],"raw_metadata_u32":[0]}
+{"text_id":738,"forms":[""],"absolute_byte_offsets":[24680],"raw_metadata_u32":[0]}
+{"text_id":739,"forms":[""],"absolute_byte_offsets":[24681],"raw_metadata_u32":[0]}
+{"text_id":740,"forms":[""],"absolute_byte_offsets":[24682],"raw_metadata_u32":[0]}
+{"text_id":741,"forms":[""],"absolute_byte_offsets":[24683],"raw_metadata_u32":[0]}
+{"text_id":742,"forms":[""],"absolute_byte_offsets":[24684],"raw_metadata_u32":[0]}
+{"text_id":743,"forms":[""],"absolute_byte_offsets":[24685],"raw_metadata_u32":[0]}
+{"text_id":744,"forms":[""],"absolute_byte_offsets":[24686],"raw_metadata_u32":[0]}
+{"text_id":745,"forms":[""],"absolute_byte_offsets":[24687],"raw_metadata_u32":[0]}
+{"text_id":746,"forms":[""],"absolute_byte_offsets":[24688],"raw_metadata_u32":[0]}
+{"text_id":747,"forms":[""],"absolute_byte_offsets":[24689],"raw_metadata_u32":[0]}
+{"text_id":748,"forms":[""],"absolute_byte_offsets":[24690],"raw_metadata_u32":[0]}
+{"text_id":749,"forms":[""],"absolute_byte_offsets":[24691],"raw_metadata_u32":[0]}
+{"text_id":750,"forms":[""],"absolute_byte_offsets":[24692],"raw_metadata_u32":[0]}
+{"text_id":751,"forms":[""],"absolute_byte_offsets":[24693],"raw_metadata_u32":[0]}
+{"text_id":752,"forms":[""],"absolute_byte_offsets":[24694],"raw_metadata_u32":[0]}
+{"text_id":753,"forms":[""],"absolute_byte_offsets":[24695],"raw_metadata_u32":[0]}
+{"text_id":754,"forms":[""],"absolute_byte_offsets":[24696],"raw_metadata_u32":[0]}
+{"text_id":755,"forms":[""],"absolute_byte_offsets":[24697],"raw_metadata_u32":[0]}
+{"text_id":756,"forms":[""],"absolute_byte_offsets":[24698],"raw_metadata_u32":[0]}
+{"text_id":757,"forms":[""],"absolute_byte_offsets":[24699],"raw_metadata_u32":[0]}
+{"text_id":758,"forms":[""],"absolute_byte_offsets":[24700],"raw_metadata_u32":[0]}
+{"text_id":759,"forms":[""],"absolute_byte_offsets":[24701],"raw_metadata_u32":[0]}
+{"text_id":760,"forms":[""],"absolute_byte_offsets":[24702],"raw_metadata_u32":[0]}
+{"text_id":761,"forms":[""],"absolute_byte_offsets":[24703],"raw_metadata_u32":[0]}
+{"text_id":762,"forms":[""],"absolute_byte_offsets":[24704],"raw_metadata_u32":[0]}
+{"text_id":763,"forms":[""],"absolute_byte_offsets":[24705],"raw_metadata_u32":[0]}
+{"text_id":764,"forms":[""],"absolute_byte_offsets":[24706],"raw_metadata_u32":[0]}
+{"text_id":765,"forms":[""],"absolute_byte_offsets":[24707],"raw_metadata_u32":[0]}
+{"text_id":766,"forms":[""],"absolute_byte_offsets":[24708],"raw_metadata_u32":[0]}
+{"text_id":767,"forms":[""],"absolute_byte_offsets":[24709],"raw_metadata_u32":[0]}
+{"text_id":768,"forms":[""],"absolute_byte_offsets":[24710],"raw_metadata_u32":[0]}
+{"text_id":769,"forms":[""],"absolute_byte_offsets":[24711],"raw_metadata_u32":[0]}
+{"text_id":770,"forms":[""],"absolute_byte_offsets":[24712],"raw_metadata_u32":[0]}
+{"text_id":771,"forms":[""],"absolute_byte_offsets":[24713],"raw_metadata_u32":[0]}
+{"text_id":772,"forms":[""],"absolute_byte_offsets":[24714],"raw_metadata_u32":[0]}
+{"text_id":773,"forms":[""],"absolute_byte_offsets":[24715],"raw_metadata_u32":[0]}
+{"text_id":774,"forms":[""],"absolute_byte_offsets":[24716],"raw_metadata_u32":[0]}
+{"text_id":775,"forms":[""],"absolute_byte_offsets":[24717],"raw_metadata_u32":[0]}
+{"text_id":776,"forms":[""],"absolute_byte_offsets":[24718],"raw_metadata_u32":[0]}
+{"text_id":777,"forms":[""],"absolute_byte_offsets":[24719],"raw_metadata_u32":[0]}
+{"text_id":778,"forms":[""],"absolute_byte_offsets":[24720],"raw_metadata_u32":[0]}
+{"text_id":779,"forms":[""],"absolute_byte_offsets":[24721],"raw_metadata_u32":[0]}
+{"text_id":780,"forms":[""],"absolute_byte_offsets":[24722],"raw_metadata_u32":[0]}
+{"text_id":781,"forms":[""],"absolute_byte_offsets":[24723],"raw_metadata_u32":[0]}
+{"text_id":782,"forms":[""],"absolute_byte_offsets":[24724],"raw_metadata_u32":[0]}
+{"text_id":783,"forms":[""],"absolute_byte_offsets":[24725],"raw_metadata_u32":[0]}
+{"text_id":784,"forms":[""],"absolute_byte_offsets":[24726],"raw_metadata_u32":[0]}
+{"text_id":785,"forms":[""],"absolute_byte_offsets":[24727],"raw_metadata_u32":[0]}
+{"text_id":786,"forms":[""],"absolute_byte_offsets":[24728],"raw_metadata_u32":[0]}
+{"text_id":787,"forms":[""],"absolute_byte_offsets":[24729],"raw_metadata_u32":[0]}
+{"text_id":788,"forms":[""],"absolute_byte_offsets":[24730],"raw_metadata_u32":[0]}
+{"text_id":789,"forms":[""],"absolute_byte_offsets":[24731],"raw_metadata_u32":[0]}
+{"text_id":790,"forms":[""],"absolute_byte_offsets":[24732],"raw_metadata_u32":[0]}
+{"text_id":791,"forms":[""],"absolute_byte_offsets":[24733],"raw_metadata_u32":[0]}
+{"text_id":792,"forms":[""],"absolute_byte_offsets":[24734],"raw_metadata_u32":[0]}
+{"text_id":793,"forms":[""],"absolute_byte_offsets":[24735],"raw_metadata_u32":[0]}
+{"text_id":794,"forms":[""],"absolute_byte_offsets":[24736],"raw_metadata_u32":[0]}
+{"text_id":795,"forms":[""],"absolute_byte_offsets":[24737],"raw_metadata_u32":[0]}
+{"text_id":796,"forms":[""],"absolute_byte_offsets":[24738],"raw_metadata_u32":[0]}
+{"text_id":797,"forms":[""],"absolute_byte_offsets":[24739],"raw_metadata_u32":[0]}
+{"text_id":798,"forms":[""],"absolute_byte_offsets":[24740],"raw_metadata_u32":[0]}
+{"text_id":799,"forms":[""],"absolute_byte_offsets":[24741],"raw_metadata_u32":[0]}
+{"text_id":800,"forms":[""],"absolute_byte_offsets":[24742],"raw_metadata_u32":[0]}

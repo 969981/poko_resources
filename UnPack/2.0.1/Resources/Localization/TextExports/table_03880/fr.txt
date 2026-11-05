@@ -1,0 +1,340 @@
+<$voicel(2,6)><$motionoff(2,814)><$comeff(2,14)>...
+<$comcan(2)><$voicel(1,7)><$emotion(1,14)>Eh ben, c'est tout ce que t'as dans les bras, <$cdef(27)>M. Mime</color> ?<br>C'est pas encore ça, dis-moi !
+<$voicel(2,1)><$motion(2,803)><$facial(2,9)><$comeff(2,11)>Sérieux ?! J'pensais bien m'en sortir, pourtant...
+<$voicel(1,5)><$emotion(1,43)>C'est quoi ces coups de paume tout mous ? Faut<br>frapper plus fort si tu veux faire mal à ton adversaire !
+<$voicel(2,3)><$facial(2,9)><$comeff(2,4)>Euh, j'veux faire mal à personne, moi...<br>Je pratique juste la pantomime, là.
+<$voicel(1,4)><$motion(1,803)><$comeff(1,6)>La quoi ? Qu'est-ce que tu m'chantes, là ?
+<$voicel(2,7)><$motionoff(2,814)><$comeff(2,10)>Mais si, tu sais ! Tu bouges tes mains comme ça, et hop !<br>Ça crée l'illusion qu'il y a un mur invisible.<clear><br><$voicel(2,9)><$emotion(2,8)>C'est super amusant !<br>Tu devrais essayer, <$cdef(27)>Hariyama </color>!
+<$voicel(1,5)><$emotion(1,39)>Je vois... C'est donc à ça que s'adonnent les jeunes<br>de nos jours...<clear><br><$voicel(1,7)><$motionoff(1,806)>OK, moi aussi, j'veux essayer !<br>Attention...<turn(1,90)><waitactor(1)><clear><br><$voicel(1,10)><$motion(1,629)><$textsize(2)>YAAAAAH !</textsize><wait(0.8)><$motion(2,802)><$comeff(2,5)>
+<turn(1,270)><$voicel(2,1)><$facial(2,9)><$comeff(2,17)><$motionoff(2,805)>Euh, <$cdef(27)>Hariyama</color>...<br>L'idée, c'est de palper le mur, pas d'le démolir...
+<waitactor(1)><$voicel(1,9)><$motion(1,801)><$facial(1,5)><$comeff(1,10)>Ah bon ? Ha ha ha !<br>Bah, en tout cas, c'était un bon entraînement !
+
+
+
+
+
+
+
+
+
+
+<$comeff(1,9)><$motion(1,801)><$voicel(1,9)>OK, maintenant, c'est à mon tour de me cacher !
+<$comeff(2,9)><$facial(2,4)><$motion(2,801)><$voicel(2,7)>Hah, bon courage ! Je vais te trouver tout de suite,<br>c'est sûr. Je suis imbattable à ce jeu.
+<$comeff(1,10)><$facial(1,1)><$motion(1,805)><$voicel(1,7)>Pfff ! C'est ça, ouais ! J'vais tellement bien me cacher<br>que tu me trouveras JAMAIS !
+<$emotion(2,14)><$voicel(2,10)>Et voilà, c'est comme ça que je vais te trouver !<clear><br><$comeff(2,10)><$facial(2,4)><$motion(2,806)><$voicel(2,7)>Cette forte émotion que tu viens de ressentir,<br>elle émane de toi, comme une aura.<slide><br><$comeff(2,9)><$facial(2,4)><$motion(2,801)><$voicel(2,10)>Et ça, moi, je le perçois tout de suite.
+<$comeff(1,10)><$motion(1,803)><$voicel(1,9)>Ah bon ?! Du coup, tu peux deviner ce que je pense, là ?
+<$comeff(2,14)><$voicel(2,5)>Hmmm...<wait(0.5)><br><$emotion(2,29)>Tu songes à tricher, non ?
+<$comeff(1,5)><$facial(1,13)><$motion(1,803)><$voicel(1,10)>Gloups !<clear><br><$comeff(1,4)><$facial(1,1)><$motion(1,807)><$voicel(1,7)>C-c'est pas d'la triche ! J'comptais juste me transformer<br>pour mieux me cacher, c'est tout !
+<$comeff(2,7)><$motion(2,802)><$voicel(2,6)>C'est carrément de la triche...
+<$comeff(1,4)><$facial(1,1)><$motion(1,666)><$voicel(1,5)>Euh... euuuh...<clear><br><$comeff(1,6)><$voicel(1,7)>Maintenant, réponds à mon humble question !<br>À quoi suis-je en train de penser ?
+<$comeff(2,14)><$facial(2,1)><$motion(2,666)><$voicel(2,4)>Hmmm...<clear><br><$emotion(2,29)><$voicel(2,7)>« Laisse tomber cache-cache et regarde plutôt<br>comment j'suis balèze en transformation » ?
+<$emotion(1,38)><$voicel(1,9)>Ouaaah ! Trop bien !!!
+
+
+
+
+
+
+
+
+
+<$voicel(1,5)><$motionoff(1,804)><$facial(1,4)><$comeff(1,3)>Dis, dis ! Tu trouves pas qu'on se ressemble beaucoup ?
+<$voicel(2,6)><$motion(2,805)><$comeff(2,6)>Euh... Tu trouves ?
+<$voicel(1,7)><$motion(1,806)><$comeff(1,10)>Oui, oui ! Regarde nos oreilles et les poils sur notre tête !<br>On a les mêmes !
+<$voicel(2,7)><$motion(2,807)><$comeff(2,14)>Maintenant que tu le dis... Tu as peut-être raison.<br>C'est bizarre, quand même...
+<$comcan(2)><$voicel(1,9)><$emotion(1,8)><$pkcry;0(1,2)> ! ♪<br>Si ça se trouve, on est de la même famille ?!
+<$voicel(2,7)><$emotion(2,1)>Oh ! Tu crois ? Ce serait super ! On fait la paire,<br>toi et moi ! Je vais t'appeler « Zoru-moi » !<clear><br><$facial(2,1)><$voicel(2,5)><$comeff(2,14)><$motion(2,805)>Ah, mais, attends...<br>On a pas le même nombre de queues...
+<$comcan(2)><$voicel(1,3)><$comeff(1,5)><$facial(1,13)><$motion(1,807)>Ah tiens, c'est vrai... Je me demande bien pourquoi.<br>À part ça, on se ressemble comme deux gouttes d'eau !<clear><br><$voicel(1,8)><$comeff(1,20)><$facial(1,1)>... Ah ! Je sais !
+<$voicel(2,6)><$motion(2,805)><$comeff(2,6)>Tu sais pourquoi on a pas le même nombre de queues ?
+<$voicel(1,9)><$facial(1,4)><$motion(1,801)><$comeff(1,10)>Oui ! C'est peut-être que les miennes ont pas encore<br>poussé ! Donc faut juste qu'on attende un peu !
+<$voicel(2,9)><$motion(2,801)><$facial(2,4)><$comeff(2,9)>Oh, je vois ! Et quand tu les auras, plus personne<br>arrivera à nous distinguer ! Ce sera rigolo !
+
+
+
+
+
+
+
+
+
+
+<$voicel(1,7)><$facial(1,4)><$motion(1,661)><$comeff(1,10)><$cdef(27)>RAICHUUU</color> ! Je te défie !
+<$voicel(2,5)><$motion(2,805)><$comeff(2,6)>Tu veux encore comparer nos attaques électriques ?<br>Il n'y a pas à dire, tu débordes vraiment d'énergie !
+<$voicel(1,7)><$motion(1,664)><$comeff(1,9)>Oui ! Et aujourd'hui, c'est moi qui vais gagner !<br>On s'y met ? C'est parti !<clear><br><$voicel(1,10)><$facial(1,7)><$comeff(1,10)><$motion(1,859)><$textsize(2)>CHUUUUUUUUU !!!</textsize>
+<$voicel(2,7)><$emotion(2,39)>Quelle puissance ! C'est incroyable !<br>Tu as fait des progrès depuis la dernière fois !
+<$voicel(1,7)><$emotion(1,8)>Hé hé hé ! C'est sûr que tu pourras pas faire mieux<br>que moi, cette fois !
+<$voicel(2,5)><$motion(2,806)><$comeff(2,14)>Hi hi hi... Dans ce cas, je vais devoir donner le meilleur<br>de moi-même... Attention... !<clear><br><$voicel(2,10)><$facial(2,7)><$comeff(2,10)><$motion(2,859)><$textsize(2)>TCHUUUUUUUUUU !!!</textsize>
+<$voicel(1,3)><$motion(1,665)><$comeff(1,11)>OUAHOU !!! C'est incroyable !
+<$voicel(2,1)><$motion(2,802)><$comeff(2,4)>*souffle souffle* Pfiou...<clear><br><$voicel(2,4)><$motion(2,807)><$comeff(2,6)>Alors ? Que penses-tu de ma puissance électrique... ?
+<$voicel(1,1)><$motion(1,663)><$comeff(1,7)>Hmmm... Bon, j'avoue, t'assures...<br>Aujourd'hui, c'est moi qui ai perdu...<clear><br><$voicel(1,8)><$facial(1,4)><$motionoff(1,804)><$comeff(1,10)>Mais demain, pas de cadeau ! Tu vas voir ce que tu vas<br>voir !
+<$voicel(2,1)><$motion(2,802)><$facial(2,9)><$comeff(2,17)>Demain... ? Un autre... *souffle* défi ?!<clear><br><$voicel(2,3)><$facial(2,1)><$comeff(2,14)><$motion(2,666)>Je... je vais avoir besoin de recharger mes batteries...<br>Je n'ai plus l'énergie de ma jeunesse, malheureusement...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<$emotion(2,29)><$voicel(2,5)>Hé, il paraît que c'est toi qui fais la loi par ici<br>depuis quelques temps ?
+<$emotion(1,38)><$voicel(1,9)>Ha ha ha ! Eh ouais ! Tout le monde dit que j'ai une force<br>de zinzin... Y a personne pour rivaliser avec moi !<clear><br><$emotion(1,29)><$voicel(1,6)>À moins que tu te portes volontaire ?
+<$emotion(2,8)><$voicel(2,9)>Eh bien, pourquoi pas ? J'accepte ton défi, mais sache<br>que j'ai encore jamais connu la défaite !
+<$emotion(1,38)><$voicel(1,8)>T'as jamais connu la défaite ? Ha ha ha ! Ça promet !<br><wait(1.0)><$motion(1,815)><$facial(1,1)><$voicel(1,10)>J'vais t'envoyer valser avec mes capacités !
+<$emotion(2,14)><$voicel(2,7)>Hé hé ! C'est bien, tu as confiance en toi...<br><$comeff(2,14)><$motion(2,807)><$voicel(2,5)>Mais encore faudrait-il que tu puisses me toucher !<slide><br><$comcan(2)><$motion(2,644)><$voicel(2,4)>Pouf !
+<$comeff(1,11)><$facial(1,13)><$motion(1,805)><$voicel(1,9)>Qu-quoi... ?! Mais où est passée cette demi-portion... ?!<br>VIENS T'BATTRE SI T'ES UN POKÉMON !!!
+<$comeff(2,9)><$voicel(2,7)>Ha ha ha ! Alooors ? Pas mal, hein ? T'es dans la mouise,<br>maintenant, non ?
+<$comeff(1,14)><$motion(1,666)><$voicel(1,7)>C'est vrai que c'est plus compliqué d'viser...<br>mais j'ai pas dit mon dernier mot !!!<clear><br><$comeff(1,5)><$motion(1,814)><$voicel(1,10)>Tu résisteras pas à <$cdef(27)>Éboulement</color> ! Et VLAAAN, prends ça !!!<br>C'est pas fini, j'te les enchaîne à la pelle !!!
+<oneline><$comeff(2,4)><$motion(2,645)><$voicel(2,5)>Hé, arrête ça tout de suite !<br>Tu pourrais blesser <$cdef(27)><pname;0> </color>!
+<oneline><$emotion(1,41)><$voicel(1,3)>Gloups ! Pardon, <$cdef(27)><pname;0></color>...<br>Dans le feu de l'action, j'ai perdu mon sang-froid !
+<$emotion(2,51)><$voicel(2,3)>Pfiou, ça rigolait vraiment pas... <$comeff(2,14)><$motion(2,666)><$voicel(2,2)>Force de zinzin, tu parles !<br>Zinzin tout court, oui ! Ça tourne pas rond dans sa tête...
+
+
+
+
+
+
+
+
+
+<$emotion(2,38)><$voicel(2,8)>Il y a pas plus fortiche que moi en imitation !<br>Regarde ! <$facial(2,4)><$motionoff(2,804)><$voicel(2,10)>Là, c'est toi en train de voler !
+<$comeff(1,14)><$voicel(1,5)>...<wait(0.8)><clear><br><$comeff(1,10)><$facial(1,4)><$motion(1,801)><$voicel(2,8)>Il y a pas plus fortiche que moi en imitation !<br>Regarde ! <$facial(1,4)><$motionoff(1,804)><$voicel(2,10)>Là, c'est toi en train de voler !
+<$comeff(2,5)><$facial(2,1)><$motion(2,803)><$voicel(2,10)>Hein ?!
+<$comeff(1,10)><$facial(1,4)><$motion(1,803)><$voicel(1,7)>C'est mon imitation de toi ! Pas mal, hein ?<br>Comme quoi, y a plus fortiche que toi en imitation...<slide><br><$comeff(1,9)><$facial(1,4)><$motion(1,801)><$voicel(1,9)>Moi ! Hé hé hé !
+<$comeff(2,4)><$facial(2,9)><$motion(2,803)><$voicel(2,5)>A-attends, t'as pas tout vu !<br>Regarde, je sais aussi faire ça...
+<$lookat(2,0,0)><$emotion(2,14)><$voicel(2,7)>Ah ! C'est toi, <$cdef(27)><pname;0></color>...<br>C'est vrai que tu imites très bien les êtres humains.<slide><br><$comeff(2,21)><$facial(2,4)><$motion(2,801)><$voicel(2,9)>Et sans jamais faire de pause, en plus !
+<$lookat(1,0,0)><$comeff(1,14)><$facial(1,1)><$motion(1,666)><$voicel(1,5)>Hmpf... Ça m'fait mal de l'admettre, mais face à toi,<br>je fais pas l'poids...
+<$comcan(1)><$comeff(2,14)><$facial(2,1)><$motion(2,666)><$voicel(2,5)>Pareil... Même moi, je peux pas imiter quelque chose<br>sur une période aussi longue...
+<$comcan(2)><$comeff(1,10)><$motion(1,803)><$voicel(1,7)>Du coup, on est d'accord !<br><$comeff(1,9)><$facial(1,4)><$motion(1,801)><$voicel(1,9)>C'est <$cdef(27)><pname;0></color> qui maîtrise le mieux<slide><br>l'art de l'imitation !
+
+
+
+
+
+
+
+
+
+
+
+<$comeff(2,5)><$motion(2,814)><$voicel(2,8)>Oh... Attention !
+<$comeff(1,11)><$facial(1,13)><$motion(1,665)><$voicel(1,9)>Qu-quoi ?! Tu m'as fait peur...<br><$comeff(1,6)><$facial(1,1)><$motion(1,805)><$voicel(1,6)>Qu'est-ce qui se passe ?
+<$emotion(2,38)><$voicel(2,7)>Le vent vient de faire tomber une branche. Je voulais<br>m'assurer que tu ne sois pas sur sa trajectoire.<slide><br><$comeff(2,6)><$facial(2,1)><$motion(2,805)><$voicel(2,6)>Tu ne t'es pas fait mal, j'espère ?
+<$emotion(1,8)><$voicel(1,8)>Oh, merci... Non, j'ai rien.<clear><br><$comeff(1,21)><$facial(1,4)><$motion(1,803)><$voicel(1,9)>En tout cas, tu m'épates, <$cdef(27)>Pingoléon</color> !<br><$comeff(1,10)><$facial(1,4)><$motion(1,806)><$voicel(1,8)>Tu as agi super rapidement !
+<$emotion(2,14)><$voicel(2,7)>... Tu veux parler de la capacité que j'ai utilisée<br>pour nous débarrasser de cette branche ?
+<$emotion(1,8)><$voicel(1,9)>Oui ! C'était si rapide que j'ai pas eu le temps de bien voir.<br><$emotion(1,29)><$voicel(1,8)>Tu pourrais me la montrer encore une fois ?
+<$emotion(2,38)><$voicel(2,5)>Bien sûr. Observe bien...<br><wait(1.0)><$facial(2,1)><$motion(2,814)><$voicel(2,10)>Et hop !
+<$comeff(1,21)><$facial(1,4)><$motion(1,803)><$voicel(1,9)>Ouah, incroyable ! Comment tu fais ça ?!<br><$emotion(1,58)><$voicel(1,4)>Enfin, je demande juste pour savoir...<slide><br>Je risque pas de t'imiter, moi.
+<$emotion(2,50)><$voicel(2,9)>Ha ha, tu en es capable, toi aussi. Essaie donc.
+<$comeff(1,5)><$motion(1,803)><$voicel(1,7)>Vraiment ?! T-tu penses que je peux y arriver... ?
+<$comeff(2,14)><$voicel(2,5)>Je vais te faire une démonstration au ralenti. Ensuite,<br>tu essaieras de faire comme moi.<clear><br><$comcan(2)><$motion(2,802)><$voicel(2,8)>Et hop ! Tu as compris ?
+<$comeff(1,14)><$motion(1,664)><$voicel(1,5)>OK... Je pense que je peux y arriver, moi aussi.<br><$motion(1,668)><$facial(1,7)><$voicel(1,10)>... Et hop là !<clear><br><$emotion(1,29)><$voicel(1,7)>Alors, tu en penses quoi ? C'est pas si mal, non ?
+<$comeff(2,10)><$facial(2,4)><$motion(2,806)><$voicel(2,9)>Eh bien, quelle belle maîtrise du mouvement !<br>J'ai hâte de voir ce que tu accompliras à l'avenir.
+
+
+
+
+
+
+
+<$comeff(1,14)><$motion(1,805)><$voicel(1,5)>Dis, <$cdef(27)>Voltali</color>... Est-ce que tu ne manges qu'un seul type<br>de Baie ?
+<$comcan(1)><$emotion(2,29)><$voicel(2,7)>Hein ? Non, pourquoi ?
+<$emotion(1,51)><$voicel(1,3)>Je vois la même Baie un peu partout dans ton lieu de vie...<br>Alors, je me posais la question.
+<$emotion(2,1)><$voicel(2,9)>Ah, ça ! J'avais pris ces Baies pour le goûter... <$comeff(2,10)><$facial(2,4)><$motion(2,806)><$voicel(2,8)>Mais quand<br>j'ai voulu en manger, impossible de les retrouver !<clear><br><$comeff(2,14)><$facial(2,1)><$motion(2,666)><$voicel(2,5)>Alors il a fallu que j'aille chercher d'autres Baies, mais<br>en rentrant, j'ai retrouvé celles que j'avais perdues...<clear><br><$emotion(2,38)><$voicel(2,10)>Et à chaque fois que ça m'arrive, je me retrouve toujours<br>avec deux fois trop de Baies.
+<$comeff(1,11)><$facial(1,13)><$motion(1,802)><$voicel(1,5)>Quoi ?! C'est arrivé plusieurs fois ? En tout cas, c'est<br>embêtant que tu te retrouves avec autant de Baies...<clear><br><$comeff(1,20)><$facial(1,1)><$motion(1,803)><$voicel(1,7)>Est-ce que tu veux que je t'aide à t'en débarrasser ?
+<$comeff(2,1)><$facial(2,4)><$motion(2,803)><$voicel(2,8)>Tu me proposes ça sérieusement ?!<clear><br><$comeff(2,14)><$facial(2,1)><$motion(2,805)><$voicel(2,5)>Pour tout te dire, là, quand je dors, y a des Baies qui<br>m'rentrent dans l'dos. <$emotion(2,41)><$voicel(2,4)>Donc c'est un peu pénible...<clear><br><$comeff(2,9)><$facial(2,4)><$motion(2,806)><$voicel(2,8)>Ça serait vraiment sympa si tu m'filais un coup de main !
+<$emotion(1,1)><$voicel(1,7)>Dans ce cas, tu peux compter sur moi.<clear><br><$comeff(1,14)><$facial(1,1)><$motion(1,806)><$voicel(1,6)>Je vais commencer par arroser ton lieu de vie<br>pour le nettoyer...
+<$emotion(2,58)><$voicel(2,7)>Houla, non, arrête ! Ça va être tout trempé !
+<$emotion(1,14)><$voicel(1,7)>Puisqu'on se débarrasse des Baies, je me disais qu'on<br>pouvait en profiter pour refaire une beauté à ton lieu de vie.<slide><br><$comeff(1,6)><$motion(1,805)><$voicel(1,6)>Ça lui ferait du bien, non ?
+<$emotion(2,41)><$voicel(2,4)>J'ai pas franchement envie que mon chez-moi soit<br>inondé...<clear><br><$comeff(2,17)><$motion(2,802)><$voicel(2,1)>J'vais plutôt me débrouiller moi-même, finalement...
+
+
+
+
+
+
+
+
+
+
+<$emotion(2,14)><$voicel(2,5)>Dis, tu pourrais me donner un peu de coton ?
+<$comeff(1,6)><$motion(1,803)><$voicel(1,7)>D'accord... Mais pour quoi faire... ?
+<$emotion(2,38)><$voicel(2,9)>Je me dis que si je mets ton coton partout chez moi,<br>ce sera super doux et confortable !
+<$emotion(1,1)><$voicel(1,6)>Oh, je vois...<clear><br><$comeff(1,14)><$facial(1,1)><$motion(1,666)><$voicel(1,3)>Par contre, mon coton est très léger... T'as pas peur<br>qu'il s'envole avec le veeent ?
+<$comcan(1)><$emotion(2,41)><$voicel(2,4)>Ah, c'est vrai... Zut, c'est dommage.<clear><br><$comeff(2,20)><$facial(2,1)><$motion(2,803)><$voicel(2,9)>Attends, j'ai une idée ! Et si j'attachais ton coton avec<br>mon fil ? <$comeff(2,6)><$motion(2,805)><$voicel(2,6)>Ça l'empêcherait sûrement de s'envoler, non ?
+<$emotion(1,38)><$voicel(1,9)>Oui, sûremeeent... ! C'est du génie... <$comeff(1,9)><$facial(1,4)><$motion(1,806)><$voicel(1,8)>Ton idée me plaît...<br>Je veux bien t'aider, si besoin...
+<$emotion(2,1)><$voicel(2,9)>Merci, c'est gentil ! Reste à trouver comment attacher<br>ton coton <$comeff(2,14)><$facial(2,1)><$motion(2,807)><$voicel(2,6)>avec mon fil...
+<$comcan(2)><$emotion(1,14)><$voicel(1,7)>Assembler du coton et du fil... Ça me fait penser<br>aux objets des êtres humains...<slide><br><$comeff(1,21)><$facial(1,4)><$motion(1,801)><$voicel(1,10)><$cdef(27)><pname;0></color> en fabrique tout le teeemps !
+<$emotion(2,14)><$voicel(2,9)>Oh, c'est vrai ! Dans ce cas, commençons par examiner<br><$emotion(2,8)><$voicel(2,8)>les objets <frque;0(1)><$cdef(27)><pname;0> </color>a fabriqués !
+<$comeff(1,3)><$facial(1,4)><$motion(1,806)><$voicel(1,7)>D'accord... On va étudier tout ça.<br><$emotion(1,60)><$voicel(1,10)>Au boulot !
+<$emotion(2,60)><$voicel(2,10)>Oui, au boulot !
+
+
+
+
+
+
+
+
+
+<$comeff(2,6)><$motion(2,805)><$voicel(2,5)>Dis, tu connaîtrais pas une bonne cachette ?
+<$emotion(1,14)><$voicel(1,5)>Une cachette ?<clear><br><$comeff(1,14)><$motion(1,805)><$voicel(1,7)>Hmmm... Pourquoi pas à l'ombre d'un arbre ou dans<br>une grotte ?<clear><br><$emotion(1,8)><$voicel(1,10)>Personne ne viendra t'y déranger. Tu pourras t'y reposer<br>en toute quiétude.
+<$emotion(2,18)><$voicel(2,7)>Ben, ça serait pas marrant, alors ! Moi, j'veux pouvoir<br>bondir hors d'ma cachette <$emotion(2,38)><$voicel(2,10)>pour faire peur aux autres !
+<$emotion(1,29)><$voicel(1,7)>Ce n'est pas très gentil... Que comptes-tu faire ensuite ?<br><$comeff(1,14)><$motion(1,666)><$voicel(1,6)>Les ligoter ?
+<$comcan(1)><$comeff(2,6)><$motion(2,805)><$voicel(2,6)>Hein ?
+<$comeff(1,9)><$motion(1,805)><$voicel(1,8)>Ensuite, tu pourrais les suspendre quelque part...
+<$comeff(2,11)><$motion(2,802)><$voicel(2,10)>P-p-pardon ?!
+<$emotion(1,38)><$voicel(1,9)>Je ne faisais que plaisanter, voyons ! Qui ferait une chose<br>pareille ?
+<$emotion(2,58)><$voicel(2,8)><$kfacial(2)>B-bonne question !
+<$emotion(1,29)><$voicel(1,7)>Mais tu sais, on punit parfois les enfants qui effraient sans<br>cesse les gens.<clear><br><$comeff(1,14)><$motion(1,806)><$voicel(1,5)>... Attention à ne pas jouer trop de mauvais tours,<br><$cdef(27)>Fantominus</color>.
+<$comcan(1)><$comeff(2,23)><$facial(2,9)><$motionoff(2,804)><$voicel(2,9)>P-p-promis, je serai sage !!!
+
+
+
+
+
+
+
+
+
+<$emotion(2,51)><$voicel(2,3)>Arf... Qu'est-ce que j'ai faim... !<br><$emotion(2,29)><$voicel(2,5)>T'aurais pas un truc à manger... ?
+<$comeff(1,9)><$facial(1,4)><$motion(1,806)><$voicel(1,8)>J'ai des Baies, si tu veuuux...
+<$emotion(2,38)><$voicel(2,9)>C'est vrai... ? Tu veux bien m'en donner... ?<br>J'ai tellement faim... que j'ai peur de faire un malaise...
+<$comeff(1,14)><$facial(1,9)><$motion(1,807)><$voicel(1,3)>Je veux bien, mais j'te préviens, elles collent un peu !<br>Ça ira ?
+<$comcan(1)><$comeff(2,6)><$motion(2,805)><$voicel(2,6)>En quoi c'est un problème... ?
+<$emotion(1,18)><$voicel(1,1)>Y a des Pokémon qui aiment pas spécialement les Baies<br>gluantes... <$comeff(1,10)><$facial(1,4)><$motion(1,18)><$voicel(1,8)>Mais si ça te dérange pas, tiens !
+<$emotion(2,63)><$voicel(2,8)>Merci... Pour moi, c'est pas un souci...<clear><br><$motion(2,17)><$voicel(2,5)>Scrontch, scrontch, scrontch...<wait(2.1)><$motion(2,19)><clear><br><$comeff(2,9)><$facial(2,4)><$motion(2,801)><$voicel(2,9)>Ouah... ! Comme elles sont gluantes, elles fondent dans<br>la bouche. C'est trop booon...
+<$comeff(1,14)><$motion(1,805)><$voicel(1,5)>Tu trooouves ? Bon, tant mieux !
+<$emotion(2,60)><$voicel(2,7)>Oui... J'adore ça. C'est vraiment délicieux...<clear><br><$comeff(2,20)><$facial(2,4)><$motion(2,801)><$voicel(2,9)>Peut-être qu'on devrait essayer... de rendre d'autres trucs<br>gluaaants...<clear><br><$comeff(2,9)><$facial(2,4)><$motion(2,806)><$voicel(2,8)>Genre des légumes... ou certains plats...
+<$emotion(1,41)><$voicel(1,3)>Hmmm... Ça a l'air faaatigant. J'ai pas le courage<br>de me lancer là-dedans...
+
+
+
+
+
+
+
+
+
+
+<$emotion(1,18)><$voicel(1,3)>La chance... J'aimerais trop pouvoir faire pareil !
+<$emotion(2,29)><$voicel(2,6)>De quoi parles-tu donc, <$cdef(27)>Tritosor</color> ?
+<$emotion(1,14)><$voicel(1,8)>J'me disais juste...<br><$comeff(1,14)><$motion(1,805)><$voicel(1,5)>On se ressemble pas mal, toi et moi !<slide><br><$comeff(1,9)><$facial(1,4)><$motion(1,806)><$voicel(1,8)>On a des silhouettes similaires, on kiffe la mer, tout ça...
+<$comeff(2,3)><$motion(2,805)><$voicel(2,6)>Maintenant que tu le dis, c'est vrai !
+<$emotion(1,41)><$voicel(1,3)>Le truc, c'est que moi, je galère un peu à porter des gens<br>sur mon dos...<clear><br><$comeff(1,21)><$facial(1,4)><$motion(1,803)><$voicel(1,7)>Alors que toi, <$cdef(27)>Lokhlass</color>, tu fais ça traaanquille et tout.<br>Je trouve ça incroyable, franchement.
+<$emotion(2,29)><$voicel(2,5)>Ah oui ? Mais tu sais... il arrive qu'on me dise <$emotion(2,51)><$voicel(2,4)>que<br>mon dos est trop dur.<clear><br><$emotion(2,38)><$voicel(2,7)>Parfois, je préférerais avoir un dos plus souple,<br>comme le tien.
+<$comeff(1,9)><$facial(1,4)><$motion(1,806)><$voicel(1,9)>Hé hé, tu vas m'faire rougir ! Le problème avec mon dos,<br>c'est qu'il est aussi humide et glissant.<slide><br><$comeff(1,6)><$facial(1,9)><$motion(1,803)><$voicel(1,6)>C'est vraiment pas l'idéal pour transporter quelqu'un !
+<$emotion(2,60)><$voicel(2,7)>Certes, mais cela a aussi ses avantages, non ?<br>Cela permet aux plus petits Pokémon <$comeff(2,9)><$facial(2,4)><$motion(2,806)><$voicel(2,10)>de faire<slide><br>du toboggan dessus !
+<$comeff(1,13)><$facial(1,4)><$motion(1,801)><$voicel(1,9)>Tu m'remontes le moral. Merci, <$cdef(27)>Lokhlass </color>!
+
+
+
+
+
+
+
+
+
+
+
+<$comeff(1,6)><$motion(1,666)><$voicel(1,7)>Hé, t'as été piquer une tête ? On dirait que t'as pas<br>encore séché.
+<$comeff(2,3)><$motion(2,805)><$voicel(2,5)>En effet. Toi aussi tu as fait trempette, n'est-ce pas ?
+<$emotion(1,38)><$voicel(1,9)>Eh ouais ! C'est fou, cette coïncidence !<br><$comeff(1,9)><$facial(1,4)><$motion(1,806)><$voicel(1,8)>Faut dire que nager dans un lac bien calme, c'est l'pied !
+<$emotion(2,29)><$voicel(2,6)>Pour ma part, je reviens de la mer. <$emotion(2,8)><$voicel(2,9)>Rien de tel que<br>de fendre des vagues glaciales et déchaînées !
+<$emotion(1,60)><$voicel(1,9)>Oh, je vois ! C'est vrai que ça a l'air fun, une mer en furie !
+<$comeff(2,14)><$motion(2,666)><$voicel(2,5)>Mais je dois bien reconnaître que tu m'intrigues,<br>avec cette histoire de lac paisible et agréable.<wait(2.9)><$lookat(2,0,0)><$lookat(2,1,0)><$lookat(1,0,0)><$lookat(1,1,0)><waitactor(2)><waitactor(1)><clear><br><oneline><$emotion(2,29)><$voicel(2,7)>Et toi, <$cdef(27)><pname;1></color> ?<br>Où préférerais-tu nager ?
+<$emotion(1,1)><$voicel(1,7)>J'vois que toi aussi, tu préfères être à la cool et profiter<br>du grand air !
+<$comeff(2,21)><$facial(2,4)><$motion(2,801)><$voicel(2,7)>C'est exaltant de ne pas savoir ce qui peut arriver<br>et d'avoir le cœur qui bat la chamade, n'est-ce pas ?
+<$comeff(1,14)><$motion(1,666)><$voicel(1,5)>... J'avais prévu d'faire une pause, mais avec tout ça,<br>j'ai envie d'retourner me baigner un peu !<slide><br><$comeff(1,9)><$facial(1,4)><$motion(1,806)><$voicel(1,10)>Ça me démange grave, là...
+<$comeff(2,10)><$facial(2,4)><$motion(2,806)><$voicel(2,9)>Et moi donc. Quel dilemme !
+
+
+
+
+
+
+
+
+
+
+<$emotion(2,14)><$voicel(2,5)>Hééé ! Mais c'est <$cdef(27)>Granivol</color>... Coucou !
+<$emotion(1,38)><$voicel(1,7)>Salut ! Je te vois souvent en train de te balader,<br>j'ai l'impression !
+<$comeff(2,14)><$motion(2,805)><$voicel(2,5)>C'est vrai ! J'aime bien faire un p'tit tour en me laissant<br><$comeff(2,9)><$facial(2,4)><$motion(2,806)><$voicel(2,8)>porter par le vent, tranquillou !
+<$comeff(1,5)><$facial(1,13)><$motion(1,803)><$voicel(1,9)>Ah ouais ? C'est drôle, moi aussi !
+<$emotion(2,38)><$voicel(2,7)>Tu m'étonnes ! Faut dire que c'est super agréaaaable...
+<$comeff(1,9)><$voicel(1,10)>Oui !<clear><br>... <wait(0.8)><$emotion(1,14)><$voicel(1,8)>Attends... Mais alors, si on se croise aussi souvent...<br><$comeff(1,6)><$motion(1,805)><$voicel(1,6)>c'est grâce au vent ?
+<$emotion(2,14)><$voicel(2,7)>Oui, sans doute ! Faut croire qu'on emprunte les mêmes<br>courants aériens !<clear><br><$comeff(2,9)><$facial(2,4)><$motion(2,806)><$voicel(2,9)>Moi, c'que je préfère, c'est quand y a du vent<br>au crépuscule !
+<$comeff(1,14)><$facial(1,14)><$motion(1,666)><$voicel(1,5)>Oui, il fait frais le soir, ça fait du bien !<clear><br>Et j'aime bien voir le soleil se coucher, aussi...<br><$comeff(1,21)><$facial(1,4)><$motion(1,801)><$voicel(1,10)>Donc je me laisse souvent porter !<clear><br><$comeff(1,1)><$facial(1,4)><$motion(1,803)><$voicel(1,8)>Mais je trouve que le vent en journée est chouette aussi.
+<$emotion(2,60)><$voicel(2,7)>Ah ouais, j'comprends ! Il fait super bon, c'est parfait<br>pour roupiller !<clear><br><$emotion(2,8)><$voicel(2,10)>Même si des fois, j'me surprends souvent à voler bien plus<br>haut que ce que j'avais prévu...
+<$emotion(1,38)><$voicel(1,9)>Moi aussi, ça m'arrive ! Hé hé, ça me fait plaisir<br>qu'on se comprenne, toi et moi !
+<$emotion(2,8)><$voicel(2,9)>Grave, à moi aussi ! Allez, on se revoit vite, hein !
+
+
+
+
+
+
+
+
+
+<$comeff(2,14)><$motion(2,805)><$voicel(2,6)>Dis, la fleur sur ta tête, là...
+<$comcan(2)><$comeff(1,6)><$motion(1,816)><$voicel(1,6)>Ça ?
+<$emotion(2,38)><$voicel(2,9)>Oui. Elle tourne quand tu voles.<br>C'est mignon...
+<$comeff(1,21)><$facial(1,4)><$motion(1,803)><$voicel(1,9)>Hé hé, merci... Moi j'aime bien les jolies feuilles vertes<br>que t'as sur la têêête... <$emotion(1,38)><$voicel(1,8)>C'est vraiment stylé...
+<$comeff(2,9)><$facial(2,4)><$motion(2,806)><$voicel(2,9)>T'as vu ça ! Mon épi me donne un air rebelle, non ?<clear><br><$emotion(2,51)><$voicel(2,3)>Mais tu sais... j'aurais bien aimé avoir une fleur, moi aussi...
+<$emotion(1,29)><$voicel(1,6)>Quoi ? Mais pourquoiii... ?
+<$comeff(2,14)><$motion(2,805)><$voicel(2,5)>Parce que ça attire pas vraiment les regards, les feuilles.<clear><br>Des fois, j'aimerais bien faire éclore une belle fleur<br><$emotion(2,31)><$voicel(2,4)>et qu'on me remarque, moi aussi...
+<$emotion(1,38)><$voicel(1,9)>Oh, mais si c'est que ça ! T'as pas besoin de t'inquiéter<br>pour ça, tu sais...
+<$comeff(2,6)><$motion(2,805)><$voicel(2,6)>Ah bon ? Pourquoi tu dis ça... ?
+<$comeff(1,14)><$motion(1,805)><$voicel(1,7)>En fait, ma fleur a pas toujours été comme ça...<br><$voicel(1,6)>J'avais que des feuilles, au début !<clear><br><$emotion(1,60)><$voicel(1,7)>Alors peut-être que toi aussi, t'auras une jolie fleur<br>qui éclora, un jouuur !
+<$comeff(2,13)><$facial(2,4)><$motion(2,801)><$voicel(2,9)>Vraiment ? Ce serait génial... Si ça arrive, c'est à toi<br>que je viendrai la montrer en premier. ♪
+<$emotion(1,1)><$voicel(1,10)>Hé hé, j'ai hâte de voir çaaa...
+
+
+
+
+
+
+
+
+<$emotion(2,8)><$voicel(2,9)>« Oh, laisse-moi juste savourer... ♪<br>La douceur de ce début de journée ! ♪<clear><br><$motion(2,806)><$voicel(2,7)>Les ailes dans le vent, le cœur battant !<clear><br><$comeff(2,14)><$voicel(2,6)>Les yeux rivés sur le firmament ! ♪ »<clear><br><wait(0.8)><$comeff(2,7)><$facial(2,9)><$motion(2,666)><$voicel(2,4)>Voyons... Comment pourrais-je bien continuer ?
+<$emotion(1,29)><$voicel(1,6)>Quel entrain ! Serais-tu en train de composer<br>une chanson ?
+<$emotion(2,14)><$voicel(2,7)>Oui, tout à fait ! Malheureusement, je manque<br>d'inspiration pour la suite...<slide><br><$comeff(2,6)><$motion(2,805)><$voicel(2,6)>Aurais-tu une idée, par hasard ?
+<$comeff(1,1)><$facial(1,4)><$motion(1,805)><$voicel(1,10)>Alors là, tu peux compter sur moi !<br>Écoute un peu ça...<clear><br><$comeff(1,9)><$facial(1,4)><$motion(1,806)><$voicel(1,7)>« Laisse-toi porter par les courants ! ♪<br>Le voyage commence maintenant !<clear><br>Allons, volons ! Droit devant ! ♪<br>Ensemble, c'est plus amusant ! ♪»<clear><br><$comeff(1,10)><$facial(1,4)><$motion(1,803)><$voicel(1,10)>Et voilà ! Je me débrouille pas mal, je trouve !<wait(1.2)><$lookat(2,0,0)><$lookat(2,1,0)><$lookat(1,0,0)><$lookat(1,1,0)><waitactor(1)><waitactor(2)><$voicel(1,8)><clear><br><oneline>Allez, <$cdef(27)><pname;0></color> ! À toi de trouver<br>la suite,<slide><br>trésor !
+<$comeff(2,1)><$facial(2,4)><$motion(2,806)><$voicel(2,9)>Hi hi, toi au moins, tu as le sens du rythme !<br>« Ensemble ! ♪ Tralala, han han ! ♪ »
+<$comeff(1,1)><$facial(1,4)><$motion(1,806)><$voicel(1,9)>Oh ! Quelle magnifique mélodie !<br>« Ensemble ! ♪ Chante avec moi, c'est plus amusant ! ♪ »
+<$emotion(2,8)><$voicel(2,7)>« Viens donc consommer des Baies ! ♪<br>Et n'oublie pas de te reposer ! ♪<clear><br>À l'ombre des arbres, il fait si frais !<br>En ce jour, le rêve est réalité ! ♪<clear><br><$comeff(2,13)><$facial(2,4)><$motion(2,816)><$voicel(2,10)>Oooh, quelle journée ! Ouiii, quelle journée ! ♪<br>Des étoiles plein les yeux, dans ce monde parfait ! ♪ »<clear><br><$comeff(2,10)><$facial(2,4)><$voicel(2,8)>... Et voilà ! La chanson est terminée !<br><wait(1.2)><$lookat(1,0,2)><$lookat(1,1,2)><$lookat(2,0,1)><$lookat(2,1,1)><waitactor(1)><waitactor(2)><$emotion(2,29)><$voicel(2,6)>C'était pas mal, non ?
+<$comeff(1,21)><$facial(1,4)><$motion(1,803)><$voicel(1,9)>Oui, ça fait chaud au cœur ! Cette chanson me rappelle<br><$comeff(1,9)><$facial(1,4)><$motion(1,806)><$voicel(1,8)>l'émotion que je ressens après avoir passé une belle<slide><br>journée en compagnie de mes proches !
+<$emotion(2,8)><$voicel(2,9)>Cela me fait plaisir de l'entendre ! Il n'y a vraiment rien de<br>mieux que de chanter avec les êtres qui nous sont chers !
+<$emotion(1,60)><$voicel(1,9)>Oh que oui ! C'est merveilleux !
+
+
+
+
+
+
+
+
+
+

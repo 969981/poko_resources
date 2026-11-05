@@ -1,0 +1,129 @@
+<$voicel(4,2)>...<wait(2.0)><$lookat(4,0,0)><$lookat(4,1,0)><waitactor(4)><clear><br><$emotion(4,14)><$voicel(4,8)>¡Buah, no te había oído llegar!<wait(1.5)><$emotion(4,55)><$voicel(4,4)> Perdona, es que me había<br>quedado empanad<gen;-3(o,a)> pensando qué habrá en esta cueva...
+<$comcan(4)>Fijo que...<wait(0.5)><$comeff(4,6)><$facial(4,1)><$motion(4,806)><$voicel(4,6)> ¿Eh?... <wait(0.5)>Oye, esos ojos y esa boca blandurrios...<br><wait(1.0)><$emotion(4,14)><$voicel(4,4)>¡No fastidies que eres un <$cdef(27)>Ditto</color>!<wait(0.8)><$motion(0,40)><wait(1.0)><clear><br><$comeff(4,9)><$motion(4,644)><$facial(4,4)><$voicel(4,5)>¡Jaaa, ja, ja! ¿A ti también te mola explorar?<br>¡Seamos colegas!
+
+
+
+<$comeff(4,7)><$motion(4,663)><$facial(4,9)><$voicel(4,4)>Me rindo... Por aquí va a ser imposible.
+<$comeff(4,14)><$motion(4,805)><$facial(4,2)><$voicel(4,5)>Quería explorar el interior de la cueva, pero está llena<br>de rocas y obstáculos... <wait(1.0)><$comeff(4,4)><$motion(4,802)><$facial(4,10)><$voicel(4,4)><$kfacial(4)>¡La cosa pinta bastante chunga!
+<$comeff(4,21)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>Buah, ¡¿lo dices en serio?! Jo, te lo agradezco mucho.<br><wait(1.0)><$emotion(4,14)><$voicel(4,7)>Oye, ya que estamos, ¿por qué no exploras conmigo?
+<$comeff(4,21)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>Buah, ¡¿lo dices en serio?! Jo, te lo agradezco mucho.<br><wait(1.0)><$emotion(4,14)><$voicel(4,7)>Oye, ya que estamos, ¿por qué no exploras conmigo?
+
+
+
+
+
+
+<$comeff(4,9)><$motion(4,806)><$facial(4,1)><$voicel(4,10)>¡Venga, figura, a ver qué nos encontramos en la cueva!
+<$cdef(27)><$comeff(4,6)></color><$motion(4,806)><$facial(4,1)><$voicel(4,5)>¿Eeeh? ¡No me digas que tienes otras cosas que hacer!
+<$emotion(4,8)><$voicel(4,7)>Me molaría que vinieses a explorar la cueva conmigo.<br>¡Vengaaa, enróllateee!
+<$emotion(4,8)><$voicel(4,7)>Me molaría que vinieses a explorar la cueva conmigo.<br>¡Vengaaa, enróllateee!
+<$comeff(4,9)><$motion(4,644)><$facial(4,4)><$voicel(4,7)>¡Gracias por acompañarme, <$cdef(27)><pname;0></color>!
+<$comeff(4,21)><$motion(4,801)><$facial(4,4)><$voicel(4,9)>Buf, por dentro es aún mejor de lo que me imaginaba.<br>¡Cómo mola! ¡¡Y cómo brilla!!
+
+
+
+<$emotion(4,27)><$voicel(4,5)>Máquina... Espera un segundo, que siento algo... <wait(1.0)>¡Sí, sí, sí!<br><$comeff(4,10)><$motion(4,662)><$facial(4,1)><$voicel(4,7)>¡¿No lo sientes tú también, <$cdef(27)><pname;0></color>?!
+<$emotion(4,55)><$voicel(4,3)>Ah, vaya... Pues yo juraría que hay un tesoro por aquí.<clear><br><$emotion(4,14)><$voicel(4,5)>Hmm, creo que ya sé qué es... <wait(1.0)><$comeff(4,8)><$motion(4,806)><$facial(4,4)><$voicel(4,8)>¡Mi cosa más favorita en<br>todo el mundo mundiaaal!
+<$voicel(4,3)><$comeff(4,14)><$motion(4,666)>¡No, el paisaje no, crack! Es otra cosa, algo me dice que<br>hay un tesoro o algo así por aquí cerca.<clear><br><$emotion(4,14)><$voicel(4,5)>Hmm, creo que ya sé qué es... <wait(1.0)><$comeff(4,8)><$motion(4,806)><$facial(4,4)><$voicel(4,8)>¡Mi cosa más favorita en<br>todo el mundo mundiaaal!
+...<wait(1.0)><$emotion(4,50)><$voicel(4,6)> ¡Un peluche!<clear><br><$emotion(4,39)><$voicel(4,9)>Me flipan los peluches, y más aún cuando están cargados<br>de recuerdos de sus antiguos dueños.<clear><br><$comeff(4,3)><$motion(4,805)><$facial(4,1)><$voicel(4,7)>¡Pues eso, que por esta zona noto como la presencia<br>de un peluche muy especial!
+...<wait(1.0)><$emotion(4,50)><$voicel(4,6)> ¡Un peluche!<clear><br><$emotion(4,39)><$voicel(4,9)>Me flipan los peluches, y más aún cuando están cargados<br>de recuerdos de sus antiguos dueños.<clear><br><$comeff(4,3)><$motion(4,805)><$facial(4,1)><$voicel(4,7)>¡Pues eso, que por esta zona noto como la presencia<br>de un peluche muy especial!
+¡Intenta encontrar el <$cdef(27)><fqty(1)><$ifull(540)></color> que quiere<br><$cdef(27)>Frillish</color>!<clear><br>Si necesitas ayuda, usa el <$cdef(27)><fqty(1)><$ifull(2793)></color> y habla con <$cdef(27)>Frillish<br></color>para buscarlo junt<gen;-2(o,a)>s.
+
+
+
+
+
+
+
+
+
+
+<oneline>Si aún no has conseguido el <$cdef(27)><fqty(1)><$ifull(2793)></color>, lo encontrarás en<br>lo alto de una colina bastante cerca del Centro Pokémon<slide><br><esde;0()><$cdef(27)><$stgname;0(1)></color>.
+
+
+
+<$emotion(4,55)><$voicel(4,4)>Juraría que hay un peluche por aquí...
+<$comcan(4)>Busca el <$cdef(27)><fqty(1)><$ifull(540)></color> con la ayuda de <$cdef(27)>Frillish</color>,<br>toda una experta en <$cdef(27)><$spwfull(11)></color> objetos.<clear><br>¡Si usas el <$cdef(27)><fqty(1)><$ifull(2793)></color>, seguro que lo encuentras enseguida!
+¡Has encontrado un tesoro! ¡Recógelo a ver qué es!
+
+
+
+
+
+<$comeff(4,21)><$motion(4,801)><$facial(4,4)><$voicel(4,10)>¡Qué guapooo! ¡Cómo refleja la luz!<clear><br><$voicel(4,7)><$comeff(4,8)><$facial(4,4)><$motion(4,806)>¿Será un accesorio de esos que se ponían los humanos<br>para ir más elegantes?
+<$comeff(4,10)><$motion(4,807)><$facial(4,2)><$voicel(4,9)>¡Venga, fiera, que hay que encontrar el peluche!
+
+
+
+
+
+
+
+<$comeff(4,6)><$motion(4,806)><$facial(4,1)><$voicel(4,3)>Hmm... ¿Y esto qué es? Un peluche no, ya te lo digo yo.<wait(1.0)><br><$emotion(4,247)><$voicel(4,8)>Ea, ¡a seguir buscando por otro sitio, figura!
+
+
+
+
+<$comeff(4,10)><$motion(4,807)><$facial(4,4)><$voicel(4,10)>¡A por el peluche! A la próxima, sí que sí.
+
+<$emotion(4,27)><$voicel(4,7)>¡Uoooh, un peluche! ¡¡A ver, enséñamelo, porfa!!<clear><br><$motion(4,666)><$facial(4,1)><$voicel(4,2)>... <wait(0.5)>Hmm...<clear><br><$emotion(4,47)><$voicel(4,3)>Nah, este no es el peluche que he sentido antes...<br><$comeff(4,6)>¿Dónde estará?<clear><br><$motion(4,806)><$facial(4,1)><$voicel(4,6)>Tiene que haber algún otro por aquí, me da a mí.
+
+
+
+
+
+<$emotion(4,27)><$voicel(4,7)>¡Uoooh, un peluche! ¡¡A ver, enséñamelo, porfa!!
+<$comeff(4,21)><$motion(4,644)><$facial(4,1)><$voicel(4,7)>Buaaah, este peluche fue muy importante para alguien.<br>Juraría que era... de una niña.
+<$emotion(4,6)><$voicel(4,6)>¡Fijo que <$cdef(27)><$cname(566)></color> era uno de sus Pokémon favoritos!
+<$comeff(4,13)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>¡Sus recuerdos me llenan de felicidad incluso a mí!<br>♪¡Fri, frill!♪<clear><br><$comeff(4,21)><$motion(4,644)><$facial(4,1)><$voicel(4,7)>Bueno, con haberlo visto me vale, así que te lo puedes<br>quedar.
+Al igual que otros peluches, puedes mostrarle a <$cdef(27)><$cname(123)></color><br>este <$cdef(27)><fqty(1)><$ifull(540)> </color>para que te transporte hasta<slide><br>una <$cdef(27)>Isla Ensueño</color>.
+<$emotion(4,8)><$voicel(4,9)>♪¡Fri, fri, fri!♪ Qué suerte haber podido ver un peluche<br>tan molón.<wait(0.5)><$comeff(4,8)><$motion(4,644)><$facial(4,1)><$voicel(4,8)> Muchas gracias por ayudarme, leyenda.<clear><br><$emotion(4,14)><$voicel(4,5)>¡Lo suyo sería que ahora te devuelva el favor, claro!<br><wait(1.0)><$emotion(4,55)><$voicel(4,4)>Hmm, pero no sé qué podría darte que estuviera bien...
+<$cdef(27)><$comeff(4,6)></color><$motion(4,806)><$facial(4,1)><$voicel(4,6)>¿Que vais a construir un edificio?... ¡¿En seeeriooo?!<br><wait(1.2)><$emotion(4,50)><$voicel(4,8)>¡Clarooo, eso no me lo pierdo!<clear><br><$comeff(4,10)><$motion(4,807)><$facial(4,1)><$voicel(4,6)>¡Muy bien, me apunto a lo que haga faltaaa!
+<$emotion(4,50)><$voicel(4,8)>¡Dame un toque cuando esté todo listo para <$cdef(27)><$spwfull(1)></color>!
+
+
+
+
+
+
+<$emotion(4,27)><$voicel(4,5)>Máquina... Espera un segundo, que siento algo... <wait(1.0)>¡Sí, sí, sí!<br><$comeff(4,10)><$motion(4,662)><$facial(4,1)><$voicel(4,7)>¡¿No lo sientes tú también, <$cdef(27)><pname;0></color>?!
+<$emotion(4,55)><$voicel(4,3)>Ah, vaya... Pues yo juraría que hay un tesoro por aquí.<clear><br><$emotion(4,14)><$voicel(4,5)>Hmm, creo que ya sé qué es... <wait(1.0)><$comeff(4,8)><$motion(4,806)><$facial(4,4)><$voicel(4,8)>¡Mi cosa más favorita en<br>todo el mundo mundiaaal!
+<$voicel(4,3)><$comeff(4,14)><$motion(4,666)>¡No, el paisaje no, crack! Es otra cosa, algo me dice que<br>hay un tesoro o algo así por aquí cerca.<clear><br><$emotion(4,14)><$voicel(4,5)>Hmm, creo que ya sé qué es... <wait(1.0)><$comeff(4,8)><$motion(4,806)><$facial(4,4)><$voicel(4,8)>¡Mi cosa más favorita en<br>todo el mundo mundiaaal!
+<$emotion(4,50)><$voicel(4,6)>... <wait(1.0)>¡Un peluche!<clear><br><$emotion(4,39)><$voicel(4,9)>Me flipan los peluches, y más aún cuando están cargados<br>de recuerdos de sus antiguos dueños.<clear><br><$comeff(4,3)><$motion(4,805)><$facial(4,1)><$voicel(4,7)>¡Pues eso, que por esta zona noto como la presencia<br>de un peluche muy especial!
+<$emotion(4,50)><$voicel(4,6)>... <wait(1.0)>¡Un peluche!<clear><br><$emotion(4,39)><$voicel(4,9)>Me flipan los peluches, y más aún cuando están cargados<br>de recuerdos de sus antiguos dueños.<clear><br><$comeff(4,3)><$motion(4,805)><$facial(4,1)><$voicel(4,7)>¡Pues eso, que por esta zona noto como la presencia<br>de un peluche muy especial!
+<$emotion(4,27)><$voicel(4,9)>¡Uooo! ¡¿Es eseee?! ¡Déjamelo ver, porfaaa!
+<$comeff(4,21)><$motion(4,644)><$facial(4,1)><$voicel(4,7)>Buaaah, este peluche fue muy importante para alguien.<br>Juraría que era... de una niña.
+<$emotion(4,6)><$voicel(4,6)>¡Fijo que <$cdef(27)><$cname(566)></color> era uno de sus Pokémon favoritos!
+<$comeff(4,13)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>¡Sus recuerdos me llenan de felicidad incluso a mí!<br>♪¡Fri, frill!♪<clear><br><$comeff(4,21)><$motion(4,644)><$facial(4,1)><$voicel(4,7)>Bueno, con haberlo visto me vale, así que te lo puedes<br>quedar.
+Al igual que otros peluches, puedes mostrarle a <$cdef(27)><$cname(123)></color><br>este <$cdef(27)><fqty(1)><$ifull(540)> </color>para que te transporte hasta<slide><br>una <$cdef(27)>Isla Ensueño</color>.
+<$emotion(4,8)><$voicel(4,9)>♪¡Fri, fri, fri!♪ Qué suerte haber podido ver un peluche<br>tan molón.<wait(0.5)><$comeff(4,8)><$motion(4,644)><$facial(4,1)><$voicel(4,8)> Muchas gracias por ayudarme, leyenda.<clear><br><$emotion(4,14)><$voicel(4,5)>¡Lo suyo sería que ahora te devuelva el favor, claro!<br><wait(1.0)><$emotion(4,55)><$voicel(4,4)>Hmm, pero no sé qué podría darte que estuviera bien...
+<$cdef(27)><$comeff(4,6)></color><$motion(4,806)><$facial(4,1)><$voicel(4,6)>¿Que vais a construir un edificio?... ¡¿En seeeriooo?!<br><wait(1.2)><$emotion(4,50)><$voicel(4,8)>¡Clarooo, eso no me lo pierdo!<clear><br><$comeff(4,10)><$motion(4,807)><$facial(4,1)><$voicel(4,6)>¡Muy bien, me apunto a lo que haga faltaaa!
+<$emotion(4,50)><$voicel(4,8)>¡Dame un toque cuando esté todo listo para <$cdef(27)><$spwfull(1)></color>!
+
+
+
+
+
+
+
+<$emotion(4,55)><$voicel(4,3)>Oyeee, que me he enterado de un rumor...<clear><br><$motion(4,644)><$facial(4,1)><$voicel(4,6)>Dicen por ahí que te mola eso de buscarle casa a la peña.<br><$comeff(4,6)>¿Es verdad?<wait(0.8)><$motion(0,40)><wait(1.0)>
+<$comeff(4,3)><$motion(4,806)><$facial(4,1)><$voicel(4,3)>Si te aburres, ¿podrías encontrarme una a mí también?<br>Vaaa.
+<$emotion(4,8)><$voicel(4,7)>¡Tomaaa! Estaría guay algo así, ¿que no?
+<$emotion(4,8)><$voicel(4,7)>¡Tomaaa! Estaría guay algo así, ¿que no?
+<$comeff(4,3)><$motion(4,644)><$facial(4,2)><$voicel(4,6)>¡Avísame cuando me pueda mudar!
+
+
+
+
+
+
+<$comeff(4,6)><$motion(4,666)><$facial(4,2)><$voicel(4,5)>¿Podrías buscarme un sitio así, fiera? Anda que no molaría.
+
+
+
+<$emotion(4,6)><$voicel(4,7)>¡Mola miiil! Mi nueva casa lo peta. ¡Te debo una, máquina!
+
+
+
+<oneline><$comeff(4,21)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>¡<$cdef(27)><pname;0></color>! Por si no te lo había dicho,<br>la casa<slide><br>que me<slide><br>has buscado es brutaaal.
+<$emotion(4,6)><$voicel(4,8)>¡No podría estar más guapa! ¡Te debo una, máquina!

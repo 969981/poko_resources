@@ -1,0 +1,148 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<$comeff(1,10)><$facial(1,1)><$motion(1,805)><$voicel(1,6)>¡Muy buen trabajo, <$cdef(27)><pname;0></color> y compañía!<br>El vecindario está ahora mucho mejor iluminado.
+<$comeff(1,7)><$facial(1,9)><$motion(1,663)><$voicel(1,3)>Y, sin embargo, la cabeza de <$cdef(27)>Snorlax</color> aún dista mucho de<br>ser un lecho de flores...<clear><br><$facial(1,1)><$motion(1,666)><$voicel(1,5)>Aunque parece que la cosa avanza... <$comeff(1,6)>¿Qué más podríamos<br>hacer?
+<$comeff(1,14)><$facial(1,1)><$motion(1,807)><$voicel(1,4)>Hm... No, yo creo que ya es suficiente. Incrementar<br>la luminosidad aún más no parece una opción.
+<$comeff(1,7)><$facial(1,9)><$motion(1,807)><$voicel(1,2)>Oh, ¡pero qué ocurrencias! ¡Pobrecillo!
+<$comeff(2,3)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>Esto... Si me permitís...
+<$comeff(2,14)><$facial(2,1)><$motion(2,805)><$voicel(2,8)>He estado investigando las inmediaciones y he dado con<br>un dispositivo que me ha llamado mucho la atención.
+<$comeff(2,3)><$facial(2,1)><$motion(2,666)><$voicel(2,5)>Si es justo lo que yo pienso que es...<clear><br><$comeff(2,21)><$facial(2,4)><$motion(2,661)><$voicel(2,7)>Es posible que nos ayude a darle el último empujoncillo<br>a <$cdef(27)>Snorlax</color>.
+<$comeff(1,5)><$facial(1,1)><$motion(1,805)><$voicel(1,7)>¡Jo, jo! En ese caso, ¡tienes toda mi atención, jovencita!<br>Dinos, ¿dónde se encuentra el susodicho dispositivo?
+<$comeff(2,3)><$facial(2,1)><$motion(2,805)><$voicel(2,7)>Un poco más allá. Venid conmigo.
+
+
+
+
+
+
+
+
+<$comeff(2,3)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>Estoy convencid<gen;-3(o,a)> de que funcionará...
+<$comeff(2,5)><$facial(2,1)><$motion(2,664)><$voicel(2,8)>Es por aquí. Seguidme.
+
+
+
+
+
+<$comeff(1,5)><$facial(1,1)><$motion(1,805)><$voicel(1,8)>¡Sigamos a <$cdef(27)>Palidachu</color>!
+
+
+
+
+
+
+<$comeff(2,3)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>Este es el dispositivo del que hablaba.
+<$facial(1,1)><$voicel(1,6)>¡Jo, jo! Extraordinario... ¿Y cómo se usa?
+<$facial(2,1)><$voicel(2,6)>Si es como me imagino, lo primero que hay que hacer...<br><$voicel(2,8)>es suministrarle una gran cantidad de energía eléctrica.
+<$voicel(2,7)>Si os fijáis, esto de aquí tiene aspecto de ser la entrada<br>de suministro eléctrico.
+<$voicel(1,5)><$comeff(1,3)><$facial(1,4)>Hmm... Ya veo. Así que primero debemos suministrarle<br>electricidad.<clear><br><$voicel(1,8)><$facial(1,1)><$lookat(1,0,0)><$lookat(2,0,0)>¿Se te ocurre cómo, <$cdef(27)><pname;0></color>?
+<$lookat(2,0,0)><$comeff(2,21)><$facial(2,4)><$motion(2,661)><$voicel(2,6)>Efectivamente, esa es la única forma... Este dispositivo<br>necesita unas cantidades ingentes de energía.<clear><br><$comeff(2,14)><$facial(2,1)><$motion(2,807)><$voicel(2,3)>Para que funcione, en esta ocasión no bastará con pedirle<br>ayuda a un Pokémon...<clear><br><$comeff(2,3)><$facial(2,1)><$motion(2,664)><$voicel(2,7)>Debes conectar <$cdef(27)><fqty(2)><class><$ifull(1396)> </color>para traer la energía<br>producida por un <$cdef(27)>generador</color> hasta aquí.
+<$lookat(2,0,0)><$comeff(2,3)><$facial(2,9)><$motion(2,663)><$voicel(2,6)>No, me temo que con eso no bastaría... Este dispositivo<br>necesita unas cantidades ingentes de energía.<clear><br><$comeff(2,14)><$facial(2,1)><$motion(2,807)><$voicel(2,3)>Para que funcione, no bastará con que un Pokémon nos<br>brinde su ayuda, aunque se me ocurre otra solución...<clear><br><$comeff(2,21)><$facial(2,1)><$motion(2,664)><$voicel(2,7)>Debes conectar <$cdef(27)><fqty(2)><class><$ifull(1396)> </color>para traer la energía<br>producida por un <$cdef(27)>generador</color> hasta aquí.
+<$lookat(1,0,0)><$comeff(1,10)><$facial(1,4)><$motion(1,666)><$voicel(1,9)>Oh, entiendo...
+<oneline><$comeff(1,3)><$facial(1,1)><$motion(1,806)><$voicel(1,6)>Hagamos caso a nuestra amiga <$cdef(27)>Palidachu</color>,<br><$cdef(27)><pname;0></color>.<clear><br><$comeff(1,6)><$motion(1,661)><$voicel(1,8)>¿Puedes crear un tendido de <$cdef(27)><fqty(2)><class><$ifull(1396)> </color>para<br>conectar <$cdef(27)>generadores </color>a esta máquina y así suministrarle<slide><br><$comeff(1,3)><$motion(1,664)><$voicel(1,9)>toda la energía que necesita?
+<oneline><$lookat(2,0,0)><$comeff(2,3)><$facial(2,1)><$motion(2,661)><$voicel(2,8)>Podemos contar contigo, ¿verdad,<br><$cdef(27)><pname;0></color>?
+
+
+
+
+
+
+
+
+
+<$comeff(2,5)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>Debes conectar el dispositivo a un <$cdef(27)>generador </color>para que<br>reciba toda la energía eléctrica que necesita.
+<$comeff(2,3)><$facial(2,1)><$motion(2,666)><$voicel(2,8)>Para ello, tienes que colocar varios <$cdef(27)><fqty(2)><class><$ifull(1396)><br></color>seguidos desde el <$cdef(27)>generador </color>hasta aquí.
+
+
+
+
+
+
+<$comeff(1,10)><$facial(1,4)><$motion(1,803)><$voicel(1,8)>¡Se ha encendido!<clear><br><$lookat(1,0,2)><$comeff(1,6)><$facial(1,1)><$motion(1,666)><$voicel(1,6)>¿Crees que con esto bastará para que funcione,<br><$cdef(27)>Palidachu</color>?
+<$comeff(2,5)><$facial(2,1)><$motion(2,664)><$voicel(2,8)>Comprobémoslo.
+
+
+
+
+
+
+<$comeff(2,14)><$facial(2,9)><$voicel(2,3)>...
+<$comeff(1,6)><$facial(1,1)><$motion(1,666)><$voicel(1,5)>¿Y bien? ¿Ha funcionado?
+<$comeff(2,7)><$facial(2,9)><$motion(2,667)><$voicel(2,1)>No... Me temo que no tiene suficiente energía.
+<$comeff(1,14)><$facial(1,1)><$motion(1,807)><$voicel(1,4)>Oh, lianas...
+<$comcan(1)><$comeff(2,3)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>Hmm... Me parece que va a hacer falta conectarlo a más<br><$cdef(27)>generadores</color> para suministrarle la corriente que necesita.
+<oneline><$lookat(2,0,0)><$comeff(2,4)><$facial(2,1)><$motion(2,807)><$voicel(2,4)>Ya lo siento, <$cdef(27)><pname;0></color>, pero tenemos que<br>valernos de<slide><br>tu ayuda nuevamente...<clear><br><$comeff(2,6)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>¿Podrías hacer lo mismo con otros <$cdef(27)>generadores</color>? Vamos<br>a necesitar toda la electricidad que podamos conseguir...
+Este vecindario cuenta con varios <$cdef(27)>generadores</color>.<clear><br>Parece que uno solo no es capaz de suministrar toda la<br>energía necesaria para la máquina, de modo que tendrás<slide><br>que conectarla a unos cuantos <$cdef(27)>generadores </color>más.
+¡Otra opción es comprar <$cdef(27)>kits de construcción </color>en la tienda<br>del <$cdef(27)>PC </color>y construir tus propios <$cdef(27)>generadores </color>en el lugar que<slide><br>te resulte más práctico!
+
+
+
+
+
+
+
+
+<$comeff(1,5)><$facial(1,1)><$motion(1,665)><$voicel(1,8)>¡¿E-estás bien?! ¡Estás chisporroteando de lo lindo!
+<oneline><$comeff(2,17)><$facial(2,1)><$motion(2,807)><$voicel(2,6)>Fiu...<clear><br><$comeff(2,3)><$facial(2,4)><$motion(2,661)><$voicel(2,8)>Parece que <$cdef(27)><pname;0> </color>tenía todo bajo<br>control.<slide><br><$comeff(2,9)><$motion(2,806)><$voicel(2,9)>¡La máquina está recibiendo la energía necesaria!<clear><br><$comeff(2,10)><$facial(2,1)><$motion(2,664)><$voicel(2,7)>Y eso ha hecho que mis mofletes se hayan recargado de<br>electricidad.
+<$comeff(1,3)><$facial(1,1)><$motion(1,666)><$voicel(1,8)>¡Oh, jo, jo! ¿Significa eso que ya puedes producir<br>electricidad por ti misma?
+<$comeff(2,4)><$facial(2,1)><$motion(2,807)><$voicel(2,4)>N-no... Me temo que no.<clear><br><$comeff(2,3)><$motion(2,803)><$voicel(2,6)>Pero, al menos, ahora puedo valerme de la máquina para<br>cargarme de electricidad.<clear><br><$lookat(2,0,0)><$comeff(2,9)><$facial(2,4)><$motion(2,806)><$voicel(2,7)>¡Y eso me permite usar mi movimiento especial otra vez!
+<$facial(1,1)><$motion(1,666)><$voicel(1,3)>Así que guardas un as en la manga... <$comeff(1,6)>¿Cuál es, por cierto?
+<$lookat(2,0,0)><$comeff(2,3)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>Es un movimiento que permitirá iluminar el vecindario<br>aún más si cabe.<clear><br><$comeff(2,14)><$facial(2,7)><$motion(2,666)><$voicel(2,3)>Os lo enseñaré...
+<$comeff(2,5)><$facial(2,7)><$voicel(2,9)><$textsize(2)>Pika... ¡chuuuuuu!</textsize>
+
+
+
+
+
+<$comeff(2,5)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>Debes conectar el dispositivo a más <$cdef(27)>generadores </color>para que<br>reciba toda la energía eléctrica que necesita.
+<$comeff(2,14)><$facial(2,1)><$motion(2,666)><$voicel(2,4)>Para ello, tienes que colocar varios <$cdef(27)><fqty(2)><class><$ifull(1396)><br></color>seguidos desde los <$cdef(27)>generadores </color>hasta aquí.
+
+
+
+
+
+
+<$facial(2,1)><$motion(2,805)><$voicel(2,8)>Esta vez está a rebosar de electricidad... <$comeff(2,5)>¡Puedo sentirlo!
+<$comeff(2,3)><$facial(2,1)><$motion(2,803)><$voicel(2,7)>Pongámosla en marcha cuanto antes. Ay, los mofletes<br>me tiemblan de los nervios...
+
+
+
+
+
+<$comeff(2,14)><$facial(2,1)><$motion(2,666)><$voicel(2,3)>Espero que funcione...
+
+
+
+
+
+<$comeff(1,5)><$facial(1,1)><$motion(1,665)><$voicel(1,8)>¡¿E-estás bien?! ¡Estás chisporroteando de lo lindo!
+<oneline><$comeff(2,17)><$facial(2,1)><$motion(2,807)><$voicel(2,6)>Fiu...<clear><br><$comeff(2,3)><$facial(2,4)><$motion(2,661)><$voicel(2,8)>Parece que <$cdef(27)><pname;0> </color>lo ha conseguido<br>por fin.<slide><br>¡La máquina está recibiendo la energía necesaria!<clear><br><$comeff(2,10)><$facial(2,1)><$motion(2,664)><$voicel(2,7)>Y eso ha hecho que mis mofletes se hayan recargado de<br>electricidad.
+<$comeff(1,3)><$facial(1,1)><$motion(1,666)><$voicel(1,8)>¡Oh, jo, jo! ¿Significa eso que ya puedes producir<br>electricidad por ti misma?
+<$comeff(2,4)><$facial(2,1)><$motion(2,807)><$voicel(2,4)>N-no... Me temo que no.<clear><br><$comeff(2,3)><$motion(2,803)><$voicel(2,6)>Pero, al menos, ahora puedo valerme de la máquina para<br>cargarme de electricidad.<clear><br><$lookat(2,0,0)><$comeff(2,9)><$facial(2,4)><$motion(2,806)><$voicel(2,7)>¡Y eso me permite usar mi movimiento especial otra vez!
+<$facial(1,1)><$motion(1,666)><$voicel(1,3)>Así que guardas un as en la manga... <$comeff(1,6)>¿Cuál es, por cierto?
+<$lookat(2,0,0)><$comeff(2,3)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>Es un movimiento que permitirá iluminar el vecindario<br>aún más si cabe.<clear><br><$comeff(2,14)><$facial(2,7)><$motion(2,666)><$voicel(2,3)>Os lo enseñaré...
+<$comeff(2,5)><$facial(2,7)><$voicel(2,9)><$textsize(2)>Pika... ¡chuuuuuu!</textsize>
+
+<$comeff(1,5)><$facial(1,1)><$motion(1,665)><$voicel(1,10)>¡Oh! ¡Menudo fulgor!
+<$lookat(2,0,0)><$comeff(2,3)><$facial(2,4)><$motion(2,661)><$voicel(2,9)>¡Ha funcionado! Espero que esto nos ayude.
+<$lookat(1,0,2)><$comeff(1,9)><$facial(1,4)><$motion(1,801)><$voicel(1,9)>¡Sin ninguna duda! Desconocía por completo que podías<br>usar un movimiento como ese...
+<$lookat(4,0,2)><$comeff(5,10)><$facial(5,4)><$motion(5,801)><$voicel(5,7)>¡Qué pasada, <$cdef(27)>Palidachu</color>!
+<$lookat(5,0,2)><$comeff(4,21)><$facial(4,4)><$motion(4,801)><$voicel(4,9)>¡Cómo reluce mi moneda!
+<$lookat(6,0,2)><$comeff(6,9)><$facial(6,4)><$motion(6,803)><$voicel(6,8)>¡<$cdef(27)>Palidachu</color>, estás on fire! Y con eso quiero decir que<br>brillas tela.
+<$lookat(2,0,0)><$comeff(2,10)><$facial(2,4)><$motion(2,664)><$voicel(2,8)>Ji, ji. Gracias por los cumplidos. Tan solo espero poder<br>seros de ayuda.
+<$comeff(2,3)><$facial(2,1)><$motion(2,661)><$voicel(2,6)>Vayamos junto a <$cdef(27)>Snorlax</color> a comprobar su estado.
+
+

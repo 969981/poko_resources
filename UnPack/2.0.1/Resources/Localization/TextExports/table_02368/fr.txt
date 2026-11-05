@@ -1,0 +1,95 @@
+<$voicel(1,3)><$facial(1,9)>Tu sais... J'avais fini par me résoudre à l'idée de vivre<br>dans la solitude pour le restant de mes jours...<clear><br><$voicel(1,9)><$facial(1,1)>Mais grâce à toi, les Pokémon sont en train de revenir<br>peu à peu.<clear><br><$voicel(1,10)><$emotion(1,1)>Merci infiniment.
+<$voicel(1,7)><$emotion(1,23)>D'ailleurs, je souhaiterais t'offrir un présent<br>en gage de ma gratitude.
+<$voicel(1,9)><$facial(1,4)>Tadaaam !<clear><br><$voicel(1,6)>Alors, qu'en penses-tu ?
+<$voicel(1,7)><$comeff(1,10)><$facial(1,4)>Ho ho ho ! On ne peut pas transporter ce genre d'objets<br>dans un sac à dos, voyons !<clear><br><$voicel(1,5)>Il s'agit d'un tabouret.<br>Les êtres humains <$voicel(1,6)><$facial(1,1)>s'asseyaient dessus pour se reposer.<clear><br><$voicel(1,7)><$facial(1,4)>À force de te voir bouger dans tous les sens sous<br>cette forme humaine, je me suis dit que cela serait<slide><br>le cadeau parfait pour toi.
+<$voicel(1,7)>À dire vrai, je partageais moi aussi la vie d'un être humain,<br>il y a de cela bien longtemps.<clear><br><$voicel(1,5)>Ce tabouret lui appartenait, donc il me rappelle beaucoup<br>de souvenirs.<clear><br><$voicel(1,7)><$facial(1,4)>Néanmoins, il est quelque peu étroit pour moi,<br>alors j'ai décidé de t'en faire don.<clear><br><$voicel(1,10)>Prends-en soin, s'il te plaît !
+Vous utilisez <$cdef(27)>Stockage </color>!
+<$voicel(1,3)><$motion(1,806)><$facial(1,9)><$comeff(1,4)>Voyons ! N'as-tu donc pas écouté ce que je t'ai dit ?<br>Cela ne se mange pas, les tabourets !
+<$voicel(1,7)><$facial(1,1)><$motion(1,803)>À moins que... Ça alors ! Tu peux donc stocker des objets<br>dans ton corps grâce à cette capacité !<clear><br><$comeff(1,9)><$voicel(1,10)><$motion(1,801)>Comme c'est pratique !<clear><br><$comeff(1,6)><$motion(1,666)><$voicel(1,7)><$cdef(27)>Dans ce cas, pourrais-tu placer ce tabouret par ici ?</color>
+<$voicel(1,8)><$motion(1,824)><$cdef(27)>Pourrais-tu poser le tabouret par ici, je te prie ?</color>
+<$voicel(1,3)><$motion(1,802)>Tu as posé le tabouret un peu trop loin de moi. Il sera plus<br>aisé pour nous de discuter si tu le rapproches un peu.
+<$voicel(1,8)><$facial(1,4)>Bien, que dirais-tu d'essayer de <$cdef(27)>t'asseoir dessus</color>,<br>maintenant ?
+<$voicel(1,6)>Bien, bien... Je vais me reposer un moment, moi aussi.
+<$voicel(1,6)><$emotion(1,38)>Que dirais-tu d'essayer le tabouret ?
+<$voicel(1,5)><$motion(1,806)><$comeff(1,17)>Pfiouuu ! Cela faisait bien longtemps que je n'avais pas<br>autant bavardé. Je commence à fatiguer.
+<$voicel(1,4)><$comeff(1,23)><$motion(1,807)>Brrr...<clear><br><$voicel(1,5)><$emotion(1,14)><$motion(1,661)>Maintenant que le soleil s'est couché,<br>il fait un peu frisquet.
+<$voicel(1,5)><$comeff(1,14)><$motion(1,827)>Tu sais, la chaleur et le froid n'ont jamais empêché<br>les êtres humains de vivre confortablement.<clear><br>Ils s'adaptaient à leur environnement en fabriquant<br>toutes sortes d'objets utiles.
+<$voicel(1,5)><$comeff(1,3)>Quoi qu'il en soit, ta transformation en être humain me<br>convainc davantage que ta transformation en Pokémon !<clear><br><$voicel(1,7)><$comeff(1,14)><$motion(1,666)>Je me demande si tu as également hérité de la capacité<br>des êtres humains à fabriquer des objets.
+<$voicel(1,8)><$emotion(1,38)>Ho ho ho !<clear><br><$voicel(1,5)>Grâce à tes pouvoirs, tu vas pouvoir créer de plus en plus<br>d'endroits confortables pour les Pokémon.<clear><br><$voicel(1,8)><$comeff(1,21)><$motion(1,668)>Cette perspective me réjouit !
+<$voicel(3,7)><$emotion(3,9)>Euh, excuse-moi ! J'peux te parler ?<br>J'ai trouvé un truc vraiment bizarre !
+<$voicel(3,7)><$comeff(3,3)><$motion(3,801)>Viens avec moi !
+<$voicel(1,7)><$motion(1,801)><$comeff(1,10)>Ho ho ho !<br>Je me demande bien de quoi il s'agit.<clear><br><$voicel(1,6)>Et si tu suivais <$cdef(27)>Bulbizarre </color>?
+<$voicel(3,8)><$comeff(3,3)>Par ici !
+<$voicel(1,3)><$motion(1,802)>Brrr...<br>Il fait vraiment froid...
+<$voicel(3,9)><$comeff(3,10)><$motion(3,801)>Regarde ! C'est ce truc ! Qu'est-ce que c'est, à ton avis ?
+<$voicel(3,7)><$facial(3,4)>Moi, j'pense que c'est...<wait(0.4)> <$comeff(3,3)>un lit pour faire la sieste !
+Ceci est un <$cdef(27)><fqty(1)><$ifull(764)></color>.<clear><br>Vous pouvez y confectionner toutes sortes d'objets,<br>à condition d'en posséder les <$cdef(27)>méthodes</color> !
+
+
+
+
+<$voicel(3,8)><$comeff(3,6)><$motion(3,803)>Attends, tu vas fabriquer un truc, là, maintenant ?
+<$voicel(3,9)><$comeff(3,3)><$motion(3,801)>Ouah ! C'est TROP GÉNIAL !<br>Mais euh... C'est quoi, en fait ?
+<$voicel(3,4)><$emotion(3,29)>Je sais ! On va montrer ce truc au <$cdef(27)>Professeur</color><br>et lui demander ce que c'est !
+<$voicel(3,9)><$emotion(3,32)>Allez ! On va montrer le truc que t'as fabriqué<br>tout à l'heure au <$cdef(27)>Professeur</color> !
+<$voicel(1,7)><$comeff(1,3)>Tiens, qu'as-tu donc là ?<br>Serait-ce... un <$cdef(27)><fqty(1)><$ifull(1280)></color> ?<clear><br><$motion(1,801)>Oh, je te remercie ! J'avais justement un peu froid.<br><$voicel(1,6)>Pourrais-tu le poser près de moi ?
+<$voicel(1,3)><$motion(1,802)>Pourrais-tu poser le <$cdef(27)><fqty(1)><$ifull(1280)></color> un petit peu<br>plus près de moi, s'il te plaît... ?
+<$voicel(3,9)><$comeff(3,6)><$motion(3,803)><$cdef(27)>Professeur</color> ! C'est quoi ce truc bizarre ?
+<$voicel(1,7)><$motion(1,824)>Il s'agit d'un <$cdef(27)><fqty(1)><$ifull(1280)></color>.<clear><br><$voicel(1,5)>Cela permet d'éclairer et de réchauffer les environs.<br><$facial(1,9)><$motion(1,805)>Brrr...
+<$voicel(3,7)><$motion(3,803)>Ah, d'accord.<br>Mais ça marche pas très bien ! Il fait pas chaud, ici.
+<$voicel(1,5)><$facial(1,1)><$motion(1,827)>Hmmm... Il est vrai qu'il lui manque un élément crucial :<br>le feu.<clear><br><$motion(1,654)>Sans feu, pas de <$cdef(27)><fqty(1)><$ifull(1280)></color>, figurez-vous !
+<$voicel(1,1)><$emotion(1,17)>Malheureusement, j'ai bien peur que cela soit au-delà<br>de nos compétences...
+<$voicel(3,5)><$emotion(3,48)>Je connais un Pokémon qui sait cracher du feu ! Sauf que...<br>je crois pas l'avoir vu dans le coin, pour l'instant.
+<$voicel(1,5)><$motion(1,801)>Oh, tu connais quelqu'un qui pourrait nous aider ?<br><$voicel(1,7)>Et dans quel genre d'endroit vit ce Pokémon, dis-moi ?
+<oneline><$voicel(3,7)><$motion(3,803)><$comeff(3,3)>Tu te souviens des hautes herbes<br><frque;0(1)><$cdef(27)><pname;0> </color>a fait pousser ?<slide><br><$voicel(3,10)>Eh ben, c'est ce genre d'endroit !
+<$voicel(1,7)><$motion(1,824)>Dis-moi, <$cdef(27)><pname;0></color>.<br>Pourrais-tu faire pousser <$cdef(27)>un autre</color> parterre de hautes<slide><br>herbes, <$voicel(1,6)>comme tu l'as fait pour <$cdef(27)>Bulbizarre </color>?<clear><br><$voicel(1,5)>Qui sait, peut-être que cette fois-ci, cela attirera<br>un Pokémon qui maîtrise le feu !
+<$motion(1,824)><$voicel(1,7)>Pourrais-tu faire pousser <$cdef(27)>un autre</color> parterre de hautes<br>herbes, comme tu l'as fait pour <$cdef(27)>Bulbizarre </color>?<clear><br><$voicel(1,9)>Qui sait, peut-être que cette fois-ci, cela attirera<br>un Pokémon qui maîtrise le feu !
+<$voicel(3,4)><$emotion(3,3)>Le <$cdef(27)>Professeur</color> a l'air d'avoir froid... !
+
+<$comeff(4,6)><$motion(4,803)><$voicel(4,7)>Hmmm... ?<br>Tu veux que j'allume un <$cdef(27)><fqty(1)><$ifull(1280)></color>, c'est ça ?
+<$voicel(4,10)><$emotion(4,1)>Fastoche ! Laisse-moi faire !
+<$voicel(4,7)><$comeff(4,3)>Montre-moi où est ce <$cdef(27)><fqty(1)><$ifull(1280)></color> !
+<$voicel(4,7)><$comeff(4,3)>Si tu veux que j'allume ton <$cdef(27)><fqty(1)><$ifull(1280)></color>,<br>montre-moi où il est !
+<$voicel(1,9)><$emotion(1,14)>Oh, mais c'est <$cdef(27)>Salamèche </color>!<br><$voicel(1,7)><$comeff(1,10)><$motion(1,801)>Parfait ! Vite, montrons-lui le <$cdef(27)><fqty(1)><$ifull(1280)> </color>!
+<$voicel(3,9)><$emotion(3,14)>Oooh, <$cdef(27)>Salamèche </color>est là !<clear><br>Emmène-le jusqu'au <$cdef(27)><fqty(1)><$ifull(1280)> </color>!
+<$motion(4,801)><$voicel(4,9)>T'as vu ça ? Je l'ai allumé !
+<$emotion(1,22)><$comeff(1,10)><$voicel(1,9)>Oooh, quel merveilleux <$cdef(27)><fqty(1)><$ifull(1280)> </color>! Merci,<br><$cdef(27)>Salamèche</color> ! <$voicel(1,8)><$comeff(1,21)><$motion(1,806)>Il fait bon, maintenant ! C'est agréable.
+<$voicel(1,5)><$motion(1,661)>Qui plus est, il commençait à faire sombre !<br>Bien ! Assez travaillé pour aujourd'hui.<clear><br>Reposons-nous, si vous le voulez bien.<br><$voicel(1,8)><$comeff(1,1)><$facial(1,4)>Merci à vous !
+<$voicel(1,5)><$motion(1,827)>J'y pense, tu ne quittes jamais ta forme humaine.<clear><br><$voicel(1,7)>Serait-ce ta manière de rester proche de quelqu'un<br>qui te manque ?
+<$voicel(1,7)><$motion(1,654)>Je vois... <$motion(1,824)>Te souviens-tu de ce que je t'ai dit ? Moi aussi,<br>j'étais inséparable d'un être humain, il y a longtemps.<slide><br><$voicel(1,6)>Bien longtemps, même.<clear><br><$voicel(1,9)>Tout le monde, être humain ou Pokémon,<br>adorait cette personne.
+<$voicel(1,3)><$motion(1,826)>Je n'en ai pas la moindre idée.<br>Cependant, j'ai une théorie.
+<$voicel(1,7)><$motion(1,824)>Tu as créé des lieux de vie agréables pour les Pokémon.<clear><br><$voicel(1,8)>Par conséquent, ces derniers ont commencé à revenir<br>peu à peu, n'est-ce pas ?<clear><br><$voicel(1,5)>J'ai la certitude qu'il en sera de même pour les êtres<br>humains.
+<$voicel(1,7)>Autrefois, êtres humains et Pokémon vivaient ici<br>en harmonie.<clear><br><$voicel(1,6)><$motion(4,619)>Si ce monde retrouvait son éclat d'antan...<br><$voicel(1,9)><$emotion(1,23)><$motion(0,219)>les êtres humains reviendraient aussi.<clear><br><$voicel(1,8)>J'en ai la certitude.<$motion(1,656)>
+<$voicel(1,7)><$emotion(1,14)><$facial(1,4)>Bon, eh bien, puisque nous avons autant de Pokémon<br>réunis, <$voicel(1,6)>je vais vous raconter une histoire d'antan...<clear><br><$voicel(1,3)><$motion(1,824)><$facial(1,14)><$motion(0,347)>Dans ma tendre enfance, les êtres humains et les Pokémon<br><$voicel(1,6)>s'entraidaient...<clear><br><$motion(1,652)><$voicel(1,4)><$facial(1,9)><$kfacial(1)><$comeff(1,6)><$motion(1,666)>... M'écoutez-vous ?
+<$voicel(3,9)><$emotion(3,1)>Aaah, c'était trop chouette, aujourd'hui !
+<$voicel(3,5)><$emotion(3,3)>Mais tout ça m'a ouvert l'appétit !<br>T'aurais pas une <$cdef(27)><fqty(1)><$ifull(2340)></color>, par hasard ?
+<$voicel(1,7)><$comeff(1,14)><$facial(1,2)>Je me demande ce qui se passerait si tu arrosais<br>un endroit plein de hautes herbes toutes sèches...
+<$voicel(1,8)><$motion(1,801)>Ce que j'aimerais pouvoir de nouveau admirer les hautes<br>herbes verdoyantes.<clear><br><$voicel(1,9)>Cela m'aiderait peut-être à me remémorer davantage<br>l'époque lointaine où les Pokémon vivaient ici.
+Vous<wait(0.8)><$facial(1,13)> avalez le<$cdef(27)> <fqty(1)><$ifull(1985)></color> tout rond !
+<$voicel(3,5)><$emotion(3,14)>Dis, tu trouves pas qu'avec toutes ses connaissances<br>et ses longues lianes en bataille, <$cdef(27)>Bouldeneu<slide><br></color><$voicel(3,4)><$facial(3,4)>ressemble un peu à un <$cdef(27)>Professeur </color>?<clear><br><$voicel(3,9)><$emotion(3,8)>À mon avis, on devrait aller montrer le <$cdef(27)><fqty(1)><$ifull(1280)><br></color>au <$cdef(27)>Professeur Bouldeneu</color> !
+<$voicel(4,7)><$emotion(4,1)>Si tu la maîtrises, <$cdef(27)>tu pourras pulvériser les pierres<br>et le sol</color>.
+Parlez à un Pokémon et sélectionnez « Viens avec moi ! »<br>pour qu'il vous suive.<clear><br>Vous pouvez aussi appuyer sur <$keyicon(214)> quand vous vous<br>tenez devant un Pokémon pour lui faire signe de venir.
+
+Essayez de confectionner quelque chose !
+<$voicel(4,7)><$emotion(4,38)>Moi, j'pense que ce truc, c'est un lit pour faire la sieste !
+Ceci est un <$cdef(27)><fqty(1)><$ifull(764)></color>.<clear><br>Vous pouvez y confectionner toutes sortes d'objets,<br>à condition d'en posséder les <$cdef(27)>méthodes</color> !
+Essayez de confectionner quelque chose !
+
+
+
+
+
+<$voicel(3,9)><$comeff(3,10)>Ouaaah ! J'y étais pas DU TOUT !<br>Je peux pas l'utiliser pour faire dodo, alors !<clear><br><$voicel(3,5)>...<wait(0.4)><$emotion(3,16)> Oh ? On dirait qu'il y a un truc coincé dedans.
+Vous avez obtenu des <$cdef(27)>méthodes simples d'objets en bois</color> !
+Et si vous confectionniez tout de suite un objet à l'aide<br>d'une des <$cdef(27)>méthodes</color> que vous avez reçues ?<clear><br>Vous pourriez fabriquer quelque chose pour réchauffer<br>les Pokémon qui ont froid, par exemple.
+
+
+
+
+
+<$voicel(1,7)><$emotion(1,14)>Oh ! C'est déjà fait, on dirait.<br><$voicel(1,6)><$motion(1,666)>Eh bien, il ne nous reste plus qu'à attendre, dans ce cas.
+
+
+
+
+

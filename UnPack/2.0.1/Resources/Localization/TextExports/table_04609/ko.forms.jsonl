@@ -1,0 +1,801 @@
+{"text_id":0,"forms":[""],"absolute_byte_offsets":[6472],"raw_metadata_u32":[0]}
+{"text_id":1,"forms":["<$kgfull;0(lnum1)>"],"absolute_byte_offsets":[6473],"raw_metadata_u32":[1]}
+{"text_id":2,"forms":["<$kgicon(lnum1)>"],"absolute_byte_offsets":[6492],"raw_metadata_u32":[1]}
+{"text_id":3,"forms":["<$kgtext;0(lnum1)>"],"absolute_byte_offsets":[6509],"raw_metadata_u32":[1]}
+{"text_id":4,"forms":["<$keyicon(lnum1)><$kgtext;0(lnum2)>"],"absolute_byte_offsets":[6528],"raw_metadata_u32":[1]}
+{"text_id":5,"forms":["<$etname;0(lnum1)>"],"absolute_byte_offsets":[6564],"raw_metadata_u32":[1]}
+{"text_id":6,"forms":["<$pkname;0(lnum1)>"],"absolute_byte_offsets":[6583],"raw_metadata_u32":[1]}
+{"text_id":7,"forms":["<$hatname;0(lnum1)>"],"absolute_byte_offsets":[6602],"raw_metadata_u32":[1]}
+{"text_id":8,"forms":["<$msname;0(lnum1)>"],"absolute_byte_offsets":[6622],"raw_metadata_u32":[1]}
+{"text_id":9,"forms":["<$msdscp;0(lnum1)>"],"absolute_byte_offsets":[6641],"raw_metadata_u32":[1]}
+{"text_id":10,"forms":["<$pkclass;0(lnum1)>"],"absolute_byte_offsets":[6660],"raw_metadata_u32":[1]}
+{"text_id":11,"forms":["<$pkheight;0(lnum1)>"],"absolute_byte_offsets":[6680],"raw_metadata_u32":[1]}
+{"text_id":12,"forms":["<$pkweight;0(lnum1)>"],"absolute_byte_offsets":[6701],"raw_metadata_u32":[1]}
+{"text_id":13,"forms":["<$pkdscp;0(lnum1)>"],"absolute_byte_offsets":[6722],"raw_metadata_u32":[1]}
+{"text_id":14,"forms":["<$iname;0(lnum1)>"],"absolute_byte_offsets":[6741],"raw_metadata_u32":[1]}
+{"text_id":15,"forms":["<$iname;0(lnum1)>"],"absolute_byte_offsets":[6759],"raw_metadata_u32":[1]}
+{"text_id":16,"forms":["<$stflevel;0(lnum1)>"],"absolute_byte_offsets":[6777],"raw_metadata_u32":[1]}
+{"text_id":17,"forms":["<$sklname;0(lnum1)>"],"absolute_byte_offsets":[6798],"raw_metadata_u32":[1]}
+{"text_id":18,"forms":["<$idscp;0(lnum1)>"],"absolute_byte_offsets":[6818],"raw_metadata_u32":[1]}
+{"text_id":19,"forms":["<$pkform;0(lnum1)>"],"absolute_byte_offsets":[6836],"raw_metadata_u32":[1]}
+{"text_id":20,"forms":["<$phfrname;0(lnum1)>"],"absolute_byte_offsets":[6855],"raw_metadata_u32":[1]}
+{"text_id":21,"forms":["<$phfilname;0(lnum1)>"],"absolute_byte_offsets":[6876],"raw_metadata_u32":[1]}
+{"text_id":22,"forms":["<$shchname;0(lnum1)>"],"absolute_byte_offsets":[6898],"raw_metadata_u32":[1]}
+{"text_id":23,"forms":["<$stgmyname;0(lnum1)>"],"absolute_byte_offsets":[6919],"raw_metadata_u32":[1]}
+{"text_id":24,"forms":["<$iname;0(lnum1)>"],"absolute_byte_offsets":[6941],"raw_metadata_u32":[1]}
+{"text_id":25,"forms":["<timerms;0(lnum1,lnum2)>"],"absolute_byte_offsets":[6959],"raw_metadata_u32":[1]}
+{"text_id":26,"forms":["<timemd;0(lnum1,lnum2)>"],"absolute_byte_offsets":[6984],"raw_metadata_u32":[1]}
+{"text_id":27,"forms":["<timehm;0(lnum1,lnum2)>"],"absolute_byte_offsets":[7008],"raw_metadata_u32":[1]}
+{"text_id":28,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[7032],"raw_metadata_u32":[1]}
+{"text_id":29,"forms":["<$cname;0(lnum1)>"],"absolute_byte_offsets":[7050],"raw_metadata_u32":[1]}
+{"text_id":30,"forms":["발견할 수 있는 장소"],"absolute_byte_offsets":[7068],"raw_metadata_u32":[1]}
+{"text_id":31,"forms":[""],"absolute_byte_offsets":[7096],"raw_metadata_u32":[0]}
+{"text_id":32,"forms":[""],"absolute_byte_offsets":[7097],"raw_metadata_u32":[0]}
+{"text_id":33,"forms":[""],"absolute_byte_offsets":[7098],"raw_metadata_u32":[0]}
+{"text_id":34,"forms":[""],"absolute_byte_offsets":[7099],"raw_metadata_u32":[0]}
+{"text_id":35,"forms":[""],"absolute_byte_offsets":[7100],"raw_metadata_u32":[0]}
+{"text_id":36,"forms":["???"],"absolute_byte_offsets":[7101],"raw_metadata_u32":[1]}
+{"text_id":37,"forms":[""],"absolute_byte_offsets":[7105],"raw_metadata_u32":[0]}
+{"text_id":38,"forms":[""],"absolute_byte_offsets":[7106],"raw_metadata_u32":[0]}
+{"text_id":39,"forms":["없음"],"absolute_byte_offsets":[7107],"raw_metadata_u32":[1]}
+{"text_id":40,"forms":[""],"absolute_byte_offsets":[7114],"raw_metadata_u32":[0]}
+{"text_id":41,"forms":["합계"],"absolute_byte_offsets":[7115],"raw_metadata_u32":[1]}
+{"text_id":42,"forms":["개"],"absolute_byte_offsets":[7122],"raw_metadata_u32":[1]}
+{"text_id":43,"forms":[""],"absolute_byte_offsets":[7126],"raw_metadata_u32":[0]}
+{"text_id":44,"forms":["<$cdef(27)><$iname;0(lnum1)></color>의 레시피"],"absolute_byte_offsets":[7127],"raw_metadata_u32":[1]}
+{"text_id":45,"forms":[""],"absolute_byte_offsets":[7177],"raw_metadata_u32":[0]}
+{"text_id":46,"forms":["???"],"absolute_byte_offsets":[7178],"raw_metadata_u32":[1]}
+{"text_id":47,"forms":["<ratio;0(lnum1,lnum2)>"],"absolute_byte_offsets":[7182],"raw_metadata_u32":[1]}
+{"text_id":48,"forms":["포켓몬 도감"],"absolute_byte_offsets":[7205],"raw_metadata_u32":[1]}
+{"text_id":49,"forms":["등록 수"],"absolute_byte_offsets":[7222],"raw_metadata_u32":[1]}
+{"text_id":50,"forms":["<$strsname;0(lstr1,lnum1)>"],"absolute_byte_offsets":[7233],"raw_metadata_u32":[1]}
+{"text_id":51,"forms":["<pkdexnum;0(lnum1)>"],"absolute_byte_offsets":[7260],"raw_metadata_u32":[1]}
+{"text_id":52,"forms":["×"],"absolute_byte_offsets":[7280],"raw_metadata_u32":[1]}
+{"text_id":53,"forms":["서식지 도감"],"absolute_byte_offsets":[7283],"raw_metadata_u32":[1]}
+{"text_id":54,"forms":[""],"absolute_byte_offsets":[7300],"raw_metadata_u32":[0]}
+{"text_id":55,"forms":["온라인"],"absolute_byte_offsets":[7301],"raw_metadata_u32":[1]}
+{"text_id":56,"forms":["오프라인"],"absolute_byte_offsets":[7311],"raw_metadata_u32":[1]}
+{"text_id":57,"forms":[""],"absolute_byte_offsets":[7324],"raw_metadata_u32":[0]}
+{"text_id":58,"forms":[""],"absolute_byte_offsets":[7325],"raw_metadata_u32":[0]}
+{"text_id":59,"forms":["앞으로 <dgt3;0(lnum1)>마리"],"absolute_byte_offsets":[7326],"raw_metadata_u32":[1]}
+{"text_id":60,"forms":["<dgt10;0(lnum1)>"],"absolute_byte_offsets":[7358],"raw_metadata_u32":[1]}
+{"text_id":61,"forms":["<$cdef(27)><$iname;0(lnum1)></color>×<dgt4;1(lnum2)>"],"absolute_byte_offsets":[7375],"raw_metadata_u32":[1]}
+{"text_id":62,"forms":[""],"absolute_byte_offsets":[7429],"raw_metadata_u32":[0]}
+{"text_id":63,"forms":[""],"absolute_byte_offsets":[7430],"raw_metadata_u32":[0]}
+{"text_id":64,"forms":["근처의 서식지"],"absolute_byte_offsets":[7431],"raw_metadata_u32":[1]}
+{"text_id":65,"forms":[""],"absolute_byte_offsets":[7451],"raw_metadata_u32":[0]}
+{"text_id":66,"forms":[""],"absolute_byte_offsets":[7452],"raw_metadata_u32":[0]}
+{"text_id":67,"forms":[""],"absolute_byte_offsets":[7453],"raw_metadata_u32":[0]}
+{"text_id":68,"forms":[""],"absolute_byte_offsets":[7454],"raw_metadata_u32":[0]}
+{"text_id":69,"forms":[""],"absolute_byte_offsets":[7455],"raw_metadata_u32":[0]}
+{"text_id":70,"forms":["<ratio;0(lnum1,lnum2)>"],"absolute_byte_offsets":[7456],"raw_metadata_u32":[1]}
+{"text_id":71,"forms":[""],"absolute_byte_offsets":[7479],"raw_metadata_u32":[0]}
+{"text_id":72,"forms":[""],"absolute_byte_offsets":[7480],"raw_metadata_u32":[0]}
+{"text_id":73,"forms":[""],"absolute_byte_offsets":[7481],"raw_metadata_u32":[0]}
+{"text_id":74,"forms":[""],"absolute_byte_offsets":[7482],"raw_metadata_u32":[0]}
+{"text_id":75,"forms":[""],"absolute_byte_offsets":[7483],"raw_metadata_u32":[0]}
+{"text_id":76,"forms":[""],"absolute_byte_offsets":[7484],"raw_metadata_u32":[0]}
+{"text_id":77,"forms":[""],"absolute_byte_offsets":[7485],"raw_metadata_u32":[1]}
+{"text_id":78,"forms":["<$cdef(27)><$ifull;0(lnum1)></color>×<dgt4;1(lnum2)>"],"absolute_byte_offsets":[7486],"raw_metadata_u32":[1]}
+{"text_id":79,"forms":[""],"absolute_byte_offsets":[7540],"raw_metadata_u32":[1]}
+{"text_id":80,"forms":["<$stgmyname;0(lnum1)>"],"absolute_byte_offsets":[7541],"raw_metadata_u32":[1]}
+{"text_id":81,"forms":["<$cdef(27)><$sklfull;0(lnum1)></color>"],"absolute_byte_offsets":[7563],"raw_metadata_u32":[1]}
+{"text_id":82,"forms":["건축 스타트!"],"absolute_byte_offsets":[7602],"raw_metadata_u32":[1]}
+{"text_id":83,"forms":["재건 스타트!"],"absolute_byte_offsets":[7620],"raw_metadata_u32":[1]}
+{"text_id":84,"forms":[""],"absolute_byte_offsets":[7638],"raw_metadata_u32":[0]}
+{"text_id":85,"forms":["<moneyint;0(lnum1)>"],"absolute_byte_offsets":[7639],"raw_metadata_u32":[1]}
+{"text_id":86,"forms":["<$icon(lnum1)>???"],"absolute_byte_offsets":[7659],"raw_metadata_u32":[1]}
+{"text_id":87,"forms":["<$icon(lnum1)>부탁을 클리어하자!"],"absolute_byte_offsets":[7677],"raw_metadata_u32":[1]}
+{"text_id":88,"forms":["<$icon(lnum1)>부탁을 클리어하자!"],"absolute_byte_offsets":[7718],"raw_metadata_u32":[1]}
+{"text_id":89,"forms":["<$icon(lnum1)>기술을 배우자!"],"absolute_byte_offsets":[7759],"raw_metadata_u32":[1]}
+{"text_id":90,"forms":["<$icon(lnum1)><$chopen;0(lnum2)>"],"absolute_byte_offsets":[7794],"raw_metadata_u32":[1]}
+{"text_id":91,"forms":["<$keyicon(153)><$inamewithnum;0(lnum1,lnum2)>"],"absolute_byte_offsets":[7827],"raw_metadata_u32":[1]}
+{"text_id":92,"forms":["<$keyicon(153)>???"],"absolute_byte_offsets":[7873],"raw_metadata_u32":[1]}
+{"text_id":93,"forms":[""],"absolute_byte_offsets":[7892],"raw_metadata_u32":[0]}
+{"text_id":94,"forms":["<$iname;0(lnum1)>의 레시피"],"absolute_byte_offsets":[7893],"raw_metadata_u32":[1]}
+{"text_id":95,"forms":[""],"absolute_byte_offsets":[7924],"raw_metadata_u32":[0]}
+{"text_id":96,"forms":[""],"absolute_byte_offsets":[7925],"raw_metadata_u32":[0]}
+{"text_id":97,"forms":[""],"absolute_byte_offsets":[7926],"raw_metadata_u32":[0]}
+{"text_id":98,"forms":[""],"absolute_byte_offsets":[7927],"raw_metadata_u32":[0]}
+{"text_id":99,"forms":[""],"absolute_byte_offsets":[7928],"raw_metadata_u32":[0]}
+{"text_id":100,"forms":[""],"absolute_byte_offsets":[7929],"raw_metadata_u32":[0]}
+{"text_id":101,"forms":[""],"absolute_byte_offsets":[7930],"raw_metadata_u32":[0]}
+{"text_id":102,"forms":[""],"absolute_byte_offsets":[7931],"raw_metadata_u32":[0]}
+{"text_id":103,"forms":["???의 보금자리"],"absolute_byte_offsets":[7932],"raw_metadata_u32":[1]}
+{"text_id":104,"forms":["<$cdef(27)><$cname;0(lnum1)></color>의 보금자리"],"absolute_byte_offsets":[7952],"raw_metadata_u32":[1]}
+{"text_id":105,"forms":[""],"absolute_byte_offsets":[8005],"raw_metadata_u32":[0]}
+{"text_id":106,"forms":[""],"absolute_byte_offsets":[8006],"raw_metadata_u32":[0]}
+{"text_id":107,"forms":[""],"absolute_byte_offsets":[8007],"raw_metadata_u32":[0]}
+{"text_id":108,"forms":["<$uqname;0(lnum1)>"],"absolute_byte_offsets":[8008],"raw_metadata_u32":[1]}
+{"text_id":109,"forms":["<$gqname;0(lnum1)>"],"absolute_byte_offsets":[8027],"raw_metadata_u32":[1]}
+{"text_id":110,"forms":["<$uqdscp;0(lnum1)>"],"absolute_byte_offsets":[8046],"raw_metadata_u32":[1]}
+{"text_id":111,"forms":["<$gqdscp;0(lnum1,lnum2)>"],"absolute_byte_offsets":[8065],"raw_metadata_u32":[1]}
+{"text_id":112,"forms":["해야 할 일"],"absolute_byte_offsets":[8090],"raw_metadata_u32":[1]}
+{"text_id":113,"forms":[""],"absolute_byte_offsets":[8105],"raw_metadata_u32":[0]}
+{"text_id":114,"forms":["일일 챌린지"],"absolute_byte_offsets":[8106],"raw_metadata_u32":[1]}
+{"text_id":115,"forms":["?"],"absolute_byte_offsets":[8123],"raw_metadata_u32":[1]}
+{"text_id":116,"forms":["키"],"absolute_byte_offsets":[8125],"raw_metadata_u32":[1]}
+{"text_id":117,"forms":["몸무게"],"absolute_byte_offsets":[8129],"raw_metadata_u32":[1]}
+{"text_id":118,"forms":["타입"],"absolute_byte_offsets":[8139],"raw_metadata_u32":[1]}
+{"text_id":119,"forms":["<$typname;0(lnum1)>"],"absolute_byte_offsets":[8146],"raw_metadata_u32":[1]}
+{"text_id":120,"forms":["시간"],"absolute_byte_offsets":[8166],"raw_metadata_u32":[1]}
+{"text_id":121,"forms":["날씨"],"absolute_byte_offsets":[8173],"raw_metadata_u32":[1]}
+{"text_id":122,"forms":["특기"],"absolute_byte_offsets":[8180],"raw_metadata_u32":[1]}
+{"text_id":123,"forms":["좋아하는 환경"],"absolute_byte_offsets":[8187],"raw_metadata_u32":[1]}
+{"text_id":124,"forms":["좋아하는 것"],"absolute_byte_offsets":[8207],"raw_metadata_u32":[1]}
+{"text_id":125,"forms":["특징"],"absolute_byte_offsets":[8224],"raw_metadata_u32":[1]}
+{"text_id":126,"forms":["만날 수 있는 장소"],"absolute_byte_offsets":[8231],"raw_metadata_u32":[1]}
+{"text_id":127,"forms":["특기와 취향"],"absolute_byte_offsets":[8256],"raw_metadata_u32":[1]}
+{"text_id":128,"forms":["???"],"absolute_byte_offsets":[8273],"raw_metadata_u32":[1]}
+{"text_id":129,"forms":["다음"],"absolute_byte_offsets":[8277],"raw_metadata_u32":[1]}
+{"text_id":130,"forms":["<$pkname;0(lnum2)>"],"absolute_byte_offsets":[8284],"raw_metadata_u32":[1]}
+{"text_id":131,"forms":["<$hatname;0(lnum2)>"],"absolute_byte_offsets":[8303],"raw_metadata_u32":[1]}
+{"text_id":132,"forms":[""],"absolute_byte_offsets":[8323],"raw_metadata_u32":[0]}
+{"text_id":133,"forms":["<$temptxt;0(lnum1)>"],"absolute_byte_offsets":[8324],"raw_metadata_u32":[1]}
+{"text_id":134,"forms":["<$illutxt;0(lnum1)>"],"absolute_byte_offsets":[8344],"raw_metadata_u32":[1]}
+{"text_id":135,"forms":["<$humitxt;0(lnum1)>"],"absolute_byte_offsets":[8364],"raw_metadata_u32":[1]}
+{"text_id":136,"forms":["아직 본 적 없는 서식지입니다."],"absolute_byte_offsets":[8384],"raw_metadata_u32":[1]}
+{"text_id":137,"forms":["<$icon(lnum1)><$cdef(27)><$spwname;0(lnum2)></color>"],"absolute_byte_offsets":[8426],"raw_metadata_u32":[1]}
+{"text_id":138,"forms":["보고 가능!"],"absolute_byte_offsets":[8479],"raw_metadata_u32":[1]}
+{"text_id":139,"forms":[""],"absolute_byte_offsets":[8494],"raw_metadata_u32":[0]}
+{"text_id":140,"forms":[""],"absolute_byte_offsets":[8495],"raw_metadata_u32":[0]}
+{"text_id":141,"forms":[""],"absolute_byte_offsets":[8496],"raw_metadata_u32":[0]}
+{"text_id":142,"forms":["-<moneyint;0(lnum1)>"],"absolute_byte_offsets":[8497],"raw_metadata_u32":[1]}
+{"text_id":143,"forms":["+<moneyint;0(lnum1)>"],"absolute_byte_offsets":[8518],"raw_metadata_u32":[1]}
+{"text_id":144,"forms":["<dgt2;0(lnum1)>개"],"absolute_byte_offsets":[8539],"raw_metadata_u32":[1]}
+{"text_id":145,"forms":["품절"],"absolute_byte_offsets":[8558],"raw_metadata_u32":[1]}
+{"text_id":146,"forms":["<dgt2;0(lnum1)>"],"absolute_byte_offsets":[8565],"raw_metadata_u32":[1]}
+{"text_id":147,"forms":[""],"absolute_byte_offsets":[8581],"raw_metadata_u32":[0]}
+{"text_id":148,"forms":["구입"],"absolute_byte_offsets":[8582],"raw_metadata_u32":[1]}
+{"text_id":149,"forms":["재고"],"absolute_byte_offsets":[8589],"raw_metadata_u32":[1]}
+{"text_id":150,"forms":[""],"absolute_byte_offsets":[8596],"raw_metadata_u32":[0]}
+{"text_id":151,"forms":["발주"],"absolute_byte_offsets":[8597],"raw_metadata_u32":[1]}
+{"text_id":152,"forms":["주거 만족도 리포트"],"absolute_byte_offsets":[8604],"raw_metadata_u32":[1]}
+{"text_id":153,"forms":[""],"absolute_byte_offsets":[8631],"raw_metadata_u32":[0]}
+{"text_id":154,"forms":["----"],"absolute_byte_offsets":[8632],"raw_metadata_u32":[10]}
+{"text_id":155,"forms":[""],"absolute_byte_offsets":[8637],"raw_metadata_u32":[0]}
+{"text_id":156,"forms":[""],"absolute_byte_offsets":[8638],"raw_metadata_u32":[0]}
+{"text_id":157,"forms":[""],"absolute_byte_offsets":[8639],"raw_metadata_u32":[0]}
+{"text_id":158,"forms":[""],"absolute_byte_offsets":[8640],"raw_metadata_u32":[0]}
+{"text_id":159,"forms":[""],"absolute_byte_offsets":[8641],"raw_metadata_u32":[0]}
+{"text_id":160,"forms":[""],"absolute_byte_offsets":[8642],"raw_metadata_u32":[0]}
+{"text_id":161,"forms":["환경 레벨"],"absolute_byte_offsets":[8643],"raw_metadata_u32":[1]}
+{"text_id":162,"forms":["MAX"],"absolute_byte_offsets":[8657],"raw_metadata_u32":[1]}
+{"text_id":163,"forms":["이 모습으로 시작하겠습니까?"],"absolute_byte_offsets":[8661],"raw_metadata_u32":[1]}
+{"text_id":164,"forms":[""],"absolute_byte_offsets":[8701],"raw_metadata_u32":[0]}
+{"text_id":165,"forms":["암호"],"absolute_byte_offsets":[8702],"raw_metadata_u32":[1]}
+{"text_id":166,"forms":["주소"],"absolute_byte_offsets":[8709],"raw_metadata_u32":[1]}
+{"text_id":167,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[8716],"raw_metadata_u32":[1]}
+{"text_id":168,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[8734],"raw_metadata_u32":[1]}
+{"text_id":169,"forms":["함께 플레이할 상대에게<br>암호를 알려 주십시오."],"absolute_byte_offsets":[8752],"raw_metadata_u32":[1]}
+{"text_id":170,"forms":["함께 플레이할 상대에게<br>암호와 주소를 알려 주십시오."],"absolute_byte_offsets":[8819],"raw_metadata_u32":[1]}
+{"text_id":171,"forms":["아래 내용으로 섬을 만듭니다.<br>괜찮겠습니까?"],"absolute_byte_offsets":[8896],"raw_metadata_u32":[1]}
+{"text_id":172,"forms":["섬의 이름"],"absolute_byte_offsets":[8960],"raw_metadata_u32":[1]}
+{"text_id":173,"forms":["주소"],"absolute_byte_offsets":[8974],"raw_metadata_u32":[1]}
+{"text_id":174,"forms":["주문"],"absolute_byte_offsets":[8981],"raw_metadata_u32":[1]}
+{"text_id":175,"forms":["앞으로 <dgt2;0(lnum1)>일"],"absolute_byte_offsets":[8988],"raw_metadata_u32":[1]}
+{"text_id":176,"forms":["오늘까지"],"absolute_byte_offsets":[9017],"raw_metadata_u32":[1]}
+{"text_id":177,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[9030],"raw_metadata_u32":[1]}
+{"text_id":178,"forms":["구입한 아이템은 <$cdef(27)><pname;0></color>의 PC로 보내집니다.<br>※레시피는 바로 습득할 수 있습니다."],"absolute_byte_offsets":[9048],"raw_metadata_u32":[1]}
+{"text_id":179,"forms":["토해내기"],"absolute_byte_offsets":[9180],"raw_metadata_u32":[1]}
+{"text_id":180,"forms":["토해내기 방향 조정: 시계 방향"],"absolute_byte_offsets":[9193],"raw_metadata_u32":[1]}
+{"text_id":181,"forms":["토해내기 방향 조정: 반시계 방향"],"absolute_byte_offsets":[9235],"raw_metadata_u32":[1]}
+{"text_id":182,"forms":["목적지 고르기"],"absolute_byte_offsets":[9280],"raw_metadata_u32":[1]}
+{"text_id":183,"forms":["목적지는 이곳이 맞습니까?"],"absolute_byte_offsets":[9300],"raw_metadata_u32":[1]}
+{"text_id":184,"forms":["플레이어"],"absolute_byte_offsets":[9337],"raw_metadata_u32":[1]}
+{"text_id":185,"forms":["관리인"],"absolute_byte_offsets":[9350],"raw_metadata_u32":[1]}
+{"text_id":186,"forms":["게스트"],"absolute_byte_offsets":[9360],"raw_metadata_u32":[1]}
+{"text_id":187,"forms":["<$keyicon(6)><$iname;0(lnum1)>"],"absolute_byte_offsets":[9370],"raw_metadata_u32":[1]}
+{"text_id":188,"forms":["이곳으로"],"absolute_byte_offsets":[9401],"raw_metadata_u32":[1]}
+{"text_id":189,"forms":["통신 플레이 시의 주의 사항"],"absolute_byte_offsets":[9414],"raw_metadata_u32":[1]}
+{"text_id":190,"forms":["모두가 즐겁게 플레이하기 위하여"],"absolute_byte_offsets":[9452],"raw_metadata_u32":[1]}
+{"text_id":191,"forms":["주의"],"absolute_byte_offsets":[9498],"raw_metadata_u32":[1]}
+{"text_id":192,"forms":["결정"],"absolute_byte_offsets":[9505],"raw_metadata_u32":[1]}
+{"text_id":193,"forms":["완료"],"absolute_byte_offsets":[9512],"raw_metadata_u32":[1]}
+{"text_id":194,"forms":["예"],"absolute_byte_offsets":[9519],"raw_metadata_u32":[1]}
+{"text_id":195,"forms":["아니요"],"absolute_byte_offsets":[9523],"raw_metadata_u32":[1]}
+{"text_id":196,"forms":["확인"],"absolute_byte_offsets":[9533],"raw_metadata_u32":[1]}
+{"text_id":197,"forms":["그만둔다"],"absolute_byte_offsets":[9540],"raw_metadata_u32":[1]}
+{"text_id":198,"forms":["???"],"absolute_byte_offsets":[9553],"raw_metadata_u32":[1]}
+{"text_id":199,"forms":["재료"],"absolute_byte_offsets":[9557],"raw_metadata_u32":[1]}
+{"text_id":200,"forms":["사용 수"],"absolute_byte_offsets":[9564],"raw_metadata_u32":[1]}
+{"text_id":201,"forms":["소지 수"],"absolute_byte_offsets":[9575],"raw_metadata_u32":[1]}
+{"text_id":202,"forms":["전부"],"absolute_byte_offsets":[9586],"raw_metadata_u32":[1]}
+{"text_id":203,"forms":["즐겨찾기"],"absolute_byte_offsets":[9593],"raw_metadata_u32":[1]}
+{"text_id":204,"forms":["당신의 코인을 사용해서 상품을 구입할 수 있습니다.<br>레시피 이외의 상품은 이 섬에서만 사용할 수 있습니다."],"absolute_byte_offsets":[9606],"raw_metadata_u32":[1]}
+{"text_id":205,"forms":["<dgt2;0(lnum1)>세트"],"absolute_byte_offsets":[9755],"raw_metadata_u32":[1]}
+{"text_id":206,"forms":[""],"absolute_byte_offsets":[9777],"raw_metadata_u32":[0]}
+{"text_id":207,"forms":["대상 외 날짜가 설정되어 있습니다.<br>HOME 메뉴에서 날짜 설정을<br>2000년 1월 1일부터<br>2060년 12월 31일 사이로 변경하고<br>게임을 재기동해 주십시오."],"absolute_byte_offsets":[9778],"raw_metadata_u32":[1]}
+{"text_id":208,"forms":["그 외"],"absolute_byte_offsets":[9977],"raw_metadata_u32":[1]}
+{"text_id":209,"forms":[""],"absolute_byte_offsets":[9985],"raw_metadata_u32":[0]}
+{"text_id":210,"forms":["이 게임은 자동 리포트 기능에 의해<br><$icon(2645)> 아이콘이 표시되는 동안<br>자동으로 저장됩니다.<br><br>리포트 작성 중에는 게임을 종료하거나<br>전원을 끄지 마십시오."],"absolute_byte_offsets":[9986],"raw_metadata_u32":[1]}
+{"text_id":211,"forms":["어떤 언어로 플레이하겠습니까?"],"absolute_byte_offsets":[10211],"raw_metadata_u32":[1]}
+{"text_id":212,"forms":[""],"absolute_byte_offsets":[10254],"raw_metadata_u32":[9]}
+{"text_id":213,"forms":[""],"absolute_byte_offsets":[10255],"raw_metadata_u32":[9]}
+{"text_id":214,"forms":[""],"absolute_byte_offsets":[10256],"raw_metadata_u32":[9]}
+{"text_id":215,"forms":[""],"absolute_byte_offsets":[10257],"raw_metadata_u32":[9]}
+{"text_id":216,"forms":[""],"absolute_byte_offsets":[10258],"raw_metadata_u32":[0]}
+{"text_id":217,"forms":[""],"absolute_byte_offsets":[10259],"raw_metadata_u32":[0]}
+{"text_id":218,"forms":[""],"absolute_byte_offsets":[10260],"raw_metadata_u32":[0]}
+{"text_id":219,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[10261],"raw_metadata_u32":[1]}
+{"text_id":220,"forms":["필요"],"absolute_byte_offsets":[10279],"raw_metadata_u32":[1]}
+{"text_id":221,"forms":["합계"],"absolute_byte_offsets":[10286],"raw_metadata_u32":[1]}
+{"text_id":222,"forms":["교환!"],"absolute_byte_offsets":[10293],"raw_metadata_u32":[1]}
+{"text_id":223,"forms":["기술 목록"],"absolute_byte_offsets":[10301],"raw_metadata_u32":[1]}
+{"text_id":224,"forms":[""],"absolute_byte_offsets":[10315],"raw_metadata_u32":[0]}
+{"text_id":225,"forms":["가능한 수"],"absolute_byte_offsets":[10316],"raw_metadata_u32":[1]}
+{"text_id":226,"forms":["???를 찾아보자."],"absolute_byte_offsets":[10330],"raw_metadata_u32":[10]}
+{"text_id":227,"forms":["내일 다시 물어보자."],"absolute_byte_offsets":[10351],"raw_metadata_u32":[1]}
+{"text_id":228,"forms":["여기로 데려오자."],"absolute_byte_offsets":[10379],"raw_metadata_u32":[1]}
+{"text_id":229,"forms":["포켓몬을 찾아보자."],"absolute_byte_offsets":[10403],"raw_metadata_u32":[1]}
+{"text_id":230,"forms":["/"],"absolute_byte_offsets":[10430],"raw_metadata_u32":[1]}
+{"text_id":231,"forms":["재료"],"absolute_byte_offsets":[10432],"raw_metadata_u32":[1]}
+{"text_id":232,"forms":["포켓몬"],"absolute_byte_offsets":[10439],"raw_metadata_u32":[1]}
+{"text_id":233,"forms":["<$spwname;0(lnum1)>"],"absolute_byte_offsets":[10449],"raw_metadata_u32":[1]}
+{"text_id":234,"forms":["빈집"],"absolute_byte_offsets":[10469],"raw_metadata_u32":[1]}
+{"text_id":235,"forms":["<$cdef(27)><$cname;0(lnum1)></color>의 집"],"absolute_byte_offsets":[10476],"raw_metadata_u32":[1]}
+{"text_id":236,"forms":["모두의 집"],"absolute_byte_offsets":[10520],"raw_metadata_u32":[1]}
+{"text_id":237,"forms":["<$cdef(27)><pname;0></color>의 집"],"absolute_byte_offsets":[10534],"raw_metadata_u32":[1]}
+{"text_id":238,"forms":["발전 시간"],"absolute_byte_offsets":[10570],"raw_metadata_u32":[1]}
+{"text_id":239,"forms":["연소 중"],"absolute_byte_offsets":[10584],"raw_metadata_u32":[1]}
+{"text_id":240,"forms":["점화"],"absolute_byte_offsets":[10595],"raw_metadata_u32":[1]}
+{"text_id":241,"forms":[""],"absolute_byte_offsets":[10602],"raw_metadata_u32":[0]}
+{"text_id":242,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color>의 집"],"absolute_byte_offsets":[10603],"raw_metadata_u32":[1]}
+{"text_id":243,"forms":[""],"absolute_byte_offsets":[10656],"raw_metadata_u32":[0]}
+{"text_id":244,"forms":[""],"absolute_byte_offsets":[10657],"raw_metadata_u32":[0]}
+{"text_id":245,"forms":["에리어"],"absolute_byte_offsets":[10658],"raw_metadata_u32":[1]}
+{"text_id":246,"forms":["플레이어 <$cdef(27)><pname;0></color> 님"],"absolute_byte_offsets":[10668],"raw_metadata_u32":[1]}
+{"text_id":247,"forms":["요리 시작!"],"absolute_byte_offsets":[10714],"raw_metadata_u32":[1]}
+{"text_id":248,"forms":["필요한 것"],"absolute_byte_offsets":[10729],"raw_metadata_u32":[1]}
+{"text_id":249,"forms":["<timeymd;0(lnum1,lnum2,lnum3)>까지"],"absolute_byte_offsets":[10743],"raw_metadata_u32":[1]}
+{"text_id":250,"forms":["난처한 포켓몬을 찾아 부탁을 들어 보자."],"absolute_byte_offsets":[10780],"raw_metadata_u32":[1]}
+{"text_id":251,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[10835],"raw_metadata_u32":[1]}
+{"text_id":252,"forms":["AM"],"absolute_byte_offsets":[10853],"raw_metadata_u32":[1]}
+{"text_id":253,"forms":["PM"],"absolute_byte_offsets":[10856],"raw_metadata_u32":[1]}
+{"text_id":254,"forms":["<timehm;0(lnum1,lnum2)>"],"absolute_byte_offsets":[10859],"raw_metadata_u32":[1]}
+{"text_id":255,"forms":["할인 중"],"absolute_byte_offsets":[10883],"raw_metadata_u32":[1]}
+{"text_id":256,"forms":["챌린지 달성!"],"absolute_byte_offsets":[10894],"raw_metadata_u32":[1]}
+{"text_id":257,"forms":["다른 플레이어가 달성한 챌린지를 보고했습니다."],"absolute_byte_offsets":[10912],"raw_metadata_u32":[1]}
+{"text_id":258,"forms":["달성한 챌린지를 한 번에 보고했습니다."],"absolute_byte_offsets":[10978],"raw_metadata_u32":[1]}
+{"text_id":259,"forms":["포켓몬의 주거 만족도"],"absolute_byte_offsets":[11032],"raw_metadata_u32":[1]}
+{"text_id":260,"forms":["레벨 업!"],"absolute_byte_offsets":[11062],"raw_metadata_u32":[1]}
+{"text_id":261,"forms":["레벨 다운..."],"absolute_byte_offsets":[11074],"raw_metadata_u32":[1]}
+{"text_id":262,"forms":[""],"absolute_byte_offsets":[11091],"raw_metadata_u32":[0]}
+{"text_id":263,"forms":[""],"absolute_byte_offsets":[11092],"raw_metadata_u32":[0]}
+{"text_id":264,"forms":[""],"absolute_byte_offsets":[11093],"raw_metadata_u32":[0]}
+{"text_id":265,"forms":["<timeymdhm;0(lnum1,lnum2,lnum3,lnum4,lnum5)>"],"absolute_byte_offsets":[11094],"raw_metadata_u32":[1]}
+{"text_id":266,"forms":["+"],"absolute_byte_offsets":[11139],"raw_metadata_u32":[1]}
+{"text_id":267,"forms":["-"],"absolute_byte_offsets":[11141],"raw_metadata_u32":[1]}
+{"text_id":268,"forms":["달성!"],"absolute_byte_offsets":[11143],"raw_metadata_u32":[1]}
+{"text_id":269,"forms":[""],"absolute_byte_offsets":[11151],"raw_metadata_u32":[0]}
+{"text_id":270,"forms":["<timeymd;0(lnum1,lnum2,lnum3)>"],"absolute_byte_offsets":[11152],"raw_metadata_u32":[1]}
+{"text_id":271,"forms":[""],"absolute_byte_offsets":[11183],"raw_metadata_u32":[0]}
+{"text_id":272,"forms":[""],"absolute_byte_offsets":[11184],"raw_metadata_u32":[0]}
+{"text_id":273,"forms":["이 에리어에 살고 있는 포켓몬은 없습니다."],"absolute_byte_offsets":[11185],"raw_metadata_u32":[1]}
+{"text_id":274,"forms":["레벨 <dgt2;0(lnum1)>"],"absolute_byte_offsets":[11243],"raw_metadata_u32":[1]}
+{"text_id":275,"forms":["---"],"absolute_byte_offsets":[11266],"raw_metadata_u32":[1]}
+{"text_id":276,"forms":["<$backupmemo;0(lstr1,lnum1)>"],"absolute_byte_offsets":[11270],"raw_metadata_u32":[1]}
+{"text_id":277,"forms":["<$strpname;0(lstr1,lnum1)>"],"absolute_byte_offsets":[11299],"raw_metadata_u32":[1]}
+{"text_id":278,"forms":["상장"],"absolute_byte_offsets":[11326],"raw_metadata_u32":[1]}
+{"text_id":279,"forms":["플레이어 <wowner;0> 님"],"absolute_byte_offsets":[11333],"raw_metadata_u32":[1]}
+{"text_id":280,"forms":["귀하는 포켓몬 도감을<br>훌륭하게 완성했습니다!<br>이 위대한 공적을 기리며<br>상장을 수여합니다."],"absolute_byte_offsets":[11361],"raw_metadata_u32":[1]}
+{"text_id":281,"forms":["스태프 일동"],"absolute_byte_offsets":[11494],"raw_metadata_u32":[1]}
+{"text_id":282,"forms":[""],"absolute_byte_offsets":[11511],"raw_metadata_u32":[1]}
+{"text_id":283,"forms":["근처의 카메라를 검색 중..."],"absolute_byte_offsets":[11512],"raw_metadata_u32":[1]}
+{"text_id":284,"forms":["전환 중..."],"absolute_byte_offsets":[11549],"raw_metadata_u32":[1]}
+{"text_id":285,"forms":["<$cdef(27)>즐겨찾기</color>가 등록되어 있지 않습니다."],"absolute_byte_offsets":[11563],"raw_metadata_u32":[1]}
+{"text_id":286,"forms":["도착한 아이템"],"absolute_byte_offsets":[11632],"raw_metadata_u32":[1]}
+{"text_id":287,"forms":["자신의 지닌 물건"],"absolute_byte_offsets":[11652],"raw_metadata_u32":[1]}
+{"text_id":288,"forms":[""],"absolute_byte_offsets":[11676],"raw_metadata_u32":[0]}
+{"text_id":289,"forms":["오늘 놀러 갈 수 있는 상대"],"absolute_byte_offsets":[11677],"raw_metadata_u32":[1]}
+{"text_id":290,"forms":["앞으로"],"absolute_byte_offsets":[11713],"raw_metadata_u32":[1]}
+{"text_id":291,"forms":["<dgt2;0(lnum1)>명"],"absolute_byte_offsets":[11723],"raw_metadata_u32":[1]}
+{"text_id":292,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[11742],"raw_metadata_u32":[1]}
+{"text_id":293,"forms":["철거 스타트!"],"absolute_byte_offsets":[11760],"raw_metadata_u32":[1]}
+{"text_id":294,"forms":["준비 스타트!"],"absolute_byte_offsets":[11778],"raw_metadata_u32":[1]}
+{"text_id":295,"forms":["이사 스타트!"],"absolute_byte_offsets":[11796],"raw_metadata_u32":[1]}
+{"text_id":296,"forms":["<$icon(11214)>보통"],"absolute_byte_offsets":[11814],"raw_metadata_u32":[1]}
+{"text_id":297,"forms":["<$icon(11214)><$icon(11214)>희귀함"],"absolute_byte_offsets":[11835],"raw_metadata_u32":[1]}
+{"text_id":298,"forms":["<$icon(11214)><$icon(11214)><$icon(11214)>매우 희귀함"],"absolute_byte_offsets":[11873],"raw_metadata_u32":[1]}
+{"text_id":299,"forms":["귀하는 클라우드섬 도감을<br>훌륭하게 완성했습니다!<br>이 위대한 공적을 기리며<br>상장을 수여합니다."],"absolute_byte_offsets":[11932],"raw_metadata_u32":[1]}
+{"text_id":300,"forms":["개조 스타트!"],"absolute_byte_offsets":[12071],"raw_metadata_u32":[1]}
+{"text_id":301,"forms":["통신 플레이에서는 <$cdef(27)>플레이어 이름과 마을 및 섬의 이름</color>,<br>블록을 조합하여 만든 <$cdef(27)>문자나 그래픽</color> 등을<br>다른 플레이어도 볼 수 있습니다.<br>다른 플레이어에게 불쾌감을 주지 않도록<br>주의하며 통신 플레이를 즐겨 주십시오."],"absolute_byte_offsets":[12089],"raw_metadata_u32":[1]}
+{"text_id":302,"forms":["통신 플레이 시에는<br>다음과 같은 내용을 공개하지 말아 주십시오.<br><br>・위법한 내용<br>・개인정보<br>・타인의 권리를 침해하는 내용<br>・불쾌감을 주는 내용<br>・다른 플레이어에게 불쾌감을 주는 행위<br>・버그 행위<br><br>공개된 콘텐츠나 게임 중의 행위에는<br>'닌텐도 어카운트 이용 약관'이 적용됩니다.<br><br>약관을 위반하는 콘텐츠나 행위가 발견될 경우<br>서버상의 데이터가 비표시화되거나<br>통신 플레이 접속이 제한될 수 있습니다.<br><br>또한 '클라우드섬'에서 위반 콘텐츠가 발견될 경우<br>해당 섬을 만든 자에게 책임이 부과됩니다.<br>클라우드섬의 '암호'를 공개할 때는<br>충분히 주의하여 플레이해 주시기 바랍니다.<br><br>부적절한 콘텐츠나 행위에 대해서는<br>통신 플레이 중에 메뉴 화면에서<br>버튼을 눌러 신고할 수 있습니다.<br><br>닌텐도 어카운트 이용 약관에 따라<br>다른 플레이어를 배려하며 플레이해 주시기 바랍니다."],"absolute_byte_offsets":[12426],"raw_metadata_u32":[1]}
+{"text_id":303,"forms":["납품!"],"absolute_byte_offsets":[13550],"raw_metadata_u32":[1]}
+{"text_id":304,"forms":["발견할 수 있는 것"],"absolute_byte_offsets":[13558],"raw_metadata_u32":[1]}
+{"text_id":305,"forms":["등록 완료 사진"],"absolute_byte_offsets":[13583],"raw_metadata_u32":[1]}
+{"text_id":306,"forms":["선택 중인 사진"],"absolute_byte_offsets":[13604],"raw_metadata_u32":[1]}
+{"text_id":307,"forms":["번호순"],"absolute_byte_offsets":[13625],"raw_metadata_u32":[1]}
+{"text_id":308,"forms":["가나다순"],"absolute_byte_offsets":[13635],"raw_metadata_u32":[1]}
+{"text_id":309,"forms":["무거운 순서"],"absolute_byte_offsets":[13648],"raw_metadata_u32":[1]}
+{"text_id":310,"forms":["가벼운 순서"],"absolute_byte_offsets":[13665],"raw_metadata_u32":[1]}
+{"text_id":311,"forms":["큰 순서"],"absolute_byte_offsets":[13682],"raw_metadata_u32":[1]}
+{"text_id":312,"forms":["작은 순서"],"absolute_byte_offsets":[13693],"raw_metadata_u32":[1]}
+{"text_id":313,"forms":["종류순"],"absolute_byte_offsets":[13707],"raw_metadata_u32":[1]}
+{"text_id":314,"forms":["알게 된 순서"],"absolute_byte_offsets":[13717],"raw_metadata_u32":[1]}
+{"text_id":315,"forms":["낮은 가격순"],"absolute_byte_offsets":[13735],"raw_metadata_u32":[1]}
+{"text_id":316,"forms":["높은 가격순"],"absolute_byte_offsets":[13752],"raw_metadata_u32":[1]}
+{"text_id":317,"forms":["상태 순서"],"absolute_byte_offsets":[13769],"raw_metadata_u32":[1]}
+{"text_id":318,"forms":["등록 상태"],"absolute_byte_offsets":[13783],"raw_metadata_u32":[1]}
+{"text_id":319,"forms":["장소"],"absolute_byte_offsets":[13797],"raw_metadata_u32":[1]}
+{"text_id":320,"forms":["특기"],"absolute_byte_offsets":[13804],"raw_metadata_u32":[1]}
+{"text_id":321,"forms":["(전부)"],"absolute_byte_offsets":[13811],"raw_metadata_u32":[1]}
+{"text_id":322,"forms":["친구가 됨"],"absolute_byte_offsets":[13820],"raw_metadata_u32":[1]}
+{"text_id":323,"forms":[""],"absolute_byte_offsets":[13834],"raw_metadata_u32":[0]}
+{"text_id":324,"forms":["정보만 알고 있음"],"absolute_byte_offsets":[13835],"raw_metadata_u32":[1]}
+{"text_id":325,"forms":["정보가 없음"],"absolute_byte_offsets":[13859],"raw_metadata_u32":[1]}
+{"text_id":326,"forms":["<$keyicon(83)>결정"],"absolute_byte_offsets":[13876],"raw_metadata_u32":[1]}
+{"text_id":327,"forms":["순서 바꾸기"],"absolute_byte_offsets":[13897],"raw_metadata_u32":[1]}
+{"text_id":328,"forms":["함께 플레이할 인원수"],"absolute_byte_offsets":[13914],"raw_metadata_u32":[1]}
+{"text_id":329,"forms":["견학 모드"],"absolute_byte_offsets":[13944],"raw_metadata_u32":[1]}
+{"text_id":330,"forms":["주소"],"absolute_byte_offsets":[13958],"raw_metadata_u32":[1]}
+{"text_id":331,"forms":["암호"],"absolute_byte_offsets":[13965],"raw_metadata_u32":[1]}
+{"text_id":332,"forms":["주문"],"absolute_byte_offsets":[13972],"raw_metadata_u32":[1]}
+{"text_id":333,"forms":["클라우드섬 이름"],"absolute_byte_offsets":[13979],"raw_metadata_u32":[1]}
+{"text_id":334,"forms":["모두에게 공개"],"absolute_byte_offsets":[14002],"raw_metadata_u32":[1]}
+{"text_id":335,"forms":["암호 설정"],"absolute_byte_offsets":[14022],"raw_metadata_u32":[1]}
+{"text_id":336,"forms":["저장 일시"],"absolute_byte_offsets":[14036],"raw_metadata_u32":[1]}
+{"text_id":337,"forms":["메모"],"absolute_byte_offsets":[14050],"raw_metadata_u32":[1]}
+{"text_id":338,"forms":["변경"],"absolute_byte_offsets":[14057],"raw_metadata_u32":[1]}
+{"text_id":339,"forms":["저장"],"absolute_byte_offsets":[14064],"raw_metadata_u32":[1]}
+{"text_id":340,"forms":["복원"],"absolute_byte_offsets":[14071],"raw_metadata_u32":[1]}
+{"text_id":341,"forms":["4명"],"absolute_byte_offsets":[14078],"raw_metadata_u32":[1]}
+{"text_id":342,"forms":["3명"],"absolute_byte_offsets":[14083],"raw_metadata_u32":[1]}
+{"text_id":343,"forms":["2명"],"absolute_byte_offsets":[14088],"raw_metadata_u32":[1]}
+{"text_id":344,"forms":["ON"],"absolute_byte_offsets":[14093],"raw_metadata_u32":[1]}
+{"text_id":345,"forms":["OFF"],"absolute_byte_offsets":[14096],"raw_metadata_u32":[1]}
+{"text_id":346,"forms":["한다"],"absolute_byte_offsets":[14100],"raw_metadata_u32":[1]}
+{"text_id":347,"forms":["하지 않는다"],"absolute_byte_offsets":[14107],"raw_metadata_u32":[1]}
+{"text_id":348,"forms":["몇 명이 플레이할지를 선택할 수 있습니다."],"absolute_byte_offsets":[14124],"raw_metadata_u32":[1]}
+{"text_id":349,"forms":["견학 모드에서는 일부 기술이나 아이템을 사용할 수 없게 됩니다."],"absolute_byte_offsets":[14182],"raw_metadata_u32":[1]}
+{"text_id":350,"forms":["클라우드섬의 주소를 확인할 수 있습니다."],"absolute_byte_offsets":[14270],"raw_metadata_u32":[1]}
+{"text_id":351,"forms":["클라우드섬의 암호를 확인하고 변경할 수 있습니다."],"absolute_byte_offsets":[14327],"raw_metadata_u32":[1]}
+{"text_id":352,"forms":["클라우드섬의 주문을 확인할 수 있습니다."],"absolute_byte_offsets":[14397],"raw_metadata_u32":[1]}
+{"text_id":353,"forms":["클라우드섬의 이름을 확인하고 변경할 수 있습니다."],"absolute_byte_offsets":[14454],"raw_metadata_u32":[1]}
+{"text_id":354,"forms":["다른 플레이어가 섬에서 자유롭게 플레이할 수 있게 합니다."],"absolute_byte_offsets":[14524],"raw_metadata_u32":[1]}
+{"text_id":355,"forms":["암호를 아는 플레이어만 플레이할 수 있게 할지를 선택할 수 있습니다."],"absolute_byte_offsets":[14605],"raw_metadata_u32":[1]}
+{"text_id":356,"forms":["현재 상태를 백업 데이터로 저장할 수 있습니다."],"absolute_byte_offsets":[14700],"raw_metadata_u32":[1]}
+{"text_id":357,"forms":["백업 데이터를 복원할 수 있습니다."],"absolute_byte_offsets":[14765],"raw_metadata_u32":[1]}
+{"text_id":358,"forms":["텍스트 속도"],"absolute_byte_offsets":[14813],"raw_metadata_u32":[1]}
+{"text_id":359,"forms":["언어"],"absolute_byte_offsets":[14830],"raw_metadata_u32":[1]}
+{"text_id":360,"forms":["사용 방법순"],"absolute_byte_offsets":[14837],"raw_metadata_u32":[1]}
+{"text_id":361,"forms":["달리기와 튀어오르기 조작"],"absolute_byte_offsets":[14854],"raw_metadata_u32":[1]}
+{"text_id":362,"forms":["버튼 설정"],"absolute_byte_offsets":[14890],"raw_metadata_u32":[1]}
+{"text_id":363,"forms":["컨트롤러 진동"],"absolute_byte_offsets":[14904],"raw_metadata_u32":[1]}
+{"text_id":364,"forms":[""],"absolute_byte_offsets":[14924],"raw_metadata_u32":[0]}
+{"text_id":365,"forms":["카메라 상하"],"absolute_byte_offsets":[14925],"raw_metadata_u32":[1]}
+{"text_id":366,"forms":["카메라 좌우"],"absolute_byte_offsets":[14942],"raw_metadata_u32":[1]}
+{"text_id":367,"forms":["카메라 속도"],"absolute_byte_offsets":[14959],"raw_metadata_u32":[1]}
+{"text_id":368,"forms":["카메라 자동 조정"],"absolute_byte_offsets":[14976],"raw_metadata_u32":[1]}
+{"text_id":369,"forms":["BGM"],"absolute_byte_offsets":[15000],"raw_metadata_u32":[1]}
+{"text_id":370,"forms":["SE"],"absolute_byte_offsets":[15004],"raw_metadata_u32":[1]}
+{"text_id":371,"forms":["울음소리"],"absolute_byte_offsets":[15007],"raw_metadata_u32":[1]}
+{"text_id":372,"forms":["변경"],"absolute_byte_offsets":[15020],"raw_metadata_u32":[1]}
+{"text_id":373,"forms":["느리게"],"absolute_byte_offsets":[15027],"raw_metadata_u32":[1]}
+{"text_id":374,"forms":["보통"],"absolute_byte_offsets":[15037],"raw_metadata_u32":[1]}
+{"text_id":375,"forms":["빠르게"],"absolute_byte_offsets":[15044],"raw_metadata_u32":[1]}
+{"text_id":376,"forms":["어느 에리어에도 없음"],"absolute_byte_offsets":[15054],"raw_metadata_u32":[1]}
+{"text_id":377,"forms":["미등록 포켓몬 있음"],"absolute_byte_offsets":[15084],"raw_metadata_u32":[1]}
+{"text_id":378,"forms":["<$strsname;0(lstr1,lnum1)>의 포켓몬 등록 상태"],"absolute_byte_offsets":[15111],"raw_metadata_u32":[1]}
+{"text_id":379,"forms":["<$strpname;0(lstr1,lnum1)>의 포켓몬 등록 상태"],"absolute_byte_offsets":[15165],"raw_metadata_u32":[1]}
+{"text_id":380,"forms":["ON"],"absolute_byte_offsets":[15219],"raw_metadata_u32":[1]}
+{"text_id":381,"forms":["OFF"],"absolute_byte_offsets":[15222],"raw_metadata_u32":[1]}
+{"text_id":382,"forms":["노말"],"absolute_byte_offsets":[15226],"raw_metadata_u32":[1]}
+{"text_id":383,"forms":["리버스"],"absolute_byte_offsets":[15233],"raw_metadata_u32":[1]}
+{"text_id":384,"forms":["한다"],"absolute_byte_offsets":[15243],"raw_metadata_u32":[1]}
+{"text_id":385,"forms":["하지 않는다"],"absolute_byte_offsets":[15250],"raw_metadata_u32":[1]}
+{"text_id":386,"forms":[""],"absolute_byte_offsets":[15267],"raw_metadata_u32":[0]}
+{"text_id":387,"forms":[""],"absolute_byte_offsets":[15268],"raw_metadata_u32":[0]}
+{"text_id":388,"forms":["텍스트의 출력 속도를 3단계 중에서 선택할 수 있습니다."],"absolute_byte_offsets":[15269],"raw_metadata_u32":[1]}
+{"text_id":389,"forms":["표시 언어를 선택할 수 있습니다."],"absolute_byte_offsets":[15345],"raw_metadata_u32":[1]}
+{"text_id":390,"forms":[""],"absolute_byte_offsets":[15390],"raw_metadata_u32":[0]}
+{"text_id":391,"forms":["<$keyicon(55)>로 달리기, <$keyicon(3)>로 튀어오르기를 사용합니다."],"absolute_byte_offsets":[15391],"raw_metadata_u32":[1]}
+{"text_id":392,"forms":["버튼 할당을 설정할 수 있습니다."],"absolute_byte_offsets":[15473],"raw_metadata_u32":[1]}
+{"text_id":393,"forms":["컨트롤러를 진동시킬지 선택할 수 있습니다."],"absolute_byte_offsets":[15518],"raw_metadata_u32":[1]}
+{"text_id":394,"forms":["<$keyicon(3)>로 달리기, <$keyicon(55)>로 튀어오르기를 사용합니다."],"absolute_byte_offsets":[15578],"raw_metadata_u32":[1]}
+{"text_id":395,"forms":["카메라의 상하 조작을 어떻게 할지 선택할 수 있습니다."],"absolute_byte_offsets":[15660],"raw_metadata_u32":[1]}
+{"text_id":396,"forms":["카메라의 좌우 조작을 어떻게 할지 선택할 수 있습니다."],"absolute_byte_offsets":[15735],"raw_metadata_u32":[1]}
+{"text_id":397,"forms":["카메라의 조작 속도를 선택할 수 있습니다."],"absolute_byte_offsets":[15810],"raw_metadata_u32":[1]}
+{"text_id":398,"forms":["카메라와 메타몽 사이에 물건 존재 시 자동으로 피할지 선택할 수 있습니다."],"absolute_byte_offsets":[15868],"raw_metadata_u32":[1]}
+{"text_id":399,"forms":[""],"absolute_byte_offsets":[15970],"raw_metadata_u32":[0]}
+{"text_id":400,"forms":["BGM의 음량을 조정할 수 있습니다."],"absolute_byte_offsets":[15971],"raw_metadata_u32":[1]}
+{"text_id":401,"forms":["SE의 음량을 조정할 수 있습니다."],"absolute_byte_offsets":[16016],"raw_metadata_u32":[1]}
+{"text_id":402,"forms":["포켓몬의 울음소리 음량을 조정할 수 있습니다."],"absolute_byte_offsets":[16060],"raw_metadata_u32":[1]}
+{"text_id":403,"forms":["무엇을 신고하겠습니까?"],"absolute_byte_offsets":[16124],"raw_metadata_u32":[1]}
+{"text_id":404,"forms":["신고할 플레이어를 선택해 주십시오."],"absolute_byte_offsets":[16157],"raw_metadata_u32":[1]}
+{"text_id":405,"forms":["신고할 내용을 선택해 주십시오."],"absolute_byte_offsets":[16207],"raw_metadata_u32":[1]}
+{"text_id":406,"forms":["이 내용으로 신고하겠습니까?"],"absolute_byte_offsets":[16251],"raw_metadata_u32":[1]}
+{"text_id":407,"forms":["스테이지(지형/사진 등)"],"absolute_byte_offsets":[16291],"raw_metadata_u32":[1]}
+{"text_id":408,"forms":["플레이어(이름/행동 등)"],"absolute_byte_offsets":[16323],"raw_metadata_u32":[1]}
+{"text_id":409,"forms":["개인 정보/만남 목적"],"absolute_byte_offsets":[16355],"raw_metadata_u32":[1]}
+{"text_id":410,"forms":["폭력적인 내용"],"absolute_byte_offsets":[16383],"raw_metadata_u32":[1]}
+{"text_id":411,"forms":["미풍양속에 반하는 내용"],"absolute_byte_offsets":[16403],"raw_metadata_u32":[1]}
+{"text_id":412,"forms":["타인에 대한 괴롭힘/욕설"],"absolute_byte_offsets":[16436],"raw_metadata_u32":[1]}
+{"text_id":413,"forms":["영리 광고 목적"],"absolute_byte_offsets":[16470],"raw_metadata_u32":[1]}
+{"text_id":414,"forms":["외설적인 내용"],"absolute_byte_offsets":[16491],"raw_metadata_u32":[1]}
+{"text_id":415,"forms":["개조 혹은 버그 사용"],"absolute_byte_offsets":[16511],"raw_metadata_u32":[1]}
+{"text_id":416,"forms":["그 외 부적절한 내용"],"absolute_byte_offsets":[16539],"raw_metadata_u32":[1]}
+{"text_id":417,"forms":["이 신고는 신고하는 상대나 신고자 본인이 아닌<br>운영자인 닌텐도로 보내집니다.<br>신고 내용은 신고 당사자 이외의<br>제삼자에게 공개될 가능성이 있습니다.<br>사전에 양해 부탁드립니다.<br>신고할 필요가 없는 사람이나 콘텐츠에 대해<br>고의로 신고하지 말아 주십시오."],"absolute_byte_offsets":[16567],"raw_metadata_u32":[1]}
+{"text_id":418,"forms":["자세히 설명해 주십시오."],"absolute_byte_offsets":[16930],"raw_metadata_u32":[1]}
+{"text_id":419,"forms":["신고하기"],"absolute_byte_offsets":[16964],"raw_metadata_u32":[1]}
+{"text_id":420,"forms":["확정"],"absolute_byte_offsets":[16977],"raw_metadata_u32":[1]}
+{"text_id":421,"forms":["돌아가기"],"absolute_byte_offsets":[16984],"raw_metadata_u32":[1]}
+{"text_id":422,"forms":["곧 통신이 종료됩니다.<br>조작을 멈춰 주십시오."],"absolute_byte_offsets":[16997],"raw_metadata_u32":[1]}
+{"text_id":423,"forms":[""],"absolute_byte_offsets":[17062],"raw_metadata_u32":[0]}
+{"text_id":424,"forms":["버추얼 모드를 시작합니다..."],"absolute_byte_offsets":[17063],"raw_metadata_u32":[1]}
+{"text_id":425,"forms":["버추얼 모드를 종료합니다..."],"absolute_byte_offsets":[17102],"raw_metadata_u32":[1]}
+{"text_id":426,"forms":["긴줄넘기"],"absolute_byte_offsets":[17141],"raw_metadata_u32":[1]}
+{"text_id":427,"forms":["터치숨바꼭질"],"absolute_byte_offsets":[17154],"raw_metadata_u32":[1]}
+{"text_id":428,"forms":["줄이 발밑에 다가온<br>타이밍에 점프하자."],"absolute_byte_offsets":[17173],"raw_metadata_u32":[1]}
+{"text_id":429,"forms":["술래에게 들키지 말고<br><$cdef(27)>포켓몬센터</color>의 <$cdef(27)>PC</color>를 터치!"],"absolute_byte_offsets":[17230],"raw_metadata_u32":[1]}
+{"text_id":430,"forms":["당신"],"absolute_byte_offsets":[17334],"raw_metadata_u32":[1]}
+{"text_id":431,"forms":["OK!"],"absolute_byte_offsets":[17341],"raw_metadata_u32":[1]}
+{"text_id":432,"forms":["스타트!"],"absolute_byte_offsets":[17345],"raw_metadata_u32":[1]}
+{"text_id":433,"forms":["1위"],"absolute_byte_offsets":[17356],"raw_metadata_u32":[1]}
+{"text_id":434,"forms":["2위"],"absolute_byte_offsets":[17361],"raw_metadata_u32":[1]}
+{"text_id":435,"forms":["3위"],"absolute_byte_offsets":[17366],"raw_metadata_u32":[1]}
+{"text_id":436,"forms":["4위"],"absolute_byte_offsets":[17371],"raw_metadata_u32":[1]}
+{"text_id":437,"forms":["기록"],"absolute_byte_offsets":[17376],"raw_metadata_u32":[1]}
+{"text_id":438,"forms":["<dgt5;0(lnum1)>번"],"absolute_byte_offsets":[17383],"raw_metadata_u32":[1]}
+{"text_id":439,"forms":["신기록!"],"absolute_byte_offsets":[17402],"raw_metadata_u32":[1]}
+{"text_id":440,"forms":[""],"absolute_byte_offsets":[17413],"raw_metadata_u32":[0]}
+{"text_id":441,"forms":["모두가 들킨 횟수"],"absolute_byte_offsets":[17414],"raw_metadata_u32":[1]}
+{"text_id":442,"forms":[""],"absolute_byte_offsets":[17438],"raw_metadata_u32":[0]}
+{"text_id":443,"forms":[""],"absolute_byte_offsets":[17439],"raw_metadata_u32":[0]}
+{"text_id":444,"forms":[""],"absolute_byte_offsets":[17440],"raw_metadata_u32":[0]}
+{"text_id":445,"forms":["<dgt4;0(lnum1)>번"],"absolute_byte_offsets":[17441],"raw_metadata_u32":[1]}
+{"text_id":446,"forms":["숍 데이"],"absolute_byte_offsets":[17460],"raw_metadata_u32":[1]}
+{"text_id":447,"forms":["챌린지 데이"],"absolute_byte_offsets":[17471],"raw_metadata_u32":[1]}
+{"text_id":448,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color> 님이 <$cdef(27)>긴줄넘기</color>를 시작하려 합니다.<br>설문 조사에 대답해 주십시오."],"absolute_byte_offsets":[17488],"raw_metadata_u32":[1]}
+{"text_id":449,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color> 님이 <$cdef(27)>긴줄넘기</color>를 하려 합니다."],"absolute_byte_offsets":[17644],"raw_metadata_u32":[1]}
+{"text_id":450,"forms":["???에 가려 합니다.<br>설문 조사에 대답해 주십시오."],"absolute_byte_offsets":[17750],"raw_metadata_u32":[1]}
+{"text_id":451,"forms":["'예'를 선택한 플레이어만 플레이합니다."],"absolute_byte_offsets":[17819],"raw_metadata_u32":[1]}
+{"text_id":452,"forms":["스탬프 모으기"],"absolute_byte_offsets":[17874],"raw_metadata_u32":[1]}
+{"text_id":453,"forms":["오늘의 스탬프"],"absolute_byte_offsets":[17894],"raw_metadata_u32":[1]}
+{"text_id":454,"forms":["스탬프 찍기!"],"absolute_byte_offsets":[17914],"raw_metadata_u32":[1]}
+{"text_id":455,"forms":["찍을 수 있는 기간"],"absolute_byte_offsets":[17932],"raw_metadata_u32":[1]}
+{"text_id":456,"forms":["교환 기간"],"absolute_byte_offsets":[17957],"raw_metadata_u32":[1]}
+{"text_id":457,"forms":["<timemd;0(lnum1,lnum2)><timemd;1(lnum3,lnum4)>"],"absolute_byte_offsets":[17971],"raw_metadata_u32":[1]}
+{"text_id":458,"forms":["사용할 수 없는 글자가 포함되어 있습니다.<br>내용을 수정해 주십시오."],"absolute_byte_offsets":[18021],"raw_metadata_u32":[1]}
+{"text_id":459,"forms":["조건에 맞는 포켓몬이 없습니다."],"absolute_byte_offsets":[18116],"raw_metadata_u32":[1]}
+{"text_id":460,"forms":["조건에 맞는 서식지가 없습니다."],"absolute_byte_offsets":[18160],"raw_metadata_u32":[1]}
+{"text_id":461,"forms":["<$cdef(27)>추려 내기: 변경 중</color>"],"absolute_byte_offsets":[18204],"raw_metadata_u32":[1]}
+{"text_id":462,"forms":["추려 내기: 기본"],"absolute_byte_offsets":[18249],"raw_metadata_u32":[1]}
+{"text_id":463,"forms":[""],"absolute_byte_offsets":[18271],"raw_metadata_u32":[0]}
+{"text_id":464,"forms":[""],"absolute_byte_offsets":[18272],"raw_metadata_u32":[0]}
+{"text_id":465,"forms":["보금자리 없음"],"absolute_byte_offsets":[18273],"raw_metadata_u32":[1]}
+{"text_id":466,"forms":["<$cdef(27)><$cname;0(lnum1)></color>의 보금자리"],"absolute_byte_offsets":[18293],"raw_metadata_u32":[1]}
+{"text_id":467,"forms":["호스트가 통신을 종료하려 합니다.<br>조작을 멈춰 주십시오."],"absolute_byte_offsets":[18346],"raw_metadata_u32":[1]}
+{"text_id":468,"forms":["곧 통신이 종료됩니다."],"absolute_byte_offsets":[18427],"raw_metadata_u32":[1]}
+{"text_id":469,"forms":["조작을 종료해 주십시오.<br><$cdef(27)><$strpname;0(lstr1,lnum1)></color> 님에게 호스트가 위임됩니다."],"absolute_byte_offsets":[18458],"raw_metadata_u32":[1]}
+{"text_id":470,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color> 님이 <$cdef(27)>꿈섬</color>에 가려 합니다.<br>설문 조사에 대답해 주십시오."],"absolute_byte_offsets":[18581],"raw_metadata_u32":[1]}
+{"text_id":471,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color> 님이 <$cdef(27)>꿈섬</color>에서 돌아가려 합니다.<br>설문 조사에 대답해 주십시오."],"absolute_byte_offsets":[18725],"raw_metadata_u32":[1]}
+{"text_id":472,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color> 님이 <$cdef(27)>터치숨바꼭질</color>을<br>시작하려 합니다. 설문 조사에 대답해 주십시오."],"absolute_byte_offsets":[18878],"raw_metadata_u32":[1]}
+{"text_id":473,"forms":["<$cdef(27)><$stgmyname;0(lnum1)></color>에 가려 합니다.<br>설문 조사에 대답해 주십시오."],"absolute_byte_offsets":[19040],"raw_metadata_u32":[1]}
+{"text_id":474,"forms":["OK"],"absolute_byte_offsets":[19146],"raw_metadata_u32":[1]}
+{"text_id":475,"forms":["필요 수"],"absolute_byte_offsets":[19149],"raw_metadata_u32":[1]}
+{"text_id":476,"forms":["들킨 횟수"],"absolute_byte_offsets":[19160],"raw_metadata_u32":[1]}
+{"text_id":477,"forms":["<dgt5;0(lnum1)>"],"absolute_byte_offsets":[19174],"raw_metadata_u32":[1]}
+{"text_id":478,"forms":["카메라 거리"],"absolute_byte_offsets":[19190],"raw_metadata_u32":[1]}
+{"text_id":479,"forms":["가까이"],"absolute_byte_offsets":[19207],"raw_metadata_u32":[1]}
+{"text_id":480,"forms":["보통"],"absolute_byte_offsets":[19217],"raw_metadata_u32":[1]}
+{"text_id":481,"forms":["멀리"],"absolute_byte_offsets":[19224],"raw_metadata_u32":[1]}
+{"text_id":482,"forms":["카메라와 피사체의 거리를 조정할 수 있습니다."],"absolute_byte_offsets":[19231],"raw_metadata_u32":[1]}
+{"text_id":483,"forms":["부탁하기"],"absolute_byte_offsets":[19295],"raw_metadata_u32":[1]}
+{"text_id":484,"forms":["물감"],"absolute_byte_offsets":[19308],"raw_metadata_u32":[1]}
+{"text_id":485,"forms":[""],"absolute_byte_offsets":[19315],"raw_metadata_u32":[0]}
+{"text_id":486,"forms":["설정할 버튼을 눌러 주십시오."],"absolute_byte_offsets":[19316],"raw_metadata_u32":[1]}
+{"text_id":487,"forms":["다른 플레이어의 대답을 기다리고 있습니다..."],"absolute_byte_offsets":[19357],"raw_metadata_u32":[1]}
+{"text_id":488,"forms":["호스트가 <$cdef(27)><$stgmyname;0(lnum1)></color>에 가려 합니다."],"absolute_byte_offsets":[19419],"raw_metadata_u32":[1]}
+{"text_id":489,"forms":["호스트가 ???에 가려 합니다."],"absolute_byte_offsets":[19494],"raw_metadata_u32":[1]}
+{"text_id":490,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color> 님이 <$cdef(27)>꿈섬</color>에 가려 합니다."],"absolute_byte_offsets":[19532],"raw_metadata_u32":[1]}
+{"text_id":491,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color> 님이 <$cdef(27)>꿈섬</color>에서 돌아가려 합니다."],"absolute_byte_offsets":[19632],"raw_metadata_u32":[1]}
+{"text_id":492,"forms":["'아니요'를 선택한 플레이어는 이동하지 않습니다."],"absolute_byte_offsets":[19741],"raw_metadata_u32":[1]}
+{"text_id":493,"forms":["'아니요'를 선택한 플레이어가 있으면 이동하지 않습니다."],"absolute_byte_offsets":[19809],"raw_metadata_u32":[1]}
+{"text_id":494,"forms":[""],"absolute_byte_offsets":[19887],"raw_metadata_u32":[0]}
+{"text_id":495,"forms":[""],"absolute_byte_offsets":[19888],"raw_metadata_u32":[0]}
+{"text_id":496,"forms":["설문 조사 종료!<br><$stgmyname;0(lnum1)>에 남습니다."],"absolute_byte_offsets":[19889],"raw_metadata_u32":[1]}
+{"text_id":497,"forms":[""],"absolute_byte_offsets":[19953],"raw_metadata_u32":[0]}
+{"text_id":498,"forms":[""],"absolute_byte_offsets":[19954],"raw_metadata_u32":[0]}
+{"text_id":499,"forms":["<$cdef(27)><$strpname;0(lstr1,lnum1)></color> 님이 <$cdef(27)>터치숨바꼭질</color>을 하려 합니다."],"absolute_byte_offsets":[19955],"raw_metadata_u32":[1]}
+{"text_id":500,"forms":["<$icon(lnum1)>예"],"absolute_byte_offsets":[20067],"raw_metadata_u32":[1]}
+{"text_id":501,"forms":["<$icon(lnum1)>아니요"],"absolute_byte_offsets":[20085],"raw_metadata_u32":[1]}
+{"text_id":502,"forms":["그만둔다"],"absolute_byte_offsets":[20109],"raw_metadata_u32":[1]}
+{"text_id":503,"forms":["변경"],"absolute_byte_offsets":[20122],"raw_metadata_u32":[1]}
+{"text_id":504,"forms":["당신"],"absolute_byte_offsets":[20129],"raw_metadata_u32":[1]}
+{"text_id":505,"forms":[""],"absolute_byte_offsets":[20136],"raw_metadata_u32":[0]}
+{"text_id":506,"forms":["통신이 불안정합니다."],"absolute_byte_offsets":[20137],"raw_metadata_u32":[1]}
+{"text_id":507,"forms":["통신이 불안정합니다. 접속 상태를 확인하여 주십시오.<br>이 상태가 계속되면 통신이 종료됩니다."],"absolute_byte_offsets":[20167],"raw_metadata_u32":[1]}
+{"text_id":508,"forms":["사용하기/대화하기 등"],"absolute_byte_offsets":[20298],"raw_metadata_u32":[1]}
+{"text_id":509,"forms":["(길게 눌러서) 달리기"],"absolute_byte_offsets":[20328],"raw_metadata_u32":[1]}
+{"text_id":510,"forms":["(짧게 눌러서) 집어넣기"],"absolute_byte_offsets":[20357],"raw_metadata_u32":[1]}
+{"text_id":511,"forms":["가방 열기"],"absolute_byte_offsets":[20389],"raw_metadata_u32":[1]}
+{"text_id":512,"forms":["(짧게 눌러서) 줍기"],"absolute_byte_offsets":[20403],"raw_metadata_u32":[1]}
+{"text_id":513,"forms":["(길게 눌러서) 빨아들이기"],"absolute_byte_offsets":[20429],"raw_metadata_u32":[1]}
+{"text_id":514,"forms":["동행<br>(길게 눌러서) 동행 종료"],"absolute_byte_offsets":[20464],"raw_metadata_u32":[1]}
+{"text_id":515,"forms":["감정 표현/채팅"],"absolute_byte_offsets":[20507],"raw_metadata_u32":[1]}
+{"text_id":516,"forms":["기술 전환: 좌"],"absolute_byte_offsets":[20528],"raw_metadata_u32":[1]}
+{"text_id":517,"forms":["기술 전환: 우"],"absolute_byte_offsets":[20547],"raw_metadata_u32":[1]}
+{"text_id":518,"forms":["기술 설정"],"absolute_byte_offsets":[20566],"raw_metadata_u32":[1]}
+{"text_id":519,"forms":["튀어오르기"],"absolute_byte_offsets":[20580],"raw_metadata_u32":[1]}
+{"text_id":520,"forms":["평행 이동"],"absolute_byte_offsets":[20596],"raw_metadata_u32":[1]}
+{"text_id":521,"forms":["기술 사용"],"absolute_byte_offsets":[20610],"raw_metadata_u32":[1]}
+{"text_id":522,"forms":["동작 대상 전환"],"absolute_byte_offsets":[20624],"raw_metadata_u32":[1]}
+{"text_id":523,"forms":[""],"absolute_byte_offsets":[20645],"raw_metadata_u32":[0]}
+{"text_id":524,"forms":["카메라 실행"],"absolute_byte_offsets":[20646],"raw_metadata_u32":[1]}
+{"text_id":525,"forms":["파도타기"],"absolute_byte_offsets":[20663],"raw_metadata_u32":[1]}
+{"text_id":526,"forms":["활공"],"absolute_byte_offsets":[20676],"raw_metadata_u32":[1]}
+{"text_id":527,"forms":[""],"absolute_byte_offsets":[20683],"raw_metadata_u32":[0]}
+{"text_id":528,"forms":[""],"absolute_byte_offsets":[20684],"raw_metadata_u32":[0]}
+{"text_id":529,"forms":["토해내기 높이 조정: 상"],"absolute_byte_offsets":[20685],"raw_metadata_u32":[1]}
+{"text_id":530,"forms":["토해내기 높이 조정: 하"],"absolute_byte_offsets":[20717],"raw_metadata_u32":[1]}
+{"text_id":531,"forms":["토해내기/손에 들기"],"absolute_byte_offsets":[20749],"raw_metadata_u32":[1]}
+{"text_id":532,"forms":["상자 등에 넣기"],"absolute_byte_offsets":[20776],"raw_metadata_u32":[1]}
+{"text_id":533,"forms":["(짧게 눌러서) 교체"],"absolute_byte_offsets":[20797],"raw_metadata_u32":[1]}
+{"text_id":534,"forms":["(길게 눌러서) 정돈"],"absolute_byte_offsets":[20823],"raw_metadata_u32":[1]}
+{"text_id":535,"forms":["전부 이동"],"absolute_byte_offsets":[20849],"raw_metadata_u32":[1]}
+{"text_id":536,"forms":["절반 이동"],"absolute_byte_offsets":[20863],"raw_metadata_u32":[1]}
+{"text_id":537,"forms":["보조 가방 표시 전환"],"absolute_byte_offsets":[20877],"raw_metadata_u32":[1]}
+{"text_id":538,"forms":["설명"],"absolute_byte_offsets":[20905],"raw_metadata_u32":[1]}
+{"text_id":539,"forms":["버리기"],"absolute_byte_offsets":[20912],"raw_metadata_u32":[1]}
+{"text_id":540,"forms":["<dgt3;0(lnum1)>"],"absolute_byte_offsets":[20922],"raw_metadata_u32":[1]}
+{"text_id":541,"forms":["/<dgt3;0(lnum1)>"],"absolute_byte_offsets":[20938],"raw_metadata_u32":[1]}
+{"text_id":542,"forms":["메인 메뉴"],"absolute_byte_offsets":[20955],"raw_metadata_u32":[1]}
+{"text_id":543,"forms":["돌아가기"],"absolute_byte_offsets":[20969],"raw_metadata_u32":[1]}
+{"text_id":544,"forms":["페이지 전환"],"absolute_byte_offsets":[20982],"raw_metadata_u32":[1]}
+{"text_id":545,"forms":[""],"absolute_byte_offsets":[20999],"raw_metadata_u32":[0]}
+{"text_id":546,"forms":["보조 가방 조작: 우"],"absolute_byte_offsets":[21000],"raw_metadata_u32":[1]}
+{"text_id":547,"forms":["보조 가방 조작: 좌"],"absolute_byte_offsets":[21026],"raw_metadata_u32":[1]}
+{"text_id":548,"forms":["카메라 자동 추적"],"absolute_byte_offsets":[21052],"raw_metadata_u32":[1]}
+{"text_id":549,"forms":["카메라가 메타몽을 자동으로 따라가게 할지 선택할 수 있습니다."],"absolute_byte_offsets":[21076],"raw_metadata_u32":[1]}
+{"text_id":550,"forms":["찾는 중..."],"absolute_byte_offsets":[21163],"raw_metadata_u32":[1]}
+{"text_id":551,"forms":["다 함께 챌린지"],"absolute_byte_offsets":[21177],"raw_metadata_u32":[1]}
+{"text_id":552,"forms":["스페셜 챌린지"],"absolute_byte_offsets":[21198],"raw_metadata_u32":[1]}
+{"text_id":553,"forms":["모든 포켓몬 등록 완료"],"absolute_byte_offsets":[21218],"raw_metadata_u32":[1]}
+{"text_id":554,"forms":["등록 완료"],"absolute_byte_offsets":[21249],"raw_metadata_u32":[1]}
+{"text_id":555,"forms":["정보 있음"],"absolute_byte_offsets":[21263],"raw_metadata_u32":[1]}
+{"text_id":556,"forms":["정보 없음"],"absolute_byte_offsets":[21277],"raw_metadata_u32":[1]}
+{"text_id":557,"forms":["환경 레벨 합계가 <dgt2;0(lnum1)> 이상일 때 상품 추가"],"absolute_byte_offsets":[21291],"raw_metadata_u32":[1]}
+{"text_id":558,"forms":["<$cdef(224)>앞으로 <dgt2;0(lnum2)> 레벨</color>(현재 환경 레벨 합계: <dgt2;1(lnum1)>)"],"absolute_byte_offsets":[21359],"raw_metadata_u32":[1]}
+{"text_id":559,"forms":[""],"absolute_byte_offsets":[21458],"raw_metadata_u32":[0]}
+{"text_id":560,"forms":["<timehm;0(lnum1,lnum2)>에 완료될 예정입니다."],"absolute_byte_offsets":[21459],"raw_metadata_u32":[1]}
+{"text_id":561,"forms":[""],"absolute_byte_offsets":[21513],"raw_metadata_u32":[0]}
+{"text_id":562,"forms":["내일 완료될 예정입니다."],"absolute_byte_offsets":[21514],"raw_metadata_u32":[1]}
+{"text_id":563,"forms":["<dgt6;0(lnum1)>"],"absolute_byte_offsets":[21548],"raw_metadata_u32":[1]}
+{"text_id":564,"forms":["클라우드섬 삭제"],"absolute_byte_offsets":[21564],"raw_metadata_u32":[1]}
+{"text_id":565,"forms":["버추얼 모드로 공개"],"absolute_byte_offsets":[21587],"raw_metadata_u32":[1]}
+{"text_id":566,"forms":["삭제"],"absolute_byte_offsets":[21614],"raw_metadata_u32":[1]}
+{"text_id":567,"forms":["클라우드섬을 삭제합니다. 삭제하면 해당 섬에서는 더 이상 놀 수 없습니다."],"absolute_byte_offsets":[21621],"raw_metadata_u32":[1]}
+{"text_id":568,"forms":["다른 플레이어가 버추얼 모드로 방문할 수 있게 할지 선택할 수 있습니다."],"absolute_byte_offsets":[21723],"raw_metadata_u32":[1]}
+{"text_id":569,"forms":[""],"absolute_byte_offsets":[21822],"raw_metadata_u32":[0]}
+{"text_id":570,"forms":["건물 내에서 카메라 거리"],"absolute_byte_offsets":[21823],"raw_metadata_u32":[1]}
+{"text_id":571,"forms":["보금자리 범위 보기"],"absolute_byte_offsets":[21857],"raw_metadata_u32":[1]}
+{"text_id":572,"forms":["환경 레벨 <dgt2;0(lnum1)> 이상일 때 상품 추가"],"absolute_byte_offsets":[21884],"raw_metadata_u32":[1]}
+{"text_id":573,"forms":["<$cdef(224)>앞으로 <dgt2;0(lnum2)> 레벨</color>(현재 환경 레벨: <dgt2;1(lnum1)>)"],"absolute_byte_offsets":[21942],"raw_metadata_u32":[1]}
+{"text_id":574,"forms":["신고 이유"],"absolute_byte_offsets":[22034],"raw_metadata_u32":[1]}
+{"text_id":575,"forms":["・"],"absolute_byte_offsets":[22048],"raw_metadata_u32":[1]}
+{"text_id":576,"forms":[""],"absolute_byte_offsets":[22052],"raw_metadata_u32":[0]}
+{"text_id":577,"forms":["<dgt3;0(lnum1)>"],"absolute_byte_offsets":[22053],"raw_metadata_u32":[1]}
+{"text_id":578,"forms":["/<dgt3;0(lnum1)>"],"absolute_byte_offsets":[22069],"raw_metadata_u32":[1]}
+{"text_id":579,"forms":["<string;0(lstr1)>"],"absolute_byte_offsets":[22086],"raw_metadata_u32":[1]}
+{"text_id":580,"forms":["이 섬의 설정을 변경하겠습니까?"],"absolute_byte_offsets":[22104],"raw_metadata_u32":[1]}
+{"text_id":581,"forms":["이 섬을 덮어쓰고 복원하겠습니까?"],"absolute_byte_offsets":[22148],"raw_metadata_u32":[1]}
+{"text_id":582,"forms":["이 섬을 삭제하겠습니까?"],"absolute_byte_offsets":[22195],"raw_metadata_u32":[1]}
+{"text_id":583,"forms":["∞"],"absolute_byte_offsets":[22229],"raw_metadata_u32":[1]}
+{"text_id":584,"forms":["습득 완료"],"absolute_byte_offsets":[22233],"raw_metadata_u32":[1]}
+{"text_id":585,"forms":["×<dgt2;0(lnum1)>"],"absolute_byte_offsets":[22247],"raw_metadata_u32":[1]}
+{"text_id":586,"forms":["<$iname;0(lnum1)> <dgt2;1(lnum2)>개 세트"],"absolute_byte_offsets":[22265],"raw_metadata_u32":[1]}
+{"text_id":587,"forms":["ver.<string;0(lstr1)>"],"absolute_byte_offsets":[22309],"raw_metadata_u32":[1]}
+{"text_id":588,"forms":["플레이어의 이름"],"absolute_byte_offsets":[22331],"raw_metadata_u32":[1]}
+{"text_id":589,"forms":["플레이어의 행동"],"absolute_byte_offsets":[22354],"raw_metadata_u32":[1]}
+{"text_id":590,"forms":["에리어의 이름"],"absolute_byte_offsets":[22377],"raw_metadata_u32":[1]}
+{"text_id":591,"forms":["에리어의 지형 등"],"absolute_byte_offsets":[22397],"raw_metadata_u32":[1]}
+{"text_id":592,"forms":["오늘 한정!"],"absolute_byte_offsets":[22421],"raw_metadata_u32":[1]}
+{"text_id":593,"forms":[""],"absolute_byte_offsets":[22436],"raw_metadata_u32":[0]}
+{"text_id":594,"forms":["백업 데이터를 복원하겠습니까?"],"absolute_byte_offsets":[22437],"raw_metadata_u32":[1]}
+{"text_id":595,"forms":["다시 찍을 스탬프를 선택해 주십시오."],"absolute_byte_offsets":[22480],"raw_metadata_u32":[1]}
+{"text_id":596,"forms":["이상한 소포"],"absolute_byte_offsets":[22531],"raw_metadata_u32":[1]}
+{"text_id":597,"forms":["발주한 상품"],"absolute_byte_offsets":[22548],"raw_metadata_u32":[1]}
+{"text_id":598,"forms":["같이 논 포켓몬이 준 선물"],"absolute_byte_offsets":[22565],"raw_metadata_u32":[1]}
+{"text_id":599,"forms":["무엇을 받겠습니까?"],"absolute_byte_offsets":[22600],"raw_metadata_u32":[1]}
+{"text_id":600,"forms":["인터넷으로 받는다"],"absolute_byte_offsets":[22627],"raw_metadata_u32":[1]}
+{"text_id":601,"forms":["시리얼 코드/암호로 받는다"],"absolute_byte_offsets":[22653],"raw_metadata_u32":[1]}
+{"text_id":602,"forms":["소포를 확인한다"],"absolute_byte_offsets":[22690],"raw_metadata_u32":[1]}
+{"text_id":603,"forms":["주의"],"absolute_byte_offsets":[22713],"raw_metadata_u32":[1]}
+{"text_id":604,"forms":["시리얼 코드 혹은 암호로<br>소포를 받고 있을 때<br>본체의 전원이 꺼지거나<br>통신할 수 없게 되면<br>그 시리얼 코드나 암호로<br>다시 받을 수 없게 될 수 있습니다.<br>본체 배터리의 잔량과<br>통신에 문제가 없는지<br>확인해 주십시오."],"absolute_byte_offsets":[22720],"raw_metadata_u32":[1]}
+{"text_id":605,"forms":["시리얼 코드 혹은 암호가 틀립니다.<br>가지고 계신 시리얼 코드 혹은<br>암호를 확인해 주십시오.<br>10회 연속해서 틀리면<br>당분간 입력할 수 없게 되오니<br>주의해 주십시오."],"absolute_byte_offsets":[23032],"raw_metadata_u32":[1]}
+{"text_id":606,"forms":["시리얼 코드 혹은 암호를<br>연속해서 틀렸으므로<br>당분간 입력할 수 없습니다.<br>잠시 시간을 두고 시도해 주십시오."],"absolute_byte_offsets":[23264],"raw_metadata_u32":[1]}
+{"text_id":607,"forms":["알겠습니다"],"absolute_byte_offsets":[23422],"raw_metadata_u32":[1]}
+{"text_id":608,"forms":["수령 이력"],"absolute_byte_offsets":[23438],"raw_metadata_u32":[1]}
+{"text_id":609,"forms":["<$cdef(27)><$ifull;0(lnum1)></color> <dgt2;1(lnum2)>개"],"absolute_byte_offsets":[23452],"raw_metadata_u32":[1]}
+{"text_id":610,"forms":["<moneyint;0(lnum1)> 라이프 코인"],"absolute_byte_offsets":[23508],"raw_metadata_u32":[1]}
+{"text_id":611,"forms":["위 선물을 수령했습니다!"],"absolute_byte_offsets":[23545],"raw_metadata_u32":[1]}
+{"text_id":612,"forms":["수령 이력이 없습니다."],"absolute_byte_offsets":[23579],"raw_metadata_u32":[1]}
+{"text_id":613,"forms":[""],"absolute_byte_offsets":[23610],"raw_metadata_u32":[0]}
+{"text_id":614,"forms":["불명"],"absolute_byte_offsets":[23611],"raw_metadata_u32":[1]}
+{"text_id":615,"forms":["암호 표시"],"absolute_byte_offsets":[23618],"raw_metadata_u32":[1]}
+{"text_id":616,"forms":["통신 중에 암호를 표시할지 선택할 수 있습니다."],"absolute_byte_offsets":[23632],"raw_metadata_u32":[1]}
+{"text_id":617,"forms":["추려 내기"],"absolute_byte_offsets":[23697],"raw_metadata_u32":[1]}
+{"text_id":618,"forms":["등록 완료"],"absolute_byte_offsets":[23711],"raw_metadata_u32":[1]}
+{"text_id":619,"forms":["<$hatname;0(lnum1)><ko(2)> 만드는 힌트"],"absolute_byte_offsets":[23725],"raw_metadata_u32":[1]}
+{"text_id":620,"forms":["입력한 암호의<br>저장 허가"],"absolute_byte_offsets":[23769],"raw_metadata_u32":[1]}
+{"text_id":621,"forms":["당신의 암호를 다른 플레이어가 자동으로 저장할지 선택할 수 있습니다."],"absolute_byte_offsets":[23806],"raw_metadata_u32":[1]}
+{"text_id":622,"forms":["이 종류의 아이템이라면<br>뭐든지 괜찮습니다."],"absolute_byte_offsets":[23903],"raw_metadata_u32":[1]}
+{"text_id":623,"forms":["함께 놀겠습니까?"],"absolute_byte_offsets":[23966],"raw_metadata_u32":[1]}
+{"text_id":624,"forms":["함께 가겠습니까?"],"absolute_byte_offsets":[23990],"raw_metadata_u32":[1]}
+{"text_id":625,"forms":["함께 가겠습니까? ※본 적 없는 에리어입니다."],"absolute_byte_offsets":[24014],"raw_metadata_u32":[1]}
+{"text_id":626,"forms":["함께 돌아가겠습니까?"],"absolute_byte_offsets":[24076],"raw_metadata_u32":[1]}
+{"text_id":627,"forms":["버튼이 중복됩니다."],"absolute_byte_offsets":[24106],"raw_metadata_u32":[1]}
+{"text_id":628,"forms":["버추얼 모드<br>허가"],"absolute_byte_offsets":[24133],"raw_metadata_u32":[1]}
+{"text_id":629,"forms":["다른 플레이어가 버추얼 모드로 플레이한 내용은 저장되지 않습니다."],"absolute_byte_offsets":[24160],"raw_metadata_u32":[1]}
+{"text_id":630,"forms":["이 에리어에 있음"],"absolute_byte_offsets":[24253],"raw_metadata_u32":[1]}
+{"text_id":631,"forms":["이 에리어에 없음"],"absolute_byte_offsets":[24277],"raw_metadata_u32":[1]}
+{"text_id":632,"forms":["합계"],"absolute_byte_offsets":[24301],"raw_metadata_u32":[1]}
+{"text_id":633,"forms":["이 에리어에 있음"],"absolute_byte_offsets":[24308],"raw_metadata_u32":[1]}
+{"text_id":634,"forms":["이 에리어에 없음"],"absolute_byte_offsets":[24332],"raw_metadata_u32":[1]}
+{"text_id":635,"forms":["달리기(전환)"],"absolute_byte_offsets":[24356],"raw_metadata_u32":[1]}
+{"text_id":636,"forms":["<$pkname;0(lnum1)>(<$pkform;1(lnum1)>)"],"absolute_byte_offsets":[24374],"raw_metadata_u32":[1]}
+{"text_id":637,"forms":["감정 표현 '<$emotename;0(lnum1)>'"],"absolute_byte_offsets":[24413],"raw_metadata_u32":[1]}
+{"text_id":638,"forms":["<$cdef(27)><$ifull;0(lnum1)></color>의 레시피"],"absolute_byte_offsets":[24451],"raw_metadata_u32":[1]}
+{"text_id":639,"forms":["<$cdef(27)><$ifull;0(lnum1)></color>"],"absolute_byte_offsets":[24501],"raw_metadata_u32":[1]}
+{"text_id":640,"forms":["<$coordname;0(lnum1)>"],"absolute_byte_offsets":[24538],"raw_metadata_u32":[1]}
+{"text_id":641,"forms":["헤어스타일 '<$hairname;0(lnum1)>'"],"absolute_byte_offsets":[24560],"raw_metadata_u32":[1]}
+{"text_id":642,"forms":["받을 소포를 선택해 주십시오."],"absolute_byte_offsets":[24599],"raw_metadata_u32":[1]}
+{"text_id":643,"forms":["그대로"],"absolute_byte_offsets":[24640],"raw_metadata_u32":[1]}
+{"text_id":644,"forms":["교체"],"absolute_byte_offsets":[24650],"raw_metadata_u32":[1]}
+{"text_id":645,"forms":["기술의<br>링 메뉴 조작"],"absolute_byte_offsets":[24657],"raw_metadata_u32":[1]}
+{"text_id":646,"forms":["<$keyicon(7)>로 결정"],"absolute_byte_offsets":[24688],"raw_metadata_u32":[1]}
+{"text_id":647,"forms":["놓아서 결정"],"absolute_byte_offsets":[24712],"raw_metadata_u32":[1]}
+{"text_id":648,"forms":["버튼을 놓아도 <$keyicon(7)>로 결정할 때까지 메뉴가 닫히지 않습니다."],"absolute_byte_offsets":[24729],"raw_metadata_u32":[1]}
+{"text_id":649,"forms":["버튼을 놓으면 메뉴가 닫히며, 선택한 내용으로 결정됩니다."],"absolute_byte_offsets":[24820],"raw_metadata_u32":[1]}
+{"text_id":650,"forms":["의사소통의<br>링 메뉴 조작"],"absolute_byte_offsets":[24901],"raw_metadata_u32":[1]}
+{"text_id":651,"forms":["<timeymdhmtz;0(lnum1,lnum2,lnum3,lnum4,lnum5,lnum6)>"],"absolute_byte_offsets":[24938],"raw_metadata_u32":[1]}
+{"text_id":652,"forms":[""],"absolute_byte_offsets":[24991],"raw_metadata_u32":[0]}
+{"text_id":653,"forms":["대회 베스트"],"absolute_byte_offsets":[24992],"raw_metadata_u32":[9]}
+{"text_id":654,"forms":["업로드 중......"],"absolute_byte_offsets":[25009],"raw_metadata_u32":[1]}
+{"text_id":655,"forms":["다운로드 중......"],"absolute_byte_offsets":[25029],"raw_metadata_u32":[1]}
+{"text_id":656,"forms":["<pernum;0(lnum1)>"],"absolute_byte_offsets":[25052],"raw_metadata_u32":[1]}
+{"text_id":657,"forms":["<timerms;0(lnum1,lnum2)>"],"absolute_byte_offsets":[25070],"raw_metadata_u32":[9]}
+{"text_id":658,"forms":["<timerms;0(lnum1,lnum2)>"],"absolute_byte_offsets":[25095],"raw_metadata_u32":[9]}
+{"text_id":659,"forms":[""],"absolute_byte_offsets":[25120],"raw_metadata_u32":[0]}
+{"text_id":660,"forms":["<$attrtagtxt;0(lnum1)>"],"absolute_byte_offsets":[25121],"raw_metadata_u32":[1]}
+{"text_id":661,"forms":["통신 멤버"],"absolute_byte_offsets":[25144],"raw_metadata_u32":[1]}
+{"text_id":662,"forms":["재료"],"absolute_byte_offsets":[25158],"raw_metadata_u32":[1]}
+{"text_id":663,"forms":["보고 가능!"],"absolute_byte_offsets":[25165],"raw_metadata_u32":[1]}
+{"text_id":664,"forms":["<$bname;0(lnum1)>"],"absolute_byte_offsets":[25180],"raw_metadata_u32":[1]}
+{"text_id":665,"forms":["<$bname;0(lnum1)>"],"absolute_byte_offsets":[25198],"raw_metadata_u32":[1]}
+{"text_id":666,"forms":["<$bname;0(lnum1)>"],"absolute_byte_offsets":[25216],"raw_metadata_u32":[1]}
+{"text_id":667,"forms":["<$coordname;0(lnum1)>"],"absolute_byte_offsets":[25234],"raw_metadata_u32":[1]}
+{"text_id":668,"forms":["<$hairname;0(lnum1)>"],"absolute_byte_offsets":[25256],"raw_metadata_u32":[1]}
+{"text_id":669,"forms":["<$bagname;0(lnum1)>"],"absolute_byte_offsets":[25277],"raw_metadata_u32":[1]}
+{"text_id":670,"forms":["<$hwearname;0(lnum1)>"],"absolute_byte_offsets":[25297],"raw_metadata_u32":[1]}
+{"text_id":671,"forms":["<$lbodyname;0(lnum1)>"],"absolute_byte_offsets":[25319],"raw_metadata_u32":[1]}
+{"text_id":672,"forms":["<$shoesname;0(lnum1)>"],"absolute_byte_offsets":[25341],"raw_metadata_u32":[1]}
+{"text_id":673,"forms":["<$ubodyname;0(lnum1)>"],"absolute_byte_offsets":[25363],"raw_metadata_u32":[1]}
+{"text_id":674,"forms":["마우스 조작 모드"],"absolute_byte_offsets":[25385],"raw_metadata_u32":[1]}
+{"text_id":675,"forms":["Joy-Con 2의 마우스 조작이 가능하도록 마우스 기능을 활성화합니다."],"absolute_byte_offsets":[25409],"raw_metadata_u32":[1]}
+{"text_id":676,"forms":["관리인이 통신을 종료하려 합니다.<br>조작을 멈춰 주십시오."],"absolute_byte_offsets":[25498],"raw_metadata_u32":[1]}
+{"text_id":677,"forms":[""],"absolute_byte_offsets":[25579],"raw_metadata_u32":[0]}
+{"text_id":678,"forms":[""],"absolute_byte_offsets":[25580],"raw_metadata_u32":[0]}
+{"text_id":679,"forms":[""],"absolute_byte_offsets":[25581],"raw_metadata_u32":[0]}
+{"text_id":680,"forms":[""],"absolute_byte_offsets":[25582],"raw_metadata_u32":[0]}
+{"text_id":681,"forms":[""],"absolute_byte_offsets":[25583],"raw_metadata_u32":[0]}
+{"text_id":682,"forms":["기술의 링 메뉴<br>조작 중의 이동"],"absolute_byte_offsets":[25584],"raw_metadata_u32":[10]}
+{"text_id":683,"forms":["불가능"],"absolute_byte_offsets":[25629],"raw_metadata_u32":[10]}
+{"text_id":684,"forms":["가능"],"absolute_byte_offsets":[25639],"raw_metadata_u32":[10]}
+{"text_id":685,"forms":["기술의 링 메뉴 조작을 <$keyicon(194)>과 <$keyicon(195)>으로 할 수 있습니다."],"absolute_byte_offsets":[25646],"raw_metadata_u32":[10]}
+{"text_id":686,"forms":["기술의 링 메뉴 조작을 <$keyicon(195)>으로만 합니다."],"absolute_byte_offsets":[25740],"raw_metadata_u32":[10]}
+{"text_id":687,"forms":["센터 마크 표시"],"absolute_byte_offsets":[25807],"raw_metadata_u32":[10]}
+{"text_id":688,"forms":["십자"],"absolute_byte_offsets":[25828],"raw_metadata_u32":[10]}
+{"text_id":689,"forms":["하지 않는다"],"absolute_byte_offsets":[25835],"raw_metadata_u32":[10]}
+{"text_id":690,"forms":["멀미 방지를 위해 화면 중앙에 마크를 표시합니다."],"absolute_byte_offsets":[25852],"raw_metadata_u32":[10]}
+{"text_id":691,"forms":["제<dgt1;0(lnum1)>탄"],"absolute_byte_offsets":[25920],"raw_metadata_u32":[18]}
+{"text_id":692,"forms":["닌텐도 e숍으로 이동한다"],"absolute_byte_offsets":[25942],"raw_metadata_u32":[18]}
+{"text_id":693,"forms":["아이템을 확인한다"],"absolute_byte_offsets":[25976],"raw_metadata_u32":[18]}
+{"text_id":694,"forms":["닌텐도 e숍에서 추가 콘텐츠를 확인합니다."],"absolute_byte_offsets":[26002],"raw_metadata_u32":[18]}
+{"text_id":695,"forms":["추가 콘텐츠를 구입하면 받을 수 있는 아이템을 확인합니다."],"absolute_byte_offsets":[26060],"raw_metadata_u32":[18]}
+{"text_id":696,"forms":["추가 콘텐츠 제<dgt1;0(lnum1)>탄입니다."],"absolute_byte_offsets":[26141],"raw_metadata_u32":[18]}
+{"text_id":697,"forms":["<$cdef(27)><$ifull;0(lnum1)></color> <dgt2;1(lnum2)>개"],"absolute_byte_offsets":[26190],"raw_metadata_u32":[18]}
+{"text_id":698,"forms":["감정 표현 '<$emotename;0(lnum1)>'"],"absolute_byte_offsets":[26246],"raw_metadata_u32":[18]}
+{"text_id":699,"forms":["<$cdef(27)><$ifull;0(lnum1)></color>의 레시피"],"absolute_byte_offsets":[26284],"raw_metadata_u32":[18]}
+{"text_id":700,"forms":["<$cdef(27)><$ifull;0(lnum1)></color>"],"absolute_byte_offsets":[26334],"raw_metadata_u32":[18]}
+{"text_id":701,"forms":["<$coordname;0(lnum1)>"],"absolute_byte_offsets":[26371],"raw_metadata_u32":[18]}
+{"text_id":702,"forms":["헤어스타일 '<$hairname;0(lnum1)>'"],"absolute_byte_offsets":[26393],"raw_metadata_u32":[18]}
+{"text_id":703,"forms":["아래 아이템을 받을 수 있습니다."],"absolute_byte_offsets":[26432],"raw_metadata_u32":[18]}
+{"text_id":704,"forms":["아래 아이템을 받았습니다."],"absolute_byte_offsets":[26477],"raw_metadata_u32":[18]}
+{"text_id":705,"forms":["<timeymdhmtz;0(lnum1,lnum2,lnum3,lnum4,lnum5,lnum6)>"],"absolute_byte_offsets":[26514],"raw_metadata_u32":[18]}
+{"text_id":706,"forms":["추가 콘텐츠"],"absolute_byte_offsets":[26567],"raw_metadata_u32":[10]}
+{"text_id":707,"forms":["도트"],"absolute_byte_offsets":[26584],"raw_metadata_u32":[10]}
+{"text_id":708,"forms":["전자부유를<br>그만둘 때의 확인"],"absolute_byte_offsets":[26591],"raw_metadata_u32":[10]}
+{"text_id":709,"forms":["한다"],"absolute_byte_offsets":[26634],"raw_metadata_u32":[10]}
+{"text_id":710,"forms":["하지 않는다"],"absolute_byte_offsets":[26641],"raw_metadata_u32":[10]}
+{"text_id":711,"forms":["<$sklname(13)> 변신을 그만둘 때 확인할지 선택할 수 있습니다."],"absolute_byte_offsets":[26658],"raw_metadata_u32":[10]}
+{"text_id":712,"forms":["외곽선 표시"],"absolute_byte_offsets":[26738],"raw_metadata_u32":[10]}
+{"text_id":713,"forms":["하지 않는다"],"absolute_byte_offsets":[26755],"raw_metadata_u32":[10]}
+{"text_id":714,"forms":["네모"],"absolute_byte_offsets":[26772],"raw_metadata_u32":[10]}
+{"text_id":715,"forms":["괄호"],"absolute_byte_offsets":[26779],"raw_metadata_u32":[10]}
+{"text_id":716,"forms":["멀미 방지를 위해 외곽선을 표시합니다."],"absolute_byte_offsets":[26786],"raw_metadata_u32":[10]}
+{"text_id":717,"forms":[""],"absolute_byte_offsets":[26840],"raw_metadata_u32":[0]}
+{"text_id":718,"forms":[""],"absolute_byte_offsets":[26841],"raw_metadata_u32":[0]}
+{"text_id":719,"forms":[""],"absolute_byte_offsets":[26842],"raw_metadata_u32":[0]}
+{"text_id":720,"forms":[""],"absolute_byte_offsets":[26843],"raw_metadata_u32":[0]}
+{"text_id":721,"forms":[""],"absolute_byte_offsets":[26844],"raw_metadata_u32":[0]}
+{"text_id":722,"forms":[""],"absolute_byte_offsets":[26845],"raw_metadata_u32":[0]}
+{"text_id":723,"forms":[""],"absolute_byte_offsets":[26846],"raw_metadata_u32":[0]}
+{"text_id":724,"forms":[""],"absolute_byte_offsets":[26847],"raw_metadata_u32":[0]}
+{"text_id":725,"forms":[""],"absolute_byte_offsets":[26848],"raw_metadata_u32":[0]}
+{"text_id":726,"forms":[""],"absolute_byte_offsets":[26849],"raw_metadata_u32":[0]}
+{"text_id":727,"forms":[""],"absolute_byte_offsets":[26850],"raw_metadata_u32":[0]}
+{"text_id":728,"forms":[""],"absolute_byte_offsets":[26851],"raw_metadata_u32":[0]}
+{"text_id":729,"forms":[""],"absolute_byte_offsets":[26852],"raw_metadata_u32":[0]}
+{"text_id":730,"forms":[""],"absolute_byte_offsets":[26853],"raw_metadata_u32":[0]}
+{"text_id":731,"forms":[""],"absolute_byte_offsets":[26854],"raw_metadata_u32":[0]}
+{"text_id":732,"forms":[""],"absolute_byte_offsets":[26855],"raw_metadata_u32":[0]}
+{"text_id":733,"forms":[""],"absolute_byte_offsets":[26856],"raw_metadata_u32":[0]}
+{"text_id":734,"forms":[""],"absolute_byte_offsets":[26857],"raw_metadata_u32":[0]}
+{"text_id":735,"forms":[""],"absolute_byte_offsets":[26858],"raw_metadata_u32":[0]}
+{"text_id":736,"forms":[""],"absolute_byte_offsets":[26859],"raw_metadata_u32":[0]}
+{"text_id":737,"forms":[""],"absolute_byte_offsets":[26860],"raw_metadata_u32":[0]}
+{"text_id":738,"forms":[""],"absolute_byte_offsets":[26861],"raw_metadata_u32":[0]}
+{"text_id":739,"forms":[""],"absolute_byte_offsets":[26862],"raw_metadata_u32":[0]}
+{"text_id":740,"forms":[""],"absolute_byte_offsets":[26863],"raw_metadata_u32":[0]}
+{"text_id":741,"forms":[""],"absolute_byte_offsets":[26864],"raw_metadata_u32":[0]}
+{"text_id":742,"forms":[""],"absolute_byte_offsets":[26865],"raw_metadata_u32":[0]}
+{"text_id":743,"forms":[""],"absolute_byte_offsets":[26866],"raw_metadata_u32":[0]}
+{"text_id":744,"forms":[""],"absolute_byte_offsets":[26867],"raw_metadata_u32":[0]}
+{"text_id":745,"forms":[""],"absolute_byte_offsets":[26868],"raw_metadata_u32":[0]}
+{"text_id":746,"forms":[""],"absolute_byte_offsets":[26869],"raw_metadata_u32":[0]}
+{"text_id":747,"forms":[""],"absolute_byte_offsets":[26870],"raw_metadata_u32":[0]}
+{"text_id":748,"forms":[""],"absolute_byte_offsets":[26871],"raw_metadata_u32":[0]}
+{"text_id":749,"forms":[""],"absolute_byte_offsets":[26872],"raw_metadata_u32":[0]}
+{"text_id":750,"forms":[""],"absolute_byte_offsets":[26873],"raw_metadata_u32":[0]}
+{"text_id":751,"forms":[""],"absolute_byte_offsets":[26874],"raw_metadata_u32":[0]}
+{"text_id":752,"forms":[""],"absolute_byte_offsets":[26875],"raw_metadata_u32":[0]}
+{"text_id":753,"forms":[""],"absolute_byte_offsets":[26876],"raw_metadata_u32":[0]}
+{"text_id":754,"forms":[""],"absolute_byte_offsets":[26877],"raw_metadata_u32":[0]}
+{"text_id":755,"forms":[""],"absolute_byte_offsets":[26878],"raw_metadata_u32":[0]}
+{"text_id":756,"forms":[""],"absolute_byte_offsets":[26879],"raw_metadata_u32":[0]}
+{"text_id":757,"forms":[""],"absolute_byte_offsets":[26880],"raw_metadata_u32":[0]}
+{"text_id":758,"forms":[""],"absolute_byte_offsets":[26881],"raw_metadata_u32":[0]}
+{"text_id":759,"forms":[""],"absolute_byte_offsets":[26882],"raw_metadata_u32":[0]}
+{"text_id":760,"forms":[""],"absolute_byte_offsets":[26883],"raw_metadata_u32":[0]}
+{"text_id":761,"forms":[""],"absolute_byte_offsets":[26884],"raw_metadata_u32":[0]}
+{"text_id":762,"forms":[""],"absolute_byte_offsets":[26885],"raw_metadata_u32":[0]}
+{"text_id":763,"forms":[""],"absolute_byte_offsets":[26886],"raw_metadata_u32":[0]}
+{"text_id":764,"forms":[""],"absolute_byte_offsets":[26887],"raw_metadata_u32":[0]}
+{"text_id":765,"forms":[""],"absolute_byte_offsets":[26888],"raw_metadata_u32":[0]}
+{"text_id":766,"forms":[""],"absolute_byte_offsets":[26889],"raw_metadata_u32":[0]}
+{"text_id":767,"forms":[""],"absolute_byte_offsets":[26890],"raw_metadata_u32":[0]}
+{"text_id":768,"forms":[""],"absolute_byte_offsets":[26891],"raw_metadata_u32":[0]}
+{"text_id":769,"forms":[""],"absolute_byte_offsets":[26892],"raw_metadata_u32":[0]}
+{"text_id":770,"forms":[""],"absolute_byte_offsets":[26893],"raw_metadata_u32":[0]}
+{"text_id":771,"forms":[""],"absolute_byte_offsets":[26894],"raw_metadata_u32":[0]}
+{"text_id":772,"forms":[""],"absolute_byte_offsets":[26895],"raw_metadata_u32":[0]}
+{"text_id":773,"forms":[""],"absolute_byte_offsets":[26896],"raw_metadata_u32":[0]}
+{"text_id":774,"forms":[""],"absolute_byte_offsets":[26897],"raw_metadata_u32":[0]}
+{"text_id":775,"forms":[""],"absolute_byte_offsets":[26898],"raw_metadata_u32":[0]}
+{"text_id":776,"forms":[""],"absolute_byte_offsets":[26899],"raw_metadata_u32":[0]}
+{"text_id":777,"forms":[""],"absolute_byte_offsets":[26900],"raw_metadata_u32":[0]}
+{"text_id":778,"forms":[""],"absolute_byte_offsets":[26901],"raw_metadata_u32":[0]}
+{"text_id":779,"forms":[""],"absolute_byte_offsets":[26902],"raw_metadata_u32":[0]}
+{"text_id":780,"forms":[""],"absolute_byte_offsets":[26903],"raw_metadata_u32":[0]}
+{"text_id":781,"forms":[""],"absolute_byte_offsets":[26904],"raw_metadata_u32":[0]}
+{"text_id":782,"forms":[""],"absolute_byte_offsets":[26905],"raw_metadata_u32":[0]}
+{"text_id":783,"forms":[""],"absolute_byte_offsets":[26906],"raw_metadata_u32":[0]}
+{"text_id":784,"forms":[""],"absolute_byte_offsets":[26907],"raw_metadata_u32":[0]}
+{"text_id":785,"forms":[""],"absolute_byte_offsets":[26908],"raw_metadata_u32":[0]}
+{"text_id":786,"forms":[""],"absolute_byte_offsets":[26909],"raw_metadata_u32":[0]}
+{"text_id":787,"forms":[""],"absolute_byte_offsets":[26910],"raw_metadata_u32":[0]}
+{"text_id":788,"forms":[""],"absolute_byte_offsets":[26911],"raw_metadata_u32":[0]}
+{"text_id":789,"forms":[""],"absolute_byte_offsets":[26912],"raw_metadata_u32":[0]}
+{"text_id":790,"forms":[""],"absolute_byte_offsets":[26913],"raw_metadata_u32":[0]}
+{"text_id":791,"forms":[""],"absolute_byte_offsets":[26914],"raw_metadata_u32":[0]}
+{"text_id":792,"forms":[""],"absolute_byte_offsets":[26915],"raw_metadata_u32":[0]}
+{"text_id":793,"forms":[""],"absolute_byte_offsets":[26916],"raw_metadata_u32":[0]}
+{"text_id":794,"forms":[""],"absolute_byte_offsets":[26917],"raw_metadata_u32":[0]}
+{"text_id":795,"forms":[""],"absolute_byte_offsets":[26918],"raw_metadata_u32":[0]}
+{"text_id":796,"forms":[""],"absolute_byte_offsets":[26919],"raw_metadata_u32":[0]}
+{"text_id":797,"forms":[""],"absolute_byte_offsets":[26920],"raw_metadata_u32":[0]}
+{"text_id":798,"forms":[""],"absolute_byte_offsets":[26921],"raw_metadata_u32":[0]}
+{"text_id":799,"forms":[""],"absolute_byte_offsets":[26922],"raw_metadata_u32":[0]}
+{"text_id":800,"forms":[""],"absolute_byte_offsets":[26923],"raw_metadata_u32":[0]}

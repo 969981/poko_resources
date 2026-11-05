@@ -1,0 +1,100 @@
+<$facial(4,9)><$voicel(4,1)>Bouhooou... Snif... Snif...
+<$comeff(4,6)><$motion(4,803)><$voicel(4,5)>... Hein ? Tu es qui, toi... ? Snif...<br>Qu'est-ce que tu fais ici ?
+<$comeff(4,6)><$motion(4,803)><$voicel(4,5)>... Hein ? Tu es qui, toi... ? Snif...<br>Qu'est-ce que tu fais ici ?
+<$comeff(4,3)><$facial(4,2)><$voicel(4,8)>Je vois... Tu viens de la part d'<$cdef(27)><$cname(562)></color> ?<clear><br><$comeff(4,14)><$facial(4,2)><$motion(4,666)><$voicel(4,3)>Et tout le monde essaie de <$cdef(27)>construire<nbs2> <$spwicon(1)> </color>un grand<br>bâtiment ?
+<$comeff(4,17)><$facial(4,9)><$motion(4,802)><$voicel(4,1)>Pardon, mais j'ai pas trop le cœur à rendre service, là...
+
+
+
+
+
+
+<$comeff(4,7)><$facial(4,9)><$motion(4,806)><$voicel(4,3)>Le truc, c'est que j'ai perdu mon trésor...<br>Il est super, super important pour moi.
+<$voicel(4,1)>Je crois que je l'ai fait tomber dans un endroit sombre, par<br>là-bas. <$voicel(4,4)>Mais j'ai beau chercher, impossible de le retrouver !
+<$comeff(4,5)><$voicel(4,8)>Quoi, pour de vrai ? <wait(1.0)><$emotion(4,39)><$voicel(4,10)>Oh, merci beaucoup !<clear><br><$emotion(4,160)><$voicel(4,3)>Mais tu sais, c'est dans un coin vraiment très sombre,<br>donc ça va être super difficile de le trouver.
+<$comeff(4,5)><$voicel(4,8)>Quoi, pour de vrai ? <wait(1.0)><$emotion(4,39)><$voicel(4,10)>Oh, merci beaucoup !<clear><br><$emotion(4,160)><$voicel(4,3)>Mais tu sais, c'est dans un coin vraiment très sombre,<br>donc ça va être super difficile de le trouver.
+Quand il fait trop sombre, essayez de poser une source de<br>lumière par terre, comme un <$cdef(27)><fqty(1)><$ifull(449)></color>.<slide><br>Vous y verrez plus clair, ce qui facilitera vos recherches !
+<$emotion(4,55)><$voicel(4,5)>Je sais pas pourquoi, mais je sens que toi, <$emotion(4,39)><$voicel(4,8)>tu vas réussir<br>à le retrouver, mon trésor. ♪
+<$emotion(4,14)><$voicel(4,7)>Ah, oui... Je t'ai pas dit, mais mon trésor, c'est en fait<br>un <$cdef(27)><fqty(1)><$ifull(541)></color> !<clear><br><$motion(4,806)><$comeff(4,8)><$voicel(4,10)>C'est un coussin trop mimi en forme de coquillage.<br><$emotion(4,77)><$voicel(4,4)>Si tu le trouves, préviens-moi !
+
+
+
+
+
+
+
+
+
+<oneline><$comeff(4,6)><$motion(4,803)><$voicel(4,5)>Alors, <$cdef(27)><pname;0></color>, tu as trouvé<br>mon <$cdef(27)><fqty(1)><$ifull(541)></color> ?
+<$voicel(4,7)>Il fait tellement sombre par là-bas, ça doit être difficile<br>de le chercher... Si tu le trouves, préviens-moi !
+Quand il fait trop sombre, essayez de poser une source de<br>lumière par terre, comme un <$cdef(27)><fqty(1)><$ifull(449)></color>.<slide><br>Vous y verrez plus clair, ce qui facilitera vos recherches !
+
+
+
+
+
+
+
+
+
+
+
+
+
+<$comeff(4,5)><$facial(4,4)><$motion(4,803)><$voicel(4,7)>Oh, mais c'est... mon <$cdef(27)><fqty(1)><$ifull(541)></color> !<br>Tu l'as vraiment retrouvé. ♪
+<$comeff(4,8)><$facial(4,14)><$motion(4,807)><$voicel(4,10)><$pkcry;0(4,2)>... Mon coussin chéri...<wait(1.3)><br><$comeff(4,21)><$facial(4,2)><$motion(4,801)><$voicel(4,8)>Je l'adore, il est tellement douillet. ♪
+<$comeff(4,9)><$motion(4,806)><$voicel(4,9)>Merci, <$cdef(27)><pname;0></color>. ♪<br>Je ferai attention à plus le perdre.
+
+
+
+
+
+<$comeff(4,7)><$facial(4,9)><$motion(4,806)><$voicel(4,3)>Le truc, c'est que j'ai perdu mon trésor...<br>Il est super, super important pour moi.
+<$voicel(4,1)>Je crois que je l'ai fait tomber dans un endroit sombre, par<br>là-bas. <$voicel(4,4)>Mais j'ai beau chercher, impossible de le retrouver !
+<$emotion(4,14)><$voicel(4,7)>Ah, oui... Je t'ai pas dit, mais mon trésor, c'est en fait<br>un <$cdef(27)><fqty(1)><$ifull(541)></color> !<clear><br><$emotion(4,31)><$voicel(4,1)>C'est un coussin en forme de coquillage, et je l'aimais<br>trop...
+<$emotion(4,27)><$voicel(4,9)>Mais... on dirait vraiment mon <$cdef(27)><fqty(1)><$ifull(541)></color> !<br><$emotion(4,64)><$voicel(4,4)>Je peux le regarder d'un peu plus près ?
+<$emotion(4,27)><$voicel(4,9)>Mais... on dirait vraiment mon <$cdef(27)><fqty(1)><$ifull(541)></color> !<br><$emotion(4,64)><$voicel(4,4)>Je peux le regarder d'un peu plus près ?
+<$emotion(4,1112)><$voicel(4,2)>Aaah, c'est tout moelleux... Aucun doute possible.<wait(1.3)><br><$emotion(4,39)><$voicel(4,7)>Cette douceur... Je l'aime tellement.
+<$emotion(4,15)><$voicel(4,7)>Si je comprends bien, tu veux bien me le rendre après<br>t'être donné tout ce mal pour le retrouver ?<wait(0.8)><$motion(0,40)><$facial(0,4)><wait(1.0)><clear><br><$emotion(4,98)><$voicel(4,9)>Merci beaucoup. ♪<br>Je ferai attention à ne plus le perdre, promis.
+<$emotion(4,15)><$voicel(4,7)>Tu veux bien me le rendre après t'être donné tout ce mal<br>pour le retrouver ?<wait(0.8)><$motion(0,40)><$facial(0,4)><wait(1.0)><clear><br><$emotion(4,98)><$voicel(4,9)>Merci beaucoup. ♪<br>Je ferai attention à ne plus le perdre, promis.
+
+
+
+
+
+
+
+
+<$comeff(4,17)><$facial(4,9)><$motion(4,663)><$voicel(4,3)>Pfiou... Encore merci d'avoir retrouvé mon trésor.<br>Dis donc, ça fatigue, toutes ces émotions.
+<$emotion(4,55)><$voicel(4,5)>Ce serait génial d'avoir quelque part où me reposer<br>dans ce genre de moments...<clear><br><$facial(4,14)><$motion(4,807)><$comeff(4,7)><$voicel(4,3)>Mais j'ai pas encore trouvé le bon endroit.
+<$comeff(4,5)><$facial(4,4)><$motion(4,803)><$voicel(4,9)>Hein ? Tu ferais ça... pour moi ? <wait(1.2)><$emotion(4,39)><$voicel(4,10)>Tu es vraiment incroyable.<br><$emotion(4,64)><$voicel(4,6)>Je peux demander ce que je veux, alors ?
+<$comeff(4,5)><$facial(4,4)><$motion(4,803)><$voicel(4,9)>Hein ? Tu ferais ça... pour moi ? <wait(1.2)><$emotion(4,39)><$voicel(4,10)>Tu es vraiment incroyable.<br><$emotion(4,64)><$voicel(4,6)>Je peux demander ce que je veux, alors ?
+<$emotion(4,95)><$voicel(4,3)>Ma maison idéale, je l'imagine avec un <$cdef(27)><fqty(1)><$ifull(449)></color><br>et un <$cdef(27)><fqty(1)><$iname(440)><nbs2><$iicon(440)></color>.<clear><br><$emotion(4,952)><$voicel(4,7)>Ah, et puis... il me faut mon <$cdef(27)><fqty(1)><$ifull(541)></color> chéri,<br>bien évidemment. ♪
+Vous avez mis au point une méthode pour confectionner<br>un <$cdef(27)><fqty(1)><$ifull(449)></color> !
+<$emotion(4,197)><$voicel(4,5)>Tiens, je te confie mon <$cdef(27)><fqty(1)><$ifull(541)></color>.<br><$emotion(4,39)><$voicel(4,9)>J'ai hâte de voir le lieu de vie que tu vas m'aménager. ♪
+
+
+
+
+<$emotion(4,39)><$voicel(4,7)>J'attends que tu m'aménages un lieu de vie. Si je pouvais<br>avoir un endroit comme ça, ce serait vraiment chouette. ♪
+
+
+
+
+
+<$comeff(4,9)><$facial(4,4)><$motion(4,801)><$voicel(4,9)>Ouah ! Tu m'as vraiment aménagé un chez-moi. ♪<br>Merci, <$cdef(27)><pname;1></color>.
+<$comeff(4,21)><$facial(4,4)><$motion(4,807)><$voicel(4,7)>Un lieu de vie lumineux, y a vraiment pas mieux. ♪<br><$comeff(4,3)><$facial(4,2)><$motion(4,803)><$voicel(4,6)>Je me demande si les autres pensent pareil que moi...
+<$comeff(4,6)><$facial(4,2)><$motion(4,666)><$voicel(4,7)>Les autres... Oh non, j'avais oublié... !<br><$cdef(27)><$cname(562)></color> avait besoin de moi, non ?
+<$comeff(4,10)><$motion(4,664)><$voicel(4,9)>Bon, au moins, maintenant que j'ai un chez-moi,<br>je vais pouvoir me donner à fond. ♪
+<$comeff(4,3)><$motion(4,803)><$voicel(4,8)>Emmène-moi voir <$cdef(27)><$cname(562)> </color>quand tout sera prêt<br>pour la <$cdef(27)><$spwfull(1)></color>.
+
+
+
+
+
+
+
+
+
+
+

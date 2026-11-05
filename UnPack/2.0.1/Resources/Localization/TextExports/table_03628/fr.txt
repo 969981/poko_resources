@@ -1,0 +1,129 @@
+<$voicel(4,2)>*fixe* ...<wait(2.0)><$lookat(4,0,0)><$lookat(4,1,0)><waitactor(4)><clear><br><$emotion(4,14)><$voicel(4,8)>OUAH ! Pardon, j'avais pas vu que t'étais là !<br><wait(1.5)><$emotion(4,55)><$voicel(4,4)>C'est cette grotte, là, elle m'obsède ! <slide><br>Je me demande trop ce qu'elle abrite !!!
+<$comcan(4)>... Eh mais...<wait(0.5)><$comeff(4,6)><$facial(4,1)><$motion(4,806)><$voicel(4,6)> attends... Cette bouille toute ramollo<br>et ces yeux... euh... innocents ?<slide><br><$emotion(4,14)><$voicel(4,4)>Tu serais pas un <$cdef(27)>Métamorph</color> ?<wait(0.8)><$motion(0,40)><wait(1.0)><clear><br><$comeff(4,9)><$motion(4,644)><$facial(4,4)><$voicel(4,5)>Hi hi ! T'as l'air d'aimer l'exploration, toi aussi !<br>Je sens qu'on va TROP bien s'entendre !
+
+
+
+<$comeff(4,7)><$motion(4,663)><$facial(4,9)><$voicel(4,4)>Rien à faire, c'est bloqué !
+<$comeff(4,14)><$motion(4,805)><$facial(4,2)><$voicel(4,5)>J'ai trop envie d'explorer cette grotte, mais regarde<br>un peu tout ce bazar qui bouche l'entrée !<slide><br><$comeff(4,4)><$motion(4,802)><$facial(4,10)><$voicel(4,4)><$kfacial(4)>Genre, y a AUCUN moyen de passer, là...
+<$comeff(4,21)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>Sérieux ? Tu ferais ça ? MERCI ! T'es adorable, toi !<clear><br><$emotion(4,14)><$voicel(4,7)>Ah ! Et tant qu'on y est, on pourrait explorer la grotte<br>ensemble, après !
+<$comeff(4,21)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>Sérieux ? Tu ferais ça ? MERCI ! T'es adorable, toi !<clear><br><$emotion(4,14)><$voicel(4,7)>Ah ! Et tant qu'on y est, on pourrait explorer la grotte<br>ensemble, après !
+
+
+
+
+
+
+<$comeff(4,9)><$motion(4,806)><$facial(4,1)><$voicel(4,10)>OK, c'est parti ! Direction le fin fond de cette grotte !
+<$cdef(27)><oneline><$comeff(4,6)><$motion(4,806)><$facial(4,1)><$voicel(4,5)><pname;0></color> ? Qu'est-ce qu'il y a, t'as autre<br>chose à faire, finalement ?
+<$emotion(4,8)><$voicel(4,7)>Ça me ferait TROP plaisir que tu viennes explorer<br>cette grotte avec moi quand t'auras le temps !
+<$emotion(4,8)><$voicel(4,7)>Ça me ferait TROP plaisir que tu viennes explorer<br>cette grotte avec moi quand t'auras le temps !
+<$comeff(4,9)><$motion(4,644)><$facial(4,4)><$voicel(4,7)>Merci beaucoup d'avoir fait tout ce chemin avec moi,<br><$cdef(27)><pname;0></color> !
+<$comeff(4,21)><$motion(4,801)><$facial(4,4)><$voicel(4,9)>C'était trop bien cette aventure à deux ! Et regarde-moi<br>un peu cet endroit ! Ça brille tellement, J'ADORE !!!
+
+
+
+<$emotion(4,27)><$voicel(4,5)>Mais, attends une minute... !<br>Cet endroit... J'ai l'impression qu'il est spécial !<slide><br><$comeff(4,10)><$motion(4,662)><$facial(4,1)><$voicel(4,7)>Dis, toi aussi tu le sens, pas vrai ?
+<$emotion(4,55)><$voicel(4,3)>Quoi, sérieux... ?! Tu sens pas comme une petite odeur<br>de trésor ?<clear><br><$emotion(4,14)><$voicel(4,5)>... OH ! MAIS IMAGINE ! On va peut-être trouver...<br><$comeff(4,8)><$motion(4,806)><$facial(4,4)><$voicel(4,8)>Oh là là, ce serait tellement incroyable !
+<$voicel(4,3)><$comeff(4,14)><$motion(4,666)>Hmmm, j'aurais plutôt dit qu'il y a comme une petite odeur<br>de trésor, mais bon...<clear><br><$emotion(4,14)><$voicel(4,5)>... OH ! MAIS IMAGINE ! On va peut-être trouver...<br><$comeff(4,8)><$motion(4,806)><$facial(4,4)><$voicel(4,8)>Oh là là, ce serait tellement incroyable !
+<$emotion(4,50)><$voicel(4,6)>Ben, UNE PELUCHE, bien sûr !<clear><br><$emotion(4,39)><$voicel(4,9)>J'A-DORE ça ! Surtout celles qui ont vraiment été aimées<br>par leur propriétaire !<clear><br><$comeff(4,3)><$motion(4,805)><$facial(4,1)><$voicel(4,7)>Et tu sais quoi ? Je sens que dans le coin, on va pouvoir<br>trouver une peluche RARE !
+<$emotion(4,50)><$voicel(4,6)>Qu'on trouve UNE PELUCHE, bien sûr !<clear><br><$emotion(4,39)><$voicel(4,9)>J'A-DORE ça ! Surtout celles qui ont vraiment été aimées<br>par leur propriétaire !<clear><br><$comeff(4,3)><$motion(4,805)><$facial(4,1)><$voicel(4,7)>Et tu sais quoi ? Je sens que dans le coin, on va pouvoir<br>trouver une peluche RARE !
+Essayez de trouver une <$cdef(27)><fqty(1)><$ifull(540)> </color>pour <$cdef(27)>Viskuse</color> !<clear><br>Pour ce faire, munissez-vous d'un <$cdef(27)><fqty(1)><$ifull(2793)><br></color>et demandez à <$cdef(27)>Viskuse</color> de vous accompagner.
+
+
+
+
+
+
+
+
+
+
+Si vous n'avez pas de <$cdef(27)><fqty(1)><$ifull(2793)></color>, rendez-vous<br><fra;0()><$cdef(27)><$stgname;0(1)></color> !<clear><br>Vous devriez pouvoir en trouver un sur le plateau<br>à proximité du Centre Pokémon !
+
+
+
+<$emotion(4,55)><$voicel(4,4)>Je te garantis qu'il y a une peluche dans le coin !
+<$comcan(4)>Partez à la recherche d'une <$cdef(27)><fqty(1)><$ifull(540)></color> avec l'aide<br>de <$cdef(27)>Viskuse</color>, dont la spécialité est la <$cdef(27)><$spwfull(11)></color>.<clear><br>Vous pourriez trouver la peluche rapidement en utilisant<br>un <$cdef(27)><fqty(1)><$ifull(2793)></color> !
+Vous avez déterré un trésor !<br>Ramassez-le pour voir ce que c'est !
+
+
+
+
+
+<$comeff(4,21)><$motion(4,801)><$facial(4,4)><$voicel(4,10)>OUAAAH ! Comment ça brille ! c'est TROP BEAU !!!<clear><br><$voicel(4,7)><$comeff(4,8)><$facial(4,4)><$motion(4,806)>Tu crois que les êtres humains se servaient de ça comme<br>accessoire ? C'est beaucoup trop classe !
+<$comeff(4,10)><$motion(4,807)><$facial(4,2)><$voicel(4,9)>Allez, on tient le bon bout ! On va la trouver,<br>cette peluche !
+
+
+
+
+
+
+
+<$comeff(4,6)><$motion(4,806)><$facial(4,1)><$voicel(4,3)>Euh... C'est quoi, ce truc ? Pas une peluche, en tout cas !<br><$emotion(4,247)><$voicel(4,8)>Cherchons ailleurs !
+
+
+
+
+<$comeff(4,10)><$motion(4,807)><$facial(4,4)><$voicel(4,10)>Allez, ON Y CROIT ! Le prochain objet qu'on trouve sera<br>une peluche, obligé !
+
+<$emotion(4,27)><$voicel(4,7)>Mais... Mais c'est UNE PELUCHE !<br>Viiite, montre-la-moi, <$cdef(27)><pname;0></color> !<clear><br><$motion(4,666)><$facial(4,1)><$voicel(4,2)>...<clear><br><$emotion(4,47)><$voicel(4,3)>Hmmm ? C'est chelou, je m'attendais pas à voir celle-là.<br><$comeff(4,6)><$motion(4,806)><$facial(4,1)><$voicel(4,6)>... Il doit y en avoir une autre dans les environs !
+
+
+
+
+
+<$emotion(4,27)><$voicel(4,7)>Mais... Mais c'est UNE PELUCHE !<br>Viiite, montre-la-moi, <$cdef(27)><pname;0></color> !
+<$comeff(4,21)><$motion(4,644)><$facial(4,1)><$voicel(4,7)>Ouaaah ! Cette peluche... ça se voit qu'elle était aimée<br>profondément ! Par une petite fille, je dirais...
+<$emotion(4,6)><$voicel(4,6)>Elle devait être, genre, une énorme fan de <$cdef(27)><$cname(566)></color> !
+<$comeff(4,13)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>Vi hi hi hi hi ! ♪<br>Rien que de l'imaginer me met de bonne humeur !<clear><br><$comeff(4,21)><$motion(4,644)><$facial(4,1)><$voicel(4,7)>Tiens ! Maintenant que j'ai eu ma dose d'affection,<br>je te rends la peluche !
+Tout comme les autres peluches, vous pouvez<br>montrer cette <$cdef(27)><fqty(1)><$ifull(540)></color> à <$cdef(27)><$cname(123)></color><slide><br>qui vous emmènera alors sur une <$cdef(27)>Île Rêve</color> !
+<$emotion(4,8)><$voicel(4,9)>Hi hi ! On a vraiment eu du bol de trouver cette peluche<br>TROP CHOU, tu crois pas ? ♪<slide><br><$comeff(4,8)><$motion(4,644)><$facial(4,1)><$voicel(4,8)>Merci pour ton aide, <$cdef(27)><pname;0></color> !<clear><br><$emotion(4,14)><$voicel(4,5)>Il me reste plus qu'à te remercier comme il faut !<br><$emotion(4,55)><$voicel(4,4)>Hmmm, laisse-moi réfléchir...
+<$cdef(27)><$comeff(4,6)><$motion(4,806)><$facial(4,1)><$voicel(4,6)></color>T'es sur un projet de bâtiment ?<br><$cdef(27)><wait(1.2)></color><$emotion(4,50)><$voicel(4,8)>Ça a l'air SU-PER marrant ! <$comeff(4,10)><$motion(4,807)><$facial(4,1)><$voicel(4,6)>Tu peux compter sur moi !
+<$emotion(4,50)><$voicel(4,8)>Appelle-moi quand t'auras fini les préparatifs de<br>la <$cdef(27)><$spwfull(1)></color> !
+
+
+
+
+
+
+<$emotion(4,27)><$voicel(4,5)>Mais, attends une minute... !<br>Cet endroit... J'ai l'impression qu'il est spécial !<slide><br><$comeff(4,10)><$motion(4,662)><$facial(4,1)><$voicel(4,7)>Dis, toi aussi tu le sens, pas vrai ?
+<$emotion(4,55)><$voicel(4,3)>Quoi, sérieux... ?! Tu sens pas comme une petite odeur<br>de trésor ?<clear><br><$emotion(4,14)><$voicel(4,5)>... OH ! MAIS IMAGINE ! On va peut-être trouver...<br><$comeff(4,8)><$motion(4,806)><$facial(4,4)><$voicel(4,8)>Oh là là, ce serait tellement incroyable !
+<$voicel(4,3)><$comeff(4,14)><$motion(4,666)>Hmmm, j'aurais plutôt dit qu'il y a comme une petite odeur<br>de trésor, mais bon...<clear><br><$emotion(4,14)><$voicel(4,5)>... OH ! MAIS IMAGINE ! On va peut-être trouver...<br><$comeff(4,8)><$motion(4,806)><$facial(4,4)><$voicel(4,8)>Oh là là, ce serait tellement incroyable !
+<$emotion(4,50)><$voicel(4,6)>Ben, UNE PELUCHE, bien sûr !<clear><br><$emotion(4,39)><$voicel(4,9)>J'A-DORE ça ! Surtout celles qui ont vraiment été aimées<br>par leur propriétaire !<clear><br><$comeff(4,3)><$motion(4,805)><$facial(4,1)><$voicel(4,7)>Et tu sais quoi ? Je sens que dans le coin, on va pouvoir<br>trouver une peluche RARE !
+<$emotion(4,50)><$voicel(4,6)>Qu'on trouve UNE PELUCHE, bien sûr !<clear><br><$emotion(4,39)><$voicel(4,9)>J'A-DORE ça ! Surtout celles qui ont vraiment été aimées<br>par leur propriétaire !<clear><br><$comeff(4,3)><$motion(4,805)><$facial(4,1)><$voicel(4,7)>Et tu sais quoi ? Je sens que dans le coin, on va pouvoir<br>trouver une peluche RARE !
+<$emotion(4,27)><$voicel(4,9)>Attends, tu l'as déjà trouvée ?!<br>Viiite, montre-la-moi, <$cdef(27)><pname;0></color> !
+<$comeff(4,21)><$motion(4,644)><$facial(4,1)><$voicel(4,7)>Ouaaah ! Cette peluche... ça se voit qu'elle était aimée<br>profondément ! Par une petite fille, je dirais...
+<$emotion(4,6)><$voicel(4,6)>Elle devait être, genre, une énorme fan de <$cdef(27)><$cname(566)></color> !
+<$comeff(4,13)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>Vi hi hi hi hi ! ♪<br>Rien que de l'imaginer me met de bonne humeur !<clear><br><$comeff(4,21)><$motion(4,644)><$facial(4,1)><$voicel(4,7)>Tiens ! Maintenant que j'ai eu ma dose d'affection,<br>je te rends la peluche !
+Tout comme les autres peluches, vous pouvez<br>montrer cette <$cdef(27)><fqty(1)><$ifull(540)></color> à <$cdef(27)><$cname(123)></color><slide><br>qui vous emmènera alors sur une <$cdef(27)>Île Rêve</color> !
+<$emotion(4,8)><$voicel(4,9)>Hi hi ! On a vraiment eu du bol de trouver cette peluche<br>TROP CHOU, tu crois pas ? ♪<slide><br><$comeff(4,8)><$motion(4,644)><$facial(4,1)><$voicel(4,8)>Merci pour ton aide, <$cdef(27)><pname;0></color> !<clear><br><$emotion(4,14)><$voicel(4,5)>Il me reste plus qu'à te remercier comme il faut !<br><$emotion(4,55)><$voicel(4,4)>Hmmm, laisse-moi réfléchir...
+<$cdef(27)><$comeff(4,6)><$motion(4,806)><$facial(4,1)><$voicel(4,6)></color>T'es sur un projet de bâtiment ?<br><$cdef(27)><wait(1.2)></color><$emotion(4,50)><$voicel(4,8)>Ça a l'air SU-PER marrant ! <$comeff(4,10)><$motion(4,807)><$facial(4,1)><$voicel(4,6)>Tu peux compter sur moi !
+<$emotion(4,50)><$voicel(4,8)>Appelle-moi quand t'auras fini les préparatifs de<br>la <$cdef(27)><$spwfull(1)></color> !
+
+
+
+
+
+
+
+<$emotion(4,55)><$voicel(4,3)>Coucou, <$cdef(27)><pname;0></color> !<br>Dis, c'est vrai ce qu'on raconte... ?<slide><br><$comeff(4,6)><$motion(4,644)><$facial(4,1)><$voicel(4,6)>Tu construis des lieux de vie pour tous les Pokémon ?<wait(0.8)><$motion(0,40)><wait(1.0)>
+<$comeff(4,3)><$motion(4,806)><$facial(4,1)><$voicel(4,3)>Tu voudrais pas m'en construire un, à moi aussi ?
+<$emotion(4,8)><$voicel(4,7)>GÉ-NIAL !!!<br>Un endroit comme ça, ce serait vraiment le top !
+<$emotion(4,8)><$voicel(4,7)>GÉ-NIAL !!!<br>Un endroit comme ça, ce serait vraiment le top !
+<$comeff(4,3)><$motion(4,644)><$facial(4,2)><$voicel(4,6)>J'ai trop hâââte ! Préviens-moi quand t'auras fini, hein ?!
+
+
+
+
+
+
+<$comeff(4,6)><$motion(4,666)><$facial(4,2)><$voicel(4,5)>Pour mon lieu de vie, tu pourrais me faire un endroit<br>comme ça ? Ce serait vraiment le TOP !
+
+
+
+<$emotion(4,6)><$voicel(4,7)>Merci d'avoir fait tout ça rien que pour moi !<br>Ce coin est adorable, je suis TROP FAN !
+
+
+
+<$comeff(4,21)><$motion(4,806)><$facial(4,4)><$voicel(4,9)>J'aime trooop l'endroit que tu m'as aménagé !<br>Il est vraiment PAR-FAIT, <$cdef(27)><pname;0></color> !
+<$emotion(4,6)><$voicel(4,8)>Encore merci pour cet endroit adorable !
