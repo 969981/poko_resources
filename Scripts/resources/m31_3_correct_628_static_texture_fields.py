@@ -45,6 +45,8 @@ COLS=(
     "legacy_M25_g1t_hash_same_raw_u32",
     "legacy_M25_texinfo_hash_same_raw_u32",
     "legacy_M25_target_texture_oid_same_raw_u32",
+    "raw_render_state_equals_legacy_M25_g1t_file_hash",
+    "raw_info_data_equals_legacy_M25_texinfo_file_hash",
     "original_wrapper_hash_locally_present_as_IDOK",
     "original_wrapper_target_node_type_if_present",
     "native_game_species_id_verified",
@@ -82,9 +84,14 @@ def run():
         render=values["LayoutTexturesRenderStateObjectHash"]
         info=values["LayoutTexturesInfoDataResourceHash"]
         wrap=values["WrapStaticScreenLayoutTexturesObjectHash"]
-        if (fmt(render)!=r["g1t_hash"] or fmt(info)!=r["texinfo_hash"]
-            or fmt(wrap)!=r["target_texture_oid"]):
-            raise ValueError(f"M25 legacy field values mismatch original source bytes {fmt(oid)}")
+        # The old M25 index associates file hashes through resource
+        # names and texture-index crosswalks, NOT necessarily the scalar
+        # fields of this particular StaticScreenLayoutTextures object.
+        # Never require equality for these *different provenance layers*.
+        if fmt(wrap)!=r["target_texture_oid"]:
+            raise ValueError(f"Original wrap field differs from legacy M25 third value {fmt(oid)}")
+        matches_render=(fmt(render)==r["g1t_hash"])
+        matches_info=(fmt(info)==r["texinfo_hash"])
         target=nodes.get(wrap)
         result.append({
             "source_oid":fmt(oid),
@@ -97,16 +104,18 @@ def run():
             "legacy_M25_g1t_hash_same_raw_u32":fmt(render),
             "legacy_M25_texinfo_hash_same_raw_u32":fmt(info),
             "legacy_M25_target_texture_oid_same_raw_u32":fmt(wrap),
+            "raw_render_state_equals_legacy_M25_g1t_file_hash":int(matches_render),
+            "raw_info_data_equals_legacy_M25_texinfo_file_hash":int(matches_info),
             "original_wrapper_hash_locally_present_as_IDOK":int(target is not None),
             "original_wrapper_target_node_type_if_present":fmt(target["type"]) if target else "",
             "native_game_species_id_verified":"",
             "native_game_villager_id_verified":"",
         })
-    for col in ("original_layout_textures_render_state_object_hash",
-                "original_layout_textures_info_data_resource_hash",
-                "original_wrap_static_screen_layout_textures_object_hash"):
-        if len({x[col] for x in result})!=628:
-            raise ValueError(f"Unexpected duplicate original field values {col}")
+    # Render-state and info-data values can legitimately repeat or be 0.
+    # Preserve the actual distribution; uniqueness is an observed fact only
+    # for the Source OID and previously validated wrap Hash column.
+    if len({x["original_wrap_static_screen_layout_textures_object_hash"] for x in result})!=628:
+        raise ValueError("Original 628 wrapper hash records no longer unique")
     result.sort(key=lambda x:x["source_oid"])
     n_local=sum(x["original_wrapper_hash_locally_present_as_IDOK"] for x in result)
     summary={
@@ -118,19 +127,27 @@ def run():
         "original_native_type_name":"StaticScreenLayoutTextures",
         "original_native_type_hash":fmt(TYPE),
         "original_field_name_hashes":{k:fmt(v) for k,v in FIELDS.items()},
-        "all_original_property_raw_values_match_M25_legacy_columns":True,
+        "all_original_wrap_hash_raw_values_match_M25_legacy_column":True,
+        "render_state_values_equal_legacy_M25_g1t_file_hash_count":sum(
+            x["raw_render_state_equals_legacy_M25_g1t_file_hash"] for x in result),
+        "info_data_values_equal_legacy_M25_texinfo_file_hash_count":sum(
+            x["raw_info_data_equals_legacy_M25_texinfo_file_hash"] for x in result),
+        "distinct_original_render_state_hashes":len(set(
+            x["original_layout_textures_render_state_object_hash"] for x in result)),
+        "distinct_original_info_data_hashes":len(set(
+            x["original_layout_textures_info_data_resource_hash"] for x in result)),
         "unique_original_wrap_object_hashes":len({
             x["original_wrap_static_screen_layout_textures_object_hash"] for x in result}),
         "wrapper_hashes_locally_present_as_IDOK":n_local,
         "wrapper_hashes_not_locally_present_as_IDOK":len(result)-n_local,
         "M25_column_target_texture_oid_is_original_wrap_static_screen_layout_textures_object_hash":True,
-        "original_render_state_field_raw_value_equals_M25_g1t_hash":True,
-        "original_info_data_field_raw_value_equals_M25_texinfo_hash":True,
+        "render_state_field_is_identical_to_M25_file_hash_without_check":False,
+        "info_data_field_is_identical_to_M25_file_hash_without_check":False,
         "raw_hash_equals_file_hash_is_not_a_proven_resource_consumer":True,
         "direct_source_to_final_texture_object_relation_proven":False,
         "native_species_id_to_icon_source_OID_proven":False,
         "game_villager_id_to_wrapper_hash_proven":False,
-        "warning":"M25 target_texture_oid is the source byte value of property WrapStaticScreenLayoutTexturesObjectHash. Retain the old column only as a legacy alias; it is not automatically the final texture object ID. Matching G1T/TEXINFO hash values are numeric provenance, not an executed loader call.",
+        "warning":"M25 target_texture_oid is the raw WrapStaticScreenLayoutTexturesObjectHash field. M25 g1t_hash and texinfo_hash are OTHER index/catalog provenance; their equality to raw render-state/info-data fields is measured, not assumed. None alone proves runtime asset selection.",
     }
     OUT.mkdir(parents=True,exist_ok=True)
     with (OUT/"m31_3_corrected_628_native_texture_object_fields.csv").open(
