@@ -27,7 +27,7 @@ R=Path("UnPack/2.0.1/Resources")
 M25=R/"Villagers/Native_2.0.1/M25"
 TEXINDEX=M25/"m25_4_26_texture_hash_rdb_provenance.csv"
 SOURCEINDEX=M25/"m25_3_26_original_source_to_texture_objects.csv"
-MISSING=M25.parent.parent/"M22/m22_unresolved_79_source_targets.csv"
+MISSING=M25.parent/"M22/m22_unresolved_79_source_targets.csv"
 OUT=R/"Pokemon/NativeRecoveryM25"
 
 FIELDS=(
@@ -260,7 +260,7 @@ def main_run():
     return report
 
 def selftest():
-    assert len(FIELDS)==23
+    assert len(FIELDS)==26
     assert THUMB==32
     print("M25.5 original source encoding and report schema sanity passed")
 
