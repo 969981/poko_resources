@@ -8,7 +8,7 @@
   ],
   "g1t_platform": "0x18",
   "g1t_format": "0x66 BC7",
-  "layout": "gob16",
+  "layout": "ounce16",
   "v_origin": "top",
   "native_atlas_records": 1333,
   "generated_pngs": 1333,
@@ -18,11 +18,10 @@
   ],
   "reference_count": 1333,
   "status_counts": {
-    "NATIVE_CROP_REFERENCE_SIMILAR": 1331,
-    "NATIVE_CROP_REVIEW": 2
+    "NATIVE_CROP_REFERENCE_SIMILAR": 1333
   },
-  "median_reference_distance": 0.08905313,
-  "max_reference_distance": 0.16816096,
+  "median_reference_distance": 0.00528238,
+  "max_reference_distance": 0.01718695,
   "reference_threshold_is_heuristic": 0.15,
   "warning": "Native G1T and TEXINFO indices validated; a reference image can differ due to scaling, transparency or external asset conversion. Never overwrite Resources/Items/Icons."
 }
