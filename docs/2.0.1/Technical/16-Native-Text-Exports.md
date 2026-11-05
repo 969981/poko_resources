@@ -11,6 +11,19 @@ updated: 2026-11-05
 分组证据：UnPack/2.0.1/Resources/Localization/M7/nine_language_groups.csv。
 SHA-256 基线：UnPack/2.0.1/Resources/Localization/M7/native_table_inventory.csv。
 
+## 2026-11-05 全量九语言表组导出（已执行并验证）
+
+- M7 候选九语言表组：**195 / 195**；其中包含先前已验证的四个锚点。
+- 关联原生 LINKDATA 文件：**1,755 / 1,755**；九语言 TXT：**1,755 个**；全形态 JSONL：**1,755 个**；逐组 manifest：**195 份**。
+- 对齐记录和原生形态槽总数：**74,089**（所有组中未展开形态的记录总计 59,084）。该数不应误写为 74,089 个独立文本 ID。
+- 每个原始二进制文件通过 M7 inventory SHA-256/status 校验；生成文件验证 SHA-256、零基文本 ID 顺序、所有 form、offset 和 TXT 对应关系。
+- 全量工作流：[unpack-m7-all-text-export.yml](../../../.github/workflows/unpack-m7-all-text-export.yml)；成功执行记录：[42023043520](https://github.com/969981/poko_resources/actions/runs/42023043520)。
+- 发布目录：[TextExports](../../../UnPack/2.0.1/Resources/Localization/TextExports) 和 [text_export_report.json](../../../UnPack/2.0.1/Resources/Localization/TextExports/text_export_report.json)。
+
+原先的四组工作流 `unpack-m7-text-export.yml` 现在只在临时目录验收锚点，不会回写或覆盖 195 组正式发布报告。全量工作流在原生解析器、导出器或 M7 索引变化时自动重新验证和发布。
+
+**范围说明：**195 组是 M7 已识别的全部 *九语言候选组*，不等于全部 2,738 个已解析原生文本表均已独立发布，也不等于剧情、任务、UI 的原生语义引用链已经闭合。结构证据较弱的四组仍维持 `STRUCTURE_ONLY`；无原生调用证据的 category 仍为 `UNKNOWN`。
+
 ## 重建命令
 
     python -m unittest discover -s tests -p test_native_text_file_export.py -v
