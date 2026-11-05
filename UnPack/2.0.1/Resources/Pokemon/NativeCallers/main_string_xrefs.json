@@ -1,0 +1,607 @@
+{
+  "status": "STATIC_FORENSICS_ONLY__NATIVE_ID_NOT_PROVEN",
+  "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "format": "NSO0",
+  "header_bytes_hex": "4e534f3000000000000000003f0000000a010000000000008094740200010000",
+  "segments": [
+    {
+      "name": "text",
+      "mem_offset": 0,
+      "file_offset": 266,
+      "compressed": true,
+      "size": 41194624
+    },
+    {
+      "name": "rodata",
+      "mem_offset": 41197568,
+      "file_offset": 23151538,
+      "compressed": true,
+      "size": 11402740
+    },
+    {
+      "name": "data",
+      "mem_offset": 52600832,
+      "file_offset": 28645443,
+      "compressed": true,
+      "size": 2760384
+    }
+  ],
+  "pokemon_literal_count": 0,
+  "pokemon_literals": [],
+  "other_related_string_count": 81,
+  "other_related_strings": [
+    {
+      "section": "rodata",
+      "raw_file_offset": 23335243,
+      "virtual_offset": 41381273,
+      "text": "m_CommonJoinPokemonInventorySaveData",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23338529,
+      "virtual_offset": 41384559,
+      "text": "MaterialReplacementNameHashes",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23338604,
+      "virtual_offset": 41384634,
+      "text": "Material",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23356344,
+      "virtual_offset": 41402374,
+      "text": "GBufferMaterialIDTable",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23372174,
+      "virtual_offset": 41418204,
+      "text": "craftstation",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23372481,
+      "virtual_offset": 41418511,
+      "text": "m_CraftRefine_v1",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23393411,
+      "virtual_offset": 41439441,
+      "text": "MaterialScaleTransparency",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23393600,
+      "virtual_offset": 41439630,
+      "text": "MaterialGroupBindTable",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23408175,
+      "virtual_offset": 41454205,
+      "text": "JOIN_POKEMON_INVENTORY",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23408763,
+      "virtual_offset": 41454793,
+      "text": "m_CraftRefine",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23408791,
+      "virtual_offset": 41454821,
+      "text": "m_craftMainHelpPokemonKind",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23426192,
+      "virtual_offset": 41472222,
+      "text": "m_craftStationHistory",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23426594,
+      "virtual_offset": 41472624,
+      "text": "m_uCraftBuildStageID",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23431453,
+      "virtual_offset": 41477483,
+      "text": "KTGLGBufferMaterialIDTableResourceHash",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23444255,
+      "virtual_offset": 41490285,
+      "text": "m_specialCraftCnt",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23444670,
+      "virtual_offset": 41490700,
+      "text": "m_craftStationId",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23445944,
+      "virtual_offset": 41491974,
+      "text": "RainDropSplashMaterialSpan",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23447308,
+      "virtual_offset": 41493338,
+      "text": "KTGLMaterialGroupBindTableResourceHash",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23449387,
+      "virtual_offset": 41495417,
+      "text": "KTGLGBufferMaterialIDAdditional0TableResourceHash",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23463011,
+      "virtual_offset": 41509041,
+      "text": "https://api.po-pokemon.com/serial.auth",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23463093,
+      "virtual_offset": 41509123,
+      "text": "m_pokemonDexReadHistory",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23463352,
+      "virtual_offset": 41509382,
+      "text": "m_RefineCraftRecipeID",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23463725,
+      "virtual_offset": 41509755,
+      "text": "m_CraftChangeColor_v1",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23463747,
+      "virtual_offset": 41509777,
+      "text": "m_CraftChangeColor",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23466040,
+      "virtual_offset": 41512070,
+      "text": "MaterialReplacementObjectNames",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23475253,
+      "virtual_offset": 41521283,
+      "text": "tls1_export_keying_material",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23480824,
+      "virtual_offset": 41526854,
+      "text": "m_pokemonDexHistory",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23488539,
+      "virtual_offset": 41534569,
+      "text": "pokemon_dex",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23496489,
+      "virtual_offset": 41542519,
+      "text": "MaterialAdditional0TableSlot",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23499166,
+      "virtual_offset": 41545196,
+      "text": "m_pokemonCenterState",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23499603,
+      "virtual_offset": 41545633,
+      "text": "m_PokemonSkill",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23502670,
+      "virtual_offset": 41548700,
+      "text": "MaterialScaleAlphaThreshold",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23516046,
+      "virtual_offset": 41562076,
+      "text": "vW2ASMaterial",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23520007,
+      "virtual_offset": 41566037,
+      "text": "MaterialReplacementNameHash",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23520035,
+      "virtual_offset": 41566065,
+      "text": "MaterialRegisterType",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23549595,
+      "virtual_offset": 41595625,
+      "text": "fRecipSplashMaterialLifeSpanRate",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23550857,
+      "virtual_offset": 41596887,
+      "text": "m_craftRecipeId",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23553417,
+      "virtual_offset": 41599447,
+      "text": "MaterialScaleSpecular",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23569088,
+      "virtual_offset": 41615118,
+      "text": "m_craftHelpTable",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23571440,
+      "virtual_offset": 41617470,
+      "text": "ResourceSetMaterialsReference",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23571652,
+      "virtual_offset": 41617682,
+      "text": "MaterialGroupBindTableBinaryFile",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23575252,
+      "virtual_offset": 41621282,
+      "text": "pokemon_dex_id",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23583491,
+      "virtual_offset": 41629521,
+      "text": "vMaterialParam",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23601415,
+      "virtual_offset": 41647445,
+      "text": "FxMaterialIDTable",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23607240,
+      "virtual_offset": 41653270,
+      "text": "DefaultMaterialObjectNameHashArray",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23609890,
+      "virtual_offset": 41655920,
+      "text": "GBufferMaterialIDTableObjectNameHash",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23610705,
+      "virtual_offset": 41656735,
+      "text": "MaterialID",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23626793,
+      "virtual_offset": 41672823,
+      "text": "MaterialFlags",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23644659,
+      "virtual_offset": 41690689,
+      "text": "GBufferMaterialIDTableBinaryFile",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23661612,
+      "virtual_offset": 41707642,
+      "text": "MaterialFlag",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23673984,
+      "virtual_offset": 41720014,
+      "text": "MaterialTableSlot",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23678602,
+      "virtual_offset": 41724632,
+      "text": "ColorVariationMaterialObjectNameHashArray",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23680680,
+      "virtual_offset": 41726710,
+      "text": "MaterialObjectNameHash",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23693700,
+      "virtual_offset": 41739730,
+      "text": "m_PokemonHintOpenGroupFlag",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23693860,
+      "virtual_offset": 41739890,
+      "text": "m_isPokemonCenterRoadCheckOk",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23694418,
+      "virtual_offset": 41740448,
+      "text": "m_CloudJoinPokemonInventorySaveData",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23711450,
+      "virtual_offset": 41757480,
+      "text": "m_CraftBuild",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23711463,
+      "virtual_offset": 41757493,
+      "text": "m_mainPokemonList",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23718890,
+      "virtual_offset": 41764920,
+      "text": "craft_num",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23729509,
+      "virtual_offset": 41775539,
+      "text": "m_uCraftBuildAssignStageID",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23732824,
+      "virtual_offset": 41778854,
+      "text": "MaterialScaleDiffuse",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23734077,
+      "virtual_offset": 41780107,
+      "text": "OriginalMaterialNameHash",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23746782,
+      "virtual_offset": 41792812,
+      "text": "m_sEventPopWildPokemon",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23750070,
+      "virtual_offset": 41796100,
+      "text": "MaterialScaleAmbient",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23763251,
+      "virtual_offset": 41809281,
+      "text": "https://api.po-pokemon.com/serial.update",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23765824,
+      "virtual_offset": 41811854,
+      "text": "MaterialScaleDiffuseAndAmbient",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23766784,
+      "virtual_offset": 41812814,
+      "text": "MaterialScaleEmission",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23780610,
+      "virtual_offset": 41826640,
+      "text": "m_pokemonHistory",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23780627,
+      "virtual_offset": 41826657,
+      "text": "m_craftCount",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23785829,
+      "virtual_offset": 41831859,
+      "text": "kids::placeable::model::EnqPropertiesWithMaterialGroupID",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23797596,
+      "virtual_offset": 41843626,
+      "text": "https://api-dev.po-pokemon.com/serial.update",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23801496,
+      "virtual_offset": 41847526,
+      "text": "MaterialScaleSpecularDecay",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23819194,
+      "virtual_offset": 41865224,
+      "text": "MaterialNameHashArray",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23819711,
+      "virtual_offset": 41865741,
+      "text": "BakedMaterialNameHash",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23832035,
+      "virtual_offset": 41878065,
+      "text": "PS_CRAFT_STA",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23840178,
+      "virtual_offset": 41886208,
+      "text": "RegisterPokemonNum",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23850972,
+      "virtual_offset": 41897002,
+      "text": "https://api-dev.po-pokemon.com/serial.auth",
+      "target_group": "OTHER_POKEMON_TEXT"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23858924,
+      "virtual_offset": 41904954,
+      "text": "craft",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23870260,
+      "virtual_offset": 41916290,
+      "text": "m_CraftBuild_v1",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 23904875,
+      "virtual_offset": 41950905,
+      "text": "vRippleMaterialScale",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    },
+    {
+      "section": "rodata",
+      "raw_file_offset": 24709118,
+      "virtual_offset": 42755148,
+      "text": "MaterialScaler",
+      "target_group": "MATERIAL_CRAFT_REFERENCE"
+    }
+  ],
+  "arm64_string_xrefs_count": 0,
+  "arm64_string_xrefs": [],
+  "ldrb_struct_offset_0x26_samples": [],
+  "species_id_confirmed": 0,
+  "material_enum_confirmed": false,
+  "warning": "String or ldrb offsets in ExeFS are candidate anchors only. Confirm struct base, caller, ID input dataflow and runtime bindings before assigning any species/material type."
+}
