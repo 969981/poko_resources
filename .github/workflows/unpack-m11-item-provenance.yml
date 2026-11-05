@@ -6,12 +6,16 @@ on:
     branches: ["2.0.1_unpack"]
     paths:
       - "Scripts/resources/trace_native_item_provenance.py"
+      - "Scripts/resources/trace_native_item_decisions.py"
+      - "tests/test_trace_native_item_decisions.py"
       - "tests/test_trace_native_item_provenance.py"
       - ".github/workflows/unpack-m11-item-provenance.yml"
   push:
     branches: ["2.0.1_unpack"]
     paths:
       - "Scripts/resources/trace_native_item_provenance.py"
+      - "Scripts/resources/trace_native_item_decisions.py"
+      - "tests/test_trace_native_item_decisions.py"
       - "tests/test_trace_native_item_provenance.py"
       - ".github/workflows/unpack-m11-item-provenance.yml"
 
@@ -32,6 +36,8 @@ jobs:
             /UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin
             /Scripts/resources/trace_native_species_item_callers.py
             /Scripts/resources/trace_native_item_provenance.py
+            /Scripts/resources/trace_native_item_decisions.py
+            /tests/test_trace_native_item_decisions.py
             /tests/test_trace_native_item_provenance.py
       - uses: actions/setup-python@v5
         with:
@@ -40,8 +46,12 @@ jobs:
         run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
       - name: Validate ARM64 loads, branch barriers and register dataflow
         run: python -m unittest discover -s tests -p "test_trace_native_item_provenance.py" -v
+      - name: Synthetic native byte conditional consumers with negative controls
+        run: python -m unittest discover -s tests -p "test_trace_native_item_decisions.py" -v
       - name: Analyze actual original ExeFS with 4600 x 68 source hash lock
         run: python -m Scripts.resources.trace_native_item_provenance
+      - name: Follow original byte loads into conditional uses
+        run: python -m Scripts.resources.trace_native_item_decisions
       - name: Enforce source coverage and absence of unsupported semantic claims
         run: |
           python3 - <<'PY'
@@ -57,6 +67,10 @@ jobs:
           assert not report["verified_item_category_consumer"]
           assert not report["verified_material_type_enum"]
           assert not report["verified_99_stack_merge_limit"]
+          decision=json.loads((folder/"field_condition_dataflow.json").read_text())
+          assert not decision["confirmed_item_record_base"] and not decision["confirmed_material_type_enum"]
+          assert decision["main_sha256"]==report["source_main_sha256"]
+          print("M11 conditions", decision["counters"], "total", decision["conditional_candidate_total"])
           print("M11 native scanned slots", report["inspected_instruction_slots"],
                 "co-access candidate sites", report["coaccess_candidates_total"])
           PY
@@ -66,4 +80,6 @@ jobs:
           path: |
             UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M11/item_consumer_register_provenance.json
             UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M11/item_consumer_review_shortlist.json
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M11/field_condition_dataflow.json
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M11/field_condition_shortlist.json
           retention-days: 30
