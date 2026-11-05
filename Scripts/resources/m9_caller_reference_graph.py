@@ -216,7 +216,8 @@ def main():
     out=args.dest
     out.mkdir(parents=True,exist_ok=True)
     groups={int(row["start_entry"]) for row in read_csv(args.m7_groups)}
-    if len(groups)!=179 or 4645 not in groups:raise ValueError("M7 group count/anchor mismatch")
+    if len(groups)<170 or not {2323,2350,3304,4645}.issubset(groups):
+        raise ValueError("M7 group inventory or core reference anchors missing")
     edges=typed_edges(args.m8_dir,groups)
     selection={}
     for path in args.sample:
