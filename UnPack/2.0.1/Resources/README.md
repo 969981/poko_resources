@@ -8,17 +8,46 @@
 | --- | ---: | --- |
 | 九语言物品名称 | 每语言 4,600 槽、差异 0 | 原生 LINKDATA 对照一致 |
 | 原生 PNG | 1,619 条，覆盖 1,615 个唯一道具 ID | 原始 G1T + TEXINFO UV，PNG 尺寸及 SHA-256 核验 |
-| 主双层图集 | 1,333 张，72×72；727/606 分层 | 两个 2048×2048 BC7 条目，GOB16/top-V，样本对照 |
+| 主双层图集 | 1,333 张，72×72；727/606 分层 | 两个 2048×2048 BC7 条目；经原始字节比对改为 **Ounce16**，与 PokoHex 图标距离中位数 **0.00528** |
 | 次图集及特殊图集 | 272 + 14 条 | 单独保存来源，未覆盖主图集 |
 | 主图集与其他道具原生字段核验 | 2,560 / 3,229 条 | TEXINFO 精确 sprite 名 + G1T 大小 + KIDSOBJDB Hash 三元组 |
 | 当前扫描范围内无法定位原始文件 | 669 / 3,229 条 | `NATIVE_SOURCE_UNAVAILABLE`，**不是**纹理错误结论 |
-| 宝可梦纹理候选 | 609 条，580 个物理文件已定位 | Hash/文件引用；图像与物种 ID 尚待验证 |
+| 宝可梦纹理候选 | 609 张均已从原始来源导出（其中 29 张使用等值解码别名） | **Ounce2/8** 解码、PNG/SHA 校验；609 条 KIDSOBJDB 索引关联；物种 ID **尚无一条原生证明** |
 
 **每个道具 ID 的权威入口**：`Items/Native_2.0.1/native_icon_complete_catalog.csv`，包含原生 PNG 路径、来源组、G1T/TEXINFO Hash、SHA-256、PokoHex 对照路径和九语言名称。四个重叠 ID（1677、1764、1765、2742）保留两个原生版本，不擅自合并。详见 `Items/Native_2.0.1/native_icon_coverage.json` 和 `native_icon_variant_review.csv`。
 
 **字段逐项证据**：`Textures/item_native_link_audit.csv` 和 `Textures/item_native_link_summary.json`。脚本 `Scripts/resources/trace_item_textures.py` 已统一使用 `parse_texinfo()` 解析多记录文件，不再把「并非第一条记录」错判为 `NATIVE_MISMATCH`。回归验收：[`M5 - Audit Pokopia item texture links`](https://github.com/969981/poko_resources/actions/runs/41939099430)（成功；1,333 条主图集逐项核验）。
 
 **边界**：图像经过 PNG 解码、72×72 尺寸及 SHA-256 校验；与 PokoHex 参考图的距离是启发式对照，不证明所有像素逐点相同。1,615 个已定位 ID 不能外推为所有 3,585 个有名称的物品都应有独立图标。原生物品名称九语言已核验，不代表剧情/UI/任务全部语言文本已完成。
+
+
+## M5.2 — Ounce 平台原生 PNG 校正与材料/UI 图像证据（2026-11-05）
+
+**像素布局核心修复**：旧 `gobN` 解码为传统 Tegra GOB，但 2.0.1 Switch 2 G1T 平台字段为 `0x18`。通过直接核验原始两个 G1T、UV/TEXINFO 与多张已知 PNG，确认其 64×8 GOB 内低位地址需要交换 `x0/y1` 两位。统一解码器 `Scripts/resources/g1t_to_png.py` 新增 `ounce1/2/4/8/16/32`，保留传统 `gobN` 作为旧格式比较候选。
+
+- 原生道具主图集重新导出 1,333 张：`ounce16`，1,333/1,333 参考比较均低于旧相似阈值 0.15，中位数 0.00528238、最大 0.01718695。
+- 原生次图集 272 张：中位数 0.00608996，271 张通过，`item_1765` 次版本与主版本差异较大，仍保留双版本，不擅自替换。
+- 原生混合图集 14 张：13 个 BC7 `ounce8`，1 个 BGRA `ounce16`，与参考差异最大 0.00888052。
+- 重新运行 `reconcile_native_item_icons.py`：1,619 条文件的 SHA-256 再次核验，生成 1,615 个物品 ID 的统一 `native_icon_complete_catalog.csv`。
+- 宝可梦普通/特殊图标：原版 609 条 TEXINFO/G1T，**609 张源图均已以 `ounceN` 重新裁剪导出**；原始 G1T 580 条加 29 条等值别名恢复；详见 `Pokemon/NativeCandidates/pokemon_native_manifest.csv` 和 `Pokemon/README.md`。
+- 物种身份严格隔离：`Pokemon/pokemon_identity_crosswalk.csv` 从 KIDSOBJDB 索引找到 609/609 的 `object_hash` 与图像双 Hash 链，但 `native_species_id_verified` **全部保持空值**，等待实际物种表/纹理消费者证据，绝不把纹理名的四位数字直接写成图鉴物种 ID。
+
+**其他原生 UI/素材/场景纹理**：
+
+| 证据 | 条目数 |
+| --- | ---: |
+| 已从 2.0.1 原生包解析的 TEXINFO 条目 | 7,566 |
+| 排除 `item_\d+` 和 `icon_poke_` 后的名称/UV 条目 | 4,348 |
+| 唯一索引边 + 原生 G1T 文件路径 | 3,930 |
+| 原生 G1T 路径缺失或不唯一 | 368 |
+| KIDSOBJDB 索引 Hash 关系缺失/歧义 | 50 |
+| **原始二进制和 UV 逐条验证并成功转 PNG 的样本** | **25/25** |
+
+查阅 `Textures/Indexes/native_misc_texture_index.csv`、`native_misc_texture_summary.json`、`Textures/MiscNativeSamples/misc_native_sample_manifest.csv`、`contact_sheet_misc_native.png`。样本包括纹理名中出现的素材不足提示、UI 图标、发型、场景插画、装饰边框等。名称包含 `material` 的 5 条仅表示**名称候选**，不能视为全部游戏材料分类；道具材料可能已包含在前述 1,615 个物品图标中，必须从原版物品类型字段进一步校验。
+
+复现工作流：`unpack-m5-pokemon-export.yml`、`unpack-m5-pokemon-identity.yml`、`unpack-m5-reconcile-item-icons.yml`、`unpack-m5-ui-material-index.yml`、`unpack-m5-ui-material-preview.yml`。所有 `PNG_CANDIDATE_UNVERIFIED` 仍属于原生来源可证、**尚未逐一与游戏实际画面比较**的图像，不将其批量改为最终游戏显示验收完成。
+
+
 
 
 此目录是 **从 `UnPack/2.0.1/romfs/` 中间层衍生出的可用资源索引**；原始、逐条解包内容继续保留在 `romfs/` 下，不做重排覆盖。当前分两套来源：
