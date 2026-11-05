@@ -34,7 +34,7 @@ def main():
     indices=sorted(set([0,1,15,53,98,137,186,230,271]))
     selected=[sprites[i] for i in indices]
     args.out.mkdir(parents=True,exist_ok=True)
-    layouts=["linear","gob1","gob2","gob4","gob8","gob16","gob32","morton8","morton16","morton16_yx"]
+    layouts=["linear","gob1","gob2","gob4","gob8","gob16","gob32","ounce16","morton8","morton16","morton16_yx"]
     records=[]
     for layout in layouts:
         try:
