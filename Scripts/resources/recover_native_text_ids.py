@@ -70,7 +70,15 @@ def parse(data, entry, path):
             if nul < 0: return None,"MISSING_NUL"
             try: val=data[off:nul].decode("utf-8","strict")
             except UnicodeDecodeError: return None,"INVALID_UTF8"
-            if val and sum(c.isprintable() or c.isspace() for c in val)/len(val) < 0.9:
+            # PUA glyphs occur in native strings (e.g. Korean U+E01B).
+            # Preserve code points; never replace native game glyphs with '?'.
+            def readable(ch):
+                cp=ord(ch)
+                return (ch.isprintable() or ch.isspace() or
+                        0xE000 <= cp <= 0xF8FF or
+                        0xF0000 <= cp <= 0xFFFFD or
+                        0x100000 <= cp <= 0x10FFFD)
+            if val and sum(readable(c) for c in val)/len(val) < 0.9:
                 return None,"INVALID_PRINTABLE_RATIO"
             vals.append(val)
             offsets.append(off)
