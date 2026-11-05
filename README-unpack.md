@@ -7,6 +7,7 @@
 ## 核心入口
 
 - [解包产物及格式](UnPack/2.0.1/README.md)
+- [Obsidian 技术知识库：格式、脚本、图片、文本与证据](docs/2.0.1/Technical/README.md)
 - [完整目录规则](docs/2.0.1/DIRECTORY.md)
 - [总体计划与验收](docs/2.0.1/PLAN.md)
 - [分阶段任务](docs/2.0.1/TASKS.md)
