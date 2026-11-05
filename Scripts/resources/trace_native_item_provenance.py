@@ -105,15 +105,15 @@ def slice_instructions(md, code: bytes, base: int, start: int, end: int):
     return list(md.disasm(code[start-base:end-base], start))
 
 
-def no_register_kill(md, code, base, first, second, reg):
+def no_register_kill(md, code, base, first, second, reg, skip_first_write=False):
     """Is this same-register co-access *linear*? No branch/write in between."""
     if first > second:
         first, second = second, first
     seq = slice_instructions(md, code, base, first, second+4)
     if len(seq) != (second-first)//4 + 1:
         return False
-    for insn in seq[:-1]:
-        if is_barrier(insn) or reg in write_names(insn):
+    for index, insn in enumerate(seq[:-1]):
+        if is_barrier(insn) or (reg in write_names(insn) and not (index == 0 and skip_first_write)):
             return False
     return True
 
@@ -191,7 +191,7 @@ def evaluate(fields, compares, movz, code, base, max_output=120):
                 if rnum != candidate["target_register"]:
                     attribution = "DIFFERENT_REGISTER_NOT_DIRECT_FIELD_COMPARE"
                 elif no_register_kill(md, code, base, pc, cmp_pc,
-                                       "x"+str(candidate["target_register"])):
+                                       "x"+str(candidate["target_register"]), skip_first_write=True):
                     attribution = "STRAIGHT_LINE_SAME_FIELD_REGISTER_NO_ITEM_BASE_PROOF"
                 else:
                     attribution = "REGISTER_REDEFINED_OR_CONTROL_FLOW"
