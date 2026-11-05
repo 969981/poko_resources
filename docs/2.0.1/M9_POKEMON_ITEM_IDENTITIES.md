@@ -57,6 +57,22 @@
 - 最终总账严格做 3,930 条源记录的集合对账：无重叠、无丢失、不混入未关联的 418 条；成功输出数不以工作流 success 代替，须读取各批 manifest 状态。
 - 分类目前仅是纹理名启发式：`ui_icon`、`ui_gameplay`、`material_name` 等，并不能证明物品 `ItemType`。
 
+
+## 已执行的原始 2.0.1 ExeFS 静态反查（2026-11-05）
+
+- 原始文件 `2.0.1/exefs/main`：NSO0，源 SHA-256 `8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f`；各压缩段解压验证：text **41,194,624** 字节、rodata **11,402,740** 字节、data **2,760,384** 字节。
+- `Scripts/resources/trace_native_species_item_callers.py` 已检查 text 的 **10,298,656 条 4 字节指令槽**，用 AArch64 ADRP+ADD 原始编码解算 rodata 字符串地址；捕获 **44 条候选字符串交叉引用**。输出 `Resources/Pokemon/NativeCallers/main_string_xrefs.json`，保留原始 PC、ADRP/ADD 指令字、目标字符串 RVA。
+- 高价值下一跳（**地址为 ExeFS NSO text RVA，不是游戏运行时绝对地址**）：
+  - `m_craftRecipeId`：RVA `0x${(6270468).toString(16)}`
+  - `m_craftMainHelpPokemonKind`：RVA `0x${(6270728).toString(16)}`
+  - `m_craftHelpTable`：RVA `0x${(6270796).toString(16)}`
+  - `m_mainPokemonList`：RVA `0x${(6279528).toString(16)}`
+  - `pokemon_dex_id`：RVA `0x${(18049700).toString(16)}`
+- 可确认这些名称存在于原版 rodata 并被原版 text 指令引用，**但尚不等同于物种 ID → G1T/TEXINFO Hash 的直接调用链**。
+- 此版没有检测到包含 `icon_poke_` 的原始可打印字符串，可能是资源中名称生成/哈希加载，并不证明“没有该功能”。不能仅用字符串缺失下定论。
+- 在 text 中也找到若干 `ldrb [Xn,#0x26]` 候选指令，但它们目前只证明代码里存在相同**位移**，还没有证明基址寄存器确实指向 00983.bin 的 68 字节 `Item` 记录；不得据此把原料枚举标为已恢复。
+- 下一阶段针对上述 RVA 候选做函数边界、寄存器数据流、原始加载对象身份/调用图回溯；若缺乏确切来源，保持 `species_id_verified=0`、`material_enum_confirmed=false`。
+
 ## 检查点
 
 | 核验项 | 已知情况 | 升级证据 |
