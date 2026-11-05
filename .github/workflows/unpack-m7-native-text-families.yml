@@ -1,0 +1,162 @@
+name: M7.1 - Triage native text families (hypotheses only)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/triage_unlinked_text_families.py"
+      - "Scripts/resources/recover_native_text_ids.py"
+      - "Scripts/resources/export_native_text_files.py"
+      - "tests/test_unlinked_text_families.py"
+      - "UnPack/2.0.1/Resources/Localization/M7/native_table_inventory.csv"
+      - "UnPack/2.0.1/Resources/Localization/M7/nine_language_groups.csv"
+      - "UnPack/2.0.1/Resources/Localization/M8/native_role_text_refs.csv"
+      - ".github/workflows/unpack-m7-native-text-families.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m7-native-text-families
+  cancel-in-progress: false
+
+jobs:
+  native-family-triage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout only parser, M7/M8 evidence and previous triage
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          persist-credentials: true
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/triage_unlinked_text_families.py
+            Scripts/resources/recover_native_text_ids.py
+            Scripts/resources/export_native_text_files.py
+            tests/test_unlinked_text_families.py
+            UnPack/2.0.1/Resources/Localization/M7/native_table_inventory.csv
+            UnPack/2.0.1/Resources/Localization/M7/nine_language_groups.csv
+            UnPack/2.0.1/Resources/Localization/M8/native_role_text_refs.csv
+            UnPack/2.0.1/Resources/Localization/TextFamilies
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Select exactly the 983 native files missing from M7 strict grouping
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY' > /tmp/native-text-families-paths.txt
+          from pathlib import Path
+          import csv
+          root=Path("UnPack/2.0.1/Resources/Localization/M7")
+          with (root/"native_table_inventory.csv").open(encoding="utf-8-sig", newline="") as f:
+              inv={int(r["entry"]):r for r in csv.DictReader(f)}
+          with (root/"nine_language_groups.csv").open(encoding="utf-8-sig", newline="") as f:
+              groups=list(csv.DictReader(f))
+          assert len(groups)==195
+          linked={int(r["start_entry"])+k for r in groups for k in range(9)}
+          assert len(linked)==1755
+          parsed={entry for entry,r in inv.items() if r["status"]=="PARSED"}
+          assert len(parsed)==2738 and linked<=parsed
+          other=sorted(parsed-linked)
+          assert len(other)==983
+          for entry in other:
+              print(f"UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/{entry:05d}.bin")
+          PY
+          git sparse-checkout add --stdin < /tmp/native-text-families-paths.txt
+          python - <<'PY'
+          from pathlib import Path
+          files=Path("/tmp/native-text-families-paths.txt").read_text().splitlines()
+          missing=[f for f in files if not Path(f).is_file()]
+          if missing: raise SystemExit(f"Missing {len(missing)} original native files: {missing[:20]}")
+          print("Found all",len(files),"original M7-unlinked native files")
+          PY
+
+      - name: Test M7 structural vs M8 proven distinctions
+        run: python -m unittest discover -s tests -p 'test_unlinked_text_families.py' -v
+
+      - name: Run original-byte parsing, script witness and structural triage
+        shell: bash
+        run: |
+          set -euo pipefail
+          python Scripts/resources/triage_unlinked_text_families.py \
+            > /tmp/m7-native-text-families.log 2>&1 || {
+              tail -n 120 /tmp/m7-native-text-families.log
+              exit 1
+            }
+          cat /tmp/m7-native-text-families.log
+
+      - name: Verify catalog accounting and fail-closed provenance
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, json
+          from pathlib import Path
+          root=Path("UnPack/2.0.1/Resources/Localization/TextFamilies")
+          r=json.loads((root/"native_text_families_report.json").read_text(encoding="utf-8"))
+          assert r["status"]=="M7_UNLINKED_NATIVE_STRUCTURE_AND_SCRIPT_TRIAGE_NOT_NEW_VERIFIED_MAPPING"
+          assert r["native_unlinked_tables_scanned"]==r["original_source_sha256_verified"]==983
+          assert r["m7_linked_tables_excluded"]==1755
+          assert r["m8_pinned_source_files"]==18
+          assert r["remaining_without_m8_role_identity"]==965
+          assert r["new_verified_locale_assignments"]==0
+          assert r["new_verified_semantic_categories"]==0
+          assert r["new_verified_script_callers"]==0
+          with (root/"unlinked_native_shape_runs.csv").open(encoding="utf-8",newline="") as f:
+              runs=list(csv.DictReader(f))
+          with (root/"nine_language_hypotheses_NOT_VERIFIED.csv").open(encoding="utf-8",newline="") as f:
+              candidates=list(csv.DictReader(f))
+          with (root/"unsegmented_native_text_tables.csv").open(encoding="utf-8",newline="") as f:
+              residual=list(csv.DictReader(f))
+          assert len(runs)==r["maximal_shape_bitmap_runs"]
+          assert len(candidates)==r["hypothetical_nine_chunks"]
+          assert len(residual)==r["source_files_outside_nine_chunk_runs"]
+          assert len(candidates)*9+len(residual)==983
+          assert sum(int(c["actual_locale_assignment"]=="M8_PINNED") for c in candidates)==2
+          assert {int(c["hypothetical_start_entry"]) for c in candidates if c["m8_pinned_role"]}=={2332,4942}
+          assert all(c["script_caller_verified"]=="false" for c in candidates)
+          assert all(c["semantic_category"]=="UNKNOWN" for c in candidates if not c["m8_pinned_role"])
+          print("PASS: 983 sources, 2 pinned M8 controls, no new semantic claims")
+          PY
+
+      - name: Upload inspectable candidate analysis
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-201-m7-native-text-families
+          path: UnPack/2.0.1/Resources/Localization/TextFamilies
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Commit conservative analysis
+        if: success()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- UnPack/2.0.1/Resources/Localization/TextFamilies
+          if git diff --cached --quiet; then echo "Triage unchanged"; exit 0; fi
+          git commit -m "data(m7): inspect 983 unlinked native tables and publish nonverified family hypotheses"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
+
+      - name: Publish bounded failure log
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-201-m7-native-text-families-failure
+          path: /tmp/m7-native-text-families.log
+          if-no-files-found: ignore
+          retention-days: 30
