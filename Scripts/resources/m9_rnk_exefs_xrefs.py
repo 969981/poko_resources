@@ -83,8 +83,8 @@ def find_references(text_data,text_base,site_by_va,max_per_hash=80):
                 "instruction_kind":kind,
                 "adrp_word":f"0x{word:08x}",
                 "second_word":f"0x{nextword:08x}",
-                "evidence":"DIRECT_ADJACENT_ARM64_LITERAL_ACCESS" if delta==4 else
-                           "NONADJACENT_AARCH64_POSSIBLE_ACCESS",
+                "evidence":("DIRECT_ADJACENT_ARM64_HASH_ADDRESS_CONSTRUCTION" if kind=="ADD_ADDRESS" else "DIRECT_ADJACENT_ARM64_HASH_VALUE_LOAD") if delta==4 else
+                           ("NONADJACENT_AARCH64_POSSIBLE_ADDRESS" if kind=="ADD_ADDRESS" else "NONADJACENT_AARCH64_POSSIBLE_LOAD"),
                 "property_consumer_verified":0,
                 "scene_quest_building_fk_verified":0
             })
@@ -130,6 +130,8 @@ def analyze(main_blob,prior):
         "rodata_hash_sites_checked":len(site_by_va),
         "direct_arm64_xref_records":len(xrefs),
         "adjacent_direct_literal_access_count":sum(r["distance_instructions"]==1 for r in xrefs),
+        "adjacent_address_construction_count":sum(r["distance_instructions"]==1 and r["instruction_kind"]=="ADD_ADDRESS" for r in xrefs),
+        "adjacent_value_load_count":sum(r["distance_instructions"]==1 and r["instruction_kind"] in ("LDR_W","LDR_X") for r in xrefs),
         "arm64_code_xrefs":xrefs,
         "movz_movk_instruction_windows":windows,
         "actual_kidsobjdb_field_consumer_confirmed":0,
