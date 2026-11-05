@@ -102,7 +102,7 @@ def main() -> None:
     if len({(t["width"], t["height"]) for t in layers}) != 1:
         raise ValueError("atlas texture entries disagree on dimensions; UV mapping needs investigation")
     layouts = [s.strip() for s in args.layouts.split(",") if s.strip()]
-    if any(s not in ("linear", "gob1", "gob2", "gob4", "gob8", "gob16", "gob32",
+    if any(s not in ("linear", "gob1", "gob2", "gob4", "gob8", "gob16", "gob32", "ounce1", "ounce2", "ounce4", "ounce8", "ounce16", "ounce32",
                      "morton", "morton_yx", "morton8", "morton8_yx",
                      "morton16", "morton16_yx", "morton32", "morton32_yx")
            for s in layouts):
