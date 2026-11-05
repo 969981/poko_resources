@@ -1,0 +1,43 @@
+{
+  "version": "2.0.1",
+  "original_nso_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "native_KIDS_registry_array_owner_oid": "b4a1803b",
+  "native_KIDS_registry_array_type_hash": "9d1afa46",
+  "native_KIDS_registry_property_hash": "34cbb458",
+  "original_KIDS_u32_array_elements": 3543,
+  "original_pokemon_source_OID_links_in_array": 602,
+  "original_native_hash_code_matches": {
+    "array_3543_property": {
+      "literal_cells": 1,
+      "movz_movk_candidates": 0,
+      "exact_adjacent_mov_pairs": 0,
+      "adrp_literal_xrefs": 0,
+      "exact_adjacent_literal_accesses": 0
+    },
+    "array_owner_type": {
+      "literal_cells": 0,
+      "movz_movk_candidates": 3,
+      "exact_adjacent_mov_pairs": 1,
+      "adrp_literal_xrefs": 0,
+      "exact_adjacent_literal_accesses": 0
+    },
+    "array_owner_oid": {
+      "literal_cells": 0,
+      "movz_movk_candidates": 0,
+      "exact_adjacent_mov_pairs": 0,
+      "adrp_literal_xrefs": 0,
+      "exact_adjacent_literal_accesses": 0
+    },
+    "source_to_texture_property": {
+      "literal_cells": 1,
+      "movz_movk_candidates": 0,
+      "exact_adjacent_mov_pairs": 0,
+      "adrp_literal_xrefs": 0,
+      "exact_adjacent_literal_accesses": 0
+    }
+  },
+  "native_registry_array_consumer_semantics_proven": false,
+  "game_species_id_to_array_slot_verified": false,
+  "game_villager_id_to_source_OID_verified": false,
+  "warning": "An immediate/literal Hash match or indirect property descriptor does not prove access to the 3543-value array by a native species ID."
+}
