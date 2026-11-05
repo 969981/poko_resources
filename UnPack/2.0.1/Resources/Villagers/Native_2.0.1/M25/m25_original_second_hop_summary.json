@@ -1,0 +1,14 @@
+{
+  "original_kidsobjdb_files_scanned": 678,
+  "parsed_original_object_nodes": 43001,
+  "typed_original_u32_values_scanned": 962158,
+  "M19_distinct_source_oids": 603,
+  "original_typed_backreference_rows": 603,
+  "distinct_M19_source_oids_referenced": 603,
+  "matched_property_hash_counts": {
+    "34cbb458": 603
+  },
+  "native_species_id_bindings_verified": 0,
+  "native_villager_id_bindings_verified": 0,
+  "warning": "A typed u32 match to an M19 source OID is only another raw reference candidate, not game identity. All original KIDSDB OIDs may be file-scoped or ambiguous."
+}
