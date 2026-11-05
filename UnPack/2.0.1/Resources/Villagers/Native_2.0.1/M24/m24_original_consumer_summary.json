@@ -1,0 +1,32 @@
+{
+  "version": "2.0.1",
+  "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "original_main_bytes_sha_verified": true,
+  "m22_ambiguous_portrait_ids": [
+    "16",
+    "18",
+    "96",
+    "98",
+    "218",
+    "220",
+    "296",
+    "297",
+    "298"
+  ],
+  "m22_typed_native_edge_rows": 54,
+  "m23_1_static_initialization_rechecked": true,
+  "scope": "ORIGINAL_NSO_DIRECT_BRANCH_AND_ADJACENT_GLOBAL_REFERENCES_ONLY",
+  "original_owner_bss_va": "0x366e6f0",
+  "registry_type_hash": "0x79991e79",
+  "texture_pointer_property_hash": "0x2856a1b3",
+  "method_table_verified_entries": 16,
+  "method_table_entries_in_original_text": 16,
+  "global_adjacent_source_xrefs_total": 0,
+  "global_adjacent_source_xrefs_by_cell": {},
+  "registry_typehelper_direct_B_or_BL": 3946,
+  "original_method_class_owner_verified": false,
+  "game_villager_id_field_consumer_verified": false,
+  "native_species_id_bindings_verified": 0,
+  "native_villager_id_bindings_verified": 0,
+  "warning": "No direct branch/ADRP read proves the caller passes a game villager ID. BSS owner and source->texture linkage remain independent evidence layers."
+}
