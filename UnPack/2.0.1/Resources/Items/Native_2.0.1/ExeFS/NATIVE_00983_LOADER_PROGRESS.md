@@ -1,5 +1,21 @@
 # Pokopia 2.0.1 — 00983.bin 原生加载器、ID 查询与分类字段静态追踪
 
+## M22 校正：先前「编号 983 是 00983.bin 原生加载器」的推断已排除（2026-11-05）
+
+**关键更正，优先于本文件中此前关于独立 983 路径的候选解释：**
+
+原版 NSO 中的 40 字节描述符索引表 RVA 0x3354500 + 983×0x28 = 0x335DE98，其两个字符串指针经原始字节解引用分别为：
+
+- RVA 0x28006B2：md_gost12_512
+- RVA 0x278B076：GOST R 34.11-2012 with 512 bit hash
+
+相邻描述符 982 的名字是 md_gost12_256，984 的名字是 id-tc26-signwithdigest，进一步确定该索引表属于 **密码学算法/OID 描述符**，不是 Pokopia 物品或 LINKDATA 资源索引。原有两处 main+0x14FD9B0 / 0x14FDB1C 的 MOV #983 → 0x1445E30 → 0x14718F0 → 0x36D54C8 路径属于此密码学描述符查找/包装流程；此前作为待证的物品加载路径已被反证，**今后禁止用这里的数值 983 作为 LD_C0_R.BIN/decoded/00983.bin 的身份依据**。
+
+注意：这项排除**不意味着**原始 00983.bin 文件结构、4600×68 记录、+0x22 名称索引或 0xC7→V1→V2 物品查询指令是假的；它们各自由其他独立证据确认，但仍缺少把 V2 返回的 wrapper+8 指针关联到原始文件记录的真实数据流。
+
+M22 的证据和可回归校验：M22/descriptor_983_referents.json，以及 Scripts/resources/trace_native_983_descriptor_refs.py、.github/workflows/unpack-m22-descriptor-983-referents.yml。测试会明确校验 982/983/984 三个密码学字符串，防止数字撞号再次造成错误提升。
+
+
 > 证据版本：原版 `2.0.1/exefs/main` SHA-256
 > `8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f`，
 > 原生 LINKDATA `00983.bin` SHA-256
