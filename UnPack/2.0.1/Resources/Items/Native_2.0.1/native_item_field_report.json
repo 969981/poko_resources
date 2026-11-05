@@ -1,0 +1,2614 @@
+{
+  "status": "NATIVE_BYTES_AND_NAME_INDEX_VALIDATED__TYPE_SEMANTICS_UNVERIFIED",
+  "game_version": "2.0.1",
+  "entry_id": 983,
+  "original_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin",
+  "original_sha256": "2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f",
+  "record_header_bytes": 64,
+  "record_stride_bytes": 68,
+  "record_count": 4600,
+  "named_item_count_excluding_empty": 3585,
+  "verified_field": {
+    "offset": 34,
+    "hex_offset": "0x22",
+    "width": 2,
+    "meaning": "native item name_index; confirmed by all nine language tables"
+  },
+  "candidate_field": {
+    "offset": 38,
+    "hex_offset": "0x26",
+    "width": 1,
+    "observed_for_raw_material_name_samples": 16,
+    "meaning": "UNKNOWN - group/category enum candidate, NOT confirmed material type"
+  },
+  "candidate_field_counts": {
+    "0": {
+      "all_item_slots": 860,
+      "with_native_names": 2,
+      "name_examples": [
+        {
+          "id": 3589,
+          "name": "meteor lamp"
+        },
+        {
+          "id": 3700,
+          "name": "???"
+        }
+      ]
+    },
+    "4": {
+      "all_item_slots": 142,
+      "with_native_names": 142,
+      "name_examples": [
+        {
+          "id": 302,
+          "name": "flower cushion"
+        },
+        {
+          "id": 304,
+          "name": "flower table"
+        },
+        {
+          "id": 314,
+          "name": "camping chair"
+        },
+        {
+          "id": 315,
+          "name": "sleeping bag"
+        },
+        {
+          "id": 425,
+          "name": "cloud table"
+        },
+        {
+          "id": 426,
+          "name": "starry-sky bed"
+        },
+        {
+          "id": 427,
+          "name": "star-shaped dresser"
+        },
+        {
+          "id": 428,
+          "name": "star closet"
+        },
+        {
+          "id": 445,
+          "name": "sand bed"
+        },
+        {
+          "id": 448,
+          "name": "cooler"
+        },
+        {
+          "id": 458,
+          "name": "marine sofa"
+        },
+        {
+          "id": 459,
+          "name": "marine table"
+        },
+        {
+          "id": 460,
+          "name": "marine chair"
+        },
+        {
+          "id": 461,
+          "name": "marine dresser"
+        },
+        {
+          "id": 462,
+          "name": "marine chest"
+        }
+      ]
+    },
+    "5": {
+      "all_item_slots": 165,
+      "with_native_names": 165,
+      "name_examples": [
+        {
+          "id": 48,
+          "name": "iron-scaffold plank"
+        },
+        {
+          "id": 401,
+          "name": "house partition (big)"
+        },
+        {
+          "id": 450,
+          "name": "decorative cloth"
+        },
+        {
+          "id": 451,
+          "name": "ornate door"
+        },
+        {
+          "id": 452,
+          "name": "ornate window"
+        },
+        {
+          "id": 453,
+          "name": "flat scale roof"
+        },
+        {
+          "id": 454,
+          "name": "sloped scale roof"
+        },
+        {
+          "id": 455,
+          "name": "scale hipped roof"
+        },
+        {
+          "id": 456,
+          "name": "scale roof valley"
+        },
+        {
+          "id": 457,
+          "name": "scale awning"
+        },
+        {
+          "id": 468,
+          "name": "ornate partition"
+        },
+        {
+          "id": 470,
+          "name": "scale roof decoration"
+        },
+        {
+          "id": 530,
+          "name": "sleek steps"
+        },
+        {
+          "id": 531,
+          "name": "floating logs"
+        },
+        {
+          "id": 535,
+          "name": "glass pane"
+        }
+      ]
+    },
+    "6": {
+      "all_item_slots": 1043,
+      "with_native_names": 930,
+      "name_examples": [
+        {
+          "id": 90,
+          "name": "party popper"
+        },
+        {
+          "id": 92,
+          "name": "Star Piece"
+        },
+        {
+          "id": 100,
+          "name": "Rainbow Feather"
+        },
+        {
+          "id": 122,
+          "name": "Silver Feather"
+        },
+        {
+          "id": 131,
+          "name": "someone’s journal #3"
+        },
+        {
+          "id": 132,
+          "name": "someone’s journal #4"
+        },
+        {
+          "id": 134,
+          "name": "Team R Grunt’s journal #1"
+        },
+        {
+          "id": 135,
+          "name": "Team R Grunt’s journal #2"
+        },
+        {
+          "id": 136,
+          "name": "Team R Grunt’s journal #3"
+        },
+        {
+          "id": 137,
+          "name": "Team R Grunt’s journal #4"
+        },
+        {
+          "id": 138,
+          "name": "Team R Grunt’s journal #5"
+        },
+        {
+          "id": 139,
+          "name": "Team R Grunt’s journal #6"
+        },
+        {
+          "id": 140,
+          "name": "Team R Grunt’s journal #7"
+        },
+        {
+          "id": 141,
+          "name": "Team R Grunt’s journal #8"
+        },
+        {
+          "id": 142,
+          "name": "Hacker’s confessions #1"
+        }
+      ]
+    },
+    "8": {
+      "all_item_slots": 228,
+      "with_native_names": 228,
+      "name_examples": [
+        {
+          "id": 42,
+          "name": "cushy wall"
+        },
+        {
+          "id": 47,
+          "name": "muddy pure-white soil"
+        },
+        {
+          "id": 297,
+          "name": "gray circle flooring"
+        },
+        {
+          "id": 416,
+          "name": "carved coarse rock"
+        },
+        {
+          "id": 417,
+          "name": "carved light-brown rock"
+        },
+        {
+          "id": 418,
+          "name": "carved yellow rock"
+        },
+        {
+          "id": 419,
+          "name": "carved red rock"
+        },
+        {
+          "id": 495,
+          "name": "farm soil"
+        },
+        {
+          "id": 500,
+          "name": "seafloor algae"
+        },
+        {
+          "id": 501,
+          "name": "star-spotted rock"
+        },
+        {
+          "id": 502,
+          "name": "glossy tiling"
+        },
+        {
+          "id": 549,
+          "name": "carved blue rock"
+        },
+        {
+          "id": 636,
+          "name": "sandstone"
+        },
+        {
+          "id": 687,
+          "name": "vibrant glossy tiling"
+        },
+        {
+          "id": 688,
+          "name": "gradient wall (upper)"
+        }
+      ]
+    },
+    "10": {
+      "all_item_slots": 415,
+      "with_native_names": 383,
+      "name_examples": [
+        {
+          "id": 50,
+          "name": "seashore-flower seeds"
+        },
+        {
+          "id": 51,
+          "name": "cute-flower seeds"
+        },
+        {
+          "id": 52,
+          "name": "palm seeds"
+        },
+        {
+          "id": 53,
+          "name": "square-plant seeds"
+        },
+        {
+          "id": 55,
+          "name": "tomato seeds"
+        },
+        {
+          "id": 56,
+          "name": "bean seeds"
+        },
+        {
+          "id": 59,
+          "name": "wheat seeds"
+        },
+        {
+          "id": 60,
+          "name": "potato seeds"
+        },
+        {
+          "id": 70,
+          "name": "Pecha seeds"
+        },
+        {
+          "id": 72,
+          "name": "Chesto seeds"
+        },
+        {
+          "id": 73,
+          "name": "Rawst seeds"
+        },
+        {
+          "id": 74,
+          "name": "Aspear seeds"
+        },
+        {
+          "id": 76,
+          "name": "Lum seeds"
+        },
+        {
+          "id": 149,
+          "name": "ripe bean plant"
+        },
+        {
+          "id": 150,
+          "name": "ripe tomato plant"
+        }
+      ]
+    },
+    "11": {
+      "all_item_slots": 397,
+      "with_native_names": 393,
+      "name_examples": [
+        {
+          "id": 291,
+          "name": "decorative plant shelf"
+        },
+        {
+          "id": 293,
+          "name": "decorative bookshelf"
+        },
+        {
+          "id": 301,
+          "name": "Hoppip water bottle"
+        },
+        {
+          "id": 303,
+          "name": "lunch box"
+        },
+        {
+          "id": 305,
+          "name": "juice trio"
+        },
+        {
+          "id": 306,
+          "name": "flowery table setting"
+        },
+        {
+          "id": 307,
+          "name": "flower backpack"
+        },
+        {
+          "id": 309,
+          "name": "flower garland"
+        },
+        {
+          "id": 313,
+          "name": "jewel wall decoration"
+        },
+        {
+          "id": 320,
+          "name": "adventure kit"
+        },
+        {
+          "id": 321,
+          "name": "digital camera"
+        },
+        {
+          "id": 400,
+          "name": "party platter"
+        },
+        {
+          "id": 422,
+          "name": "star wall decoration"
+        },
+        {
+          "id": 429,
+          "name": "moon clock"
+        },
+        {
+          "id": 430,
+          "name": "telescope"
+        }
+      ]
+    },
+    "12": {
+      "all_item_slots": 34,
+      "with_native_names": 34,
+      "name_examples": [
+        {
+          "id": 94,
+          "name": "party curry"
+        },
+        {
+          "id": 515,
+          "name": "Sharpedo submarine"
+        },
+        {
+          "id": 680,
+          "name": "Basin Pokémon Center"
+        },
+        {
+          "id": 681,
+          "name": "Dewgong clock tower"
+        },
+        {
+          "id": 716,
+          "name": "imperial cottage"
+        },
+        {
+          "id": 717,
+          "name": "imperial house"
+        },
+        {
+          "id": 1377,
+          "name": "furnace"
+        },
+        {
+          "id": 1378,
+          "name": "waterwheel"
+        },
+        {
+          "id": 1379,
+          "name": "windmill"
+        },
+        {
+          "id": 1397,
+          "name": "charging station"
+        },
+        {
+          "id": 1670,
+          "name": "moonlight dance statue"
+        },
+        {
+          "id": 1870,
+          "name": "Poké Mart"
+        },
+        {
+          "id": 1900,
+          "name": "Poké Ball house"
+        },
+        {
+          "id": 2600,
+          "name": "Wasteland Pokémon Center"
+        },
+        {
+          "id": 2601,
+          "name": "Ridge Pokémon Center"
+        }
+      ]
+    },
+    "13": {
+      "all_item_slots": 96,
+      "with_native_names": 94,
+      "name_examples": [
+        {
+          "id": 292,
+          "name": "mushroom streetlight"
+        },
+        {
+          "id": 316,
+          "name": "camping cooking pot"
+        },
+        {
+          "id": 317,
+          "name": "oil lantern"
+        },
+        {
+          "id": 377,
+          "name": "orange meteor lamp"
+        },
+        {
+          "id": 378,
+          "name": "yellow meteor lamp"
+        },
+        {
+          "id": 379,
+          "name": "green meteor lamp"
+        },
+        {
+          "id": 380,
+          "name": "blue meteor lamp"
+        },
+        {
+          "id": 392,
+          "name": "indigo meteor lamp"
+        },
+        {
+          "id": 393,
+          "name": "violet meteor lamp"
+        },
+        {
+          "id": 423,
+          "name": "Jirachi lamp"
+        },
+        {
+          "id": 446,
+          "name": "floating lantern"
+        },
+        {
+          "id": 449,
+          "name": "lampion"
+        },
+        {
+          "id": 517,
+          "name": "bubble machine"
+        },
+        {
+          "id": 522,
+          "name": "pearl streetlight"
+        },
+        {
+          "id": 528,
+          "name": "blender"
+        }
+      ]
+    },
+    "14": {
+      "all_item_slots": 68,
+      "with_native_names": 68,
+      "name_examples": [
+        {
+          "id": 95,
+          "name": "leaf den kit"
+        },
+        {
+          "id": 96,
+          "name": "leaf hut kit"
+        },
+        {
+          "id": 99,
+          "name": "Wasteland Pokémon Center kit"
+        },
+        {
+          "id": 294,
+          "name": "pink hut kit"
+        },
+        {
+          "id": 295,
+          "name": "gray hut kit"
+        },
+        {
+          "id": 296,
+          "name": "yellow hut kit"
+        },
+        {
+          "id": 326,
+          "name": "Pokémon Center rebuilding kit"
+        },
+        {
+          "id": 327,
+          "name": "Pokémon Center rebuilding kit"
+        },
+        {
+          "id": 328,
+          "name": "Pokémon Center rebuilding kit"
+        },
+        {
+          "id": 329,
+          "name": "Pokémon Center rebuilding kit"
+        },
+        {
+          "id": 471,
+          "name": "Pokémon Center rebuilding kit"
+        },
+        {
+          "id": 472,
+          "name": "Basin Pokémon Center kit"
+        },
+        {
+          "id": 473,
+          "name": "clock tower kit"
+        },
+        {
+          "id": 514,
+          "name": "ocean temple kit"
+        },
+        {
+          "id": 516,
+          "name": "submarine kit"
+        }
+      ]
+    },
+    "15": {
+      "all_item_slots": 61,
+      "with_native_names": 60,
+      "name_examples": [
+        {
+          "id": 6,
+          "name": "cave mushrooms"
+        },
+        {
+          "id": 7,
+          "name": "seaweed"
+        },
+        {
+          "id": 8,
+          "name": "tomato"
+        },
+        {
+          "id": 14,
+          "name": "bean"
+        },
+        {
+          "id": 20,
+          "name": "wheat"
+        },
+        {
+          "id": 21,
+          "name": "potato"
+        },
+        {
+          "id": 22,
+          "name": "simple salad"
+        },
+        {
+          "id": 23,
+          "name": "seaweed salad"
+        },
+        {
+          "id": 24,
+          "name": "shredded salad"
+        },
+        {
+          "id": 25,
+          "name": "crushed-berry salad"
+        },
+        {
+          "id": 26,
+          "name": "crouton salad"
+        },
+        {
+          "id": 27,
+          "name": "simple soup"
+        },
+        {
+          "id": 28,
+          "name": "mushroom soup"
+        },
+        {
+          "id": 29,
+          "name": "electrifying soup"
+        },
+        {
+          "id": 30,
+          "name": "healthy soup"
+        }
+      ]
+    },
+    "16": {
+      "all_item_slots": 48,
+      "with_native_names": 48,
+      "name_examples": [
+        {
+          "id": 101,
+          "name": "vine rope"
+        },
+        {
+          "id": 102,
+          "name": "sea glass fragments"
+        },
+        {
+          "id": 105,
+          "name": "brick"
+        },
+        {
+          "id": 106,
+          "name": "copper ore"
+        },
+        {
+          "id": 107,
+          "name": "iron ore"
+        },
+        {
+          "id": 108,
+          "name": "glass"
+        },
+        {
+          "id": 109,
+          "name": "nonburnable garbage"
+        },
+        {
+          "id": 110,
+          "name": "twine"
+        },
+        {
+          "id": 111,
+          "name": "fluff"
+        },
+        {
+          "id": 112,
+          "name": "squishy clay"
+        },
+        {
+          "id": 113,
+          "name": "gold ore"
+        },
+        {
+          "id": 114,
+          "name": "copper ingot"
+        },
+        {
+          "id": 115,
+          "name": "iron ingot"
+        },
+        {
+          "id": 116,
+          "name": "gold ingot"
+        },
+        {
+          "id": 117,
+          "name": "crystal fragment"
+        }
+      ]
+    },
+    "17": {
+      "all_item_slots": 23,
+      "with_native_names": 22,
+      "name_examples": [
+        {
+          "id": 93,
+          "name": "diploma"
+        },
+        {
+          "id": 3960,
+          "name": "Bouldery Badge"
+        },
+        {
+          "id": 3961,
+          "name": "Cascade-like Badge"
+        },
+        {
+          "id": 3962,
+          "name": "Thunderish Badge"
+        },
+        {
+          "id": 3963,
+          "name": "Rainbowish Badge"
+        },
+        {
+          "id": 3964,
+          "name": "Soul-like Badge"
+        },
+        {
+          "id": 3965,
+          "name": "Marshy Badge"
+        },
+        {
+          "id": 3966,
+          "name": "Volcanoey Badge"
+        },
+        {
+          "id": 3967,
+          "name": "“Earth” Badge"
+        },
+        {
+          "id": 3976,
+          "name": "PP Up"
+        },
+        {
+          "id": 3977,
+          "name": "PP Up"
+        },
+        {
+          "id": 3978,
+          "name": "PP Up"
+        },
+        {
+          "id": 3979,
+          "name": "PP Up"
+        },
+        {
+          "id": 3983,
+          "name": "large lost relic"
+        },
+        {
+          "id": 3984,
+          "name": "handy bag"
+        }
+      ]
+    },
+    "18": {
+      "all_item_slots": 929,
+      "with_native_names": 925,
+      "name_examples": [
+        {
+          "id": 523,
+          "name": "lampion"
+        },
+        {
+          "id": 538,
+          "name": "Pikachu sofa"
+        },
+        {
+          "id": 539,
+          "name": "pearl streetlight"
+        },
+        {
+          "id": 721,
+          "name": "buoyant block"
+        },
+        {
+          "id": 722,
+          "name": "wish note"
+        },
+        {
+          "id": 845,
+          "name": "house partition (medium)"
+        },
+        {
+          "id": 846,
+          "name": "house partition (small)"
+        },
+        {
+          "id": 847,
+          "name": "portal pod"
+        },
+        {
+          "id": 848,
+          "name": "dynamic Ditto print"
+        },
+        {
+          "id": 849,
+          "name": "dynamic Ditto print"
+        },
+        {
+          "id": 857,
+          "name": "seashell fencing"
+        },
+        {
+          "id": 858,
+          "name": "marine table"
+        },
+        {
+          "id": 859,
+          "name": "marine chair"
+        },
+        {
+          "id": 860,
+          "name": "marine dresser"
+        },
+        {
+          "id": 861,
+          "name": "marine chest"
+        }
+      ]
+    },
+    "19": {
+      "all_item_slots": 91,
+      "with_native_names": 91,
+      "name_examples": [
+        {
+          "id": 44,
+          "name": "painting (landscape)"
+        },
+        {
+          "id": 45,
+          "name": "painting (portrait)"
+        },
+        {
+          "id": 46,
+          "name": "painting (still life)"
+        },
+        {
+          "id": 250,
+          "name": "eerie candle"
+        },
+        {
+          "id": 318,
+          "name": "treasure"
+        },
+        {
+          "id": 319,
+          "name": "map and compass"
+        },
+        {
+          "id": 431,
+          "name": "cloud cannon"
+        },
+        {
+          "id": 443,
+          "name": "swim ring"
+        },
+        {
+          "id": 444,
+          "name": "big swim ring"
+        },
+        {
+          "id": 447,
+          "name": "beach volleyball set"
+        },
+        {
+          "id": 507,
+          "name": "sandpile"
+        },
+        {
+          "id": 544,
+          "name": "sand toys"
+        },
+        {
+          "id": 594,
+          "name": "supermarket sign"
+        },
+        {
+          "id": 595,
+          "name": "gift shop sign"
+        },
+        {
+          "id": 596,
+          "name": "restaurant sign"
+        }
+      ]
+    }
+  },
+  "named_pair_counts_0x26_vs_0x2A": [
+    {
+      "raw_0x26": 6,
+      "raw_0x2A": 1,
+      "count": 765
+    },
+    {
+      "raw_0x26": 18,
+      "raw_0x2A": 1,
+      "count": 748
+    },
+    {
+      "raw_0x26": 10,
+      "raw_0x2A": 1,
+      "count": 341
+    },
+    {
+      "raw_0x26": 11,
+      "raw_0x2A": 1,
+      "count": 250
+    },
+    {
+      "raw_0x26": 8,
+      "raw_0x2A": 1,
+      "count": 196
+    },
+    {
+      "raw_0x26": 18,
+      "raw_0x2A": 10,
+      "count": 174
+    },
+    {
+      "raw_0x26": 6,
+      "raw_0x2A": 10,
+      "count": 160
+    },
+    {
+      "raw_0x26": 5,
+      "raw_0x2A": 1,
+      "count": 121
+    },
+    {
+      "raw_0x26": 4,
+      "raw_0x2A": 1,
+      "count": 119
+    },
+    {
+      "raw_0x26": 11,
+      "raw_0x2A": 9,
+      "count": 103
+    },
+    {
+      "raw_0x26": 13,
+      "raw_0x2A": 1,
+      "count": 79
+    },
+    {
+      "raw_0x26": 19,
+      "raw_0x2A": 1,
+      "count": 72
+    },
+    {
+      "raw_0x26": 14,
+      "raw_0x2A": 1,
+      "count": 57
+    },
+    {
+      "raw_0x26": 15,
+      "raw_0x2A": 1,
+      "count": 46
+    },
+    {
+      "raw_0x26": 16,
+      "raw_0x2A": 1,
+      "count": 44
+    },
+    {
+      "raw_0x26": 5,
+      "raw_0x2A": 10,
+      "count": 44
+    },
+    {
+      "raw_0x26": 10,
+      "raw_0x2A": 10,
+      "count": 42
+    },
+    {
+      "raw_0x26": 11,
+      "raw_0x2A": 10,
+      "count": 40
+    },
+    {
+      "raw_0x26": 8,
+      "raw_0x2A": 10,
+      "count": 31
+    },
+    {
+      "raw_0x26": 12,
+      "raw_0x2A": 1,
+      "count": 29
+    },
+    {
+      "raw_0x26": 17,
+      "raw_0x2A": 1,
+      "count": 22
+    },
+    {
+      "raw_0x26": 4,
+      "raw_0x2A": 10,
+      "count": 19
+    },
+    {
+      "raw_0x26": 19,
+      "raw_0x2A": 10,
+      "count": 18
+    },
+    {
+      "raw_0x26": 13,
+      "raw_0x2A": 10,
+      "count": 14
+    },
+    {
+      "raw_0x26": 15,
+      "raw_0x2A": 10,
+      "count": 14
+    },
+    {
+      "raw_0x26": 14,
+      "raw_0x2A": 10,
+      "count": 10
+    },
+    {
+      "raw_0x26": 6,
+      "raw_0x2A": 9,
+      "count": 5
+    },
+    {
+      "raw_0x26": 12,
+      "raw_0x2A": 10,
+      "count": 5
+    },
+    {
+      "raw_0x26": 4,
+      "raw_0x2A": 9,
+      "count": 4
+    },
+    {
+      "raw_0x26": 16,
+      "raw_0x2A": 10,
+      "count": 4
+    },
+    {
+      "raw_0x26": 18,
+      "raw_0x2A": 9,
+      "count": 3
+    },
+    {
+      "raw_0x26": 0,
+      "raw_0x2A": 1,
+      "count": 2
+    },
+    {
+      "raw_0x26": 13,
+      "raw_0x2A": 9,
+      "count": 1
+    },
+    {
+      "raw_0x26": 19,
+      "raw_0x2A": 9,
+      "count": 1
+    },
+    {
+      "raw_0x26": 8,
+      "raw_0x2A": 9,
+      "count": 1
+    },
+    {
+      "raw_0x26": 14,
+      "raw_0x2A": 9,
+      "count": 1
+    }
+  ],
+  "byte_offset_profile": [
+    {
+      "offset": 0,
+      "hex_offset": "0x00",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    },
+    {
+      "offset": 1,
+      "hex_offset": "0x01",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    },
+    {
+      "offset": 2,
+      "hex_offset": "0x02",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    },
+    {
+      "offset": 3,
+      "hex_offset": "0x03",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    },
+    {
+      "offset": 4,
+      "hex_offset": "0x04",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    },
+    {
+      "offset": 5,
+      "hex_offset": "0x05",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    },
+    {
+      "offset": 6,
+      "hex_offset": "0x06",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    },
+    {
+      "offset": 7,
+      "hex_offset": "0x07",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    },
+    {
+      "offset": 8,
+      "hex_offset": "0x08",
+      "distinct_values": 14,
+      "most_common": [
+        {
+          "value": 1,
+          "count": 1096
+        },
+        {
+          "value": 10,
+          "count": 714
+        },
+        {
+          "value": 100,
+          "count": 683
+        },
+        {
+          "value": 232,
+          "count": 189
+        },
+        {
+          "value": 20,
+          "count": 186
+        },
+        {
+          "value": 244,
+          "count": 142
+        }
+      ]
+    },
+    {
+      "offset": 9,
+      "hex_offset": "0x09",
+      "distinct_values": 4,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3029
+        },
+        {
+          "value": 1,
+          "count": 364
+        },
+        {
+          "value": 3,
+          "count": 189
+        },
+        {
+          "value": 7,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "offset": 10,
+      "hex_offset": "0x0A",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    },
+    {
+      "offset": 11,
+      "hex_offset": "0x0B",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    },
+    {
+      "offset": 12,
+      "hex_offset": "0x0C",
+      "distinct_values": 256,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 734
+        },
+        {
+          "value": 30,
+          "count": 18
+        },
+        {
+          "value": 32,
+          "count": 18
+        },
+        {
+          "value": 31,
+          "count": 17
+        },
+        {
+          "value": 12,
+          "count": 17
+        },
+        {
+          "value": 34,
+          "count": 17
+        }
+      ]
+    },
+    {
+      "offset": 13,
+      "hex_offset": "0x0D",
+      "distinct_values": 13,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 1573
+        },
+        {
+          "value": 1,
+          "count": 443
+        },
+        {
+          "value": 2,
+          "count": 407
+        },
+        {
+          "value": 3,
+          "count": 302
+        },
+        {
+          "value": 7,
+          "count": 200
+        },
+        {
+          "value": 11,
+          "count": 144
+        }
+      ]
+    },
+    {
+      "offset": 14,
+      "hex_offset": "0x0E",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    },
+    {
+      "offset": 15,
+      "hex_offset": "0x0F",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    },
+    {
+      "offset": 16,
+      "hex_offset": "0x10",
+      "distinct_values": 256,
+      "most_common": [
+        {
+          "value": 208,
+          "count": 502
+        },
+        {
+          "value": 72,
+          "count": 298
+        },
+        {
+          "value": 63,
+          "count": 228
+        },
+        {
+          "value": 64,
+          "count": 129
+        },
+        {
+          "value": 228,
+          "count": 124
+        },
+        {
+          "value": 96,
+          "count": 118
+        }
+      ]
+    },
+    {
+      "offset": 17,
+      "hex_offset": "0x11",
+      "distinct_values": 34,
+      "most_common": [
+        {
+          "value": 32,
+          "count": 494
+        },
+        {
+          "value": 31,
+          "count": 339
+        },
+        {
+          "value": 38,
+          "count": 324
+        },
+        {
+          "value": 8,
+          "count": 209
+        },
+        {
+          "value": 2,
+          "count": 181
+        },
+        {
+          "value": 34,
+          "count": 147
+        }
+      ]
+    },
+    {
+      "offset": 18,
+      "hex_offset": "0x12",
+      "distinct_values": 26,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3455
+        },
+        {
+          "value": 184,
+          "count": 8
+        },
+        {
+          "value": 186,
+          "count": 7
+        },
+        {
+          "value": 50,
+          "count": 5
+        },
+        {
+          "value": 51,
+          "count": 5
+        },
+        {
+          "value": 156,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "offset": 19,
+      "hex_offset": "0x13",
+      "distinct_values": 7,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3510
+        },
+        {
+          "value": 3,
+          "count": 20
+        },
+        {
+          "value": 1,
+          "count": 15
+        },
+        {
+          "value": 4,
+          "count": 15
+        },
+        {
+          "value": 9,
+          "count": 10
+        },
+        {
+          "value": 10,
+          "count": 10
+        }
+      ]
+    },
+    {
+      "offset": 20,
+      "hex_offset": "0x14",
+      "distinct_values": 183,
+      "most_common": [
+        {
+          "value": 18,
+          "count": 1268
+        },
+        {
+          "value": 0,
+          "count": 1132
+        },
+        {
+          "value": 99,
+          "count": 354
+        },
+        {
+          "value": 1,
+          "count": 234
+        },
+        {
+          "value": 58,
+          "count": 111
+        },
+        {
+          "value": 87,
+          "count": 81
+        }
+      ]
+    },
+    {
+      "offset": 21,
+      "hex_offset": "0x15",
+      "distinct_values": 2,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3539
+        },
+        {
+          "value": 1,
+          "count": 46
+        }
+      ]
+    },
+    {
+      "offset": 22,
+      "hex_offset": "0x16",
+      "distinct_values": 212,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3171
+        },
+        {
+          "value": 228,
+          "count": 6
+        },
+        {
+          "value": 50,
+          "count": 5
+        },
+        {
+          "value": 92,
+          "count": 5
+        },
+        {
+          "value": 113,
+          "count": 5
+        },
+        {
+          "value": 70,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "offset": 23,
+      "hex_offset": "0x17",
+      "distinct_values": 12,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3167
+        },
+        {
+          "value": 6,
+          "count": 103
+        },
+        {
+          "value": 5,
+          "count": 96
+        },
+        {
+          "value": 7,
+          "count": 63
+        },
+        {
+          "value": 2,
+          "count": 48
+        },
+        {
+          "value": 8,
+          "count": 37
+        }
+      ]
+    },
+    {
+      "offset": 24,
+      "hex_offset": "0x18",
+      "distinct_values": 5,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 2808
+        },
+        {
+          "value": 34,
+          "count": 374
+        },
+        {
+          "value": 40,
+          "count": 290
+        },
+        {
+          "value": 185,
+          "count": 111
+        },
+        {
+          "value": 43,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "offset": 25,
+      "hex_offset": "0x19",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    },
+    {
+      "offset": 26,
+      "hex_offset": "0x1A",
+      "distinct_values": 256,
+      "most_common": [
+        {
+          "value": 135,
+          "count": 365
+        },
+        {
+          "value": 130,
+          "count": 206
+        },
+        {
+          "value": 178,
+          "count": 78
+        },
+        {
+          "value": 182,
+          "count": 50
+        },
+        {
+          "value": 31,
+          "count": 39
+        },
+        {
+          "value": 64,
+          "count": 29
+        }
+      ]
+    },
+    {
+      "offset": 27,
+      "hex_offset": "0x1B",
+      "distinct_values": 18,
+      "most_common": [
+        {
+          "value": 50,
+          "count": 560
+        },
+        {
+          "value": 51,
+          "count": 493
+        },
+        {
+          "value": 59,
+          "count": 421
+        },
+        {
+          "value": 46,
+          "count": 393
+        },
+        {
+          "value": 48,
+          "count": 371
+        },
+        {
+          "value": 49,
+          "count": 339
+        }
+      ]
+    },
+    {
+      "offset": 28,
+      "hex_offset": "0x1C",
+      "distinct_values": 6,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 1971
+        },
+        {
+          "value": 41,
+          "count": 1436
+        },
+        {
+          "value": 34,
+          "count": 112
+        },
+        {
+          "value": 39,
+          "count": 56
+        },
+        {
+          "value": 42,
+          "count": 5
+        },
+        {
+          "value": 108,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "offset": 29,
+      "hex_offset": "0x1D",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    },
+    {
+      "offset": 30,
+      "hex_offset": "0x1E",
+      "distinct_values": 32,
+      "most_common": [
+        {
+          "value": 1,
+          "count": 1436
+        },
+        {
+          "value": 0,
+          "count": 1300
+        },
+        {
+          "value": 80,
+          "count": 355
+        },
+        {
+          "value": 10,
+          "count": 209
+        },
+        {
+          "value": 14,
+          "count": 111
+        },
+        {
+          "value": 9,
+          "count": 81
+        }
+      ]
+    },
+    {
+      "offset": 31,
+      "hex_offset": "0x1F",
+      "distinct_values": 2,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3507
+        },
+        {
+          "value": 3,
+          "count": 78
+        }
+      ]
+    },
+    {
+      "offset": 32,
+      "hex_offset": "0x20",
+      "distinct_values": 256,
+      "most_common": [
+        {
+          "value": 128,
+          "count": 774
+        },
+        {
+          "value": 15,
+          "count": 240
+        },
+        {
+          "value": 228,
+          "count": 123
+        },
+        {
+          "value": 160,
+          "count": 110
+        },
+        {
+          "value": 159,
+          "count": 110
+        },
+        {
+          "value": 72,
+          "count": 51
+        }
+      ]
+    },
+    {
+      "offset": 33,
+      "hex_offset": "0x21",
+      "distinct_values": 29,
+      "most_common": [
+        {
+          "value": 37,
+          "count": 880
+        },
+        {
+          "value": 15,
+          "count": 291
+        },
+        {
+          "value": 4,
+          "count": 231
+        },
+        {
+          "value": 39,
+          "count": 230
+        },
+        {
+          "value": 30,
+          "count": 191
+        },
+        {
+          "value": 29,
+          "count": 180
+        }
+      ]
+    },
+    {
+      "offset": 34,
+      "hex_offset": "0x22",
+      "distinct_values": 256,
+      "most_common": [
+        {
+          "value": 213,
+          "count": 109
+        },
+        {
+          "value": 214,
+          "count": 108
+        },
+        {
+          "value": 74,
+          "count": 49
+        },
+        {
+          "value": 45,
+          "count": 25
+        },
+        {
+          "value": 46,
+          "count": 24
+        },
+        {
+          "value": 248,
+          "count": 23
+        }
+      ]
+    },
+    {
+      "offset": 35,
+      "hex_offset": "0x23",
+      "distinct_values": 12,
+      "most_common": [
+        {
+          "value": 2,
+          "count": 547
+        },
+        {
+          "value": 4,
+          "count": 449
+        },
+        {
+          "value": 3,
+          "count": 394
+        },
+        {
+          "value": 9,
+          "count": 330
+        },
+        {
+          "value": 5,
+          "count": 295
+        },
+        {
+          "value": 6,
+          "count": 258
+        }
+      ]
+    },
+    {
+      "offset": 36,
+      "hex_offset": "0x24",
+      "distinct_values": 28,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3154
+        },
+        {
+          "value": 79,
+          "count": 340
+        },
+        {
+          "value": 245,
+          "count": 30
+        },
+        {
+          "value": 2,
+          "count": 12
+        },
+        {
+          "value": 92,
+          "count": 7
+        },
+        {
+          "value": 177,
+          "count": 7
+        }
+      ]
+    },
+    {
+      "offset": 37,
+      "hex_offset": "0x25",
+      "distinct_values": 9,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3156
+        },
+        {
+          "value": 1,
+          "count": 341
+        },
+        {
+          "value": 2,
+          "count": 37
+        },
+        {
+          "value": 5,
+          "count": 18
+        },
+        {
+          "value": 6,
+          "count": 11
+        },
+        {
+          "value": 3,
+          "count": 9
+        }
+      ]
+    },
+    {
+      "offset": 38,
+      "hex_offset": "0x26",
+      "distinct_values": 15,
+      "most_common": [
+        {
+          "value": 6,
+          "count": 930
+        },
+        {
+          "value": 18,
+          "count": 925
+        },
+        {
+          "value": 11,
+          "count": 393
+        },
+        {
+          "value": 10,
+          "count": 383
+        },
+        {
+          "value": 8,
+          "count": 228
+        },
+        {
+          "value": 5,
+          "count": 165
+        }
+      ]
+    },
+    {
+      "offset": 39,
+      "hex_offset": "0x27",
+      "distinct_values": 54,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3532
+        },
+        {
+          "value": 55,
+          "count": 1
+        },
+        {
+          "value": 56,
+          "count": 1
+        },
+        {
+          "value": 57,
+          "count": 1
+        },
+        {
+          "value": 58,
+          "count": 1
+        },
+        {
+          "value": 59,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "offset": 40,
+      "hex_offset": "0x28",
+      "distinct_values": 43,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3541
+        },
+        {
+          "value": 42,
+          "count": 3
+        },
+        {
+          "value": 1,
+          "count": 1
+        },
+        {
+          "value": 13,
+          "count": 1
+        },
+        {
+          "value": 14,
+          "count": 1
+        },
+        {
+          "value": 15,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "offset": 41,
+      "hex_offset": "0x29",
+      "distinct_values": 6,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3551
+        },
+        {
+          "value": 1,
+          "count": 7
+        },
+        {
+          "value": 3,
+          "count": 7
+        },
+        {
+          "value": 2,
+          "count": 7
+        },
+        {
+          "value": 4,
+          "count": 7
+        },
+        {
+          "value": 5,
+          "count": 6
+        }
+      ]
+    },
+    {
+      "offset": 42,
+      "hex_offset": "0x2A",
+      "distinct_values": 3,
+      "most_common": [
+        {
+          "value": 1,
+          "count": 2891
+        },
+        {
+          "value": 10,
+          "count": 575
+        },
+        {
+          "value": 9,
+          "count": 119
+        }
+      ]
+    },
+    {
+      "offset": 43,
+      "hex_offset": "0x2B",
+      "distinct_values": 2,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3023
+        },
+        {
+          "value": 1,
+          "count": 562
+        }
+      ]
+    },
+    {
+      "offset": 44,
+      "hex_offset": "0x2C",
+      "distinct_values": 2,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3523
+        },
+        {
+          "value": 1,
+          "count": 62
+        }
+      ]
+    },
+    {
+      "offset": 45,
+      "hex_offset": "0x2D",
+      "distinct_values": 2,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3390
+        },
+        {
+          "value": 1,
+          "count": 195
+        }
+      ]
+    },
+    {
+      "offset": 46,
+      "hex_offset": "0x2E",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    },
+    {
+      "offset": 47,
+      "hex_offset": "0x2F",
+      "distinct_values": 2,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3433
+        },
+        {
+          "value": 1,
+          "count": 152
+        }
+      ]
+    },
+    {
+      "offset": 48,
+      "hex_offset": "0x30",
+      "distinct_values": 2,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3572
+        },
+        {
+          "value": 1,
+          "count": 13
+        }
+      ]
+    },
+    {
+      "offset": 49,
+      "hex_offset": "0x31",
+      "distinct_values": 2,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3584
+        },
+        {
+          "value": 1,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "offset": 50,
+      "hex_offset": "0x32",
+      "distinct_values": 2,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3083
+        },
+        {
+          "value": 1,
+          "count": 502
+        }
+      ]
+    },
+    {
+      "offset": 51,
+      "hex_offset": "0x33",
+      "distinct_values": 2,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3583
+        },
+        {
+          "value": 1,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "offset": 52,
+      "hex_offset": "0x34",
+      "distinct_values": 2,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3512
+        },
+        {
+          "value": 1,
+          "count": 73
+        }
+      ]
+    },
+    {
+      "offset": 53,
+      "hex_offset": "0x35",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    },
+    {
+      "offset": 54,
+      "hex_offset": "0x36",
+      "distinct_values": 2,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3580
+        },
+        {
+          "value": 1,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "offset": 55,
+      "hex_offset": "0x37",
+      "distinct_values": 3,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3481
+        },
+        {
+          "value": 1,
+          "count": 75
+        },
+        {
+          "value": 8,
+          "count": 29
+        }
+      ]
+    },
+    {
+      "offset": 56,
+      "hex_offset": "0x38",
+      "distinct_values": 32,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3409
+        },
+        {
+          "value": 35,
+          "count": 62
+        },
+        {
+          "value": 31,
+          "count": 26
+        },
+        {
+          "value": 29,
+          "count": 11
+        },
+        {
+          "value": 26,
+          "count": 10
+        },
+        {
+          "value": 3,
+          "count": 8
+        }
+      ]
+    },
+    {
+      "offset": 57,
+      "hex_offset": "0x39",
+      "distinct_values": 5,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 2090
+        },
+        {
+          "value": 1,
+          "count": 1195
+        },
+        {
+          "value": 3,
+          "count": 211
+        },
+        {
+          "value": 2,
+          "count": 63
+        },
+        {
+          "value": 6,
+          "count": 26
+        }
+      ]
+    },
+    {
+      "offset": 58,
+      "hex_offset": "0x3A",
+      "distinct_values": 11,
+      "most_common": [
+        {
+          "value": 2,
+          "count": 1417
+        },
+        {
+          "value": 15,
+          "count": 878
+        },
+        {
+          "value": 7,
+          "count": 518
+        },
+        {
+          "value": 1,
+          "count": 233
+        },
+        {
+          "value": 6,
+          "count": 211
+        },
+        {
+          "value": 13,
+          "count": 163
+        }
+      ]
+    },
+    {
+      "offset": 59,
+      "hex_offset": "0x3B",
+      "distinct_values": 8,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 2289
+        },
+        {
+          "value": 2,
+          "count": 325
+        },
+        {
+          "value": 6,
+          "count": 296
+        },
+        {
+          "value": 4,
+          "count": 263
+        },
+        {
+          "value": 5,
+          "count": 128
+        },
+        {
+          "value": 3,
+          "count": 104
+        }
+      ]
+    },
+    {
+      "offset": 60,
+      "hex_offset": "0x3C",
+      "distinct_values": 2,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3344
+        },
+        {
+          "value": 1,
+          "count": 241
+        }
+      ]
+    },
+    {
+      "offset": 61,
+      "hex_offset": "0x3D",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    },
+    {
+      "offset": 62,
+      "hex_offset": "0x3E",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    },
+    {
+      "offset": 63,
+      "hex_offset": "0x3F",
+      "distinct_values": 7,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3524
+        },
+        {
+          "value": 3,
+          "count": 15
+        },
+        {
+          "value": 4,
+          "count": 11
+        },
+        {
+          "value": 6,
+          "count": 10
+        },
+        {
+          "value": 1,
+          "count": 9
+        },
+        {
+          "value": 2,
+          "count": 8
+        }
+      ]
+    },
+    {
+      "offset": 64,
+      "hex_offset": "0x40",
+      "distinct_values": 2,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3565
+        },
+        {
+          "value": 1,
+          "count": 20
+        }
+      ]
+    },
+    {
+      "offset": 65,
+      "hex_offset": "0x41",
+      "distinct_values": 20,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 2135
+        },
+        {
+          "value": 32,
+          "count": 973
+        },
+        {
+          "value": 80,
+          "count": 100
+        },
+        {
+          "value": 16,
+          "count": 96
+        },
+        {
+          "value": 48,
+          "count": 95
+        },
+        {
+          "value": 34,
+          "count": 50
+        }
+      ]
+    },
+    {
+      "offset": 66,
+      "hex_offset": "0x42",
+      "distinct_values": 6,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 1698
+        },
+        {
+          "value": 8,
+          "count": 1064
+        },
+        {
+          "value": 4,
+          "count": 590
+        },
+        {
+          "value": 12,
+          "count": 82
+        },
+        {
+          "value": 1,
+          "count": 81
+        },
+        {
+          "value": 10,
+          "count": 70
+        }
+      ]
+    },
+    {
+      "offset": 67,
+      "hex_offset": "0x43",
+      "distinct_values": 1,
+      "most_common": [
+        {
+          "value": 0,
+          "count": 3585
+        }
+      ]
+    }
+  ],
+  "native_material_item_ids_verified": 0,
+  "warning": "Material-type semantics require a native game field consumer or schema and positive/negative gameplay cases. Codes 0x10,0x0F,0x0A remain raw numeric evidence, not material classifications."
+}
