@@ -15,22 +15,44 @@
   "mod0": {
     "text_first_64_hex": "0100000074a07402a8a0740200000000000000000000000000000000000000007f2303d5ff4302d1fd7b07a9f44f08a9fdc3019113a60190680240b9e8060035",
     "word_at_text_plus_4": "0x274a074",
-    "mod0_found": false,
-    "candidate_offsets": [
-      "0x274a074"
-    ]
+    "mod0_found": true,
+    "mod0_offset": "0x274a074",
+    "mod0_section": "rodata",
+    "mod0_pointer_mode": "image_va",
+    "mod0_header_64_hex": "4d4f4430f478d3008c1fd8008caa5c01340b5a0058186c00941fd8008cffad008c5fd70098ffffff000000005cfdad0080fdad00140000000500000019000000",
+    "dynamic_relative": 13859060
   },
   "dynamic": {
-    "status": "MOD0_NOT_FOUND"
+    "status": "DYNAMIC_PARSED",
+    "dynamic_va": "0x3481968",
+    "entry_count": 27,
+    "selected_tags": {
+      "7": [
+        "0x274a0b8"
+      ],
+      "8": [
+        "0xa500"
+      ],
+      "9": [
+        "0x18"
+      ]
+    }
   },
   "relocations": {
-    "status": "NO_RELA_TAG",
-    "counts": {},
-    "candidate_base_modes": {}
+    "status": "RELA_PARSED",
+    "mode": "module_va",
+    "rela_va": "0x274a0b8",
+    "rela_count": 1760,
+    "rela_types": {
+      "257": 1732,
+      "1025": 28
+    },
+    "relative_text_pointer_count": 0,
+    "unmapped_relocation_cells": 0
   },
   "raw_text_pointer_cells": 252187,
   "merged_text_pointer_cells": 252187,
-  "vtable_dense_candidate_count": 240134,
+  "vtable_dense_candidate_count": 32067,
   "registry_to_concrete_vtable_confirmed": false,
   "virtual_method_to_original_item_record_confirmed": false,
   "return_object_plus8_to_00983_68_stride_confirmed": false,
@@ -42,214 +64,191 @@
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a140",
-      "method_va": "0x11c0",
+      "vtable_base": "0x322c208",
+      "method_va": "0x4948",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a148",
-      "method_va": "0x1200",
+      "vtable_base": "0x322c2a0",
+      "method_va": "0x4f7c",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a150",
-      "method_va": "0x1230",
+      "vtable_base": "0x322c338",
+      "method_va": "0x5f3c",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a158",
-      "method_va": "0x1260",
+      "vtable_base": "0x322c3b8",
+      "method_va": "0x60f8",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a160",
-      "method_va": "0x12c0",
+      "vtable_base": "0x322c438",
+      "method_va": "0x6300",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a168",
-      "method_va": "0x12f0",
+      "vtable_base": "0x322c4b8",
+      "method_va": "0x650c",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a170",
-      "method_va": "0x1320",
+      "vtable_base": "0x322c538",
+      "method_va": "0x66d4",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a178",
-      "method_va": "0x1350",
+      "vtable_base": "0x322c5b8",
+      "method_va": "0x68dc",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a180",
-      "method_va": "0x13e0",
+      "vtable_base": "0x322c638",
+      "method_va": "0x6aa4",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a188",
-      "method_va": "0x1470",
+      "vtable_base": "0x322c6b8",
+      "method_va": "0x6cac",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a190",
-      "method_va": "0x1500",
+      "vtable_base": "0x322c738",
+      "method_va": "0x6ea8",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a198",
-      "method_va": "0x1560",
+      "vtable_base": "0x322c7b8",
+      "method_va": "0x712c",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a1a0",
-      "method_va": "0x15c0",
-      "score_pointer_density": 18,
-      "interesting_immediates": []
-    },
-    {
-      "vtable_base": "0x322a1a8",
-      "method_va": "0x1620",
-      "score_pointer_density": 18,
-      "interesting_immediates": []
-    },
-    {
-      "vtable_base": "0x322a1b0",
-      "method_va": "0x1680",
-      "score_pointer_density": 18,
-      "interesting_immediates": []
-    },
-    {
-      "vtable_base": "0x322a1b8",
-      "method_va": "0x16e0",
-      "score_pointer_density": 18,
-      "interesting_immediates": []
-    },
-    {
-      "vtable_base": "0x322a1c0",
-      "method_va": "0x1740",
-      "score_pointer_density": 18,
-      "interesting_immediates": []
-    },
-    {
-      "vtable_base": "0x322a1c8",
-      "method_va": "0x17a0",
+      "vtable_base": "0x322c838",
+      "method_va": "0x7550",
       "score_pointer_density": 18,
       "interesting_immediates": [
         {
-          "pc": "0x1804",
-          "asm": "ldr x8, [x8, #0x260]"
+          "pc": "0x756c",
+          "asm": "ldr x0, [x0, #0xc70]"
         },
         {
-          "pc": "0x1838",
-          "asm": "ldr x11, [x11, #0x268]"
+          "pc": "0x7598",
+          "asm": "ldr x0, [x0, #0xc70]"
+        },
+        {
+          "pc": "0x75c0",
+          "asm": "ldr x0, [x0, #0xc70]"
         }
       ]
     },
     {
-      "vtable_base": "0x322a1d0",
-      "method_va": "0x1800",
-      "score_pointer_density": 18,
-      "interesting_immediates": [
-        {
-          "pc": "0x1804",
-          "asm": "ldr x8, [x8, #0x260]"
-        },
-        {
-          "pc": "0x1838",
-          "asm": "ldr x11, [x11, #0x268]"
-        }
-      ]
-    },
-    {
-      "vtable_base": "0x322a1d8",
-      "method_va": "0x1860",
+      "vtable_base": "0x322c8b8",
+      "method_va": "0x7e70",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a1e0",
-      "method_va": "0x18c0",
+      "vtable_base": "0x322c938",
+      "method_va": "0x8070",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a1e8",
-      "method_va": "0x1920",
+      "vtable_base": "0x322c9b8",
+      "method_va": "0x8490",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a1f0",
-      "method_va": "0x1980",
+      "vtable_base": "0x322ca38",
+      "method_va": "0x8720",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a1f8",
-      "method_va": "0x19e0",
+      "vtable_base": "0x322cab8",
+      "method_va": "0x8938",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a200",
-      "method_va": "0x1a40",
+      "vtable_base": "0x322cb38",
+      "method_va": "0x8bf4",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a208",
-      "method_va": "0x1aa0",
+      "vtable_base": "0x322ccd8",
+      "method_va": "0x85810",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a210",
-      "method_va": "0x1b00",
+      "vtable_base": "0x322cd50",
+      "method_va": "0x87840",
       "score_pointer_density": 18,
       "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a218",
-      "method_va": "0x1b60",
+      "vtable_base": "0x322cdc8",
+      "method_va": "0x8b3c0",
       "score_pointer_density": 18,
-      "interesting_immediates": [
-        {
-          "pc": "0x1bc4",
-          "asm": "ldr x8, [x8, #0x3a0]"
-        },
-        {
-          "pc": "0x1bf8",
-          "asm": "ldr x11, [x11, #0x3a8]"
-        }
-      ]
+      "interesting_immediates": []
     },
     {
-      "vtable_base": "0x322a220",
-      "method_va": "0x1bc0",
+      "vtable_base": "0x322ce40",
+      "method_va": "0x8e660",
       "score_pointer_density": 18,
-      "interesting_immediates": [
-        {
-          "pc": "0x1bc4",
-          "asm": "ldr x8, [x8, #0x3a0]"
-        },
-        {
-          "pc": "0x1bf8",
-          "asm": "ldr x11, [x11, #0x3a8]"
-        }
-      ]
+      "interesting_immediates": []
+    },
+    {
+      "vtable_base": "0x322ceb8",
+      "method_va": "0x92724",
+      "score_pointer_density": 18,
+      "interesting_immediates": []
+    },
+    {
+      "vtable_base": "0x322cf30",
+      "method_va": "0x941cc",
+      "score_pointer_density": 18,
+      "interesting_immediates": []
+    },
+    {
+      "vtable_base": "0x322cfa8",
+      "method_va": "0x9597c",
+      "score_pointer_density": 18,
+      "interesting_immediates": []
+    },
+    {
+      "vtable_base": "0x322d020",
+      "method_va": "0x232994",
+      "score_pointer_density": 18,
+      "interesting_immediates": []
+    },
+    {
+      "vtable_base": "0x322d398",
+      "method_va": "0x20e6c00",
+      "score_pointer_density": 18,
+      "interesting_immediates": []
+    },
+    {
+      "vtable_base": "0x322d7a0",
+      "method_va": "0x13c9bc",
+      "score_pointer_density": 18,
+      "interesting_immediates": []
     }
   ]
 }
