@@ -35,6 +35,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install Pillow for G1T parser imports
+        run: python -m pip install "Pillow>=11,<13"
+
       - name: Resolve all 29 exact native G1T blob paths from Git tree
         run: |
           git ls-tree -r --name-only HEAD -- UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0x00011c54.fdata/native > /tmp/original-tree.txt
