@@ -1,0 +1,97 @@
+name: M28.3 - Original KIDS icon name/key/source OID lookup CLI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m28_3_kids_icon_lookup.py"
+      - ".github/workflows/unpack-m28-3-kids-icon-lookup.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m28-3-lookup-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify-original-KIDS-icon-name-source-lookup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout immutable native KIDS database and M25 M27 evidence
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m16_verify_pokemon_texture_kidsobjdb.py
+            Scripts/resources/m27_reverse_decimal_hash31.py
+            Scripts/resources/m28_3_kids_icon_lookup.py
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native/root_019167_50ae86ef.kidsobjdb
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26/m26_4_original_3543_parallel_key_value_pairs.csv
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M27/m27_hash31_candidate_family_constants.json
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M27/m27_626_native_icon_hash31_template_validation.csv
+            UnPack/2.0.1/Resources/Pokemon/NativeRecoveryM25/m25_8_complete_native_629_kids_icon_source_index.csv
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Test native texture parser and exact numeric format
+        run: python -m Scripts.resources.m28_3_kids_icon_lookup --self-test
+
+      - name: Validate all 626 source OIDs and record real sample texture 0043
+        run: |
+          mkdir -p UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M28
+          python -m Scripts.resources.m28_3_kids_icon_lookup --verify-all > UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M28/m28_3_626_name_source_lookup_summary.json
+          python -m Scripts.resources.m28_3_kids_icon_lookup --name icon_poke_0043_00_00_00 > UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M28/m28_3_native_0043_name_to_source.json
+          python -m Scripts.resources.m28_3_kids_icon_lookup --slot 455 > UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M28/m28_3_native_slot455_source.json
+
+      - name: Fail closed on unproven gameplay identities
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M28")
+          result=json.loads((p/"m28_3_626_name_source_lookup_summary.json").read_text(encoding="utf-8"))
+          name=json.loads((p/"m28_3_native_0043_name_to_source.json").read_text(encoding="utf-8"))
+          slot=json.loads((p/"m28_3_native_slot455_source.json").read_text(encoding="utf-8"))
+          assert result["matched_named_original_KIDS_icon_records"]==626
+          assert result["all_records_validated"]
+          assert name["status"]=="EXACT_ORIGINAL_SOURCE_NAME_AND_OID"
+          assert name["predicted_original_key_hash"]=="469e2c00"
+          assert name["predicted_source_oid"]=="06ab845f"
+          assert name["original"]["native_original_array_index"]==455
+          assert name["original"]["texture_oid"]=="c1a6d60c"
+          assert slot["source_oid"]=="06ab845f"
+          assert not result["native_game_species_id_verified"]
+          assert not name["native_game_species_id_verified"]
+          assert not slot["native_game_species_id_verified"]
+          print("PASS original KIDS icon 626 raw lookup entries and exact 0043 sample")
+          PY
+
+      - name: Upload source-qualified lookup and verification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m28-3-original-KIDS-icon-name-source-lookup
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M28/m28_3_*
+          if-no-files-found: warn
+
+      - name: Commit 626-entry original KIDS lookup proof
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M28/m28_3_*
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "feat(m28.3): audit original KIDS icon source lookup for 626 source-backed names"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
