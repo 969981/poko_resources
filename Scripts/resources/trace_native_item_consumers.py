@@ -40,6 +40,18 @@ CHECKS={
   0x1028A28:("bl","#0xabba30"),
   0x1028A38:("ldrb","w8, [x8, #0x39]"),
   0x1028A40:("cmp","w9, #9"),
+  0xABBAEC:("and","w19, w0, #0xffff"),
+  0xABBAF0:("mov","w9, #0x11f6"),
+  0xABBAF4:("sub","w8, w19, #1"),
+  0xABBAF8:("cmp","w8, w9"),
+  0xABBB40:("mov","w1, w19"),
+  0xABBB44:("ldr","x8, [x8, #0x30]"),
+  0xABBB48:("blr","x8"),
+  0xABBB50:("ldr","x8, [x0, #8]"),
+  0xABBB64:("ldrb","w8, [x8, #0x3a]"),
+  0xABBB68:("cmp","w8, #0xf"),
+  0xABBBD4:("ldrb","w8, [x8, #0x3a]"),
+  0xABBBD8:("cmp","w8, #0x15"),
 }
 CONTEXTS={
   "native_count_loop_A":(0xE5A974,0xE5AAC0),
@@ -93,7 +105,8 @@ def analyze(main,item):
            "At 0xE5A99C and 0x1028968 W28 is initialized to 4600, used as loop bound for X20.",
            "Both routines pass W20 as W1 to an indirect vtable function at +0x30.",
            "Both routines read pointer +8 from the returned object, then byte +0x26 from that pointer (or fallback).",
-           "0x1028A38 also reads +0x39. Value-range checks follow these returned-object loads."
+           "0x1028A38 also reads +0x39. Value-range checks follow these returned-object loads.",
+           "0xABBAD8 validates (ID-1)<=4598, queries registry entry by ID, then reads +0x3A and tests values 15 and 21."
        ],
        "field_histograms_from_exact_original_00983":hexrecord(item),
        "proven_4600_item_id_lookup_to_0x26_field_consumption":True,
@@ -115,6 +128,8 @@ def selftest():
     except ValueError:pass
     assert CHECKS[0xE5AA60]==("ldrb","w0, [x8, #0x26]")
     assert CHECKS[0x1028A38]==("ldrb","w8, [x8, #0x39]")
+    assert CHECKS[0xABBB64]==("ldrb","w8, [x8, #0x3a]")
+    assert CHECKS[0xABBBD8]==("cmp","w8, #0x15")
     h=hexrecord(fake)
     assert h["kind_candidate"]["all_4600_slots"]["0"]==4600
     print("PASS: fake originals rejected; full item-field table counts and exact evidence anchor list")
