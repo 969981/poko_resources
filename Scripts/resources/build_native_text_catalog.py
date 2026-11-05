@@ -30,7 +30,7 @@ def load_json(path: Path) -> dict:
 
 
 def run(m7: Path, grouped_root: Path, unlinked_root: Path,
-        m9_edges: Path, dest: Path) -> dict:
+        m9_edges: Path, dest: Path, m8_role_edges: Path | None = None) -> dict:
     inventory = load_inventory(m7 / "native_table_inventory.csv")
     parsed = {k: v for k, v in inventory.items() if v["status"] == "PARSED"}
     groups = load_groups(m7 / "nine_language_groups.csv", None)
@@ -47,6 +47,45 @@ def run(m7: Path, grouped_root: Path, unlinked_root: Path,
     if not set(group_by_entry) <= set(parsed):
         raise ValueError("M7 linked native table absent from parsed inventory")
     unlinked = set(parsed) - set(group_by_entry)
+    # M8's pinned native AbilityDumper proves two role tables missed by the
+    # stricter M7 nine-language grouping (language-specific flags differ).
+    m8_role_starts = {}
+    m8_role_by_entry = {}
+    if m8_role_edges is not None:
+        with m8_role_edges.open(encoding="utf-8-sig", newline="") as f:
+            for role in csv.DictReader(f):
+                start = int(role["target_group_start"])
+                category = role["category"]
+                if (role["relationship"] != "explicit_native_role_table" or
+                        role["evidence_grade"] != "PINNED_PARSER_ROLE_PLUS_NATIVE_ROW"):
+                    raise ValueError(f"Unexpected M8 role evidence: {start}")
+                if category not in ("Reactions", "Skills"):
+                    raise ValueError(f"Unexpected M8 role category: {category}")
+                first = parsed.get(start)
+                if first is None or int(first["record_width"]) != 8:
+                    raise ValueError(f"M8 role group missing parsed 8-byte table: {start}")
+                count = int(first["record_count"])
+                if not 0 <= int(role["target_text_id"]) < count or int(role["target_form_index"]) != 0:
+                    raise ValueError(f"M8 role record/form out of bounds: {start}")
+                details = m8_role_starts.setdefault(
+                    start, {"category": category, "record_count": count,
+                            "forms": 1, "rows": set(), "parser": role["parser_source_url"]})
+                if details["category"] != category or details["parser"] != role["parser_source_url"]:
+                    raise ValueError(f"M8 role source disagreement: {start}")
+                details["rows"].add(int(role["target_text_id"]))
+                for offset, lang in enumerate(LANGS):
+                    entry = start + offset
+                    if (int(role[f"{lang}_entry"]) != entry or
+                            entry not in parsed or
+                            int(parsed[entry]["record_count"]) != count or
+                            int(parsed[entry]["record_width"]) != 8):
+                        raise ValueError(f"M8 role locale/source mismatch: {start}:{lang}")
+                    prior = m8_role_by_entry.setdefault(entry, (start, lang, category))
+                    if prior != (start, lang, category):
+                        raise ValueError(f"M8 locale identity collision: {entry}")
+        for start, details in m8_role_starts.items():
+            if details["rows"] != set(range(details["record_count"])):
+                raise ValueError(f"M8 role row coverage incomplete: {start}")
 
     grouped_report = load_json(grouped_root / "text_export_report.json")
     unlinked_report = load_json(unlinked_root / "unlinked_text_export_report.json")
@@ -66,6 +105,10 @@ def run(m7: Path, grouped_root: Path, unlinked_root: Path,
             raise ValueError(f"Unexpected native M7 record width: {entry}")
         is_grouped = entry in group_by_entry
         start, lang, grade = group_by_entry.get(entry, ("", "UNKNOWN", "UNLINKED_NATIVE_RECORD"))
+        role = m8_role_by_entry.get(entry)
+        locale = lang if is_grouped else (role[1] if role else "UNKNOWN")
+        locale_status = ("M7_STRUCTURAL_CANDIDATE" if is_grouped else
+                         ("M8_PINNED_NATIVE_ROLE_MAPPING" if role else "UNKNOWN"))
         table_rows.append({
             "source_entry": entry,
             "source_sha256": source["sha256"],
@@ -73,11 +116,13 @@ def run(m7: Path, grouped_root: Path, unlinked_root: Path,
             "record_width": width,
             "forms_per_record": 1 if width == 8 else 6,
             "linkage": "NINE_LANGUAGE_CANDIDATE" if is_grouped else "UNLINKED_NATIVE_RECORD",
-            "locale_candidate": lang if is_grouped else "UNKNOWN",
-            "locale_status": "M7_STRUCTURAL_CANDIDATE" if is_grouped else "UNKNOWN",
+            "locale_candidate": locale,
+            "locale_status": locale_status,
             "group_start": start,
             "group_evidence_grade": grade,
-            "business_category": "UNKNOWN",
+            "m8_verified_role_start": role[0] if role else "",
+            "m8_native_role_evidence_grade": "PINNED_PARSER_ROLE_PLUS_NATIVE_ROW" if role else "",
+            "business_category": role[2] if role else "UNKNOWN",
             "export_directory": str((grouped_root / f"table_{start:05d}") if is_grouped
                                     else (unlinked_root / f"table_{entry:05d}")),
         })
@@ -89,12 +134,23 @@ def run(m7: Path, grouped_root: Path, unlinked_root: Path,
         edges = csv.DictReader(f)
         for edge in edges:
             start = int(edge["target_group_start"])
-            if start not in group_by_start:
-                raise ValueError(f"M9 verified edge points at unlinked/absent group: {start}")
+            if start in group_by_start:
+                group = group_by_start[start]
+                count, forms = int(group["record_count"]), int(group["forms"])
+                export_root = str(grouped_root / f"table_{start:05d}")
+                locale_dirs = {lang: export_root for lang in LANGS}
+            elif start in m8_role_starts:
+                group = m8_role_starts[start]
+                count, forms = group["record_count"], group["forms"]
+                export_root = str(unlinked_root)
+                locale_dirs = {
+                    lang: str(unlinked_root / f"table_{start + offset:05d}")
+                    for offset, lang in enumerate(LANGS)
+                }
+            else:
+                raise ValueError(f"M9 edge missing both M7 and M8 group evidence: {start}")
             idx, form = int(edge["target_text_id"]), int(edge["target_form_index"])
-            group = group_by_start[start]
-            if not (0 <= idx < int(group["record_count"]) and
-                    0 <= form < int(group["forms"])):
+            if not (0 <= idx < count and 0 <= form < forms):
                 raise ValueError(f"Out-of-range native M9 edge: group {start}, row {idx}, form {form}")
             if not edge["evidence_grade"] or not edge["source_domain"]:
                 raise ValueError("M9 verified edge lacks evidence/domain")
@@ -114,7 +170,8 @@ def run(m7: Path, grouped_root: Path, unlinked_root: Path,
                 "evidence_grade": edge["evidence_grade"],
                 "parser_evidence": edge["parser_evidence"],
                 "intermediates": edge["intermediates"],
-                "target_export_directory": str(grouped_root / f"table_{start:05d}"),
+                "target_export_directory": export_root,
+                "target_locale_export_directories_json": json.dumps(locale_dirs, ensure_ascii=False),
                 "script_caller_verified": "false",
             })
     group_rows = [{
@@ -142,18 +199,24 @@ def run(m7: Path, grouped_root: Path, unlinked_root: Path,
         "unlinked_native_text_tables": len(unlinked),
         "typed_resource_edges_from_m9": len(verified_rows),
         "m9_groups_with_verified_typed_edges": sorted(group_unique_rows),
+        "m8_source_verified_role_groups": sorted(m8_role_starts),
+        "m8_source_verified_role_tables": len(m8_role_by_entry),
+        "m7_unlinked_with_no_m8_role_identity": len(unlinked - set(m8_role_by_entry)),
         "m9_group_domains": [
             {"group_start": r["target_group_start"],
              "domain": r["source_domain"], "category": r["category"],
              "edges": r["edge_count"]} for r in group_rows
         ],
         "verified_new_script_to_text_caller_edges": 0,
-        "unlinked_tables_with_m9_verified_typed_edges": 0,
+        "unlinked_tables_with_m9_verified_typed_edges": sum(
+            len(set(range(start, start + 9)) & unlinked)
+            for start in group_unique_rows if start in m8_role_starts),
         "full_game_coverage": "NOT_CLAIMED",
         "notes": [
             "Locale candidates are M7 structural assignments, not established locale identity for every table.",
             "M9 edges are existing typed resource/row relations, not newly proven script calls.",
             "A group's row-level verified edge is not evidence that the entire table has one category.",
+            "M8 pinned native role tables provide Reactions/Skills identity for 18 M7-unlinked files.",
             "No new Quest/Dialogue/Buildings/UI/Tutorials mappings were inferred.",
         ],
     }
@@ -170,10 +233,11 @@ def main() -> None:
     ap.add_argument("--unlinked-root", type=Path, default=base / "UnlinkedText")
     ap.add_argument("--m9-edges", type=Path,
                     default=base / "M9/verified_resource_text_edges.csv")
+    ap.add_argument("--m8-roles", type=Path, default=base / "M8/native_role_text_refs.csv")
     ap.add_argument("--dest", type=Path, default=base / "TextCatalog")
     args = ap.parse_args()
     print(json.dumps(
-        run(args.m7, args.grouped_root, args.unlinked_root, args.m9_edges, args.dest),
+        run(args.m7, args.grouped_root, args.unlinked_root, args.m9_edges, args.dest, args.m8_roles),
         indent=2, ensure_ascii=False))
 
 
