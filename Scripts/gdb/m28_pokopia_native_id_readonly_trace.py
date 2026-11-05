@@ -11,7 +11,9 @@ Load only inside an AArch64 target-capable GDB:
 Offsets are verified against original 2.0.1 NSO SHA256:
 8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f
 
-No write memory command, no poked values. Every breakpoint auto-continues.
+No explicit game-data mutation; hardware breakpoints are requested to avoid
+software instruction patching. The remote must support hardware breakpoints;
+there is no silent fallback to software breakpoints. Breakpoints auto-continue.
 Address belongs to a loaded NSO0 main segment; Do NOT pass a GitHub
 file offset, or a different game/version base. This helper is not an ID
 mapping tool: it samples field metadata / caller contexts for analysis.
@@ -46,7 +48,7 @@ def fmt(num):
 class Sampler(gdb.Breakpoint):
     def __init__(self, context, label, offset):
         absolute = context.main_base + offset
-        super().__init__(f"*0x{absolute:x}", type=gdb.BP_BREAKPOINT,
+        super().__init__(f"*0x{absolute:x}", type=gdb.BP_HARDWARE_BREAKPOINT,
                          internal=False, temporary=False)
         self.silent = True
         self.label = label
@@ -58,7 +60,7 @@ class Sampler(gdb.Breakpoint):
         if not c.enabled:
             return False
         c.hits += 1
-        vals = {r: reg(r) for r in ("pc","sp","x0","x1","x2","x3","x4","x8","x9","x10","x30")}
+        vals = {r: reg(r) for r in ("pc","sp","x0","x1","x2","x3","x4","x8","x9","x10","x19","x20","x21","x22","x23","x24","x25","x26","x28","x30")}
         # Require exact source PC; if the tool is attached to a different
         # build or the base is wrong, disable rather than assigning meaning.
         if vals["pc"] is not None and vals["pc"] != c.main_base+self.offset:
@@ -153,11 +155,11 @@ class Start(gdb.Command):
         outpath=args[2] if len(args)>2 else "m28_runtime_trace.jsonl"
         try:_active=Session(base,count,outpath)
         except Exception as exc:
-            raise gdb.GdbError(f"Failed to install read-only M28 breakpoints: {exc}") from exc
+            raise gdb.GdbError(f"Failed to install hardware M28 breakpoints (check remote stub support): {exc}") from exc
         gdb.write(
             f"M28 monitoring {len(OFFSETS)} instruction entry sites, max {count} hits. "
             f"JSONL: {_active.outpath}\n"
-            "No game memory writes. Resume with 'continue'; stop with 'pokopia-m28-stop'.\n")
+            "Hardware breakpoints requested (no software fallback). Resume with 'continue'; stop with 'pokopia-m28-stop'.\n")
 
 
 class Stop(gdb.Command):
