@@ -1,0 +1,20 @@
+{
+  "status": "NATIVE_TYPED_TEXTURE_OID_BACKREFERENCE_SURVEY",
+  "source_database_files": 678,
+  "source_parse_status": {
+    "NATIVE_DB_PARSED": 678
+  },
+  "parse_failures": [],
+  "target_icon_object_ids": 603,
+  "original_u32_matches": 603,
+  "unique_target_icon_oids_referenced": 603,
+  "match_property_hash_frequency": {
+    "2856a1b3": 603
+  },
+  "top_source_kidsobjdb_files": {
+    "root_019167_50ae86ef.kidsobjdb": 602,
+    "root_053829_e2e43333.kidsobjdb": 1
+  },
+  "native_species_id_binding_verified": 0,
+  "warning": "Even an exact object-ID value in a typed native property cannot establish species ID without original native property label or code consumer. Self-contained texture-layout references are not species fields."
+}
