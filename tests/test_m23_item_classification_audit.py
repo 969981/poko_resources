@@ -68,6 +68,52 @@ class M23AuditTests(unittest.TestCase):
         result = audit([header(), *rows], source)
         self.assertFalse(result["exact_record_identity_criteria_met"])
 
+    def test_operator_phases_and_real_slot_targets_are_separate_evidence(self):
+        src = table()
+        a, b, c = field(src, 6), field(src, 101), field(src, 302)
+        a["phase"] = "inventory"
+        b["phase"] = "crafting"
+        c["phase"] = "construction"
+        for event in (a, b, c):
+            event["guest_call_stack"] = [
+                {"pc": "0x1234", "candidate_main_rva": "0x1234"}
+            ]
+        events = [
+            header(),
+            {"schema": SCHEMA, "event": "v1_call", "phase": "inventory",
+             "v1_method": "0x1111", "v1_method_from_vtable_slot": "0x1111",
+             "v1_vtable_slot_agrees": True},
+            {"schema": SCHEMA, "event": "v2_tailcall", "phase": "inventory",
+             "v2_method": "0x2222", "v2_method_from_vtable_slot": "0x2222",
+             "v2_vtable_slot_agrees": True},
+            a, b, c
+        ]
+        result = audit(events, src)
+        self.assertTrue(result["exact_record_identity_criteria_met"])
+        self.assertEqual(result["v1_targets_correlated_with_real_vtable_slot"], ["0x1111"])
+        self.assertEqual(result["v2_targets_correlated_with_real_vtable_slot"], ["0x2222"])
+        self.assertEqual(result["operator_declared_phase_matching_ids"],
+                         {"construction": [302], "crafting": [101], "inventory": [6]})
+        self.assertFalse(result["inventory_crafting_construction_material_semantics_proven"])
+
+    def test_empty_item_id_does_not_prove_three_valid_items(self):
+        src = table()
+        e = field(src, 6)
+        other = field(src, 101)
+        zero = field(src, 0)
+        result = audit([header(), zero, e, other], src)
+        self.assertFalse(result["exact_record_identity_criteria_met"])
+        self.assertEqual(result["full_match_ids"], [6, 101])
+
+    def test_unverified_vtable_slot_cannot_be_promoted(self):
+        src = table()
+        events = [header(),
+                  {"schema": SCHEMA, "event": "v2_tailcall", "v2_method": "0x2000",
+                   "v2_method_from_vtable_slot": "0x3000", "v2_vtable_slot_agrees": False}]
+        result = audit(events, src)
+        self.assertEqual(result["dynamic_v2_targets"], ["0x2000"])
+        self.assertEqual(result["v2_targets_correlated_with_real_vtable_slot"], [])
+
     def test_bad_session_hash_rejected(self):
         source = table()
         h = header()
