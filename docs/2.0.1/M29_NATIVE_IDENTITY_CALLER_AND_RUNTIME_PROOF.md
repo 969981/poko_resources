@@ -135,3 +135,8 @@ CI 只提供模拟 JSONL 的合法/非法案例，不提供真正 GDB 运行数�
 - [M29 原生三入口和 KIDS 类关联](https://github.com/969981/poko_resources/actions/runs/42009731562)
 - [M28 硬件断点版本语法和无主动游戏数据修改检查](https://github.com/969981/poko_resources/actions/runs/42010018483)
 - [M29.1 JSONL 原始 PC 与不实身份绑定拒绝](https://github.com/969981/poko_resources/actions/workflows/unpack-m29-1-gdb-trace-validator.yml)
+
+
+## M30 后续证据路径
+
+参见 [[M30_SCREENLAYOUT_NATIVE_CLASS_AND_WITNESS]]。原始 ExeFS 已证实两个相关 ScreenLayout 类的真实名称：`ScreenLayoutTexturePackSettings (0x9D1AFA46)` 和 `StaticScreenLayoutTextures (0x79991E79)`。原始双数组属性名也已恢复为 `TexturePackKeyHashArray` 和 `TexturePackObjectHashArray`。因此后续身份绑定应优先从**ScreenLayout 的资源查询消费者**寻找运行时 Key/Source OID，而不是仅凭 `pokemon_dex_id` 字符串附近的记录 u16 自动定义游戏物种 ID。新增两阶段硬件 GDB 见证与离线 ROM 源字节对账已准备好，但尚未取得真实游戏同对象执行链，正式 ID 绑定仍为 0。
