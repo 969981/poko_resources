@@ -1,0 +1,88 @@
+name: M26.1 - Negative evidence audit of all 629 original native icon sources
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m26_1_native_registry_full_negative_audit.py"
+      - ".github/workflows/unpack-m26-1-native-registry-negative-audit.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m26-1-negative-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  compare-all-original-natives:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout 635 native PNG files and 62 reference portraits
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m26_1_native_registry_full_negative_audit.py
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26/m26_62_third_party_portrait_roster.csv
+            UnPack/2.0.1/Resources/Villagers/Icons
+            UnPack/2.0.1/Resources/Pokemon/NativeCandidates
+            UnPack/2.0.1/Resources/Pokemon/NativeRecoveryM25
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install native pixel decoder
+        run: python -m pip install "Pillow>=11,<13"
+
+      - name: Byte-check all 635 original PNG sources and compare 62 reference images
+        run: python -m Scripts.resources.m26_1_native_registry_full_negative_audit
+
+      - name: Verify scoped negative result and no ungrounded version claims
+        run: |
+          python - <<'PY'
+          import json,csv
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26")
+          j=json.loads((p/"m26_1_original_icon_registry_negative_audit.json").read_text(encoding="utf-8"))
+          with (p/"m26_1_62_vs_complete_629_icon_registry.csv").open(encoding="utf-8",newline="") as f:
+              rows=list(csv.DictReader(f))
+          assert j["original_source_kids_oid_count"]==629
+          assert j["original_source_linked_distinct_png_files"]==635
+          assert j["original_png_sha256_verified"]==635
+          assert j["original_reference_portraits_rechecked"]==62
+          assert len(rows)==62
+          assert j["game_species_ids_verified"]==0
+          assert j["game_villager_ids_verified"]==0
+          assert j["not_exhaustive_of_other_original_FDATA_containers"]
+          assert all(not r["original_native_game_id_verified"] for r in rows)
+          print("PASS M26.1 complete indexed source negative evidence")
+          PY
+
+      - name: Upload full native-scope negative evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m26-1-62-portraits-against-629-original-source-oids
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26/m26_1_*
+          if-no-files-found: warn
+
+      - name: Commit negative audit without changing original PNGs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26/m26_1_*
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m26.1): compare 62 references against all 629 original KIDS native icon sources"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
