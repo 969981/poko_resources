@@ -1,0 +1,102 @@
+{
+  "status": "NATIVE_STRUCTURE_CONFIRMED_SAMPLE",
+  "group_start_entry": 2350,
+  "group_end_entry": 2358,
+  "record_id": 4,
+  "record_index_base": 0,
+  "category": "UNKNOWN",
+  "reference_to_game_scene": "UNVERIFIED",
+  "language_order": [
+    "jp",
+    "en",
+    "fr",
+    "it",
+    "de",
+    "es",
+    "zht",
+    "ko",
+    "zhs"
+  ],
+  "record_count": 248,
+  "layout_width": 8,
+  "source_entries": {
+    "jp": {
+      "entry": 2350,
+      "source_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02350.bin",
+      "blob_sha1": "7f2bc5365b3e220e6868fe4897de132bb1c8a2c0",
+      "absolute_byte_offset": 2314,
+      "flags_raw_u32": 1,
+      "text": "<$voicel(1,9)><$motionoff(1,804)><$comeff(1,5)><$facial(1,13)>なな･･･なんと！<br>こんなところに　ニンゲンが！？<slide><br><$voicel(1,5)><$comeff(1,21)><$motion(1,801)><$facial(1,5)>まだニンゲンが　<残:のこ>っておったとは！"
+    },
+    "en": {
+      "entry": 2351,
+      "source_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02351.bin",
+      "blob_sha1": "332d031635ebb46156c736dd1f9379da497414d0",
+      "absolute_byte_offset": 2201,
+      "flags_raw_u32": 1,
+      "text": "<$voicel(1,9)><$motionoff(1,804)><$comeff(1,5)><$facial(1,13)>Gadzooks! What in the world is a human doing here?!<br><$voicel(1,5)><$comeff(1,21)><$motion(1,801)><$facial(1,5)>I didn’t think there were any left!"
+    },
+    "fr": {
+      "entry": 2352,
+      "source_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02352.bin",
+      "blob_sha1": "4047a7068ab752487e53ed4adef7bc100b8c27cf",
+      "absolute_byte_offset": 2218,
+      "flags_raw_u32": 1,
+      "text": "<$voicel(1,9)><$motionoff(1,804)><$comeff(1,5)><$facial(1,13)>Que vois-je ? Un être humain ?!<br><$voicel(1,5)><$comeff(1,21)><$motion(1,801)><$facial(1,5)>J'ignorais que vous existiez encore !"
+    },
+    "it": {
+      "entry": 2353,
+      "source_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02353.bin",
+      "blob_sha1": "6320fc61517df1b23e08db9a31babfd53b9daeaf",
+      "absolute_byte_offset": 2213,
+      "flags_raw_u32": 1,
+      "text": "<$voicel(1,9)><$motionoff(1,804)><$comeff(1,5)><$facial(1,13)>P-Poffarbacca! N-Non può essere! Un essere umano...<br>in un posto come questo?!<slide><br><$voicel(1,5)><$comeff(1,21)><$motion(1,801)><$facial(1,5)>Chi s'immaginava di vederne ancora in giro!"
+    },
+    "de": {
+      "entry": 2354,
+      "source_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02354.bin",
+      "blob_sha1": "58d51507edf5403ae0c9a31092d90767a02a5f03",
+      "absolute_byte_offset": 2244,
+      "flags_raw_u32": 1,
+      "text": "<$voicel(1,9)><$motionoff(1,804)><$comeff(1,5)><$facial(1,13)>Ich traue meinen Augen kaum!<br>Ein Mensch? Hier?!<clear><br><$voicel(1,5)><$comeff(1,21)><$motion(1,801)><$facial(1,5)>Wer hätte gedacht, dass es noch Menschen gibt!"
+    },
+    "es": {
+      "entry": 2355,
+      "source_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02355.bin",
+      "blob_sha1": "d37bbbd647410b69cd2baec3df7a8cf4a89d5967",
+      "absolute_byte_offset": 2218,
+      "flags_raw_u32": 1,
+      "text": "<$voicel(1,9)><$motionoff(1,804)><$comeff(1,5)><$facial(1,13)>¡Pero qué ven mis ojos! ¿Un ser humano? No puede ser...<br><$voicel(1,5)><$comeff(1,21)><$motion(1,801)><$facial(1,5)>¡Creía que ya no quedaba ninguno!"
+    },
+    "zht": {
+      "entry": 2356,
+      "source_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02356.bin",
+      "blob_sha1": "4342579379e11aa7ed4b252e121ea4e698e01080",
+      "absolute_byte_offset": 2215,
+      "flags_raw_u32": 1,
+      "text": "<$voicel(1,9)><$motionoff(1,804)><$comeff(1,5)><$facial(1,13)>竟、竟……竟然！<br>有人類在這種地方！？<slide><br><$voicel(1,5)><$comeff(1,21)><$motion(1,801)><$facial(1,5)>想不到還有人類存在！"
+    },
+    "ko": {
+      "entry": 2357,
+      "source_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02357.bin",
+      "blob_sha1": "54fa7d1de4413e461998319e31380af3d1e3d22c",
+      "absolute_byte_offset": 2207,
+      "flags_raw_u32": 1,
+      "text": "<$voicel(1,9)><$motionoff(1,804)><$comeff(1,5)><$facial(1,13)>이, 이... 이럴 수가!<br>이런 곳에 인간이!?<slide><br><$voicel(1,5)><$comeff(1,21)><$motion(1,801)><$facial(1,5)>아직 인간이 남아 있었을 줄이야!"
+    },
+    "zhs": {
+      "entry": 2358,
+      "source_path": "UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02358.bin",
+      "blob_sha1": "e7fb29f76aaf59857432ce15211ebf7c51c66939",
+      "absolute_byte_offset": 2221,
+      "flags_raw_u32": 1,
+      "text": "<$voicel(1,9)><$motionoff(1,804)><$comeff(1,5)><$facial(1,13)>居、居……居然！<br>在这种地方居然有人类！？<slide><br><$voicel(1,5)><$comeff(1,21)><$motion(1,801)><$facial(1,5)>没想到还有人类存在！"
+    }
+  },
+  "evidence": [
+    "relative pointer verified",
+    "full 248-slot nonempty bitmap equal across 9",
+    "full raw flag sequence equal across 9"
+  ],
+  "notes": "Sample only. Full M7 export contains all records after workflow runs."
+}
