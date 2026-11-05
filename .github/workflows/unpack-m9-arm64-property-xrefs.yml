@@ -1,0 +1,144 @@
+name: M9.4 - AArch64 direct property-hash literal reference evidence
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_rnk_exefs_xrefs.py"
+      - "tests/test_m9_rnk_exefs_xrefs.py"
+      - ".github/workflows/unpack-m9-arm64-property-xrefs.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-4-arm64-xrefs
+  cancel-in-progress: false
+
+jobs:
+  arm64-hash-crossrefs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          persist-credentials: true
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/m9_rnk_exefs_xrefs.py
+            Scripts/resources/trace_native_species_item_callers.py
+            tests/test_m9_rnk_exefs_xrefs.py
+            UnPack/2.0.1/Resources/Localization/M9/NameTables
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: AArch64 instruction and relative-page tests
+        id: tests
+        shell: bash
+        run: |
+          mkdir -p UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics
+          set +e
+          python -m unittest discover -s tests -p 'test_m9_rnk_exefs_xrefs.py' -v \
+            > UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/xrefs_tests.log 2>&1
+          code=$?
+          cat UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/xrefs_tests.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Inspect actual main binary for direct property-hash literal references
+        id: xrefs
+        if: steps.tests.outputs.exit_code == '0'
+        shell: bash
+        run: |
+          set +e
+          python Scripts/resources/m9_rnk_exefs_xrefs.py \
+            --main 2.0.1/exefs/main \
+            --prior UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_property_hash_consumers.json \
+            --dest UnPack/2.0.1/Resources/Localization/M9/NameTables \
+            > UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/xrefs.log 2>&1
+          code=$?
+          tail -c 18000 UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/xrefs.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Ensure none of the raw xrefs became semantic foreign keys
+        id: verify
+        if: steps.tests.outputs.exit_code == '0' && steps.xrefs.outputs.exit_code == '0'
+        shell: bash
+        run: |
+          set +e
+          python - <<'PY' > UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/xrefs_verify.log 2>&1
+          from pathlib import Path
+          import json
+          root=Path("UnPack/2.0.1/Resources/Localization/M9/NameTables")
+          r=json.loads((root/"exefs_property_hash_xrefs.json").read_text(encoding="utf-8"))
+          assert r["status"]=="M9_ARM64_DIRECT_LITERAL_SITES_ONLY"
+          assert r["original_main_sha256"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert r["rodata_hash_sites_checked"]>0
+          assert r["actual_kidsobjdb_field_consumer_confirmed"]==0
+          assert r["verified_scene_quest_building_text_foreign_keys"]==0
+          assert (root/"exefs_property_hash_xrefs.csv").is_file()
+          assert all(x["property_consumer_verified"]==0 for x in r["arm64_code_xrefs"])
+          print("Direct static references:", r["direct_arm64_xref_records"])
+          print("Adjacent static literal accesses:", r["adjacent_direct_literal_access_count"])
+          print("MOVZ/MOVK disassembly windows:",len(r["movz_movk_instruction_windows"]))
+          PY
+          code=$?
+          cat UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/xrefs_verify.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Preserve result and diagnostics run ID
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics
+          printf 'tests=%s\nxrefs=%s\nverify=%s\nrun_id=%s\n' \
+            "${{ steps.tests.outputs.exit_code }}" \
+            "${{ steps.xrefs.outputs.exit_code }}" \
+            "${{ steps.verify.outputs.exit_code }}" \
+            "${{ github.run_id }}" \
+            > UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics/xrefs_status.txt
+
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m9-4-arm64-hash-xrefs-${{ github.run_id }}
+          path: UnPack/2.0.1/Resources/Localization/M9/NameTables
+          retention-days: 30
+
+      - name: Commit native disassembly evidence or failure diagnostic
+        if: always()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ "${{ steps.tests.outputs.exit_code }}" = 0 ] &&
+             [ "${{ steps.xrefs.outputs.exit_code }}" = 0 ] &&
+             [ "${{ steps.verify.outputs.exit_code }}" = 0 ]; then
+            git add -A -- UnPack/2.0.1/Resources/Localization/M9/NameTables
+          else
+            git add -A -- UnPack/2.0.1/Resources/Localization/M9/NameTables/Diagnostics
+          fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9.4): trace ARM64 static property-hash references or preserve failure"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
+
+      - name: Strict final status
+        if: always()
+        run: |
+          test "${{ steps.tests.outputs.exit_code }}" = 0
+          test "${{ steps.xrefs.outputs.exit_code }}" = 0
+          test "${{ steps.verify.outputs.exit_code }}" = 0
