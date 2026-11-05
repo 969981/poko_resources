@@ -1,0 +1,49 @@
+{
+  "version": "2.0.1",
+  "original_nso_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "original_kids_array_type_hash": "0x9d1afa46",
+  "original_kids_property_hash": "0x34cbb458",
+  "verified_original_rodata_property_hash_va": "0x283883c",
+  "class_typehash_getter_verified": "0xdd1c30",
+  "exact_typehash_getter_machine_words": [
+    "529f48c0",
+    "72b3a340",
+    "d65f03c0"
+  ],
+  "type_registration_tailcall_sites": [
+    "0xbe19d0",
+    "0xbe1a5c"
+  ],
+  "type_registration_original_global_cells": [
+    {
+      "global_pointer_cell_rva": "0x349c2d8",
+      "initialized_u64_pointer_rva": "0x367ad50",
+      "target_original_section": "UNMAPPED_OR_BSS",
+      "pointer_in_dynamic_session_verified": false
+    },
+    {
+      "global_pointer_cell_rva": "0x349c2e0",
+      "initialized_u64_pointer_rva": "0x367ad40",
+      "target_original_section": "UNMAPPED_OR_BSS",
+      "pointer_in_dynamic_session_verified": false
+    },
+    {
+      "global_pointer_cell_rva": "0x349c2e8",
+      "initialized_u64_pointer_rva": "0x33135b8",
+      "target_original_section": "data",
+      "pointer_in_dynamic_session_verified": false
+    }
+  ],
+  "original_typegetter_function_pointer_cells": 1,
+  "original_property_neighborhood_pointer_cells": 0,
+  "bounded_property_neighborhood_adrp_candidates": 15,
+  "property_adrp_adjacent_candidate_count": 15,
+  "original_direct_callers_of_typehash_getter": {
+    "BL": 0,
+    "B": 0
+  },
+  "gameplay_ID_to_icon_array_slot_verified": false,
+  "runtime_object_instance_to_source_oid_verified": false,
+  "game_native_villager_id_verified": false,
+  "warning": "Unrelated native field name consumer/rodata hash and a typehash getter are not proof of the index expression or in-game species identity."
+}
