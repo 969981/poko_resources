@@ -46,5 +46,11 @@ class TestM3Rdok(unittest.TestCase):
    p.write_bytes(b"A MissionSettings Z"+ "MissionInfo_array.bfbs".encode("utf-16le"))
    report=scan_exefs(p)
    self.assertFalse(report["verified_runtime_linkage"])
-   self.assertEqual(sum(x["hits"] for x in report["matches"]),2)
+   # Both the complete schema name and its shorter prefix are searched.
+   # The prefix is one overlapping observation, not a third unique string.
+   by_term={(x["text"],x["encoding"]):x["hits"] for x in report["matches"]}
+   self.assertEqual(by_term[("MissionSettings","utf-8")],1)
+   self.assertEqual(by_term[("MissionInfo_array.bfbs","utf-16le")],1)
+   self.assertEqual(by_term[("MissionInfo_array","utf-16le")],1)
+   self.assertEqual(sum(x["hits"] for x in report["matches"]),3)
 if __name__=="__main__":unittest.main()
