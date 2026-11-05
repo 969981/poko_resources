@@ -27,3 +27,7 @@ updated: 2026-11-05
 ## M23：物品分类证据链下一步
 
 - [[08-M23-Native-Category-Proof]] · [GitHub M23 手册](08-M23-Native-Category-Proof.md)：GDB 动态读取 V1/V2 两级虚表目标，并把现场完整 68 字节与原版 00983.bin 逐项对账；尚无真实运行时验收结果，分类官方枚举未证明。
+
+## M24：消费者静态矩阵与分场景验收
+
+- [[09-M24-Consumer-Context-And-Acceptance]] · [GitHub M24 文档](09-M24-Consumer-Context-And-Acceptance.md)：已用原版 M12/M20 结果建立 17 个直接查询调用点的字段访问矩阵；记录/虚表的真实游戏运行时验证以及背包、制作、建造语义仍需 GDB 采集。
