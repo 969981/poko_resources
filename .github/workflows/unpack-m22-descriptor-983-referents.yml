@@ -51,6 +51,12 @@ jobs:
           assert j["original_item_sha256"]=="2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f"
           assert j["descriptor_stride"]==40
           assert not j["confirmed_983_is_00983_file"]
+          assert j["descriptor_983_crypto_oid_identity_proven"]
+          assert j["numeric_983_not_usable_as_linkdata_file_evidence"]
+          crypto={x["id"]:x for x in j["descriptors"]}
+          assert crypto[983]["u64_interpretations"][0]["string"]=="md_gost12_512"
+          assert crypto[982]["u64_interpretations"][0]["string"]=="md_gost12_256"
+          assert crypto[984]["u64_interpretations"][0]["string"]=="id-tc26-signwithdigest"
           assert not j["confirmed_983_pointer_is_4600x68_table"]
           assert not j["confirmed_V1_V2_constructor_link"]
           print("PASS original byte provenance and unresolved identity")
