@@ -1,0 +1,100 @@
+name: M9.11 - verified ExeFS vptr address construction windows
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_vptr_constructor_windows.py"
+      - "tests/test_m9_vptr_constructor_windows.py"
+      - ".github/workflows/unpack-m9-vptr-constructor-windows.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-11-vptr-windows
+  cancel-in-progress: false
+
+jobs:
+  native-instruction-windows:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/m9_vptr_constructor_windows.py
+            Scripts/resources/m9_rnk_exefs_xrefs.py
+            Scripts/resources/trace_native_species_item_callers.py
+            tests/test_m9_vptr_constructor_windows.py
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_vtable_neighborhood_report.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_vptr_disassembly_windows.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_vptr_disassembly_sites.csv
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Check synthetic ARM64 address and mutation guards
+        env:
+          PYTHONPATH: "."
+        run: python -m unittest discover -s tests -p 'test_m9_vptr_constructor_windows.py' -v
+
+      - name: Collect verified native instructions and bounded object-context candidates
+        env:
+          PYTHONPATH: "."
+        run: |
+          python Scripts/resources/m9_vptr_constructor_windows.py \
+            --main 2.0.1/exefs/main \
+            --source UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_vtable_neighborhood_report.json \
+            --dest UnPack/2.0.1/Resources/Localization/M9/NameTables
+
+      - name: Protect foreign-key and access semantics
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_vptr_disassembly_windows.json')
+          doc=json.loads(p.read_text(encoding='utf-8'))
+          report=doc['report']
+          assert len(doc['sites'])==report['verified_native_address_constructions']
+          assert all(x['adrp_add_bytes_confirmed'] for x in doc['sites'])
+          assert report['verified_object_constructor_vptr_store']==0
+          assert report['verified_indirect_callback_dispatch']==0
+          assert report['verified_kidsobjdb_field_accessor']==0
+          assert report['new_scene_quest_building_text_foreign_keys']==0
+          assert all(not x['verified_text_fk'] for x in doc['sites'])
+          print('M9.11 strict instruction context PASS')
+          PY
+
+      - name: Attach evidence even if upload-back is unavailable
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m9-11-vptr-windows
+          path: |
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_vptr_disassembly_windows.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_vptr_disassembly_sites.csv
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Commit only verified native static evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_vptr_disassembly_windows.json \
+                     UnPack/2.0.1/Resources/Localization/M9/NameTables/exefs_vptr_disassembly_sites.csv
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9.11): disassembled original vtable-neighborhood address sites"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
