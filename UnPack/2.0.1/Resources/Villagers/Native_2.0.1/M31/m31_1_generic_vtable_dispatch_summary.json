@@ -1,0 +1,25 @@
+{
+  "version": "2.0.1",
+  "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "registered_classes_using_same_common_enumerator": 2,
+  "generic_enumerator_pc": "0x1fe4fa0",
+  "generic_enumerator_calls_virtual_slot_offset": "0x18",
+  "generic_original_source_check_instructions": 10,
+  "class_specific_virtual_property_methods": [
+    "0xdd1b48",
+    "0xce854c"
+  ],
+  "class_specific_full_instruction_count": 105,
+  "class_type_names_and_hashes_verified": true,
+  "actual_indirect_callsite_class_targets_grounded_by_static_vtable_slots": true,
+  "initialized_data_references_to_generic_iterator": 1990,
+  "initialized_data_references_to_specific_methods": {
+    "0xdd1b48": 1,
+    "0xce854c": 1
+  },
+  "source_static_vtable_path_proven": true,
+  "runtime_common_iterator_called_with_pokemon_instance_proven": false,
+  "game_ID_to_texture_pack_lookup_proven": false,
+  "runtime_source_OID_selection_proven": false,
+  "warning": "This proves a static generic BLR vtable dispatch structure; it does NOT prove real game execution or that the KIDS enumerated arrays were used to select a Pokémon icon."
+}
