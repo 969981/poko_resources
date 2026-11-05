@@ -1,0 +1,628 @@
+{
+  "status": "ORIGINAL_RODATA_AND_ARM64_REFERENCE_GRAPH__SPECIES_UNVERIFIED",
+  "game_version": "2.0.1",
+  "exe_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "text_bytes": 41194624,
+  "rodata_bytes": 11402740,
+  "symbol_count": 910,
+  "xref_count": 571,
+  "symbol_category_counts": {
+    "RESOURCE_LOADER": 786,
+    "OTHER_TEXT": 88,
+    "ITEM_METADATA": 5,
+    "CRAFTING": 23,
+    "POKEMON_ID": 8
+  },
+  "xref_category_counts": {
+    "CRAFTING": 26,
+    "ITEM_METADATA": 4,
+    "OTHER_TEXT": 72,
+    "POKEMON_ID": 8,
+    "RESOURCE_LOADER": 461
+  },
+  "interesting_xrefs": [
+    {
+      "name": "m_cloudPokeDexHistory",
+      "rva": "0x60cd9c",
+      "category": "POKEMON_ID"
+    },
+    {
+      "name": "m_craftMainHelpPokemonKind",
+      "rva": "0x5faf08",
+      "category": "POKEMON_ID"
+    },
+    {
+      "name": "m_mainPokemonList",
+      "rva": "0x5fd168",
+      "category": "POKEMON_ID"
+    },
+    {
+      "name": "m_pokeDexLvFinishHistory",
+      "rva": "0x5cc24c",
+      "category": "POKEMON_ID"
+    },
+    {
+      "name": "m_pokemonDexHistory",
+      "rva": "0x5cc170",
+      "category": "POKEMON_ID"
+    },
+    {
+      "name": "m_pokemonDexReadHistory",
+      "rva": "0x5cc1c4",
+      "category": "POKEMON_ID"
+    },
+    {
+      "name": "pokemon_dex",
+      "rva": "0x11367d8",
+      "category": "POKEMON_ID"
+    },
+    {
+      "name": "pokemon_dex_id",
+      "rva": "0x1136aa4",
+      "category": "POKEMON_ID"
+    },
+    {
+      "name": "m_challengeItemCategoryTableHistory",
+      "rva": "0x6030c8",
+      "category": "ITEM_METADATA"
+    },
+    {
+      "name": "m_CloudChallengeItemCategoryTableHistory",
+      "rva": "0x60d9e8",
+      "category": "ITEM_METADATA"
+    },
+    {
+      "name": "m_save.stage.m_importantDropItemDatas",
+      "rva": "0x5b3ed0",
+      "category": "ITEM_METADATA"
+    },
+    {
+      "name": "m_save.stage.m_normalDropItemDatas",
+      "rva": "0x5b401c",
+      "category": "ITEM_METADATA"
+    },
+    {
+      "name": "AlbedoTextureArraySlice",
+      "rva": "0xd15a90",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "AsyncCompute CSPH2DGPUManager::MaskTexture",
+      "rva": "0x1f45134",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendMapNoiseTexture",
+      "rva": "0xba6b18",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture1BlendModeOfAlpha",
+      "rva": "0xc8d8fc",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture1BlendModeOfAlpha",
+      "rva": "0xca98c0",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture1BlendModeOfAlpha",
+      "rva": "0xcaad8c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture1BlendModeOfColor",
+      "rva": "0xc8d8dc",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture1BlendModeOfColor",
+      "rva": "0xca98a8",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture1BlendModeOfColor",
+      "rva": "0xcaad98",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture1NameHash",
+      "rva": "0xc86ebc",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture1NameHash",
+      "rva": "0xc8d89c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture1TilingOption",
+      "rva": "0xc872f4",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture1TilingOption",
+      "rva": "0xc8dd58",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture1TilingSize",
+      "rva": "0xc87314",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture1TilingSize",
+      "rva": "0xc8dd78",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture2BlendModeOfAlpha",
+      "rva": "0xc8d93c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture2BlendModeOfAlpha",
+      "rva": "0xca9938",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture2BlendModeOfAlpha",
+      "rva": "0xcaae08",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture2BlendModeOfColor",
+      "rva": "0xc8d91c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture2BlendModeOfColor",
+      "rva": "0xca9914",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture2BlendModeOfColor",
+      "rva": "0xcaadc8",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture2NameHash",
+      "rva": "0xc86edc",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture2NameHash",
+      "rva": "0xc8d8bc",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture2TilingOption",
+      "rva": "0xc87334",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture2TilingOption",
+      "rva": "0xc8dd98",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture2TilingSize",
+      "rva": "0xc86cf8",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "BlendTexture2TilingSize",
+      "rva": "0xc8d6d8",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "CausticsTextureSizeX",
+      "rva": "0x9d6d88",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "CausticsTextureSizeX",
+      "rva": "0xcbd3e0",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "CausticsTextureSizeZ",
+      "rva": "0x9d6da0",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "CausticsTextureSizeZ",
+      "rva": "0xcbd3f8",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "ClearSpritesInstanceInfoCS",
+      "rva": "0x1e42190",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "CloudCircleTextureFreqU",
+      "rva": "0x9d549c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "CloudCircleTextureFreqU",
+      "rva": "0xcbbaf4",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "CloudCircleTextureFreqV",
+      "rva": "0x9d54b4",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "CloudCircleTextureFreqV",
+      "rva": "0xcbbb0c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "CloudCircleTextureScrollU",
+      "rva": "0x9d546c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "CloudCircleTextureScrollU",
+      "rva": "0xcbbac4",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "CloudCircleTextureScrollV",
+      "rva": "0x9d5484",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "CloudCircleTextureScrollV",
+      "rva": "0xcbbadc",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "CloudTextureType",
+      "rva": "0x9d3648",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "CloudTextureType",
+      "rva": "0xcb9ca0",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "clrSpriteDir",
+      "rva": "0x1a46ea0",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "clrSpriteNormal",
+      "rva": "0x1a46f28",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "clrSpriteTangent",
+      "rva": "0x1a46f3c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "clrSpriteVolumeNormal",
+      "rva": "0x1a46f50",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "clrSpriteVolumeNormal2",
+      "rva": "0x1a46e98",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "ContrastValuesOfTexture",
+      "rva": "0xca9d98",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "ContrastValuesOfTexture",
+      "rva": "0xcaaf4c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "DOF2SpriteDofAccumRear",
+      "rva": "0x1e440dc",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "DOF2SpriteInstanceInfo",
+      "rva": "0x1e4417c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "DrawSprite",
+      "rva": "0xba8604",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "EmissiveTextureArraySlice",
+      "rva": "0xd1592c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "EnableDepthTexture",
+      "rva": "0x17f7e3c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "EnableDepthTexture",
+      "rva": "0x17f7e9c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "EstuaryTextureScaleU",
+      "rva": "0xe16630",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "EstuaryTextureScaleV",
+      "rva": "0xe16308",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "ExternalTexturesObjectNameHashArray",
+      "rva": "0xd37648",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "FluidGridTexture",
+      "rva": "0xbaa9f0",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "FluidGridTextureData",
+      "rva": "0xbab230",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "GhostSprite",
+      "rva": "0x1e3967c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "GhostSprite",
+      "rva": "0x1e3c0b0",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "GhostSprite",
+      "rva": "0x1e3df20",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "GlossinessTextureArraySlice",
+      "rva": "0xd15924",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "HeightMapTextureOffsetX",
+      "rva": "0xd0e398",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "HeightMapTextureOffsetZ",
+      "rva": "0xd0e3b8",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "HeightMapTextureScaleX",
+      "rva": "0xd0e358",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "HeightMapTextureScaleZ",
+      "rva": "0xd0e378",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "kids::graph::Draw2DSprite",
+      "rva": "0xdb95f4",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "kids::graph::GetTextureSize",
+      "rva": "0xdb8a74",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "kids::graph::SetTexture",
+      "rva": "0xdb884c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "kids::module::QueryCornerOnPrismVertexInfo",
+      "rva": "0xe1ece4",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "kids::placeable::camera::CommitOuterTextureRenderTarget",
+      "rva": "0xe49980",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "kids::placeable::enum::AnimationTextureCycle",
+      "rva": "0xbdea54",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "kids::placeable::model::ParasiteTexture",
+      "rva": "0xdb2184",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "kids::shader::enum::TextureUsage",
+      "rva": "0xbde8cc",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "kids::shader::SetTextureFromUsage",
+      "rva": "0xdb9764",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "LensSimulationSpriteDOFThreshold",
+      "rva": "0x9d88ac",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "LensSimulationSpriteDOFThreshold",
+      "rva": "0xcbef04",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "LightMapTexturesRenderStateObjectHash",
+      "rva": "0xceb810",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "LightOuterTexture",
+      "rva": "0xbaaaa0",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "MainTextureNameHash",
+      "rva": "0xc86e9c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "MainTextureNameHash",
+      "rva": "0xc8d87c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "MainTextureTilingOption",
+      "rva": "0xc872b4",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "MainTextureTilingOption",
+      "rva": "0xc8dd18",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "MainTextureTilingSize",
+      "rva": "0xc872d4",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "MainTextureTilingSize",
+      "rva": "0xc8dd38",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "MakeSpritesInfo_4KResFix_ForViewportCS",
+      "rva": "0x1e42330",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "MakeSpritesInfo_4KResFixCS",
+      "rva": "0x1e421b0",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "MakeSpritesInfo_ForViewportCS",
+      "rva": "0x1e42320",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "MakeSpritesInfoCS",
+      "rva": "0x1e421a0",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "MatrixPaletteTexture",
+      "rva": "0x2106614",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "MotorFilePathBasedTextures",
+      "rva": "0xba7238",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "MotorKtidFilePathBasedTextures",
+      "rva": "0xba729c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "NormalTextureArraySlice",
+      "rva": "0xd15ab0",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "NormalTextureScaleX",
+      "rva": "0xd0dfec",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "NormalTextureScaleX",
+      "rva": "0xe151ec",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "NormalTextureScaleZ",
+      "rva": "0xd0e00c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "NormalTextureScaleZ",
+      "rva": "0xe1520c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "NormalTextureSizeU",
+      "rva": "0xd0e02c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "NormalTextureSizeU",
+      "rva": "0xe1522c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "NormalTextureSizeV",
+      "rva": "0xd0e04c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "NormalTextureSizeV",
+      "rva": "0xe1524c",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "NormalTextureSpeedX",
+      "rva": "0xd0dfac",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "NormalTextureSpeedX",
+      "rva": "0xe151ac",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "NormalTextureSpeedZ",
+      "rva": "0xd0dfcc",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "NormalTextureSpeedZ",
+      "rva": "0xdd8fc0",
+      "category": "RESOURCE_LOADER"
+    },
+    {
+      "name": "NormalTextureSpeedZ",
+      "rva": "0xe151cc",
+      "category": "RESOURCE_LOADER"
+    }
+  ],
+  "native_species_bindings_verified": 0,
+  "item_0x26_semantics_verified": false,
+  "warning": "Strings/ADRP references may be UI, logging, serializer, tooling or texture loaders; positive ID binding requires concrete native dataflow."
+}
