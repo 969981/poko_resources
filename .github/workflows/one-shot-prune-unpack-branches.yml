@@ -6,72 +6,40 @@ on:
       - .github/workflows/one-shot-prune-unpack-branches.yml
 permissions:
   contents: write
+concurrency:
+  group: pokopia-one-shot-prune-2-0-1
+  cancel-in-progress: false
 jobs:
   prune:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
-      - name: Verify all 14 branches are integrated, then delete only those 14
+      - name: Prune the newly-created fully merged branch
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
-          branches=(
-            "2.0.1_unpack_audit"
-            "2.0.1_unpack_finish"
-            "2.0.1_unpack_m3_probe"
-            "2.0.1_unpack_m3_types"
-            "2.0.1_unpack_m4_all"
-            "2.0.1_unpack_m4_diagnostics"
-            "2.0.1_unpack_m4_kidsobjdb"
-            "2.0.1_unpack_m4_large_array_fix"
-            "2.0.1_unpack_native_export"
-            "2.0.1_unpack_native_git_aliases"
-            "2.0.1_unpack_native_magic_refresh"
-            "2.0.1_unpack_source_coverage"
-            "feature/pokopia-binary-evidence-v2"
-            "feature/pokopia-binary-net10"
-          )
-          for branch in "${branches[@]}"; do
-            if [[ "$branch" == "main" || "$branch" == "2.0.1_unpack" ]]; then
-              echo "REFUSED: protected branch $branch"
-              exit 1
-            fi
+          branch="feature/pokopia-binary-m10-evidence-graph"
+          if gh api "repos/$GH_REPO/git/ref/heads/$branch" >/dev/null 2>&1; then
             ahead="$(gh api "repos/$GH_REPO/compare/2.0.1_unpack...$branch" --jq '.ahead_by')"
             if [[ "$ahead" != "0" ]]; then
-              if [[ "$branch" != "feature/pokopia-binary-net10" ]]; then
-                echo "REFUSED: branch still has unmerged commits: $branch ($ahead)"
-                exit 1
-              fi
-              pr="$(gh api "repos/$GH_REPO/pulls/13")"
-              merged="$(jq -r '.merged' <<< "$pr")"
-              base="$(jq -r '.base.ref' <<< "$pr")"
-              pr_head="$(jq -r '.head.sha' <<< "$pr")"
-              current_head="$(gh api "repos/$GH_REPO/git/ref/heads/$branch" --jq '.object.sha')"
-              if [[ "$merged" != "true" || "$base" != "2.0.1_unpack" || "$pr_head" != "$current_head" ]]; then
-                echo "REFUSED: PR 13 squash-merge evidence or head SHA mismatch"
-                exit 1
-              fi
-              echo "Verified squash-merged PR 13: $branch"
-            else
-              echo "Verified fully merged: $branch"
+              echo "REFUSED: the newly created branch has unmerged work ($ahead commits)"
+              exit 1
             fi
-          done
-          for branch in "${branches[@]}"; do
             gh api --method DELETE "repos/$GH_REPO/git/refs/heads/$branch"
-            echo "Deleted $branch"
-          done
+            echo "Deleted verified fully merged branch $branch"
+          fi
           remaining="$(gh api "repos/$GH_REPO/branches?per_page=100" --jq '.[].name' | sort)"
           expected="$(printf '%s\n' '2.0.1_unpack' 'main' | sort)"
           if [[ "$remaining" != "$expected" ]]; then
-            echo "Remaining branches differ from requested set:"
+            echo "Unexpected branches remain:"
             printf '%s\n' "$remaining"
             exit 1
           fi
           echo "SUCCESS: only main and 2.0.1_unpack remain"
-      - name: Remove the one-shot workflow itself
+      - name: Remove temporary cleanup workflow
         if: success()
         shell: bash
         env:
@@ -80,5 +48,7 @@ jobs:
         run: |
           set -euo pipefail
           path=".github/workflows/one-shot-prune-unpack-branches.yml"
-          sha="$(gh api "repos/$GH_REPO/contents/$path?ref=2.0.1_unpack" --jq '.sha')"
-          gh api --method DELETE "repos/$GH_REPO/contents/$path" -f message="chore: remove one-shot branch-prune workflow [skip ci]" -f sha="$sha" -f branch="2.0.1_unpack"
+          sha="$(gh api "repos/$GH_REPO/contents/$path?ref=2.0.1_unpack" --jq '.sha' 2>/dev/null || true)"
+          if [[ -n "$sha" ]]; then
+            gh api --method DELETE "repos/$GH_REPO/contents/$path" -f message="chore: remove one-shot branch cleanup workflow [skip ci]" -f sha="$sha" -f branch="2.0.1_unpack"
+          fi
