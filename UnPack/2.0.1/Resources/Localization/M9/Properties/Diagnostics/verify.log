@@ -1,0 +1,118 @@
+{
+  "status": "M9_NATIVE_TYPED_IDOK_PROPERTIES_EXACT",
+  "source_kidsobjdb_files_verified": 3,
+  "native_node_records_verified": 101467,
+  "native_typed_fields_exported": 1176984,
+  "local_oid_equality_candidates_exported": 87445,
+  "candidate_semantics": "NOT_PROVEN_FOREIGN_KEYS",
+  "scene_quest_building_text_foreign_keys_confirmed": 0,
+  "files": [
+    {
+      "m3_record_id": "root:42257",
+      "name_hash": "b290631c",
+      "object_type_hash_m3": "20a6a0bb",
+      "source_sha256": "f96972dc847e679aa01d602c0fc5897bdd81e7b09eeea1567cd75b0e9d279e51",
+      "verified_native_records": 31740,
+      "verified_typed_property_fields": 247598,
+      "counts": {
+        "typed_properties": 247598,
+        "typed_u32_local_oid_matches": 12510,
+        "complete_node_properties": 31740
+      },
+      "property_type_histogram": {
+        "0": 60,
+        "1": 1068,
+        "4": 20877,
+        "5": 175664,
+        "8": 49927,
+        "10": 2
+      },
+      "candidate_property_hash_histogram": {
+        "0xf92c5190": 3296,
+        "0x0b534abc": 3263,
+        "0x0b6e1578": 2464,
+        "0x00bae1c9": 2049,
+        "0xe21ff09f": 977,
+        "0xb722ee20": 461
+      },
+      "candidate_output_truncated": false
+    },
+    {
+      "m3_record_id": "root:49334",
+      "name_hash": "cfd2bd1f",
+      "object_type_hash_m3": "20a6a0bb",
+      "source_sha256": "ee4f3885744af85ae34df856805b849485246928dbb54628feac7bf355b9050f",
+      "verified_native_records": 1330,
+      "verified_typed_property_fields": 17740,
+      "counts": {
+        "typed_properties": 17740,
+        "complete_node_properties": 1330,
+        "typed_u32_local_oid_matches": 1228
+      },
+      "property_type_histogram": {
+        "1": 1560,
+        "4": 1305,
+        "5": 9800,
+        "8": 5075
+      },
+      "candidate_property_hash_histogram": {
+        "0xb5869388": 405,
+        "0xcf4a6da5": 222,
+        "0xd4b534c8": 144,
+        "0xc3c650db": 125,
+        "0x5335b95b": 116,
+        "0x3fbe932d": 99,
+        "0xa810dd85": 80,
+        "0xab85bd96": 8,
+        "0x4297e49c": 8,
+        "0xc9ed9068": 8,
+        "0x60ffb76e": 8,
+        "0x5fd0b93d": 4,
+        "0x95708e3b": 1
+      },
+      "candidate_output_truncated": false
+    },
+    {
+      "m3_record_id": "root:49689",
+      "name_hash": "d14d76ef",
+      "object_type_hash_m3": "20a6a0bb",
+      "source_sha256": "ea4e260c1bc6b0feea16ca16d9c65ca017454a9c7754277e088ecd97d49a5a9a",
+      "verified_native_records": 68397,
+      "verified_typed_property_fields": 911646,
+      "counts": {
+        "typed_properties": 911646,
+        "typed_u32_local_oid_matches": 73707,
+        "complete_node_properties": 68397
+      },
+      "property_type_histogram": {
+        "1": 9775,
+        "4": 170072,
+        "5": 279011,
+        "8": 452788
+      },
+      "candidate_property_hash_histogram": {
+        "0xe1773a02": 26793,
+        "0x9e1e3953": 19774,
+        "0x72365b94": 9775,
+        "0x71dd9b9a": 7975,
+        "0x0b6e1578": 7563,
+        "0xf92c5190": 1172,
+        "0xf7f103b3": 344,
+        "0x7867bf0e": 299,
+        "0xb2e69a87": 12
+      },
+      "candidate_output_truncated": false
+    }
+  ],
+  "source_parsers": [
+    "https://github.com/eArmada8/yumia_fdata_tools/blob/9d8dc1fb7436f14ffec42acb6d719cea1214abbd/ktid/yumia_decode_kidsobjdb.py",
+    "https://github.com/PieceMetal/DWOriginsAssetTool/blob/22d744f37d4a55a7b684bd8c6d7fd14665c0152d/Core/KidsObjectDatabase.cs"
+  ],
+  "warnings": [
+    "The on-disk property type and size are validated; their semantic names require a .name table or consumer code.",
+    "A u32 value matching a local object ID is only a candidate relationship without a typed property name.",
+    "Neither node index nor object ID is automatically an M7 text row ID.",
+    "Files with unsupported native property types fail closed instead of silently skipping members."
+  ]
+}
+Native property decode verified
