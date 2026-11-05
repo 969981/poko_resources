@@ -1,0 +1,91 @@
+name: M31.2 - Original StaticScreenLayoutTextures typed field names
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m31_2_static_texture_property_labels.py"
+      - ".github/workflows/unpack-m31-2-static-texture-schema.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m31-2-static-texture-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  native-static-screenlayout-property-schema:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout original KIDSOBJDB and original source NSO
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native/root_019167_50ae86ef.kidsobjdb
+            Scripts/resources/m16_verify_pokemon_texture_kidsobjdb.py
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m20_native_species_item_targets.py
+            Scripts/resources/m31_2_static_texture_property_labels.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install source NSO LZ4 and ARM64 disassembly
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Check registered static texture schema source anchors
+        run: python -m Scripts.resources.m31_2_static_texture_property_labels --self-test
+
+      - name: Decode original StaticScreenLayoutTextures 3 property labels
+        run: python -m Scripts.resources.m31_2_static_texture_property_labels
+
+      - name: Validate original names and sample Source OID provenance only
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M31")
+          j=json.loads((p/"m31_2_static_texture_schema_summary.json").read_text(encoding="utf-8"))
+          d=json.loads((p/"m31_2_original_StaticScreenLayoutTextures_3_field_labels.json").read_text(encoding="utf-8"))
+          assert j["original_main_sha256"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert j["original_kids_objdb_sha256"]=="86f90b4c11da9bc2b3e28889a5090ff507f96ca713fe4fad1dd50f6f692d7541"
+          assert j["native_property_descriptor_count"]==len(d["native_original_descriptor_records"])==3
+          assert j["all_original_property_labels_read_from_rodata"]
+          assert "2856a1b3" in j["original_property_hash_list"]
+          assert j["representative_native_source_OID"]=="06ab845f"
+          assert j["representative_native_texture_OID"]=="c1a6d60c"
+          assert not j["runtime_texture_selection_consumer_confirmed"]
+          assert not j["real_pokemon_species_or_form_ID_confirmed"]
+          print("PASS original 2.0.1 native StaticScreenLayoutTextures schema and OID provenance")
+          PY
+
+      - name: Upload native static texture class schema evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m31-2-original-three-StaticScreenLayoutTextures-fields
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M31/m31_2_*
+          if-no-files-found: warn
+
+      - name: Commit source-qualified static texture property labels
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M31/m31_2_*
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m31.2): original StaticScreenLayoutTextures source schema and target texture OID"
+          for n in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
