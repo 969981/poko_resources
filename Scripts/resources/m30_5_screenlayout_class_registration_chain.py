@@ -35,7 +35,7 @@ TYPES=(
         "original_string_va":0x279B44D,
         "load_adrp":0xBA6A10,"load_add":0xBA6A14,"pass_reg":0xBA6A18,"call_pc":0xBA6A1C,
         "function":0xBB8558,
-        "type_hash":0x79991E79,"movz_pc":0xBB85F4,"movk_pc":0xBB85FC,
+        "type_hash":0x79991E79,"movz_pc":0xBB85F8,"movk_pc":0xBB8600,
         "class_bss_global":0x34963B0,"table_base_global":0x34963B8,
         "bss_object":0x366E6F0,"vtable_base":0x32F0EE0,
         "property_method_slot":0x18,"property_method":0xCE854C,
