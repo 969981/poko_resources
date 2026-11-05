@@ -61,7 +61,7 @@ jobs:
           for entry in sorted(ids):
               print(f"UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/{entry:05d}.bin")
           PY
-          git sparse-checkout add --no-cone --stdin < /tmp/m7-sparse-paths.txt
+          git sparse-checkout add --stdin < /tmp/m7-sparse-paths.txt
           python - <<'PY'
           from pathlib import Path
           missing = [line for line in Path("/tmp/m7-sparse-paths.txt").read_text().splitlines()
