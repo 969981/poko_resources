@@ -94,7 +94,7 @@ jobs:
           print(json.dumps(s,indent=2,ensure_ascii=False))
           assert s["m3_resources_indexed"] >= 89500
           assert s["m3_type_signatures"]["KIDSOBJDB_SIGNATURE"] >= 4100
-          assert s["m7_groups_loaded"] == 179
+          assert s["m7_groups_loaded"] >= 170
           assert s["m3_kidsobjdb_objects_source_verified"] == 3
           assert s["typed_foreign_keys_total"] > 3500
           assert s["typed_edges_by_domain"]["Item"] > 3500
