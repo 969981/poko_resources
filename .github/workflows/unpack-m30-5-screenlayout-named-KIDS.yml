@@ -1,0 +1,89 @@
+name: M30.5 - Verify named ScreenLayout KIDS class registrations
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m30_5_screenlayout_class_registration_chain.py"
+      - ".github/workflows/unpack-m30-5-screenlayout-named-KIDS.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m30-5-named-classes-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  exact-native-class-registration-mapping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout pinned original NSO and class registration verifier
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m20_native_species_item_targets.py
+            Scripts/resources/m30_5_screenlayout_class_registration_chain.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install original source disassembler
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Selftest two original named KIDS class anchors
+        run: python -m Scripts.resources.m30_5_screenlayout_class_registration_chain --self-test
+
+      - name: Verify registered names, BL destinations, embedded type hashes, and installed vtables
+        run: python -m Scripts.resources.m30_5_screenlayout_class_registration_chain
+
+      - name: Certify exact static type relationship and reject runtime ID claims
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M30")
+          s=json.loads((p/"m30_5_static_native_class_chain_summary.json").read_text(encoding="utf-8"))
+          d=json.loads((p/"m30_5_two_named_KIDS_class_registrations.json").read_text(encoding="utf-8"))
+          assert s["original_main_sha256"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert s["registered_class_labels"]=={
+            "ScreenLayoutTexturePackSettings":"0x9d1afa46",
+            "StaticScreenLayoutTextures":"0x79991e79"}
+          assert len(d["source_verified_classes"])==2
+          assert all(x["original_label_and_type_same_registered_class"] for x in d["source_verified_classes"])
+          assert not s["runtime_texture_pack_query_consumer_proven"]
+          assert not s["runtime_species_ID_or_form_selection_proven"]
+          assert not s["game_ID_to_icon_Source_OID_proven"]
+          print("PASS exact original native KIDS ScreenLayout type labels and method table provenance")
+          PY
+
+      - name: Upload proof of ScreenLayout registered type names
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m30-5-original-two-named-KIDS-ScreenLayout-classes
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M30/m30_5_*
+          if-no-files-found: warn
+
+      - name: Commit source-qualified ScreenLayout KIDS class names
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M30/m30_5_*
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m30.5): prove original named ScreenLayout class and type hash registry links"
+          for n in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
