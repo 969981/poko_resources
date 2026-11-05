@@ -1,0 +1,194 @@
+name: M8 - Native resource to nine-language text reference graph
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/link_native_text_references.py"
+      - "tests/test_m8_native_text_refs.py"
+      - ".github/workflows/unpack-m8-localization-refs.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m8-native-localization
+  cancel-in-progress: false
+
+jobs:
+  native-reference-graph:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout exact native source files and previously verified text
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          persist-credentials: true
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/recover_native_text_ids.py
+            Scripts/resources/link_native_text_references.py
+            tests/test_m8_native_text_refs.py
+            UnPack/2.0.1/Resources/Localization/M7/m7_report.json
+            UnPack/2.0.1/Resources/Localization/M8
+            UnPack/2.0.1/Resources/Items/Text
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/validation.json
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00040.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00041.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00042.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00044.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02332.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02333.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02334.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02335.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02336.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02337.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02338.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02339.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/02340.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04645.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04646.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04647.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04648.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04649.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04650.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04651.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04652.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04653.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04942.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04943.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04944.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04945.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04946.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04947.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04948.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04949.bin
+            UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/04950.bin
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Execute native ID and role regression tests
+        id: tests
+        shell: bash
+        run: |
+          mkdir -p UnPack/2.0.1/Resources/Localization/M8/Diagnostics
+          set +e
+          python -m unittest discover -s tests -p "test_m8_native_text_refs.py" -v \
+            > UnPack/2.0.1/Resources/Localization/M8/Diagnostics/tests.log 2>&1
+          code=$?
+          cat UnPack/2.0.1/Resources/Localization/M8/Diagnostics/tests.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Link original resource fields to nine-language text IDs
+        id: export
+        if: steps.tests.outputs.exit_code == '0'
+        shell: bash
+        run: |
+          set +e
+          python Scripts/resources/link_native_text_references.py \
+            --decoded-root UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded \
+            --dest UnPack/2.0.1/Resources/Localization/M8 \
+            > UnPack/2.0.1/Resources/Localization/M8/Diagnostics/export.log 2>&1
+          code=$?
+          tail -c 30000 UnPack/2.0.1/Resources/Localization/M8/Diagnostics/export.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Check actual IDs, native source references and role counts
+        id: verify
+        if: steps.tests.outputs.exit_code == '0' && steps.export.outputs.exit_code == '0'
+        shell: bash
+        run: |
+          set +e
+          python - <<'PY' > UnPack/2.0.1/Resources/Localization/M8/Diagnostics/verify.log 2>&1
+          import csv, json
+          from pathlib import Path
+          root=Path("UnPack/2.0.1/Resources/Localization/M8")
+          r=json.loads((root/"m8_report.json").read_text(encoding="utf-8"))
+          print("M8:",json.dumps(r,ensure_ascii=False,indent=2))
+          assert r["item_to_text"]["slots_verified_all_9_languages"]==4600
+          assert r["item_to_text"]["language_text_discrepancies"]==0
+          assert r["item_to_text"]["items_with_native_name"]==3585
+          assert r["map_part_to_item_to_text"]["linked_map_part_variations"]==1963
+          assert r["map_part_to_item_to_text"]["unique_item_ids"]==1374
+          assert r["native_text_roles"]["Reactions"]["nonempty_text_ids"]==47
+          assert r["native_text_roles"]["Skills"]["nonempty_text_ids"]==11
+          assert r["native_text_roles"]["Reactions"]["empty_slot_pattern_consistent"]
+          assert r["native_text_roles"]["Skills"]["empty_slot_pattern_consistent"]
+          assert r["quest_scene_building_reference_analysis"]["Buildings"]=="MAP_PART_IS_NOT_A_BUILDING_TYPE"
+          with (root/"map_part_item_name_refs.csv").open(encoding="utf-8",newline="") as f:
+              rows={int(row["source_record_id"]): row for row in csv.DictReader(f)}
+          assert int(rows[1498]["item_id"])==1357
+          assert int(rows[3197]["item_id"])==1628
+          with (root/"native_role_text_refs.csv").open(encoding="utf-8",newline="") as f:
+              data=list(csv.DictReader(f))
+          assert len(data)==189
+          assert len(list(root.glob("*_refs.json")))==3
+          PY
+          code=$?
+          cat UnPack/2.0.1/Resources/Localization/M8/Diagnostics/verify.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Preserve diagnostics and run identity
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p UnPack/2.0.1/Resources/Localization/M8/Diagnostics
+          printf 'tests=%s\nexport=%s\nverify=%s\nrun_id=%s\n' \
+            "${{ steps.tests.outputs.exit_code }}" \
+            "${{ steps.export.outputs.exit_code }}" \
+            "${{ steps.verify.outputs.exit_code }}" \
+            "${{ github.run_id }}" \
+            > UnPack/2.0.1/Resources/Localization/M8/Diagnostics/status.txt
+          for file in UnPack/2.0.1/Resources/Localization/M8/Diagnostics/*.log; do
+            [ -f "$file" ] || continue
+            tail -c 100000 "$file" > "$file.tail"
+            mv "$file.tail" "$file"
+          done
+
+      - name: Upload exact output or failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-m8-${{ github.run_id }}
+          path: UnPack/2.0.1/Resources/Localization/M8/
+          retention-days: 30
+
+      - name: Commit provenance and generated references
+        if: always()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ "${{ steps.tests.outputs.exit_code }}" = 0 ] &&
+             [ "${{ steps.export.outputs.exit_code }}" = 0 ] &&
+             [ "${{ steps.verify.outputs.exit_code }}" = 0 ]; then
+            git add -A -- UnPack/2.0.1/Resources/Localization/M8
+          else
+            git add -A -- UnPack/2.0.1/Resources/Localization/M8/Diagnostics
+          fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m8): record exact native resource-to-text references and diagnostics"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
+
+      - name: Fail if native source references were not verified
+        if: always()
+        shell: bash
+        run: |
+          test "${{ steps.tests.outputs.exit_code }}" = 0
+          test "${{ steps.export.outputs.exit_code }}" = 0
+          test "${{ steps.verify.outputs.exit_code }}" = 0
