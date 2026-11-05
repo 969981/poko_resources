@@ -32,6 +32,13 @@ OWNER=0xB4A1803B
 TYPE=0x9D1AFA46
 ARRAYS=(0xE88C8D60,0x34CBB458)
 COUNT=3543
+# Verified original ARM64 words at source-qualified breakpoint sites.
+SOURCE_WORDS={
+    0x1136A60:0x794012C8,
+    0x5FD168:0x912CD463,
+    0xDD1B48:0x2A1F03E8,
+    0xDD1B74:0xB863D92C,
+}
 DESC_HASHES=(0x2F610FEA,0xE88C8D60,0x34CBB458)
 CODE={
     "identity":{
@@ -95,7 +102,13 @@ def check_header(rec):
 def check_memory(r,expected_address=None,expected_size=None):
     if not isinstance(r,dict) or type(r.get("read_ok")) is not bool:
         raise ValueError("Malformed bounded memory reading")
-    if not r["read_ok"]:return None
+    if not r["read_ok"]:
+        if expected_address is None and r.get("address") is not None:
+            # Address could be recorded even for target access errors.
+            q(r["address"],"failed-read address")
+        return None
+    if expected_address is None:
+        raise ValueError("Memory read without source register or original address provenance")
     a=q(r.get("address"),"read address")
     n=r.get("size")
     if type(n) is not int or n not in (1,4,6):
@@ -124,6 +137,8 @@ def verify(path,original_arrays):
     markers=Counter()
     read_errors=Counter()
     desc=Counter()
+    original_opcode_matches=Counter()
+    original_opcode_read_errors=Counter()
     pair_evidence=[]
     record_triplets=[]
     flag_values=Counter()
@@ -154,6 +169,17 @@ def verify(path,original_arrays):
                 if k!="sp" and (not k.startswith("x") or not k[1:].isdigit()):
                     raise ValueError("Unexpected register name")
                 if v is not None:q(v,k)
+            opcode=r.get("current_instruction_original_code_read")
+            source_word=q(r.get("expected_original_instruction_word"),"original opcode word")
+            if source_word!=SOURCE_WORDS[expected]:
+                raise ValueError("Record changed expected pinned AArch64 instruction word")
+            check=check_memory(opcode,expected_address=base+expected,expected_size=4)
+            if check is None:
+                original_opcode_read_errors[label]+=1
+            elif int.from_bytes(check,"little")!=source_word:
+                raise ValueError("Target breakpoint instruction differs from original pinned 2.0.1 source bytes")
+            else:
+                original_opcode_matches[label]+=1
             reads=r.get("bounded_original_instruction_reads")
             if not isinstance(reads,dict):raise ValueError("Missing bounded memory map")
             expect={
@@ -161,7 +187,7 @@ def verify(path,original_arrays):
                 "pokemon_list_string_reference":"x19_plus26_byte",
                 "kids_property_descriptor_hash_read":"descriptor_hash_at_x9_plus_index",
             }.get(label)
-            if set(reads)!={expect} if expect is not None else bool(reads):
+            if (set(reads)!={expect}) if expect is not None else bool(reads):
                 raise ValueError("Wrong original instruction memory-read site")
             if expect:
                 src={"three_u16_record_before_read":"x22",
@@ -231,6 +257,8 @@ def verify(path,original_arrays):
         "source_pairs_reverified":COUNT,
         "observed_event_samples":samples,
         "observed_event_by_site":dict(counts),
+        "runtime_original_opcode_spotcheck_matches":dict(original_opcode_matches),
+        "runtime_original_opcode_spotcheck_unavailable":dict(original_opcode_read_errors),
         "operator_scenario_markers":dict(markers),
         "bounded_read_failures":dict(read_errors),
         "raw_16_bit_record_triplets":record_triplets[:50],
@@ -242,6 +270,7 @@ def verify(path,original_arrays):
         "raw_pair_evidence":pair_evidence[:100],
         "same_scenario_equals_same_game_instance":False,
         "runtime_target_build_sha_verified":False,
+        "runtime_opcode_spotcheck_is_complete_build_proof":False,
         "game_entity_ID_field_proven":False,
         "game_species_ID_to_KIDS_key_proven":False,
         "game_species_ID_to_KIDS_source_OID_proven":False,
@@ -267,6 +296,11 @@ def selftest():
         "kind":"event","event":"kids_property_descriptor_hash_read","phase":"kids",
         "ordinal":1,"original_main_offset":"0xdd1b74","absolute_pc":hex(base+0xDD1B74),
         "return_lr_x30":hex(base+0x400),"registers":{"x9":"0x100000","x3":"0x2"},
+        "expected_original_instruction_word":hex(SOURCE_WORDS[0xDD1B74]),
+        "current_instruction_original_code_read":{
+            "read_ok":True,"address":hex(base+0xDD1B74),"size":4,
+            "raw_hex":struct.pack("<I",SOURCE_WORDS[0xDD1B74]).hex(),
+            "decoded_u32_le":SOURCE_WORDS[0xDD1B74]},
         "descriptor_index_w3":2,
         "bounded_original_instruction_reads":{
             "descriptor_hash_at_x9_plus_index":{
@@ -300,6 +334,8 @@ def selftest():
         file.write_text("\n".join(json.dumps(r) for r in rows+[good])+"\n",encoding="utf-8")
         result=verify(file,(keys,values))
         assert result["operator_supplied_raw_pairs_with_exact_original_KIDS_values"]==1
+        assert result["runtime_original_opcode_spotcheck_matches"]=={
+            "kids_property_descriptor_hash_read":1}
         assert not result["game_species_ID_to_KIDS_source_OID_proven"]
         for changed in [
             {"source_oid_u32_raw":{**good["source_oid_u32_raw"],"raw_hex":"12345678",
