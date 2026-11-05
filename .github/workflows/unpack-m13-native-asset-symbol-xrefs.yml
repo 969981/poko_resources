@@ -1,0 +1,76 @@
+name: M13 - Original Pokemon species and item metadata loader symbol references
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m13_native_asset_symbol_xrefs.py"
+      - "tests/test_m13_native_asset_symbol_xrefs.py"
+      - ".github/workflows/unpack-m13-native-asset-symbol-xrefs.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-201-m13-asset-refs-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  native-asset-symbols:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m13_native_asset_symbol_xrefs.py
+            tests/test_m13_native_asset_symbol_xrefs.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install compressed NSO native decoder
+        run: python -m pip install "lz4>=4,<5"
+
+      - name: Test native RODATA and AArch64 ADRP/ADD address reconstruction
+        run: python -m unittest discover -s tests -p "test_m13_native_asset_symbol_xrefs.py" -v
+
+      - name: Enumerate original metadata/resource symbols and real instruction references
+        run: python -m Scripts.resources.m13_native_asset_symbol_xrefs
+
+      - name: Do not promote string references to species or item enum proof
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Pokemon/NativeCallers/M13/m13_summary.json")
+          x=json.loads(p.read_text(encoding="utf-8"))
+          assert x["exe_sha256"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert x["symbol_count"]>10 and x["xref_count"]>10
+          assert x["native_species_bindings_verified"]==0
+          assert x["item_0x26_semantics_verified"] is False
+          print("Native asset symbols:",x["symbol_count"],"assembly literal xrefs:",x["xref_count"])
+          PY
+
+      - name: Save reproducible symbol-address and callsite crosswalk
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Pokemon/NativeCallers/M13
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m13): identify source-verified Pokemon and item resource-loader string xrefs"
+          for i in 1 2 3 4 5 6 7 8; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+            sleep 2
+          done
+          exit 1
