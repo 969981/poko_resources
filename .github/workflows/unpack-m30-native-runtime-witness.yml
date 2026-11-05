@@ -1,0 +1,98 @@
+name: M30 - Original game identity KIDS two-phase witness toolkit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/gdb/m30_pokopia_two_phase_witness.py"
+      - "Scripts/resources/m30_1_review_original_runtime_witness.py"
+      - ".github/workflows/unpack-m30-native-runtime-witness.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  verify-capture-schema-and-original-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Sparse checkout GDB witness plus original ExeFS/KIDSOBJDB
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/gdb/m30_pokopia_two_phase_witness.py
+            Scripts/resources/m30_1_review_original_runtime_witness.py
+            Scripts/resources/m16_verify_pokemon_texture_kidsobjdb.py
+            Scripts/resources/trace_native_species_item_callers.py
+            2.0.1/exefs/main
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native/root_019167_50ae86ef.kidsobjdb
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install original NSO decoder
+        run: python -m pip install "lz4>=4,<5"
+
+      - name: Syntax-check the separate GDB runtime collector and the validator
+        run: |
+          python -m py_compile Scripts/gdb/m30_pokopia_two_phase_witness.py
+          python -m py_compile Scripts/resources/m30_1_review_original_runtime_witness.py
+
+      - name: Test mock trace schema including record bytes, opcode bytes, and fabricated claims
+        run: python -m Scripts.resources.m30_1_review_original_runtime_witness --self-test
+
+      - name: Verify all 3543 original KIDS key/source pairs from pinned raw bytes
+        run: |
+          python - <<'PY'
+          from Scripts.resources.m30_1_review_original_runtime_witness import raw_arrays,COUNT,KIDS_SHA
+          a,b=raw_arrays()
+          assert len(a)==len(b)==COUNT==3543
+          assert (a[455],b[455])==(0x469E2C00,0x06AB845F)
+          assert KIDS_SHA=="86f90b4c11da9bc2b3e28889a5090ff507f96ca713fe4fad1dd50f6f692d7541"
+          print("PASS original 3543 KIDS key/source pairs, slot 455 raw byte witness")
+          PY
+
+      - name: Verify exactly four original ARM64 2.0.1 instruction words
+        run: |
+          python - <<'PY'
+          import struct,hashlib
+          from Scripts.resources.trace_native_species_item_callers import get_sections
+          from Scripts.resources.m30_1_review_original_runtime_witness import MAIN_SHA,SOURCE_WORDS
+          from pathlib import Path
+          raw=Path("2.0.1/exefs/main").read_bytes()
+          assert hashlib.sha256(raw).hexdigest()==MAIN_SHA
+          kind,parts=get_sections(raw)
+          assert kind=="NSO0"
+          code=next(p for p in parts if p["name"]=="text")
+          for at,expected in sorted(SOURCE_WORDS.items()):
+              off=at-code["mem_offset"]
+              assert 0<=off<=len(code["data"])-4
+              actual=struct.unpack_from("<I",code["data"],off)[0]
+              assert actual==expected,(hex(at),hex(actual),hex(expected))
+              print("Verified original code",hex(at),hex(actual))
+          PY
+
+      - name: Assert hardware only, 2-point capture, bounded reads, and unknown runtime identities
+        run: |
+          python - <<'PY'
+          import ast
+          from pathlib import Path
+          p=Path("Scripts/gdb/m30_pokopia_two_phase_witness.py")
+          t=p.read_text(encoding="utf-8")
+          a=ast.parse(t)
+          assert "BP_HARDWARE_BREAKPOINT" in t
+          assert "BP_BREAKPOINT," not in t
+          assert '"identity":{' in t and '"kids":{' in t
+          assert 'mem(address+4,6)' in t and 'mem(address+0x26,1)' in t
+          assert 'mem(ptr+4*idx,4)' in t
+          assert 'mem(pc,4)' in t
+          assert "same_game_instance_proven" in t and "native_species_ID_proven" in t
+          assert not any(isinstance(n,ast.Attribute) and n.attr in (
+              "write_memory","write_register","set_value") for n in ast.walk(a))
+          print("M30 only static GDB code inspection; real debugger/target hardware breakpoints NOT exercised")
+          PY
