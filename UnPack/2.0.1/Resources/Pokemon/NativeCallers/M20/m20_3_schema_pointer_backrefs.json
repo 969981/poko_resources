@@ -98,13 +98,13 @@
     {
       "cell": "0x32f0ed0",
       "value": "0x0",
-      "executable_pointer": true,
+      "executable_pointer": false,
       "offset_from_method_cell": -40
     },
     {
       "cell": "0x32f0ed8",
       "value": "0x0",
-      "executable_pointer": true,
+      "executable_pointer": false,
       "offset_from_method_cell": -32
     },
     {
@@ -256,112 +256,128 @@
     {
       "candidate_table_start": "0x32f0ef8",
       "method_pointer_offset": "0x0",
-      "contiguous_executable_pointer_cells_through_method": 1,
+      "executable_pointer_cells_through_method": 1,
+      "all_entries_to_method_executable": true,
       "next_seven_executable_pointer_cells": 7,
       "vtable_identity_proven": false
     },
     {
       "candidate_table_start": "0x32f0ef0",
       "method_pointer_offset": "0x8",
-      "contiguous_executable_pointer_cells_through_method": 2,
+      "executable_pointer_cells_through_method": 2,
+      "all_entries_to_method_executable": true,
       "next_seven_executable_pointer_cells": 7,
       "vtable_identity_proven": false
     },
     {
       "candidate_table_start": "0x32f0ee8",
       "method_pointer_offset": "0x10",
-      "contiguous_executable_pointer_cells_through_method": 3,
+      "executable_pointer_cells_through_method": 3,
+      "all_entries_to_method_executable": true,
       "next_seven_executable_pointer_cells": 7,
       "vtable_identity_proven": false
     },
     {
       "candidate_table_start": "0x32f0ee0",
       "method_pointer_offset": "0x18",
-      "contiguous_executable_pointer_cells_through_method": 4,
+      "executable_pointer_cells_through_method": 4,
+      "all_entries_to_method_executable": true,
       "next_seven_executable_pointer_cells": 7,
       "vtable_identity_proven": false
     },
     {
       "candidate_table_start": "0x32f0ed8",
       "method_pointer_offset": "0x20",
-      "contiguous_executable_pointer_cells_through_method": 5,
+      "executable_pointer_cells_through_method": 4,
+      "all_entries_to_method_executable": false,
       "next_seven_executable_pointer_cells": 7,
       "vtable_identity_proven": false
     },
     {
       "candidate_table_start": "0x32f0ed0",
       "method_pointer_offset": "0x28",
-      "contiguous_executable_pointer_cells_through_method": 6,
+      "executable_pointer_cells_through_method": 4,
+      "all_entries_to_method_executable": false,
       "next_seven_executable_pointer_cells": 7,
       "vtable_identity_proven": false
     },
     {
       "candidate_table_start": "0x32f0ec8",
       "method_pointer_offset": "0x30",
-      "contiguous_executable_pointer_cells_through_method": 7,
+      "executable_pointer_cells_through_method": 5,
+      "all_entries_to_method_executable": false,
       "next_seven_executable_pointer_cells": 7,
       "vtable_identity_proven": false
     },
     {
       "candidate_table_start": "0x32f0ec0",
       "method_pointer_offset": "0x38",
-      "contiguous_executable_pointer_cells_through_method": 8,
+      "executable_pointer_cells_through_method": 6,
+      "all_entries_to_method_executable": false,
       "next_seven_executable_pointer_cells": 7,
       "vtable_identity_proven": false
     },
     {
       "candidate_table_start": "0x32f0eb8",
       "method_pointer_offset": "0x40",
-      "contiguous_executable_pointer_cells_through_method": 9,
+      "executable_pointer_cells_through_method": 7,
+      "all_entries_to_method_executable": false,
       "next_seven_executable_pointer_cells": 7,
       "vtable_identity_proven": false
     },
     {
       "candidate_table_start": "0x32f0eb0",
       "method_pointer_offset": "0x48",
-      "contiguous_executable_pointer_cells_through_method": 10,
+      "executable_pointer_cells_through_method": 8,
+      "all_entries_to_method_executable": false,
       "next_seven_executable_pointer_cells": 7,
       "vtable_identity_proven": false
     },
     {
       "candidate_table_start": "0x32f0ea8",
       "method_pointer_offset": "0x50",
-      "contiguous_executable_pointer_cells_through_method": 11,
+      "executable_pointer_cells_through_method": 9,
+      "all_entries_to_method_executable": false,
       "next_seven_executable_pointer_cells": 7,
       "vtable_identity_proven": false
     },
     {
       "candidate_table_start": "0x32f0ea0",
       "method_pointer_offset": "0x58",
-      "contiguous_executable_pointer_cells_through_method": 12,
+      "executable_pointer_cells_through_method": 10,
+      "all_entries_to_method_executable": false,
       "next_seven_executable_pointer_cells": 7,
       "vtable_identity_proven": false
     },
     {
       "candidate_table_start": "0x32f0e98",
       "method_pointer_offset": "0x60",
-      "contiguous_executable_pointer_cells_through_method": 13,
+      "executable_pointer_cells_through_method": 11,
+      "all_entries_to_method_executable": false,
       "next_seven_executable_pointer_cells": 7,
       "vtable_identity_proven": false
     },
     {
       "candidate_table_start": "0x32f0e90",
       "method_pointer_offset": "0x68",
-      "contiguous_executable_pointer_cells_through_method": 14,
+      "executable_pointer_cells_through_method": 12,
+      "all_entries_to_method_executable": false,
       "next_seven_executable_pointer_cells": 7,
       "vtable_identity_proven": false
     },
     {
       "candidate_table_start": "0x32f0e88",
       "method_pointer_offset": "0x70",
-      "contiguous_executable_pointer_cells_through_method": 15,
+      "executable_pointer_cells_through_method": 13,
+      "all_entries_to_method_executable": false,
       "next_seven_executable_pointer_cells": 7,
       "vtable_identity_proven": false
     },
     {
       "candidate_table_start": "0x32f0e80",
       "method_pointer_offset": "0x78",
-      "contiguous_executable_pointer_cells_through_method": 16,
+      "executable_pointer_cells_through_method": 14,
+      "all_entries_to_method_executable": false,
       "next_seven_executable_pointer_cells": 7,
       "vtable_identity_proven": false
     }
