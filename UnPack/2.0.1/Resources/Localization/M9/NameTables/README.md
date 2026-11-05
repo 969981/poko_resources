@@ -14,7 +14,7 @@
 
 核对 89,507 条 M3 资源索引后，三组均为 `RNK_NAME_FILE_MISSING`。这是**当前仓库输入未找到匹配的名称文件**，并非断言整个游戏或其他版本必然不存在。不得因此自动生成或填入名称。
 
-解析器 [`Scripts/resources/m9_rnk_name_tables.py`](../../../../../Scripts/resources/m9_rnk_name_tables.py) 已实现标准结构：
+解析器 [`Scripts/resources/m9_rnk_name_tables.py`](https://github.com/969981/poko_resources/blob/2.0.1_unpack/Scripts/resources/m9_rnk_name_tables.py) 已实现标准结构：
 
 - 顶层 `_RNK0000`、24 字节头部、条目计数和原始文件大小验证。
 - 每个 `IRNK0000` 的原生长度、名称 Hash、字符串数、相对于条目起点的字符串偏移、UTF-8 与 4 字节对齐填充验证。
