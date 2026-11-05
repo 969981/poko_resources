@@ -31,7 +31,7 @@ updated: 2026-11-05
 - `2.0.1/exefs/main` SHA-256 = `8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f`。
 - `UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin` SHA-256 = `2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f`。
 
-## GDB 调试（只读、自动继续）
+## GDB 调试（仅做只读数据采集，自动继续）
 
 需要运行 Pokopia 2.0.1 的 guest ARM64 调试进程。获取当次真实 `main` 模块基址，**不可把宿主地址或不同 BuildID 的基址代入**。GDB 必须能读取 x0/x1/x8/x19/x20 及 guest 内存。
 
@@ -41,7 +41,7 @@ pokopia_m23_start 0xYOUR_REAL_MAIN_BASE /absolute/path/2.0.1/exefs/main /absolut
 continue
 ~~~
 
-脚本先校验两个磁盘文件 SHA/长度，再布置五个只读 GDB 断点。命中自动继续，并将 `v1_method`、`v2_method`、寄存器对象指针和原始 68-byte 内存 Hex 记为 JSONL，不修改游戏内存、ROM 或存档。
+脚本先校验两个磁盘文件 SHA/长度，再布置五个 GDB 断点。命中自动继续，并将 `v1_method`、`v2_method`、实读虚表槽位、guest 调用栈、实验阶段标签、寄存器对象指针和 68-byte 现场内存 Hex 记为 JSONL。采集器不主动写入物品数据、ROM 或存档；但调试器的软件断点可能临时修改客体代码指令。
 
 需要提前停采：
 
@@ -60,7 +60,9 @@ python -m unittest discover -s tests -p "test_m23_item_classification_audit.py" 
 python -m Scripts.resources.m23_item_classification_audit --jsonl _work/m23.jsonl --source UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin --out _work/m23_audit.json --min-distinct 3
 ~~~
 
-路径需与 GDB 记录实际输出一致。判为 `RUNTIME_68B_RECORD_IDENTITY_SUPPORTED__LOADER_UNPROVEN` 的条件：至少三个不同有效 ID 完整 68-byte 一致、具有不同内存记录指针，并涵盖至少一条 `+0x26=0x10` 材料候选及另一种类别。任何单字节不符、只有 fallback、缺少独立 ID 不能提升证据等级。若程序未运行、没有真实 JSONL，状态只能是 `INSUFFICIENT_RUNTIME_RECORD_EVIDENCE` 或 `RUNTIME_NOT_YET_EXECUTED`。
+M23 新增 `pokopia_m23_phase inventory`、`pokopia_m23_phase crafting`、`pokopia_m23_phase construction`、`pokopia_m23_phase materials`，用于在调试暂停时标记当前**人工声明**的实验场景；`guest_call_stack` 包含最多 8 层调用点，`v1_vtable_slot_agrees` / `v2_vtable_slot_agrees` 用于将动态方法指针与实际虚表内存槽位交叉核验。**人工阶段名称不是原生 UI 逻辑的证明**。完整分场景流程见 [[09-M24-Consumer-Context-And-Acceptance]]。
+
+路径需与 GDB 记录实际输出一致。判为 `RUNTIME_68B_RECORD_IDENTITY_SUPPORTED__LOADER_UNPROVEN` 的条件：至少三个不同且有原生名称索引的有效 ID 完整 68-byte 一致、具有不同内存记录指针，并涵盖至少一条 `+0x26=0x10` 材料候选及另一种类别。任何单字节不符、只有 fallback、缺少独立 ID 不能提升证据等级。若程序未运行、没有真实 JSONL，状态只能是 `INSUFFICIENT_RUNTIME_RECORD_EVIDENCE` 或 `RUNTIME_NOT_YET_EXECUTED`。
 
 测试和工作流：
 - [GDB 数据采集脚本](../../../../Scripts/resources/m23_gdb_trace_item_classification.py)
