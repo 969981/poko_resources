@@ -2,6 +2,15 @@ name: Pokopia.Binary - .NET 10 native reader checks
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Pokopia.Binary/**"
+      - "Pokopia.Binary.Cli/**"
+      - "Pokopia.Binary.Checks/**"
+      - "ThirdParty/Edoke"
+      - ".gitmodules"
+      - ".github/workflows/pokopia-binary-dotnet10.yml"
   push:
     branches: ["2.0.1_unpack"]
     paths:
