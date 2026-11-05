@@ -1,0 +1,78 @@
+name: M20 - original 983 descriptor and global item-pointer provenance
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [2.0.1_unpack]
+    paths:
+      - "Scripts/resources/m20_item983_cache_provenance.py"
+      - "tests/test_m20_item983_cache_provenance.py"
+      - ".github/workflows/unpack-m20-item983-cache-provenance.yml"
+  push:
+    branches: [2.0.1_unpack]
+    paths:
+      - "Scripts/resources/m20_item983_cache_provenance.py"
+      - "tests/test_m20_item983_cache_provenance.py"
+      - ".github/workflows/unpack-m20-item983-cache-provenance.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  original-main-cache:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /2.0.1/exefs/main
+            /UnPack/2.0.1/romfs/LD_C0_R.BIN/decoded/00983.bin
+            /Scripts/resources/trace_native_species_item_callers.py
+            /Scripts/resources/trace_native_item_provenance.py
+            /Scripts/resources/trace_native_item_resource_loader.py
+            /Scripts/resources/trace_native_item_consumers.py
+            /Scripts/resources/m20_item983_cache_provenance.py
+            /tests/test_m20_item983_cache_provenance.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install static ARM64 and NSO readers
+        run: python -m pip install "capstone>=5,<6" "lz4>=4,<5"
+      - name: Verify global ADRP/add aliases, index bounds and negative cases
+        run: python -m unittest discover -s tests -p "test_m20_item983_cache_provenance.py" -v
+      - name: Recover actual M20 983 descriptor, callees and global read/write provenance
+        run: python -m Scripts.resources.m20_item983_cache_provenance
+      - name: Strict real-source and semantic evidence checks
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          src=Path("UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M20")
+          j=json.loads((src/"m20_native_983_cache_provenance.json").read_text())
+          assert j["sha256_main"]=="8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f"
+          assert j["sha256_item"]=="2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f"
+          assert j["original_table_record_count"]==4600
+          assert j["original_table_record_stride"]==68
+          assert len(j["native_983_lookup_chains"])==2
+          assert j["original_40_byte_descriptor_samples"]["descriptor_count_if_zero_based"]==1195
+          assert j["independent_item_consumers"]["native_4600_id_virtual_accessor_to_raw_fields"]
+          assert all(not value for key,value in j["semantic_proofs"].items()
+                     if key not in ("983_descriptor_indexed_by_original_main",
+                                    "global_cache_store_from_983_chain"))
+          assert j["semantic_proofs"]["983_descriptor_indexed_by_original_main"]
+          assert j["semantic_proofs"]["global_cache_store_from_983_chain"]
+          print("M20 proven",len(j["native_983_lookup_chains"]),"original 983 chains,",
+                j["global_static_xrefs"]["exact_direct_load_store_site_count"],
+                "direct original global accesses; still no table origin proof")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m20-983-cache-original-native-evidence
+          path: |
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M20/m20_native_983_cache_provenance.json
+            UnPack/2.0.1/Resources/Items/Native_2.0.1/ExeFS/M20/m20_native_983_cache_summary.json
+          retention-days: 30
