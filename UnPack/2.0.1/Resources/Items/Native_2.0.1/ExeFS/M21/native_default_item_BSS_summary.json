@@ -1,0 +1,561 @@
+{
+  "status": "ORIGINAL_BSS_DEFAULT_REFERENCE_CANDIDATES__NO_LOADER_PROOF",
+  "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "original_item_sha256": "2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f",
+  "default_pointer_cells": {
+    "0x3483c58": "0x35b6128",
+    "0x3484a38": "0x35b617c"
+  },
+  "default_record_va_difference": "0x54",
+  "xref_counts": {
+    "0x35b6128": 123,
+    "0x35b617c": 1,
+    "0x35b5b3c": 1,
+    "0x35b7af8": 0,
+    "0x3483c58": 360,
+    "0x3484a38": 10
+  },
+  "confirmed_item_default_constructor": false,
+  "confirmed_record_wrapper_plus8_source": false,
+  "confirmed_00983_table_loader": false,
+  "top_xrefs": {
+    "0x3483c58": [
+      {
+        "target_va": "0x3483c58",
+        "target_name": "C7_global_pointer_cell",
+        "adrp_pc": "0x35a30",
+        "consumer_pc": "0x35a4c",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x27",
+        "consumer_reg": "27",
+        "distance": 28,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3483c58",
+        "target_name": "C7_global_pointer_cell",
+        "adrp_pc": "0x3a698",
+        "consumer_pc": "0x3a6a0",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3483c58",
+        "target_name": "C7_global_pointer_cell",
+        "adrp_pc": "0x3b410",
+        "consumer_pc": "0x3b418",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3483c58",
+        "target_name": "C7_global_pointer_cell",
+        "adrp_pc": "0x43404",
+        "consumer_pc": "0x4341c",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x10",
+        "consumer_reg": "10",
+        "distance": 24,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3483c58",
+        "target_name": "C7_global_pointer_cell",
+        "adrp_pc": "0x43544",
+        "consumer_pc": "0x4355c",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x10",
+        "consumer_reg": "10",
+        "distance": 24,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3483c58",
+        "target_name": "C7_global_pointer_cell",
+        "adrp_pc": "0x4632c",
+        "consumer_pc": "0x4633c",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x27",
+        "consumer_reg": "27",
+        "distance": 16,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3483c58",
+        "target_name": "C7_global_pointer_cell",
+        "adrp_pc": "0x10096c",
+        "consumer_pc": "0x100974",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3483c58",
+        "target_name": "C7_global_pointer_cell",
+        "adrp_pc": "0x100d14",
+        "consumer_pc": "0x100d1c",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3483c58",
+        "target_name": "C7_global_pointer_cell",
+        "adrp_pc": "0x1798d8",
+        "consumer_pc": "0x1798e0",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3483c58",
+        "target_name": "C7_global_pointer_cell",
+        "adrp_pc": "0x17d374",
+        "consumer_pc": "0x17d37c",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3483c58",
+        "target_name": "C7_global_pointer_cell",
+        "adrp_pc": "0x2179fc",
+        "consumer_pc": "0x217a04",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3483c58",
+        "target_name": "C7_global_pointer_cell",
+        "adrp_pc": "0x218ecc",
+        "consumer_pc": "0x218ed4",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3483c58",
+        "target_name": "C7_global_pointer_cell",
+        "adrp_pc": "0x218f70",
+        "consumer_pc": "0x218f78",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3483c58",
+        "target_name": "C7_global_pointer_cell",
+        "adrp_pc": "0x21d9e8",
+        "consumer_pc": "0x21d9f0",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3483c58",
+        "target_name": "C7_global_pointer_cell",
+        "adrp_pc": "0x21e9f0",
+        "consumer_pc": "0x21ea00",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 16,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3483c58",
+        "target_name": "C7_global_pointer_cell",
+        "adrp_pc": "0x21f048",
+        "consumer_pc": "0x21f050",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3483c58",
+        "target_name": "C7_global_pointer_cell",
+        "adrp_pc": "0x25c468",
+        "consumer_pc": "0x25c470",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3483c58",
+        "target_name": "C7_global_pointer_cell",
+        "adrp_pc": "0x25da88",
+        "consumer_pc": "0x25da90",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      }
+    ],
+    "0x35b6128": [
+      {
+        "target_va": "0x35b6128",
+        "target_name": "C7_fallback_BSS_default_record",
+        "adrp_pc": "0x1015a0",
+        "consumer_pc": "0x1015a4",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x35b6128",
+        "target_name": "C7_fallback_BSS_default_record",
+        "adrp_pc": "0x267490",
+        "consumer_pc": "0x267494",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x35b6128",
+        "target_name": "C7_fallback_BSS_default_record",
+        "adrp_pc": "0x2af22c",
+        "consumer_pc": "0x2af230",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x35b6128",
+        "target_name": "C7_fallback_BSS_default_record",
+        "adrp_pc": "0x2e7974",
+        "consumer_pc": "0x2e7978",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x26",
+        "consumer_reg": "26",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x35b6128",
+        "target_name": "C7_fallback_BSS_default_record",
+        "adrp_pc": "0x2e8180",
+        "consumer_pc": "0x2e8184",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x35b6128",
+        "target_name": "C7_fallback_BSS_default_record",
+        "adrp_pc": "0x2ef950",
+        "consumer_pc": "0x2ef954",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x23",
+        "consumer_reg": "23",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x35b6128",
+        "target_name": "C7_fallback_BSS_default_record",
+        "adrp_pc": "0x332f40",
+        "consumer_pc": "0x332f44",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x35b6128",
+        "target_name": "C7_fallback_BSS_default_record",
+        "adrp_pc": "0x3bca38",
+        "consumer_pc": "0x3bca3c",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x35b6128",
+        "target_name": "C7_fallback_BSS_default_record",
+        "adrp_pc": "0x3be3bc",
+        "consumer_pc": "0x3be3c0",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x35b6128",
+        "target_name": "C7_fallback_BSS_default_record",
+        "adrp_pc": "0x3c32e4",
+        "consumer_pc": "0x3c32e8",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x35b6128",
+        "target_name": "C7_fallback_BSS_default_record",
+        "adrp_pc": "0x3c33ac",
+        "consumer_pc": "0x3c33b0",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x35b6128",
+        "target_name": "C7_fallback_BSS_default_record",
+        "adrp_pc": "0x3dc7fc",
+        "consumer_pc": "0x3dc800",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x35b6128",
+        "target_name": "C7_fallback_BSS_default_record",
+        "adrp_pc": "0x3dccc0",
+        "consumer_pc": "0x3dccc4",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x35b6128",
+        "target_name": "C7_fallback_BSS_default_record",
+        "adrp_pc": "0x3f61d0",
+        "consumer_pc": "0x3f61d4",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x35b6128",
+        "target_name": "C7_fallback_BSS_default_record",
+        "adrp_pc": "0x4006b0",
+        "consumer_pc": "0x4006b4",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x35b6128",
+        "target_name": "C7_fallback_BSS_default_record",
+        "adrp_pc": "0x40790c",
+        "consumer_pc": "0x407910",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x35b6128",
+        "target_name": "C7_fallback_BSS_default_record",
+        "adrp_pc": "0x408498",
+        "consumer_pc": "0x40849c",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x35b6128",
+        "target_name": "C7_fallback_BSS_default_record",
+        "adrp_pc": "0x40ed88",
+        "consumer_pc": "0x40ed8c",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      }
+    ],
+    "0x3484a38": [
+      {
+        "target_va": "0x3484a38",
+        "target_name": "C9_global_pointer_cell",
+        "adrp_pc": "0x646b44",
+        "consumer_pc": "0x646b60",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 28,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3484a38",
+        "target_name": "C9_global_pointer_cell",
+        "adrp_pc": "0x1aa2b4",
+        "consumer_pc": "0x1aa2bc",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3484a38",
+        "target_name": "C9_global_pointer_cell",
+        "adrp_pc": "0x2dca48",
+        "consumer_pc": "0x2dca50",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3484a38",
+        "target_name": "C9_global_pointer_cell",
+        "adrp_pc": "0x641ea4",
+        "consumer_pc": "0x641eac",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3484a38",
+        "target_name": "C9_global_pointer_cell",
+        "adrp_pc": "0xabbaa4",
+        "consumer_pc": "0xabbaac",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3484a38",
+        "target_name": "C9_global_pointer_cell",
+        "adrp_pc": "0xabfd98",
+        "consumer_pc": "0xabfda0",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3484a38",
+        "target_name": "C9_global_pointer_cell",
+        "adrp_pc": "0xabfec0",
+        "consumer_pc": "0xabfec8",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3484a38",
+        "target_name": "C9_global_pointer_cell",
+        "adrp_pc": "0xe8b974",
+        "consumer_pc": "0xe8b97c",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3484a38",
+        "target_name": "C9_global_pointer_cell",
+        "adrp_pc": "0x1027cd8",
+        "consumer_pc": "0x1027ce0",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x25",
+        "consumer_reg": "25",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      },
+      {
+        "target_va": "0x3484a38",
+        "target_name": "C9_global_pointer_cell",
+        "adrp_pc": "0x1027df4",
+        "consumer_pc": "0x1027dfc",
+        "kind": "ADRP_LDR64_target",
+        "base_reg": "x22",
+        "consumer_reg": "22",
+        "distance": 8,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      }
+    ],
+    "0x35b617c": [
+      {
+        "target_va": "0x35b617c",
+        "target_name": "C9_fallback_BSS_default_record",
+        "adrp_pc": "0x42d7f8",
+        "consumer_pc": "0x42d7fc",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x9",
+        "consumer_reg": "9",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      }
+    ],
+    "0x35b5b3c": [
+      {
+        "target_va": "0x35b5b3c",
+        "target_name": "related_BSS_default_record",
+        "adrp_pc": "0x8066b0",
+        "consumer_pc": "0x8066b4",
+        "kind": "ADRP_ADD_address",
+        "base_reg": "x8",
+        "consumer_reg": "8",
+        "distance": 4,
+        "status": "STATIC_ADDRESS_REFERENCE__WRITER_IDENTITY_NOT_PROVEN"
+      }
+    ]
+  }
+}
