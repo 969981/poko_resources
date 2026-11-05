@@ -87,6 +87,8 @@ def inspect(main_data,typed_report,rnk_report,max_samples=10):
         ]
     }
     anchors=[]
+    # Collect magic-string targets from *all* sections first; NSO text is
+    # encountered before rodata, where most literal strings actually live.
     for section in sections:
         data=section["data"];base=section["mem_offset"]
         for magic in MAGICS:
@@ -95,10 +97,12 @@ def inspect(main_data,typed_report,rnk_report,max_samples=10):
                 found=data.find(magic,pos)
                 if found<0:break
                 va=base+found
-                rec={"section":section["name"],"virtual_offset":va,"literal":magic.decode()}
-                result["magic_literals"].append(rec)
+                result["magic_literals"].append(
+                    {"section":section["name"],"virtual_offset":va,"literal":magic.decode()})
                 anchors.append({"virtual_offset":va,"text":magic.decode()})
                 count+=1;pos=found+len(magic)
+    for section in sections:
+        data=section["data"];base=section["mem_offset"]
         # This is exactly aligned u32 data, not arbitrary shifted 4-byte hits.
         counts=collections.Counter()
         samples=collections.defaultdict(list)
