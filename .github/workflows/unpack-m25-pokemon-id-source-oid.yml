@@ -8,6 +8,7 @@ on:
       - "Scripts/resources/m25_original_source_oid_second_hop.py"
       - "Scripts/resources/m25_2_original_icon_array_gaps.py"
       - "Scripts/resources/m25_3_recover_unknown_icon_object_targets.py"
+      - "Scripts/resources/m25_4_missing_texinfo_rdb_provenance.py"
       - "Scripts/resources/m25_identity_field_dataflow.py"
       - ".github/workflows/unpack-m25-pokemon-id-source-oid.yml"
 
@@ -38,6 +39,12 @@ jobs:
             Scripts/resources/m25_original_source_oid_second_hop.py
             Scripts/resources/m25_2_original_icon_array_gaps.py
             Scripts/resources/m25_3_recover_unknown_icon_object_targets.py
+            Scripts/resources/m25_4_missing_texinfo_rdb_provenance.py
+            Scripts/unpack/core.py
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdx
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdb
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdx
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdb
             Scripts/resources/m25_identity_field_dataflow.py
             UnPack/2.0.1/Resources/Pokemon/NativeCallers/M19/m19_verified_texture_object_edges.csv
             UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M24/m24_1_identity_anchors_summary.json
@@ -55,6 +62,7 @@ jobs:
           python -m Scripts.resources.m25_original_source_oid_second_hop --self-test
           python -m Scripts.resources.m25_2_original_icon_array_gaps --self-test
           python -m Scripts.resources.m25_3_recover_unknown_icon_object_targets --self-test
+          python -m Scripts.resources.m25_4_missing_texinfo_rdb_provenance --self-test
           python -m Scripts.resources.m25_identity_field_dataflow --self-test
 
       - name: Scan all 678 original databases for second-hop references to 603 source OIDs
@@ -65,6 +73,9 @@ jobs:
 
       - name: Recover 26 original KIDS source-to-texture objects and missing G1T paths
         run: python -m Scripts.resources.m25_3_recover_unknown_icon_object_targets
+
+      - name: Resolve all 26 G1T and TEXINFO hashes against original root and system RDB
+        run: python -m Scripts.resources.m25_4_missing_texinfo_rdb_provenance
 
       - name: Prove narrow pokemon_dex_id and mainPokemonList helper branches
         run: python -m Scripts.resources.m25_identity_field_dataflow
@@ -79,6 +90,8 @@ jobs:
           caller=json.loads((p/"m25_identity_caller_summary.json").read_text(encoding="utf-8"))
           gaps=json.loads((p/"m25_2_original_registry_summary.json").read_text(encoding="utf-8"))
           target=json.loads((p/"m25_3_26_texture_object_summary.json").read_text(encoding="utf-8"))
+          rdb=json.loads((p/"m25_4_rdb_provenance_summary.json").read_text(encoding="utf-8"))
+          rdb_rows=list(csv.DictReader((p/"m25_4_26_texture_hash_rdb_provenance.csv").open(encoding="utf-8",newline="")))
           target_rows=list(csv.DictReader((p/"m25_3_26_original_source_to_texture_objects.csv").open(encoding="utf-8",newline="")))
           gap_rows=list(csv.DictReader((p/"m25_2_26_unmatched_native_icon_registry.csv").open(encoding="utf-8",newline="")))
           full_rows=list(csv.DictReader((p/"m25_2_full_628_native_icon_registry.csv").open(encoding="utf-8",newline="")))
@@ -91,6 +104,11 @@ jobs:
           assert gaps["original_database_scan_count"]==678
           assert target["original_array_26_gap_slots"]==26
           assert len(target_rows)==26
+          assert rdb["original_source_26_texture_OIDs"]==26
+          assert rdb["original_native_resource_hashes"]==52
+          assert len(rdb_rows)>=52
+          assert rdb["native_species_ids_verified"]==0
+          assert rdb["native_villager_ids_verified"]==0
           assert target["native_species_ids_proven"]==0
           assert target["native_villager_ids_proven"]==0
           assert gaps["native_species_id_bindings_verified"]==0
