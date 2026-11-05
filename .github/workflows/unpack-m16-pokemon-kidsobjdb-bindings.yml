@@ -1,0 +1,80 @@
+name: M16 - Prove 609 native Pokemon texture layout KIDSOBJDB hash bindings
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m16_verify_pokemon_texture_kidsobjdb.py"
+      - "tests/test_m16_verify_pokemon_texture_kidsobjdb.py"
+      - ".github/workflows/unpack-m16-pokemon-kidsobjdb-bindings.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m16-native-pokemon-layout-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate-original-objects:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/resources/m16_verify_pokemon_texture_kidsobjdb.py
+            tests/test_m16_verify_pokemon_texture_kidsobjdb.py
+            UnPack/2.0.1/Resources/Pokemon/pokemon_identity_crosswalk.csv
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native/root_019167_50ae86ef.kidsobjdb
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native/root_053829_e2e43333.kidsobjdb
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Test exact 72-byte IDOK resource-hash object fields
+        run: python -m unittest discover -s tests -p "test_m16_verify_pokemon_texture_kidsobjdb.py" -v
+
+      - name: Parse actual 7087 plus 31 native nodes and compare exact 609 icon hash triples
+        run: python -m Scripts.resources.m16_verify_pokemon_texture_kidsobjdb
+
+      - name: Reject any premature species ID mapping
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          root=Path("UnPack/2.0.1/Resources/Pokemon/NativeCallers/M16")
+          d=json.loads((root/"m16_report.json").read_text(encoding="utf-8"))
+          with (root/"pokemon_original_kidsobjdb_layout_bindings.csv").open(encoding="utf-8",newline="") as f:
+              rows=list(csv.DictReader(f))
+          assert d["matched_records"]==609==len(rows)
+          assert d["matched_by_database"]=={
+              "0xacd220a8__50ae86ef.kidsobjdb":608,
+              "0xacd220a8__e2e43333.kidsobjdb":1}
+          assert d["source_databases"][0]["nodes"]==7087
+          assert d["source_databases"][1]["nodes"]==31
+          assert d["species_id_bindings_verified"]==0
+          assert all(not r["native_species_id_verified"] for r in rows)
+          print("609 native object -> G1T/TEXINFO hash pairs checked against actual 2.0.1 bytes")
+          PY
+
+      - name: Commit byte-verified original layout object evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Pokemon/NativeCallers/M16
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m16): verify 609 original Pokémon G1T/TEXINFO layout object hashes by native byte offsets"
+          for i in 1 2 3 4 5 6 7 8; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+            sleep 1
+          done
+          exit 1
