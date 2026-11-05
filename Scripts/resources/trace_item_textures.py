@@ -103,7 +103,7 @@ def main():
     a.add_argument("--output", type=Path, default=Path("UnPack/2.0.1/Resources"))
     a.add_argument("--ids", help="comma-separated item IDs to export preview candidates")
     a.add_argument("--max-preview", type=int, default=10)
-    a.add_argument("--layouts", default="linear,gob1,gob2,gob4,gob8")
+    a.add_argument("--layouts", default="ounce1,ounce2,ounce4,ounce8,ounce16")
     args = a.parse_args()
 
     links = table(args.indexes / "layout-textures.tsv")
