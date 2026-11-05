@@ -74,3 +74,7 @@ updated: 2026-11-05
 **[[docs/2.0.1/Technical/Resources/README|Resources 资源路径百科]]** · [GitHub 目录](Resources/README.md)：针对物品/食材/材料、表情、村民头像、技能、宝可梦、UI 场景等，整理原始 RomFS→TEXINFO/G1T→PNG/CSV 路径、Hex 字段、分类候选和可执行的 PowerShell 查询。
 
 重点：[[docs/2.0.1/Technical/Resources/02-Items-And-Native-Kinds|物品分类原值]] · [[docs/2.0.1/Technical/Resources/03-Reactions-Villagers-Skills|表情/村民/技能]] · [[docs/2.0.1/Technical/Resources/05-Image-Export-Guide|图片导出]] · [[docs/2.0.1/Technical/Resources/06-Hex-Format-And-Lookup|真实十六进制示例]]。PokoHex 参考与原生 2.0.1 明确分级，未经代码证明的材料枚举及数量上限仍保留 UNKNOWN。
+
+## 最新：原生 TXT 导出
+
+- [[16-Native-Text-Exports]] — M7 四个九语言锚点的实际 TXT/JSONL、SHA 校验及全组导出命令。
