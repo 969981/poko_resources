@@ -70,7 +70,7 @@ def parse(data, entry, path):
             if nul < 0: return None,"MISSING_NUL"
             try: val=data[off:nul].decode("utf-8","strict")
             except UnicodeDecodeError: return None,"INVALID_UTF8"
-            if val and sum(c.isprintable() or c in "\n\r\t" for c in val)/len(val) < 0.9:
+            if val and sum(c.isprintable() or c.isspace() for c in val)/len(val) < 0.9:
                 return None,"INVALID_PRINTABLE_RATIO"
             vals.append(val)
             offsets.append(off)
