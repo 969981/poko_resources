@@ -1,0 +1,106 @@
+name: M25 - Original Pokemon ID callers and second-hop KIDS OID backrefs
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m25_original_source_oid_second_hop.py"
+      - "Scripts/resources/m25_identity_field_dataflow.py"
+      - ".github/workflows/unpack-m25-pokemon-id-source-oid.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m25-oid-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  original-native-identity-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout all 678 native KIDSOBJDB, pinned NSO and original evidence
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/m16_verify_pokemon_texture_kidsobjdb.py
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m20_native_species_item_targets.py
+            Scripts/resources/m25_original_source_oid_second_hop.py
+            Scripts/resources/m25_identity_field_dataflow.py
+            UnPack/2.0.1/Resources/Pokemon/NativeCallers/M19/m19_verified_texture_object_edges.csv
+            UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M24/m24_1_identity_anchors_summary.json
+            UnPack/2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/0xacd220a8.fdata/native
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install native NSO instruction decoder
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Verify independent byte parsers and original helper call decoder
+        run: |
+          python -m Scripts.resources.m25_original_source_oid_second_hop --self-test
+          python -m Scripts.resources.m25_identity_field_dataflow --self-test
+
+      - name: Scan all 678 original databases for second-hop references to 603 source OIDs
+        run: python -m Scripts.resources.m25_original_source_oid_second_hop
+
+      - name: Prove narrow pokemon_dex_id and mainPokemonList helper branches
+        run: python -m Scripts.resources.m25_identity_field_dataflow
+
+      - name: Check original-only provenance and no guessed Pokemon identity
+        run: |
+          python - <<'PY'
+          import json,csv
+          from pathlib import Path
+          p=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M25")
+          hop=json.loads((p/"m25_original_second_hop_summary.json").read_text(encoding="utf-8"))
+          caller=json.loads((p/"m25_identity_caller_summary.json").read_text(encoding="utf-8"))
+          with (p/"m25_original_second_hop_kids_source_oid_backrefs.csv").open(encoding="utf-8",newline="") as f:
+              rows=list(csv.DictReader(f))
+          assert hop["original_kidsobjdb_files_scanned"]==678
+          assert hop["M19_distinct_source_oids"]==603
+          assert hop["original_typed_backreference_rows"]==len(rows)
+          assert all(not r["game_species_id_binding_verified"] for r in rows)
+          assert all(not r["game_villager_id_binding_verified"] for r in rows)
+          assert hop["native_species_id_bindings_verified"]==0
+          assert hop["native_villager_id_bindings_verified"]==0
+          assert caller["verified_anchor_count"]==2
+          assert caller["pokemon_dex_id_helper_call_verified"]=="0x1136ab0"
+          assert caller["mainPokemonList_helper_call_verified"]=="0x5fd174"
+          assert not caller["native_species_id_to_KIDS_source_OID_verified"]
+          assert not caller["runtime_villager_id_link_verified"]
+          print("PASS all 678 original KIDS and ExeFS identity anchor gate")
+          PY
+
+      - name: Store M25 typed-byte and instruction proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-2.0.1-m25-original-native-second-hop
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M25/
+          if-no-files-found: warn
+          retention-days: 21
+
+      - name: Commit M25 source evidence to research branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M25/
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m25): original identity helper and second-hop typed source OID audit"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
