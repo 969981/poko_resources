@@ -1,17 +1,17 @@
 {
   "status": "M7_NATIVE_RECORDS_PARSED_UNVERIFIED_REFERENCES",
   "input_files": 9793,
-  "parsed_text_tables": 2649,
-  "nine_language_groups": 161,
-  "native_record_forms_exported": 755319,
-  "nine_language_rows_exported": 44398,
-  "json_rows_exported": 44398,
-  "ambiguous_runs": 33,
+  "parsed_text_tables": 2700,
+  "nine_language_groups": 179,
+  "native_record_forms_exported": 823661,
+  "nine_language_rows_exported": 66310,
+  "json_rows_exported": 66310,
+  "ambiguous_runs": 37,
   "known_anchor_groups": {
-    "2323": "NOT_LINKED",
+    "2323": "PASS",
     "2350": "PASS",
-    "3304": "NOT_LINKED",
-    "4645": "NOT_LINKED"
+    "3304": "PASS",
+    "4645": "PASS"
   },
   "id_semantics": "ZERO_BASED_TABLE_RECORD_ORDINAL",
   "category_evidence": "NOT_YET_AVAILABLE",
