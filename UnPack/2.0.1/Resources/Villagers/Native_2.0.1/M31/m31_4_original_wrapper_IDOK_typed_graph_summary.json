@@ -1,0 +1,42 @@
+{
+  "version": "2.0.1",
+  "original_kids_source_sha256": "86f90b4c11da9bc2b3e28889a5090ff507f96ca713fe4fad1dd50f6f692d7541",
+  "original_idok_object_count": 7087,
+  "source_to_real_wrapper_IDOK_edges": 628,
+  "unique_original_wrapper_IDOK_objects": 628,
+  "original_wrapper_type_histogram": {
+    "79991e79": 628
+  },
+  "original_wrapper_property_schema_distinct_count": 1,
+  "original_wrapper_property_schema_histogram": [
+    {
+      "properties": [
+        {
+          "hash": "c8bb66da",
+          "kind": 5,
+          "count": 1
+        },
+        {
+          "hash": "2276fc56",
+          "kind": 5,
+          "count": 1
+        },
+        {
+          "hash": "2856a1b3",
+          "kind": 5,
+          "count": 1
+        }
+      ],
+      "objects": 628
+    }
+  ],
+  "wrapper_field_rows_written": 1884,
+  "wrapper_scalar_u32_field_count": 1884,
+  "wrapper_scalar_resolves_to_IDOK": 0,
+  "wrapper_scalar_matches_legacy_g1t_file_hash": 628,
+  "wrapper_scalar_matches_legacy_texinfo_file_hash": 628,
+  "wrapper_IDOK_type_name_from_original_ExeFS_verified": false,
+  "runtime_game_entity_to_wrapper_source_ID_verified": false,
+  "native_species_form_ID_to_Source_OID_verified": false,
+  "caveat": "628 actual Source->Wrapper IDOK object edges and wrapper typed fields are source-backed, but property labels, resource file bindings, executed loader calls and game-ID inputs require independent proof."
+}
