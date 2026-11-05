@@ -1,0 +1,293 @@
+{
+  "version": "2.0.1",
+  "main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "original_install_instruction_verified": true,
+  "original_install_pc": "0xbb85cc",
+  "stp_destination_pointer_source_global": "0x34963b0",
+  "stp_installed_table_pointer_source_global": "0x34963b8",
+  "registered_method_table_pointer": "0x32f0ee0",
+  "registered_method_pointer_offset": "0x18",
+  "original_code_pointer_at_vtable_offset": "0xce854c",
+  "original_data_global_cells": {
+    "OBJECT_OWNER_POINTER_CELL": {
+      "virtual_address": "0x34963b0",
+      "source_section": "data",
+      "initial_raw_pointer_value": "0x366e6f0"
+    },
+    "METHOD_TABLE_BASE_POINTER_CELL": {
+      "virtual_address": "0x34963b8",
+      "source_section": "data",
+      "initial_raw_pointer_value": "0x32f0ed0"
+    },
+    "RELATED_GLOBAL_POINTER_CELL": {
+      "virtual_address": "0x34963c0",
+      "source_section": "data",
+      "initial_raw_pointer_value": "0xce851c"
+    }
+  },
+  "byte_verified_instruction_words": {
+    "0xbb85ac": "0xd00146e1",
+    "0xbb85b0": "0xd00146e8",
+    "0xbb85b4": "0xf941d821",
+    "0xbb85b8": "0xf941dd08",
+    "0xbb85c8": "0x91004108",
+    "0xbb85cc": "0xa9002428",
+    "0xbb85f4": "0xd00146e2",
+    "0xbb85f8": "0x5283cf21",
+    "0xbb85fc": "0xf941d842",
+    "0xbb8600": "0x72af3321",
+    "0xbb8604": "0x14508ef7"
+  },
+  "original_install_asm_window": [
+    {
+      "pc": "0xbb859c",
+      "word": "946e35f1",
+      "asm": "bl #0x2745d60"
+    },
+    {
+      "pc": "0xbb85a0",
+      "word": "2a0003e8",
+      "asm": "mov w8, w0"
+    },
+    {
+      "pc": "0xbb85a4",
+      "word": "a94003e9",
+      "asm": "ldp x9, x0, [sp]"
+    },
+    {
+      "pc": "0xbb85a8",
+      "word": "34000208",
+      "asm": "cbz w8, #0xbb85e8"
+    },
+    {
+      "pc": "0xbb85ac",
+      "word": "d00146e1",
+      "asm": "adrp x1, #0x3496000"
+    },
+    {
+      "pc": "0xbb85b0",
+      "word": "d00146e8",
+      "asm": "adrp x8, #0x3496000"
+    },
+    {
+      "pc": "0xbb85b4",
+      "word": "f941d821",
+      "asm": "ldr x1, [x1, #0x3b0]"
+    },
+    {
+      "pc": "0xbb85b8",
+      "word": "f941dd08",
+      "asm": "ldr x8, [x8, #0x3b8]"
+    },
+    {
+      "pc": "0xbb85bc",
+      "word": "d00146e0",
+      "asm": "adrp x0, #0x3496000"
+    },
+    {
+      "pc": "0xbb85c0",
+      "word": "d0013382",
+      "asm": "adrp x2, #0x322a000"
+    },
+    {
+      "pc": "0xbb85c4",
+      "word": "91230042",
+      "asm": "add x2, x2, #0x8c0"
+    },
+    {
+      "pc": "0xbb85c8",
+      "word": "91004108",
+      "asm": "add x8, x8, #0x10"
+    },
+    {
+      "pc": "0xbb85cc",
+      "word": "a9002428",
+      "asm": "stp x8, x9, [x1]"
+    },
+    {
+      "pc": "0xbb85d0",
+      "word": "f941e000",
+      "asm": "ldr x0, [x0, #0x3c0]"
+    },
+    {
+      "pc": "0xbb85d4",
+      "word": "97d11f0f",
+      "asm": "bl #0x210"
+    },
+    {
+      "pc": "0xbb85d8",
+      "word": "d00146e0",
+      "asm": "adrp x0, #0x3496000"
+    },
+    {
+      "pc": "0xbb85dc",
+      "word": "f941d400",
+      "asm": "ldr x0, [x0, #0x3a8]"
+    },
+    {
+      "pc": "0xbb85e0",
+      "word": "946e35e4",
+      "asm": "bl #0x2745d70"
+    },
+    {
+      "pc": "0xbb85e4",
+      "word": "f94007e0",
+      "asm": "ldr x0, [sp, #8]"
+    },
+    {
+      "pc": "0xbb85e8",
+      "word": "a9417bfd",
+      "asm": "ldp x29, x30, [sp, #0x10]"
+    },
+    {
+      "pc": "0xbb85ec",
+      "word": "910083ff",
+      "asm": "add sp, sp, #0x20"
+    },
+    {
+      "pc": "0xbb85f0",
+      "word": "d50323ff",
+      "asm": "autibsp"
+    },
+    {
+      "pc": "0xbb85f4",
+      "word": "d00146e2",
+      "asm": "adrp x2, #0x3496000"
+    },
+    {
+      "pc": "0xbb85f8",
+      "word": "5283cf21",
+      "asm": "mov w1, #0x1e79"
+    },
+    {
+      "pc": "0xbb85fc",
+      "word": "f941d842",
+      "asm": "ldr x2, [x2, #0x3b0]"
+    },
+    {
+      "pc": "0xbb8600",
+      "word": "72af3321",
+      "asm": "movk w1, #0x7999, lsl #16"
+    },
+    {
+      "pc": "0xbb8604",
+      "word": "14508ef7",
+      "asm": "b #0x1fdc1e0"
+    },
+    {
+      "pc": "0xbb8608",
+      "word": "d00146e8",
+      "asm": "adrp x8, #0x3496000"
+    },
+    {
+      "pc": "0xbb860c",
+      "word": "f941e508",
+      "asm": "ldr x8, [x8, #0x3c8]"
+    },
+    {
+      "pc": "0xbb8610",
+      "word": "38bfc108",
+      "asm": "ldaprb w8, [x8]"
+    }
+  ],
+  "original_typehash_asm_window": [
+    {
+      "pc": "0xbb85dc",
+      "word": "f941d400",
+      "asm": "ldr x0, [x0, #0x3a8]"
+    },
+    {
+      "pc": "0xbb85e0",
+      "word": "946e35e4",
+      "asm": "bl #0x2745d70"
+    },
+    {
+      "pc": "0xbb85e4",
+      "word": "f94007e0",
+      "asm": "ldr x0, [sp, #8]"
+    },
+    {
+      "pc": "0xbb85e8",
+      "word": "a9417bfd",
+      "asm": "ldp x29, x30, [sp, #0x10]"
+    },
+    {
+      "pc": "0xbb85ec",
+      "word": "910083ff",
+      "asm": "add sp, sp, #0x20"
+    },
+    {
+      "pc": "0xbb85f0",
+      "word": "d50323ff",
+      "asm": "autibsp"
+    },
+    {
+      "pc": "0xbb85f4",
+      "word": "d00146e2",
+      "asm": "adrp x2, #0x3496000"
+    },
+    {
+      "pc": "0xbb85f8",
+      "word": "5283cf21",
+      "asm": "mov w1, #0x1e79"
+    },
+    {
+      "pc": "0xbb85fc",
+      "word": "f941d842",
+      "asm": "ldr x2, [x2, #0x3b0]"
+    },
+    {
+      "pc": "0xbb8600",
+      "word": "72af3321",
+      "asm": "movk w1, #0x7999, lsl #16"
+    },
+    {
+      "pc": "0xbb8604",
+      "word": "14508ef7",
+      "asm": "b #0x1fdc1e0"
+    },
+    {
+      "pc": "0xbb8608",
+      "word": "d00146e8",
+      "asm": "adrp x8, #0x3496000"
+    },
+    {
+      "pc": "0xbb860c",
+      "word": "f941e508",
+      "asm": "ldr x8, [x8, #0x3c8]"
+    },
+    {
+      "pc": "0xbb8610",
+      "word": "38bfc108",
+      "asm": "ldaprb w8, [x8]"
+    },
+    {
+      "pc": "0xbb8614",
+      "word": "360000c8",
+      "asm": "tbz w8, #0, #0xbb862c"
+    },
+    {
+      "pc": "0xbb8618",
+      "word": "d00146e2",
+      "asm": "adrp x2, #0x3496000"
+    },
+    {
+      "pc": "0xbb861c",
+      "word": "528d0e61",
+      "asm": "mov w1, #0x6873"
+    }
+  ],
+  "nearby_type_hash_value": "0x79991e79",
+  "native_typed_KIDSOBJDB_source_target_hash_matches": true,
+  "nearby_type_hash_tail_branch_target": "0x1fdc1e0",
+  "direct_bl_callers_to_typehash_site": [],
+  "direct_b_callers_to_typehash_site": [],
+  "typehash_site_callers_total": 0,
+  "dynamic_pointer_global_owner_verified": false,
+  "runtime_registration_execution_verified": false,
+  "typehash_call_semantic_role_verified": false,
+  "game_villager_id_to_native_object_verified": false,
+  "native_species_id_verified": false,
+  "next_proof": "Trace the initialization and dynamic pointed-to object of [main+0x34963b0], identify callsite and runtime owner of the installed method table, and recover the game villager ID field consumer.",
+  "warning": "This verifies a static original pointer installation, not the dynamic class identity or species-ID semantics."
+}
