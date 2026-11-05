@@ -1,0 +1,12 @@
+{
+  "status": "GLOBAL_REGISTRY_POINTER_DIRECT_STORE_CANDIDATES",
+  "main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "registry_global": "0x35618f0",
+  "static_adrp_add_global_references": 2689,
+  "direct_global_cell_store_sites": 0,
+  "writer_candidates": [],
+  "global_writer_function_identity_proven": false,
+  "registered_item_class_0xc7_proven": false,
+  "item_record_pointer_source_proven": false,
+  "warning": "Only direct global pointer-cell writes, not indexed table member registration. No alias or interprocedural propagation."
+}
