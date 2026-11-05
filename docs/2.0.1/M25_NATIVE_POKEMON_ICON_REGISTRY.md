@@ -178,3 +178,8 @@ FF03 物理源容器缺失问题仍由 [[M23_FDATA_PLATFORM_AND_KIDS_CONSUMER]] 
 已继续推进到 [[M26_VILLAGER_ROSTER_AND_KIDS_PARALLEL_ARRAYS]]。M26.1 将剩余 62 张 PokoHex 参考肖像逐一与 629 个已验证原生 Source OID 对应的 635 张 PNG 做 SHA/图像对照，0 新增可靠匹配，因此保留 62 未定位、9 多候选；但并非证明游戏所有资源均缺失。对 9 张多候选取得 4 组互斥最优视觉方案，**不能当作运行时正式 ID**。
 
 原生代码方面，M26.2/M26.3 从 KIDS 类 `0x9D1AFA46` 的 BSS 对象、安装的方法表 `main+0x33135C8`，定位到真实的属性枚举函数 `main+0xDD1B48`。它从 `main+0x2838834` 读取 `0x34CBB458`，并确认该类型有 **两个连续的 3,543×u32 数组**：`0xE88C8D60`（偏移 364556）和 `0x34CBB458`（偏移 378728）。M26.4 已导出所有 3,543 对原始值，第二数组中的 628 个图标 Source OID 逐项对账。第一数组的全部 3,543 个值均唯一且非零；常见直接名称 Hash 候选暂未命中，**原生物种 ID 到数组键/槽位的消费者还没有证明**。
+
+
+## M31 源对象到纹理文件的两跳纠正
+
+M25 的旧索引 `target_texture_oid` 保存的实际是 **`WrapStaticScreenLayoutTexturesObjectHash`**，而不是可直接当作最终纹理文件的 OID。M31.2 从游戏原生 ExeFS 恢复了三个正式字段名，M31.5 进一步从原始 KIDSOBJDB 证实全部 628 项都遵循：`Source IDOK (RenderState=0, InfoData=0, Wrap=包装 OID) → Wrapper IDOK (RenderState=G1T 文件 Hash, InfoData=TEXINFO 文件 Hash, Wrap=0)`。旧表的 G1T/TEXINFO 文件 Hash 数值仍然正确，但实际来自第二层包装对象，不能把父对象前两个 0 值当成旧索引文件 Hash。新的完整来源表：[[M31_KIDS_TWO_HOP_SCREENLAYOUT_TEXTURE_PROVENANCE]]；保留旧表只为历史可复现及兼容。
