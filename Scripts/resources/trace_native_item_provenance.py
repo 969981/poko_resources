@@ -242,6 +242,14 @@ def analyze(main: bytes, item_table: bytes, max_output=120):
     code, base = text["data"], text["mem_offset"]
     fields, compares, movz = scan(code,base)
     ranked, summary, matches = evaluate(fields, compares, movz,code,base,max_output)
+    from capstone import Cs, CS_ARCH_ARM64, CS_MODE_ARM
+    context_md=Cs(CS_ARCH_ARM64,CS_MODE_ARM)
+    context_md.detail=True
+    movz_983_contexts=[
+        {"pc":hex(pc), "destination_register": "x"+str(
+            int.from_bytes(code[pc-base:pc-base+4],"little")&31),
+         "assembly_context":windows(context_md,code,base,pc,before=24,after=96)}
+        for pc in movz[983]]
     return {
         "status": "STATIC_SAME_REGISTER_COACCESS_ONLY__ITEM_LOADER_UNPROVEN",
         "source_main_sha256": digest,
@@ -256,6 +264,7 @@ def analyze(main: bytes, item_table: bytes, max_output=120):
         "static_literal_anchor_samples": {
             str(k): [hex(pc) for pc in movz[k][:100]] for k in (68, 983, 4600)
         },
+        "movz_983_contexts":movz_983_contexts,
         "coaccess_summary": summary,
         "coaccess_candidates_total": matches,
         "top_bounded_candidates": ranked,
@@ -305,6 +314,10 @@ def main():
                       "movz_983":report["static_literal_anchor_samples"]["983"],
                       "movz_4600":report["static_literal_anchor_samples"]["4600"]},
                      separators=(",",":")))
+    for anchor in report["movz_983_contexts"]:
+        print("M11_983_CODE",anchor["pc"],json.dumps(
+            [x["pc"]+" "+x["assembly"] for x in anchor["assembly_context"]],
+            separators=(",",":")))
     print("M11_TOP_REGISTER_CHAIN_SITES",json.dumps([
         {"pc":c["pc"],"coaccess":c["coaccess"],
          "base_producer":c["base_producer"],
