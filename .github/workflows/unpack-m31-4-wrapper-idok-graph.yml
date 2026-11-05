@@ -59,7 +59,12 @@ jobs:
           assert s["original_idok_object_count"]==7087
           assert len(rows)==s["wrapper_field_rows_written"]
           assert len({r["original_wrap_object_hash"] for r in rows})==628
-          assert not s["wrapper_IDOK_type_name_from_original_ExeFS_verified"]
+          assert s["wrapper_property_type_name_from_original_ExeFS_verified"]
+          assert s["wrapper_property_original_type_name"]=="StaticScreenLayoutTextures"
+          assert s["source_and_wrapper_both_original_class_0x79991e79"]
+          assert s["source_wrapper_raw_fields_link_to_M25_G1T_TEXINFO_hashes_proven"]
+          assert s["wrapper_scalar_matches_legacy_g1t_file_hash"]==628
+          assert s["wrapper_scalar_matches_legacy_texinfo_file_hash"]==628
           assert not s["runtime_game_entity_to_wrapper_source_ID_verified"]
           assert not s["native_species_form_ID_to_Source_OID_verified"]
           assert all(not r["native_game_species_id_verified"] for r in rows)
