@@ -73,6 +73,17 @@
 - 在 text 中也找到若干 `ldrb [Xn,#0x26]` 候选指令，但它们目前只证明代码里存在相同**位移**，还没有证明基址寄存器确实指向 00983.bin 的 68 字节 `Item` 记录；不得据此把原料枚举标为已恢复。
 - 下一阶段针对上述 RVA 候选做函数边界、寄存器数据流、原始加载对象身份/调用图回溯；若缺乏确切来源，保持 `species_id_verified=0`、`material_enum_confirmed=false`。
 
+
+## M9 UI 批次正式验收与现有原生材料线索（2026-11-05）
+
+- **3,930/3,930 原始可关联非道具纹理已成功导出 PNG**；17 个批次均成功，源键唯一且不漏行，合并流程 `Scripts/resources/reconcile_native_misc_batches.py` / `.github/workflows/unpack-m9-misc-reconcile.yml` 得到 `status=COMPLETE_SOURCE_COVERAGE`，输出 `Textures/Indexes/native_misc_png_catalog.csv`、`native_misc_png_summary.json`。
+- 全部 3,930 张图的 PNG 解码均成功，其中 3,925 张含非零 Alpha，5 张为透明 4×4，后者单独列入 `native_misc_transparent_review.md`。未找到/有歧义的 418 条仍留在原索引，并未算入导出成功。
+- 原始 00983.bin 的 4,600 条物品字段经再次字节级核验，`+0x22` NameIndex 已正式确认。位于 `+0x26` 的分组候选分布：有名称项目中原值 **16: 48 项**（石头/铁铜矿石/玻璃等），**15: 60 项**（食物/食材），**10: 383 项**（种子/植物相关），**4: 142 项**（家具示例）。`native_item_field_audit.csv` / `native_item_field_report.json` 保存所有原始字节、源 SHA 与每个记录的偏移。
+- 不得把 `+0x26=16` 简化为“游戏唯一的可制作材料集合”：材料可能跨食材和种子类，且尚缺**Item record 起始基址可证的原生消费者调用链**。当前正式材料类型枚举仍未证明。
+- 从原始压缩 NSO0 静态恢复了 `m_craftRecipeId`、`m_craftMainHelpPokemonKind`、`pokemon_dex_id` 等名称的 ARM64 ADRP+ADD 引用地址共 44 个，但尚未将其中任何一个引用端的原始物种字段绑定到 G1T/TEXINFO Hash。参见 `Pokemon/NativeCallers/main_string_xrefs.json`，**物种 ID 原生绑定仍为 0 项**。
+
+后续最小闭环：对一条 `pokemon_dex_id` 引用地址做完整局部函数数据流，再用同资源对象的真正消费端将该值绑定到 `icon_poke_` 图像；物品端对 `record+0x26` 读取指令证明寄存器基址指向 68-byte 00983 记录、恢复枚举分发逻辑及材料用途，从而把 `CANDIDATE_ONLY` 升级为 `CONFIRMED_NATIVE_TYPE`。
+
 ## 检查点
 
 | 核验项 | 已知情况 | 升级证据 |
