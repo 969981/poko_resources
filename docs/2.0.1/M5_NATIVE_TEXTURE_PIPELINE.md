@@ -76,3 +76,24 @@ GitHub Actions：`unpack-m5-export-native-icons.yml`、`unpack-m5-pokemon-export
 - **GAME_VISIBLE_VERIFIED**：与实际游戏展示对照且记录版本、差异和样本；不得使用 PNG 解码成功代替。
 
 任何失败应报告原始文件 SHA、完整索引键、错误类型和最小复现样本；优先保留未解决记录，不能在统计中消失。
+
+
+## 4. M9 UI/场景/素材全批次导出终验（2026-11-05）
+
+前文的“25 条抽样”是批量正式运行之前的阶段。最新代码与原版数据已经通过完整的 17 批验证：
+
+| 核验结果 | 实际值 |
+| --- | ---: |
+| 非 item/pokemon TEXINFO 名称/UV 记录 | 4,348 |
+| 具有唯一 KIDSOBJDB→G1T 边且原始文件可定位 | **3,930** |
+| 实际导出 PNG 候选 | **3,930** |
+| 已导出但全透明的 4×4 占位图 | **5** |
+| 已导出且含非零 Alpha 的图 | **3,925** |
+| 解码/UV/Hash 失败 | **0** |
+| 没有对应记录的批次或漏行 | **0** |
+| 暂未唯一关联的剩余记录 | **418**（G1T 368、索引 50） |
+
+统一总账 `Resources/Textures/Indexes/native_misc_png_catalog.csv`，总报告 `native_misc_png_summary.json`，全透明样本说明 `native_misc_transparent_review.md`。每一批存放在 `Textures/MiscNativeBatches/batch_00`～`batch_16`，目录包含原始源键、PNG、SHA/UV 审计和预览拼图。全部 17 批完成后，合并脚本严格检查 3,930 条记录**来源键无重叠、无缺失、原始索引 SHA 一致**，不依赖仅看 GitHub Actions 运行状态。验证工作流：[M9 17 批导出](https://github.com/969981/poko_resources/actions/runs/41947563611)；[全批次合并核验](https://github.com/969981/poko_resources/actions/runs/41949088320)。
+
+5 张 4×4 全透明的源名称包括 `0000_prt_square_transparent`、`0300_base_character_table` 和 3 张 `icon_skill`；保留为 `TRANSPARENT_CANDIDATE_REVIEW` 而不删除。其余 418 条缺失/歧义仍保留索引，没有被强行合并为 3,930 张图像。**这里的素材仅代表源纹理名候选，游戏材料类型的原生证明仍需反查 00983.bin 与其消费者。**
+
