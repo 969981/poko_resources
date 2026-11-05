@@ -102,12 +102,18 @@ def inspect():
         if sec!="data" or b is None:raise ValueError(f"Global cell unmapped {addr:x}")
         glob[label]={"virtual_address":f"0x{addr:x}","source_section":sec,
                      "initial_raw_pointer_value":f"0x{struct.unpack('<Q',b)[0]:x}"}
+    owner_target=int(glob["OBJECT_OWNER_POINTER_CELL"]["initial_raw_pointer_value"],16)
+    data_section=next(x for x in parts if x["name"]=="data")
+    data_end=data_section["mem_offset"]+len(data_section["data"])
+    original_nso_bss_size=struct.unpack_from("<I",src,0x3c)[0]
+    bss_start=data_end
+    bss_end=bss_start+original_nso_bss_size
+    owner_in_original_bss=bss_start <= owner_target < bss_end
     if int(glob["METHOD_TABLE_BASE_POINTER_CELL"]["initial_raw_pointer_value"],16)!=REGISTERED_BASE-0x10:
         raise ValueError("Method table registration base differs")
     sec,b=mapped(parts,METHOD_PTR_CELL,8)
     if sec!="data" or not b or struct.unpack("<Q",b)[0]!=METHOD:
         raise ValueError("Registered method slot differs")
-    type_sources={r["source_type_hash"] for r in []}
     # M19 exposes native typed-object hash 0x79991e79, not original species ID.
     first_path=Path("UnPack/2.0.1/Resources/Pokemon/NativeCallers/M19/m19_verified_texture_object_edges.csv")
     import csv
@@ -123,6 +129,12 @@ def inspect():
         "stp_destination_pointer_source_global":hex(0x34963B0),
         "stp_installed_table_pointer_source_global":hex(0x34963B8),
         "registered_method_table_pointer":hex(REGISTERED_BASE),
+        "static_owner_address_from_initialized_global":hex(owner_target),
+        "owner_in_original_nso_bss_range":owner_in_original_bss,
+        "original_nso_data_end_rva":hex(data_end),
+        "original_nso_bss_start_rva":hex(bss_start),
+        "original_nso_bss_end_rva":hex(bss_end),
+        "owner_pointer_liveness_at_runtime_verified":False,
         "registered_method_pointer_offset":hex(METHOD_PTR_CELL-REGISTERED_BASE),
         "original_code_pointer_at_vtable_offset":hex(METHOD),
         "original_data_global_cells":glob,
