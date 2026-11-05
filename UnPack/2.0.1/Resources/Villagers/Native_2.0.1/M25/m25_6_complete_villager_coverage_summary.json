@@ -1,0 +1,15 @@
+{
+  "version": "2.0.1",
+  "reference_portraits": 378,
+  "m21_original_visual_candidates": 290,
+  "m25_new_original_visual_candidates": 17,
+  "combined_high_confidence_visual_candidates": 307,
+  "ambiguous_multiple_native_candidates": 9,
+  "not_yet_native_mapped": 62,
+  "unmapped_reference_id_first": 317,
+  "unmapped_reference_id_last": 378,
+  "m25_original_pngs_added_to_existing_villager_icon_dir": 17,
+  "native_game_villager_id_bindings_verified": 0,
+  "native_game_species_id_bindings_verified": 0,
+  "warning": "Visual-source candidate coverage is not native game villager-ID proof. The 62 unmatched may reflect original-version content limitations or unseen assets; their cause remains unproven."
+}
