@@ -1,0 +1,107 @@
+name: M9.6 - original RDB missing RNK hash audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m9_rnk_original_rdb_audit.py"
+      - "tests/test_m9_rnk_original_rdb_audit.py"
+      - ".github/workflows/unpack-m9-original-rdb-rnk-audit.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m9-6-original-rdb-rnk
+  cancel-in-progress: false
+
+jobs:
+  original-rdb-coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            Scripts/unpack/core.py
+            Scripts/unpack/__init__.py
+            Scripts/resources/m9_rnk_original_rdb_audit.py
+            tests/test_m9_rnk_original_rdb_audit.py
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdb
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/root.rdx
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdb
+            2.0.1/romfs/motor_asset_re/KIDS_PLATFORM_OUNCE/system.rdx
+            UnPack/2.0.1/_reports/m3_resource_type_index.csv
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/rnk_report.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/rnk_original_rdb_audit.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/rnk_original_rdb_matches.csv
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Unit tests
+        env:
+          PYTHONPATH: "."
+        run: |
+          python -m unittest discover -s tests -p 'test_m9_rnk_original_rdb_audit.py' -v
+
+      - name: Parse primary RDB/RDX; preserve unverified cases
+        env:
+          PYTHONPATH: "."
+        run: |
+          python Scripts/resources/m9_rnk_original_rdb_audit.py \
+            --rnk-report UnPack/2.0.1/Resources/Localization/M9/NameTables/rnk_report.json \
+            --m3-index UnPack/2.0.1/_reports/m3_resource_type_index.csv \
+            --dest UnPack/2.0.1/Resources/Localization/M9/NameTables
+
+      - name: Verify no unearned evidence promotion
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          p=Path('UnPack/2.0.1/Resources/Localization/M9/NameTables')
+          doc=json.loads((p/'rnk_original_rdb_audit.json').read_text(encoding='utf-8'))
+          assert doc['m3_index_records_rechecked']==89507
+          assert len(doc['per_hash'])==3
+          assert {x['expected_rnk_hash'] for x in doc['per_hash']}=={'aa91cb96','a91711c6','cb3c8b15'}
+          assert doc['rnk_payloads_verified']==0
+          assert doc['irnk_strings_recovered']==0
+          assert doc['new_script_scene_quest_building_text_foreign_keys']==0
+          assert doc['previous_numeric_oid_candidates_preserved_unverified']==87445
+          with (p/'rnk_original_rdb_matches.csv').open(newline='', encoding='utf-8') as f:
+              for row in csv.DictReader(f):
+                  assert row['rnk_magic_verified']=='False'
+                  assert row['script_text_fk_verified']=='False'
+          print('M9.6 ORIGINAL RDB AUDIT PASS', doc['per_hash'])
+          PY
+
+      - name: Upload inspectable provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m9-6-original-rdb-rnk
+          path: |
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/rnk_original_rdb_audit.json
+            UnPack/2.0.1/Resources/Localization/M9/NameTables/rnk_original_rdb_matches.csv
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Commit confirmed audit output only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- UnPack/2.0.1/Resources/Localization/M9/NameTables/rnk_original_rdb_audit.json \
+                     UnPack/2.0.1/Resources/Localization/M9/NameTables/rnk_original_rdb_matches.csv
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(m9.6): original RDB RNK hash coverage evidence"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
