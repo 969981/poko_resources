@@ -1,0 +1,18 @@
+{
+  "batch_id": 16,
+  "batch_name": "batch_16",
+  "batch_size": 240,
+  "total_batches": 17,
+  "source_scope_rows": 3930,
+  "indexed_rows_in_batch": 90,
+  "png_success": 90,
+  "png_unavailable": 0,
+  "statuses": {
+    "PNG_CANDIDATE_UNVERIFIED": 90
+  },
+  "source_key_sha256": "a29ffc5abfe2adaacc92f6ae437e4a70b284d25a34a61c5a59b855e5856ab1fb",
+  "index_sha256": "3e9cb04da58422222f543ab5a0ca1f5e62c6b1e91512162da2cb53f812e10439",
+  "failed_source_rows": [],
+  "evidence": "Original TEXINFO + G1T, KIDSOBJDB index edge, Ounce decode, source UV, PNG/SHA verification",
+  "identities_unverified": true
+}

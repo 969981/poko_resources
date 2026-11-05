@@ -1,0 +1,13 @@
+{
+  "source_samples": 90,
+  "native_decoded_pngs": 90,
+  "statuses": {
+    "PNG_CANDIDATE_UNVERIFIED": 90
+  },
+  "by_candidate_category": {
+    "ui_icon_name_candidate": 41,
+    "ui_gameplay_name_candidate": 49
+  },
+  "source_evidence": "Actual 2.0.1 G1T/TEXINFO bytes, layout index edge, UV crop, G1T and PNG SHA256",
+  "warning": "Ounce decoded PNG CANDIDATES; category by filename only, scene rendering/gametype/identity not verified."
+}
