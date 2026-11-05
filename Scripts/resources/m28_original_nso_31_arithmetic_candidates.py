@@ -21,7 +21,7 @@ from pathlib import Path
 
 from Scripts.resources.trace_native_species_item_callers import get_sections
 from Scripts.resources.m20_native_species_item_targets import (
-    MAIN, SHA_MAIN, arm64_window, branch_target, scan_direct_callers
+    MAIN, SHA_MAIN, arm64_window, branch_target
 )
 
 OUT=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M28")
@@ -125,12 +125,18 @@ def detect():
     shift_candidates=[]
     madd_candidates=[]
     byte_load_count=0
+    direct_bl_targets=Counter()
+    direct_b_targets=Counter()
     count=0
     for off in range(0,len(buf),4):
         count+=1
         word=w32(buf,off)
         pc=base+off
         if is_ldrb(word):byte_load_count+=1
+        if (word&0xfc000000)==0x94000000 or (word&0xfc000000)==0x14000000:
+            item=branch_target(pc,word)
+            if item:
+                (direct_bl_targets if item[1]=="BL" else direct_b_targets)[item[0]]+=1
         if is_movz31(word):
             reg=word&31
             movz_map.setdefault(reg,[]).append(pc)
@@ -168,11 +174,11 @@ def detect():
     for c in ranked[:LIMIT]:
         pc=int(c["original_pc"],16)
         c["native_asm_window"]=arm64_window(buf,base,pc,0x28,0x48)
-        bl,b=scan_direct_callers(buf,base,pc)
+        # Precomputed across text exactly once: avoid 250 full NSO scans.
         # A direct branch to an interior instruction is rarely a function
         # entry, so these counts are context only.
-        c["direct_BL_branch_to_instruction_count"]=len(bl)
-        c["direct_B_branch_to_instruction_count"]=len(b)
+        c["direct_BL_branch_to_instruction_count"]=direct_bl_targets[pc]
+        c["direct_B_branch_to_instruction_count"]=direct_b_targets[pc]
     anchors={}
     for label,pc in ANCHORS.items():
         if not base<=pc<base+len(buf):raise ValueError(f"Original NSO anchor missing {label}")
