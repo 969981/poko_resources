@@ -44,3 +44,17 @@ CI workflow: [`.github/workflows/unpack-m8-localization-refs.yml`](https://githu
 Find an actual caller `scene/mission/object/script/resource → text-group resource identity → native table entry (or name-index) → record ID`. Source file names or lexical matches in the text are **not** sufficient evidence. The future classifier should include the caller's raw file path, hash, member path, field offset, expected type, table ID, row ID, and reproducible code/execution references. Until such a chain exists, those categories must remain `UNKNOWN`, not fabricated.
 
 There are two separate identity spaces: the `M7 text_id` is a **zero-based row ID inside a particular native table**, whereas item IDs, map variation IDs, part IDs and scene/mission identifiers belong to other domains.
+
+## Verified M8 run (2026-11-05)
+
+The [successful workflow run #41945879978](https://github.com/969981/poko_resources/actions/runs/41945879978) has completed tests, native export, CSV/JSON verification and GitHub push with all steps successful.
+
+- 32 original native files SHA-256 indexed; 4,600 item slots across 9 locales compared with **0 mismatches**.
+- 3,585 native named items plus the ID=0 `(Empty)` sentinel (this explains the reference catalog's 3,586 nonempty display names).
+- 1,963 native map variation links to parts and items, referring to 1,374 distinct item IDs; layout anchors 1498→1357 and 3197→1628 pass.
+- `Reactions`: 128 rows, 47 nonempty; 24 rows have locale-specific raw flag differences.
+- `Skills`: 61 rows, 11 nonempty; 3 rows have locale-specific raw flag differences.
+- Korean `U+E01B` is retained as a private-use code point in the original text, not stripped or replaced. This required updating the M7 decoder's character acceptance rule.
+- `Quest`, `Dialogue`, `Buildings`, `UI`, `Tutorials`: explicit caller references **not established**. Do not promote MapPart aliases or keyword matches to these categories.
+
+Validation summary is in [`m8_report.json`](./m8_report.json) and [`Diagnostics/status.txt`](./Diagnostics/status.txt).
