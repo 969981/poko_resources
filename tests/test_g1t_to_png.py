@@ -72,6 +72,44 @@ class G1TTests(unittest.TestCase):
         self.assertNotEqual(m.unswizzle_gob_bc7(source, 64, 64, 1), source)
         self.assertEqual(len(m.unswizzle_gob_bc7(source, 64, 64, 2)), 4096)
 
+
+    def test_ounce_bc7_switch2_gob_bit_order(self):
+        # Original 2.0.1 reference alignment proves a swap of x0 and y1
+        # address bits relative to legacy Tegra GOB byte addresses.
+        blocks = 16 * 16
+        source = b"".join(bytes([i]) * 16 for i in range(blocks))
+        untiled = m.unswizzle_ounce_bc7(source, 64, 64, 2)
+        get = lambda x, y: untiled[(y * 16 + x) * 16]
+        self.assertEqual([get(x, 0) for x in range(5)], [0, 4, 16, 20, 64])
+        self.assertEqual([get(0, y) for y in range(9)],
+                         [0, 1, 2, 3, 8, 9, 10, 11, 32])
+        self.assertEqual(set(untiled[::16]), set(range(blocks)))
+        legacy = m.unswizzle_gob_bc7(source, 64, 64, 2)
+        self.assertNotEqual(untiled, legacy)
+        self.assertEqual(legacy[(1 * 16 + 0) * 16], 1)
+        self.assertEqual(legacy[(2 * 16 + 0) * 16], 4)
+
+    def test_ounce_bgra_addresses_are_distinct_and_in_bounds(self):
+        source = b"".join(i.to_bytes(4, "little") for i in range(256))
+        untiled = m.unswizzle_ounce_raw_bgra(source, 16, 16, 1)
+        sample = lambda x, y: int.from_bytes(untiled[(y * 16 + x) * 4:
+                                                       (y * 16 + x + 1) * 4], "little")
+        self.assertEqual([sample(0, y) for y in range(5)], [0, 4, 8, 12, 32])
+        self.assertEqual(sample(4, 0), 16)
+        self.assertEqual(set(int.from_bytes(untiled[i:i + 4], "little")
+                             for i in range(0, len(untiled), 4)), set(range(256)))
+
+    def test_ounce_bc7_rejects_truncated_surface(self):
+        with self.assertRaisesRegex(ValueError, "surface requires"):
+            m.unswizzle_ounce_bc7(bytes(1024), 64, 64, 2)
+        with self.assertRaises(ValueError):
+            m.unswizzle_ounce_bc7(bytes(4096), 64, 64, 3)
+
+    def test_ounce_decode_produces_rgba_png(self):
+        png = m.decode_png(bytes(4096), 64, 64, "ounce2", 0x66)
+        with Image.open(io.BytesIO(png)) as img:
+            self.assertEqual((img.format, img.size), ("PNG", (64, 64)))
+
     def test_texinfo_name_is_unlinked_candidate(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
