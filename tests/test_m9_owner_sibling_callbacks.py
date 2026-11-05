@@ -14,7 +14,7 @@ def ldr(base,dst,offset):
 class SiblingTableTests(unittest.TestCase):
     def test_source_callback_pointer_slots_and_neighbors(self):
         base=0x32fde38
-        raw=bytearray(0x120)
+        raw=bytearray(0x140)
         struct.pack_into("<Q",raw,0,ROOTS["cleanup_table"][1])
         struct.pack_into("<Q",raw,0x100,ROOTS["constructor_table"][1])
         for k in (8,16,24,32,40):
