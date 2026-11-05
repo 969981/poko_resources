@@ -1,0 +1,712 @@
+{
+  "report": {
+    "status": "M9_SPECIFIC_OWNER_CALLBACK_POINTER_TABLE_XREFS",
+    "source_exefs_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+    "exact_entry_probes": {
+      "owner_cleanup_callback": 13995572,
+      "owner_constructor_callback": 13996256
+    },
+    "alternate_body_probes": {
+      "owner_cleanup_body": 13995576,
+      "owner_constructor_body": 13996260
+    },
+    "native_qword_pointer_hits": 2,
+    "strict_function_entry_hits": 2,
+    "nearby_two_entry_pointer_pairs": 1,
+    "verified_original_slot0_callsite_pc": 13995792,
+    "same_runtime_owner_type_proven": false,
+    "registered_dispatch_consumer_proven": false,
+    "original_descriptor_callback_slot0x38_actual_dispatch_proven": false,
+    "native_RNK_sources_loaded": 0,
+    "script_to_M7_foreign_keys": 0,
+    "limitations": [
+      "Exact native pointer bytes and relative proximity are data provenance, not a native caller argument flow.",
+      "Prologue PCs come from M9.16 native PACIBSP/function-frame patterns; a code pointer may point to a thunk instead.",
+      "Even a shared callback table cannot prove two method invocations receive the same runtime x3 argument.",
+      "Indirect slot0 method is distinct from known descriptor slot0x38."
+    ]
+  },
+  "data_pointer_xrefs": [
+    {
+      "function": "owner_cleanup_callback",
+      "callback_entry_pc": 13995572,
+      "section": "data",
+      "pointer_data_va": 53468728,
+      "pointer_data_file_offset": 29513339,
+      "verified_exact_qword": true,
+      "context_qwords": [
+        {
+          "data_va": 53468472,
+          "qword": "0x0000000000d58650",
+          "distance_from_pointer": -256
+        },
+        {
+          "data_va": 53468480,
+          "qword": "0x0000000000d58658",
+          "distance_from_pointer": -248
+        },
+        {
+          "data_va": 53468488,
+          "qword": "0x0000000000d58660",
+          "distance_from_pointer": -240
+        },
+        {
+          "data_va": 53468496,
+          "qword": "0x0000000000d586f4",
+          "distance_from_pointer": -232
+        },
+        {
+          "data_va": 53468504,
+          "qword": "0x0000000001fea934",
+          "distance_from_pointer": -224
+        },
+        {
+          "data_va": 53468512,
+          "qword": "0x0000000001fea940",
+          "distance_from_pointer": -216
+        },
+        {
+          "data_va": 53468520,
+          "qword": "0x0000000001fea948",
+          "distance_from_pointer": -208
+        },
+        {
+          "data_va": 53468528,
+          "qword": "0x0000000001fea94c",
+          "distance_from_pointer": -200
+        },
+        {
+          "data_va": 53468536,
+          "qword": "0x0000000001fea954",
+          "distance_from_pointer": -192
+        },
+        {
+          "data_va": 53468544,
+          "qword": "0x0000000000000000",
+          "distance_from_pointer": -184
+        },
+        {
+          "data_va": 53468552,
+          "qword": "0x0000000000000000",
+          "distance_from_pointer": -176
+        },
+        {
+          "data_va": 53468560,
+          "qword": "0x0000000000d586fc",
+          "distance_from_pointer": -168
+        },
+        {
+          "data_va": 53468568,
+          "qword": "0x0000000000d58700",
+          "distance_from_pointer": -160
+        },
+        {
+          "data_va": 53468576,
+          "qword": "0x0000000001fe4fa0",
+          "distance_from_pointer": -152
+        },
+        {
+          "data_va": 53468584,
+          "qword": "0x0000000000d58740",
+          "distance_from_pointer": -144
+        },
+        {
+          "data_va": 53468592,
+          "qword": "0x0000000000d587d4",
+          "distance_from_pointer": -136
+        },
+        {
+          "data_va": 53468600,
+          "qword": "0x0000000000d587e0",
+          "distance_from_pointer": -128
+        },
+        {
+          "data_va": 53468608,
+          "qword": "0x0000000000d587ec",
+          "distance_from_pointer": -120
+        },
+        {
+          "data_va": 53468616,
+          "qword": "0x0000000000d587f4",
+          "distance_from_pointer": -112
+        },
+        {
+          "data_va": 53468624,
+          "qword": "0x0000000000d58834",
+          "distance_from_pointer": -104
+        },
+        {
+          "data_va": 53468632,
+          "qword": "0x0000000001fe4f88",
+          "distance_from_pointer": -96
+        },
+        {
+          "data_va": 53468640,
+          "qword": "0x0000000001fe4f90",
+          "distance_from_pointer": -88
+        },
+        {
+          "data_va": 53468648,
+          "qword": "0x0000000001fe4f98",
+          "distance_from_pointer": -80
+        },
+        {
+          "data_va": 53468656,
+          "qword": "0x0000000001fe4f08",
+          "distance_from_pointer": -72
+        },
+        {
+          "data_va": 53468664,
+          "qword": "0x0000000001fe4f10",
+          "distance_from_pointer": -64
+        },
+        {
+          "data_va": 53468672,
+          "qword": "0x0000000001fe4f18",
+          "distance_from_pointer": -56
+        },
+        {
+          "data_va": 53468680,
+          "qword": "0x0000000001fe4f24",
+          "distance_from_pointer": -48
+        },
+        {
+          "data_va": 53468688,
+          "qword": "0x0000000001fe4f30",
+          "distance_from_pointer": -40
+        },
+        {
+          "data_va": 53468696,
+          "qword": "0x0000000001fe4f38",
+          "distance_from_pointer": -32
+        },
+        {
+          "data_va": 53468704,
+          "qword": "0x0000000001fe4f40",
+          "distance_from_pointer": -24
+        },
+        {
+          "data_va": 53468712,
+          "qword": "0x0000000001fe4f64",
+          "distance_from_pointer": -16
+        },
+        {
+          "data_va": 53468720,
+          "qword": "0x0000000000d58860",
+          "distance_from_pointer": -8
+        },
+        {
+          "data_va": 53468728,
+          "qword": "0x0000000000d58e34",
+          "distance_from_pointer": 0
+        },
+        {
+          "data_va": 53468736,
+          "qword": "0x0000000000d58f50",
+          "distance_from_pointer": 8
+        },
+        {
+          "data_va": 53468744,
+          "qword": "0x0000000000d58f58",
+          "distance_from_pointer": 16
+        },
+        {
+          "data_va": 53468752,
+          "qword": "0x0000000000d58f60",
+          "distance_from_pointer": 24
+        },
+        {
+          "data_va": 53468760,
+          "qword": "0x0000000000d58ff4",
+          "distance_from_pointer": 32
+        },
+        {
+          "data_va": 53468768,
+          "qword": "0x0000000001fea934",
+          "distance_from_pointer": 40
+        },
+        {
+          "data_va": 53468776,
+          "qword": "0x0000000001fea940",
+          "distance_from_pointer": 48
+        },
+        {
+          "data_va": 53468784,
+          "qword": "0x0000000001fea948",
+          "distance_from_pointer": 56
+        },
+        {
+          "data_va": 53468792,
+          "qword": "0x0000000001fea94c",
+          "distance_from_pointer": 64
+        },
+        {
+          "data_va": 53468800,
+          "qword": "0x0000000001fea954",
+          "distance_from_pointer": 72
+        },
+        {
+          "data_va": 53468808,
+          "qword": "0x0000000000000000",
+          "distance_from_pointer": 80
+        },
+        {
+          "data_va": 53468816,
+          "qword": "0x0000000000000000",
+          "distance_from_pointer": 88
+        },
+        {
+          "data_va": 53468824,
+          "qword": "0x0000000000d58ffc",
+          "distance_from_pointer": 96
+        },
+        {
+          "data_va": 53468832,
+          "qword": "0x0000000000d59000",
+          "distance_from_pointer": 104
+        },
+        {
+          "data_va": 53468840,
+          "qword": "0x0000000001fe4fa0",
+          "distance_from_pointer": 112
+        },
+        {
+          "data_va": 53468848,
+          "qword": "0x0000000000d5902c",
+          "distance_from_pointer": 120
+        },
+        {
+          "data_va": 53468856,
+          "qword": "0x0000000000d59064",
+          "distance_from_pointer": 128
+        },
+        {
+          "data_va": 53468864,
+          "qword": "0x0000000000d59070",
+          "distance_from_pointer": 136
+        },
+        {
+          "data_va": 53468872,
+          "qword": "0x0000000000d5907c",
+          "distance_from_pointer": 144
+        },
+        {
+          "data_va": 53468880,
+          "qword": "0x0000000000d59084",
+          "distance_from_pointer": 152
+        },
+        {
+          "data_va": 53468888,
+          "qword": "0x0000000001fe4ef8",
+          "distance_from_pointer": 160
+        },
+        {
+          "data_va": 53468896,
+          "qword": "0x0000000001fe4f88",
+          "distance_from_pointer": 168
+        },
+        {
+          "data_va": 53468904,
+          "qword": "0x0000000001fe4f90",
+          "distance_from_pointer": 176
+        },
+        {
+          "data_va": 53468912,
+          "qword": "0x0000000001fe4f98",
+          "distance_from_pointer": 184
+        },
+        {
+          "data_va": 53468920,
+          "qword": "0x0000000001fe4f08",
+          "distance_from_pointer": 192
+        },
+        {
+          "data_va": 53468928,
+          "qword": "0x0000000001fe4f10",
+          "distance_from_pointer": 200
+        },
+        {
+          "data_va": 53468936,
+          "qword": "0x0000000001fe4f18",
+          "distance_from_pointer": 208
+        },
+        {
+          "data_va": 53468944,
+          "qword": "0x0000000001fe4f24",
+          "distance_from_pointer": 216
+        },
+        {
+          "data_va": 53468952,
+          "qword": "0x0000000001fe4f30",
+          "distance_from_pointer": 224
+        },
+        {
+          "data_va": 53468960,
+          "qword": "0x0000000001fe4f38",
+          "distance_from_pointer": 232
+        },
+        {
+          "data_va": 53468968,
+          "qword": "0x0000000001fe4f40",
+          "distance_from_pointer": 240
+        },
+        {
+          "data_va": 53468976,
+          "qword": "0x0000000001fe4f64",
+          "distance_from_pointer": 248
+        },
+        {
+          "data_va": 53468984,
+          "qword": "0x0000000000d590e0",
+          "distance_from_pointer": 256
+        }
+      ]
+    },
+    {
+      "function": "owner_constructor_callback",
+      "callback_entry_pc": 13996256,
+      "section": "data",
+      "pointer_data_va": 53468984,
+      "pointer_data_file_offset": 29513595,
+      "verified_exact_qword": true,
+      "context_qwords": [
+        {
+          "data_va": 53468728,
+          "qword": "0x0000000000d58e34",
+          "distance_from_pointer": -256
+        },
+        {
+          "data_va": 53468736,
+          "qword": "0x0000000000d58f50",
+          "distance_from_pointer": -248
+        },
+        {
+          "data_va": 53468744,
+          "qword": "0x0000000000d58f58",
+          "distance_from_pointer": -240
+        },
+        {
+          "data_va": 53468752,
+          "qword": "0x0000000000d58f60",
+          "distance_from_pointer": -232
+        },
+        {
+          "data_va": 53468760,
+          "qword": "0x0000000000d58ff4",
+          "distance_from_pointer": -224
+        },
+        {
+          "data_va": 53468768,
+          "qword": "0x0000000001fea934",
+          "distance_from_pointer": -216
+        },
+        {
+          "data_va": 53468776,
+          "qword": "0x0000000001fea940",
+          "distance_from_pointer": -208
+        },
+        {
+          "data_va": 53468784,
+          "qword": "0x0000000001fea948",
+          "distance_from_pointer": -200
+        },
+        {
+          "data_va": 53468792,
+          "qword": "0x0000000001fea94c",
+          "distance_from_pointer": -192
+        },
+        {
+          "data_va": 53468800,
+          "qword": "0x0000000001fea954",
+          "distance_from_pointer": -184
+        },
+        {
+          "data_va": 53468808,
+          "qword": "0x0000000000000000",
+          "distance_from_pointer": -176
+        },
+        {
+          "data_va": 53468816,
+          "qword": "0x0000000000000000",
+          "distance_from_pointer": -168
+        },
+        {
+          "data_va": 53468824,
+          "qword": "0x0000000000d58ffc",
+          "distance_from_pointer": -160
+        },
+        {
+          "data_va": 53468832,
+          "qword": "0x0000000000d59000",
+          "distance_from_pointer": -152
+        },
+        {
+          "data_va": 53468840,
+          "qword": "0x0000000001fe4fa0",
+          "distance_from_pointer": -144
+        },
+        {
+          "data_va": 53468848,
+          "qword": "0x0000000000d5902c",
+          "distance_from_pointer": -136
+        },
+        {
+          "data_va": 53468856,
+          "qword": "0x0000000000d59064",
+          "distance_from_pointer": -128
+        },
+        {
+          "data_va": 53468864,
+          "qword": "0x0000000000d59070",
+          "distance_from_pointer": -120
+        },
+        {
+          "data_va": 53468872,
+          "qword": "0x0000000000d5907c",
+          "distance_from_pointer": -112
+        },
+        {
+          "data_va": 53468880,
+          "qword": "0x0000000000d59084",
+          "distance_from_pointer": -104
+        },
+        {
+          "data_va": 53468888,
+          "qword": "0x0000000001fe4ef8",
+          "distance_from_pointer": -96
+        },
+        {
+          "data_va": 53468896,
+          "qword": "0x0000000001fe4f88",
+          "distance_from_pointer": -88
+        },
+        {
+          "data_va": 53468904,
+          "qword": "0x0000000001fe4f90",
+          "distance_from_pointer": -80
+        },
+        {
+          "data_va": 53468912,
+          "qword": "0x0000000001fe4f98",
+          "distance_from_pointer": -72
+        },
+        {
+          "data_va": 53468920,
+          "qword": "0x0000000001fe4f08",
+          "distance_from_pointer": -64
+        },
+        {
+          "data_va": 53468928,
+          "qword": "0x0000000001fe4f10",
+          "distance_from_pointer": -56
+        },
+        {
+          "data_va": 53468936,
+          "qword": "0x0000000001fe4f18",
+          "distance_from_pointer": -48
+        },
+        {
+          "data_va": 53468944,
+          "qword": "0x0000000001fe4f24",
+          "distance_from_pointer": -40
+        },
+        {
+          "data_va": 53468952,
+          "qword": "0x0000000001fe4f30",
+          "distance_from_pointer": -32
+        },
+        {
+          "data_va": 53468960,
+          "qword": "0x0000000001fe4f38",
+          "distance_from_pointer": -24
+        },
+        {
+          "data_va": 53468968,
+          "qword": "0x0000000001fe4f40",
+          "distance_from_pointer": -16
+        },
+        {
+          "data_va": 53468976,
+          "qword": "0x0000000001fe4f64",
+          "distance_from_pointer": -8
+        },
+        {
+          "data_va": 53468984,
+          "qword": "0x0000000000d590e0",
+          "distance_from_pointer": 0
+        },
+        {
+          "data_va": 53468992,
+          "qword": "0x0000000000d592b4",
+          "distance_from_pointer": 8
+        },
+        {
+          "data_va": 53469000,
+          "qword": "0x0000000000d593ac",
+          "distance_from_pointer": 16
+        },
+        {
+          "data_va": 53469008,
+          "qword": "0x0000000000d593b4",
+          "distance_from_pointer": 24
+        },
+        {
+          "data_va": 53469016,
+          "qword": "0x0000000000d593bc",
+          "distance_from_pointer": 32
+        },
+        {
+          "data_va": 53469024,
+          "qword": "0x0000000000d593c4",
+          "distance_from_pointer": 40
+        },
+        {
+          "data_va": 53469032,
+          "qword": "0x0000000001fea934",
+          "distance_from_pointer": 48
+        },
+        {
+          "data_va": 53469040,
+          "qword": "0x0000000001fea940",
+          "distance_from_pointer": 56
+        },
+        {
+          "data_va": 53469048,
+          "qword": "0x0000000001fea948",
+          "distance_from_pointer": 64
+        },
+        {
+          "data_va": 53469056,
+          "qword": "0x0000000001fea94c",
+          "distance_from_pointer": 72
+        },
+        {
+          "data_va": 53469064,
+          "qword": "0x0000000001fea954",
+          "distance_from_pointer": 80
+        },
+        {
+          "data_va": 53469072,
+          "qword": "0x0000000000000000",
+          "distance_from_pointer": 88
+        },
+        {
+          "data_va": 53469080,
+          "qword": "0x0000000000000000",
+          "distance_from_pointer": 96
+        },
+        {
+          "data_va": 53469088,
+          "qword": "0x0000000000d593cc",
+          "distance_from_pointer": 104
+        },
+        {
+          "data_va": 53469096,
+          "qword": "0x0000000000d593d0",
+          "distance_from_pointer": 112
+        },
+        {
+          "data_va": 53469104,
+          "qword": "0x0000000000000000",
+          "distance_from_pointer": 120
+        },
+        {
+          "data_va": 53469112,
+          "qword": "0x0000000000000000",
+          "distance_from_pointer": 128
+        },
+        {
+          "data_va": 53469120,
+          "qword": "0x0000000000d593d4",
+          "distance_from_pointer": 136
+        },
+        {
+          "data_va": 53469128,
+          "qword": "0x0000000000d593d8",
+          "distance_from_pointer": 144
+        },
+        {
+          "data_va": 53469136,
+          "qword": "0x0000000001fe4fa0",
+          "distance_from_pointer": 152
+        },
+        {
+          "data_va": 53469144,
+          "qword": "0x0000000000d59420",
+          "distance_from_pointer": 160
+        },
+        {
+          "data_va": 53469152,
+          "qword": "0x0000000000d594dc",
+          "distance_from_pointer": 168
+        },
+        {
+          "data_va": 53469160,
+          "qword": "0x0000000000d594e8",
+          "distance_from_pointer": 176
+        },
+        {
+          "data_va": 53469168,
+          "qword": "0x0000000000d594f4",
+          "distance_from_pointer": 184
+        },
+        {
+          "data_va": 53469176,
+          "qword": "0x0000000000d594fc",
+          "distance_from_pointer": 192
+        },
+        {
+          "data_va": 53469184,
+          "qword": "0x0000000001fe4ef8",
+          "distance_from_pointer": 200
+        },
+        {
+          "data_va": 53469192,
+          "qword": "0x0000000001fe4f88",
+          "distance_from_pointer": 208
+        },
+        {
+          "data_va": 53469200,
+          "qword": "0x0000000001fe4f90",
+          "distance_from_pointer": 216
+        },
+        {
+          "data_va": 53469208,
+          "qword": "0x0000000001fe4f98",
+          "distance_from_pointer": 224
+        },
+        {
+          "data_va": 53469216,
+          "qword": "0x0000000001fe4f08",
+          "distance_from_pointer": 232
+        },
+        {
+          "data_va": 53469224,
+          "qword": "0x0000000001fe4f10",
+          "distance_from_pointer": 240
+        },
+        {
+          "data_va": 53469232,
+          "qword": "0x0000000001fe4f18",
+          "distance_from_pointer": 248
+        },
+        {
+          "data_va": 53469240,
+          "qword": "0x0000000001fe4f24",
+          "distance_from_pointer": 256
+        }
+      ]
+    }
+  ],
+  "same_table_neighborhood_candidates": [
+    {
+      "cleanup_slot_va": 53468728,
+      "constructor_slot_va": 53468984,
+      "same_nontext_section": true,
+      "pointer_byte_distance": 256,
+      "same_static_registry_proven": false,
+      "same_runtime_owner_proven": false,
+      "evidence_grade": "TWO_FUNCTION_PTR_QWORDS_IN_STATIC_NEIGHBORHOOD_ONLY"
+    }
+  ]
+}
