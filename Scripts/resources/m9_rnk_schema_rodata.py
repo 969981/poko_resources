@@ -166,6 +166,44 @@ def main():
         raise ValueError("ExeFS hash changed")
     result=analyze(data,prior)
     args.dest.mkdir(parents=True,exist_ok=True)
+    # A descriptor couples an exact hash value with a verified nearby string
+    # pointer store. These are EXEFS-derived label candidates, NOT RNK names
+    # and not runtime KIDSOBJDB object-property getter evidence.
+    named=[]
+    for rec in result["records"]:
+        if not rec["adjacent_descriptor_pair_proven"]:
+            continue
+        for ptr in rec["rodata_pointer_assignments"]:
+            if not ptr["candidate_string"]:
+                continue
+            pair=rec["paired_descriptor_writes"][0]
+            named.append({
+                "property_hash":rec["hash"],
+                "exefs_string_candidate":ptr["candidate_string"],
+                "hash_movz_pc":rec["movz_pc"],
+                "hash_movk_pc":rec["movk_pc"],
+                "hash_store_pc":pair["hash_write_pc"],
+                "pointer_store_pc":pair["pointer_write_pc"],
+                "name_address_register":ptr["register"],
+                "name_rodata_va":ptr["target_va"],
+                "name_adrp_pc":ptr["adrp_pc"],
+                "name_add_pc":ptr["add_pc"],
+                "source_main_sha256":result["main_sha256"],
+                "evidence_grade":"ARM64_DESCRIPTOR_HASH_AND_STRING_POINTER_PAIR",
+                "rnk_name_table_verified":False,
+                "semantic_property_name_verified":False,
+                "runtime_property_getter_verified":False,
+                "script_or_scene_text_foreign_key_verified":False
+            })
+    result["exefs_descriptor_hash_label_candidates"]=len(named)
+    (args.dest/"exefs_hash_name_candidates.json").write_text(
+        json.dumps(named,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
+    if named:
+        with (args.dest/"exefs_hash_name_candidates.csv").open("w",encoding="utf-8",newline="") as f:
+            w=csv.DictWriter(f,fieldnames=list(named[0]))
+            w.writeheader();w.writerows(named)
+    else:
+        (args.dest/"exefs_hash_name_candidates.csv").write_text("property_hash,exefs_string_candidate,evidence_grade\n",encoding="utf-8")
     (args.dest/"exefs_descriptor_hash_writes.json").write_text(
       json.dumps(result,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     cols=["hash","movz_pc","movk_pc","hash_register",
