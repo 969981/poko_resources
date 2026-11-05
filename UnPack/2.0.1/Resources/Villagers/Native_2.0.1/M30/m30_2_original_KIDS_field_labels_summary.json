@@ -1,0 +1,18 @@
+{
+  "game_version": "2.0.1",
+  "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+  "original_KIDS_type_hash": "0x9d1afa46",
+  "original_property_descriptor_string_pointer_cells": 3,
+  "original_KIDS_property_hashes": [
+    "2f610fea",
+    "e88c8d60",
+    "34cbb458"
+  ],
+  "all_pointer_targets_are_rodata_text": true,
+  "original_field_2_3543_entry_key_array_hash": "e88c8d60",
+  "original_field_3_3543_entry_source_array_hash": "34cbb458",
+  "property_strings_are_not_function_pointers": true,
+  "native_species_ID_to_KIDS_source_OID_proven": false,
+  "game_villager_ID_to_texture_proven": false,
+  "warning": "The 3 data pointers are property descriptor label strings, NOT virtual getter functions. Original hashes and names may illuminate structure; game entity ID->array key still needs dynamic or native code consumer evidence."
+}

@@ -1,0 +1,67 @@
+{
+  "summary": {
+    "game_version": "2.0.1",
+    "original_main_sha256": "8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f",
+    "original_KIDS_type_hash": "0x9d1afa46",
+    "original_property_descriptor_string_pointer_cells": 3,
+    "original_KIDS_property_hashes": [
+      "2f610fea",
+      "e88c8d60",
+      "34cbb458"
+    ],
+    "all_pointer_targets_are_rodata_text": true,
+    "original_field_2_3543_entry_key_array_hash": "e88c8d60",
+    "original_field_3_3543_entry_source_array_hash": "34cbb458",
+    "property_strings_are_not_function_pointers": true,
+    "native_species_ID_to_KIDS_source_OID_proven": false,
+    "game_villager_ID_to_texture_proven": false,
+    "warning": "The 3 data pointers are property descriptor label strings, NOT virtual getter functions. Original hashes and names may illuminate structure; game entity ID->array key still needs dynamic or native code consumer evidence."
+  },
+  "original_descriptor_rows": [
+    {
+      "descriptor_index": 0,
+      "source_cell": "0x3331810",
+      "source_cell_raw_u64_le": "c7b27f0200000000",
+      "static_pointer_target": "0x27fb2c7",
+      "property_hash_u32": "2f610fea",
+      "original_target_type": "RODATA_NUL_TERMINATED_TEXT_NOT_CODE",
+      "literal_utf8": "ScreenLayoutTexturePackObjectNameHash",
+      "literal_hex": "53637265656e4c61796f7574546578747572655061636b4f626a6563744e616d6548617368",
+      "nul_terminated": true,
+      "byte_length": 37,
+      "source_section": "rodata",
+      "read_max_length": 512,
+      "property_runtime_game_ID_field_verified": false
+    },
+    {
+      "descriptor_index": 1,
+      "source_cell": "0x3331818",
+      "source_cell_raw_u64_le": "c1137b0200000000",
+      "static_pointer_target": "0x27b13c1",
+      "property_hash_u32": "e88c8d60",
+      "original_target_type": "RODATA_NUL_TERMINATED_TEXT_NOT_CODE",
+      "literal_utf8": "TexturePackKeyHashArray",
+      "literal_hex": "546578747572655061636b4b6579486173684172726179",
+      "nul_terminated": true,
+      "byte_length": 23,
+      "source_section": "rodata",
+      "read_max_length": 512,
+      "property_runtime_game_ID_field_verified": false
+    },
+    {
+      "descriptor_index": 2,
+      "source_cell": "0x3331820",
+      "source_cell_raw_u64_le": "d6fe7c0200000000",
+      "static_pointer_target": "0x27cfed6",
+      "property_hash_u32": "34cbb458",
+      "original_target_type": "RODATA_NUL_TERMINATED_TEXT_NOT_CODE",
+      "literal_utf8": "TexturePackObjectHashArray",
+      "literal_hex": "546578747572655061636b4f626a656374486173684172726179",
+      "nul_terminated": true,
+      "byte_length": 26,
+      "source_section": "rodata",
+      "read_max_length": 512,
+      "property_runtime_game_ID_field_verified": false
+    }
+  ]
+}
