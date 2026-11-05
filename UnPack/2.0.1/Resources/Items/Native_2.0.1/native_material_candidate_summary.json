@@ -1,0 +1,28 @@
+{
+  "status": "NATIVE_RAW_GROUP_AND_SECONDARY_REFERENCE_MATCH__NATIVE_ENUM_NOT_PROVEN",
+  "game_version": "2.0.1",
+  "original_record_sha256": "2a2dbc88715dc76410cef495d418613456c0c4fa7b7d719e7b37709ad53e1b6f",
+  "native_kind_offset_u8": 38,
+  "native_raw_kind_value": 16,
+  "native_raw_kind_16_item_ids": 48,
+  "secondary_reference_url": "https://pokopia.pokemonhubs.com/items/",
+  "secondary_reference_material_count": 50,
+  "reference_intersection_with_native_kind_16": 48,
+  "reference_outside_native_kind_16": [
+    {
+      "item_id": 532,
+      "en": "pumpkin candy",
+      "zhs": "南瓜棒棒糖",
+      "raw_kind": 15
+    },
+    {
+      "item_id": 1291,
+      "en": "mossy stone",
+      "zhs": "苔石",
+      "raw_kind": 10
+    }
+  ],
+  "official_native_enum_name_verified": false,
+  "game_original_item_983_loader_connected_to_consumer": false,
+  "explanation": "Independent public guide classification is not an official or native field enum, even if all 48 group-16 items match."
+}
