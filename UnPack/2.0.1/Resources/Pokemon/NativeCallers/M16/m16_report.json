@@ -1,0 +1,35 @@
+{
+  "status": "609_NATIVE_TEXTURE_HASH_BINDINGS_EXACT",
+  "source_databases": [
+    {
+      "name": "0xacd220a8__50ae86ef.kidsobjdb",
+      "nodes": 7087,
+      "source_sha256": "86f90b4c11da9bc2b3e28889a5090ff507f96ca713fe4fad1dd50f6f692d7541",
+      "name_resource_hash": "9ff4c728"
+    },
+    {
+      "name": "0xacd220a8__e2e43333.kidsobjdb",
+      "nodes": 31,
+      "source_sha256": "98c7f56f54155d9016f26a6510cb63fb8b016798d986aa3189e5c35fe3c8c1bb",
+      "name_resource_hash": "4892d11a"
+    }
+  ],
+  "matched_records": 609,
+  "matched_by_database": {
+    "0xacd220a8__50ae86ef.kidsobjdb": 608,
+    "0xacd220a8__e2e43333.kidsobjdb": 1
+  },
+  "native_layout_object_type_hash": "79991e79",
+  "native_field_hashes": {
+    "g1t": "c8bb66da",
+    "texinfo": "2276fc56",
+    "third_unknown": "2856a1b3"
+  },
+  "third_raw_value_histogram": {
+    "00000000": 609
+  },
+  "species_id_bindings_verified": 0,
+  "out_of_scope_ui_texture": "icon_poke_at_home",
+  "next_required_proof": "A native species/form table or runtime consumer referencing this layout object hash and passing a proven species ID",
+  "warning": "Exact G1T/TEXINFO resource pointers are verified, not original Pokémon species IDs."
+}
