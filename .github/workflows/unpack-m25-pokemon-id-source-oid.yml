@@ -7,6 +7,7 @@ on:
     paths:
       - "Scripts/resources/m25_original_source_oid_second_hop.py"
       - "Scripts/resources/m25_2_original_icon_array_gaps.py"
+      - "Scripts/resources/m25_3_recover_unknown_icon_object_targets.py"
       - "Scripts/resources/m25_identity_field_dataflow.py"
       - ".github/workflows/unpack-m25-pokemon-id-source-oid.yml"
 
@@ -36,6 +37,7 @@ jobs:
             Scripts/resources/m20_native_species_item_targets.py
             Scripts/resources/m25_original_source_oid_second_hop.py
             Scripts/resources/m25_2_original_icon_array_gaps.py
+            Scripts/resources/m25_3_recover_unknown_icon_object_targets.py
             Scripts/resources/m25_identity_field_dataflow.py
             UnPack/2.0.1/Resources/Pokemon/NativeCallers/M19/m19_verified_texture_object_edges.csv
             UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M24/m24_1_identity_anchors_summary.json
@@ -52,6 +54,7 @@ jobs:
         run: |
           python -m Scripts.resources.m25_original_source_oid_second_hop --self-test
           python -m Scripts.resources.m25_2_original_icon_array_gaps --self-test
+          python -m Scripts.resources.m25_3_recover_unknown_icon_object_targets --self-test
           python -m Scripts.resources.m25_identity_field_dataflow --self-test
 
       - name: Scan all 678 original databases for second-hop references to 603 source OIDs
@@ -59,6 +62,9 @@ jobs:
 
       - name: Recover original values for 26 gaps across two icon registry blocks
         run: python -m Scripts.resources.m25_2_original_icon_array_gaps
+
+      - name: Recover 26 original KIDS source-to-texture objects and missing G1T paths
+        run: python -m Scripts.resources.m25_3_recover_unknown_icon_object_targets
 
       - name: Prove narrow pokemon_dex_id and mainPokemonList helper branches
         run: python -m Scripts.resources.m25_identity_field_dataflow
@@ -72,6 +78,8 @@ jobs:
           hop=json.loads((p/"m25_original_second_hop_summary.json").read_text(encoding="utf-8"))
           caller=json.loads((p/"m25_identity_caller_summary.json").read_text(encoding="utf-8"))
           gaps=json.loads((p/"m25_2_original_registry_summary.json").read_text(encoding="utf-8"))
+          target=json.loads((p/"m25_3_26_texture_object_summary.json").read_text(encoding="utf-8"))
+          target_rows=list(csv.DictReader((p/"m25_3_26_original_source_to_texture_objects.csv").open(encoding="utf-8",newline="")))
           gap_rows=list(csv.DictReader((p/"m25_2_26_unmatched_native_icon_registry.csv").open(encoding="utf-8",newline="")))
           full_rows=list(csv.DictReader((p/"m25_2_full_628_native_icon_registry.csv").open(encoding="utf-8",newline="")))
           with (p/"m25_original_second_hop_kids_source_oid_backrefs.csv").open(encoding="utf-8",newline="") as f:
@@ -81,6 +89,10 @@ jobs:
           assert gaps["original_unmatched_raw_slots"]==26
           assert len(gap_rows)==26 and len(full_rows)==628
           assert gaps["original_database_scan_count"]==678
+          assert target["original_array_26_gap_slots"]==26
+          assert len(target_rows)==26
+          assert target["native_species_ids_proven"]==0
+          assert target["native_villager_ids_proven"]==0
           assert gaps["native_species_id_bindings_verified"]==0
           assert hop["M19_distinct_source_oids"]==603
           assert hop["original_typed_backreference_rows"]==len(rows)
