@@ -258,3 +258,36 @@ main+0xD59274  str x23, [x19, #0x28]
 - 文件 `exefs_constructor_slot38_receiver_provenance.json`。
 
 **当前边界：** 已证实回调表、各自函数体、x3→owner+0x28 的局部路径、slot0 静态间接调用，以及一次接收者为 x22 的 slot+0x38 指令。尚未证实特定内部 x23 的 slot+0x38 消费者、相同 x3 实例的上层真实调用者、KIDSOBJDB getter 或剧情任务建筑到 M7 的正式新外键（仍 0）。物理 `0xea42a223.fdata`、`0x5c83387f.fdata`、`0x898afd6d.fdata` 仍缺失，RNK/IRNK 不能由 Hash 推断生成。`main` 不受影响。
+
+## M9.23 — 只读 GDB 运行时目标回调证据采集（2026-11-05）
+
+[Actions #41963759345](https://github.com/969981/poko_resources/actions/runs/41963759345) **Success**：此 CI 仅验证 Python 语法和合成记录的边界条件，**没有运行 Switch2 游戏或真实 GDB 会话，不能写成运行时 callback 验证通过**。
+
+### 精确采集点
+
+只在已取得 NSO 字节证据的入口／代码位置设断点：`main+0xD590E0`（构造回调）、`+0xD591C8`（内部对象 vptr）、`+0xD59274`（owner+0x28 保存）、`+0xD58E34`（清理回调）、`+0xD58F10`（slot0 BLR）、`+0xD592B4`（同表相邻回调）、`+0xD59250`（接收者 x22 的 slot+0x38）、`+0xD59420`（目标内层类描述符回调）。
+
+脚本 `Scripts/resources/m9_gdb_owner_callback_trace.py` 实现只读寄存器／内存回读、每点最多 24 次命中并自动继续、JSONL 事件记录；不写游戏内存、不修补二进制。另提供不依赖 GDB 的 `Scripts/resources/m9_runtime_callback_trace_validator.py`，检查用户采集日志中的 main 基址、PC、x0 vptr、vptr+0x38 真实目标以及从 LR-4 读取的原生 BLR 指令候选。
+
+### 使用方法
+
+先确保游戏确为本次研究的原版 2.0.1 NSO，SHA-256 为 `8a8ce87b4edfce88c6260da5dd80d6cafc03a761eebc842d7a3476e353a8336f`。打开连接目标 ARM64 的 GDB，并取得**运行时实际 main 装载基址**（不是文件偏移，也不是预先猜出的地址）：
+
+```gdb
+source -s python Scripts/resources/m9_gdb_owner_callback_trace.py
+m9trace-install 0xACTUAL_MAIN_LOAD_BASE ./m9_23_trace.jsonl 24
+continue
+```
+
+在用户本地退出调试后，执行：
+
+```bash
+python Scripts/resources/m9_runtime_callback_trace_validator.py --input m9_23_trace.jsonl --output m9_23_report.json
+```
+
+**严格验收区别：**
+
+- 如果 `main+0xD59420` 实际命中，且当时 `x0.vptr == actual_main_base + 0x32FDFA0`、`*(x0.vptr+0x38) == actual_main_base + 0xD59420`，则形成 **同类实例上的实际描述符函数入口命中证据**。如果另见 LR-4 是 ARM64 BLR，可定位候选上层间接调用点；还需要对调用者寄存器／虚表槽读取进行实证，才能宣布特定 slot+0x38 派发闭合。
+- 如果只看到 `main+0xD59250` 命中，按 M9.22 的证据它属于 x22 接收者，**不得写成内部 x23 描述符调用成功**。
+- 捕获同一个 x3 数值出现在构造和清理回调只是**运行时地址一致的候选**，还应排除对象生命期结束后地址重复利用。没有日志时不许猜测。
+- 用户未提供真实运行日志，当前 `specific_vptr_slot0x38_indirect_call_path_proven=false`、原生 `RNK/IRNK` 名称为 0、新正式 M7 剧情／任务／建筑文本外键为 0，保持不变。
