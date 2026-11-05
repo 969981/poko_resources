@@ -49,5 +49,5 @@ updated: 2026-11-05
 
 ## 知识库连接
 
-- [[README]]
+- [[docs/2.0.1/Technical/README|技术知识库首页]]
 - [[08-Evidence-And-Open-Questions]]
