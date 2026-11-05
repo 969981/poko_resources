@@ -1,0 +1,89 @@
+name: M26 - Original KIDS icon registry type/class consumer provenance
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["2.0.1_unpack"]
+    paths:
+      - "Scripts/resources/m26_original_icon_registry_consumer_trace.py"
+      - ".github/workflows/unpack-m26-icon-class-consumer.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pokopia-m26-class-consumer-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify-original-KIDS-type-and-rodata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Sparse checkout pinned original NSO and type consumer parser
+        uses: actions/checkout@v4
+        with:
+          ref: 2.0.1_unpack
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            2.0.1/exefs/main
+            Scripts/resources/trace_native_species_item_callers.py
+            Scripts/resources/m20_native_species_item_targets.py
+            Scripts/resources/m26_original_icon_registry_consumer_trace.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install original ARM64 source interpreter
+        run: python -m pip install "lz4>=4,<5" "capstone>=5,<6"
+
+      - name: Test exact native class and property hash assumptions
+        run: python -m Scripts.resources.m26_original_icon_registry_consumer_trace --self-test
+
+      - name: Scan bounded original descriptor/code and class typehash getter
+        run: python -m Scripts.resources.m26_original_icon_registry_consumer_trace
+
+      - name: Reject all inferred game runtime villager ID bindings
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          base=Path("UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26")
+          s=json.loads((base/"m26_original_class_consumer_summary.json").read_text(encoding="utf-8"))
+          p=json.loads((base/"m26_original_rodata_class_source_trace.json").read_text(encoding="utf-8"))
+          assert s["original_kids_array_type_hash"]=="0x9d1afa46"
+          assert s["original_kids_property_hash"]=="0x34cbb458"
+          assert s["verified_original_rodata_property_hash_va"]=="0x283883c"
+          assert s["class_typehash_getter_verified"]=="0xdd1c30"
+          assert s["type_registration_tailcall_sites"]==["0xbe19d0","0xbe1a5c"]
+          assert len(p["original_candidate_code_windows"])==5
+          assert not s["gameplay_ID_to_icon_array_slot_verified"]
+          assert not s["runtime_object_instance_to_source_oid_verified"]
+          assert not s["game_native_villager_id_verified"]
+          print("PASS M26 original class descriptor and source-byte proof")
+          PY
+
+      - name: Preserve source analysis evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokopia-m26-3543-native-array-property-typehash-consumer
+          path: UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26/m26_original_*
+          if-no-files-found: warn
+
+      - name: Commit original NSO evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -A -- UnPack/2.0.1/Resources/Villagers/Native_2.0.1/M26/m26_original_*
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "research(m26): original KIDS registry type getter and rodata source-byte pointers"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:2.0.1_unpack; then exit 0; fi
+            git fetch origin 2.0.1_unpack
+            git rebase origin/2.0.1_unpack
+          done
+          exit 1
